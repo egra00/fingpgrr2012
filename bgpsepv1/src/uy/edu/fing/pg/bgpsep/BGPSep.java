@@ -12,7 +12,6 @@ import uy.edu.fing.pg.bgpsep.utils.Separator;
 import uy.edu.fing.pg.bgpsep.utils.Utils;
 import edu.uci.ics.jung.graph.Graph;
 
-
 public class BGPSep
 {
 	
