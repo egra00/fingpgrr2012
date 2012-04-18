@@ -69,13 +69,21 @@ public class BGPSep
 			return;
 		}
 		
-		Graph<Router,Link> IGPTopology = IO.load(args[0]);
+		System.out.println("Running...");
+		
+		String filename = args[0];
+		
+		Graph<Router,Link> IGPTopology = IO.load(filename);
 		
 		System.out.println("Routers: " + IGPTopology.getVertexCount());
 		System.out.println("Aristas: " + IGPTopology.getEdgeCount());
 		
-		List<iBGPSession> i = new ArrayList<iBGPSession>();
-		BGPSepAlgorithm(IGPTopology, i);
+		List<iBGPSession> iBGPTopology = new ArrayList<iBGPSession>();
+		BGPSepAlgorithm(IGPTopology, iBGPTopology);
+		
+		IO.dumpSimpleIBGPFile(iBGPTopology, filename + ".rrl");
+		
+		System.out.println("Finish");
 		
 	}
 

@@ -7,12 +7,14 @@ import java.io.IOException;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 
 import uy.edu.fing.pg.bgpsep.domain.model.Link;
 import uy.edu.fing.pg.bgpsep.domain.model.LinkConf;
 import uy.edu.fing.pg.bgpsep.domain.model.Router;
 import uy.edu.fing.pg.bgpsep.domain.model.RouterConf;
 import uy.edu.fing.pg.bgpsep.domain.model.RouterType;
+import uy.edu.fing.pg.bgpsep.domain.model.iBGPSession;
 import Graph.Edge;
 import Graph.Graph;
 import Graph.Node;
@@ -100,4 +102,23 @@ public class IO {
 		}
 		
 	}
+	
+	public static void dumpSimpleIBGPFile(List<iBGPSession> iBGPTopology, String filename) {
+		File f = new File(filename);
+		BufferedWriter bw;
+		try {
+			bw = new BufferedWriter(new FileWriter(f, true));
+			bw.write("\niBGP sessions ("+iBGPTopology.size()+")\n");
+			for (iBGPSession iter: iBGPTopology) {
+				bw.write(iter.getIdLink1() + " - " + iter.getIdLink2() + " -> " + iter.getSessionType() + "\n");
+			}
+			bw.close();
+			System.out.println("[MESSAGE]: Output format file");
+		}
+		catch (IOException e) {
+			System.out.println("Error writing in a file");
+			System.exit(0);
+		}
+	}
+	
 }
