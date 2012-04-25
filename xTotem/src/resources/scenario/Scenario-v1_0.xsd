@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+
+<!--
+    Created on : November 16, 2004, 2:23 PM
+    Author     : Jean Lepropre
+    Description: Main scenario file.
+    TOTEM Project.
+-->
+
+<!--
+    Changes:
+    ========
+
+    - 15-Feb.-2005: startAlgo now uses the param element (JL).
+    - 16-Feb.-2005: ShowLinkReservableBandwidth - Rename linkid into linkId (JL).
+    - 16-Feb.-2005: Add the useBWSharing attribute to the loadDomain event (JL).
+    - 17-Feb.-2005: Default values for the protectionType and methodType attributes (JL).
+    - 17-Feb.-2005: removeMultipleLinks sets as default attribute (JL).
+    - 17-Feb.-2005: Add nbIter and maxPossibleWeight to IGPWOCalculateWeights (JL).
+    - 17-Feb.-2005: Default values for nbIter and maxPossibleWeight (JL).
+-->
+
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- Root element -->
+    <xs:element name="scenario">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="event" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Super abstract types -->
+    <!-- These types can only be extended -->
+    <xs:complexType name="eventType" abstract="true" final="restriction">
+        <xs:attribute name="time" type="xs:time" use="optional"/>
+    </xs:complexType>
+    
+    <!-- Intradomain events (i.e., they must have an AS ID) -->
+    <xs:complexType name="ASEventType" abstract="true" final="restriction">
+        <xs:complexContent>
+            <xs:extension base="eventType">
+                <xs:attribute name="ASID" type="ASIdType" use="optional"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <!-- Traffic events (i.e., they must have a TM ID) -->
+    <xs:complexType name="TMEventType" abstract="true" final="restriction">
+        <xs:complexContent>
+            <xs:extension base="eventType">
+                <xs:attribute name="TMID" type="TMIdType" use="optional"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <!-- Intradomain traffic events (TM ID & AS ID) -->
+    <xs:complexType name="ASTMEventType" abstract="true" final="restriction">
+        <xs:complexContent>
+            <xs:extension base="ASEventType">
+                <xs:attribute name="TMID" type="TMIdType" use="optional"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:element name="event" type="eventType" abstract="true"/>
+
+    <!-- "Real" events -->
+    <xs:element name="loadDomain" substitutionGroup="event">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="eventType">
+                    <xs:attribute name="file" type="xs:string" use="required"/>
+                    <xs:attribute name="removeMultipleLinks" type="xs:boolean" use="optional" default="false"/>
+                    <xs:attribute name="defaultDomain" type="xs:boolean" use="optional" default="false"/>
+                    <xs:attribute name="useBWSharing" type="xs:boolean" use="optional" default="false"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="startAlgo" substitutionGroup="event">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="ASTMEventType">
+                    <xs:sequence>
+                        <xs:element ref="param" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                    <xs:attribute name="name" type="xs:string" use="required"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="loadTrafficMatrix" substitutionGroup="event">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="TMEventType">
+                    <xs:attribute name="file" type="xs:string" use="required"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="computeMCF" substitutionGroup="event">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="ASTMEventType">
+                    <xs:attribute name="runGLPSOL" type="xs:boolean" use="optional"/>
+                    <xs:attribute name="dataFile" type="xs:string" use="optional"/>
+                    <xs:attribute name="resultFile" type="xs:string" use="optional"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="nodeUp" substitutionGroup="event">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="ASEventType">
+                    <xs:attribute name="nodeId" type="xs:string" use="required"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="nodeDown" substitutionGroup="event">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="ASEventType">
+                    <xs:attribute name="nodeId" type="xs:string" use="required"/>
+                    <xs:attribute name="cause" type="xs:string" use="optional"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="linkUp" substitutionGroup="event">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="ASEventType">
+                    <xs:attribute name="linkId" type="xs:string" use="required"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="linkDown" substitutionGroup="event">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="ASEventType">
+                    <xs:attribute name="linkId" type="xs:string" use="required"/>
+                    <xs:attribute name="cause" type="xs:string" use="optional"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="linkMetricChange" substitutionGroup="event">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="ASEventType">
+                    <xs:attribute name="linkId" type="xs:string" use="required"/>
+                    <xs:attribute name="metric" type="xs:float" use="required"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="linkTeMetricChange" substitutionGroup="event">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="ASEventType">
+                    <xs:attribute name="linkId" type="xs:string" use="required"/>
+                    <xs:attribute name="metric" type="xs:float" use="required"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>    
+    </xs:element>
+
+    <xs:element name="LSPDeletion" substitutionGroup="event">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="ASEventType">
+                    <xs:attribute name="lspId" type="xs:string" use="required"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="LSPBWChange" substitutionGroup="event">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="ASEventType">
+                    <xs:attribute name="lspId" type="xs:string" use="required"/>
+                    <xs:attribute name="bw" type="xs:float" use="required"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="LSPCreation" substitutionGroup="event">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="ASEventType">
+                    <xs:sequence>
+                        <xs:element name="metric" type="xs:float" minOccurs="0" maxOccurs="1"/>
+                        <xs:element name="maxRate" type="xs:float" minOccurs="0" maxOccurs="1"/>
+                        <xs:element name="diff-serv" minOccurs="0" maxOccurs="1">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="ct" type="xs:int" minOccurs="1" maxOccurs="1"/>
+                                    <xs:element name="preemption" minOccurs="1" maxOccurs="1">
+                                        <xs:complexType>
+                                            <xs:attribute name="setup" type="xs:int" use="required"/>
+                                            <xs:attribute name="holding" type="xs:int" use="required"/>
+                                        </xs:complexType>
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element ref="routingAlgo" minOccurs="1" maxOccurs="1"/>
+                    </xs:sequence>
+                    <xs:attribute name="lspId" type="xs:string" use="optional"/>
+                    <xs:attribute name="src" type="xs:string" use="required"/>
+                    <xs:attribute name="dst" type="xs:string" use="required"/>
+                    <xs:attribute name="bw" type="xs:float" use="optional"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="LSPBackupCreation" substitutionGroup="event">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="ASEventType">
+                    <xs:sequence>
+                        <xs:choice>
+                            <xs:element name="Detour">
+                                <xs:complexType>
+                                    <xs:attribute name="protectedLSP" type="xs:string" use="required"/>
+                                    <xs:attribute name="methodType" type="methodType" use="optional" default="GLOBAL"/>
+                                    <xs:attribute name="protectionType" type="protectionType" use="optional" default="NODE_DISJOINT"/>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Bypass">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="protectedLink" minOccurs="1" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:attribute name="linkId" type="xs:string" use="required"/>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:choice>
+                        <xs:element ref="routingAlgo" minOccurs="1" maxOccurs="1"/>
+                    </xs:sequence>
+                    <xs:attribute name="lspId" type="xs:string" use="optional"/>
+                    <xs:attribute name="bw" type="xs:float" use="optional"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="IGPWOCalculateWeights" substitutionGroup="event">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="ASTMEventType">
+                    <xs:attribute name="nbIter" type="xs:int" use="optional" default="100"/>
+                    <xs:attribute name="maxPossibleWeight" type="xs:int" use="optional" default="50"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="ShowLinkInfo" substitutionGroup="event">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="ASTMEventType">
+                    <xs:attribute name="type" type="infoLinkType" use="optional" default="LOAD"/>
+                    <xs:attribute name="verbose" type="xs:boolean" use="optional" default="false"/>
+                    <xs:attribute name="SPFtype" type="xs:string" use="optional"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="ShowLinkReservableBandwidth" substitutionGroup="event">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="ASEventType">
+                    <xs:attribute name="linkId" type="xs:string" use="required"/>
+                    <xs:attribute name="priority" type="xs:int" use="optional"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="CBGPInfo" substitutionGroup="event">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="eventType">
+                    <xs:sequence>
+                        <xs:element ref="param" minOccurs="1" maxOccurs="4"/>
+                    </xs:sequence>
+                    <xs:attribute name="info" type="xs:string" use="required"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="CBGPLoadRib" substitutionGroup="event">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="eventType">
+                    <!-- node has to be an ip address -->
+                    <xs:attribute name="node" type="xs:string" use="required"/>
+                    <xs:attribute name="file" type="xs:string" use="required"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="CBGPRun" substitutionGroup="event">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="eventType">
+                    <!-- stop-at is an integer (X) telling to C-BGP to stop the
+                         simulation when reaching the step X -->
+                    <xs:attribute name="stopAt" type="xs:string" use="optional"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+     </xs:element>
+
+    <xs:element name="CBGPPeerUp" substitutionGroup="event">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="eventType">
+                    <!-- node has to be an ip address -->
+                    <xs:attribute name="node" type="xs:string" use="required"/>
+                    <!-- peer has to be an ip address -->
+                    <xs:attribute name="peer" type="xs:string" use="required"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="CBGPPeerDown" substitutionGroup="event">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="eventType">
+                    <!-- node has to be an ip address -->
+                    <xs:attribute name="node" type="xs:string" use="required"/>
+                    <!-- peer has to be an ip address -->
+                    <xs:attribute name="peer" type="xs:string" use="required"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="CBGPExecute" substitutionGroup="event">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="eventType">
+                    <!-- command is a string containing a C-BGP command (see doc of C-BGP) -->
+                    <xs:attribute name="command" type="xs:string" use="required"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="CBGPPeerRecv" substitutionGroup="event">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="eventType">
+                    <!-- router has to be an ip address -->
+                    <xs:attribute name="router" type="xs:string" use="required"/>
+                    <!-- peer has to be an ip address -->
+                    <xs:attribute name="peer" type="xs:string" use="required"/>
+                    <!-- msg has to be a BGP message in MRT format -->
+                    <xs:attribute name="msg" type="xs:string" use="required"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="topologyGeneration" substitutionGroup="event">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="eventType">
+                    <xs:sequence>
+                        <xs:element ref="param" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="trafficMatrixGeneration" substitutionGroup="event">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="ASTMEventType">
+                    <xs:sequence>
+                        <xs:element ref="param" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="echo" substitutionGroup="event">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="eventType">
+                    <xs:attribute name="msg" type="xs:string" use="required"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="saveDomain" substitutionGroup="event">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="ASEventType">
+                    <xs:attribute name="file" type="xs:string" use="required"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Complex types and elements used in this schema. -->
+    <xs:element name="routingAlgo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="param" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="name" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="param">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="name" type="xs:string" use="required"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Simple types used in this schema. -->
+
+    <xs:simpleType name="methodType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="LOCAL"/>
+            <xs:enumeration value="GLOBAL"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="protectionType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="NODE_DISJOINT"/>
+            <xs:enumeration value="LINK_DISJOINT"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="infoLinkType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="LOAD"/>
+            <xs:enumeration value="RESERVATION"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="ASIdType">
+        <xs:restriction base="xs:int"/>
+    </xs:simpleType>
+    
+    <xs:simpleType name="TMIdType">
+        <xs:restriction base="xs:int"/>
+    </xs:simpleType>
+</xs:schema>

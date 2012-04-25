@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+
+<!--- created by Thomas DEKENS -->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:include schemaLocation="http://totem.run.montefiore.ulg.ac.be/Schema/TOTEM-base-v1_0.xsd"/>
+	<xs:include schemaLocation="measurementBase.xsd"/>
+
+<!--- root element -->
+	
+	<xs:element name="rttMeasurementRequest">
+		<xs:complexType> 
+			<xs:sequence>
+				<xs:element name="requestList" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="subnetDNS" minOccurs="1" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="subnet" type="subnet" minOccurs="1" maxOccurs="1"/>
+										<xs:element name="dnsServer" type="dnsServer" minOccurs="1" maxOccurs="unbounded"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="request" minOccurs="1" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="startTime" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+										<xs:element name="poissonParameters" minOccurs="1" maxOccurs="1">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="poissonDistribution" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
+													<xs:element name="numberOfObservations" type="xs:integer" minOccurs="1" maxOccurs="1"/>
+													<xs:element name="lambda" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+													<xs:element name="timingUnits" type="delayUnits" minOccurs="1" maxOccurs="1"/>
+													<xs:element name="takeFirstMeasureDirectly" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="measurementMethod" type="rttMeasurementMethod" minOccurs="1" maxOccurs="1"/>
+										<xs:element name="numberOfQueries" type="xs:positiveInteger" minOccurs="1" maxOccurs="1"/>
+										<xs:element name="randomizeDnsInList" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>			
+		</xs:complexType>
+	</xs:element>
+
+
+
+</xs:schema>

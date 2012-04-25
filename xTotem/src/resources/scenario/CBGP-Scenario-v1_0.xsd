@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!--
+    Created on : March 01, 2005, 12:00 AM
+    Author     : Jean Lepropre
+    Description: Scenario file for CBGP.
+    TOTEM Project.
+-->
+
+<!--
+    Changes:
+    ========
+
+    - 01-Mar.-2005: Creation of the file (JL).
+-->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://jaxb.model.scenario.totem.ingi.ucl.ac.be"
+           xmlns:cbgp="http://jaxb.model.scenario.totem.ingi.ucl.ac.be"
+           xmlns="http://jaxb.model.scenario.totem.run.montefiore.ulg.ac.be"
+           elementFormDefault="qualified">
+
+    <xs:import schemaLocation="http://totem.run.montefiore.ulg.ac.be/Schema/Scenario-v1_1.xsd"
+               namespace="http://jaxb.model.scenario.totem.run.montefiore.ulg.ac.be"/>
+
+    <xs:element name="CBGPInfo" substitutionGroup="event">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="eventType">
+                    <xs:sequence>
+                        <xs:element ref="param" minOccurs="1" maxOccurs="4"/>
+                    </xs:sequence>
+                    <xs:attribute name="info" type="xs:string" use="required"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="CBGPLoadRib" substitutionGroup="event">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="eventType">
+                    <!-- node has to be an ip address -->
+                    <xs:attribute name="node" type="xs:string" use="required"/>
+                    <xs:attribute name="file" type="xs:string" use="required"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="CBGPRun" substitutionGroup="event">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="eventType">
+                    <!-- stop-at is an integer (X) telling to C-BGP to stop the
+                         simulation when reaching the step X -->
+                    <xs:attribute name="stopAt" type="xs:string" use="optional"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+     </xs:element>
+
+    <xs:element name="CBGPPeerUp" substitutionGroup="event">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="eventType">
+                    <!-- node has to be an ip address -->
+                    <xs:attribute name="node" type="xs:string" use="required"/>
+                    <!-- peer has to be an ip address -->
+                    <xs:attribute name="peer" type="xs:string" use="required"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="CBGPPeerDown" substitutionGroup="event">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="eventType">
+                    <!-- node has to be an ip address -->
+                    <xs:attribute name="node" type="xs:string" use="required"/>
+                    <!-- peer has to be an ip address -->
+                    <xs:attribute name="peer" type="xs:string" use="required"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="CBGPExecute" substitutionGroup="event">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="eventType">
+                    <!-- command is a string containing a C-BGP command (see doc of C-BGP) -->
+                    <xs:attribute name="command" type="xs:string" use="required"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="CBGPPeerRecv" substitutionGroup="event">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="eventType">
+                    <!-- router has to be an ip address -->
+                    <xs:attribute name="router" type="xs:string" use="required"/>
+                    <!-- peer has to be an ip address -->
+                    <xs:attribute name="peer" type="xs:string" use="required"/>
+                    <!-- msg has to be a BGP message in MRT format -->
+                    <xs:attribute name="msg" type="xs:string" use="required"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>    
+    
+    <xs:element name="CBGPSnapshot" substitutionGroup="event">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="eventType">
+                    <xs:attribute name="comment" type="xs:string" use="required"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+     </xs:element>
+
+</xs:schema>

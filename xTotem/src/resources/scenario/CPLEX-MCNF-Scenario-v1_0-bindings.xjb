@@ -1,0 +1,29 @@
+<!--
+    JAXB binding declarations file for CPLEX-MCNF-Scenario-v1_0.xsd.
+    Author: Jean Lepropre (2007).
+    TOTEM Project.
+-->
+
+<jxb:bindings version="1.0"
+              xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+              xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+ <jxb:bindings schemaLocation="CPLEX-MCNF-Scenario-v1_0.xsd" node="/xs:schema">
+
+  <jxb:globalBindings choiceContentProperty="false"
+		      		  typesafeEnumBase="xs:string"
+		      		  generateIsSetMethod="true"/>
+  
+  <jxb:schemaBindings>
+   <jxb:package name="be.ac.ulg.montefiore.run.totem.repository.cplexMCNF.scenario.model.jaxb"/>
+  </jxb:schemaBindings>
+
+  <!-- Tell JAXB to create instances of our own classes instead of the impl generated classes. -->
+  
+  <jxb:bindings node="//xs:element[@name='ComputeMCNFOptimalRouting']">
+     <jxb:class implClass="be.ac.ulg.montefiore.run.totem.repository.cplexMCNF.scenario.model.ComputeMCNFOptimalRouting"/>
+  </jxb:bindings>
+
+  
+ </jxb:bindings>
+</jxb:bindings>

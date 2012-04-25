@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+    <!-- This first appender just prints logs on console-->
+    <appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%-4r [%t] %-5p %c %x -%m%n"/>
+        </layout>
+    </appender>
+
+    <!-- This second appender prints logs to file totem.log -->
+    <!-- This file will be rolled over when it reaches 100KB -->
+    <!-- When roll-over occurs, the old version of example.log is -->
+    <!-- automatically moved to example.log.1 -->
+    <!-- previous content is removed (append=false) -->
+    <appender name="RollingFilesALL" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="logs/totem.log" />
+        <!--param name="Append" value="false" /-->
+        <param name="MaxFileSize" value="100KB" />
+        <param name="MaxBackupIndex" value="1" />
+        <layout class="org.apache.log4j.xml.XMLLayout"/>
+    </appender>
+
+    <!-- This third appender logs to a file  -->
+    <appender name="FileWARN" class="org.apache.log4j.FileAppender">
+        <param name="File" value="logs/totem-warn.log" />
+        <param name="Append" value="false" />
+        <layout class="org.apache.log4j.xml.XMLLayout"/>
+    </appender>
+
+    <!-- This last appender sends logs to a socket -->
+    <!-- If chainsaw is opened, you see a live concert of logs :) -->
+    <appender name="SOCKET" class="org.apache.log4j.net.SocketAppender">
+        <param name="RemoteHost" value="localhost" />
+        <param name="Port" value="4445" />
+    </appender>
+
+    <!-- The following few lines are commented !!! -->
+    <!-- ALL LOGERS INHERIT level and appenders from ROOT -->
+    <!-- For level, use the tag level (see below) -->
+    <!-- For appenders, you can add one using the appender-ref tag -->
+    <!-- If you don't want to inherit appenders,  use the additivity flag -->
+
+
+    <!--logger name="be.ac.ulg.montefiore.run.totem.repository.CSPF" additivity="false"-->
+    <!--level value="warn" /-->
+    <!--appender-ref ref="FILESTANDARD"/-->
+    <!--/logger-->
+
+
+    <!--logger name="be.ac.ulg.montefiore.run.totem.core.UlgTest"-->
+    <!--appender-ref ref="SOCKET"/-->
+    <!--/logger-->
+
+    <root>
+        <level value="info"/>
+        <appender-ref ref="RollingFilesALL"/>
+    </root>
+
+</log4j:configuration>
+

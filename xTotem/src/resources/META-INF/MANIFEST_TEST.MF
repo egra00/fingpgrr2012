@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Implementation-Title: JNetSimTest
+Implementation-Vendor: "RUN"
+Main-Class: test.AllTest
+

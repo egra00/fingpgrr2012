@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<domain ASID="10000" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://totem.run.montefiore.ulg.ac.be/Schema/Domain-v1_3.xsd">
+    <info>
+        <title>Test Topology</title>
+        <date>2004-04-07</date>
+        <author>RUN - University of Liege</author>
+        <description>
+			Perl script of the Research Unit in Networking (RUN) of the University of Liege
+			TOTEM Project (http://totem.info.ucl.ac.be/)
+		</description>
+        <units>
+            <unit type="bandwidth" value="kbps"/>
+            <unit type="delay" value="ms"/>
+        </units>
+        <diff-serv>
+            <priority ct="0" id="0" preemption="0"/>
+            <priority ct="1" id="1" preemption="0"/>
+            <priority ct="1" id="2" preemption="1"/>
+            <priority ct="2" id="3" preemption="2"/>
+        </diff-serv>
+    </info>
+    <topology>
+        <nodes>
+            <node id="0">
+                <status>UP</status>
+                <location latitude="335.0" longitude="784.0"/>
+                <interfaces>
+                    <interface id="0"/>
+                </interfaces>
+            </node>
+            <node id="1">
+                <status>UP</status>
+                <location latitude="44.0" longitude="681.0"/>
+                <interfaces>
+                    <interface id="1"/>
+                </interfaces>
+            </node>
+            <node id="2">
+                <status>UP</status>
+                <location latitude="935.0" longitude="610.0"/>
+                <interfaces>
+                    <interface id="0"/>
+                    <interface id="1"/>
+                    <interface id="2"/>
+                    <interface id="3"/>
+                </interfaces>
+            </node>
+            <node id="3">
+                <status>UP</status>
+                <location latitude="630.0" longitude="310.0"/>
+                <interfaces>
+                    <interface id="3"/>
+                    <interface id="4"/>
+                </interfaces>
+            </node>
+            <node id="4">
+                <status>UP</status>
+                <location latitude="632.0" longitude="316.0"/>
+                <interfaces>
+                    <interface id="2"/>
+                    <interface id="4"/>
+                </interfaces>
+            </node>
+        </nodes>
+        <links>
+            <link id="0_0 -&gt; 2_0">
+                <from if="0" node="0"/>
+                <to if="0" node="2"/>
+                <status>UP</status>
+                <bw>60.0</bw>
+                <delay>1.4270346</delay>
+            </link>
+            <link id="2_0 -&gt; 0_0">
+                <from if="0" node="2"/>
+                <to if="0" node="0"/>
+                <status>UP</status>
+                <bw>60.0</bw>
+                <delay>1.4270346</delay>
+            </link>
+            <link id="1_1 -&gt; 2_1">
+                <from if="1" node="1"/>
+                <to if="1" node="2"/>
+                <status>UP</status>
+                <bw>60.0</bw>
+                <delay>1.4270346</delay>
+            </link>
+            <link id="2_1 -&gt; 1_1">
+                <from if="1" node="2"/>
+                <to if="1" node="1"/>
+                <status>UP</status>
+                <bw>60.0</bw>
+                <delay>1.4270346</delay>
+            </link>
+            <link id="4_2 -&gt; 2_2">
+                <from if="2" node="4"/>
+                <to if="2" node="2"/>
+                <status>UP</status>
+                <bw>30.0</bw>
+                <delay>1.4270346</delay>
+            </link>
+            <link id="2_2 -&gt; 4_2">
+                <from if="2" node="2"/>
+                <to if="2" node="4"/>
+                <status>UP</status>
+                <bw>30.0</bw>
+                <delay>1.4270346</delay>
+            </link>
+            <link id="3_3 -&gt; 2_3">
+                <from if="3" node="3"/>
+                <to if="3" node="2"/>
+                <status>UP</status>
+                <bw>60.0</bw>
+                <delay>1.4270346</delay>
+            </link>
+            <link id="2_3 -&gt; 3_3">
+                <from if="3" node="2"/>
+                <to if="3" node="3"/>
+                <status>UP</status>
+                <bw>60.0</bw>
+                <delay>1.4270346</delay>
+            </link>
+            <link id="3_4 -&gt; 4_4">
+                <from if="4" node="3"/>
+                <to if="4" node="4"/>
+                <status>UP</status>
+                <bw>60.0</bw>
+                <delay>1.4270346</delay>
+            </link>
+            <link id="4_4 -&gt; 3_4">
+                <from if="4" node="4"/>
+                <to if="4" node="3"/>
+                <status>UP</status>
+                <bw>60.0</bw>
+                <delay>1.4270346</delay>
+            </link>
+        </links>
+    </topology>
+    <mpls>
+        <lsp id="LSP 0-1">
+            <path>
+                <link>0_0 -&gt; 2_0</link>
+                <link>2_1 -&gt; 1_1</link>
+            </path>
+            <bw>1.0</bw>
+            <diff-serv>
+                <ct>1</ct>
+                <preemption holding="0" setup="1"/>
+            </diff-serv>
+        </lsp>
+        <lsp id="LSP 0-4">
+            <path>
+                <link>0_0 -&gt; 2_0</link>
+                <link>2_3 -&gt; 3_3</link>
+                <link>3_4 -&gt; 4_4</link>
+            </path>
+            <bw>2.0</bw>
+            <diff-serv>
+                <ct>2</ct>
+                <preemption holding="2" setup="2"/>
+            </diff-serv>
+        </lsp>
+    </mpls>
+    <igp>
+        <links>
+            <link id="0_0 -&gt; 2_0">
+                <static>
+                    <metric>1666666.6</metric>
+                    <te-metric>1666666.6</te-metric>
+                    <mrbw>60.0</mrbw>
+                    <mbw>60.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">20.0</bc>
+                        <bc id="1">20.0</bc>
+                        <bc id="2">20.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">20.0</priority>
+                        <priority id="1">20.0</priority>
+                        <priority id="2">19.0</priority>
+                        <priority id="3">18.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="2_0 -&gt; 0_0">
+                <static>
+                    <metric>1666666.6</metric>
+                    <te-metric>1666666.6</te-metric>
+                    <mrbw>60.0</mrbw>
+                    <mbw>60.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">20.0</bc>
+                        <bc id="1">20.0</bc>
+                        <bc id="2">20.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">20.0</priority>
+                        <priority id="1">20.0</priority>
+                        <priority id="2">20.0</priority>
+                        <priority id="3">20.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="1_1 -&gt; 2_1">
+                <static>
+                    <metric>1666666.6</metric>
+                    <te-metric>1666666.6</te-metric>
+                    <mrbw>60.0</mrbw>
+                    <mbw>60.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">20.0</bc>
+                        <bc id="1">20.0</bc>
+                        <bc id="2">20.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">20.0</priority>
+                        <priority id="1">20.0</priority>
+                        <priority id="2">20.0</priority>
+                        <priority id="3">20.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="2_1 -&gt; 1_1">
+                <static>
+                    <metric>1666666.6</metric>
+                    <te-metric>1666666.6</te-metric>
+                    <mrbw>60.0</mrbw>
+                    <mbw>60.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">20.0</bc>
+                        <bc id="1">20.0</bc>
+                        <bc id="2">20.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">20.0</priority>
+                        <priority id="1">20.0</priority>
+                        <priority id="2">19.0</priority>
+                        <priority id="3">20.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="4_2 -&gt; 2_2">
+                <static>
+                    <metric>3333333.2</metric>
+                    <te-metric>3333333.2</te-metric>
+                    <mrbw>30.0</mrbw>
+                    <mbw>30.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">10.0</bc>
+                        <bc id="1">10.0</bc>
+                        <bc id="2">10.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">10.0</priority>
+                        <priority id="1">10.0</priority>
+                        <priority id="2">10.0</priority>
+                        <priority id="3">10.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="2_2 -&gt; 4_2">
+                <static>
+                    <metric>3333333.2</metric>
+                    <te-metric>3333333.2</te-metric>
+                    <mrbw>30.0</mrbw>
+                    <mbw>30.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">10.0</bc>
+                        <bc id="1">10.0</bc>
+                        <bc id="2">10.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">10.0</priority>
+                        <priority id="1">10.0</priority>
+                        <priority id="2">10.0</priority>
+                        <priority id="3">10.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="3_3 -&gt; 2_3">
+                <static>
+                    <metric>1666666.6</metric>
+                    <te-metric>1666666.6</te-metric>
+                    <mrbw>60.0</mrbw>
+                    <mbw>60.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">20.0</bc>
+                        <bc id="1">20.0</bc>
+                        <bc id="2">20.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">20.0</priority>
+                        <priority id="1">20.0</priority>
+                        <priority id="2">20.0</priority>
+                        <priority id="3">20.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="2_3 -&gt; 3_3">
+                <static>
+                    <metric>1666666.6</metric>
+                    <te-metric>1666666.6</te-metric>
+                    <mrbw>60.0</mrbw>
+                    <mbw>60.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">20.0</bc>
+                        <bc id="1">20.0</bc>
+                        <bc id="2">20.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">20.0</priority>
+                        <priority id="1">20.0</priority>
+                        <priority id="2">20.0</priority>
+                        <priority id="3">18.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="3_4 -&gt; 4_4">
+                <static>
+                    <metric>1666666.6</metric>
+                    <te-metric>1666666.6</te-metric>
+                    <mrbw>60.0</mrbw>
+                    <mbw>60.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">20.0</bc>
+                        <bc id="1">20.0</bc>
+                        <bc id="2">20.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">20.0</priority>
+                        <priority id="1">20.0</priority>
+                        <priority id="2">20.0</priority>
+                        <priority id="3">18.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="4_4 -&gt; 3_4">
+                <static>
+                    <metric>1666666.6</metric>
+                    <te-metric>1666666.6</te-metric>
+                    <mrbw>60.0</mrbw>
+                    <mbw>60.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">20.0</bc>
+                        <bc id="1">20.0</bc>
+                        <bc id="2">20.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">20.0</priority>
+                        <priority id="1">20.0</priority>
+                        <priority id="2">20.0</priority>
+                        <priority id="3">20.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+        </links>
+    </igp>
+</domain>
+

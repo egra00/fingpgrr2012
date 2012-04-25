@@ -1,0 +1,46 @@
+<!--
+    JAXB binding declarations file for CBGP-Scenario-v1_0.xsd.
+    Author: Jean Lepropre (2005).
+    TOTEM Project.
+-->
+
+<jxb:bindings version="1.0"
+              xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+              xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+ <jxb:bindings schemaLocation="CBGP-Scenario-v1_0.xsd" node="/xs:schema">
+
+  <jxb:globalBindings choiceContentProperty="false"
+		      		  typesafeEnumBase="xs:string"
+		      		  generateIsSetMethod="true"/>
+  
+  <jxb:schemaBindings>
+   <jxb:package name="be.ac.ucl.ingi.totem.scenario.model.jaxb"/>
+  </jxb:schemaBindings>
+
+  <!-- Tell JAXB to create instances of our own classes instead of the impl generated classes. -->
+  
+  <jxb:bindings node="//xs:element[@name='CBGPExecute']">
+     <jxb:class implClass="be.ac.ucl.ingi.totem.scenario.model.CBGPExecute"/>
+  </jxb:bindings>
+  <jxb:bindings node="//xs:element[@name='CBGPLoadRib']">
+     <jxb:class implClass="be.ac.ucl.ingi.totem.scenario.model.CBGPLoadRib"/>
+  </jxb:bindings>
+  <jxb:bindings node="//xs:element[@name='CBGPInfo']">
+     <jxb:class implClass="be.ac.ucl.ingi.totem.scenario.model.CBGPInfo"/>
+  </jxb:bindings>
+  <jxb:bindings node="//xs:element[@name='CBGPRun']">
+     <jxb:class implClass="be.ac.ucl.ingi.totem.scenario.model.CBGPRun"/>
+  </jxb:bindings>
+  <jxb:bindings node="//xs:element[@name='CBGPPeerUp']">
+     <jxb:class implClass="be.ac.ucl.ingi.totem.scenario.model.CBGPPeerUp"/>
+  </jxb:bindings>
+  <jxb:bindings node="//xs:element[@name='CBGPPeerDown']">
+     <jxb:class implClass="be.ac.ucl.ingi.totem.scenario.model.CBGPPeerDown"/>
+  </jxb:bindings>
+  <jxb:bindings node="//xs:element[@name='CBGPPeerRecv']">
+     <jxb:class implClass="be.ac.ucl.ingi.totem.scenario.model.CBGPPeerRecv"/>
+  </jxb:bindings>
+
+ </jxb:bindings>
+</jxb:bindings>

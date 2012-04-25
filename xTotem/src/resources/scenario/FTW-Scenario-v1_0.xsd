@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!--
+    Created on : May 18, 2005, 2:45 PM
+    Author     : Jean Lepropre
+    Description: Scenario file for FTW algorithms.
+    TOTEM Project.
+-->
+
+<!--
+    Changes:
+    ========
+
+    - 18-May-2005: Creation of the file (JL).
+-->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://jaxb.model.scenario.ftw.at"
+           xmlns:ftw="http://jaxb.model.scenario.ftw.at"
+           xmlns="http://jaxb.model.scenario.totem.run.montefiore.ulg.ac.be"
+           elementFormDefault="qualified">
+
+    <xs:import schemaLocation="http://totem.run.montefiore.ulg.ac.be/Schema/Scenario-v1_1.xsd"
+               namespace="http://jaxb.model.scenario.totem.run.montefiore.ulg.ac.be"/>
+
+    <xs:element name="FTWReopt" substitutionGroup="event">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="ASTMEventType">
+                    <xs:sequence>
+                        <xs:element name="LSPGeneration">
+                            <xs:complexType>
+                                <xs:attribute name="nbParallelPaths" type="xs:int" use="required"/>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                    <xs:attribute name="profit" type="xs:int" use="optional" default="1"/>
+                    <xs:attribute name="changeCost" type="xs:int" use="optional" default="10"/>
+                    <xs:attribute name="runSolver" type="xs:boolean" use="optional"/>
+                    <xs:attribute name="applyChanges" type="xs:boolean" use="optional"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="LSPDimensioning" substitutionGroup="event">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="eventType">
+                    <xs:sequence>
+                        <xs:element name="loadSample" type="xs:float" minOccurs="1" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

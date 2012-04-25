@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<domain ASID="11111" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://totem.run.montefiore.ulg.ac.be/Schema/Domain-v1_3.xsd">
+    <info>
+        <title>Test BW sharing Topology (from fig2 in Computer Networks 50 pg 3043-3063) </title>
+        <date>2005-11-08</date>
+        <author>RUN - University of Liege</author>
+        <description>
+			Topology to test the primary-backup sharing
+		</description>
+        <units>
+            <unit type="bandwidth" value="kbps"/>
+            <unit type="delay" value="ms"/>
+        </units>
+        <diff-serv>
+            <priority ct="0" id="0" preemption="0"/>
+        </diff-serv>
+    </info>
+    <topology>
+        <nodes>
+            <node id="N1">
+                <status>UP</status>
+                <location latitude="201.49333" longitude="53.301968"/>
+            </node>
+            <node id="N2">
+                <status>UP</status>
+                <location latitude="203.17159" longitude="276.34738"/>
+            </node>
+            <node id="N3">
+                <status>UP</status>
+                <location latitude="55.477226" longitude="523.1168"/>
+            </node>
+            <node id="N4">
+                <status>UP</status>
+                <location latitude="327.2855" longitude="525.5576"/>
+            </node>
+            <node id="N5">
+                <status>UP</status>
+                <location latitude="512.0435" longitude="286.44165"/>
+            </node>
+        </nodes>
+        <links>
+            <link id="N1-N2">
+                <from node="N1"/>
+                <to node="N2"/>
+                <status>UP</status>
+                <bw>100.0</bw>
+            </link>
+            <link id="N2-N1">
+                <from node="N2"/>
+                <to node="N1"/>
+                <status>UP</status>
+                <bw>100.0</bw>
+            </link>
+            <link id="N2-N3">
+                <from node="N2"/>
+                <to node="N3"/>
+                <status>UP</status>
+                <bw>100.0</bw>
+            </link>
+            <link id="N3-N2">
+                <from node="N3"/>
+                <to node="N2"/>
+                <status>UP</status>
+                <bw>100.0</bw>
+            </link>
+            <link id="N2-N4">
+                <from node="N2"/>
+                <to node="N4"/>
+                <status>UP</status>
+                <bw>100.0</bw>
+            </link>
+            <link id="N4-N2">
+                <from node="N4"/>
+                <to node="N2"/>
+                <status>UP</status>
+                <bw>100.0</bw>
+            </link>
+            <link id="N3-N4">
+                <from node="N3"/>
+                <to node="N4"/>
+                <status>UP</status>
+                <bw>100.0</bw>
+            </link>
+            <link id="N4-N3">
+                <from node="N4"/>
+                <to node="N3"/>
+                <status>UP</status>
+                <bw>100.0</bw>
+            </link>
+            <link id="N2-N5">
+                <from node="N2"/>
+                <to node="N5"/>
+                <status>UP</status>
+                <bw>100.0</bw>
+            </link>
+            <link id="N5-N2">
+                <from node="N5"/>
+                <to node="N2"/>
+                <status>UP</status>
+                <bw>100.0</bw>
+            </link>
+            <link id="N5-N4">
+                <from node="N5"/>
+                <to node="N4"/>
+                <status>UP</status>
+                <bw>100.0</bw>
+            </link>
+            <link id="N4-N5">
+                <from node="N4"/>
+                <to node="N5"/>
+                <status>UP</status>
+                <bw>100.0</bw>
+            </link>
+        </links>
+    </topology>
+</domain>
+

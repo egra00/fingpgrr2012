@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!--
+	Document   : Domain.xsd
+	Created on : January 20, 2005, 10:45 AM
+	Author     : RUN - Research Unit in Networking - ULg
+	Contributor: Dept. INGI - UCL
+	Description: Represents a domain.
+	TOTEM Project.
+-->
+
+<!--
+    Changes:
+    ========
+
+    - 16-Nov.-2005: move common stuff into TOTEM-base (JLE).
+    - 16-Nov.-2005: include TOTEM-base (JLE).
+    - 21-Mar.-2006: add two new link types (ACCESS and PEERING) (JLE).
+    - 11-Jul.-2006: it is now mandatory to specify all unit's types (JLE).
+    - 11-Jul.-2006: increase version number to 1.1 (JLE).
+    - 19-Jul.-2006: the info element is now mandatory (JLE).
+    - 15-Jan.-2007: add key references (GMO).
+    - 15-Jan.-2007: increase version number to 1.2 (GMO).
+    - 05-Feb.-2007: add NEIGH node type (JLE).
+    - 06-Feb.-2007: add VIRTUAL node and link types (JLE).
+    - 11-May.-2007: add status to the lsps (GMO).
+    - 25-Oct.-2007: increase version number to 1.3 (GMO).
+    - 25-Oct.-2007: remove status from lsps (GMO).
+    - 04-Mar.-2008: add classes of service to info and accepted_cos to lsp, move some types to TOTEM-base (GMO)
+-->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:include schemaLocation="http://totem.run.montefiore.ulg.ac.be/Schema/TOTEM-base-v1_0.xsd"/>
+
+	<!-- Root element and keys -->
+    <xs:element name="domain">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="info" type="information" minOccurs="1" maxOccurs="1"/>
+                <xs:element name="topology" type="topology" minOccurs="1" maxOccurs="1"/>
+                <xs:element name="mpls" type="mpls" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="igp" type="igp" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="bgp" type="bgp" minOccurs="0" maxOccurs="1"/>
+            </xs:sequence>
+            <xs:attribute name="name" type="xs:string"/>
+            <xs:attribute name="ASID" type="ASIdType" use="required"/>
+        </xs:complexType>
+        
+        <!-- Keys defined in this schema -->
+        <xs:key name="unitsTypeKey">
+            <xs:selector xpath="info/units/unit"/>
+            <xs:field xpath="@type"/>
+        </xs:key>
+
+        <xs:key name="priorityKey">
+            <xs:selector xpath="info/diff-serv/priority"/>
+            <xs:field xpath="@id"/>
+        </xs:key>
+
+        <xs:key name="nodeIdKey">
+            <xs:selector xpath="topology/nodes/node"/>
+            <xs:field xpath="@id"/>
+        </xs:key>
+        
+        <xs:key name="linkIdKey">
+            <xs:selector xpath="topology/links/link"/>
+            <xs:field xpath="@id"/>
+        </xs:key>
+        
+        <xs:key name="lspIdKey">
+            <xs:selector xpath="mpls/lsp"/>
+            <xs:field xpath="@id"/>
+        </xs:key>
+
+        <xs:key name="bgpRouterIdKey">
+            <xs:selector xpath="bgp/routers/router"/>
+            <xs:field xpath="@id"/>
+        </xs:key>
+
+        <xs:key name="cosKey">
+            <xs:selector xpath="info/classes-of-service/cos"/>
+            <xs:field xpath="@name"/>
+        </xs:key>
+
+        <xs:key name="sub-classKey">
+            <xs:selector xpath="info/classes-of-service/cos/sub-class"/>
+            <xs:field xpath="."/>
+        </xs:key>
+
+        <!-- Uniqueness of accepted Cos per Lsp -->
+        <xs:key name="accepted_cosKey">
+            <xs:selector xpath="mpls/lsp/accepted_cos/cos"/>
+            <xs:field xpath="."/>
+        </xs:key>
+
+        <!-- ################## -->
+        <!--   Key references   -->
+        <!-- ################## -->
+        <xs:keyref name="fromKeyRef" refer="nodeIdKey">
+            <xs:selector xpath="topology/links/link/from"/>
+            <xs:field xpath="@node"/>
+        </xs:keyref>
+
+        <xs:keyref name="toKeyRef" refer="nodeIdKey">
+            <xs:selector xpath="topology/links/link/to"/>
+            <xs:field xpath="@node"/>
+        </xs:keyref>
+
+        <xs:keyref name="lspPathRef" refer="linkIdKey">
+            <xs:selector xpath="mpls/lsp/path/link"/>
+            <xs:field xpath="."/>
+        </xs:keyref>
+
+        <xs:keyref name="backupProtectedLspRef" refer="lspIdKey">
+            <xs:selector xpath="mpls/lsp/backup/protected_lsp"/>
+            <xs:field xpath="."/>
+        </xs:keyref>
+
+        <xs:keyref name="backupProtectedLinksRef" refer="linkIdKey">
+            <xs:selector xpath="mpls/lsp/backup/protected_links/protected_link"/>
+            <xs:field xpath="."/>
+        </xs:keyref>
+
+        <xs:keyref name="igpLinkIdRef" refer="linkIdKey">
+            <xs:selector xpath="igp/links/link"/>
+            <xs:field xpath="@id"/>
+        </xs:keyref>
+
+        <xs:keyref name="igpPriority" refer="priorityKey">
+            <xs:selector xpath="igp/links/link/dynamic/rbw/priority"/>
+            <xs:field xpath="@id"/>
+        </xs:keyref>
+
+        <xs:keyref name="accepted_cosKeyRef" refer="cosKey">
+            <xs:selector xpath="mpls/lsp/accepted_cos/cos"/>
+            <xs:field xpath="."/>
+        </xs:keyref>
+
+    </xs:element>
+
+	<!-- Complex Types defined in this schema -->
+    <xs:complexType name="information">
+        <xs:sequence>
+            <xs:element name="title" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="date" type="xs:date" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="author" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="units" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <!-- There is a key on unit's type and there is only -->
+                        <!-- two possible values for unit's type. -->
+						<xs:element ref="unit" minOccurs="2" maxOccurs="2"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="diff-serv" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="priority" minOccurs="1" maxOccurs="8">
+                            <xs:complexType>
+                                <xs:attribute name="id" type="priorityIdType" use="required"/>
+                                <xs:attribute name="ct" type="ctType" use="required"/>
+                                <xs:attribute name="preemption" type="preemptionType" use="required"/>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="classes-of-service" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="cos" minOccurs="1" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="sub-class" minOccurs="0" maxOccurs="unbounded" type="cosType"/>
+                                </xs:sequence>
+                                <xs:attribute name="name" type="cosType" use="required"/>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="srlgs" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="srlg" minOccurs="1" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:simpleContent>
+                                    <xs:extension base="xs:string">
+                                        <xs:attribute name="id" type="srlgIdType" use="required"/>
+                                    </xs:extension>
+                                </xs:simpleContent>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="topology">
+        <xs:sequence>
+            <xs:element name="nodes" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="node" type="node" minOccurs="1" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="links" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="link" type="link" minOccurs="1" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="node">
+        <xs:sequence>
+            <xs:element name="status" type="statusType" minOccurs="0" maxOccurs="1" default="UP"/>
+            <xs:element name="rid" type="IPAddress" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="type" type="nodeType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="location" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:attribute name="latitude" type="xs:float" use="required"/>
+                    <xs:attribute name="longitude" type="xs:float" use="required"/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="interfaces" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="interface" type="nodeInterface" minOccurs="1" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="id" type="nodeIdType" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="nodeInterface">
+        <xs:sequence>
+            <xs:element name="status" type="statusType" minOccurs="0" maxOccurs="1" default="UP"/>
+            <xs:element name="ip" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base="IPAddress">
+                            <xs:attribute name="mask" type="IPAddressMask" use="required"/>
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="id" type="interfaceIdType" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="link">
+        <xs:sequence>
+            <xs:element name="from" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                    <xs:attribute name="node" type="nodeIdType" use="required"/>
+                    <xs:attribute name="if" type="interfaceIdType" use="optional"/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="to" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                    <xs:attribute name="as" type="ASIdType" use="optional"/>
+                    <xs:attribute name="node" type="nodeIdType" use="required"/>
+                    <xs:attribute name="if" type="interfaceIdType" use="optional"/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="status" type="statusType" minOccurs="0" maxOccurs="1" default="UP"/>
+            <xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="type" type="linkType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="bw" type="bwType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="technology" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="delay" type="delayType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="srlgs" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="srlg" type="srlgIdType" minOccurs="1" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="id" type="linkIdType" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="mpls">
+        <xs:sequence>
+            <xs:element name="lsp" type="lsp" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="lsp">
+        <xs:sequence>
+            <xs:element name="path" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="link" type="linkIdType" minOccurs="1" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="bw" type="bwType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="metric" type="metricType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="max_rate" type="bwType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="diff-serv" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="ct" type="ctType" minOccurs="1" maxOccurs="1"/>
+                        <xs:element name="preemption" minOccurs="1" maxOccurs="1">
+                            <xs:complexType>
+                                <xs:attribute name="setup" type="preemptionType" use="required"/>
+                                <xs:attribute name="holding" type="preemptionType" use="required"/>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="accepted_cos" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="cos" type="cosType" minOccurs="1" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="backup" minOccurs="0" maxOccurs="1">
+	            <xs:complexType>
+    		        <xs:sequence>
+		                <xs:element name="protected_lsp" type="lspIdType" minOccurs="0" maxOccurs="1"/>
+    			        <xs:element name="protected_links" minOccurs="1" maxOccurs="1">
+	    		            <xs:complexType>
+		            		    <xs:sequence>
+				                    <xs:element name="protected_link" type="linkIdType" minOccurs="1" maxOccurs="unbounded"/>
+				                </xs:sequence>
+            				</xs:complexType>
+			            </xs:element>
+        			</xs:sequence>
+		            <xs:attribute name="type" type="lspBackupType" use="required"/>
+        		</xs:complexType>
+    	    </xs:element>
+        </xs:sequence>
+        <xs:attribute name="id" type="lspIdType" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="igp">
+        <xs:sequence>
+            <xs:element name="links" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="link" type="linkIgp" minOccurs="1" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="type" type="igpType" use="optional"/>
+    </xs:complexType>
+
+    <xs:complexType name="linkIgp">
+        <xs:sequence>
+            <xs:element name="static" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="metric" type="metricType" minOccurs="0" maxOccurs="1"/>
+                        <xs:element name="te-metric" type="metricType" minOccurs="0" maxOccurs="1"/>
+                        <xs:element name="mrbw" type="bwType" minOccurs="0" maxOccurs="1"/>
+                        <xs:element name="mbw" type="bwType" minOccurs="0" maxOccurs="1"/>
+                        <xs:element name="admingroup" type="xs:int" minOccurs="0" maxOccurs="1"/>
+                        <xs:element name="diff-serv" minOccurs="0" maxOccurs="1">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="bcm" type="bcmType" minOccurs="1" maxOccurs="1"/>
+                                    <xs:element name="bc" minOccurs="1" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                            <xs:simpleContent>
+                                                <xs:extension base="bwType">
+                                                    <xs:attribute name="id" type="bcIdType" use="required"/>
+                                                </xs:extension>
+                                            </xs:simpleContent>
+                                        </xs:complexType>
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="dynamic" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="rbw" minOccurs="1" maxOccurs="1">
+    			            <xs:complexType>
+            			        <xs:sequence>
+		                		    <xs:element name="priority" minOccurs="1" maxOccurs="8">
+			    	                    <xs:complexType>
+                    					    <xs:simpleContent>
+				                        		<xs:extension base="bwType">
+						                            <xs:attribute name="id" type="priorityIdType" use="required"/>
+                        						</xs:extension>
+					                        </xs:simpleContent>
+                    					</xs:complexType>
+                				    </xs:element>
+                				</xs:sequence>
+            			    </xs:complexType>
+            			</xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="id" type="linkIdType" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="bgp">
+        <xs:sequence>
+            <xs:element name="routers" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="router" type="bgpRouter" minOccurs="1" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="bgpRouter">
+        <xs:sequence>
+            <xs:element name="rid" type="IPAddress" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="networks" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="network" type="bgpNetwork" minOccurs="1" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="neighbors" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="neighbor" type="bgpNeighbor" minOccurs="1" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="id" type="bgpRouterIdType" use="required"/>
+	<xs:attribute name="reflector" type="xs:boolean" use="optional"/>
+    </xs:complexType>
+
+    <xs:complexType name="bgpNetwork">
+        <xs:attribute name="prefix" type="IPAddressMask"/>
+    </xs:complexType>
+
+    <xs:complexType name="bgpNeighbor">
+    	<xs:sequence>
+	        <xs:element name="filters" minOccurs="0" maxOccurs="1">
+		        <xs:complexType>
+        		    <xs:sequence>
+		                <xs:element name="in-filter" type="bgpFilter" minOccurs="0" maxOccurs="1"/>
+        		        <xs:element name="out-filter" type="bgpFilter" minOccurs="0" maxOccurs="1"/>
+        		    </xs:sequence>
+		        </xs:complexType>
+    	    </xs:element>
+	    </xs:sequence>
+        <xs:attribute name="as" type="ASIdType" use="required"/>
+		<xs:attribute name="ip" type="IPAddress" use="required"/>
+        <xs:attribute name="reflector-client" type="xs:boolean" use="optional"/>
+        <xs:attribute name="next-hop-self" type="xs:boolean" use="optional"/>
+    </xs:complexType>
+
+    <xs:complexType name="bgpFilter">
+        <xs:sequence>
+            <xs:element name="rule" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="action" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:attribute name="type" type="xs:string" use="required"/>
+                                <xs:attribute name="value" type="xs:string" use="required"/>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+	<!-- Simple Types defined in this schema -->
+
+    <!-- Other simple types -->
+    <xs:simpleType name="statusType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="UP"/>
+            <xs:enumeration value="DOWN"/>                        
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="nodeType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="CORE"/>
+            <xs:enumeration value="EDGE"/>
+            <xs:enumeration value="NEIGH"/>
+            <xs:enumeration value="VIRTUAL"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="linkType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="INTRA"/>
+            <xs:enumeration value="INTER"/>
+            <xs:enumeration value="ACCESS"/>
+            <xs:enumeration value="PEERING"/>
+            <xs:enumeration value="VIRTUAL"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="lspBackupType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="DETOUR_LOCAL"/>
+            <xs:enumeration value="DETOUR_E2E"/>
+            <xs:enumeration value="BYPASS"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="igpType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="OSPF"/>
+            <xs:enumeration value="IS-IS"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="bcmType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="RDM"/>
+            <xs:enumeration value="MAM"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

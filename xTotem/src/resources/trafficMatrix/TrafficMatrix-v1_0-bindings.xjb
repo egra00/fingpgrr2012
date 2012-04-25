@@ -1,0 +1,23 @@
+<!--
+	Document   : TrafficMatrix-bindings.xjb
+	Created on : September 9, 2004, 9:00 AM
+	Author     : Jean Lepropre
+	Description: JAXB binding declarations file for TrafficMatrix.xsd.
+	Project	   : TOTEM
+-->
+
+<jxb:bindings version="1.0"
+              xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+              xmlns:xs="http://www.w3.org/2001/XMLSchema">
+ <jxb:bindings schemaLocation="TrafficMatrix-v1_0.xsd" node="/xs:schema">
+ 
+   <jxb:globalBindings choiceContentProperty="false"
+                       bindingStyle="modelGroupBinding"
+		      		   typesafeEnumBase="xs:string"/>
+  
+  <jxb:schemaBindings>
+   <jxb:package name="be.ac.ulg.montefiore.run.totem.trafficMatrix.model.jaxb"/>
+  </jxb:schemaBindings>
+
+ </jxb:bindings>
+</jxb:bindings>

@@ -1,0 +1,261 @@
+<domain ASID="100012" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://totem.run.montefiore.ulg.ac.be/Schema/Domain-v1_3.xsd">
+	<info>
+		<title>Test Topology</title>
+		<date>2004-04-07</date>
+		<author>RUN - University of Liege</author>
+		<description>
+			Perl script of the Research Unit in Networking (RUN) of the University of Liege
+			TOTEM Project (http://totem.info.ucl.ac.be/)
+		</description>
+		<units>
+			<unit type="bandwidth" value="kbps"/>
+			<unit type="delay" value="ms"/>
+		</units>
+        <diff-serv>
+            <priority preemption="0" ct="0" id="0"/>
+            <priority preemption="1" ct="0" id="1"/>
+        </diff-serv>
+	</info>
+	<topology>
+		<nodes>
+			<node id="0">
+				<location latitude="335" longitude="784"/>
+				<interfaces>
+					<interface id="0">
+					</interface>
+                    <interface id="1">
+                    </interface>
+				</interfaces>
+			</node>
+			<node id="1">
+                <location latitude="44" longitude="681"/>
+				<interfaces>
+					<interface id="0">
+					</interface>
+                    <interface id="1">
+					</interface>
+				</interfaces>
+			</node>
+			<node id="2">
+                <location latitude="935" longitude="610"/>
+				<interfaces>
+					<interface id="0">
+					</interface>
+					<interface id="1">
+					</interface>
+					<interface id="2">
+					</interface>
+					<interface id="3">
+					</interface>
+				</interfaces>
+			</node>
+			<node id="3">
+                <location latitude="630" longitude="310"/>
+				<interfaces>
+					<interface id="3">
+					</interface>
+					<interface id="4">
+					</interface>
+				</interfaces>
+			</node>
+			<node id="4">
+                <location latitude="632" longitude="316"/>
+				<interfaces>
+					<interface id="2">
+					</interface>
+					<interface id="4">
+					</interface>
+				</interfaces>
+			</node>
+		</nodes>
+		<links>
+			<link id="0_0 -> 2_0">
+				<from node="0" if="0"/>
+				<to node="2" if="0"/>
+				<bw>200000</bw>
+				<delay>1.427034605429082</delay>
+			</link>
+			<link id="2_0 -> 0_0">
+				<from node="2" if="0"/>
+				<to node="0" if="0"/>
+				<bw>200000</bw>
+				<delay>1.427034605429082</delay>
+			</link>
+            <link id="0_1 -> 1_1">
+				<from node="0" if="1"/>
+				<to node="1" if="1"/>
+				<bw>200000</bw>
+				<delay>1.427034605429082</delay>
+			</link>
+			<link id="1_1 -> 0_1">
+				<from node="1" if="1"/>
+				<to node="0" if="1"/>
+				<bw>200000</bw>
+				<delay>1.427034605429082</delay>
+			</link>
+			<link id="1_1 -> 2_1">
+				<from node="1" if="1"/>
+				<to node="2" if="1"/>
+				<bw>200000</bw>
+				<delay>1.427034605429082</delay>
+			</link>
+			<link id="2_1 -> 1_1">
+				<from node="2" if="1"/>
+				<to node="1" if="1"/>
+				<bw>200000</bw>
+				<delay>1.427034605429082</delay>
+			</link>
+			<link id="4_2 -> 2_2">
+				<from node="4" if="2"/>
+				<to node="2" if="2"/>
+				<bw>200000</bw>
+				<delay>1.427034605429082</delay>
+			</link>
+			<link id="2_2 -> 4_2">
+				<from node="2" if="2"/>
+				<to node="4" if="2"/>
+				<bw>200000</bw>
+				<delay>1.427034605429082</delay>
+			</link>
+			<link id="3_3 -> 2_3">
+				<from node="3" if="3"/>
+				<to node="2" if="3"/>
+				<bw>100000</bw>
+				<delay>1.427034605429082</delay>
+			</link>
+			<link id="2_3 -> 3_3">
+				<from node="2" if="3"/>
+				<to node="3" if="3"/>
+				<bw>100000</bw>
+				<delay>1.427034605429082</delay>
+			</link>
+			<link id="3_4 -> 4_4">
+				<from node="3" if="4"/>
+				<to node="4" if="4"/>
+				<bw>100000</bw>
+				<delay>1.427034605429082</delay>
+			</link>
+			<link id="4_4 -> 3_4">
+				<from node="4" if="4"/>
+				<to node="3" if="4"/>
+				<bw>100000</bw>
+				<delay>1.427034605429082</delay>
+			</link>
+		</links>
+	</topology>
+    
+	<igp>
+		<links>
+			<link id="0_0 -> 2_0">
+				<static>
+					<metric>5e-06</metric>
+					<te-metric>5e-06</te-metric>
+					<mrbw>200000</mrbw>
+					<mbw>200000</mbw>
+                </static>
+            </link>
+
+			<link id="2_0 -> 0_0">
+				<static>
+					<metric>5e-06</metric>
+					<te-metric>5e-06</te-metric>
+					<mrbw>200000</mrbw>
+					<mbw>200000</mbw>
+				</static>
+		    </link>
+
+            <link id="0_1 -> 1_1">
+				<static>
+					<metric>5e-06</metric>
+					<te-metric>5e-06</te-metric>
+					<mrbw>200000</mrbw>
+					<mbw>200000</mbw>
+                </static>
+            </link>
+
+            <link id="1_1 -> 0_1">
+				<static>
+					<metric>5e-06</metric>
+					<te-metric>5e-06</te-metric>
+					<mrbw>200000</mrbw>
+					<mbw>200000</mbw>
+                </static>
+            </link>
+
+			<link id="1_1 -> 2_1">
+				<static>
+					<metric>5e-06</metric>
+					<te-metric>5e-06</te-metric>
+					<mrbw>200000</mrbw>
+					<mbw>200000</mbw>
+				</static>
+
+			</link>
+			<link id="2_1 -> 1_1">
+				<static>
+					<metric>5e-06</metric>
+					<te-metric>5e-06</te-metric>
+					<mrbw>200000</mrbw>
+					<mbw>200000</mbw>
+
+				</static>
+
+			</link>
+			<link id="4_2 -> 2_2">
+				<static>
+					<metric>5e-06</metric>
+					<te-metric>5e-06</te-metric>
+					<mrbw>200000</mrbw>
+					<mbw>200000</mbw>
+				</static>
+
+			</link>
+			<link id="2_2 -> 4_2">
+				<static>
+					<metric>5e-06</metric>
+					<te-metric>5e-06</te-metric>
+					<mrbw>200000</mrbw>
+					<mbw>200000</mbw>
+				</static>
+
+			</link>
+			<link id="3_3 -> 2_3">
+				<static>
+					<metric>1e-05</metric>
+					<te-metric>1e-05</te-metric>
+					<mrbw>100000</mrbw>
+					<mbw>100000</mbw>
+				</static>
+
+			</link>
+			<link id="2_3 -> 3_3">
+				<static>
+					<metric>1e-05</metric>
+					<te-metric>1e-05</te-metric>
+					<mrbw>100000</mrbw>
+					<mbw>100000</mbw>
+				</static>
+
+			</link>
+			<link id="3_4 -> 4_4">
+				<static>
+					<metric>1e-05</metric>
+					<te-metric>1e-05</te-metric>
+					<mrbw>100000</mrbw>
+					<mbw>100000</mbw>
+				</static>
+
+			</link>
+			<link id="4_4 -> 3_4">
+				<static>
+					<metric>1e-05</metric>
+					<te-metric>1e-05</te-metric>
+					<mrbw>100000</mrbw>
+					<mbw>100000</mbw>
+				</static>
+
+			</link>
+		</links>
+	</igp>
+</domain>

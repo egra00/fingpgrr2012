@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<domain ASID="0" xsi:noNamespaceSchemaLocation="http://totem.run.montefiore.ulg.ac.be/Schema/Domain-v1_3.xsd"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<info>
+		<title>Domain file for the real routing matrix test case</title>
+		<date>2005-05-17</date>
+		<author>Jean Lepropre</author>
+		<units>
+			<unit type="bandwidth" value="mbps"/>
+			<unit type="delay" value="ms"/>
+		</units>
+	</info>
+	
+	<topology>
+		<nodes>
+			<node id="S"/> <!-- source -->
+			<node id="A"/>
+			<node id="B"/>
+			<node id="C"/>
+			<node id="D"/>
+			<node id="E"/>
+			<node id="F"/>
+			<node id="G"/> <!-- destination -->
+		</nodes>
+		
+		<links>
+			<link id="1">
+				<from node="S"/>
+				<to node="A"/>
+			</link>
+			
+			<link id="1'">
+				<from node="A"/>
+				<to node="S"/>
+			</link>
+
+			<link id="2">
+				<from node="A"/>
+				<to node="B"/>
+			</link>
+			
+			<link id="2'">
+				<from node="B"/>
+				<to node="A"/>
+			</link>
+
+			<link id="3">
+				<from node="B"/>
+				<to node="C"/>
+			</link>
+			
+			<link id="3'">
+				<from node="C"/>
+				<to node="B"/>
+			</link>
+
+			<link id="4">
+				<from node="C"/>
+				<to node="D"/>
+			</link>
+			
+			<link id="4'">
+				<from node="D"/>
+				<to node="C"/>
+			</link>
+
+			<link id="5">
+				<from node="B"/>
+				<to node="D"/>
+			</link>
+			
+			<link id="5'">
+				<from node="D"/>
+				<to node="B"/>
+			</link>
+
+			<link id="6">
+				<from node="A"/>
+				<to node="E"/>
+			</link>
+			
+			<link id="6'">
+				<from node="E"/>
+				<to node="A"/>
+			</link>
+
+			<link id="7">
+				<from node="E"/>
+				<to node="F"/>
+			</link>
+			
+			<link id="7'">
+				<from node="F"/>
+				<to node="E"/>
+			</link>
+			
+			<link id="8">
+				<from node="F"/>
+				<to node="D"/>
+			</link>
+			
+			<link id="8'">
+				<from node="D"/>
+				<to node="F"/>
+			</link>
+
+			<link id="9">
+				<from node="D"/>
+				<to node="G"/>
+			</link>
+			
+			<link id="9'">
+				<from node="G"/>
+				<to node="D"/>
+			</link>
+		</links>
+	</topology>
+
+	<igp>
+		<links>
+			<link id="1">
+				<static>
+					<metric>1</metric>
+				</static>
+			</link>
+
+			<link id="2">
+				<static>
+					<metric>1</metric>
+				</static>
+			</link>
+
+			<link id="3">
+				<static>
+					<metric>1</metric>
+				</static>
+			</link>
+
+			<link id="4">
+				<static>
+					<metric>1</metric>
+				</static>
+			</link>
+
+			<link id="5">
+				<static>
+					<metric>2</metric>
+				</static>
+			</link>
+
+			<link id="6">
+				<static>
+					<metric>1</metric>
+				</static>
+			</link>
+
+			<link id="7">
+				<static>
+					<metric>1</metric>
+				</static>
+			</link>
+
+			<link id="8">
+				<static>
+					<metric>1</metric>
+				</static>
+			</link>
+
+			<link id="9">
+				<static>
+					<metric>1</metric>
+				</static>
+			</link>
+		</links>
+	</igp>
+</domain>

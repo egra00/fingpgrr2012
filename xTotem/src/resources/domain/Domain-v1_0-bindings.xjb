@@ -1,0 +1,60 @@
+<!--
+    JAXB binding declarations file for Domain.xsd.
+    Author: Jean Lepropre (lepropre@run.montefiore.ulg.ac.be) (2004-2006).
+    Contributor: Bruno Quoitin (bqu@info.ucl.ac.be).
+    TOTEM Project.
+-->
+
+<jxb:bindings version="1.0"
+    xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <jxb:bindings schemaLocation="Domain-v1_0.xsd" node="/xs:schema">
+
+        <jxb:globalBindings choiceContentProperty="false"
+            bindingStyle="modelGroupBinding"                            
+            typesafeEnumBase="xs:string"/>
+
+        <jxb:schemaBindings>
+            <jxb:package name="be.ac.ulg.montefiore.run.totem.domain.model.jaxb"/>
+        </jxb:schemaBindings>
+
+        <jxb:bindings node="//xs:complexType[@name='igp']">
+            <jxb:bindings node=".//xs:element[@name='links']">
+                <jxb:class name="IgpLinksType"/>
+            </jxb:bindings>
+        </jxb:bindings>
+
+        <jxb:bindings node="//xs:complexType[@name='link']">
+            <jxb:class implClass="be.ac.ulg.montefiore.run.totem.domain.model.impl.LinkImpl"/>
+        </jxb:bindings>
+        
+        <jxb:bindings node="//xs:complexType[@name='nodeInterface']">
+            <jxb:class implClass="be.ac.ulg.montefiore.run.totem.domain.model.impl.NodeInterfaceImpl"/>
+        </jxb:bindings>
+
+        <jxb:bindings node="//xs:complexType[@name='lsp']">
+            <jxb:class implClass="be.ac.ulg.montefiore.run.totem.domain.model.impl.LspImpl"/>
+        </jxb:bindings>
+
+        <jxb:bindings node="//xs:complexType[@name='node']">
+            <jxb:class implClass="be.ac.ulg.montefiore.run.totem.domain.model.impl.NodeImpl"/>
+        </jxb:bindings>
+
+        <jxb:bindings node="//xs:complexType[@name='bgpRouter']">
+            <jxb:class implClass="be.ac.ulg.montefiore.run.totem.domain.model.impl.BgpRouterImpl"/>
+        </jxb:bindings>
+
+        <jxb:bindings node="//xs:complexType[@name='bgpNeighbor']">
+            <jxb:class implClass="be.ac.ulg.montefiore.run.totem.domain.model.impl.BgpNeighborImpl"/>
+        </jxb:bindings>
+
+        <jxb:bindings node="//xs:complexType[@name='bgpNetwork']">
+            <jxb:class implClass="be.ac.ulg.montefiore.run.totem.domain.model.impl.BgpNetworkImpl"/>
+        </jxb:bindings>
+
+        <jxb:bindings node="//xs:element[@name='domain']">
+            <jxb:class implClass="be.ac.ulg.montefiore.run.totem.domain.model.impl.DomainImpl"/>
+        </jxb:bindings>
+
+    </jxb:bindings>
+</jxb:bindings>

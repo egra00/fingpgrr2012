@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<TrafficMatrixFile
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="http://totem.run.montefiore.ulg.ac.be/Schema/TrafficMatrix-v1_1.xsd" >
+    <info>
+        <description>Traffix matrix on multidomain.xml</description>
+        <units>
+            <unit type="bandwidth" value="kbps"/>
+        </units>
+    </info>
+    <IntraTM ASID="444">
+        <src id="0">
+            <dst id="1">0</dst>
+            <dst id="2">0</dst>
+            <dst id="3">0</dst>
+            <dst id="4">10000</dst>
+        </src>
+        <src id="1">
+            <dst id="4">0</dst>
+        </src>
+        <src id="2">
+            <dst id="4">0</dst>
+        </src>
+        <src id="3">
+            <dst id="4">0</dst>
+        </src>
+    </IntraTM>
+</TrafficMatrixFile>

@@ -1,0 +1,30 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://jaxb.model.scenario.unina.it"
+    xmlns:unina="http://jaxb.model.scenario.unina.it"
+    xmlns="http://jaxb.model.scenario.totem.run.montefiore.ulg.ac.be"
+    elementFormDefault="qualified">
+
+    <xs:import schemaLocation="http://totem.run.montefiore.ulg.ac.be/Schema/Scenario-v1_1.xsd"
+               namespace="http://jaxb.model.scenario.totem.run.montefiore.ulg.ac.be"/>
+
+    <xs:element name="generateTraffic" substitutionGroup="event">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="ASTMEventType">
+                    <xs:sequence>
+                        <xs:element ref="param" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>	
+
+    <xs:element name="sendLinkWeights" substitutionGroup="event">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="ASEventType"/>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

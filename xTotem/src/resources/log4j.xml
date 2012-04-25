@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+    <!-- This first appender just prints logs on console-->
+    <appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+        <!-- <param name="Threshold" value="INFO"/>    -->
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{dd-MM-yyyy HH:mm:ss} [%p] %c{1} - %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="CONSOLE-WARN" class="org.apache.log4j.ConsoleAppender">
+        <param name="Threshold" value="WARN"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{dd-MM-yyyy HH:mm:ss} [%p] %c{1} - %m%n"/>
+        </layout>
+    </appender>
+
+    <!-- This second appender prints logs to file totem-log.xml -->
+    <!-- This file will be rolled over when it reaches 100KB -->
+    <!-- When roll-over occurs, the old version of example.log is -->
+    <!-- automatically moved to example.log.1 -->
+    <!-- previous content is removed (append=false) -->
+    <appender name="RollingXMLFilesALL" class="org.apache.log4j.RollingFileAppender">
+        <param name="Threshold" value="INFO"/>
+        <param name="File" value="totem-log.xml" />
+        <!--param name="Append" value="false" /-->
+        <param name="MaxFileSize" value="500KB" />
+        <param name="MaxBackupIndex" value="1" />
+        <layout class="org.apache.log4j.xml.XMLLayout"/>
+    </appender>
+
+        <!-- This second appender prints logs to file totem.log -->
+    <!-- This file will be rolled over when it reaches 100KB -->
+    <!-- When roll-over occurs, the old version of example.log is -->
+    <!-- automatically moved to example.log.1 -->
+    <!-- previous content is removed (append=false) -->
+    <!--
+    <appender name="RollingFilesALL" class="org.apache.log4j.RollingFileAppender">
+        <param name="Threshold" value="INFO"/>
+        <param name="File" value="totem-debug.log" />
+        <!- -param name="Append" value="false" / - ->
+        <param name="MaxFileSize" value="500KB" />
+        <param name="MaxBackupIndex" value="1" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{dd-MM-yyyy HH:mm:ss} [%p] %c{1} - %m%n"/>
+        </layout>
+    </appender>
+    -->
+
+    <appender name="RollingFiles-INFO" class="org.apache.log4j.RollingFileAppender">
+        <param name="Threshold" value="INFO"/>
+        <param name="File" value="totem-info.log" />
+        <!--param name="Append" value="false" /-->
+        <param name="MaxFileSize" value="100KB" />
+        <param name="MaxBackupIndex" value="1" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{dd-MM-yyyy HH:mm:ss} [%p] %c{1} - %m%n"/>
+        </layout>
+    </appender>
+
+    <!-- This third appender logs to a file  -->
+    <appender name="FileWARN" class="org.apache.log4j.FileAppender">
+        <param name="File" value="logs/totem-warn.log" />
+        <param name="Append" value="false" />
+        <layout class="org.apache.log4j.xml.XMLLayout"/>
+    </appender>
+
+    <!-- This last appender sends logs to a socket -->
+    <!-- If chainsaw is opened, you see a live concert of logs :) -->
+    <appender name="SOCKET" class="org.apache.log4j.net.SocketAppender">
+        <param name="RemoteHost" value="localhost" />
+        <param name="Port" value="4445" />
+    </appender>
+
+    <!-- This category send all DEBUG messages to CONSOLE -->
+    <!--
+    <category name="be.ac.ulg.montefiore.run.totem.repository.CSPF.CSPF" additivity="true">
+        <priority value="debug"/>
+        <appender-ref ref="CONSOLE"/>
+    </category>
+    -->
+    <!-- Send all DEBUG messages to the following appenders :
+        - CONSOLE-INFO : select only INFO messages
+        - RollingFilesALL : all DEBUG messages in totem-debug.log
+        - RollingFilesALL : select INFO messages in totem-info.log
+        - RollingXMLFilesALL : all DEBUG messages in totem-log.xml
+    -->
+    <root>
+        <level value="info"/>
+        <appender-ref ref="CONSOLE-WARN"/>
+        <!--<appender-ref ref="RollingFilesALL"/>   -->
+        <appender-ref ref="RollingFiles-INFO"/>
+        <!--<appender-ref ref="RollingXMLFilesALL"/>-->
+    </root>
+
+</log4j:configuration>
+

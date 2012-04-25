@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!--
+    Created on : March 26, 2007, 6:00 PM
+    Author     : Jean Lepropre
+    Description: Scenario file for CPLEX-MCNF.
+    TOTEM Project.
+-->
+
+<!--
+    Changes:
+    ========
+
+    - 26-Mar.-2007: Creation of the file (JLE).
+-->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://jaxb.model.scenario.cplexMCNF.repository.totem.run.montefiore.ulg.ac.be"
+           xmlns:cplex="http://jaxb.model.scenario.cplexMCNF.repository.totem.run.montefiore.ulg.ac.be"
+           xmlns="http://jaxb.model.scenario.totem.run.montefiore.ulg.ac.be"
+           elementFormDefault="qualified">
+
+    <xs:import schemaLocation="http://totem.run.montefiore.ulg.ac.be/Schema/Scenario-v1_1.xsd"
+               namespace="http://jaxb.model.scenario.totem.run.montefiore.ulg.ac.be"/>
+
+    <xs:element name="ComputeMCNFOptimalRouting" substitutionGroup="event">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="ASTMEventType">
+                    <xs:sequence>
+                        <xs:element name="objectiveFunction" minOccurs="1" maxOccurs="1">
+                        	<xs:complexType>
+                            	<xs:sequence>
+                            		<xs:element ref="param" minOccurs="0" maxOccurs="unbounded"/>
+                            	</xs:sequence>
+                            	<xs:attribute name="name" type="xs:string" use="required"/>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="formulation" minOccurs="1" maxOccurs="1">
+                        	<xs:complexType>
+                        		<xs:choice minOccurs="1" maxOccurs="1">
+                        			<xs:sequence>
+                        				<xs:element name="nodeLink" minOccurs="1" maxOccurs="1">
+                        					<xs:complexType/>
+                        				</xs:element>
+                        			</xs:sequence>
+                        			<xs:sequence>
+                        				<xs:element name="linkPath" minOccurs="1" maxOccurs="1">
+                        					<xs:complexType>
+                        						<xs:attribute name="nbPaths" type="xs:int" use="required"/>
+                        					</xs:complexType>
+                        				</xs:element>
+                        			</xs:sequence>
+                        		</xs:choice>
+                        	</xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                    <xs:attribute name="verbose" type="xs:boolean" use="optional" default="false"/>
+                    <xs:attribute name="displayTEMetrics" type="xs:boolean" use="optional" default="false"/>
+                    <xs:attribute name="exportModelToFile" type="xs:string" use="optional"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

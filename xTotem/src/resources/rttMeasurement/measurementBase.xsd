@@ -1,0 +1,31 @@
+
+<!--- created by Thomas DEKENS -->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:include schemaLocation="http://totem.run.montefiore.ulg.ac.be/Schema/TOTEM-base-v1_0.xsd"/>
+
+	<xs:complexType name="subnet">
+		<xs:sequence>
+			<xs:element name="address" type="IPAddress" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="mask" type="IPAddressMask" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>		
+
+	<xs:complexType name="dnsServer">
+			<xs:sequence>
+				<xs:element name="dnsName" type="xs:string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="dnsAddress" type="IPAddress" minOccurs="1" maxOccurs="1"/>
+			</xs:sequence>
+	</xs:complexType>
+
+	<xs:simpleType name="rttMeasurementMethod">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="dnsQuery"/>
+			<xs:enumeration value="icmpPing"/>
+			<xs:enumeration value="dnsTcpSynAck"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+</xs:schema>
+

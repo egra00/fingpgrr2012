@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!--- created by Thomas DEKENS -->
+
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:include schemaLocation="http://totem.run.montefiore.ulg.ac.be/Schema/TOTEM-base-v1_0.xsd"/>
+	<xs:include schemaLocation="measurementBase.xsd"/>
+
+<!--- root element -->
+
+	<xs:element name="rttMeasurementReport">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="info" type="information" minOccurs="1" maxOccurs="1"/>
+				<xs:element name="measures" type="subnetMeasures" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+
+<!-- complex types -->
+	
+	<xs:complexType name="information">
+		<xs:sequence>
+			<xs:element name="id" type="IPAddress" minOccurs="1" maxOccurs="unbounded"/>
+			<xs:element name="resolution" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="timingUnits" type="delayUnits" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="constantError" type="xs:decimal" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="comment" type="xs:string" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="subnetMeasures">
+		<xs:sequence>
+			<xs:element name="subnet" type="subnet" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="dnsServerMeasures" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="dnsServer" type="dnsServer" minOccurs="1" maxOccurs="1"/>
+						<xs:element name="measure" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="measurementMethod" type="rttMeasurementMethod" minOccurs="1" maxOccurs="1"/>
+									<xs:element name="timeOfMeasurement" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+									<xs:element name="result" minOccurs="1" maxOccurs="1">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="numberOfObservations" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+												<xs:element name="successfulObservations" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+												<xs:element name="minimum" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+												<xs:element name="average" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+												<xs:element name="maximum" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+												<xs:element name="meanAbsoluteDeviation" type="xs:decimal" minOccurs="1" maxOccurs="1"/>
+												<xs:element name="standardDeviation" type="xs:decimal" minOccurs="1" maxOccurs="1"/>	
+											</xs:sequence>	
+										</xs:complexType>	
+									</xs:element>
+								</xs:sequence>		
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!--
+    Created on : June 23, 2005, 14:13 PM
+    Author     : Fabian Skivee
+    Description: Scenario file for SAMTE algorithms.
+    TOTEM Project.
+-->
+
+<!--
+    Changes:
+    ========
+    
+    - 23-Jun-2005: Creation of the file (FSK).
+    - 21-Sep-2005: Bugfixes (JLE).
+-->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://jaxb.scenario.SAMTE.repository.totem.run.montefiore.ulg.ac.be"
+    xmlns:samte="http://jaxb.scenario.SAMTE.repository.totem.run.montefiore.ulg.ac.be"
+    xmlns="http://jaxb.model.scenario.totem.run.montefiore.ulg.ac.be"
+    elementFormDefault="qualified">
+
+    <xs:import schemaLocation="http://totem.run.montefiore.ulg.ac.be/Schema/Scenario-v1_1.xsd"
+        namespace="http://jaxb.model.scenario.totem.run.montefiore.ulg.ac.be"/>
+
+    <xs:element name="generateCPL" substitutionGroup="event">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="ASEventType">
+                    <xs:attribute name="fileName" type="samte:fileNameType" use="optional" default="cpl.txt"/>
+                    <xs:attribute name="nbPath" type="xs:int" use="optional" default="5"/>
+                    <xs:attribute name="maxDepth" type="xs:int" use="optional" default="5"/>
+                    <xs:attribute name="type" type="samte:cplType" use="optional" default="SINGLE_PATH"/>
+                    <xs:attribute name="verbose" type="xs:boolean" use="optional" default="false"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="SAMTE" substitutionGroup="event">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="ASTMEventType">
+                    <xs:sequence>
+                        <xs:element ref="samte:simulatedAnnealing" minOccurs="0" maxOccurs="1"/>
+                    </xs:sequence>
+                    <xs:attribute name="nbLSP" type="xs:int" use="optional" default="5"/>
+                    <xs:attribute name="nbRun" type="xs:int" use="optional" default="5"/>
+                    <xs:attribute name="cplName" type="samte:fileNameType" use="optional" default="cpl.txt"/>
+                    <xs:attribute name="verbose" type="xs:boolean" use="optional" default="false"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Complex types and elements used in this schema. -->
+    <xs:element name="simulatedAnnealing">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="samte:objectiveFunction" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="neighbourhood" type="samte:neighbourhoodType" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="initialSolution" type="samte:initialSolutionType" minOccurs="0" maxOccurs="1"/>
+            </xs:sequence>
+            <xs:attribute name="T0" type="xs:float" use="optional" default="10.0"/>
+            <xs:attribute name="L" type="xs:int" use="optional" default="5"/>
+            <xs:attribute name="alpha" type="samte:alphaType" use="optional" default="0.8"/>
+            <xs:attribute name="E" type="xs:int" use="optional" default="10"/>
+            <xs:attribute name="K" type="xs:int" use="optional" default="5"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="objectiveFunction">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="param" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="name" type="samte:objectiveType" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Simple types used in this schema. -->
+    <xs:simpleType name="fileNameType">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+
+    <xs:simpleType name="cplType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="SINGLE_PATH"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="alphaType">
+        <xs:restriction base="xs:float">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="objectiveType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="MAX_LOAD"/>
+            <xs:enumeration value="LOAD_BAL"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="neighbourhoodType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="ONE_CHANGE"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="initialSolutionType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="RANDOM"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

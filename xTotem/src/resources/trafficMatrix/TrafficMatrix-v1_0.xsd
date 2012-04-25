@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!--
+	Document   : TrafficMatrix.xsd
+	Created on : September 8, 2004, 5:00 PM
+	Author     : Jean Lepropre
+	Description: Represents a traffic matrix.
+	Project	   : TOTEM
+-->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- Root element -->
+
+	<xs:element name="TrafficMatrixFile">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="info" type="information" minOccurs="0" maxOccurs="1"/>
+				<!-- TrafficMatrix is mandatory -->
+				<xs:element ref="TrafficMatrix" minOccurs="1" maxOccurs="1"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+    <!-- Complex Types and elements defined in this schema -->
+	<xs:complexType name="information">
+		<xs:sequence>
+			<xs:element name="title" type="xs:string" minOccurs="0" maxOccurs="1"/>
+   			<xs:element name="date" type="xs:date" minOccurs="0" maxOccurs="1"/>
+   			<xs:element name="author" type="xs:string" minOccurs="0" maxOccurs="1"/>
+   			<xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="1"/>
+   			<xs:element name="units" minOccurs="0" maxOccurs="1">
+   				<xs:complexType>
+   					<xs:sequence>
+   						<xs:element name="unit" minOccurs="1" maxOccurs="1">
+   							<xs:complexType>
+   								<xs:attribute name="type" use="required" type="xs:string" fixed="bandwidth"/>
+   								<xs:attribute name="value" use="required" type="bandwidthUnits"/>
+   							</xs:complexType>
+   						</xs:element>
+   					</xs:sequence>
+   				</xs:complexType>
+   			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:element name="TrafficMatrix">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="src" minOccurs="1" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="dst" minOccurs="1" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:simpleContent>
+										<!-- You can't put a negative bandwidth. -->
+										<xs:extension base="nonNegativeFloat">
+											<xs:attribute name="id" type="xs:string" use="required"/>
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="id" type="xs:string" use="required"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="ASID" type="ASIdType" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	
+	
+	<!-- Simple Types defined in this schema -->
+	
+    <xs:simpleType name="ASIdType">
+        <xs:restriction base="xs:int"/>
+    </xs:simpleType>
+	
+	<xs:simpleType name="bandwidthUnits">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="bps"/>
+			<xs:enumeration value="kbps"/>
+			<xs:enumeration value="mbps"/>
+			<xs:enumeration value="gbps"/>
+			<xs:enumeration value="tbps"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="nonNegativeFloat">
+		<xs:restriction base="xs:float">
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>	
+	
+</xs:schema>

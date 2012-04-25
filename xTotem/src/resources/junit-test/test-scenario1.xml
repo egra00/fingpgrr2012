@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+
+<scenario
+    xsi:schemaLocation="http://jaxb.model.scenario.totem.run.montefiore.ulg.ac.be http://totem.run.montefiore.ulg.ac.be/Schema/Scenario-v1_3.xsd"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://jaxb.model.scenario.totem.run.montefiore.ulg.ac.be">
+    <loadDomain file="examples/abilene/abilene.xml" defaultDomain="true"/>
+    <startAlgo name="CSPF" ASID="11537"/>
+    <LSPCreation bw="250.0" dst="NYCM" src="STTL" lspId="lsp1">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+
+</scenario>

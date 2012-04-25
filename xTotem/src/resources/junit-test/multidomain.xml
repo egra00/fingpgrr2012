@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<domain ASID="444" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://totem.run.montefiore.ulg.ac.be/Schema/Domain-v1_3.xsd">
+    <info>
+        <units>
+            <unit type="bandwidth" value="kbps"/>
+            <unit type="delay" value="ms"/>
+        </units>
+        <diff-serv>
+            <priority ct="0" id="0" preemption="0"/>
+        </diff-serv>
+    </info>
+    <topology>
+        <nodes>
+            <node id="0"/>
+            <node id="1"/>
+            <node id="2"/>
+            <node id="3"/>
+            <node id="4"/>
+        </nodes>
+        <links>
+            <link id="0-1">
+                <from node="0"/>
+                <to node="1"/>
+                <bw>10000.0</bw>
+            </link>
+            <link id="0-1-bis">
+                <from node="0"/>
+                <to node="1"/>
+                <bw>10000.0</bw>
+            </link>
+            <link id="0-2">
+                <from node="0"/>
+                <to node="2"/>
+                <bw>10000.0</bw>
+            </link>
+            <link id="0-3">
+                <from node="0"/>
+                <to node="3"/>
+                <bw>10000.0</bw>
+            </link>
+            <link id="1-0">
+                <from node="1"/>
+                <to node="0"/>
+                <bw>10000.0</bw>
+            </link>
+            <link id="1-0-bis">
+                <from node="1"/>
+                <to node="0"/>
+                <bw>10000.0</bw>
+            </link>
+            <link id="2-0">
+                <from node="2"/>
+                <to node="0"/>
+                <bw>10000.0</bw>
+            </link>
+            <link id="3-0">
+                <from node="3"/>
+                <to node="0"/>
+                <bw>10000.0</bw>
+            </link>
+            <link id="1-4">
+                <from node="1"/>
+                <to node="4"/>
+                <bw>20000.0</bw>
+            </link>
+            <link id="2-4">
+                <from node="2"/>
+                <to node="4"/>
+                <bw>10000.0</bw>
+            </link>
+            <link id="3-4">
+                <from node="3"/>
+                <to node="4"/>
+                <bw>10000.0</bw>
+            </link>
+            <link id="4-1">
+                <from node="4"/>
+                <to node="1"/>
+                <bw>20000.0</bw>
+            </link>
+            <link id="4-2">
+                <from node="4"/>
+                <to node="2"/>
+                <bw>10000.0</bw>
+            </link>
+            <link id="4-3">
+                <from node="4"/>
+                <to node="3"/>
+                <bw>10000.0</bw>
+            </link>
+        </links>
+    </topology>
+    <igp>
+        <links>
+            <link id="0-1">
+                <static>
+                    <metric>0.0</metric>
+                    <te-metric>0.0</te-metric>
+                    <mrbw>10000.0</mrbw>
+                    <mbw>10000.0</mbw>
+                    <admingroup>0</admingroup>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">10000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">10000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="0-1-bis">
+                <static>
+                    <metric>0.0</metric>
+                    <te-metric>0.0</te-metric>
+                    <mrbw>10000.0</mrbw>
+                    <mbw>10000.0</mbw>
+                    <admingroup>0</admingroup>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">10000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">10000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="0-2">
+                <static>
+                    <metric>0.0</metric>
+                    <te-metric>0.0</te-metric>
+                    <mrbw>10000.0</mrbw>
+                    <mbw>10000.0</mbw>
+                    <admingroup>0</admingroup>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">10000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">10000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="0-3">
+                <static>
+                    <metric>0.0</metric>
+                    <te-metric>0.0</te-metric>
+                    <mrbw>10000.0</mrbw>
+                    <mbw>10000.0</mbw>
+                    <admingroup>0</admingroup>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">10000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">10000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="1-0">
+                <static>
+                    <metric>0.0</metric>
+                    <te-metric>0.0</te-metric>
+                    <mrbw>10000.0</mrbw>
+                    <mbw>10000.0</mbw>
+                    <admingroup>0</admingroup>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">10000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">10000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="1-0-bis">
+                <static>
+                    <metric>0.0</metric>
+                    <te-metric>0.0</te-metric>
+                    <mrbw>10000.0</mrbw>
+                    <mbw>10000.0</mbw>
+                    <admingroup>0</admingroup>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">10000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">10000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="2-0">
+                <static>
+                    <metric>0.0</metric>
+                    <te-metric>0.0</te-metric>
+                    <mrbw>10000.0</mrbw>
+                    <mbw>10000.0</mbw>
+                    <admingroup>0</admingroup>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">10000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">10000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="3-0">
+                <static>
+                    <metric>0.0</metric>
+                    <te-metric>0.0</te-metric>
+                    <mrbw>10000.0</mrbw>
+                    <mbw>10000.0</mbw>
+                    <admingroup>0</admingroup>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">10000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">10000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="1-4">
+                <static>
+                    <metric>0.0</metric>
+                    <te-metric>0.0</te-metric>
+                    <mrbw>20000.0</mrbw>
+                    <mbw>20000.0</mbw>
+                    <admingroup>0</admingroup>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">20000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">20000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="2-4">
+                <static>
+                    <metric>0.0</metric>
+                    <te-metric>0.0</te-metric>
+                    <mrbw>10000.0</mrbw>
+                    <mbw>10000.0</mbw>
+                    <admingroup>0</admingroup>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">10000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">10000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="3-4">
+                <static>
+                    <metric>0.0</metric>
+                    <te-metric>0.0</te-metric>
+                    <mrbw>10000.0</mrbw>
+                    <mbw>10000.0</mbw>
+                    <admingroup>0</admingroup>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">10000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">10000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="4-1">
+                <static>
+                    <metric>0.0</metric>
+                    <te-metric>0.0</te-metric>
+                    <mrbw>20000.0</mrbw>
+                    <mbw>20000.0</mbw>
+                    <admingroup>0</admingroup>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">20000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">20000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="4-2">
+                <static>
+                    <metric>0.0</metric>
+                    <te-metric>0.0</te-metric>
+                    <mrbw>10000.0</mrbw>
+                    <mbw>10000.0</mbw>
+                    <admingroup>0</admingroup>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">10000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">10000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="4-3">
+                <static>
+                    <metric>0.0</metric>
+                    <te-metric>0.0</te-metric>
+                    <mrbw>10000.0</mrbw>
+                    <mbw>10000.0</mbw>
+                    <admingroup>0</admingroup>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">10000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">10000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+        </links>
+    </igp>
+</domain>
+

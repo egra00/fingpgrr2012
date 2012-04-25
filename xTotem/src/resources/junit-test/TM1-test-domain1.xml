@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<TrafficMatrixFile xsi:noNamespaceSchemaLocation="http://totem.run.montefiore.ulg.ac.be/Schema/TrafficMatrix-v1_1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <info>
+        <description>Random traffix matrix on test-domain1.xml</description>
+        <units>
+            <unit type="bandwidth" value="kbps"/>
+        </units>
+    </info>
+    <IntraTM ASID="10000">
+        <src id="0">
+            <dst id="1">2</dst>
+            <dst id="2">3</dst>
+            <dst id="3">1</dst>
+            <dst id="4">1</dst>
+        </src>
+        <src id="1">
+            <dst id="0">2</dst>
+            <dst id="2">3</dst>
+            <dst id="3">1</dst>
+            <dst id="4">1</dst>
+        </src>
+        <src id="2">
+            <dst id="0">2</dst>
+            <dst id="1">3</dst>
+            <dst id="3">1</dst>
+            <dst id="4">1</dst>
+        </src>
+        <src id="3">
+            <dst id="0">2</dst>
+            <dst id="1">3</dst>
+            <dst id="2">1</dst>
+            <dst id="4">1</dst>
+        </src>
+        <src id="4">
+            <dst id="0">2</dst>
+            <dst id="1">3</dst>
+            <dst id="2">1</dst>
+            <dst id="3">1</dst>
+        </src>
+    </IntraTM>
+</TrafficMatrixFile>

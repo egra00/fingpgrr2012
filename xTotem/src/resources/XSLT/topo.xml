@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<domain xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://totem.run.montefiore.ulg.ac.be/Schema/Domain-v1_0.xsd" ASID="1">
+    <info><description>
+            Topology converted from the Unina fromat to the TOTEM format
+            using the XSLT of the University of Liege.
+        </description>
+        <units>
+            <unit type="bandwidth" value="bps"/>
+        </units>
+    </info>
+    <topology>
+        <nodes>
+            <node id="192.168.1.10">
+                <rid>192.168.1.10</rid>
+                <interfaces>
+                    <interface id="3">
+                        <ip mask="192.168.1.17/32">192.168.1.17</ip>
+                    </interface>
+                    <interface id="2">
+                        <ip mask="192.168.1.10/32">192.168.1.10</ip>
+                    </interface>
+                    <interface id="1">
+                        <ip mask="127.0.0.1/32">127.0.0.1</ip>
+                    </interface>
+                    <interface id="4">
+                        <ip mask="0.0.0.0/32">0.0.0.0</ip>
+                    </interface>
+                </interfaces>
+            </node>
+            <node id="192.168.1.6">
+                <rid>192.168.1.6</rid>
+                <interfaces>
+                    <interface id="3">
+                        <ip mask="192.168.1.9/32">192.168.1.9</ip>
+                    </interface>
+                    <interface id="2">
+                        <ip mask="192.168.1.6/32">192.168.1.6</ip>
+                    </interface>
+                    <interface id="1">
+                        <ip mask="127.0.0.1/32">127.0.0.1</ip>
+                    </interface>
+                    <interface id="4">
+                        <ip mask="0.0.0.0/32">0.0.0.0</ip>
+                    </interface>
+                </interfaces>
+            </node>
+            <node id="192.168.1.18">
+                <rid>192.168.1.18</rid>
+                <interfaces>
+                    <interface id="3">
+                        <ip mask="192.168.1.18/32">192.168.1.18</ip>
+                    </interface>
+                    <interface id="4">
+                        <ip mask="192.168.1.33/32">192.168.1.33</ip>
+                    </interface>
+                    <interface id="1">
+                        <ip mask="127.0.0.1/32">127.0.0.1</ip>
+                    </interface>
+                    <interface id="5">
+                        <ip mask="0.0.0.0/32">0.0.0.0</ip>
+                    </interface>
+                </interfaces>
+            </node>
+        </nodes>
+        <links>
+            <link id="192.168.1.10-192.168.1.6">
+                <from node="192.168.1.10" if="2"/>
+		<to node="192.168.1.6" if="3"/>
+                <bw>10000000</bw>
+            </link>
+            <link id="192.168.1.6-192.168.1.10">
+                <from node="192.168.1.6" if="3"/>
+		<to node="192.168.1.10" if="2"/>
+                <bw>10000000</bw>
+            </link>
+            <link id="192.168.1.10-192.168.1.18">
+                <from node="192.168.1.10" if="3"/>
+		<to node="192.168.1.18" if="3"/>
+                <bw>10000000</bw>
+            </link>
+            <link id="192.168.1.18-192.168.1.10">
+                <from node="192.168.1.18" if="3"/>
+		<to node="192.168.1.10" if="3"/>
+                <bw>10000000</bw>
+            </link>
+        </links>
+    </topology>
+</domain>

@@ -2,5 +2,26 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="lib/java/ant-contrib-1.0b3.jar"/>
+	<classpathentry kind="lib" path="lib/java/Brite_modified.jar"/>
+	<classpathentry kind="lib" path="lib/java/catalina-ant.jar"/>
+	<classpathentry kind="lib" path="lib/java/CBGP.jar"/>
+	<classpathentry kind="lib" path="lib/java/colt.jar"/>
+	<classpathentry kind="lib" path="lib/java/commons-collections-3.1.jar"/>
+	<classpathentry kind="lib" path="lib/java/epsgraphics.jar"/>
+	<classpathentry kind="lib" path="lib/java/jax-qname.jar"/>
+	<classpathentry kind="lib" path="lib/java/jaxb-api.jar"/>
+	<classpathentry kind="lib" path="lib/java/jaxb-impl.jar"/>
+	<classpathentry kind="lib" path="lib/java/jaxb-libs.jar"/>
+	<classpathentry kind="lib" path="lib/java/jaxb-xjc.jar"/>
+	<classpathentry kind="lib" path="lib/java/jcommon-1.0.0.jar"/>
+	<classpathentry kind="lib" path="lib/java/jfreechart-1.0.0.jar"/>
+	<classpathentry kind="lib" path="lib/java/jgrapht-0.5.2.jar"/>
+	<classpathentry kind="lib" path="lib/java/jrobin-1.5.2.jar"/>
+	<classpathentry kind="lib" path="lib/java/jung-1.7.6.jar"/>
+	<classpathentry kind="lib" path="lib/java/junit.jar"/>
+	<classpathentry kind="lib" path="lib/java/log4j-1.2.8.jar"/>
+	<classpathentry kind="lib" path="lib/java/relaxngDatatype.jar"/>
+	<classpathentry kind="lib" path="lib/java/xsdlib.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

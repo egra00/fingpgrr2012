@@ -1,0 +1,149 @@
+<!--
+    JAXB binding declarations file for Scenario.xsd.
+    Author: Jean Lepropre (2004).
+    TOTEM Project.
+-->
+
+<jxb:bindings version="1.0"
+              xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+              xmlns:xs="http://www.w3.org/2001/XMLSchema">
+ <jxb:bindings schemaLocation="Scenario-v1_2.xsd" node="/xs:schema">
+
+  <jxb:globalBindings choiceContentProperty="false"
+		      		  typesafeEnumBase="xs:string"
+		      		  generateIsSetMethod="true"/>
+  
+  <jxb:schemaBindings>
+   <jxb:package name="be.ac.ulg.montefiore.run.totem.scenario.model.jaxb"/>
+  </jxb:schemaBindings>
+  
+  <!-- Tell JAXB to create instances of our own classes instead of the impl generated classes. -->
+
+  <jxb:bindings node="//xs:element[@name='scenario']">
+  	<jxb:class implClass="be.ac.ulg.montefiore.run.totem.scenario.model.Scenario"/>
+  </jxb:bindings>  
+  <jxb:bindings node="//xs:element[@name='nodeUp']">
+  	<jxb:class implClass="be.ac.ulg.montefiore.run.totem.scenario.model.NodeUp"/>
+  </jxb:bindings>
+  <jxb:bindings node="//xs:element[@name='nodeDown']">
+  	<jxb:class implClass="be.ac.ulg.montefiore.run.totem.scenario.model.NodeDown"/>
+  </jxb:bindings>
+  <jxb:bindings node="//xs:element[@name='linkUp']">
+  	<jxb:class implClass="be.ac.ulg.montefiore.run.totem.scenario.model.LinkUp"/>
+  </jxb:bindings>
+  <jxb:bindings node="//xs:element[@name='linkDown']">
+  	<jxb:class implClass="be.ac.ulg.montefiore.run.totem.scenario.model.LinkDown"/>
+  </jxb:bindings>
+  <jxb:bindings node="//xs:element[@name='linkMetricChange']">
+  	<jxb:class implClass="be.ac.ulg.montefiore.run.totem.scenario.model.LinkMetricChange"/>
+  </jxb:bindings>
+  <jxb:bindings node="//xs:element[@name='linkTeMetricChange']">
+  	<jxb:class implClass="be.ac.ulg.montefiore.run.totem.scenario.model.LinkTeMetricChange"/>
+  </jxb:bindings>
+  <jxb:bindings node="//xs:element[@name='LSPDeletion']">
+  	<jxb:class implClass="be.ac.ulg.montefiore.run.totem.scenario.model.LSPDeletion"/>
+  </jxb:bindings>
+  <jxb:bindings node="//xs:element[@name='deleteAllLSP']">
+  	<jxb:class implClass="be.ac.ulg.montefiore.run.totem.scenario.model.DeleteAllLSP"/>
+  </jxb:bindings>
+  <jxb:bindings node="//xs:element[@name='LSPBWChange']">
+  	<jxb:class implClass="be.ac.ulg.montefiore.run.totem.scenario.model.LSPBWChange"/>
+  </jxb:bindings>
+  <jxb:bindings node="//xs:element[@name='LSPCreation']">
+  	<jxb:class implClass="be.ac.ulg.montefiore.run.totem.scenario.model.LSPCreation"/>
+  </jxb:bindings>
+  <jxb:bindings node="//xs:element[@name='LSPBackupCreation']">
+  	<jxb:class implClass="be.ac.ulg.montefiore.run.totem.scenario.model.LSPBackupCreation"/>
+  </jxb:bindings>
+  <jxb:bindings node="//xs:element[@name='loadDomain']">
+  	<jxb:class implClass="be.ac.ulg.montefiore.run.totem.scenario.model.LoadDomain"/>
+  </jxb:bindings>
+  <jxb:bindings node="//xs:element[@name='startAlgo']">
+  	<jxb:class implClass="be.ac.ulg.montefiore.run.totem.scenario.model.StartAlgo"/>
+  </jxb:bindings>
+  <jxb:bindings node="//xs:element[@name='stopAlgo']">
+  	<jxb:class implClass="be.ac.ulg.montefiore.run.totem.scenario.model.StopAlgo"/>
+  </jxb:bindings>
+  <jxb:bindings node="//xs:element[@name='loadTrafficMatrix']">
+  	<jxb:class implClass="be.ac.ulg.montefiore.run.totem.scenario.model.LoadTrafficMatrix"/>
+  </jxb:bindings>
+  <jxb:bindings node="//xs:element[@name='computeMCF']">
+  	<jxb:class implClass="be.ac.ulg.montefiore.run.totem.scenario.model.ComputeMCF"/>
+  </jxb:bindings>
+ <jxb:bindings node="//xs:element[@name='FastIPMetric']">
+  	<jxb:class implClass="be.ac.ulg.montefiore.run.totem.scenario.model.FastIPMetric"/>
+  </jxb:bindings>
+  <jxb:bindings node="//xs:element[@name='IGPWOCalculateWeights']">
+     <jxb:class implClass="be.ac.ulg.montefiore.run.totem.scenario.model.IGPWOCalculateWeights"/>
+  </jxb:bindings>
+  <jxb:bindings node="//xs:element[@name='ShowLinkInfo']">
+     <jxb:class implClass="be.ac.ulg.montefiore.run.totem.scenario.model.ShowLinkInfo"/>
+  </jxb:bindings>
+  <jxb:bindings node="//xs:element[@name='ShowLinkReservableBandwidth']">
+     <jxb:class implClass="be.ac.ulg.montefiore.run.totem.scenario.model.ShowLinkReservableBandwidth"/>
+  </jxb:bindings>
+  <jxb:bindings node="//xs:element[@name='topologyGeneration']">
+     <jxb:class implClass="be.ac.ulg.montefiore.run.totem.scenario.model.TopologyGeneration"/>
+  </jxb:bindings>
+  <jxb:bindings node="//xs:element[@name='trafficMatrixGeneration']">
+     <jxb:class implClass="be.ac.ulg.montefiore.run.totem.scenario.model.TrafficMatrixGeneration"/>
+  </jxb:bindings>
+  <jxb:bindings node="//xs:element[@name='echo']">
+  	 <jxb:class implClass="be.ac.ulg.montefiore.run.totem.scenario.model.Echo"/>
+  </jxb:bindings>
+  <jxb:bindings node="//xs:element[@name='saveDomain']">
+  	 <jxb:class implClass="be.ac.ulg.montefiore.run.totem.scenario.model.SaveDomain"/>
+  </jxb:bindings>
+  <jxb:bindings node="//xs:element[@name='addNetworkController']">
+  	 <jxb:class implClass="be.ac.ulg.montefiore.run.totem.scenario.model.AddNetworkController"/>
+  </jxb:bindings>
+  <jxb:bindings node="//xs:element[@name='removeNetworkController']">
+  	 <jxb:class implClass="be.ac.ulg.montefiore.run.totem.scenario.model.RemoveNetworkController"/>
+  </jxb:bindings>
+  <jxb:bindings node="//xs:element[@name='generateIntraTM']">
+  	 <jxb:class implClass="be.ac.ulg.montefiore.run.totem.scenario.model.GenerateIntraTM"/>
+  </jxb:bindings>
+  <jxb:bindings node="//xs:element[@name='ECMPAnalysis']">
+  	 <jxb:class implClass="be.ac.ulg.montefiore.run.totem.scenario.model.ECMPAnalysis"/>
+  </jxb:bindings>
+  <jxb:bindings node="//xs:element[@name='listShortestPaths']">
+  	 <jxb:class implClass="be.ac.ulg.montefiore.run.totem.scenario.model.ListShortestPaths"/>
+  </jxb:bindings>
+  <jxb:bindings node="//xs:element[@name='chartCreation']">
+  	 <jxb:class implClass="be.ac.ulg.montefiore.run.totem.scenario.model.ChartCreation"/>
+  </jxb:bindings>
+  <jxb:bindings node="//xs:element[@name='chartDeletion']">
+  	 <jxb:class implClass="be.ac.ulg.montefiore.run.totem.scenario.model.ChartDeletion"/>
+  </jxb:bindings>
+  <jxb:bindings node="//xs:element[@name='chartAddSeries']">
+  	 <jxb:class implClass="be.ac.ulg.montefiore.run.totem.scenario.model.ChartAddSeries"/>
+  </jxb:bindings>
+  <jxb:bindings node="//xs:element[@name='chartSave']">
+  	 <jxb:class implClass="be.ac.ulg.montefiore.run.totem.scenario.model.ChartSave"/>
+  </jxb:bindings>
+  <jxb:bindings node="//xs:element[@name='removeTrafficMatrix']">
+  	 <jxb:class implClass="be.ac.ulg.montefiore.run.totem.scenario.model.RemoveTrafficMatrix"/>
+  </jxb:bindings>
+  <jxb:bindings node="//xs:element[@name='optDivideTM']">
+  	 <jxb:class implClass="be.ac.ulg.montefiore.run.totem.scenario.model.OptDivideTM"/>
+  </jxb:bindings>
+  <jxb:bindings node="//xs:element[@name='listenToLSPsDemands']">
+  	 <jxb:class implClass="be.ac.ulg.montefiore.run.totem.scenario.model.ListenToLSPsDemands"/>
+  </jxb:bindings>
+  <jxb:bindings node="//xs:element[@name='startScenarioServer']">
+       <jxb:class implClass="be.ac.ulg.montefiore.run.totem.scenario.model.StartScenarioServer"/>
+  </jxb:bindings>
+  <jxb:bindings node="//xs:element[@name='template']">
+  	 <jxb:class implClass="be.ac.ulg.montefiore.run.totem.scenario.model.Template"/>
+  </jxb:bindings>
+  <jxb:bindings node="//xs:element[@name='loadDistantDomain']">
+     <jxb:class implClass="be.ac.ulg.montefiore.run.totem.scenario.model.LoadDistantDomain"/>
+  </jxb:bindings>
+  <jxb:bindings node="//xs:element[@name='bgpAwareIGPWO']">
+     <jxb:class implClass="be.ac.ulg.montefiore.run.totem.scenario.model.BgpAwareIGPWO"/>
+  </jxb:bindings>
+  <jxb:bindings node="//xs:element[@name='enableTrafficSwitching']">
+     <jxb:class implClass="be.ac.ulg.montefiore.run.totem.scenario.model.EnableTrafficSwitching"/>
+  </jxb:bindings>
+ </jxb:bindings>
+</jxb:bindings>

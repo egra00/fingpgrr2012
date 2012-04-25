@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Implementation-Title: Totem
+Implementation-Vendor: "RUN"
+Main-Class: be.ac.ulg.montefiore.run.totem.core.TopologyServer
+

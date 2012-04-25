@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!--
+	Created on : September 8, 2004, 5:00 PM
+	Author     : Jean Lepropre
+	Description: Represents an intra-domain or inter-domain traffic matrix.
+	TOTEM Project.
+-->
+
+<!--
+    Changes:
+    ========
+
+    - 08-Mar.-2005: Add code to represent inter-domain traffic matrices (JL).
+    - 08-Mar.-2005: Upgrade version number (JL).
+    - 30-Jul.-2005: Add duration element in information (FSK).
+-->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- Root element -->
+
+	<xs:element name="TrafficMatrixFile">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="info" type="information" minOccurs="0" maxOccurs="1"/>
+				<!-- The choice is mandatory -->
+				<xs:choice minOccurs="1" maxOccurs="1">
+				    <xs:element ref="IntraTM" minOccurs="1" maxOccurs="1"/>
+				    <xs:element ref="InterTM" minOccurs="1" maxOccurs="1"/>
+				</xs:choice>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+    <!-- Complex Types and elements defined in this schema -->
+	<xs:complexType name="information">
+		<xs:sequence>
+			<xs:element name="title" type="xs:string" minOccurs="0" maxOccurs="1"/>
+   			<xs:element name="date" type="xs:date" minOccurs="0" maxOccurs="1"/>
+            <!-- duration must be expressed in minute -->
+            <xs:element name="duration" type="xs:double" minOccurs="0" maxOccurs="1"/>
+   			<xs:element name="author" type="xs:string" minOccurs="0" maxOccurs="1"/>
+   			<xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="1"/>
+   			<xs:element name="units" minOccurs="0" maxOccurs="1">
+   				<xs:complexType>
+   					<xs:sequence>
+   						<xs:element name="unit" minOccurs="1" maxOccurs="1">
+   							<xs:complexType>
+   								<xs:attribute name="type" use="required" type="xs:string" fixed="bandwidth"/>
+   								<xs:attribute name="value" use="required" type="bandwidthUnits"/>
+   							</xs:complexType>
+   						</xs:element>
+   					</xs:sequence>
+   				</xs:complexType>
+   			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:element name="IntraTM">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="src" minOccurs="1" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="dst" minOccurs="1" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:simpleContent>
+										<!-- You can't put a negative bandwidth. -->
+										<xs:extension base="nonNegativeFloat">
+											<xs:attribute name="id" type="xs:string" use="required"/>
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="id" type="xs:string" use="required"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="ASID" type="ASIdType" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="InterTM">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="node" minOccurs="1" maxOccurs="unbounded">
+				    <xs:complexType>
+				        <xs:sequence>
+				            <xs:element name="src" minOccurs="1" maxOccurs="unbounded">
+				                <xs:complexType>
+				                    <xs:sequence>
+				                        <xs:element name="dst" minOccurs="1" maxOccurs="unbounded">
+				                            <xs:complexType>
+				                                <xs:simpleContent>
+				                                    <xs:extension base="nonNegativeFloat">
+				                                        <xs:attribute name="prefix" type="prefixType" use="required"/>
+				                                    </xs:extension>
+				                                </xs:simpleContent>
+				                            </xs:complexType>
+				                        </xs:element>
+				                    </xs:sequence>
+				                    <xs:attribute name="prefix" type="prefixType" use="required"/>
+				                </xs:complexType>
+				            </xs:element>
+				        </xs:sequence>
+				        <xs:attribute name="id" type="xs:string" use="required"/>
+				    </xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="ASID" type="ASIdType" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<!-- Simple Types defined in this schema -->
+	
+    <xs:simpleType name="ASIdType">
+        <xs:restriction base="xs:int"/>
+    </xs:simpleType>
+	
+	<xs:simpleType name="bandwidthUnits">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="bps"/>
+			<xs:enumeration value="kbps"/>
+			<xs:enumeration value="mbps"/>
+			<xs:enumeration value="gbps"/>
+			<xs:enumeration value="tbps"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="nonNegativeFloat">
+		<xs:restriction base="xs:float">
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>	
+
+    <xs:simpleType name="prefixType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="((0|1[0-9]{0,2}|2[6-9]{0,1}|2[0-4][0-9]{0,1}|25[0-5]{0,1}|[3-9][0-9]{0,1}).){3}(0|1[0-9]{0,2}|2[6-9]{0,1}|2[0-4][0-9]{0,1}|25[0-5]{0,1}|[3-9][0-9]{0,1})/(0|[1-2][0-9]{0,1}|3[0-2]{0,1}|[4-9])"/>
+        </xs:restriction>
+    </xs:simpleType>
+	
+</xs:schema>

@@ -1,0 +1,32 @@
+<!--
+    JAXB binding declarations file for UNINA-Scenario-v0_1.xsd.
+    Author: Gael Monfort (2006).
+    TOTEM Project.
+-->
+
+<jxb:bindings version="1.0"
+              xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+              xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+ <jxb:bindings schemaLocation="UNINA-Scenario-v0_1.xsd" node="/xs:schema">
+
+  <jxb:globalBindings choiceContentProperty="false"
+                                  typesafeEnumBase="xs:string"
+                                  generateIsSetMethod="true"/>
+
+  <jxb:schemaBindings>
+   <jxb:package name="it.unina.scenario.model.jaxb"/>
+  </jxb:schemaBindings>
+
+  <!-- Tell JAXB to create instances of our own classes instead of the impl generated classes. -->
+
+  <jxb:bindings node="//xs:element[@name='generateTraffic']">
+     <jxb:class implClass="it.unina.scenario.model.GenerateTraffic"/>
+  </jxb:bindings>
+
+  <jxb:bindings node="//xs:element[@name='sendLinkWeights']">
+     <jxb:class implClass="it.unina.scenario.model.SendLinkWeights"/>
+  </jxb:bindings>
+
+ </jxb:bindings>
+</jxb:bindings>
