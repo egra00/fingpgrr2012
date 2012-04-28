@@ -18,10 +18,20 @@
 	<classpathentry kind="lib" path="lib/java/jfreechart-1.0.0.jar"/>
 	<classpathentry kind="lib" path="lib/java/jgrapht-0.5.2.jar"/>
 	<classpathentry kind="lib" path="lib/java/jrobin-1.5.2.jar"/>
-	<classpathentry kind="lib" path="lib/java/jung-1.7.6.jar"/>
 	<classpathentry kind="lib" path="lib/java/junit.jar"/>
 	<classpathentry kind="lib" path="lib/java/log4j-1.2.8.jar"/>
 	<classpathentry kind="lib" path="lib/java/relaxngDatatype.jar"/>
 	<classpathentry kind="lib" path="lib/java/xsdlib.jar"/>
+	<classpathentry kind="lib" path="lib/java/agape/guava-r07.jar"/>
+	<classpathentry kind="lib" path="lib/java/jung-1.7.6.jar"/>
+	<classpathentry kind="lib" path="lib/java/jung2-201/jung-3d.jar"/>
+	<classpathentry kind="lib" path="lib/java/jung2-201/jung-algorithms.jar"/>
+	<classpathentry kind="lib" path="lib/java/jung2-201/jung-api.jar"/>
+	<classpathentry kind="lib" path="lib/java/jung2-201/jung-graph-impl.jar"/>
+	<classpathentry kind="lib" path="lib/java/jung2-201/jung-io.jar"/>
+	<classpathentry kind="lib" path="lib/java/jung2-201/jung-jai.jar"/>
+	<classpathentry kind="lib" path="lib/java/jung2-201/jung-visualization.jar"/>
+	<classpathentry kind="lib" path="lib/java/agape/agape-dependencies.jar"/>
+	<classpathentry kind="lib" path="lib/java/agape/agape.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
