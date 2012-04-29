@@ -33,5 +33,6 @@
 	<classpathentry kind="lib" path="lib/java/jung2-201/jung-visualization.jar"/>
 	<classpathentry kind="lib" path="lib/java/agape/agape-dependencies.jar"/>
 	<classpathentry kind="lib" path="lib/java/agape/agape.jar"/>
+	<classpathentry kind="lib" path="lib/java/jung2-201/collections-generic-4.01.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
