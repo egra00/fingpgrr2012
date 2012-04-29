@@ -85,9 +85,9 @@ public class BGPSepBackup {
 		
 		BGPSepAlgorithm(jIGPTopology, iBGPTopology);
 		
-		logger.debug("iBGP sessions ("+iBGPTopology.size()+")");
+		logger.info("iBGP sessions ("+iBGPTopology.size()+")");
 		for (iBGPSession session: iBGPTopology) {
-			logger.debug(session.getIdLink1() + " - " + session.getIdLink2() + " -> " + session.getSessionType());
+			logger.info(session.getIdLink1() + " - " + session.getIdLink2() + " -> " + session.getSessionType());
 		}
 		
 	}
