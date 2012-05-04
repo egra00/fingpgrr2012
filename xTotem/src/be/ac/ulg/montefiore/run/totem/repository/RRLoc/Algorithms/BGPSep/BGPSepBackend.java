@@ -79,7 +79,7 @@ public class BGPSepBackend {
 		// Se elimina toda posible configuración previa
 		((DomainImpl)domain).removeBgpRouters();
 		
-		// Todos los routers tenrán sesiones bgp
+		// Todos los routers tendrán sesiones bgp
 		for (Node router : domain.getAllNodes()) {
 			BgpRouter bgpRouter = factory.createBgpRouter();
 	        bgpRouter.setId(router.getId());

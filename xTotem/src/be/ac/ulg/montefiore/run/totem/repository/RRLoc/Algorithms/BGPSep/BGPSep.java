@@ -22,7 +22,6 @@ public class BGPSep implements TotemAlgorithm {
 	private static HashMap runningParams = null;
     
     static {
-    	
         try {
         	params.add(new ParameterDescriptor("ASID", "Domain ASID (leave blank for default).", Integer.class, null));
         } catch (AlgorithmParameterException e) {
@@ -37,7 +36,11 @@ public class BGPSep implements TotemAlgorithm {
         String asId = (String) params.get("ASID");
         Domain domain;
         if(asId == null) {
-            domain = InterDomainManager.getInstance().getDefaultDomain();
+        	domain = InterDomainManager.getInstance().getDefaultDomain();
+        	if(domain == null){
+	        	logger.error("There is no default domain");
+	            return;
+        	}
         } else {
             try {
                 domain = InterDomainManager.getInstance().getDomain(Integer.parseInt(asId));
