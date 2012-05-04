@@ -46,7 +46,7 @@ public class BGPSep implements TotemAlgorithm {
             }
         }
         logger.debug("Starting BGPSEP...");
-        BGPSepBackup.BGPSepAlgorithm(domain);
+        BGPSepBackend.BGPSepAlgorithm(domain);
         logger.debug("BGPSEP finish");
 	}
 
