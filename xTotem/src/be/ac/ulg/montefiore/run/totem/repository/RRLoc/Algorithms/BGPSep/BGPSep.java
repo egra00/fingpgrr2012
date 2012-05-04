@@ -22,6 +22,7 @@ public class BGPSep implements TotemAlgorithm {
 	private static HashMap runningParams = null;
     
     static {
+    	
         try {
         	params.add(new ParameterDescriptor("ASID", "Domain ASID (leave blank for default).", Integer.class, null));
         } catch (AlgorithmParameterException e) {
