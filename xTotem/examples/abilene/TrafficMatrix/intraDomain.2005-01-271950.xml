@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<TrafficMatrixFile xsi:noNamespaceSchemaLocation="http://totem.run.montefiore.ulg.ac.be/Schema/TrafficMatrix-v1_2.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <info>
+        <title>Abilene intraTM on 27-01-2005 from 19:50 for 5 minutes</title>
+        <date>2005-01-27T19:50:00.951+01:00</date>
+        <duration>5.0</duration>
+        <author>Olivier Delcourt</author>
+        <description>Intra-domain traffic matrix generated from NetFlow traces and BGP dump (from 01-01-2005).</description>
+        <units>
+            <unit type="bandwidth" value="mbps"/>
+        </units>
+    </info>
+    <IntraTM ASID="11537">
+        <src id="STTL">
+            <dst id="STTL">448.37188</dst>
+            <dst id="DNVR">61.58017</dst>
+            <dst id="KSCY">62.893274</dst>
+            <dst id="IPLS">126.89395</dst>
+            <dst id="CHIN">203.29048</dst>
+            <dst id="NYCM">38.724832</dst>
+            <dst id="WASH">109.93916</dst>
+            <dst id="ATLA">62.20467</dst>
+            <dst id="ATLA-M5">3.37376</dst>
+            <dst id="HSTN">45.065717</dst>
+            <dst id="LOSA">29.932382</dst>
+            <dst id="SNVA">12.69148</dst>
+        </src>
+        <src id="DNVR">
+            <dst id="STTL">279.9713</dst>
+            <dst id="DNVR">312.7779</dst>
+            <dst id="KSCY">107.51238</dst>
+            <dst id="IPLS">229.95664</dst>
+            <dst id="CHIN">458.92466</dst>
+            <dst id="NYCM">419.9464</dst>
+            <dst id="WASH">170.3771</dst>
+            <dst id="ATLA">69.666455</dst>
+            <dst id="ATLA-M5">3.461864</dst>
+            <dst id="HSTN">8.1164825</dst>
+            <dst id="LOSA">261.8843</dst>
+            <dst id="SNVA">84.800073</dst>
+        </src>
+        <src id="KSCY">
+            <dst id="STTL">261.7931</dst>
+            <dst id="DNVR">158.82499</dst>
+            <dst id="KSCY">265.21216</dst>
+            <dst id="IPLS">273.20737</dst>
+            <dst id="CHIN">524.21196</dst>
+            <dst id="NYCM">475.54736</dst>
+            <dst id="WASH">189.44728</dst>
+            <dst id="ATLA">77.603064</dst>
+            <dst id="ATLA-M5">3.8798508</dst>
+            <dst id="HSTN">63.957825</dst>
+            <dst id="LOSA">248.26565</dst>
+            <dst id="SNVA">65.36889</dst>
+        </src>
+        <src id="IPLS">
+            <dst id="STTL">187.85833</dst>
+            <dst id="DNVR">99.36751</dst>
+            <dst id="KSCY">102.67465</dst>
+            <dst id="IPLS">558.45317</dst>
+            <dst id="CHIN">517.67783</dst>
+            <dst id="NYCM">363.5933</dst>
+            <dst id="WASH">198.62528</dst>
+            <dst id="ATLA">112.98224</dst>
+            <dst id="ATLA-M5">5.7893574</dst>
+            <dst id="HSTN">39.257956</dst>
+            <dst id="LOSA">172.78127</dst>
+            <dst id="SNVA">50.427393</dst>
+        </src>
+        <src id="CHIN">
+            <dst id="STTL">0</dst>
+            <dst id="DNVR">0</dst>
+            <dst id="KSCY">0</dst>
+            <dst id="IPLS">0</dst>
+            <dst id="CHIN">0</dst>
+            <dst id="NYCM">0</dst>
+            <dst id="WASH">0</dst>
+            <dst id="ATLA">0</dst>
+            <dst id="ATLA-M5">0</dst>
+            <dst id="HSTN">0</dst>
+            <dst id="LOSA">0</dst>
+            <dst id="SNVA">0</dst>
+        </src>
+        <src id="NYCM">
+            <dst id="STTL">128.54521</dst>
+            <dst id="DNVR">97.511176</dst>
+            <dst id="KSCY">61.2607</dst>
+            <dst id="IPLS">235.70828</dst>
+            <dst id="CHIN">214.92346</dst>
+            <dst id="NYCM">1329.2201</dst>
+            <dst id="WASH">615.0361</dst>
+            <dst id="ATLA">59.86861</dst>
+            <dst id="ATLA-M5">8.610256</dst>
+            <dst id="HSTN">45.67864</dst>
+            <dst id="LOSA">107.89602</dst>
+            <dst id="SNVA">37.490558</dst>
+        </src>
+        <src id="WASH">
+            <dst id="STTL">92.17522</dst>
+            <dst id="DNVR">78.94045</dst>
+            <dst id="KSCY">29.343735</dst>
+            <dst id="IPLS">142.69624</dst>
+            <dst id="CHIN">145.78633</dst>
+            <dst id="NYCM">444.4656</dst>
+            <dst id="WASH">1180.1033</dst>
+            <dst id="ATLA">199.02936</dst>
+            <dst id="ATLA-M5">19.334325</dst>
+            <dst id="HSTN">91.556616</dst>
+            <dst id="LOSA">168.2906</dst>
+            <dst id="SNVA">16.116211</dst>
+        </src>
+        <src id="ATLA">
+            <dst id="STTL">29.42065</dst>
+            <dst id="DNVR">3.535795</dst>
+            <dst id="KSCY">9.911498</dst>
+            <dst id="IPLS">63.7625</dst>
+            <dst id="CHIN">43.43613</dst>
+            <dst id="NYCM">64.24359</dst>
+            <dst id="WASH">199.02617</dst>
+            <dst id="ATLA">461.10557</dst>
+            <dst id="ATLA-M5">35.35588</dst>
+            <dst id="HSTN">106.06926</dst>
+            <dst id="LOSA">192.76396</dst>
+            <dst id="SNVA">6.953317</dst>
+        </src>
+        <src id="ATLA-M5">
+            <dst id="STTL">0</dst>
+            <dst id="DNVR">0</dst>
+            <dst id="KSCY">0</dst>
+            <dst id="IPLS">0</dst>
+            <dst id="CHIN">0</dst>
+            <dst id="NYCM">0</dst>
+            <dst id="WASH">0</dst>
+            <dst id="ATLA">0</dst>
+            <dst id="ATLA-M5">0</dst>
+            <dst id="HSTN">0</dst>
+            <dst id="LOSA">0</dst>
+            <dst id="SNVA">0</dst>
+        </src>
+        <src id="HSTN">
+            <dst id="STTL">16.770091</dst>
+            <dst id="DNVR">2.5477547</dst>
+            <dst id="KSCY">6.806474</dst>
+            <dst id="IPLS">10.75152</dst>
+            <dst id="CHIN">23.643858</dst>
+            <dst id="NYCM">23.259291</dst>
+            <dst id="WASH">108.74473</dst>
+            <dst id="ATLA">58.79972</dst>
+            <dst id="ATLA-M5">4.6361893</dst>
+            <dst id="HSTN">276.5727</dst>
+            <dst id="LOSA">212.97024</dst>
+            <dst id="SNVA">0.74781866</dst>
+        </src>
+        <src id="LOSA">
+            <dst id="STTL">62.094366</dst>
+            <dst id="DNVR">74.777545</dst>
+            <dst id="KSCY">23.120038</dst>
+            <dst id="IPLS">55.376074</dst>
+            <dst id="CHIN">179.44106</dst>
+            <dst id="NYCM">392.3742</dst>
+            <dst id="WASH">97.53347</dst>
+            <dst id="ATLA">48.45558</dst>
+            <dst id="ATLA-M5">1.0043493</dst>
+            <dst id="HSTN">84.525146</dst>
+            <dst id="LOSA">593.9095</dst>
+            <dst id="SNVA">31.413196</dst>
+        </src>
+        <src id="SNVA">
+            <dst id="STTL">109.33782</dst>
+            <dst id="DNVR">79.7669</dst>
+            <dst id="KSCY">25.44876</dst>
+            <dst id="IPLS">77.421234</dst>
+            <dst id="CHIN">214.6676</dst>
+            <dst id="NYCM">392.7651</dst>
+            <dst id="WASH">30.333438</dst>
+            <dst id="ATLA">4.1125973</dst>
+            <dst id="ATLA-M5">0.040138668</dst>
+            <dst id="HSTN">56.00532</dst>
+            <dst id="LOSA">347.85676</dst>
+            <dst id="SNVA">129.37837</dst>
+        </src>
+    </IntraTM>
+</TrafficMatrixFile>
+

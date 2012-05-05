@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<scenario
+    xsi:schemaLocation="http://jaxb.model.scenario.totem.run.montefiore.ulg.ac.be http://totem.run.montefiore.ulg.ac.be/Schema/Scenario-v1_3.xsd"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://jaxb.model.scenario.totem.run.montefiore.ulg.ac.be">
+    <!-- replace here using your own topologies! -->
+    <echo msg="Loading a topology file (ASID 10013)"/>
+    <loadDomain file="examples/simpleDomain/domain1.xml" defaultDomain="true"/>
+    <echo msg=""/>
+    <echo msg="Loading a demand matrix file (for ASID 10013, with TMID 0)"/>
+    <loadTrafficMatrix file="examples/simpleDomain/TrafficMatrix/TM1-domain1.xml" TMID="0"/>
+    <echo msg=""/>
+    <echo msg="First printing information about link loads with standard weights"/>
+    <IGPRouting TMID="0"/>
+    <showLinkLoad perLink="false"/>
+    <echo msg=""/>
+    <echo msg="Putting a link down (non consecutive IDs)"/>
+    <!-- we will put a link down such that link ids are no more consecutive -->
+    <linkDown linkId="2_2 -> 4_2"/>
+    <startAlgo name="IGPWO"/>
+    <echo msg=""/>
+    <echo msg="Executing IGPWO"/>
+    <IGPWOCalculateWeights  nbIter="50" maxPossibleWeight="150">
+			<trafficMatrix TMID="0"/>
+    </IGPWOCalculateWeights>
+    <echo msg="Information about link loads with new optimized TE weights"/>
+    <startAlgo name="CSPFTEMetric" TMID="0" />
+    <IGPRouting TMID="0" SPFtype="CSPFTEMetric"/>
+    <showLinkLoad perLink="false"/>
+</scenario>

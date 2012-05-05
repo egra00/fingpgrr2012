@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<domain ASID="10000"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://totem.run.montefiore.ulg.ac.be/Schema/Domain-v1_3.xsd">
+    <info>
+        <title>Test Topology</title>
+        <date>2005-01-28</date>
+        <author>RUN - University of Liege</author>
+        <description>
+			Perl script of the Research Unit in Networking (RUN) of the University of Liege
+			TOTEM toolbox (http://totem.run.montefiore.ulg.ac.be/)
+		</description>
+        <units>
+            <unit type="bandwidth" value="kbps"/>
+            <unit type="delay" value="ms"/>
+        </units>
+        <diff-serv>
+            <priority ct="0" id="0" preemption="0"/>
+        </diff-serv>
+    </info>
+    <topology>
+        <nodes>
+            <node id="0">
+                <type>CORE</type>
+                <location latitude="53.664368" longitude="16.702972"/>
+                <interfaces>
+                    <interface id="0"/>
+                    <interface id="1"/>
+                </interfaces>
+            </node>
+            <node id="1">
+                <type>CORE</type>
+                <location latitude="73.77931" longitude="28.345434"/>
+                <interfaces>
+                    <interface id="0"/>
+                    <interface id="2"/>
+                    <interface id="3"/>
+                </interfaces>
+            </node>
+            <node id="2">
+                <type>CORE</type>
+                <location latitude="35.35709" longitude="28.09241"/>
+                <interfaces>
+                    <interface id="1"/>
+                    <interface id="2"/>
+                    <interface id="4"/>
+                </interfaces>
+            </node>
+            <node id="3">
+                <type>VIRTUAL</type>
+                <location latitude="49.708817" longitude="48.085808"/>
+                <interfaces>
+                    <interface id="5"/>
+                    <interface id="6"/>
+                </interfaces>
+            </node>
+            <node id="4">
+                <type>NEIGH</type>
+                <location latitude="64.50498" longitude="38.770077"/>
+                <interfaces>
+                    <interface id="3"/>
+                    <interface id="5"/>
+                </interfaces>
+            </node>
+            <node id="5">
+                <type>NEIGH</type>
+                <location latitude="37.85441" longitude="37.81298"/>
+                <interfaces>
+                    <interface id="4"/>
+                    <interface id="6"/>
+                </interfaces>
+            </node>
+        </nodes>
+        <links>
+            <link id="0-1">
+                <from if="0" node="0"/>
+                <to if="0" node="1"/>
+                <type>INTRA</type>
+                <bw>1000.0</bw>
+                <delay>0.050034612</delay>
+            </link>
+            <link id="1-0">
+                <from if="0" node="1"/>
+                <to if="0" node="0"/>
+                <type>INTRA</type>
+                <bw>1000.0</bw>
+                <delay>0.050034612</delay>
+            </link>
+            <link id="0-2">
+                <from if="1" node="0"/>
+                <to if="1" node="2"/>
+                <type>INTRA</type>
+                <bw>1000.0</bw>
+                <delay>0.11053008</delay>
+            </link>
+            <link id="2-0">
+                <from if="1" node="2"/>
+                <to if="1" node="0"/>
+                <type>INTRA</type>
+                <bw>1000.0</bw>
+                <delay>0.11053008</delay>
+            </link>
+            <link id="1-2">
+                <from if="2" node="1"/>
+                <to if="2" node="2"/>
+                <type>INTRA</type>
+                <bw>1000.0</bw>
+                <delay>0.09073924</delay>
+            </link>
+            <link id="2-1">
+                <from if="2" node="2"/>
+                <to if="2" node="1"/>
+                <type>INTRA</type>
+                <bw>1000.0</bw>
+                <delay>0.09073924</delay>
+            </link>
+            <link id="1-4">
+                <from if="3" node="1"/>
+                <to if="3" node="4"/>
+                <type>INTER</type>
+                <bw>2000.0</bw>
+                <delay>0.00745872</delay>
+            </link>
+            <link id="2-5">
+                <from if="4" node="2"/>
+                <to if="4" node="5"/>
+                <type>INTER</type>
+                <bw>2000.0</bw>
+                <delay>0.2166113</delay>
+            </link>
+            <link id="4-3">
+                <from if="5" node="4"/>
+                <to if="5" node="3"/>
+                <type>VIRTUAL</type>
+                <bw>INF</bw>
+                <delay>0.00745872</delay>
+            </link>
+            <link id="5-3">
+                <from if="6" node="5"/>
+                <to if="6" node="3"/>
+                <type>VIRTUAL</type>
+                <bw>INF</bw>
+                <delay>0.2166113</delay>
+            </link>
+        </links>
+    </topology>
+	<igp>
+		<links>
+			<link id="0-1">
+				<static>
+					<metric>2</metric>
+				</static>
+			</link>
+			<link id="1-0">
+				<static>
+					<metric>2</metric>
+				</static>
+			</link>
+			<link id="0-2">
+				<static>
+					<metric>1</metric>
+				</static>
+			</link>
+			<link id="2-0">
+				<static>
+					<metric>1</metric>
+				</static>
+			</link>
+			<link id="1-2">
+				<static>
+					<metric>1</metric>
+				</static>
+			</link>
+			<link id="2-1">
+				<static>
+					<metric>1</metric>
+				</static>
+			</link>
+			<link id="1-4">
+				<static>
+					<metric>0</metric>
+				</static>
+			</link>
+			<link id="2-5">
+				<static>
+					<metric>0</metric>
+				</static>
+			</link>
+			<link id="4-3">
+				<static>
+					<metric>0</metric>
+				</static>
+			</link>
+			<link id="5-3">
+				<static>
+					<metric>0</metric>
+				</static>
+			</link>
+		</links>
+	</igp>
+</domain>
+

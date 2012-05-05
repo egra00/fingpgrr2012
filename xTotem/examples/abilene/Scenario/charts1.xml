@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<!--
+    This scenario illustrates the use of the chart interface.
+
+    Author: Gael Monfort (monfort@run.montefiore.ulg.ac.be)
+-->
+<scenario
+    xsi:schemaLocation="http://jaxb.model.scenario.totem.run.montefiore.ulg.ac.be http://totem.run.montefiore.ulg.ac.be/Schema/Scenario-v1_3.xsd"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://jaxb.model.scenario.totem.run.montefiore.ulg.ac.be">
+    <loadDomain file="examples/abilene/abilene.xml" defaultDomain="true" removeMultipleLinks="true"/>
+
+    <chartCreation id="chart1">
+        <collector name="LinksLoadDataCollector"/>
+    </chartCreation>
+
+    <loadTrafficMatrix file="examples/abilene/TrafficMatrix/TM0-abilene.xml" TMID="0"/>
+    <loadTrafficMatrix file="examples/abilene/TrafficMatrix/TM1-abilene.xml" TMID="1"/>
+
+    <chartAddSeries chartId="chart1" seriesName="Using TM0">
+        <collector>
+            <param name="tmId">0</param>
+        </collector>
+    </chartAddSeries>
+
+    <chartAddSeries chartId="chart1" seriesName="Using TM1">
+        <collector>
+            <param name="tmId">1</param>
+        </collector>
+    </chartAddSeries>
+
+    <echo msg="Saving chart: chart1.eps"/>
+    <chartSave chartId="chart1" file="chart1.eps" format="EPS">
+        <title>Load on Abilene Network</title>
+        <xAxisTitle>Links</xAxisTitle>
+        <yAxisTitle>Load</yAxisTitle>
+        <width>800</width>
+        <height>600</height>
+        <plotter name="DecreasingLineChartPlotter"/>
+    </chartSave>
+
+    <chartDeletion chartId="chart1"/>
+</scenario>

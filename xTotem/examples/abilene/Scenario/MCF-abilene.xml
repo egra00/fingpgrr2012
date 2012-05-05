@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+    This scenario computes a multi-commodity flow on abilene network and display the link load.
+
+    Author : Fabian Skivee (skivee@run.montefiore.ulg.ac.be)
+-->
+<scenario
+    xsi:schemaLocation="http://jaxb.model.scenario.totem.run.montefiore.ulg.ac.be http://totem.run.montefiore.ulg.ac.be/Schema/Scenario-v1_3.xsd"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://jaxb.model.scenario.totem.run.montefiore.ulg.ac.be">
+    <loadDomain file="examples/abilene/abilene.xml" removeMultipleLinks="true" defaultDomain="true"/>
+    <loadTrafficMatrix file="examples/abilene/TrafficMatrix/TM0-abilene.xml"/>
+    <computeMCF runGLPSOL="true"/>
+</scenario>

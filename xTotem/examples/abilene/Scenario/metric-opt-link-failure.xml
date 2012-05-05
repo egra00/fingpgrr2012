@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<!--
+    This scenario optimises the IP metric using IGPWO on abilene network and then
+    simulates a failure of each links. For each failure, it displays the link load.
+
+    Author : Fabian Skivee (skivee@run.montefiore.ulg.ac.be)
+-->
+<scenario
+    xsi:schemaLocation="http://jaxb.model.scenario.totem.run.montefiore.ulg.ac.be http://totem.run.montefiore.ulg.ac.be/Schema/Scenario-v1_3.xsd"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://jaxb.model.scenario.totem.run.montefiore.ulg.ac.be">
+    <loadDomain file="examples/abilene/abilene.xml" defaultDomain="true" removeMultipleLinks="true"/>
+    <loadTrafficMatrix file="examples/abilene/TrafficMatrix/TM0-abilene.xml"/>
+    <echo msg="Link loads with standard weights (spf)"/>
+    <IGPRouting />
+    <showLinkLoad perLink="false"/>
+    <startAlgo name="IGPWO"/>
+    <echo msg=""/>
+    <echo msg="Executing IGPWO"/>
+    <IGPWOCalculateWeights  nbIter="50" maxPossibleWeight="150"/>
+    <echo msg=""/>
+    <echo msg="Information about link loads with new optimized TE weights"/>
+    <startAlgo name="CSPFTEMetric"/>
+    <IGPRouting SPFtype="CSPFTEMetric"/>
+    <showLinkLoad perLink="false"/>
+    <echo msg=""/>
+    <echo msg="Link failure analysis"/>
+    <linkDown linkId="STTL-DNVR"/>
+    <linkDown linkId="DNVR-STTL"/>
+    <echo msg="Failure of link between STTL and DNVR"/>
+    <showLinkLoad perLink="false"/>
+    <linkUp linkId="STTL-DNVR"/>
+    <linkUp linkId="DNVR-STTL"/>
+    <linkDown linkId="STTL-SNVA"/>
+    <linkDown linkId="SNVA-STTL"/>
+    <echo msg="Failure of link between STTL and SNVA"/>
+    <showLinkLoad perLink="false"/>
+    <linkUp linkId="STTL-SNVA"/>
+    <linkUp linkId="SNVA-STTL"/>
+    <linkDown linkId="DNVR-KSCY"/>
+    <linkDown linkId="KSCY-DNVR"/>
+    <echo msg="Failure of link between DNVR and KSCY"/>
+    <showLinkLoad perLink="false"/>
+    <linkUp linkId="DNVR-KSCY"/>
+    <linkUp linkId="KSCY-DNVR"/>
+    <linkDown linkId="DNVR-SNVA"/>
+    <linkDown linkId="SNVA-DNVR"/>
+    <echo msg="Failure of link between DNVR and SNVA"/>
+    <showLinkLoad perLink="false"/>
+    <linkUp linkId="DNVR-SNVA"/>
+    <linkUp linkId="SNVA-DNVR"/>
+    <linkDown linkId="KSCY-IPLS"/>
+    <linkDown linkId="IPLS-KSCY"/>
+    <echo msg="Failure of link between KSCY and IPLS"/>
+    <showLinkLoad perLink="false"/>
+    <linkUp linkId="KSCY-IPLS"/>
+    <linkUp linkId="IPLS-KSCY"/>
+    <linkDown linkId="KSCY-HSTN"/>
+    <linkDown linkId="HSTN-KSCY"/>
+    <echo msg="Failure of link between KSCY and HSTN"/>
+    <showLinkLoad perLink="false"/>
+    <linkUp linkId="KSCY-HSTN"/>
+    <linkUp linkId="HSTN-KSCY"/>
+    <linkDown linkId="IPLS-CHIN"/>
+    <linkDown linkId="CHIN-IPLS"/>
+    <echo msg="Failure of link between IPLS and CHIN"/>
+    <showLinkLoad perLink="false"/>
+    <linkUp linkId="IPLS-CHIN"/>
+    <linkUp linkId="CHIN-IPLS"/>
+    <linkDown linkId="IPLS-ATLA"/>
+    <linkDown linkId="ATLA-IPLS"/>
+    <echo msg="Failure of link between IPLS and ATLA"/>
+    <showLinkLoad perLink="false"/>
+    <linkUp linkId="IPLS-ATLA"/>
+    <linkUp linkId="ATLA-IPLS"/>
+    <linkDown linkId="CHIN-NYCM"/>
+    <linkDown linkId="NYCM-CHIN"/>
+    <echo msg="Failure of link between CHIN and NYCM"/>
+    <showLinkLoad perLink="false"/>
+    <linkUp linkId="CHIN-NYCM"/>
+    <linkUp linkId="NYCM-CHIN"/>
+    <linkDown linkId="NYCM-WASH"/>
+    <linkDown linkId="WASH-NYCM"/>
+    <echo msg="Failure of link between NYCM and WASH"/>
+    <showLinkLoad perLink="false"/>
+    <linkUp linkId="NYCM-WASH"/>
+    <linkUp linkId="WASH-NYCM"/>
+    <linkDown linkId="WASH-ATLA"/>
+    <linkDown linkId="ATLA-WASH"/>
+    <echo msg="Failure of link between WASH and ATLA"/>
+    <showLinkLoad perLink="false"/>
+    <linkUp linkId="WASH-ATLA"/>
+    <linkUp linkId="ATLA-WASH"/>
+    <linkDown linkId="ATLA-HSTN"/>
+    <linkDown linkId="HSTN-ATLA"/>
+    <echo msg="Failure of link between ATLA and HSTN"/>
+    <showLinkLoad perLink="false"/>
+    <linkUp linkId="ATLA-HSTN"/>
+    <linkUp linkId="HSTN-ATLA"/>
+    <linkDown linkId="HSTN-LOSA"/>
+    <linkDown linkId="LOSA-HSTN"/>
+    <echo msg="Failure of link between HSTN and LOSA"/>
+    <showLinkLoad perLink="false"/>
+    <linkUp linkId="HSTN-LOSA"/>
+    <linkUp linkId="LOSA-HSTN"/>
+    <linkDown linkId="LOSA-SNVA"/>
+    <linkDown linkId="SNVA-LOSA"/>
+    <echo msg="Failure of link between LOSA and SNVA"/>
+    <showLinkLoad perLink="false"/>
+    <linkUp linkId="LOSA-SNVA"/>
+    <linkUp linkId="SNVA-LOSA"/>
+</scenario>
+

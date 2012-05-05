@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<domain ASID="0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="http://totem.run.montefiore.ulg.ac.be/Schema/Domain-v1_3.xsd">
+    <info>
+        <title/>
+        <author/>
+        <description/>
+        <units>
+            <unit type="bandwidth" value="mbps"/>
+            <unit type="delay" value="ms"/>
+        </units>
+        <diff-serv>
+            <priority ct="0" id="0" preemption="0"/>
+            <priority ct="1" id="1" preemption="0"/>
+            <priority ct="2" id="2" preemption="0"/>
+            <priority ct="3" id="3" preemption="0"/>
+        </diff-serv>
+    </info>
+    <topology>
+        <nodes>
+            <node id="1">
+                <location latitude="693.5833" longitude="335.1"/>
+            </node>
+            <node id="2">
+                <location latitude="686.73334" longitude="750.6667"/>
+            </node>
+            <node id="3">
+                <location latitude="679.88336" longitude="1227.8833"/>
+            </node>
+        </nodes>
+        <links>
+            <link id="1-2">
+                <from node="1"/>
+                <to node="2"/>
+            </link>
+            <link id="2-1">
+                <from node="2"/>
+                <to node="1"/>
+            </link>
+            <link id="2-3">
+                <from node="2"/>
+                <to node="3"/>
+            </link>
+            <link id="3-2">
+                <from node="3"/>
+                <to node="2"/>
+            </link>
+        </links>
+    </topology>
+    <igp>
+        <links>
+            <link id="1-2">
+                <static>
+                    <metric>0.0</metric>
+                    <te-metric>0.0</te-metric>
+                    <mrbw>100.0</mrbw>
+                    <mbw>100.0</mbw>
+                    <diff-serv>
+                        <bcm>RDM</bcm>
+                        <bc id="0">100.0</bc>
+                        <bc id="1">80.0</bc>
+                        <bc id="2">45.0</bc>
+                        <bc id="3">25.0</bc>
+                    </diff-serv>
+                </static>
+            </link>
+            <link id="2-1">
+                <static>
+                    <metric>0.0</metric>
+                    <te-metric>0.0</te-metric>
+                    <mrbw>100.0</mrbw>
+                    <mbw>100.0</mbw>
+                    <diff-serv>
+                        <bcm>RDM</bcm>
+                        <bc id="0">100.0</bc>
+                        <bc id="1">80.0</bc>
+                        <bc id="2">45.0</bc>
+                        <bc id="3">25.0</bc>
+                    </diff-serv>
+                </static>
+            </link>
+            <link id="2-3">
+                <static>
+                    <metric>0.0</metric>
+                    <te-metric>0.0</te-metric>
+                    <mrbw>100.0</mrbw>
+                    <mbw>100.0</mbw>
+                    <diff-serv>
+                        <bcm>RDM</bcm>
+                        <bc id="0">100.0</bc>
+                        <bc id="1">80.0</bc>
+                        <bc id="2">45.0</bc>
+                        <bc id="3">25.0</bc>
+                    </diff-serv>
+                </static>
+            </link>
+            <link id="3-2">
+                <static>
+                    <metric>0.0</metric>
+                    <te-metric>0.0</te-metric>
+                    <mrbw>100.0</mrbw>
+                    <mbw>100.0</mbw>
+                    <diff-serv>
+                        <bcm>RDM</bcm>
+                        <bc id="0">100.0</bc>
+                        <bc id="1">80.0</bc>
+                        <bc id="2">45.0</bc>
+                        <bc id="3">25.0</bc>
+                    </diff-serv>
+                </static>
+            </link>
+        </links>
+    </igp>
+</domain>
+

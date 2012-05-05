@@ -735,9 +735,9 @@ public class MainWindow extends JFrame implements InterDomainManagerListener {
          * @param e the fired event
          */
         public void windowClosing(WindowEvent e) {
-            if (e.getWindow() instanceof MainWindow)
+            /*if (e.getWindow() instanceof MainWindow)
                 ((MainWindow) e.getWindow()).exit();
-            else
+            else*/
                 System.exit(1);
         }
     }

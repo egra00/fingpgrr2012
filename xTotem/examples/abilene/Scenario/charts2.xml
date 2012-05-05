@@ -1,0 +1,703 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<!--
+    This scenario illustrates the use of the chart interface.
+    It computes a fullmesh with CSPF then with DAMOTE and shows the difference of loads
+    on a single chart.
+
+    Author: Gael Monfort (monfort@run.montefiore.ulg.ac.be)
+-->
+<scenario
+    xsi:schemaLocation="http://jaxb.model.scenario.totem.run.montefiore.ulg.ac.be http://totem.run.montefiore.ulg.ac.be/Schema/Scenario-v1_3.xsd"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://jaxb.model.scenario.totem.run.montefiore.ulg.ac.be">
+    <loadDomain file="examples/abilene/abilene.xml" defaultDomain="true" removeMultipleLinks="true"/>
+
+    <chartCreation id="chart1">
+        <collector name="LinksReservedBWDataCollector"/>
+    </chartCreation>
+
+    <startAlgo name="CSPF"/>
+    <LSPCreation bw="518.0" dst="WASH" lspId="0" src="SNVA">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="518.0" dst="IPLS" lspId="1" src="SNVA">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="518.0" dst="ATLA" lspId="2" src="LOSA">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="518.0" dst="IPLS" lspId="3" src="LOSA">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="518.0" dst="STTL" lspId="4" src="LOSA">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="518.0" dst="CHIN" lspId="5" src="HSTN">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="518.0" dst="LOSA" lspId="6" src="ATLA">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="518.0" dst="CHIN" lspId="7" src="ATLA">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="518.0" dst="STTL" lspId="8" src="ATLA">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="518.0" dst="CHIN" lspId="9" src="WASH">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="518.0" dst="DNVR" lspId="10" src="WASH">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="518.0" dst="HSTN" lspId="11" src="NYCM">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="518.0" dst="DNVR" lspId="12" src="NYCM">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="518.0" dst="ATLA" lspId="13" src="CHIN">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="518.0" dst="SNVA" lspId="14" src="IPLS">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="518.0" dst="ATLA" lspId="15" src="IPLS">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="518.0" dst="CHIN" lspId="16" src="IPLS">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="518.0" dst="STTL" lspId="17" src="IPLS">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="518.0" dst="WASH" lspId="18" src="KSCY">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="518.0" dst="CHIN" lspId="19" src="KSCY">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="518.0" dst="STTL" lspId="20" src="KSCY">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="518.0" dst="WASH" lspId="21" src="DNVR">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="518.0" dst="STTL" lspId="22" src="DNVR">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="518.0" dst="NYCM" lspId="23" src="STTL">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="518.0" dst="KSCY" lspId="24" src="STTL">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="LOSA" lspId="25" src="SNVA">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="ATLA" lspId="26" src="SNVA">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="CHIN" lspId="27" src="SNVA">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="STTL" lspId="28" src="SNVA">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="HSTN" lspId="29" src="LOSA">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="CHIN" lspId="30" src="LOSA">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="DNVR" lspId="31" src="LOSA">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="SNVA" lspId="32" src="HSTN">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="LOSA" lspId="33" src="HSTN">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="WASH" lspId="34" src="HSTN">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="IPLS" lspId="35" src="HSTN">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="DNVR" lspId="36" src="HSTN">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="SNVA" lspId="37" src="ATLA">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="HSTN" lspId="38" src="ATLA">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="NYCM" lspId="39" src="ATLA">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="IPLS" lspId="40" src="ATLA">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="DNVR" lspId="41" src="ATLA">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="SNVA" lspId="42" src="WASH">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="NYCM" lspId="43" src="WASH">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="KSCY" lspId="44" src="WASH">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="LOSA" lspId="45" src="NYCM">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="ATLA" lspId="46" src="NYCM">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="IPLS" lspId="47" src="NYCM">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="SNVA" lspId="48" src="CHIN">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="HSTN" lspId="49" src="CHIN">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="NYCM" lspId="50" src="CHIN">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="DNVR" lspId="51" src="CHIN">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="LOSA" lspId="52" src="IPLS">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="NYCM" lspId="53" src="IPLS">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="DNVR" lspId="54" src="IPLS">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="SNVA" lspId="55" src="KSCY">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="ATLA" lspId="56" src="KSCY">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="IPLS" lspId="57" src="KSCY">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="LOSA" lspId="58" src="DNVR">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="ATLA" lspId="59" src="DNVR">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="KSCY" lspId="60" src="DNVR">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="LOSA" lspId="61" src="STTL">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="ATLA" lspId="62" src="STTL">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="IPLS" lspId="63" src="STTL">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="DNVR" lspId="64" src="STTL">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="250.0" dst="NYCM" lspId="65" src="SNVA">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="250.0" dst="DNVR" lspId="66" src="SNVA">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="250.0" dst="WASH" lspId="67" src="LOSA">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="250.0" dst="NYCM" lspId="68" src="LOSA">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="250.0" dst="ATLA" lspId="69" src="HSTN">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="250.0" dst="KSCY" lspId="70" src="HSTN">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="250.0" dst="WASH" lspId="71" src="ATLA">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="250.0" dst="KSCY" lspId="72" src="ATLA">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="250.0" dst="HSTN" lspId="73" src="WASH">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="250.0" dst="IPLS" lspId="74" src="WASH">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="250.0" dst="SNVA" lspId="75" src="NYCM">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="250.0" dst="CHIN" lspId="76" src="NYCM">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="250.0" dst="KSCY" lspId="77" src="NYCM">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="250.0" dst="LOSA" lspId="78" src="CHIN">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="250.0" dst="IPLS" lspId="79" src="CHIN">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="250.0" dst="STTL" lspId="80" src="CHIN">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="250.0" dst="WASH" lspId="81" src="IPLS">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="250.0" dst="LOSA" lspId="82" src="KSCY">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="250.0" dst="HSTN" lspId="83" src="KSCY">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="250.0" dst="DNVR" lspId="84" src="KSCY">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="250.0" dst="SNVA" lspId="85" src="DNVR">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="250.0" dst="NYCM" lspId="86" src="DNVR">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="250.0" dst="IPLS" lspId="87" src="DNVR">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="250.0" dst="SNVA" lspId="88" src="STTL">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="175.0" dst="HSTN" lspId="89" src="SNVA">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="175.0" dst="KSCY" lspId="90" src="SNVA">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="175.0" dst="SNVA" lspId="91" src="LOSA">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="175.0" dst="KSCY" lspId="92" src="LOSA">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="175.0" dst="NYCM" lspId="93" src="HSTN">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="175.0" dst="STTL" lspId="94" src="HSTN">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="175.0" dst="LOSA" lspId="95" src="WASH">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="175.0" dst="ATLA" lspId="96" src="WASH">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="175.0" dst="STTL" lspId="97" src="WASH">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="175.0" dst="WASH" lspId="98" src="NYCM">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="175.0" dst="STTL" lspId="99" src="NYCM">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="175.0" dst="WASH" lspId="100" src="CHIN">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="175.0" dst="KSCY" lspId="101" src="CHIN">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="175.0" dst="HSTN" lspId="102" src="IPLS">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="175.0" dst="KSCY" lspId="103" src="IPLS">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="175.0" dst="NYCM" lspId="104" src="KSCY">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="175.0" dst="HSTN" lspId="105" src="DNVR">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="175.0" dst="CHIN" lspId="106" src="DNVR">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="175.0" dst="HSTN" lspId="107" src="STTL">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="175.0" dst="WASH" lspId="108" src="STTL">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <LSPCreation bw="175.0" dst="CHIN" lspId="109" src="STTL">
+        <routingAlgo name="CSPF"/>
+    </LSPCreation>
+    <chartAddSeries chartId="chart1" seriesName="CSPF"/>
+    <deleteAllLSP/>
+
+    <startAlgo name="DAMOTE">
+        <param name="loadbal">1</param>
+        <param name="tMin">0</param>
+    </startAlgo>
+
+    <LSPCreation bw="518.0" dst="WASH" lspId="0" src="SNVA">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="518.0" dst="IPLS" lspId="1" src="SNVA">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="518.0" dst="ATLA" lspId="2" src="LOSA">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="518.0" dst="IPLS" lspId="3" src="LOSA">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="518.0" dst="STTL" lspId="4" src="LOSA">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="518.0" dst="CHIN" lspId="5" src="HSTN">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="518.0" dst="LOSA" lspId="6" src="ATLA">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="518.0" dst="CHIN" lspId="7" src="ATLA">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="518.0" dst="STTL" lspId="8" src="ATLA">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="518.0" dst="CHIN" lspId="9" src="WASH">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="518.0" dst="DNVR" lspId="10" src="WASH">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="518.0" dst="HSTN" lspId="11" src="NYCM">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="518.0" dst="DNVR" lspId="12" src="NYCM">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="518.0" dst="ATLA" lspId="13" src="CHIN">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="518.0" dst="SNVA" lspId="14" src="IPLS">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="518.0" dst="ATLA" lspId="15" src="IPLS">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="518.0" dst="CHIN" lspId="16" src="IPLS">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="518.0" dst="STTL" lspId="17" src="IPLS">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="518.0" dst="WASH" lspId="18" src="KSCY">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="518.0" dst="CHIN" lspId="19" src="KSCY">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="518.0" dst="STTL" lspId="20" src="KSCY">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="518.0" dst="WASH" lspId="21" src="DNVR">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="518.0" dst="STTL" lspId="22" src="DNVR">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="518.0" dst="NYCM" lspId="23" src="STTL">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="518.0" dst="KSCY" lspId="24" src="STTL">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="LOSA" lspId="25" src="SNVA">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="ATLA" lspId="26" src="SNVA">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="CHIN" lspId="27" src="SNVA">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="STTL" lspId="28" src="SNVA">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="HSTN" lspId="29" src="LOSA">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="CHIN" lspId="30" src="LOSA">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="DNVR" lspId="31" src="LOSA">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="SNVA" lspId="32" src="HSTN">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="LOSA" lspId="33" src="HSTN">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="WASH" lspId="34" src="HSTN">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="IPLS" lspId="35" src="HSTN">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="DNVR" lspId="36" src="HSTN">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="SNVA" lspId="37" src="ATLA">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="HSTN" lspId="38" src="ATLA">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="NYCM" lspId="39" src="ATLA">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="IPLS" lspId="40" src="ATLA">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="DNVR" lspId="41" src="ATLA">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="SNVA" lspId="42" src="WASH">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="NYCM" lspId="43" src="WASH">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="KSCY" lspId="44" src="WASH">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="LOSA" lspId="45" src="NYCM">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="ATLA" lspId="46" src="NYCM">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="IPLS" lspId="47" src="NYCM">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="SNVA" lspId="48" src="CHIN">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="HSTN" lspId="49" src="CHIN">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="NYCM" lspId="50" src="CHIN">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="DNVR" lspId="51" src="CHIN">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="LOSA" lspId="52" src="IPLS">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="NYCM" lspId="53" src="IPLS">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="DNVR" lspId="54" src="IPLS">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="SNVA" lspId="55" src="KSCY">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="ATLA" lspId="56" src="KSCY">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="IPLS" lspId="57" src="KSCY">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="LOSA" lspId="58" src="DNVR">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="ATLA" lspId="59" src="DNVR">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="KSCY" lspId="60" src="DNVR">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="LOSA" lspId="61" src="STTL">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="ATLA" lspId="62" src="STTL">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="IPLS" lspId="63" src="STTL">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="315.0" dst="DNVR" lspId="64" src="STTL">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="250.0" dst="NYCM" lspId="65" src="SNVA">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="250.0" dst="DNVR" lspId="66" src="SNVA">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="250.0" dst="WASH" lspId="67" src="LOSA">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="250.0" dst="NYCM" lspId="68" src="LOSA">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="250.0" dst="ATLA" lspId="69" src="HSTN">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="250.0" dst="KSCY" lspId="70" src="HSTN">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="250.0" dst="WASH" lspId="71" src="ATLA">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="250.0" dst="KSCY" lspId="72" src="ATLA">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="250.0" dst="HSTN" lspId="73" src="WASH">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="250.0" dst="IPLS" lspId="74" src="WASH">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="250.0" dst="SNVA" lspId="75" src="NYCM">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="250.0" dst="CHIN" lspId="76" src="NYCM">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="250.0" dst="KSCY" lspId="77" src="NYCM">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="250.0" dst="LOSA" lspId="78" src="CHIN">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="250.0" dst="IPLS" lspId="79" src="CHIN">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="250.0" dst="STTL" lspId="80" src="CHIN">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="250.0" dst="WASH" lspId="81" src="IPLS">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="250.0" dst="LOSA" lspId="82" src="KSCY">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="250.0" dst="HSTN" lspId="83" src="KSCY">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="250.0" dst="DNVR" lspId="84" src="KSCY">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="250.0" dst="SNVA" lspId="85" src="DNVR">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="250.0" dst="NYCM" lspId="86" src="DNVR">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="250.0" dst="IPLS" lspId="87" src="DNVR">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="250.0" dst="SNVA" lspId="88" src="STTL">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="175.0" dst="HSTN" lspId="89" src="SNVA">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="175.0" dst="KSCY" lspId="90" src="SNVA">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="175.0" dst="SNVA" lspId="91" src="LOSA">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="175.0" dst="KSCY" lspId="92" src="LOSA">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="175.0" dst="NYCM" lspId="93" src="HSTN">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="175.0" dst="STTL" lspId="94" src="HSTN">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="175.0" dst="LOSA" lspId="95" src="WASH">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="175.0" dst="ATLA" lspId="96" src="WASH">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="175.0" dst="STTL" lspId="97" src="WASH">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="175.0" dst="WASH" lspId="98" src="NYCM">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="175.0" dst="STTL" lspId="99" src="NYCM">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="175.0" dst="WASH" lspId="100" src="CHIN">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="175.0" dst="KSCY" lspId="101" src="CHIN">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="175.0" dst="HSTN" lspId="102" src="IPLS">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="175.0" dst="KSCY" lspId="103" src="IPLS">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="175.0" dst="NYCM" lspId="104" src="KSCY">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="175.0" dst="HSTN" lspId="105" src="DNVR">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="175.0" dst="CHIN" lspId="106" src="DNVR">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="175.0" dst="HSTN" lspId="107" src="STTL">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="175.0" dst="WASH" lspId="108" src="STTL">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <LSPCreation bw="175.0" dst="CHIN" lspId="109" src="STTL">
+        <routingAlgo name="DAMOTE"/>
+    </LSPCreation>
+    <chartAddSeries chartId="chart1" seriesName="DAMOTE (load balancing mode)"/>
+
+    <echo msg="Saving chart: chart2.eps"/>    
+    <chartSave chartId="chart1" file="chart2.eps" format="EPS">
+        <title>Load on Abilene Network</title>
+        <xAxisTitle>Load (relative)</xAxisTitle>
+        <yAxisTitle>Number of links (%)</yAxisTitle>
+        <width>800</width>
+        <height>600</height>
+        <plotter name="LoadIntervalChartPlotter">
+            <param name="nbInterval">5</param>
+        </plotter>
+    </chartSave>
+
+    <chartDeletion chartId="chart1"/>
+</scenario>

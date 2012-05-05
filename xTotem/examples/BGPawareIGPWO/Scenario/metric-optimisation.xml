@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+    This scenario optimises the IP metric using BGP-aware IGP-WO.
+    It displays the link load before and after the metric optimisation.
+
+    Author : Simon Balon (balon@run.montefiore.ulg.ac.be)
+-->
+<scenario
+    xsi:schemaLocation="http://jaxb.model.scenario.totem.run.montefiore.ulg.ac.be http://totem.run.montefiore.ulg.ac.be/Schema/Scenario-v1_3.xsd"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://jaxb.model.scenario.totem.run.montefiore.ulg.ac.be">
+    <loadDomain file="examples/BGPawareIGPWO/BGPawareIGPWO-topo.xml" defaultDomain="true"/>
+    <loadTrafficMatrix file="examples/BGPawareIGPWO/TrafficMatrix/BGPawareIGPWO-TM.xml"/>
+    <echo msg="Link loads with standard weights (spf)"/>
+    <startAlgo name="CSPF"/>
+    <startAlgo name="CSPFTEMetric"/>
+    <IGPRouting ECMP="true"/>
+    <showLinkLoad perLink="false"/>
+    <startAlgo name="IGPWO"/>
+    <echo msg=""/>
+    <echo msg="Executing IGPWO"/>
+    <IGPWOCalculateWeights  nbIter="50" maxPossibleWeight="150"/>
+    <echo msg=""/>
+    <echo msg="Information about link loads with IGPWO optimized TE weights"/>
+    <IGPRouting SPFtype="CSPFTEMetric" ECMP="true"/>
+    <showLinkLoad perLink="false"/>
+    <startAlgo name="bgpAwareIGPWO"/>
+    <echo msg=""/>
+    <echo msg="Executing bgpAwareIGPWO"/>
+    <bgpAwareIGPWO  nbIter="50" maxPossibleWeight="150" interdomainTE="true"/>
+    <echo msg=""/>
+    <echo msg="Information about link loads with bgpAwareIGPWO optimized TE weights"/>
+    <showLinkLoad perLink="false"/>
+</scenario>
