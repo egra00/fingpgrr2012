@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+
+<scenario
+    xsi:schemaLocation="http://jaxb.model.scenario.totem.run.montefiore.ulg.ac.be http://totem.run.montefiore.ulg.ac.be/Schema/Scenario-v1_3.xsd http://jaxb.model.scenario.cplexMCNF.repository.totem.run.montefiore.ulg.ac.be http://totem.run.montefiore.ulg.ac.be/Schema/CPLEX-MCNF-Scenario-v1_0.xsd"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:cplex="http://jaxb.model.scenario.cplexMCNF.repository.totem.run.montefiore.ulg.ac.be"
+    xmlns="http://jaxb.model.scenario.totem.run.montefiore.ulg.ac.be">
+    <loadDomain file="./examples/abilene/abilene.xml" defaultDomain="true"/>
+    <loadTrafficMatrix file="./examples/abilene/TrafficMatrix/TM0-abilene.xml" TMID="0"/>
+    <cplex:ComputeMCNFOptimalRouting verbose="false" displayTEMetrics="false">
+     <cplex:objectiveFunction name="Degrande">
+     	<param name="C_B">0.1</param>
+     	<param name="C_U">0.9</param>
+     </cplex:objectiveFunction>
+     <cplex:formulation>
+        <cplex:linkPath nbPaths="2"/>
+     </cplex:formulation>
+    </cplex:ComputeMCNFOptimalRouting>
+</scenario>
+

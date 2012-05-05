@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+
+<!--
+	This scenario creates a chart comparing the load resulting from different
+	"SPF" routing schemes on Abilene.
+	
+	Author: Jean Lepropre (lepropre@run.montefiore.ulg.ac.be)
+-->
+
+<scenario
+    xsi:schemaLocation="http://jaxb.model.scenario.totem.run.montefiore.ulg.ac.be http://totem.run.montefiore.ulg.ac.be/Schema/Scenario-v1_3.xsd"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://jaxb.model.scenario.totem.run.montefiore.ulg.ac.be">
+    <loadDomain file="examples/abilene/abilene.xml" defaultDomain="true" removeMultipleLinks="true"/>
+    <loadTrafficMatrix file="examples/abilene/TrafficMatrix/TM1-abilene.xml"/>
+
+    <chartCreation id="load-chart">
+    	<collector name="LinksLoadDataCollector"/>
+    </chartCreation>
+
+    <startAlgo name="CSPF"/>
+    <chartAddSeries chartId="load-chart" seriesName="SPF">
+	<collector>
+	    <param name="routingAlgo">CSPF</param>
+	</collector>
+    </chartAddSeries>
+
+    <startAlgo name="CSPFInvCap"/>
+    <chartAddSeries chartId="load-chart" seriesName="SPFInvCap">
+	<collector>
+	    <param name="routingAlgo">CSPFInvCap</param>
+	</collector>
+    </chartAddSeries>
+    
+    <startAlgo name="IGPWO"/>
+    <IGPWOCalculateWeights nbIter="50" maxPossibleWeight="150"/>
+    <startAlgo name="CSPFTEMetric"/>
+    <chartAddSeries chartId="load-chart" seriesName="IGPWO">
+	<collector>
+	    <param name="routingAlgo">CSPFTEMetric</param>
+	</collector>
+    </chartAddSeries>
+
+    <echo msg="Saving chart: abilene-SPF-load-chart.png"/>
+    <chartSave chartId="load-chart" file="abilene-SPF-load-chart.png" format="PNG">
+    	<title>Load on Abilene Network</title>
+    	<xAxisTitle>Links</xAxisTitle>
+    	<yAxisTitle>Load</yAxisTitle>
+    	<width>1024</width>
+    	<height>768</height>
+    	<plotter name="DecreasingLineChartPlotter"/>
+    </chartSave>
+    <chartDeletion chartId="load-chart"/>
+</scenario>

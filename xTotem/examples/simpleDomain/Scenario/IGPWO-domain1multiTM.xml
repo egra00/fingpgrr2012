@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<scenario
+    xsi:schemaLocation="http://jaxb.model.scenario.totem.run.montefiore.ulg.ac.be http://totem.run.montefiore.ulg.ac.be/Schema/Scenario-v1_3.xsd"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://jaxb.model.scenario.totem.run.montefiore.ulg.ac.be">
+    <!-- replace here using your own topologies! -->
+    <echo msg="Loading a topology file (ASID 10013)"/>
+    <loadDomain file="examples/simpleDomain/domain1.xml" defaultDomain="true"/>
+    <echo msg=""/>
+    <echo msg="Loading two demand matrices files (for ASID 10013, with TMID 0 and TMID 1)"/>
+    <loadTrafficMatrix file="examples/simpleDomain/TrafficMatrix/TM1-domain1.xml" TMID="0"/>
+    <loadTrafficMatrix file="examples/simpleDomain/TrafficMatrix/TM2-domain1.xml" TMID="1"/>
+    <echo msg=""/>
+    <echo msg="Printing information about link loads with standard weights (TM1)"/>
+    <IGPRouting TMID="0"/>
+    <showLinkLoad perLink="false"/>
+    <echo msg="Printing information about link loads with standard weights (TM2)"/>
+    <IGPRouting TMID="1"/>
+    <showLinkLoad perLink="false"/>
+    <startAlgo name="IGPWO"/>
+    <echo msg=""/>
+    <echo msg="Executing IGPWO for TM1 and TM2"/>
+    <IGPWOCalculateWeights  nbIter="50" maxPossibleWeight="150">
+	<trafficMatrix TMID="0"/>
+	<trafficMatrix TMID="1"/>
+    </IGPWOCalculateWeights>
+    <startAlgo name="CSPFTEMetric"/>
+    <echo msg="Printing information about link loads with optimized TE weights (TM1)"/>
+    <IGPRouting TMID="0" SPFtype="CSPFTEMetric"/>
+    <showLinkLoad perLink="false"/>
+    <echo msg="Printing information about link loads with optimized TE weights (TM2)"/>
+    <IGPRouting TMID="1" SPFtype="CSPFTEMetric"/>
+    <showLinkLoad perLink="false"/>
+</scenario>

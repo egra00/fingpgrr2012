@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<scenario
+    xsi:schemaLocation="http://jaxb.model.scenario.totem.run.montefiore.ulg.ac.be http://totem.run.montefiore.ulg.ac.be/Schema/Scenario-v1_1.xsd"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://jaxb.model.scenario.totem.run.montefiore.ulg.ac.be">
+    <echo msg=""/>
+    <echo msg="Loading a topology file which specifies 1 CT and 3 preemption levels"/>
+    <echo msg="We will establish LSPs between node 2 and 4.  The link between both nodes" />
+    <echo msg="is link 2_2 -> 4_2 and its capacity is 200000.0 "/>
+    
+    <loadDomain file="examples/simpleDomain/domain1.xml" defaultDomain="true"/>
+
+    <startAlgo name="DAMOTE" ASID="10013">
+        <param name="loadBal">0</param>
+        <param name="tMin">1</param>
+        <param name="allowReroute">true</param>
+        <param name="colorClause">false</param>
+        <param name="capacityClause">true</param>
+    </startAlgo>
+    <echo msg=""/>
+    <ShowLinkReservableBandwidth linkId="2_2 -> 4_2" priority="0"/>
+    <ShowLinkReservableBandwidth linkId="2_2 -> 4_2" priority="1"/>
+    <ShowLinkReservableBandwidth linkId="2_2 -> 4_2" priority="2"/>
+    <echo msg=""/>
+    <echo msg="Creating a first lsp at priority 2 with bw equals to 50000"/>
+    <LSPCreation src="2" dst="4" lspId="Primary_0" bw="50000">
+        <diff-serv>
+	        <ct>0</ct>
+	        <preemption holding="2" setup="2"/>
+	    </diff-serv>
+        <routingAlgo name="DAMOTE">
+            <param name="preempt">true</param>
+        </routingAlgo>
+    </LSPCreation>
+    <ShowLinkReservableBandwidth linkId="2_2 -> 4_2" priority="0"/>
+    <ShowLinkReservableBandwidth linkId="2_2 -> 4_2" priority="1"/>
+    <ShowLinkReservableBandwidth linkId="2_2 -> 4_2" priority="2"/>
+    <echo msg=""/>
+    <echo msg="Creating a second lsp at priority 2 with bw equals to 50000"/>
+    <LSPCreation src="2" dst="4" lspId="Primary_1" bw="50000">
+        <diff-serv>
+	        <ct>0</ct>
+	        <preemption holding="2" setup="2"/>
+	    </diff-serv>
+        <routingAlgo name="DAMOTE">
+            <param name="preempt">true</param>
+        </routingAlgo>
+    </LSPCreation>
+    <ShowLinkReservableBandwidth linkId="2_2 -> 4_2" priority="0"/>
+    <ShowLinkReservableBandwidth linkId="2_2 -> 4_2" priority="1"/>
+    <ShowLinkReservableBandwidth linkId="2_2 -> 4_2" priority="2"/>
+    <echo msg=""/>
+    <echo msg="Creating a third lsp at priority 1 with bw equals to 50000"/>
+    <LSPCreation src="2" dst="4" lspId="Primary_2" bw="50000">
+        <diff-serv>
+	        <ct>0</ct>
+	        <preemption holding="1" setup="1"/>
+	    </diff-serv>
+        <routingAlgo name="DAMOTE">
+            <param name="preempt">true</param>
+        </routingAlgo>
+    </LSPCreation>
+    <ShowLinkReservableBandwidth linkId="2_2 -> 4_2" priority="0"/>
+    <ShowLinkReservableBandwidth linkId="2_2 -> 4_2" priority="1"/>
+    <ShowLinkReservableBandwidth linkId="2_2 -> 4_2" priority="2"/>
+    <echo msg=""/>
+    <echo msg="Creating a fourth lsp at priority 1 with bw equals to 50000"/>
+    <LSPCreation src="2" dst="4" lspId="Primary_3" bw="50000">
+        <diff-serv>
+	        <ct>0</ct>
+	        <preemption holding="1" setup="1"/>
+	    </diff-serv>
+        <routingAlgo name="DAMOTE">
+            <param name="preempt">true</param>
+        </routingAlgo>
+    </LSPCreation>
+    <ShowLinkReservableBandwidth linkId="2_2 -> 4_2" priority="0"/>
+    <ShowLinkReservableBandwidth linkId="2_2 -> 4_2" priority="1"/>
+    <ShowLinkReservableBandwidth linkId="2_2 -> 4_2" priority="2"/>
+    <echo msg=""/>
+    <echo msg="Now creating a lsp at priority 0 which requires all available bandwidth"/>
+    <echo msg="DAMOTE algorithm is used to select lsps to preempt"/>
+    <LSPCreation src="2" dst="4" lspId="Primary_4" bw="200000">
+        <diff-serv>
+	        <ct>0</ct>
+	        <preemption holding="0" setup="0"/>
+	    </diff-serv>
+        <routingAlgo name="DAMOTE">
+            <param name="preempt">true</param>
+        </routingAlgo>
+    </LSPCreation>
+    <ShowLinkReservableBandwidth linkId="2_2 -> 4_2" priority="0"/>
+    <ShowLinkReservableBandwidth linkId="2_2 -> 4_2" priority="1"/>
+    <ShowLinkReservableBandwidth linkId="2_2 -> 4_2" priority="2"/>
+    <echo msg=""/>
+
+</scenario>

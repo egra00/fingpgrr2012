@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<scenario xsi:schemaLocation="http://jaxb.model.scenario.totem.run.montefiore.ulg.ac.be http://totem.run.montefiore.ulg.ac.be/Schema/Scenario-v1_3.xsd http://jaxb.model.scenario.totem.ingi.ucl.ac.be http://totem.run.montefiore.ulg.ac.be/Schema/CBGP-Scenario-v1_0.xsd http://jaxb.model.scenario.ftw.at http://totem.run.montefiore.ulg.ac.be/Schema/FTW-Scenario-v1_0.xsd http://jaxb.scenario.SAMTE.repository.totem.run.montefiore.ulg.ac.be http://totem.run.montefiore.ulg.ac.be/Schema/SAMTE-Scenario-v1_0.xsd http://jaxb.model.scenario.unina.it http://totem.run.montefiore.ulg.ac.be/Schema/UNINA-Scenario-v0_1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://jaxb.model.scenario.totem.run.montefiore.ulg.ac.be">
+    <loadDomain defaultDomain="true" file="examples/abilene/abilene.xml" removeMultipleLinks="true"/>
+    <loadTrafficMatrix file="examples/abilene/TrafficMatrix/intraDomain.2005-01-271950.xml"/>
+    <startAlgo name="CSPF" ASID="11537"/>
+    <chartCreation id="WCA">
+        <collector name="LinksLoadDataCollector">
+            <param name="asId">11537</param>
+            <param name="absoluteLoad">false</param>
+            <param name="statistic">Max</param>
+        </collector>
+    </chartCreation>
+    <IGPRouting SPFtype="CSPF" llcId="Load 0" ASID="11537"/>
+    <chartAddSeries chartId="WCA" seriesName="No failure">
+        <collector>
+            <param name="linkLoadComputerId">Load 0</param>
+        </collector>
+    </chartAddSeries>
+    <showLinkLoad llcId="Load 0" perLink="false" ASID="11537"/>
+    <linkDown linkId="STTL-DNVR"/>
+    <linkDown linkId="DNVR-STTL"/>
+    <echo msg="Failure of link between STTL and DNVR"/>
+    <showLinkLoad llcId="Load 0" perLink="false" ASID="11537"/>
+    <chartAddSeries chartId="WCA" seriesName="STTL-DNVR">
+        <collector>
+            <param name="linkLoadComputerId">Load 0</param>
+        </collector>
+    </chartAddSeries>
+    <linkUp linkId="STTL-DNVR"/>
+    <linkUp linkId="DNVR-STTL"/>
+    <linkDown linkId="STTL-SNVA"/>
+    <linkDown linkId="SNVA-STTL"/>
+    <echo msg="Failure of link between STTL and SNVA"/>
+    <showLinkLoad llcId="Load 0" perLink="false" ASID="11537"/>
+    <chartAddSeries chartId="WCA" seriesName="STTL-SNVA">
+        <collector>
+            <param name="linkLoadComputerId">Load 0</param>
+        </collector>
+    </chartAddSeries>
+    <linkUp linkId="STTL-SNVA"/>
+    <linkUp linkId="SNVA-STTL"/>
+    <linkDown linkId="DNVR-KSCY"/>
+    <linkDown linkId="KSCY-DNVR"/>
+    <echo msg="Failure of link between DNVR and KSCY"/>
+    <showLinkLoad llcId="Load 0" perLink="false" ASID="11537"/>
+    <chartAddSeries chartId="WCA" seriesName="DNVR-KSCY">
+        <collector>
+            <param name="linkLoadComputerId">Load 0</param>
+        </collector>
+    </chartAddSeries>
+    <linkUp linkId="DNVR-KSCY"/>
+    <linkUp linkId="KSCY-DNVR"/>
+    <linkDown linkId="DNVR-SNVA"/>
+    <linkDown linkId="SNVA-DNVR"/>
+    <echo msg="Failure of link between DNVR and SNVA"/>
+    <showLinkLoad llcId="Load 0" perLink="false" ASID="11537"/>
+    <chartAddSeries chartId="WCA" seriesName="DNVR-SNVA">
+        <collector>
+            <param name="linkLoadComputerId">Load 0</param>
+        </collector>
+    </chartAddSeries>
+    <linkUp linkId="DNVR-SNVA"/>
+    <linkUp linkId="SNVA-DNVR"/>
+    <linkDown linkId="KSCY-IPLS"/>
+    <linkDown linkId="IPLS-KSCY"/>
+    <echo msg="Failure of link between KSCY and IPLS"/>
+    <showLinkLoad llcId="Load 0" perLink="false" ASID="11537"/>
+    <chartAddSeries chartId="WCA" seriesName="KSCY-IPLS">
+        <collector>
+            <param name="linkLoadComputerId">Load 0</param>
+        </collector>
+    </chartAddSeries>
+    <linkUp linkId="KSCY-IPLS"/>
+    <linkUp linkId="IPLS-KSCY"/>
+    <linkDown linkId="KSCY-HSTN"/>
+    <linkDown linkId="HSTN-KSCY"/>
+    <echo msg="Failure of link between KSCY and HSTN"/>
+    <showLinkLoad llcId="Load 0" perLink="false" ASID="11537"/>
+    <chartAddSeries chartId="WCA" seriesName="KSCY-HSTN">
+        <collector>
+            <param name="linkLoadComputerId">Load 0</param>
+        </collector>
+    </chartAddSeries>
+    <linkUp linkId="KSCY-HSTN"/>
+    <linkUp linkId="HSTN-KSCY"/>
+    <linkDown linkId="IPLS-CHIN"/>
+    <linkDown linkId="CHIN-IPLS"/>
+    <echo msg="Failure of link between IPLS and CHIN"/>
+    <showLinkLoad llcId="Load 0" perLink="false" ASID="11537"/>
+    <chartAddSeries chartId="WCA" seriesName="IPLS-CHIN">
+        <collector>
+            <param name="linkLoadComputerId">Load 0</param>
+        </collector>
+    </chartAddSeries>
+    <linkUp linkId="IPLS-CHIN"/>
+    <linkUp linkId="CHIN-IPLS"/>
+    <linkDown linkId="IPLS-ATLA"/>
+    <linkDown linkId="ATLA-IPLS"/>
+    <echo msg="Failure of link between IPLS and ATLA"/>
+    <showLinkLoad llcId="Load 0" perLink="false" ASID="11537"/>
+    <chartAddSeries chartId="WCA" seriesName="IPLS-ATLA">
+        <collector>
+            <param name="linkLoadComputerId">Load 0</param>
+        </collector>
+    </chartAddSeries>
+    <linkUp linkId="IPLS-ATLA"/>
+    <linkUp linkId="ATLA-IPLS"/>
+    <linkDown linkId="CHIN-NYCM"/>
+    <linkDown linkId="NYCM-CHIN"/>
+    <echo msg="Failure of link between CHIN and NYCM"/>
+    <showLinkLoad llcId="Load 0" perLink="false" ASID="11537"/>
+    <chartAddSeries chartId="WCA" seriesName="CHIN-NYCM">
+        <collector>
+            <param name="linkLoadComputerId">Load 0</param>
+        </collector>
+    </chartAddSeries>
+    <linkUp linkId="CHIN-NYCM"/>
+    <linkUp linkId="NYCM-CHIN"/>
+    <linkDown linkId="NYCM-WASH"/>
+    <linkDown linkId="WASH-NYCM"/>
+    <echo msg="Failure of link between NYCM and WASH"/>
+    <showLinkLoad llcId="Load 0" perLink="false" ASID="11537"/>
+    <chartAddSeries chartId="WCA" seriesName="NYCM-WASH">
+        <collector>
+            <param name="linkLoadComputerId">Load 0</param>
+        </collector>
+    </chartAddSeries>
+    <linkUp linkId="NYCM-WASH"/>
+    <linkUp linkId="WASH-NYCM"/>
+    <linkDown linkId="WASH-ATLA"/>
+    <linkDown linkId="ATLA-WASH"/>
+    <echo msg="Failure of link between WASH and ATLA"/>
+    <showLinkLoad llcId="Load 0" perLink="false" ASID="11537"/>
+    <chartAddSeries chartId="WCA" seriesName="WASH-ATLA">
+        <collector>
+            <param name="linkLoadComputerId">Load 0</param>
+        </collector>
+    </chartAddSeries>
+    <linkUp linkId="WASH-ATLA"/>
+    <linkUp linkId="ATLA-WASH"/>
+    <linkDown linkId="ATLA-ATLAM5"/>
+    <linkDown linkId="ATLAM5-ATLA"/>
+    <echo msg="Failure of link between ATLA and ATLA-M5"/>
+    <showLinkLoad llcId="Load 0" perLink="false" ASID="11537"/>
+    <chartAddSeries chartId="WCA" seriesName="ATLA-ATLA-M5">
+        <collector>
+            <param name="linkLoadComputerId">Load 0</param>
+        </collector>
+    </chartAddSeries>
+    <linkUp linkId="ATLA-ATLAM5"/>
+    <linkUp linkId="ATLAM5-ATLA"/>
+    <linkDown linkId="ATLA-HSTN"/>
+    <linkDown linkId="HSTN-ATLA"/>
+    <echo msg="Failure of link between ATLA and HSTN"/>
+    <showLinkLoad llcId="Load 0" perLink="false" ASID="11537"/>
+    <chartAddSeries chartId="WCA" seriesName="ATLA-HSTN">
+        <collector>
+            <param name="linkLoadComputerId">Load 0</param>
+        </collector>
+    </chartAddSeries>
+    <linkUp linkId="ATLA-HSTN"/>
+    <linkUp linkId="HSTN-ATLA"/>
+    <linkDown linkId="HSTN-LOSA"/>
+    <linkDown linkId="LOSA-HSTN"/>
+    <echo msg="Failure of link between HSTN and LOSA"/>
+    <showLinkLoad llcId="Load 0" perLink="false" ASID="11537"/>
+    <chartAddSeries chartId="WCA" seriesName="HSTN-LOSA">
+        <collector>
+            <param name="linkLoadComputerId">Load 0</param>
+        </collector>
+    </chartAddSeries>
+    <linkUp linkId="HSTN-LOSA"/>
+    <linkUp linkId="LOSA-HSTN"/>
+    <linkDown linkId="LOSA-SNVA"/>
+    <linkDown linkId="SNVA-LOSA"/>
+    <echo msg="Failure of link between LOSA and SNVA"/>
+    <showLinkLoad llcId="Load 0" perLink="false" ASID="11537"/>
+    <chartAddSeries chartId="WCA" seriesName="LOSA-SNVA">
+        <collector>
+            <param name="linkLoadComputerId">Load 0</param>
+        </collector>
+    </chartAddSeries>
+    <linkUp linkId="LOSA-SNVA"/>
+    <linkUp linkId="SNVA-LOSA"/>
+    <chartSave chartId="WCA" file="/home/monfort/Projects/run-totem/abilene-wca-SPF-new.eps" format="EPS">
+        <title>Worst Case Link Failure (CSPF)</title>
+        <xAxisTitle>Links' failures</xAxisTitle>
+        <yAxisTitle>Maximum link load</yAxisTitle>
+        <width>800</width>
+        <height>600</height>
+        <plotter name="LoadChartPlotter">
+            <param name="asId">11537</param>
+            <param name="allLinks">false</param>
+        </plotter>
+    </chartSave>
+    <chartDeletion chartId="WCA"/>
+</scenario>
+

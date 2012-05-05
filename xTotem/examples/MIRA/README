@@ -1,0 +1,19 @@
+This example demonstrates the use of MIRA algorithm.
+
+The topology is taken from 
+   "Minimum Interference Routing with Applications to MPLS Traffic Engineering"
+    Murali Kodialam, T.V. Lakshman
+    INFOCOM 2000
+
+The scenario files uses the "pathRelativeTo" attribute of the scenario XML element.
+
+Included files:
+---------------
+
+MIRA.xml: define a simple topology. Some nodes are defined as CORE while others are EDGE nodes.
+
+MIRA-scenario.xml: Scenario consisting in establishing two lsps on the topology with newMIRA.
+    
+HopCount-scenario.xml: Same scenario but using CSPF hop count. In this scenario, one of the two LSPs cannot establish.
+
+

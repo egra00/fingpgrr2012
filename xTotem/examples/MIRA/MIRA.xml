@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://totem.run.montefiore.ulg.ac.be/Schema/Domain-v1_3.xsd" ASID="1212">
+       <info>
+              <date>2007-01-10</date>
+              <author>Gaël Monfort</author>
+              <description>Topology for MIRA. This demonstrates the use of node type (CORE or EDGE).</description>
+              <units>
+                     <unit type="delay" value="ms"/>
+                     <unit type="bandwidth" value="mbps"/>
+              </units>
+       </info>
+       <topology>
+              <nodes>
+                     <node id="1">
+                            <type>EDGE</type>
+                     </node>
+                     <node id="2">
+                            <type>CORE</type>
+                     </node>
+                     <node id="3">
+                            <type>CORE</type>
+                     </node>
+                     <node id="4">
+                            <type>CORE</type>
+                     </node>
+                     <node id="5">
+                            <type>EDGE</type>
+                     </node>
+                     <node id="6">
+                            <type>EDGE</type>
+                     </node>
+                     <node id="7">
+                            <type>CORE</type>
+                     </node>
+                     <node id="8">
+                            <type>CORE</type>
+                     </node>
+                     <node id="9">
+                            <type>EDGE</type>
+                     </node>
+                     <node id="10">
+                            <type>EDGE</type>
+                     </node>
+                     <node id="11">
+                            <type>EDGE</type>
+                     </node>
+              </nodes>
+              <links>
+                     <link id="1-2">
+                            <from node="1"/>
+                            <to node="2"/>
+                            <bw>1</bw>
+                     </link>
+                     <link id="2-3">
+                            <from node="2"/>
+                            <to node="3"/>
+                            <bw>1</bw>
+                     </link>
+                     <link id="3-4">
+                            <from node="3"/>
+                            <to node="4"/>
+                            <bw>1</bw>
+                     </link>
+                     <link id="4-5">
+                            <from node="4"/>
+                            <to node="5"/>
+                            <bw>1</bw>
+                     </link>
+                     <link id="1-7">
+                            <from node="1"/>
+                            <to node="7"/>
+                            <bw>1</bw>
+                     </link>
+                     <link id="6-7">
+                            <from node="6"/>
+                            <to node="7"/>
+                            <bw>1</bw>
+                     </link>
+                     <link id="10-7">
+                            <from node="10"/>
+                            <to node="7"/>
+                            <bw>1</bw>
+                     </link>
+                     <link id="7-8">
+                            <from node="7"/>
+                            <to node="8"/>
+                            <bw>1</bw>
+                     </link>
+                     <link id="8-5">
+                            <from node="8"/>
+                            <to node="5"/>
+                            <bw>1</bw>
+                     </link>
+                     <link id="8-9">
+                            <from node="8"/>
+                            <to node="9"/>
+                            <bw>1</bw>
+                     </link>
+                     <link id="8-11">
+                            <from node="8"/>
+                            <to node="11"/>
+                            <bw>1</bw>
+                     </link>
+		     <link id="2-1">
+			     <from node="2"/>
+			     <to node="1"/>
+			     <bw>1</bw>
+		     </link>
+		     <link id="3-2">
+			     <from node="3"/>
+			     <to node="2"/>
+			     <bw>1</bw>
+		     </link>
+		     <link id="4-3">
+			     <from node="4"/>
+			     <to node="3"/>
+			     <bw>1</bw>
+		     </link>
+		     <link id="5-4">
+			     <from node="5"/>
+			     <to node="4"/>
+			     <bw>1</bw>
+		     </link>
+<!--
+		     <link id="7-1">
+			     <from node="7"/>
+			     <to node="1"/>
+			     <bw>1</bw>
+		     </link>
+-->
+		     <link id="7-6">
+			     <from node="7"/>
+			     <to node="6"/>
+			     <bw>1</bw>
+		     </link>
+		     <link id="7-10">
+			     <from node="7"/>
+			     <to node="10"/>
+			     <bw>1</bw>
+		     </link>
+		     <link id="8-7">
+			     <from node="8"/>
+			     <to node="7"/>
+			     <bw>1</bw>
+		     </link>
+<!--
+		     <link id="5-8">
+			     <from node="5"/>
+			     <to node="8"/>
+			     <bw>1</bw>
+		     </link>
+-->
+		     <link id="9-8">
+			     <from node="9"/>
+			     <to node="8"/>
+			     <bw>1</bw>
+		     </link>
+		     <link id="11-8">
+			     <from node="11"/>
+			     <to node="8"/>
+			     <bw>1</bw>
+                     </link>
+              </links>
+       </topology>
+</domain>

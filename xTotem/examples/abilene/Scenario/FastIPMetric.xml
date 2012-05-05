@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+    This scenario computes a multi-commodity flow on abilene network and display the link load.
+-->
+<scenario
+    xsi:schemaLocation="http://jaxb.model.scenario.totem.run.montefiore.ulg.ac.be http://totem.run.montefiore.ulg.ac.be/Schema/Scenario-v1_1.xsd"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://jaxb.model.scenario.totem.run.montefiore.ulg.ac.be">
+      <loadDomain file="examples/abilene/abilene.xml" defaultDomain="true"/>
+ <loadTrafficMatrix file="examples/abilene/TrafficMatrix/TM1-abilene.xml" TMID="0"/>
+    <FastIPMetric runGLPSOL="true"/>
+    <echo msg="Information about link loads with new optimized TE weights"/>
+    <startAlgo name="CSPFTEMetric" TMID="0" />
+    <IGPRouting TMID="0" SPFtype="CSPFTEMetric"/>
+    <showLinkLoad perLink="false"/>
+</scenario>
