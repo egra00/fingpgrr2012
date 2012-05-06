@@ -32,7 +32,7 @@ public class BgpNeighborImpl extends be.ac.ulg.montefiore.run.totem.domain.model
      */
     public boolean isReflectorClient()
     {
-	return isReflectorClient();
+	return super.isReflectorClient();
     }
 
     /**
