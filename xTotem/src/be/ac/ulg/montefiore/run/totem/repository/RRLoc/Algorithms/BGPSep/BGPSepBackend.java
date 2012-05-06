@@ -12,6 +12,7 @@ import be.ac.ulg.montefiore.run.totem.domain.exception.NodeNotFoundException;
 import be.ac.ulg.montefiore.run.totem.domain.model.Domain;
 import be.ac.ulg.montefiore.run.totem.domain.model.Link;
 import be.ac.ulg.montefiore.run.totem.domain.model.Node;
+import be.ac.ulg.montefiore.run.totem.domain.model.impl.BgpNeighborImpl;
 import be.ac.ulg.montefiore.run.totem.domain.model.impl.BgpRouterImpl;
 import be.ac.ulg.montefiore.run.totem.domain.model.impl.DomainImpl;
 import be.ac.ulg.montefiore.run.totem.domain.model.jaxb.BgpNeighbor;
@@ -94,7 +95,9 @@ public class BGPSepBackend {
 			BgpRouterImpl router2 = (BgpRouterImpl)domain.getBgpRouter(session.getIdLink2());
 			
 			// El router2, el destino, será reflector en caso que router1 sea su cliente
-			router2.setReflector(session.getSessionType().equals(iBGPSessionType.client));
+			router2.setReflector(
+					router2.isReflector() ||
+					session.getSessionType().equals(iBGPSessionType.client));
 			
 			BgpNeighbor bgpNeighbor = factory.createBgpNeighbor();
 			bgpNeighbor.setIp(router2.getRid());
@@ -103,6 +106,11 @@ public class BGPSepBackend {
 				router1.setNeighbors(factory.createBgpRouterNeighborsType());
 			}
 			router1.getNeighbors().getNeighbor().add((be.ac.ulg.montefiore.run.totem.domain.model.BgpNeighbor)bgpNeighbor);
+			
+			// El router1, el origen, será cliente en caso de tener una session de tipo client.
+			((BgpNeighborImpl)bgpNeighbor).setReflectorClient(
+					((BgpNeighborImpl)bgpNeighbor).isReflectorClient() ||
+					session.getSessionType().equals(iBGPSessionType.client));
 			
 			bgpNeighbor = factory.createBgpNeighbor();
 			bgpNeighbor.setIp(router1.getRid());
