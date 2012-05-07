@@ -134,7 +134,10 @@ public class BGPSepBackend {
 		Operations.addAllVertices(jIGPTopology, (Set<Node>)(new HashSet<Node>(domain.getAllNodes())));
 		for (Link link : domain.getAllLinks()) {
 			try {
-				jIGPTopology.addEdge(link, link.getSrcNode(), link.getDstNode());
+				// Elimino la direccionalidad del grafo
+				if (jIGPTopology.findEdge(link.getDstNode(), link.getSrcNode()) == null) {
+					jIGPTopology.addEdge(link, link.getSrcNode(), link.getDstNode());
+				}
 			} catch (NodeNotFoundException e) {
 				logger.error("Parsing Totem domain to Jung graph");
 				e.printStackTrace();
