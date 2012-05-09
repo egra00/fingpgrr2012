@@ -62,4 +62,22 @@ public class BGPSepAlgorithm implements RRLocAlgorithm {
 		}
 	}
 	
+	public static void main(String args[]) {
+		
+		// ...
+		
+		// Cargo de un archivo la topologia
+		
+		// ...
+		
+		// runAlgorithm(param, result)
+		
+		// ...
+		
+		// Imprimo los resultados
+		
+		// ...
+		
+	}
+	
 }

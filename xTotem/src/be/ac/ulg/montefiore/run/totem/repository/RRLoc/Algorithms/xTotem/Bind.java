@@ -17,8 +17,7 @@ import be.ac.ulg.montefiore.run.totem.util.ParameterDescriptor;
 
 @SuppressWarnings({"rawtypes", "unchecked"})
 public abstract class Bind implements TotemAlgorithm {
-private static Logger logger = Logger.getLogger(BGPSep.class);
-	
+	private static Logger logger = Logger.getLogger(BGPSep.class);
 	private static final ArrayList<ParameterDescriptor> params = new ArrayList<ParameterDescriptor>();
 	private static HashMap runningParams = null;
     
