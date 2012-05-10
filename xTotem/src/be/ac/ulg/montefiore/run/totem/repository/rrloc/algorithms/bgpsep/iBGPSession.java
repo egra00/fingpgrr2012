@@ -1,4 +1,4 @@
-package be.ac.ulg.montefiore.run.totem.repository.RRLoc.Algorithms.BGPSep;
+package be.ac.ulg.montefiore.run.totem.repository.rrloc.algorithms.bgpsep;
 
 public class iBGPSession {
 	private String idLink1;

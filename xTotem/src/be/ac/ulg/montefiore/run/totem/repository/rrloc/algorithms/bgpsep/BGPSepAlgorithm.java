@@ -1,19 +1,19 @@
-package be.ac.ulg.montefiore.run.totem.repository.RRLoc.Algorithms.BGPSep;
+package be.ac.ulg.montefiore.run.totem.repository.rrloc.algorithms.bgpsep;
 
 import java.util.List;
 
 import be.ac.ulg.montefiore.run.totem.domain.model.Link;
 import be.ac.ulg.montefiore.run.totem.domain.model.Node;
-import be.ac.ulg.montefiore.run.totem.repository.RRLoc.Algorithms.xTotem.RRLocAlgorithm;
-import be.ac.ulg.montefiore.run.totem.repository.RRLoc.GraphTools.GraphSeparator;
-import be.ac.ulg.montefiore.run.totem.repository.RRLoc.GraphTools.Separator;
+import be.ac.ulg.montefiore.run.totem.repository.rrloc.graphTools.GraphSeparator;
+import be.ac.ulg.montefiore.run.totem.repository.rrloc.graphTools.Separator;
+import be.ac.ulg.montefiore.run.totem.repository.rrloc.iface.RRLocAlgorithm;
 import edu.uci.ics.jung2.graph.Graph;
 
 @SuppressWarnings("unchecked")
 public class BGPSepAlgorithm implements RRLocAlgorithm {
 	
 	@Override
-	public void runAlgorithm(Object param, Object result) {
+	public void run(Object param, Object result) {
 		Graph<Node, Link> IGPTopology = (Graph<Node, Link>) param;
 		List<iBGPSession> i = (List<iBGPSession>) result;
 		
@@ -56,27 +56,20 @@ public class BGPSepAlgorithm implements RRLocAlgorithm {
 								iBGPSessionType.client));
 					}
 				}
-				runAlgorithm(g_i, i);
+				run(g_i, i);
 			}
 			
 		}
 	}
 	
-	public static void main(String args[]) {
-		
-		// ...
-		
-		// Cargo de un archivo la topologia
-		
-		// ...
-		
-		// runAlgorithm(param, result)
-		
-		// ...
-		
-		// Imprimo los resultados
-		
-		// ...
+	
+	/*
+	 * 
+	 * Used for independent execution
+	 * 
+	 */
+	public static void main(String args[]) 
+	{
 		
 	}
 	

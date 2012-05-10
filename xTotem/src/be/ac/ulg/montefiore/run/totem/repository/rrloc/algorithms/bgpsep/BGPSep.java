@@ -1,4 +1,4 @@
-package be.ac.ulg.montefiore.run.totem.repository.RRLoc.Algorithms.BGPSep;
+package be.ac.ulg.montefiore.run.totem.repository.rrloc.algorithms.bgpsep;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -18,13 +18,13 @@ import be.ac.ulg.montefiore.run.totem.domain.model.impl.DomainImpl;
 import be.ac.ulg.montefiore.run.totem.domain.model.jaxb.BgpNeighbor;
 import be.ac.ulg.montefiore.run.totem.domain.model.jaxb.BgpRouter;
 import be.ac.ulg.montefiore.run.totem.domain.model.jaxb.ObjectFactory;
-import be.ac.ulg.montefiore.run.totem.repository.RRLoc.Algorithms.xTotem.Bind;
-import be.ac.ulg.montefiore.run.totem.repository.RRLoc.Algorithms.xTotem.RRLocAlgorithm;
+import be.ac.ulg.montefiore.run.totem.repository.rrloc.iface.RRLocAlgorithm;
+import be.ac.ulg.montefiore.run.totem.repository.rrloc.iface.RunByGuiAlgorithm;
 import edu.uci.ics.jung2.graph.Graph;
 import edu.uci.ics.jung2.graph.UndirectedSparseMultigraph;
 
 @SuppressWarnings("unchecked")
-public class BGPSep extends Bind {
+public class BGPSep extends RunByGuiAlgorithm {
 	private static Logger logger = Logger.getLogger(BGPSep.class);
 	
 	@Override
