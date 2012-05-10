@@ -1,4 +1,4 @@
-package be.ac.ulg.montefiore.run.totem.repository.RRLoc.Algorithms.xTotem;
+package be.ac.ulg.montefiore.run.totem.repository.rrloc.iface;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -9,15 +9,15 @@ import org.apache.log4j.Logger;
 import be.ac.ulg.montefiore.run.totem.domain.exception.InvalidDomainException;
 import be.ac.ulg.montefiore.run.totem.domain.facade.InterDomainManager;
 import be.ac.ulg.montefiore.run.totem.domain.model.Domain;
-import be.ac.ulg.montefiore.run.totem.repository.RRLoc.Algorithms.BGPSep.BGPSep;
 import be.ac.ulg.montefiore.run.totem.repository.model.TotemAlgorithm;
 import be.ac.ulg.montefiore.run.totem.repository.model.exception.AlgorithmInitialisationException;
 import be.ac.ulg.montefiore.run.totem.repository.model.exception.AlgorithmParameterException;
 import be.ac.ulg.montefiore.run.totem.util.ParameterDescriptor;
 
 @SuppressWarnings({"rawtypes", "unchecked"})
-public abstract class Bind implements TotemAlgorithm {
-	private static Logger logger = Logger.getLogger(BGPSep.class);
+public abstract class RunByGuiAlgorithm implements TotemAlgorithm {
+	
+	private static Logger logger = Logger.getLogger(RunByGuiAlgorithm.class);
 	private static final ArrayList<ParameterDescriptor> params = new ArrayList<ParameterDescriptor>();
 	private static HashMap runningParams = null;
     
@@ -29,7 +29,52 @@ public abstract class Bind implements TotemAlgorithm {
             e.printStackTrace();
         }
     }
+    
+    
+	/*
+	 * Used for create a instance of the algorithm 
+	 *
+	 * @return an instance of RRLocAlgorithm interface
+	 * 
+	 */
+	public abstract RRLocAlgorithm getAlgorithm();
 
+	/*
+	 * Used for initialize the parameters of input
+	 * 
+	 * @param domain
+	 * @return the algorithm parameters 
+	 * 
+	 */
+	public abstract Object getAlgorithmParams(Domain domain);
+	
+	/*
+	 * It is called for initialize the result parameter
+	 * 
+	 * @return the parameter result
+	 * 
+	 */
+	public abstract Object initAlgorithmResult();
+	
+	/*
+	 * It is called when a algorithm end and is necessary impact
+	 * the changes in the domain
+	 * 
+	 * @param domain
+	 * @param algorithmResult is the result of the algorithm
+	 * 
+	 */
+	public abstract void dumpResultInDomain(Domain domain, Object algorithmResult) throws Exception;
+	
+	/*
+	 * Used in debug mode, log the result of algorithm in logger
+	 * 
+	 * @param algorithmResult is the result of the algorithm
+	 * 
+	 */
+	public abstract void log(Object algorithmResult);
+	
+	
 	@Override
 	public void start(HashMap params) throws AlgorithmInitialisationException {
 		runningParams = params;
@@ -57,7 +102,7 @@ public abstract class Bind implements TotemAlgorithm {
         Object algorithmParams = getAlgorithmParams(domain);
         Object algorithmResult = initAlgorithmResult();
         
-        algorithm.runAlgorithm(algorithmParams, algorithmResult);
+        algorithm.run(algorithmParams, algorithmResult);
         
         log(algorithmResult);
         
@@ -86,36 +131,4 @@ public abstract class Bind implements TotemAlgorithm {
 		
 		return (List<ParameterDescriptor>) params.clone();
 	}
-
-	public abstract RRLocAlgorithm getAlgorithm();
-	
-	/*
-	 * It is called when an algorithm started and parameters 
-	 * are needed from the domain
-	 * 
-	 * @param domain
-	 * @return a specific algorithms parameters 
-	 * 
-	 * */
-	public abstract Object getAlgorithmParams(Domain domain);
-	public abstract Object initAlgorithmResult();
-	
-	/*
-	 * It is called when a algorithm end and is necesary impact
-	 * the changes in the domain
-	 * 
-	 * @param domain
-	 * @param algorithmResult the algorithm result
-	 * 
-	 */
-	public abstract void dumpResultInDomain(Domain domain, Object algorithmResult) throws Exception;
-	
-	/*
-	 * When debug, log login the result of algorithm in logger
-	 * 
-	 * @param algorithmResult the algorithm result
-	 * 
-	 * */
-	public abstract void log(Object algorithmResult);
-
 }

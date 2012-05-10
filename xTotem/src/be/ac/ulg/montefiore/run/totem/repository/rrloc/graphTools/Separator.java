@@ -1,4 +1,4 @@
-package be.ac.ulg.montefiore.run.totem.repository.RRLoc.GraphTools;
+package be.ac.ulg.montefiore.run.totem.repository.rrloc.graphTools;
 
 import java.util.ArrayList;
 import java.util.Set;
