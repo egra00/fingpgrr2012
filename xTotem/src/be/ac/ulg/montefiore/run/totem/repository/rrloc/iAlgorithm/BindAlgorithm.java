@@ -8,7 +8,7 @@ import be.ac.ulg.montefiore.run.totem.repository.model.TotemAlgorithm;
 import be.ac.ulg.montefiore.run.totem.repository.model.exception.AlgorithmInitialisationException;
 import be.ac.ulg.montefiore.run.totem.util.ParameterDescriptor;
 
-@SuppressWarnings({"rawtypes", "unchecked"})
+@SuppressWarnings("unchecked")
 public abstract class BindAlgorithm implements TotemAlgorithm {
 	
 	protected ArrayList<ParameterDescriptor> params = new ArrayList<ParameterDescriptor>();
