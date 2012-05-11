@@ -36,7 +36,7 @@ public class BGPSepAlgorithm implements RRLocAlgorithm {
 	private static Logger logger = Logger.getLogger(BGPSepAlgorithm.class);
 	
 	
-	public void run(Graph<Node, Link> param, List<iBGPSession> result) {
+	private void run(Graph<Node, Link> param, List<iBGPSession> result) {
 		Graph<Node, Link> IGPTopology = param;
 		List<iBGPSession> i = result;
 		

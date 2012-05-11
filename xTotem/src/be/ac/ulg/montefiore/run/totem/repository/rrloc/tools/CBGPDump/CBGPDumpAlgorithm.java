@@ -36,7 +36,7 @@ public class CBGPDumpAlgorithm implements RRLocAlgorithm
 	public void run() 
 	{
 		logger.debug("Starting CBGPDump");
-		
+		myrun(domain, fileName);
 		logger.debug("Ending CBGPDump");
 	}
 
@@ -71,8 +71,6 @@ public class CBGPDumpAlgorithm implements RRLocAlgorithm
         	logger.error("Ivalid File name");
         	return;
         }
-      
-		
 	}
 
 	@Override
@@ -81,5 +79,10 @@ public class CBGPDumpAlgorithm implements RRLocAlgorithm
 		domain = null;
 		fileName = null;
 	}
-
+	
+	
+	private void myrun(Domain domain, String fileName)
+	{
+		
+	}
 }
