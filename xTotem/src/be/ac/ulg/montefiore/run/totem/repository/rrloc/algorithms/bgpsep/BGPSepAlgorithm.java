@@ -179,7 +179,7 @@ public class BGPSepAlgorithm implements RRLocAlgorithm {
 		
 		logger.debug("Starting BGPSep");
 		run(jIGPTopology, iBGPTopology);
-		logger.debug("End BGPSep");
+		logger.debug("Ending BGPSep");
 		
 	}
 
