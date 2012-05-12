@@ -101,13 +101,16 @@ public class CBGPDumpAlgorithm implements RRLocAlgorithm
 	private void myrun(Domain domain, String fileName)
 	{
 		int domain_num = domain.getASID();
+		BufferedWriter bw = null;
         try 
         {
-            BufferedWriter bw = new BufferedWriter(new FileWriter("fileName"+".cli"));
+            bw = new BufferedWriter(new FileWriter(fileName));
             
-            bw.write("print \"*** valid-igp-change ***\n\n\""+"\n\n");
+            bw.write("print \"*** "+ domain.getDescription() +" ***\\n\\n\""+"\n\n");
             bw.write("# Domain AS"+ domain_num +"\n");
             bw.write("net add domain "+ domain_num +" igp" +"\n");
+            
+         
             
             /// ADD NODES
     		List<Node> lst_nodes = domain.getAllNodes();
@@ -130,8 +133,8 @@ public class CBGPDumpAlgorithm implements RRLocAlgorithm
                 String linkId = (nodeSrc.getRid().compareTo(nodeDst.getRid()) <= 0) ? nodeSrc.getRid() + ":" + nodeDst.getRid() : nodeDst.getRid() + ":" + nodeSrc.getRid();
                 if (!linksById.containsKey(linkId))
                 {
-                	bw.write("net add link "+ nodeSrc + " " + nodeDst + "\n");
-                	bw.write("net link "+ nodeSrc + " " + nodeDst + " igp-weight –-bidir" + (int)link.getMetric() +"\n");
+                	bw.write("net add link "+ nodeSrc.getRid() + " " + nodeDst.getRid() + "\n");
+                	bw.write("net link "+ nodeSrc.getRid() + " " + nodeDst.getRid() + " igp-weight --bidir " + (int)link.getMetric() +"\n");
                 	linksById.put(linkId, link);
                 }
                 
@@ -159,38 +162,35 @@ public class CBGPDumpAlgorithm implements RRLocAlgorithm
                 List<BgpNeighbor> neighbors = router.getAllNeighbors();
                 for (Iterator<BgpNeighbor> iterNeighbors = neighbors.iterator(); iterNeighbors.hasNext();) 
                 {
-                    BgpNeighbor neighbor = iterNeighbors.next();
-                    bw.write("\t");
-                    
-                    /* Internal/external BGP neighbor */
-                    if (neighbor.getASID() == domain.getASID()) 
-                    {
 
+                	BgpNeighbor neighbor = iterNeighbors.next();
+                    /* Internal/external BGP neighbor */
+                    if (neighbor.getASID() == domain_num) 
+                    {
+                        bw.write("\t");
                         /* Internal... */
 
                         /* Check that the neighbor node exists. Issue
                          * a warning if not. */
                         if (!nodesById.containsKey(neighbor.getAddress()))
                         	logger.error("WARNING: no node for neighbor " + neighbor.getAddress());
-                    }
-                    else
-                    	return;
                     
-                    if(neighbor.isReflectorClient())
-                    {
-                        bw.write("add peer "+ domain_num +" "+ neighbor.getAddress() +" rr-client "+"\n");
+                    
+	                    if(neighbor.isReflectorClient())
+	                    {
+	                        bw.write("add peer "+ domain_num +" "+ neighbor.getAddress() +" rr-client "+"\n");
+	                    }
+	                    else
+	                    {
+	                        bw.write("add peer "+ domain_num +" "+ neighbor.getAddress() +"\n");
+	                    }
+	
+	                    bw.write("\t");
+	                    bw.write("peer "+ neighbor.getAddress() +" up "+"\n");
                     }
-                    else
-                    {
-                        bw.write("add peer "+ domain_num +" "+ neighbor.getAddress() +"\n");
-                    }
-
-                    bw.write("\t");
-                    bw.write("peer "+ neighbor.getAddress() +" up "+"\n");  
                 }
                 bw.write("\t");
                 bw.write("exit"+"\n");
-				
     		}
     		/// END ROUTERS BGP AND SESSIONS iBGP
 
