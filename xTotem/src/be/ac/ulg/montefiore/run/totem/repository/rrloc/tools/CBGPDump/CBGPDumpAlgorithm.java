@@ -4,7 +4,6 @@ package be.ac.ulg.montefiore.run.totem.repository.rrloc.tools.CBGPDump;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.util.HashMap;
-import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.List;
 
@@ -26,9 +25,9 @@ public class CBGPDumpAlgorithm implements RRLocAlgorithm
 	
 	private Domain domain;
 	private String fileName;
-	private Hashtable<String, Link> linksById;
-	private Hashtable<String, BgpRouter> cbgpBgpRouters;
-    private Hashtable<String, Node> nodesById;
+	private HashMap<String, Link> linksById;
+	private HashMap<String, BgpRouter> cbgpBgpRouters;
+    private HashMap<String, Node> nodesById;
 	private static Logger logger = Logger.getLogger(CBGPDumpAlgorithm.class);
 
 	@Override
@@ -39,9 +38,9 @@ public class CBGPDumpAlgorithm implements RRLocAlgorithm
 	@Override
 	public void init() 
 	{	
-		linksById = new Hashtable<String, Link>();
-		cbgpBgpRouters = new Hashtable<String, BgpRouter>();
-		nodesById = new Hashtable<String, Node>();
+		linksById = new HashMap<String, Link>();
+		cbgpBgpRouters = new HashMap<String, BgpRouter>();
+		nodesById = new HashMap<String, Node>();
 	}
 
 	@Override
@@ -130,6 +129,12 @@ public class CBGPDumpAlgorithm implements RRLocAlgorithm
                 Node nodeSrc = link.getSrcNode();;
                 Node nodeDst = link.getDstNode();
                 
+                /*if(nodeSrc.getRid() == null || nodeDst.getRid() == null)
+                {
+                	System.out.println(link.getId() +"   NULL");
+                	return;
+                }*/
+                
                 String linkId = (nodeSrc.getRid().compareTo(nodeDst.getRid()) <= 0) ? nodeSrc.getRid() + ":" + nodeDst.getRid() : nodeDst.getRid() + ":" + nodeSrc.getRid();
                 if (!linksById.containsKey(linkId))
                 {
@@ -162,20 +167,18 @@ public class CBGPDumpAlgorithm implements RRLocAlgorithm
                 List<BgpNeighbor> neighbors = router.getAllNeighbors();
                 for (Iterator<BgpNeighbor> iterNeighbors = neighbors.iterator(); iterNeighbors.hasNext();) 
                 {
-
+                	boolean bVirtual = false; 
                 	BgpNeighbor neighbor = iterNeighbors.next();
-                    /* Internal/external BGP neighbor */
+                	
+                    /* Internal/External BGP neighbor */
                     if (neighbor.getASID() == domain_num) 
                     {
-                        bw.write("\t");
-                        /* Internal... */
-
                         /* Check that the neighbor node exists. Issue
                          * a warning if not. */
                         if (!nodesById.containsKey(neighbor.getAddress()))
                         	logger.error("WARNING: no node for neighbor " + neighbor.getAddress());
                     
-                    
+                        bw.write("\t");
 	                    if(neighbor.isReflectorClient())
 	                    {
 	                        bw.write("add peer "+ domain_num +" "+ neighbor.getAddress() +" rr-client "+"\n");
