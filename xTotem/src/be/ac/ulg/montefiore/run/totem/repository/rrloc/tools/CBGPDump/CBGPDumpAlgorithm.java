@@ -19,9 +19,10 @@ import be.ac.ulg.montefiore.run.totem.domain.model.BgpRouter;
 import be.ac.ulg.montefiore.run.totem.domain.model.Domain;
 import be.ac.ulg.montefiore.run.totem.domain.model.Link;
 import be.ac.ulg.montefiore.run.totem.domain.model.Node;
+import be.ac.ulg.montefiore.run.totem.repository.rrloc.tools.CBGPDump.iface.ICBGPDumpAlgorithm;
 
 @SuppressWarnings("unchecked")
-public class CBGPDumpAlgorithm 
+public class CBGPDumpAlgorithm implements ICBGPDumpAlgorithm
 {
 	
 	private Domain domain;
@@ -32,24 +33,24 @@ public class CBGPDumpAlgorithm
     private HashMap<String, Node> nodesById;
 	private static Logger logger = Logger.getLogger(CBGPDumpAlgorithm.class);
 
-
+	@Override
 	public void dump() 
 	{	
 	}
 
-
+	@Override
 	public void init() 
 	{	
 		linksById = new HashMap<String, Link>();
 		nodesById = new HashMap<String, Node>();
 	}
 
-
+	@Override
 	public void log() 
 	{
 	}
 
-
+	@Override
 	public void run() 
 	{
 		logger.debug("Starting CBGPDump");
@@ -57,7 +58,7 @@ public class CBGPDumpAlgorithm
 		logger.debug("Ending CBGPDump");
 	}
 
-
+	@Override
 	public void setParameters(HashMap params) 
 	{	
         String asId = (String) params.get("ASID");
@@ -90,7 +91,7 @@ public class CBGPDumpAlgorithm
         }
 	}
 
-
+	@Override
 	public void stop() 
 	{
 		domain = null;
