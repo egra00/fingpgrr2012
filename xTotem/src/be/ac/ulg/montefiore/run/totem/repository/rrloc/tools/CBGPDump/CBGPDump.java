@@ -1,10 +1,10 @@
 package be.ac.ulg.montefiore.run.totem.repository.rrloc.tools.CBGPDump;
 
 import be.ac.ulg.montefiore.run.totem.repository.model.exception.AlgorithmParameterException;
-import be.ac.ulg.montefiore.run.totem.repository.rrloc.iAlgorithm.BindAlgorithm;
+import be.ac.ulg.montefiore.run.totem.repository.rrloc.tools.CBGPDump.iface.BindCBGPDumpAlgorithm;
 import be.ac.ulg.montefiore.run.totem.util.ParameterDescriptor;
 
-public class CBGPDump extends BindAlgorithm 
+public class CBGPDump extends BindCBGPDumpAlgorithm 
 {
     public CBGPDump()
     {
