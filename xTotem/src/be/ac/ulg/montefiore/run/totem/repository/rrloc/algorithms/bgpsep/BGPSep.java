@@ -19,7 +19,7 @@ import be.ac.ulg.montefiore.run.totem.domain.model.jaxb.BgpNeighbor;
 import be.ac.ulg.montefiore.run.totem.domain.model.jaxb.BgpRouter;
 import be.ac.ulg.montefiore.run.totem.domain.model.jaxb.ObjectFactory;
 import be.ac.ulg.montefiore.run.totem.repository.model.exception.AlgorithmParameterException;
-import be.ac.ulg.montefiore.run.totem.repository.rrloc.iAlgorithm.BindAlgorithm;
+import be.ac.ulg.montefiore.run.totem.repository.rrloc.algorithms.xAlgorithm.BindAlgorithm;
 import be.ac.ulg.montefiore.run.totem.util.ParameterDescriptor;
 import edu.uci.ics.jung2.graph.Graph;
 import edu.uci.ics.jung2.graph.UndirectedSparseMultigraph;
@@ -29,8 +29,7 @@ public class BGPSep extends BindAlgorithm {
 	private Logger my_logger;
 	
 	
-	public BGPSep()
-	{
+	public BGPSep() {
 		my_logger = Logger.getLogger(BGPSep.class);
 		params = new ArrayList<ParameterDescriptor>();
 		algorithm = new BGPSepAlgorithm();

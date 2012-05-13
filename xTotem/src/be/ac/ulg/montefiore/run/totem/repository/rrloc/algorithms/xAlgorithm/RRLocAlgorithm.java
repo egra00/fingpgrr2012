@@ -1,4 +1,4 @@
-package be.ac.ulg.montefiore.run.totem.repository.rrloc.iAlgorithm;
+package be.ac.ulg.montefiore.run.totem.repository.rrloc.algorithms.xAlgorithm;
 
 public interface RRLocAlgorithm {
 	

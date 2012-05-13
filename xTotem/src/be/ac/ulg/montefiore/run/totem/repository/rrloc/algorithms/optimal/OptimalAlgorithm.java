@@ -1,6 +1,6 @@
 package be.ac.ulg.montefiore.run.totem.repository.rrloc.algorithms.optimal;
 
-import be.ac.ulg.montefiore.run.totem.repository.rrloc.iAlgorithm.RRLocAlgorithm;
+import be.ac.ulg.montefiore.run.totem.repository.rrloc.algorithms.xAlgorithm.RRLocAlgorithm;
 
 public class OptimalAlgorithm implements RRLocAlgorithm{
 
