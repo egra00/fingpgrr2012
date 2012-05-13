@@ -6,14 +6,13 @@ import org.apache.log4j.Logger;
 
 import be.ac.ulg.montefiore.run.totem.domain.model.Domain;
 import be.ac.ulg.montefiore.run.totem.repository.model.exception.AlgorithmParameterException;
-import be.ac.ulg.montefiore.run.totem.repository.rrloc.iAlgorithm.BindAlgorithm;
+import be.ac.ulg.montefiore.run.totem.repository.rrloc.algorithms.xAlgorithm.BindAlgorithm;
 import be.ac.ulg.montefiore.run.totem.util.ParameterDescriptor;
 
 public class Optimal extends BindAlgorithm {
 	private Logger my_logger;
 
-	public Optimal()
-	{
+	public Optimal() {
 		my_logger = Logger.getLogger(Optimal.class);
 		params = new ArrayList<ParameterDescriptor>();
 		algorithm = new OptimalAlgorithm();

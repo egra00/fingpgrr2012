@@ -4,9 +4,9 @@ import java.util.List;
 
 import be.ac.ulg.montefiore.run.totem.domain.model.Link;
 import be.ac.ulg.montefiore.run.totem.domain.model.Node;
+import be.ac.ulg.montefiore.run.totem.repository.rrloc.algorithms.xAlgorithm.RRLocAlgorithm;
 import be.ac.ulg.montefiore.run.totem.repository.rrloc.graphTools.GraphSeparator;
 import be.ac.ulg.montefiore.run.totem.repository.rrloc.graphTools.Separator;
-import be.ac.ulg.montefiore.run.totem.repository.rrloc.iAlgorithm.RRLocAlgorithm;
 import edu.uci.ics.jung2.graph.Graph;
 
 @SuppressWarnings("unchecked")
@@ -68,8 +68,7 @@ public class BGPSepAlgorithm implements RRLocAlgorithm {
 	 * Used for independent execution
 	 * 
 	 */
-	public static void main(String args[]) 
-	{
+	public static void main(String args[]) {
 		
 	}
 	
