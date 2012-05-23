@@ -26,6 +26,34 @@
 
 package be.ac.ucl.ingi.totem.repository.guiComponents;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Enumeration;
+import java.util.Hashtable;
+import java.util.Iterator;
+import java.util.StringTokenizer;
+import java.util.TreeMap;
+
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JDialog;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextField;
+import javax.swing.JTree;
+import javax.swing.SpringLayout;
+
+import org.jfree.ui.RefineryUtilities;
+
 import be.ac.ucl.ingi.cbgp.IPPrefix;
 import be.ac.ucl.ingi.cbgp.IPTrace;
 import be.ac.ucl.ingi.cbgp.UnknownMetricException;
@@ -40,13 +68,7 @@ import be.ac.ulg.montefiore.run.totem.repository.model.exception.RoutingExceptio
 import be.ac.ulg.montefiore.run.totem.visualtopo.guiComponents.MainWindow;
 import be.ac.ulg.montefiore.run.totem.visualtopo.guiComponents.ProgressBarPanel;
 import be.ac.ulg.montefiore.run.totem.visualtopo.guiModules.AbstractGUIModule;
-import org.jfree.ui.RefineryUtilities;
-
-import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.util.*;
+import be.ac.ulg.montefiore.run.totem.visualtopo.util.SpringUtilities;
 
 /*
  * Changes:
@@ -114,8 +136,14 @@ public class CBGPManager extends AbstractGUIModule {
     public JMenu getMenu() {
         JMenu menu = new JMenu("CBGP");
         menu.setMnemonic(KeyEvent.VK_G);
+        
+        JMenuItem menuItem = new JMenuItem("Down to CBGP file");
+        menu.add(menuItem);
+        menuItem.addActionListener(new downListener());
+        
+        menu.addSeparator();
 
-        JMenuItem menuItem = new JMenuItem("Take Snapshot");
+        menuItem = new JMenuItem("Take Snapshot");
         menu.add(menuItem);
         menuItem.addActionListener(new snapshotListener());
 
@@ -181,6 +209,16 @@ public class CBGPManager extends AbstractGUIModule {
         }
     }
     
+    private class downListener implements ActionListener {
+        
+        InterDomainManager idm = InterDomainManager.getInstance();
+        
+        public void actionPerformed(ActionEvent ae) {
+            new downParameters();
+            refreshMenu();
+        }
+    }
+    
     /**
      * le listener chargé de l'entée "Take Snapshot" du menu
      * @author Thomas Vanstals
@@ -195,7 +233,6 @@ public class CBGPManager extends AbstractGUIModule {
             refreshMenu();
         }
     }
-    
     
     /**
      * le listener chargé de l'entée "Diff Snapshot" du menu
@@ -709,6 +746,71 @@ public class CBGPManager extends AbstractGUIModule {
             getContentPane().add(jsp);
             this.setLocationRelativeTo(this.getParent());
             this.setVisible(true);
+        }
+    }
+    
+    private class downParameters implements ActionListener{
+        private JTextField asidField = null;
+        private JTextField pathField = null;
+        private JLabel asidLabel = null;
+        private JLabel pathLabel = null;
+        private JDialog dialog = null;
+        
+        public downParameters() {
+            dialog = new JDialog(MainWindow.getInstance(), "Insert parameters");
+            dialog.setSize(400,140);
+            dialog.setContentPane(setupUI());
+            dialog.setLocationRelativeTo(dialog.getParent());
+            dialog.setVisible(true);
+            // dialog.pack();
+        }
+        
+        private JPanel setupUI() {
+            JPanel jp = new JPanel();
+            jp.setLayout(new SpringLayout());
+            
+            asidLabel = new JLabel("ASID");
+            jp.add(asidLabel);
+            asidField = new JTextField();
+            jp.add(asidField);
+            
+            pathLabel = new JLabel("File path");
+            jp.add(pathLabel);
+            pathField = new JTextField();
+            jp.add(pathField);
+            
+            JButton accept = new JButton("Ok");
+            accept.addActionListener(this);
+            jp.add(accept);
+            
+            JButton cancel = new JButton("Cancel");
+            cancel.addActionListener(this);
+            jp.add(cancel);
+            
+            SpringUtilities.makeGrid(jp,
+                    3, 2, //rows, cols
+                    5, 5, //initialX, initialY
+                    5, 5);//xPad, yPad
+            
+            dialog.getRootPane().setDefaultButton(accept);
+            
+            return jp;
+        }
+        
+        void hide() {
+            dialog.setVisible(false);
+        }
+        
+        public void actionPerformed(ActionEvent e) {
+            hide();
+            
+            /**
+             * 
+             * Aca va la llamada al cbgp down
+             * 
+             * */
+            
+            refreshMenu();
         }
     }
     
