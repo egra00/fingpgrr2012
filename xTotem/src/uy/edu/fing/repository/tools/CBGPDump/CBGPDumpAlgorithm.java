@@ -1,4 +1,4 @@
-package be.ac.ulg.montefiore.run.totem.repository.rrloc.tools.CBGPDump;
+package uy.edu.fing.repository.tools.CBGPDump;
 
 
 import java.io.BufferedWriter;
@@ -19,10 +19,9 @@ import be.ac.ulg.montefiore.run.totem.domain.model.BgpRouter;
 import be.ac.ulg.montefiore.run.totem.domain.model.Domain;
 import be.ac.ulg.montefiore.run.totem.domain.model.Link;
 import be.ac.ulg.montefiore.run.totem.domain.model.Node;
-import be.ac.ulg.montefiore.run.totem.repository.rrloc.tools.CBGPDump.iface.ICBGPDumpAlgorithm;
 
 @SuppressWarnings("unchecked")
-public class CBGPDumpAlgorithm implements ICBGPDumpAlgorithm
+public class CBGPDumpAlgorithm
 {
 	
 	private Domain domain;
@@ -33,70 +32,38 @@ public class CBGPDumpAlgorithm implements ICBGPDumpAlgorithm
     private HashMap<String, Node> nodesById;
 	private static Logger logger = Logger.getLogger(CBGPDumpAlgorithm.class);
 
-	@Override
-	public void dump() 
-	{	
-	}
 
-	@Override
 	public void init() 
 	{	
 		linksById = new HashMap<String, Link>();
 		nodesById = new HashMap<String, Node>();
 	}
 
-	@Override
-	public void log() 
-	{
-	}
 
-	@Override
-	public void run() 
+	public void run(String name) 
 	{
+    	domain = InterDomainManager.getInstance().getDefaultDomain();
+    	if(domain == null)
+    	{
+        	logger.error("There is no default domain");
+            return;
+    	}
+    	
+    	if(name.equals("") || name == null)
+    	{
+        	logger.error("Invalid file name");
+            return;
+    	}
+    	fileName = name;
+    	
 		logger.debug("Starting CBGPDump");
 		myrun();
 		logger.debug("Ending CBGPDump");
-	}
-
-	@Override
-	public void setParameters(HashMap params) 
-	{	
-        String asId = (String) params.get("ASID");
-        if(asId == null) 
-        {
-        	domain = InterDomainManager.getInstance().getDefaultDomain();
-        	if(domain == null)
-        	{
-	        	logger.error("There is no default domain");
-	            return;
-        	}
-        } else 
-        {
-            try 
-            {
-                domain = InterDomainManager.getInstance().getDomain(Integer.parseInt(asId));
-            } 
-            catch(InvalidDomainException e) 
-            {
-                logger.error("Cannot load domain " + asId);
-                return;
-            }
-        }
-        
-        fileName = (String) params.get("FILENAME");
-        if(fileName == null || fileName.equals("")) 
-        {
-        	logger.error("Ivalid File name");
-        	return;
-        }
-	}
-
-	@Override
-	public void stop() 
-	{
+		
 		domain = null;
 		fileName = null;
 	}
+
 	
 	
 	private void errorControl(String descriptionError) throws IOException
