@@ -1040,9 +1040,7 @@ public class MainWindow extends JFrame implements InterDomainManagerListener {
                 {
                     filename = filename.concat(".cli");
                 }
-                
-                System.out.println(filename);
-                
+
                 CBGPDumpAlgorithm alg = new CBGPDumpAlgorithm();
                 alg.run(filename);
             }
