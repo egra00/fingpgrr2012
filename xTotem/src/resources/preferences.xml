@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE preferences SYSTEM 'http://java.sun.com/dtd/preferences.dtd'>
+
+<preferences EXTERNAL_XML_VERSION="1.0">
+  <root type="user">
+    <map />
+    <node name="java">
+      <map />
+      <node name="lang">
+        <map>
+          <entry key="GLPSOL-BIN" value="glpsol"/>
+          <entry key="FASTIPMETRIC-MODEL" value="/resources/modelAMPL/fastipmetric.mod"/>
+          <entry key="FTW_REOPT-INIT-MODEL" value="/resources/modelAMPL/ftw_reopt-init.mod"/>
+          <entry key="FTW_REOPT-REOPT-MODEL" value="/resources/modelAMPL/ftw_reopt-reopt.mod"/>
+          <entry key="MCF-MODEL" value="/resources/modelAMPL/mcf-min-maxUtil.mod"/>
+          <entry key="MPLS-ROUTING-MODEL" value="/resources/modelAMPL/MplsRouting.mod"/>
+          <entry key="DOMAIN-SCHEMA-LOCATION" value="http://totem.run.montefiore.ulg.ac.be/Schema/Domain-v1_3.xsd"/>
+          <entry key="SCENARIO-SCHEMA-LOCATION" value="http://jaxb.model.scenario.totem.run.montefiore.ulg.ac.be http://totem.run.montefiore.ulg.ac.be/Schema/Scenario-v1_3.xsd http://jaxb.model.scenario.totem.ingi.ucl.ac.be http://totem.run.montefiore.ulg.ac.be/Schema/CBGP-Scenario-v1_0.xsd http://jaxb.model.scenario.ftw.at http://totem.run.montefiore.ulg.ac.be/Schema/FTW-Scenario-v1_0.xsd http://jaxb.scenario.SAMTE.repository.totem.run.montefiore.ulg.ac.be http://totem.run.montefiore.ulg.ac.be/Schema/SAMTE-Scenario-v1_0.xsd"/>
+          <entry key="SCENARIO-PACKAGES" value="be.ac.ulg.montefiore.run.totem.scenario.model.jaxb:be.ac.ulg.montefiore.run.totem.repository.SAMTE.scenario.jaxb:be.ac.ucl.ingi.totem.scenario.model.jaxb:at.ftw.scenario.model.jaxb"/>
+
+          <entry key="AVAILABLE-ALGORITHMS" value="uy.edu.fing.repository.rrloc.algorithms.optimal.Optimal:uy.edu.fing.repository.rrloc.algorithms.bgpsep.BGPSep"/>
+          <entry key="COMPATIBLE-ALGORITHMS" value="be.ac.ulg.montefiore.run.totem.repository.CSPF.CSPF:be.ac.ulg.montefiore.run.totem.repository.CSPF.CSPFInvFreeBw:be.ac.ulg.montefiore.run.totem.repository.CSPF.CSPFInvCap:be.ac.ulg.montefiore.run.totem.repository.CSPF.CSPFHopCount:be.ac.ulg.montefiore.run.totem.repository.CSPF.CSPFTEMetric"/>
+          <entry key="AVAILABLE-NET-CONTROLLERS" value=""/>
+
+          <entry key="AVAILABLE-DATA-COLLECTORS" value="be.ac.ulg.montefiore.run.totem.chart.model.collectors.LinksLoadDataCollector:be.ac.ulg.montefiore.run.totem.chart.model.collectors.LinksReservedBWDataCollector"/>
+          <entry key="AVAILABLE-CHART-PLOTTERS" value="be.ac.ulg.montefiore.run.totem.chart.model.plotters.DecreasingLineChartPlotter:be.ac.ulg.montefiore.run.totem.chart.model.plotters.LoadIntervalChartPlotter:be.ac.ulg.montefiore.run.totem.chart.model.plotters.LoadChartPlotter"/>
+          <entry key="AVAILABLE-GUI-MODULES" value="be.ac.ucl.ingi.totem.repository.guiComponents.CBGPManager:be.ac.ulg.montefiore.run.totem.visualtopo.guiModules.IGPWOGUIModule:be.ac.ulg.montefiore.run.totem.visualtopo.guiModules.routingGUIModule.RoutingGUIModule:be.ac.ulg.montefiore.run.totem.visualtopo.guiModules.SAMTE.SAMTEGUIModule:be.ac.ulg.montefiore.run.totem.visualtopo.guiModules.whatIfScenarios.facade.WhatIfModule:be.ac.ulg.montefiore.run.totem.visualtopo.guiModules.trafficMatrixGeneration.TrafficMatrixGenerationGUIModule:be.ac.ulg.montefiore.run.totem.visualtopo.guiModules.topEdit.TopEditGUIModule"/>
+        </map>
+      </node>
+    </node>
+  </root>
+</preferences>
