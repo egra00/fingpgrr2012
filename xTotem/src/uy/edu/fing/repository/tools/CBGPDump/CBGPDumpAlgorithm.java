@@ -33,15 +33,10 @@ public class CBGPDumpAlgorithm
 	private static Logger logger = Logger.getLogger(CBGPDumpAlgorithm.class);
 
 
-	public void init() 
-	{	
-		linksById = new HashMap<String, Link>();
-		nodesById = new HashMap<String, Node>();
-	}
-
-
 	public void run(String name) 
 	{
+		
+		
     	domain = InterDomainManager.getInstance().getDefaultDomain();
     	if(domain == null)
     	{
@@ -55,6 +50,9 @@ public class CBGPDumpAlgorithm
             return;
     	}
     	fileName = name;
+    	
+		linksById = new HashMap<String, Link>();
+		nodesById = new HashMap<String, Node>();
     	
 		logger.debug("Starting CBGPDump");
 		myrun();
