@@ -29,6 +29,7 @@ package be.ac.ucl.ingi.totem.repository.guiComponents;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.io.File;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Enumeration;
@@ -41,6 +42,7 @@ import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JDialog;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
@@ -53,6 +55,8 @@ import javax.swing.JTree;
 import javax.swing.SpringLayout;
 
 import org.jfree.ui.RefineryUtilities;
+
+import uy.edu.fing.repository.tools.CBGPDump.CBGPDumpAlgorithm;
 
 import be.ac.ucl.ingi.cbgp.IPPrefix;
 import be.ac.ucl.ingi.cbgp.IPTrace;
@@ -137,9 +141,9 @@ public class CBGPManager extends AbstractGUIModule {
         JMenu menu = new JMenu("CBGP");
         menu.setMnemonic(KeyEvent.VK_G);
         
-        JMenuItem menuItem = new JMenuItem("Down to CBGP file");
+        JMenuItem menuItem = new JMenuItem("Export as C-BGP scritp");
         menu.add(menuItem);
-        menuItem.addActionListener(new downListener());
+        menuItem.addActionListener(new ExportCbgpListener());
         
         menu.addSeparator();
 
@@ -209,13 +213,26 @@ public class CBGPManager extends AbstractGUIModule {
         }
     }
     
-    private class downListener implements ActionListener {
-        
-        InterDomainManager idm = InterDomainManager.getInstance();
-        
-        public void actionPerformed(ActionEvent ae) {
-            new downParameters();
-            refreshMenu();
+    class ExportCbgpListener implements ActionListener 
+    {
+
+        public void actionPerformed(ActionEvent e) 
+        {
+        	JFileChooser fc = new JFileChooser();
+            int returnVal = fc.showSaveDialog(MainWindow.getInstance());
+
+            if (returnVal == JFileChooser.APPROVE_OPTION) 
+            {
+                File file = fc.getSelectedFile();
+                String filename = file.getAbsolutePath();
+                if (!filename.toLowerCase().endsWith(".cli")) 
+                {
+                    filename = filename.concat(".cli");
+                }
+
+                CBGPDumpAlgorithm alg = new CBGPDumpAlgorithm();
+                alg.run(filename);
+            }
         }
     }
     
