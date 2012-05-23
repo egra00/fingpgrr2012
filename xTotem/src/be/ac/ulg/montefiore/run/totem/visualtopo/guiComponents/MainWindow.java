@@ -64,6 +64,8 @@ import java.util.List;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 
+import uy.edu.fing.repository.tools.CBGPDump.CBGPDumpAlgorithm;
+
 /*
  * Changes:
  * --------
@@ -113,6 +115,7 @@ public class MainWindow extends JFrame implements InterDomainManagerListener {
     static final String ACTION_DISTANT_LOAD = "Load Topology from network";
     static final String ACTION_SAVE = "Save Topology as ...";
     static final String ACTION_SAVE_VISUAL = "Save Visualization as Image ...";
+    static final String ACTION_EXPORT_CBGP = "Export to C-BGP script";
     static final String ACTION_CLOSE = "Close Topology";
     static final String ACTION_EXIT = "Exit";
     static final String ACTION_LIST_NODES = "Nodes List";
@@ -362,6 +365,11 @@ public class MainWindow extends JFrame implements InterDomainManagerListener {
 
         menuItem = new JMenuItem(ACTION_SAVE_VISUAL);
         mbar.addMenuItem(menuItem, null, new SaveVisualListener());
+        menuItem.setEnabled(false);
+        buttonList.add(menuItem);
+        
+        menuItem = new JMenuItem(ACTION_EXPORT_CBGP);
+        mbar.addMenuItem(menuItem, null, new ExportCbgpListener());
         menuItem.setEnabled(false);
         buttonList.add(menuItem);
 
@@ -1015,6 +1023,32 @@ public class MainWindow extends JFrame implements InterDomainManagerListener {
         }
     }
 
+    
+    class ExportCbgpListener implements ActionListener 
+    {
+
+        public void actionPerformed(ActionEvent e) 
+        {
+        	JFileChooser fc = new JFileChooser();
+            int returnVal = fc.showSaveDialog(MainWindow.getInstance());
+
+            if (returnVal == JFileChooser.APPROVE_OPTION) 
+            {
+                File file = fc.getSelectedFile();
+                String filename = file.getAbsolutePath();
+                if (!filename.toLowerCase().endsWith(".cli")) 
+                {
+                    filename = filename.concat(".cli");
+                }
+                
+                System.out.println(filename);
+                
+                CBGPDumpAlgorithm alg = new CBGPDumpAlgorithm();
+                alg.run(filename);
+            }
+        }
+    }
+    
     class CloseTopologyListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             if (manager.getCurrentDomain() != null)
