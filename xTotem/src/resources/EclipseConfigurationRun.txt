@@ -1,12 +1,11 @@
-Go to
-menu Run-> Run Configurations
+Go to menu Run -> Run Configurations
 
-Main
-Set "Main class" with be.ac.ulg.montefiore.run.totem.core.Totem
+Tab Main
+Set "Main class" with: be.ac.ulg.montefiore.run.totem.core.Totem
 
-Arguments
-Set "VM arguments" with -d32 -Xmx512m -Djava.ext.dirs=${workspace_loc:Totem}/lib/java -Djava.library.path=${workspace_loc:Totem}/lib
+Tab Arguments
+Set "VM arguments" with: -d32 -Xmx512m -Djava.ext.dirs=${workspace_loc:Totem}/lib/java -Djava.library.path=${workspace_loc:Totem}/lib
 
-Environment
+Tab Environment
 Create new environment variable LD_LIBRARY_PATH and set with ${workspace_loc:Totem}/lib
 Note: Set the option "Append environment to native environment".
