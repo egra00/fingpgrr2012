@@ -28,7 +28,7 @@ import edu.uci.ics.jung2.graph.UndirectedSparseMultigraph;
 
 @SuppressWarnings("unchecked")
 public class BGPSep extends BindAlgorithm {
-	private Logger my_logger;
+	protected Logger my_logger;
 	
 	
 	public BGPSep() {
