@@ -20,20 +20,21 @@ public class BGPSepDAlgorithm implements RRLocAlgorithm {
 	
 	@SuppressWarnings("unchecked")
 	@Override
-	public void run(Object param, Object result) 
-	{
+	public void run(Object param, Object result) {
 		my_logger = Logger.getLogger(BGPSepDAlgorithm.class);
 		Graph<Node, Link> G = (Graph<Node, Link>) param;
 		List<iBGPSession> I = (List<iBGPSession>) result;
 		
-		myrun(G, I);
+		Graph<Node, Link> Gp = Operations.copyUndirectedSparseGraph(G);
+		myrun(G, I, Gp);
+		RRLocAlgorithm bgpsep = new BGPSepAlgorithm();
+		bgpsep.run(Gp, I);
 	}
 	
 	
-	public void myrun(Graph<Node, Link> G, List<iBGPSession> I) 
+	protected void myrun(Graph<Node, Link> G, List<iBGPSession> I, Graph<Node, Link> Gp) 
 	{
 		boolean pending = true;
-		Graph<Node, Link> Gp = Operations.copyUndirectedSparseGraph(G);
 		
 		while(pending)
 		{
@@ -57,8 +58,6 @@ public class BGPSepDAlgorithm implements RRLocAlgorithm {
 			}
 		}
 		
-		RRLocAlgorithm bgpsep = new BGPSepAlgorithm();
-		bgpsep.run(Gp, I);
 	}
 	
 	/*
