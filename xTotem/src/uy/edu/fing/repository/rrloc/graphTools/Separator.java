@@ -1,6 +1,7 @@
 package uy.edu.fing.repository.rrloc.graphTools;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Set;
 
 import agape.algos.Separators;
@@ -20,7 +21,12 @@ public class Separator {
 		Set<Set<Node>> gs = s.getAllMinimalSeparators(g);
 		
 		GraphSeparator ret = new GraphSeparator();
-		ret.setSeparator((Set<Node>)gs.toArray()[0]);
+		if (!gs.isEmpty()) {
+			ret.setSeparator((Set<Node>)gs.toArray()[0]);
+		}
+		else {
+			ret.setSeparator(new HashSet<Node>());
+		}
 		ret.setComponents(new ArrayList<Graph<Node, Link>>());
 		
 		Graph<Node, Link> aux = Operations.copyUndirectedSparseGraph(g);
