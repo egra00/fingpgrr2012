@@ -1,4 +1,4 @@
-package uy.edu.fing.repository.rrloc.algorithms.xAlgorithm;
+package uy.edu.fing.repository.rrloc.algorithms.iAlgorithm;
 
 public interface RRLocAlgorithm {
 	

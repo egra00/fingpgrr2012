@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import org.apache.log4j.Logger;
 
-import uy.edu.fing.repository.rrloc.algorithms.xAlgorithm.BindAlgorithm;
+import uy.edu.fing.repository.rrloc.algorithms.iAlgorithm.BindAlgorithm;
 import be.ac.ulg.montefiore.run.totem.domain.model.Domain;
 import be.ac.ulg.montefiore.run.totem.repository.model.exception.AlgorithmParameterException;
 import be.ac.ulg.montefiore.run.totem.util.ParameterDescriptor;
