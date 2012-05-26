@@ -57,7 +57,6 @@ public class BGPSepDAlgorithm implements RRLocAlgorithm {
 				}	
 			}
 		}
-		
 	}
 	
 	/*
