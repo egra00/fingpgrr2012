@@ -2,7 +2,7 @@ package uy.edu.fing.repository.rrloc.algorithms.bgpsep;
 
 import java.util.List;
 
-import uy.edu.fing.repository.rrloc.algorithms.xAlgorithm.RRLocAlgorithm;
+import uy.edu.fing.repository.rrloc.algorithms.iAlgorithm.RRLocAlgorithm;
 import uy.edu.fing.repository.rrloc.graphTools.GraphSeparator;
 import uy.edu.fing.repository.rrloc.graphTools.Separator;
 import be.ac.ulg.montefiore.run.totem.domain.model.Link;

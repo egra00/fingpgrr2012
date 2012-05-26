@@ -1,4 +1,4 @@
-package uy.edu.fing.repository.rrloc.algorithms.xAlgorithm;
+package uy.edu.fing.repository.rrloc.algorithms.iAlgorithm;
 
 import java.util.ArrayList;
 import java.util.HashMap;

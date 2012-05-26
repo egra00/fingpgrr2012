@@ -1,6 +1,6 @@
 package uy.edu.fing.repository.rrloc.algorithms.optimal;
 
-import uy.edu.fing.repository.rrloc.algorithms.xAlgorithm.RRLocAlgorithm;
+import uy.edu.fing.repository.rrloc.algorithms.iAlgorithm.RRLocAlgorithm;
 
 public class OptimalAlgorithm implements RRLocAlgorithm{
 

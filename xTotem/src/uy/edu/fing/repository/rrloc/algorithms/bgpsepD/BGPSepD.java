@@ -1,4 +1,4 @@
-package uy.edu.fing.repository.rrloc.algorithms.bgpsep;
+package uy.edu.fing.repository.rrloc.algorithms.bgpsepD;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -25,14 +25,14 @@ import edu.uci.ics.jung2.graph.Graph;
 import edu.uci.ics.jung2.graph.UndirectedSparseMultigraph;
 
 @SuppressWarnings("unchecked")
-public class BGPSep extends BindAlgorithm {
+public class BGPSepD extends BindAlgorithm {
 	private Logger my_logger;
 	
 	
-	public BGPSep() {
-		my_logger = Logger.getLogger(BGPSep.class);
+	public BGPSepD() {
+		my_logger = Logger.getLogger(BGPSepD.class);
 		params = new ArrayList<ParameterDescriptor>();
-		algorithm = new BGPSepAlgorithm();
+		algorithm = new BGPSepDAlgorithm();
 		
 		try {
 			params.add(new ParameterDescriptor("ASID", "Domain ASID (leave blank for default).", Integer.class, null));
