@@ -9,11 +9,10 @@ import uy.edu.fing.repository.rrloc.algorithms.bgpsepX.iBGPSession;
 import uy.edu.fing.repository.rrloc.algorithms.bgpsepX.iBGPSessionType;
 import uy.edu.fing.repository.rrloc.algorithms.bgpsepX.bgpsep.BGPSepAlgorithm;
 import uy.edu.fing.repository.rrloc.iAlgorithm.RRLocAlgorithm;
-import be.ac.ulg.montefiore.run.totem.domain.exception.NodeNotFoundException;
+import agape.tools.Operations;
 import be.ac.ulg.montefiore.run.totem.domain.model.Link;
 import be.ac.ulg.montefiore.run.totem.domain.model.Node;
 import edu.uci.ics.jung2.graph.Graph;
-import edu.uci.ics.jung2.graph.UndirectedSparseMultigraph;
 
 public class BGPSepDAlgorithm implements RRLocAlgorithm {
 	
@@ -34,11 +33,11 @@ public class BGPSepDAlgorithm implements RRLocAlgorithm {
 	public void myrun(Graph<Node, Link> G, List<iBGPSession> I) 
 	{
 		boolean pending = true;
-		Graph<Node, Link> Gp = copy(G);
+		Graph<Node, Link> Gp = Operations.copyUndirectedSparseGraph(G);
 		
 		while(pending)
 		{
-			G = copy(Gp);
+			G = Operations.copyUndirectedSparseGraph(Gp);
 			pending = false;
 			
 			for (Node n : G.getVertices()) 
@@ -60,31 +59,6 @@ public class BGPSepDAlgorithm implements RRLocAlgorithm {
 		
 		RRLocAlgorithm bgpsep = new BGPSepAlgorithm();
 		bgpsep.run(Gp, I);
-	}
-	
-	public Graph<Node, Link> copy(Graph<Node, Link> original) 
-	{
-		Graph<Node, Link> target = new UndirectedSparseMultigraph<Node, Link>();
-		
-		//Copy nodes
-		for (Node n : original.getVertices()) 
-		{
-			target.addVertex(n);
-		}
-		
-		//Copy links
-		for (Link l : original.getEdges()) 
-		{
-			try 
-			{
-				target.addEdge(l, l.getSrcNode(), l.getDstNode());
-			} 
-			catch (NodeNotFoundException e) 
-			{
-				e.printStackTrace();
-			}
-		}
-		return target;
 	}
 	
 	/*
