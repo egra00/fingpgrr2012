@@ -26,13 +26,13 @@ public class BGPSepDAlgorithm implements RRLocAlgorithm {
 		List<iBGPSession> I = (List<iBGPSession>) result;
 		
 		Graph<Node, Link> Gp = Operations.copyUndirectedSparseGraph(G);
-		myrun(G, I, Gp);
+		removePedantVertexes(G, I, Gp);
 		RRLocAlgorithm bgpsep = new BGPSepAlgorithm();
 		bgpsep.run(Gp, I);
 	}
 	
 	
-	protected void myrun(Graph<Node, Link> G, List<iBGPSession> I, Graph<Node, Link> Gp) 
+	protected void removePedantVertexes(Graph<Node, Link> G, List<iBGPSession> I, Graph<Node, Link> Gp) 
 	{
 		boolean pending = true;
 		

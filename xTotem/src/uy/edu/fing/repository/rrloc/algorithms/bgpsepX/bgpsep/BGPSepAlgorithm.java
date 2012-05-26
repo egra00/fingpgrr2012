@@ -37,13 +37,9 @@ public class BGPSepAlgorithm implements RRLocAlgorithm {
 			//El conjunto de routes reflectors estará configurado Full Mesh
 			for (Node u : graphSeparator.getSeparator()) {
 				for (Node v : graphSeparator.getSeparator()) {
-					if (u == v)
-						continue;
-					i.add(new iBGPSession(
-							u.getId(),
-							v.getId(),
-							iBGPSessionType.peer));
-					
+					if (u != v) {
+						i.add(new iBGPSession(u.getId(), v.getId(), iBGPSessionType.peer));
+					}
 				}
 			}
 			
@@ -52,10 +48,7 @@ public class BGPSepAlgorithm implements RRLocAlgorithm {
 			for (Graph<Node, Link> g_i : graphSeparator.getComponents()) {
 				for (Node u : g_i.getVertices()) {
 					for (Node v : graphSeparator.getSeparator()) {
-						i.add(new iBGPSession(
-								u.getId(), 
-								v.getId(), 
-								iBGPSessionType.client));
+						i.add(new iBGPSession(u.getId(), v.getId(), iBGPSessionType.client));
 					}
 				}
 				run(g_i, i);
