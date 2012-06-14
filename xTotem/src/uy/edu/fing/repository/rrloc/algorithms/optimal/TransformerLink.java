@@ -8,6 +8,6 @@ public class TransformerLink implements Transformer<Link,Float>{
 
 	@Override
 	public Float transform(Link link) {
-		return link.getBandwidth();
+		return new Float(1);
 	}
 }
