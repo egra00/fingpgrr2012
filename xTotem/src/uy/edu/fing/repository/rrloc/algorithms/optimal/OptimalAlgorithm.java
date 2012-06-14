@@ -1,21 +1,25 @@
 package uy.edu.fing.repository.rrloc.algorithms.optimal;
 
-import java.awt.Dimension;
-import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
+import java.awt.Dimension;
+import java.text.MessageFormat;
 
 import javax.swing.JFrame;
 
 import org.apache.commons.collections15.Transformer;
 
-import uy.edu.fing.repository.rrloc.iAlgorithm.RRLocAlgorithm;
+import agape.tools.Operations;
 import be.ac.ulg.montefiore.run.totem.domain.exception.NodeNotFoundException;
 import be.ac.ulg.montefiore.run.totem.domain.model.BgpRouter;
 import be.ac.ulg.montefiore.run.totem.domain.model.Link;
 import be.ac.ulg.montefiore.run.totem.domain.model.Node;
+
+import static choco.Choco.*;
 import choco.Choco;
 import choco.cp.model.CPModel;
 import choco.cp.solver.CPSolver;
@@ -28,6 +32,7 @@ import edu.uci.ics.jung2.graph.DirectedSparseGraph;
 import edu.uci.ics.jung2.graph.Graph;
 import edu.uci.ics.jung2.graph.UndirectedSparseMultigraph;
 import edu.uci.ics.jung2.visualization.BasicVisualizationServer;
+import uy.edu.fing.repository.rrloc.iAlgorithm.RRLocAlgorithm;
 
 public class OptimalAlgorithm implements RRLocAlgorithm{
 
@@ -38,6 +43,9 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 		Graph<Node, Link> IGPGraph = (Graph<Node, Link>)((List<Object>)inParams).get(0);
 		List<BgpRouter> BGPRouters = (List<BgpRouter>)((List<Object>)inParams).get(1);
 		List<Node> nextHops = (List<Node>)((List<Object>)inParams).get(2);
+		
+		int BGPRoutersSize = BGPRouters.size();
+		int nextHopsSize = nextHops.size();
 				
 		//Build the model
 		CPModel m = new CPModel();
@@ -51,17 +59,52 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 		// For each variable, we define its name and the boundaries of its domain
 		for (int i = 0; i < n; i++) {
 			for (int j = 0; j < n; j++) {
-				UP[i][j] = Choco.makeIntVar("up_" + i + "_" + j, 0, 1);
+				UP[i][j] = makeIntVar("up_" + i + "_" + j, 0, 1);
 				m.addVariable(UP[i][j]); // Associate the variable to the model
 			}
 		}
 		
 		for (int i = 0; i < n; i++) {
 			for (int j = 0; j < n; j++) {
-				DOWN[i][j] = Choco.makeIntVar("down_" + i + "_" + j, 0, 1);
+				DOWN[i][j] = makeIntVar("down_" + i + "_" + j, 0, 1);
 				m.addVariable(DOWN[i][j]);
 			}
 		}
+		
+		//Adding the constraint for the function to minimise
+		
+		//Calculating the length of the shortest IGP path from i to j
+		int MINHOPS[][] = new int[n][n];
+ 
+		Object[] nodes = IGPGraph.getVertices().toArray();
+		
+		for(int i = 0; i < n; i++) {
+            for(int j = 0; j < n; j++) {
+            	if(i!=j){
+            		MINHOPS[i][j]= hops(IGPGraph,((Node)nodes[i]).getRid(),((Node)nodes[j]).getRid());
+            	}
+            }
+		}
+		
+		System.out.println("MINHOPS:");
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < n; j++) {
+				System.out.print(MINHOPS[i][j]+" ");
+			}
+		System.out.println();
+		}
+		
+        IntegerVariable R_aux = makeIntVar("R_aux", 0, 10000);
+        IntegerVariable[] z_array = new IntegerVariable[n*n];
+        
+        for(int i = 0; i < n; i++) {
+            for(int j = 0; j < n; j++) {
+                z_array[i*n+j] = makeIntVar("z_" + i +"_" + j, 0, 10000);
+                m.addConstraint(eq(mult(MINHOPS[i][j],sum(UP[i][j],DOWN[i][j])), z_array[i*n+j]));
+                
+            }
+        }
+        m.addConstraint(eq(sum(z_array), R_aux));
 		
 		//Adding domain constraints to the model
 		
@@ -69,7 +112,7 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 		for (int i = 0; i < n; i++) {
 		for (int j = 0; j < n; j++) {
 			if(i!=j){
-				Constraint c = (Choco.leq(UP[i][j], Choco.plus(1,Choco.neg(DOWN[i][j]))));
+				Constraint c = (leq(UP[i][j], plus(1,neg(DOWN[i][j]))));
 				m.addConstraint(c);
 			}
 		}
@@ -79,25 +122,23 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 		for (int i = 0; i < n; i++) {
 			for (int j = 0; j < n; j++) {
 				if(j>i){
-					Constraint c = (Choco.eq(UP[i][j] , DOWN[j][i]));
+					Constraint c = (eq(UP[i][j] , DOWN[j][i]));
 					m.addConstraint(c);
 				}
 			}
 		}
 		
-		printGraph(IGPGraph,"Grafo IGP");
-		
-		//Adding max-flow min-cut constraints to the model
+		//printGraph(IGPGraph,"Grafo IGP");
 		
 		//Building satellite graphs
 
 		List<Graph<Node, Link>> satellites = new ArrayList<Graph<Node, Link>>();
 		
-		System.out.println("BGPRouters.size() = "+BGPRouters.size());
-		System.out.println("nextHops.size() = "+nextHops.size());
+		System.out.println("BGPRouters.size() = "+BGPRoutersSize);
+		System.out.println("nextHops.size() = "+nextHopsSize);
 		
-		for (int i = 0; i < BGPRouters.size(); i++) {
-			for (int j = 0; j < nextHops.size(); j++) {
+		for (int i = 0; i < BGPRoutersSize; i++) {
+			for (int j = 0; j < nextHopsSize; j++) {
 				
 				Graph<Node, Link> sat = new UndirectedSparseMultigraph<Node, Link>();
 				
@@ -155,15 +196,44 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 					}
 				}
 				
-				//Extending satellite graph
-				//Graph<MetaNode,ExtendedLink> eg = CreateExtendedGraph(sat);
+//				if(imprimir<2){
+//					printGraph(sat,"Grafo Satelite ("+no.getId()+","+r.getId()+")");
+//					imprimir++;
+//				}
 				
-				printGraph(sat,"Grafo Satelite ("+no.getId()+","+r.getId()+")");
-				
-				if(sat.getVertexCount()>0)//OJO
-					satellites.add(sat);
+				//if(sat.getVertexCount()>0)//OJO
+				satellites.add(sat);
 			}
 				
+		}
+
+		//Adding max-flow min-cut constraints to the model
+		
+		// Build the solver
+		CPSolver s = new CPSolver();
+		
+		s.read(m);
+	
+		// Solve the model
+		s.solve();
+		
+		for(int i = 0; i< BGPRoutersSize; i++){
+			for(int j = 0; j< nextHopsSize; j++){
+
+				// Read the model
+//				s.read(m);
+//				
+//				// Solve the model
+//				s.solve();
+				
+				//Extending satellite graph
+				Graph<MetaNode,ExtendedLink> eg = CreateExtendedGraph(IGPGraph, satellites.get(i*BGPRoutersSize+j), UP, DOWN, s);
+				
+				if(!existsPath(eg,BGPRouters.get(i).getId(),nextHops.get(j).getId())){
+					
+				}
+			
+			}
 		}
 		
 		//Adding constraints for the satellite problems
@@ -178,18 +248,18 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 			}
 		}*/
 		
-		Constraint c2 = (Choco.eq(UP[0][0] , 1));
-		m.addConstraint(c2);
+//		Constraint c2 = (eq(UP[0][0] , 1));
+//		m.addConstraint(c2);
 		
 		// Build the solver
-		CPSolver s = new CPSolver();
-
-		// Read the model
-		s.read(m);
-		// Solve the model
-		s.solve();
-		
-		// Print the solution
+//		CPSolver s2 = new CPSolver();
+//
+//		// Read the model
+//		s2.read(m);
+//		// Solve the model
+//		s2.solve();
+//		
+//		// Print the solution
 		System.out.println("UP Matrix:");
 		for (int i = 0; i < n; i++) {
 			for (int j = 0; j < n; j++) {
@@ -208,18 +278,54 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 		
 	}
 	
-	private static int dist(Graph<Node, Link> IGPGraph,String idw,String idn){ 
+	private static int imprimir = 0;
+	private static int imprimir2 = 0;
+	
+	private boolean existsPath(Graph<MetaNode,ExtendedLink> eg, String i, String j) {
+		Graph<MetaNode,ExtendedLink> egAux = new DirectedSparseGraph<MetaNode,ExtendedLink>();
+		Iterator<MetaNode> it = eg.getVertices().iterator();
+		
+		while(it.hasNext()){
+			MetaNode mn = (MetaNode)it.next();
+			egAux.addVertex(mn);
+		}
+
+		Iterator<ExtendedLink> it2 = eg.getEdges().iterator();
+		
+		while(it2.hasNext()){
+			ExtendedLink el = (ExtendedLink)it2.next();
+			if(el.getCapacity()!=0)
+				egAux.addEdge(el,el.getSrc(),el.getDst());
+		}
+		
+		Transformer<ExtendedLink,Integer> tr = new TransformerExtendedLink();
+		DijkstraShortestPath<MetaNode, ExtendedLink> s = new DijkstraShortestPath<MetaNode, ExtendedLink>(egAux,tr);
+		List<ExtendedLink> edges = s.getPath(findCol(egAux.getVertices(),i),findCol(egAux.getVertices(),j));
+		
+		if(edges.size()>0)
+			return true;
+		else
+			return false;
+	}
+
+	private static float dist(Graph<Node, Link> IGPGraph,String idw,String idn){ 
 		Transformer<Link,Float> tr = new TransformerLink();
 		DijkstraShortestPath<Node, Link> s = new DijkstraShortestPath<Node, Link>(IGPGraph,tr);
 		List<Link> edges = s.getPath(findCol(IGPGraph.getVertices(),idw),findCol(IGPGraph.getVertices(),idn));
-		//System.out.println("Size of path is : "+edges.size());
 		Iterator<Link> it = edges.iterator();
-		int sum = 0;
+		float sum = 0;
 		while(it.hasNext()){
 			Link l = (Link)it.next();
-			sum+=l.getDelay();
+			sum+=l.getMetric();
 		}
 		return sum;
+	}
+	
+	private static int hops(Graph<Node, Link> IGPGraph,String idw,String idn){ 
+		Transformer<Link,Float> tr = new TransformerLink();
+		DijkstraShortestPath<Node, Link> s = new DijkstraShortestPath<Node, Link>(IGPGraph,tr);
+		List<Link> edges = s.getPath(findCol(IGPGraph.getVertices(),idw),findCol(IGPGraph.getVertices(),idn));
+		return edges.size();
 	}
 	
 	private static Node findCol(Collection<Node> c, String id){
@@ -237,7 +343,22 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 			return null;
 	} 
 	
-	private static Graph<MetaNode,ExtendedLink> CreateExtendedGraph(Graph<Node,Link> g){
+	private static MetaNode findCol(Collection<MetaNode> c, String id){
+		Iterator<MetaNode> it = c.iterator();
+		boolean found = false;
+		MetaNode n = null;
+		while(!found && it.hasNext()){
+			n = it.next();
+			if(n.getRid().equals(id))
+				found = true;
+		}
+		if(found)
+			return n;
+		else
+			return null;
+	} 
+	
+	private static Graph<MetaNode,ExtendedLink> CreateExtendedGraph(Graph<Node, Link> IGPGraph, Graph<Node,Link> g, IntegerVariable[][] UP,IntegerVariable[][] DOWN, CPSolver s){
 		
 		Graph<MetaNode,ExtendedLink> eg = new DirectedSparseGraph<MetaNode,ExtendedLink>();
 		
@@ -245,27 +366,109 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 		
 		Collection<Node> lstNodos = g.getVertices();
 		Iterator<Node> it = lstNodos.iterator();
+		int p = 0;
 		
 		while(it.hasNext()){
 			Node n = (Node)it.next();
-			MetaNode src = new MetaNode(n.getRid(),MetaNodeType.SRC);
+			MetaNode src = new MetaNode(p,n.getId(),MetaNodeType.SRC);
 			eg.addVertex(src);
-			MetaNode dst = new MetaNode(n.getRid(),MetaNodeType.DST);
+			MetaNode dst = new MetaNode(p,n.getId(),MetaNodeType.DST);
 			eg.addVertex(dst);
-			eg.addEdge(new ExtendedLink(Integer.MAX_VALUE), src, dst);
+			eg.addEdge(new ExtendedLink(Integer.MAX_VALUE, src, dst), src, dst);
+			p++;
 		}
 		
 		//Create the links between the metanodes of different nodes
 		
-//		Collection<Link> lstLinks = g.getEdges();
-//		Iterator<Link> itl = lstLinks.iterator();
-//		
+		Collection<Link> lstLinks = g.getEdges();
+		Iterator<Link> itl = lstLinks.iterator();
+		
 //		while(itl.hasNext()){
 //			Link l = (Link)itl.next();
+//				try{	
+////					if(s.getVar(UP[IndexOf(IGPGraph,l.getSrcNode().getId())][IndexOf(IGPGraph,l.getDstNode().getId())]).getVal()==1){ //Exists an UP session between the nodes
+//						ExtendedLink elUP = new ExtendedLink(0);
+//						eg.addEdge(elUP,getMetaNode(MetaNodeType.SRC,eg,l.getSrcNode().getId()),getMetaNode(MetaNodeType.SRC,eg,l.getDstNode().getId()));
+////					}
+////					else if(s.getVar(DOWN[IndexOf(IGPGraph,l.getSrcNode().getId())][IndexOf(IGPGraph,l.getDstNode().getId())]).getVal()==1){ //Exists an DOWN session between the nodes
+//						ExtendedLink elDOWN = new ExtendedLink(0);
+//						eg.addEdge(elDOWN,getMetaNode(MetaNodeType.DST,eg,l.getSrcNode().getId()),getMetaNode(MetaNodeType.DST,eg,l.getDstNode().getId()));
+////					}	
+//				}
+//				catch(NodeNotFoundException e){
+//					System.out.println("Error while creating the extended graphs.");
+//				}
+//		}
+		
+		while(itl.hasNext()){
+			Link l = (Link)itl.next();
+				try{	
+					MetaNode m1SRC = getMetaNode(MetaNodeType.SRC,eg,l.getSrcNode().getId());
+					MetaNode m2SRC = getMetaNode(MetaNodeType.SRC,eg,l.getDstNode().getId());
+					MetaNode m1DST = getMetaNode(MetaNodeType.DST,eg,l.getSrcNode().getId());
+					MetaNode m2DST = getMetaNode(MetaNodeType.DST,eg,l.getDstNode().getId());
+					
+					if(s.getVar(UP[IndexOf(IGPGraph,l.getSrcNode().getId())][IndexOf(IGPGraph,l.getDstNode().getId())]).getVal()==1) //Exists an UP session between the nodes
+						eg.addEdge(new ExtendedLink(1,m1SRC,m2SRC),m1SRC,m2SRC);
+					else
+						eg.addEdge(new ExtendedLink(0,m1SRC,m2SRC),m1SRC,m2SRC);
+					
+					if(s.getVar(DOWN[IndexOf(IGPGraph,l.getSrcNode().getId())][IndexOf(IGPGraph,l.getDstNode().getId())]).getVal()==1) //Exists an DOWN session between the nodes
+						eg.addEdge(new ExtendedLink(1,m1DST,m2DST),m1DST,m2DST);	
+					else
+						eg.addEdge(new ExtendedLink(0,m1DST,m2DST),m1DST,m2DST);
+				}
+				catch(NodeNotFoundException e){
+					System.out.println("Error while creating the extended graphs.");
+				}
+		}
+		
+//		if(imprimir2<2){
+//			printGraph2(eg,"Grafo extendido "+imprimir2);
+//			imprimir2++;
 //		}
 		
 		return eg;
 	} 
+	
+	private static MetaNode getMetaNode(MetaNodeType type, Graph<MetaNode,ExtendedLink> eg, String id){
+
+		boolean found = false;
+		Iterator<MetaNode> it = eg.getVertices().iterator();
+		MetaNode mn = null;
+		
+		while(it.hasNext() && !found){
+			mn = (MetaNode)it.next();
+			if((mn.getType()==type) && (mn.getRid()==id)){
+				found = true;
+			}
+		}
+		
+		if(found)
+			return mn;
+		else
+			return null;
+	}
+	
+	private static int IndexOf(Graph<Node,Link> IGP, String id){
+		int p = 0;
+		boolean found = false;
+		Iterator<Node> it = IGP.getVertices().iterator();
+		
+		while(it.hasNext() && !found){
+			Node n = (Node)it.next();
+			if(n.getId()==id){
+				found = true;
+			}
+			else
+				p++;
+		}
+		
+		if(found)
+			return p;
+		else
+			return -1;
+	}
 	
 	private static void printGraph(Graph<Node,Link> g,String title){
 		
@@ -273,6 +476,22 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 		layout.setSize(new Dimension(300,300));
 		BasicVisualizationServer<Node,Link> vv =
 				new BasicVisualizationServer<Node,Link>(layout);
+				vv.setPreferredSize(new Dimension(350,350)); //Sets the viewing area size
+			
+		JFrame frame = new JFrame(title);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().add(vv);
+		frame.pack();
+		frame.setVisible(true);
+		
+	}
+	
+	private static void printGraph2(Graph<MetaNode,ExtendedLink> g,String title){
+		
+		Layout<MetaNode,ExtendedLink> layout = new CircleLayout(g);
+		layout.setSize(new Dimension(300,300));
+		BasicVisualizationServer<MetaNode,ExtendedLink> vv =
+				new BasicVisualizationServer<MetaNode,ExtendedLink>(layout);
 				vv.setPreferredSize(new Dimension(350,350)); //Sets the viewing area size
 			
 		JFrame frame = new JFrame(title);
