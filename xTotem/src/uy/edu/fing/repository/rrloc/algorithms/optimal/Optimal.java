@@ -8,12 +8,9 @@ import java.util.Set;
 
 import org.apache.log4j.Logger;
 
-import edu.uci.ics.jung2.graph.Graph;
-import edu.uci.ics.jung2.graph.UndirectedSparseMultigraph;
-
-import uy.edu.fing.repository.rrloc.algorithms.bgpsep.iBGPSession;
-import uy.edu.fing.repository.rrloc.algorithms.bgpsep.iBGPSessionType;
-import uy.edu.fing.repository.rrloc.algorithms.xAlgorithm.BindAlgorithm;
+import uy.edu.fing.repository.rrloc.algorithms.bgpsepX.iBGPSession;
+import uy.edu.fing.repository.rrloc.algorithms.bgpsepX.iBGPSessionType;
+import uy.edu.fing.repository.rrloc.iAlgorithm.BindAlgorithm;
 import agape.tools.Operations;
 import be.ac.ulg.montefiore.run.totem.domain.exception.NodeNotFoundException;
 import be.ac.ulg.montefiore.run.totem.domain.model.Domain;
@@ -24,11 +21,11 @@ import be.ac.ulg.montefiore.run.totem.domain.model.impl.BgpRouterImpl;
 import be.ac.ulg.montefiore.run.totem.domain.model.impl.DomainImpl;
 import be.ac.ulg.montefiore.run.totem.domain.model.jaxb.BgpNeighbor;
 import be.ac.ulg.montefiore.run.totem.domain.model.jaxb.BgpRouter;
-import be.ac.ulg.montefiore.run.totem.domain.model.jaxb.NodeType;
 import be.ac.ulg.montefiore.run.totem.domain.model.jaxb.ObjectFactory;
-import be.ac.ulg.montefiore.run.totem.domain.model.jaxb.impl.NodeImpl;
 import be.ac.ulg.montefiore.run.totem.repository.model.exception.AlgorithmParameterException;
 import be.ac.ulg.montefiore.run.totem.util.ParameterDescriptor;
+import edu.uci.ics.jung2.graph.Graph;
+import edu.uci.ics.jung2.graph.UndirectedSparseMultigraph;
 
 public class Optimal extends BindAlgorithm {
 	private Logger my_logger;
