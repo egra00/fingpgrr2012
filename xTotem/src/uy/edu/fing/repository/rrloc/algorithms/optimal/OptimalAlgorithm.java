@@ -1,24 +1,21 @@
 package uy.edu.fing.repository.rrloc.algorithms.optimal;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
 import java.awt.Dimension;
 import java.text.MessageFormat;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
 
 import javax.swing.JFrame;
 
 import org.apache.commons.collections15.Transformer;
 
-import agape.tools.Operations;
+import uy.edu.fing.repository.rrloc.iAlgorithm.RRLocAlgorithm;
 import be.ac.ulg.montefiore.run.totem.domain.exception.NodeNotFoundException;
 import be.ac.ulg.montefiore.run.totem.domain.model.BgpRouter;
 import be.ac.ulg.montefiore.run.totem.domain.model.Link;
 import be.ac.ulg.montefiore.run.totem.domain.model.Node;
-
 import choco.Choco;
 import choco.cp.model.CPModel;
 import choco.cp.solver.CPSolver;
@@ -31,7 +28,6 @@ import edu.uci.ics.jung2.graph.DirectedSparseGraph;
 import edu.uci.ics.jung2.graph.Graph;
 import edu.uci.ics.jung2.graph.UndirectedSparseMultigraph;
 import edu.uci.ics.jung2.visualization.BasicVisualizationServer;
-import uy.edu.fing.repository.rrloc.algorithms.xAlgorithm.RRLocAlgorithm;
 
 public class OptimalAlgorithm implements RRLocAlgorithm{
 
