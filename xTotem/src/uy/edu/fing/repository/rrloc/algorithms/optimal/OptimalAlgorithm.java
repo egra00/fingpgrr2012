@@ -2,6 +2,7 @@ package uy.edu.fing.repository.rrloc.algorithms.optimal;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
@@ -11,7 +12,11 @@ import java.text.MessageFormat;
 
 import javax.swing.JFrame;
 
+import org.apache.commons.collections.FactoryUtils;
+import org.apache.commons.collections15.Factory;
 import org.apache.commons.collections15.Transformer;
+import org.apache.commons.collections15.functors.ConstantFactory;
+import org.apache.commons.collections15.functors.InstantiateFactory;
 
 import agape.tools.Operations;
 import be.ac.ulg.montefiore.run.totem.domain.exception.NodeNotFoundException;
@@ -25,6 +30,7 @@ import choco.cp.model.CPModel;
 import choco.cp.solver.CPSolver;
 import choco.kernel.model.constraints.Constraint;
 import choco.kernel.model.variables.integer.IntegerVariable;
+import edu.uci.ics.jung2.algorithms.flows.EdmondsKarpMaxFlow;
 import edu.uci.ics.jung2.algorithms.layout.CircleLayout;
 import edu.uci.ics.jung2.algorithms.layout.Layout;
 import edu.uci.ics.jung2.algorithms.shortestpath.DijkstraShortestPath;
@@ -209,44 +215,55 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 
 		//Adding max-flow min-cut constraints to the model
 		
-		// Build the solver
 		CPSolver s = new CPSolver();
-		
-		s.read(m);
-	
-		// Solve the model
-		s.solve();
 		
 		for(int i = 0; i< BGPRoutersSize; i++){
 			for(int j = 0; j< nextHopsSize; j++){
 
+				// Build the solver
+				s = new CPSolver();
+				
 				// Read the model
-//				s.read(m);
-//				
-//				// Solve the model
-//				s.solve();
+				s.read(m);
+				
+				// Solve the model
+				s.solve();
+				
+				Graph<Node,Link> gsat = satellites.get(i*BGPRoutersSize+j);
 				
 				//Extending satellite graph
-				Graph<MetaNode,ExtendedLink> eg = CreateExtendedGraph(IGPGraph, satellites.get(i*BGPRoutersSize+j), UP, DOWN, s);
+				Graph<MetaNode,ExtendedLink> eg = CreateExtendedGraph(IGPGraph, gsat, UP, DOWN, s);
 				
 				if(!existsPath(eg,BGPRouters.get(i).getId(),nextHops.get(j).getId())){
 					
+//					MetaNode src = findCol(eg.getVertices(),BGPRouters.get(i).getId());
+//					MetaNode dst = findCol(eg.getVertices(),nextHops.get(j).getId());
+//					ExtendedLinkFactory factory = new ExtendedLinkFactory();
+//					//Calculating max flow min cut edges             Source and sink vertices must be elements of the specified graph, and must be distinct.  
+//					EdmondsKarpMaxFlow<MetaNode,ExtendedLink> ek = new EdmondsKarpMaxFlow<MetaNode,ExtendedLink>(eg, src, dst, new TransformerExtendedLinkCapacity(), new HashMap<ExtendedLink,Integer>(), factory);
+//					ek.evaluate(); // This computes the max flow
+					
+					//Adding restrictions
+					//Set<ExtendedLink> minCutEdges = ek.getMinCutEdges(); 
+					Collection<ExtendedLink> minCutEdges = eg.getEdges();
+					Iterator<ExtendedLink> it = minCutEdges.iterator();
+					
+					while(it.hasNext()){
+						ExtendedLink el = (ExtendedLink)it.next();
+
+						int indexI = IndexOf(gsat,el.getSrc().getRid());
+						int indexJ = IndexOf(gsat,el.getDst().getRid());
+						
+						if(el.getSrc().getType()==MetaNodeType.SRC)
+							m.addConstraint(geq(UP[indexI][indexJ],1));
+						else
+							m.addConstraint(geq(DOWN[indexI][indexJ],1));
+						
+					}
 				}
 			
 			}
 		}
-		
-		//Adding constraints for the satellite problems
-		
-		/*for (int i = 0; i < n; i++) {
-			for (int j = 0; j < n; j++) {
-				if(i!=j){
-					
-					
-					
-				}
-			}
-		}*/
 		
 //		Constraint c2 = (eq(UP[0][0] , 1));
 //		m.addConstraint(c2);
