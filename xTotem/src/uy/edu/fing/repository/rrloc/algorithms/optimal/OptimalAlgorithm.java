@@ -34,6 +34,7 @@ import edu.uci.ics.jung2.algorithms.flows.EdmondsKarpMaxFlow;
 import edu.uci.ics.jung2.algorithms.layout.CircleLayout;
 import edu.uci.ics.jung2.algorithms.layout.Layout;
 import edu.uci.ics.jung2.algorithms.shortestpath.DijkstraShortestPath;
+import edu.uci.ics.jung2.graph.DirectedGraph;
 import edu.uci.ics.jung2.graph.DirectedSparseGraph;
 import edu.uci.ics.jung2.graph.Graph;
 import edu.uci.ics.jung2.graph.UndirectedSparseMultigraph;
@@ -236,12 +237,13 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 				
 				if(!existsPath(eg,BGPRouters.get(i).getId(),nextHops.get(j).getId())){
 					
-//					MetaNode src = findCol(eg.getVertices(),BGPRouters.get(i).getId());
-//					MetaNode dst = findCol(eg.getVertices(),nextHops.get(j).getId());
-//					ExtendedLinkFactory factory = new ExtendedLinkFactory();
-//					//Calculating max flow min cut edges             Source and sink vertices must be elements of the specified graph, and must be distinct.  
-//					EdmondsKarpMaxFlow<MetaNode,ExtendedLink> ek = new EdmondsKarpMaxFlow<MetaNode,ExtendedLink>(eg, src, dst, new TransformerExtendedLinkCapacity(), new HashMap<ExtendedLink,Integer>(), factory);
-//					ek.evaluate(); // This computes the max flow
+					MetaNode src = findCol(eg.getVertices(),BGPRouters.get(i).getId());
+					MetaNode dst = findCol(eg.getVertices(),nextHops.get(j).getId());
+					ExtendedLinkFactory factory = new ExtendedLinkFactory();
+					//Calculating max flow min cut edges             Source and sink vertices must be elements of the specified graph, and must be distinct.  
+					EdmondsKarpMaxFlow<MetaNode,ExtendedLink> ek = new EdmondsKarpMaxFlow((DirectedGraph) eg, src, dst, new TransformerExtendedLinkCapacity(), new HashMap<ExtendedLink,Integer>(), factory);
+
+					ek.evaluate(); // This computes the max flow
 					
 					//Adding restrictions
 					//Set<ExtendedLink> minCutEdges = ek.getMinCutEdges(); 
