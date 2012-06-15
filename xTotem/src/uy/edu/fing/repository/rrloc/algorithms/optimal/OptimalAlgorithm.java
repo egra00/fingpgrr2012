@@ -48,7 +48,8 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 		
 		//Obtain parameters
 		Graph<Node, Link> IGPGraph = (Graph<Node, Link>)((List<Object>)inParams).get(0);
-		List<BgpRouter> BGPRouters = (List<BgpRouter>)((List<Object>)inParams).get(1);
+//		List<BgpRouter> BGPRouters = (List<BgpRouter>)((List<Object>)inParams).get(1);
+		List<Node> BGPRouters = (List<Node>)((List<Object>)inParams).get(1);
 		List<Node> nextHops = (List<Node>)((List<Object>)inParams).get(2);
 		
 		int BGPRoutersSize = BGPRouters.size();
@@ -150,7 +151,9 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 				Graph<Node, Link> sat = new UndirectedSparseMultigraph<Node, Link>();
 				
 				Node no = nextHops.get(j);
-				BgpRouter r = BGPRouters.get(i);
+				//BgpRouter r = BGPRouters.get(i);
+				
+				Node r = BGPRouters.get(i);
 				
 				//Build N(n,r)
 				List<Node> lstNnr = new ArrayList<Node>();
@@ -165,10 +168,12 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 				//W(n, r) = {w ∈ R|∀n′ ∈ N(n, r), dist(w, n) < dist(w, n′ )}
 				
 				//Adding vertices
-				Iterator<BgpRouter> it = BGPRouters.iterator();
+				//Iterator<BgpRouter> it = BGPRouters.iterator();
+				Iterator<Node> it = BGPRouters.iterator();
 				
 				while(it.hasNext()){
-					BgpRouter w = it.next();
+					//BgpRouter w = it.next();
+					Node w = it.next();
 					boolean addRouter = true;
 					
 					Iterator<Node> it2 = lstNnr.iterator();
@@ -216,53 +221,96 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 
 		//Adding max-flow min-cut constraints to the model
 		
+		//Solving the MIP without max-flow min-cut constraints
+		
 		CPSolver s = new CPSolver();
+		s.read(m);
+		s.solve();
+		
+		boolean[][] newContraintsUP = new boolean[n][n];
+		boolean[][] newContraintsDOWN = new boolean[n][n];
+		
+		for (int k = 0; k < n; k++) {
+			for (int l = 0; l < n; l++) {
+				newContraintsUP[k][l] = false;
+				newContraintsDOWN[k][l] = false;
+			}
+		}
 		
 		for(int i = 0; i< BGPRoutersSize; i++){
 			for(int j = 0; j< nextHopsSize; j++){
-
-				// Build the solver
-				s = new CPSolver();
 				
-				// Read the model
-				s.read(m);
-				
-				// Solve the model
-				s.solve();
-				
-				Graph<Node,Link> gsat = satellites.get(i*BGPRoutersSize+j);
-				
-				//Extending satellite graph
-				Graph<MetaNode,ExtendedLink> eg = CreateExtendedGraph(IGPGraph, gsat, UP, DOWN, s);
-				
-				if(!existsPath(eg,BGPRouters.get(i).getId(),nextHops.get(j).getId())){
+				//if(i!=j){
 					
-					MetaNode src = findCol(eg.getVertices(),BGPRouters.get(i).getId());
-					MetaNode dst = findCol(eg.getVertices(),nextHops.get(j).getId());
-					ExtendedLinkFactory factory = new ExtendedLinkFactory();
-					//Calculating max flow min cut edges             Source and sink vertices must be elements of the specified graph, and must be distinct.  
-					EdmondsKarpMaxFlow<MetaNode,ExtendedLink> ek = new EdmondsKarpMaxFlow((DirectedGraph) eg, src, dst, new TransformerExtendedLinkCapacity(), new HashMap<ExtendedLink,Integer>(), factory);
-
-					ek.evaluate(); // This computes the max flow
-					
-					//Adding restrictions
-					//Set<ExtendedLink> minCutEdges = ek.getMinCutEdges(); 
-					Collection<ExtendedLink> minCutEdges = eg.getEdges();
-					Iterator<ExtendedLink> it = minCutEdges.iterator();
-					
-					while(it.hasNext()){
-						ExtendedLink el = (ExtendedLink)it.next();
-
-						int indexI = IndexOf(gsat,el.getSrc().getRid());
-						int indexJ = IndexOf(gsat,el.getDst().getRid());
-						
-						if(el.getSrc().getType()==MetaNodeType.SRC)
-							m.addConstraint(geq(UP[indexI][indexJ],1));
-						else
-							m.addConstraint(geq(DOWN[indexI][indexJ],1));
-						
+					//Adding the new constraints to the model
+					for (int k = 0; k < n; k++) {
+						for (int l = 0; l < n; l++) {
+							if(newContraintsUP[k][l]==true){
+								m.addConstraint(eq(UP[k][l],1));
+							}
+							if(newContraintsDOWN[k][l]==true){
+								m.addConstraint(eq(DOWN[k][l],1));
+							}
+						}
 					}
-				}
+					
+					for (int k = 0; k < n; k++) {
+						for (int l = 0; l < n; l++) {
+							newContraintsUP[k][l] = false;
+							newContraintsDOWN[k][l] = false;
+						}
+					}
+					
+					//Solving the MIP with the new constraints
+					s = new CPSolver();
+					s.read(m);
+					s.solve();
+					
+					Graph<Node,Link> gsat = satellites.get(i*nextHopsSize+j);
+					
+					//Extending satellite graph
+					Graph<MetaNode,ExtendedLink> eg = CreateExtendedGraph(IGPGraph, gsat, UP, DOWN, s);
+					
+					if(!existsPath(eg,BGPRouters.get(i).getId(),nextHops.get(j).getId())){
+						
+						MetaNode src = findCol(eg.getVertices(),BGPRouters.get(i).getId());
+						MetaNode dst = findCol(eg.getVertices(),nextHops.get(j).getId());
+						
+						if(src.getRid()!=dst.getRid()){
+							ExtendedLinkFactory factory = new ExtendedLinkFactory();
+							//Calculating max flow min cut edges        
+							EdmondsKarpMaxFlow<MetaNode,ExtendedLink> ek = new EdmondsKarpMaxFlow((DirectedGraph) eg, src, dst, new TransformerExtendedLinkCapacity(), new HashMap<ExtendedLink,Integer>(), factory);
+		
+							ek.evaluate(); // This computes the max flow
+							
+							//Adding restrictions
+							Set<ExtendedLink> minCutEdges = ek.getMinCutEdges(); 
+							//Collection<ExtendedLink> minCutEdges = eg.getEdges();
+							Iterator<ExtendedLink> it = minCutEdges.iterator();
+							
+							while(it.hasNext()){
+								ExtendedLink el = (ExtendedLink)it.next();
+		
+								int indexI = IndexOf(gsat,el.getSrc().getRid());
+								int indexJ = IndexOf(gsat,el.getDst().getRid());
+								
+								if(el.getSrc().getType()==MetaNodeType.SRC){
+									if(s.getVar(UP[indexI][indexJ]).getVal()!=1){
+										m.addConstraint(geq(UP[indexI][indexJ],1));
+										newContraintsUP[indexI][indexJ] = true;
+									}
+								}
+								else{
+									if(s.getVar(DOWN[indexI][indexJ]).getVal()!=1){
+										m.addConstraint(geq(DOWN[indexI][indexJ],1));
+										newContraintsDOWN[indexI][indexJ] = true;
+									}
+								}
+								
+							}
+						}
+					}
+				//}
 			
 			}
 		}
@@ -270,19 +318,20 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 //		Constraint c2 = (eq(UP[0][0] , 1));
 //		m.addConstraint(c2);
 		
-		// Build the solver
-//		CPSolver s2 = new CPSolver();
-//
-//		// Read the model
-//		s2.read(m);
-//		// Solve the model
-//		s2.solve();
-//		
-//		// Print the solution
+		// Print the solution
+		List<String> reflectors = new ArrayList<String>();
+		int sessions = 0;
+		
 		System.out.println("UP Matrix:");
 		for (int i = 0; i < n; i++) {
 			for (int j = 0; j < n; j++) {
-				System.out.print(MessageFormat.format("{0} ", s.getVar(UP[i][j]).getVal()));
+				int value =  s.getVar(UP[i][j]).getVal();
+				String rid = ((Node)IGPGraph.getVertices().toArray()[j]).getId();
+				System.out.print(MessageFormat.format("{0} ", value));
+				if(value==1) sessions++;
+				if(value==1 && !reflectors.contains(rid)){
+					reflectors.add(rid);
+				}
 			}
 		System.out.println();
 		}
@@ -290,10 +339,20 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 		System.out.println("DOWN Matrix:");
 		for (int i = 0; i < n; i++) {
 			for (int j = 0; j < n; j++) {
-				System.out.print(MessageFormat.format("{0} ", s.getVar(DOWN[i][j]).getVal()));
+				int value =  s.getVar(DOWN[i][j]).getVal();
+				if(value==1) sessions++;
+				System.out.print(MessageFormat.format("{0} ", value));
 			}
 		System.out.println();
 		}
+		
+		System.out.println("Route reflectors IDs("+reflectors.size()+"):");
+		Iterator<String> it = reflectors.iterator();
+		while(it.hasNext()){
+			System.out.println((String)it.next());
+		}
+		
+		System.out.println("Number of sessions: "+sessions);
 		
 	}
 	

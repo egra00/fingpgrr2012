@@ -122,7 +122,9 @@ public class Optimal extends BindAlgorithm {
 		lstParams.add(jIGPTopology);
 		
 		//Add BGP routers set
-		List<be.ac.ulg.montefiore.run.totem.domain.model.BgpRouter> lstBGPRouters = domain.getAllBgpRouters();
+//		List<be.ac.ulg.montefiore.run.totem.domain.model.BgpRouter> lstBGPRouters = domain.getAllBgpRouters();
+//		lstParams.add(lstBGPRouters);
+		List<be.ac.ulg.montefiore.run.totem.domain.model.Node> lstBGPRouters = domain.getAllNodes();
 		lstParams.add(lstBGPRouters);
 		
 		//Add Next-hop set
@@ -130,9 +132,9 @@ public class Optimal extends BindAlgorithm {
 		Iterator<Node> it = domain.getAllNodes().iterator();
 		while(it.hasNext()){
 			Node n = it.next();
-			//if(((NodeImpl)n).getType()==NodeType.EDGE){
+			if(((NodeImpl)n).getType()==NodeType.EDGE){
 				lstNextHops.add(n);
-			//}
+			}
 		}
 		lstParams.add(lstNextHops);
 		
