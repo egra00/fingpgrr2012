@@ -7,6 +7,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
 import java.util.Set;
 
 import org.ejml.alg.dense.decomposition.SingularMatrixException;
@@ -22,6 +23,10 @@ import edu.uci.ics.jung2.graph.UndirectedSparseGraph;
 
 public class Separator {
 	
+	
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////// Minimal AB-separator //////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	@SuppressWarnings("unchecked")
 	static public GraphSeparator graphSeparator(Graph<Node,Link> g) {
 		
@@ -47,7 +52,380 @@ public class Separator {
 		
 		return ret;
 	}
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////FIN: Minimal AB-separator //////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
+	
+	
+	
+	
+	
+	
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////// Approach Evolutive (GA) //////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	static public GraphSeparator GraphPartitionAE(Graph<Node,Link> G, int NGen, int sizeP, double pmut, double pcross)
+	{
+		int sizeI = G.getVertexCount();
+		int[][] Population = Initialization(sizeP, sizeI);
+		// System.out.println("Initialization(sizeP, sizeI);");
+		int[][] tempPopu;
+		double[] fitness;
+		
+		for(int i=0; i<NGen; i++)
+		{
+			fitness = Fitness(G, Population, sizeP, sizeI);
+		//	System.out.println("Fitness(G, Population, sizeP, sizeI);");
+			tempPopu = Selection(Population, fitness, sizeP, sizeI);
+		//	System.out.println("Selection(Population, fitness,sizeP, sizeI);");
+			tempPopu = Crossover(tempPopu, sizeP, sizeI, pcross);
+		//	System.out.println("Crossover(tempPopu, sizeP, sizeI, pcross);");
+			Population = Mutation(tempPopu, sizeP, sizeI, pmut);
+		//	System.out.println("Mutation(tempPopu, sizeP, sizeI, pmut);");
+		}
+		
+		//System.out.println("IN: BestSolution(G, Population, sizeP, sizeI);");
+		GraphSeparator SG = BestSolution(G, Population, sizeP, sizeI);
+		while(null==SG)
+			SG=GraphPartitionAE(G, NGen, sizeP, pmut, pcross);
+		
+		return SG;
+		
+	}
+	
+
+	private static GraphSeparator BestSolution(Graph<Node, Link> G, int[][] population, int sizeP, int sizeI) 
+	{
+		double[] fitness = Fitness(G, population, sizeP, sizeI);
+		double best = fitness[0];
+		int key = 0;
+		int fit_total = 0;
+		
+		for(int i=1; i<sizeP; i++)
+		{
+			double fit = fitness[i];
+			if (best<fit)
+			{
+				key = i;
+				best = fit;
+			}
+			fit_total += fit;
+		}
+		
+		if (fit_total == 0)
+		{
+			
+			return null;
+		}
+			 
+		
+		int[] indi = population[key];
+		
+		//Creo separador de grafo
+		GraphSeparator SG = new GraphSeparator();
+		
+		// Set separator
+		Set<Node> set =  new HashSet<Node>();
+		int i = 0;
+		
+		//System.out.println("///////////////"+G.getVertexCount());
+		
+		for(Node n : G.getVertices())
+		{
+			if (indi[i]==1) 
+			{
+				set.add(n);
+				//System.out.println(n.getDescription());
+			}
+			i++;
+			
+		}
+		SG.setSeparator(set);
+		SG.setComponents(new ArrayList<Graph<Node, Link>>());
+		
+		// Components
+		Graph<Node, Link> aux = Operations.copyUndirectedSparseGraph(G);
+		Operations.removeAllVertices(aux, set);
+		for (Set<Node> iter : Components.getAllConnectedComponent(aux)) {
+			Graph<Node, Link> component = new UndirectedSparseGraph<Node, Link>();
+			Operations.subGraph(aux, component, iter);
+			SG.getComponents().add(component);
+		}
+		
+		return SG;
+	}
+
+
+
+	private static int[][] Mutation(int[][] population, int sizeP, int sizeI, double pmut) 
+	{
+		int[][] popuMut = new int[sizeP][];
+		
+		for(int i=0; i<sizeP; i++)
+		{
+			int[] indiMut = new int[sizeI];
+			int[] indi = population[i];
+			
+
+			for(int j=0; j<sizeI; j++)
+			{
+				if(Math.random()<pmut)
+				{
+					indiMut[j]=(indi[j]+1)%2;
+				}
+				else
+				{
+					indiMut[j]=indi[j];
+				}
+			}		
+			popuMut[i] = indi;
+		}
+		return popuMut;
+	}
+
+
+
+	private static int[][] Crossover(int[][] population, int sizeP, int sizeI, double pcross) 
+	{
+		int[][] popuCross = new int[sizeP][];
+		List<Integer> choice_list= new LinkedList<Integer>();
+		Random ram = new Random();
+		Random ram1 = new Random();
+		int key1;
+		int key2;
+		
+		for(int i=0; i<sizeP; i+=2)
+		{
+			//Selecciono primer individuo
+			while(choice_list.contains(key1=ram.nextInt(sizeP)));
+			choice_list.add(key1);
+			
+			//Selecciono segundo individuo
+			while(choice_list.contains(key2=ram.nextInt(sizeP)));
+			choice_list.add(key2);
+			
+			
+			int[] child1 = new int[sizeI];
+			int[] child2 = new int[sizeI];
+			
+			int[] indi1 = population[key1];
+			int[] indi2 = population[key2];
+			
+			if(Math.random()<pcross)
+			{
+				int pointCross = ram1.nextInt(sizeI);
+				
+				//Creo primer individuo
+				for(int j=0; j<pointCross; j++)
+					child1[j] = indi1[j];
+				 
+				for(int j=pointCross; j<sizeI; j++)
+					child1[j] = indi2[j];
+				
+				
+				//Creo segundo individuo
+				for(int j=0; j<pointCross; j++)
+					child2[j] = indi2[j];
+				 
+				for(int j=pointCross; j<sizeI; j++)
+					child2[j]=indi1[j];
+			}
+			else
+			{
+				for(int j=0; j<sizeI; j++)
+					child1[j]=indi1[j];
+				
+				for(int j=0; j<sizeI; j++)
+					child2[j]=indi2[j];
+			}
+			
+			popuCross[i] = child1;
+			popuCross[i+1] = child2;
+		}
+		return popuCross;
+	}
+
+
+
+	private static int[][] Selection(int[][] population, double[] fitness, int sizeP, int sizeI) 
+	{
+		int[][] popuSelec = new int[sizeP][];
+		double Npointer = Math.random()/sizeP;
+		List<Integer> visited_list = new LinkedList<Integer>();
+		double d = 1/sizeP;
+		double begin[] = new double[sizeP];
+		int order[] = new int[sizeP];
+		double P[] = new double[sizeP];
+		int j;
+		double fit_total = 0;
+		
+
+		for(int i=0; i<sizeP; i++)
+		{
+			fit_total += fitness[i];
+			
+			//Busco el maximo de los no visitados
+			double max_fit = fitness[0];
+			int key = 0;
+			for(int k = 1; k<sizeP; k++)
+			{
+				if(!visited_list.contains(k) && (fitness[k]> max_fit))
+				{
+					key = k;
+					max_fit = fitness[k];
+				}
+			}
+			visited_list.add(key);
+			
+			order[i] = key;
+		}
+		
+		P[0] = fitness[order[0]]/fit_total;
+		begin[0] = 0.0;
+		
+		for(int i=1; i<sizeP; i++)
+		{
+			P[i] = fitness[order[i]]/fit_total;
+			begin[i] = begin[i-1] + P[i-1];
+		}
+		
+		for(int i=0; i<sizeP; i++)
+		{
+			double pointer= i*d+Npointer;
+			j = 0;
+			while((j<sizeP) && (pointer>begin[j++]));
+			
+			int[] cpyIndi = new int[sizeI];
+			int[] indi = population[order[j]];
+			for(int k=0; k<sizeI; k++)
+			{
+				cpyIndi[k] = indi[k];
+			}
+			
+			popuSelec[i] = cpyIndi;
+		}
+		return popuSelec;
+	}
+
+
+
+	private static double[] Fitness(Graph<Node, Link> G, int[][] population, int sizeP, int sizeI) 
+	{
+		double[] fitness_evaluation = new double[sizeP];
+		
+		for(int i=0; i<sizeP; i++)
+		{
+			fitness_evaluation[i] = fitness_function(G, population[i], sizeI);
+			//System.out.println(" / "+fitness_evaluation[i]);
+		}
+		return fitness_evaluation;
+	}
+
+
+	private static double fitness_function(Graph<Node,Link> G, int[] indi, int sizeI) 
+	{
+		// Set separator
+		Set<Node> set =  new HashSet<Node>();
+		int i = 0;
+		int tamIndi = 0;
+		for(Node n : G.getVertices())
+		{
+			if (indi[i]==1) 
+			{
+				set.add(n);
+				//System.out.print(n.getDescription() +" / ");
+				tamIndi++;
+			}
+			i++;
+		}
+		
+		
+		// Components
+		Graph<Node, Link> aux = Operations.copyUndirectedSparseGraph(G);
+		Operations.removeAllVertices(aux, set);
+		int cantCompConex = 0;
+		double media = 0;
+		List<Graph<Node, Link>> components = new LinkedList<Graph<Node,Link>>();
+		
+		for (Set<Node> cc : Components.getAllConnectedComponent(aux)) {
+			Graph<Node, Link> component = new UndirectedSparseGraph<Node, Link>();
+			Operations.subGraph(aux, component, cc);
+			components.add(component);
+			media += component.getVertexCount();
+			cantCompConex++;
+		}
+		
+		if (cantCompConex <= 1) // No es un grafo separador, penalizo
+		{
+			return 0;
+		}
+		
+		
+		media = media/cantCompConex;
+
+		Iterator<Graph<Node, Link>> ii = components.iterator();
+		double sum = 0;
+		while(ii.hasNext())
+		{
+			int x = ii.next().getVertexCount();
+			sum += (x-media)*(x-media); 
+		}
+		
+		double size = G.getVertexCount();
+		
+		double desviacion = Math.sqrt(sum/(cantCompConex-1));
+		double max_desviacion = Math.sqrt((size*((size-2)*(size-2)))/(size-1));
+		
+		//System.out.print("/ Size:" + size + "/ Media:"+ media + "/ max_Desviacion:" + max_desviacion + "/ Desviacion:" + desviacion + "/ cantCompConex:" + cantCompConex);
+
+		
+		return (sizeI-tamIndi) + cantCompConex + (max_desviacion - desviacion);
+	}
+
+
+
+	private static int[][] Initialization(int sizeP, int sizeI) 
+	{
+		int[][] population = new int[sizeP][];
+	
+		for(int i =0; i<sizeP; i++)
+		{			
+			population[i] = randomIndi(sizeI, Math.random());
+			//System.out.println("");
+		}
+		return population;
+	}
+
+	private static int[] randomIndi(int sizeI, double seed) 
+	{
+		int[] indi = new int[sizeI];
+		
+		for(int i = 0; i<sizeI; i++)
+		{	
+			if (Math.random() < seed)
+				indi[i] = 0;
+			else
+				indi[i] = 1;
+			
+			//System.out.print(indi[i]+"-");
+		}
+		
+		return indi;
+	}
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////FIN: Approach Evolutive (GA) /////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	
+	
+	
+	
+	
+	
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////// Spectral Bisection //////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	static public GraphSeparator SpectralBisection(Graph<Node,Link> G) 
 	{ 
 		GraphSeparator SG = new GraphSeparator();
@@ -281,5 +659,9 @@ public class Separator {
 		return null;
 
 	}
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////// Spectral Bisection //////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 }
+
