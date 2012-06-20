@@ -32,7 +32,7 @@ public class BGPSepAlgorithm implements RRLocAlgorithm {
 					iBGPSessionType.peer));
 		}
 		else {
-			GraphSeparator graphSeparator = Separator.SpectralBisection(IGPTopology);
+			GraphSeparator graphSeparator = Separator.graphSeparator(IGPTopology);
 			
 			//El conjunto de routes reflectors estará configurado Full Mesh
 			for (Node u : graphSeparator.getSeparator()) {
