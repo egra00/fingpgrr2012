@@ -2,13 +2,13 @@ package uy.edu.fing.repository.rrloc.algorithms.optimal;
 
 public class MetaNode {
 	
-	private String rid; //Router-ID
+	private String id;
 	private int p;
 	private MetaNodeType type;
 	
-	public MetaNode(int p, String rid, MetaNodeType type) {
+	public MetaNode(int p, String id, MetaNodeType type) {
 		this.p = p;
-		this.rid = rid;
+		this.id = id;
 		this.type = type;
 	}
 	
@@ -20,12 +20,12 @@ public class MetaNode {
 		this.p = p;
 	}
 	
-	public String getRid() {
-		return rid;
+	public String getId() {
+		return id;
 	}
 	
-	public void setRid(String rid) {
-		this.rid = rid;
+	public void setId(String id) {
+		this.id = id;
 	}
 	
 	public MetaNodeType getType() {
