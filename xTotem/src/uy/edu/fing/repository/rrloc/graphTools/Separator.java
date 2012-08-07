@@ -70,19 +70,57 @@ public class Separator {
 		GraphSeparator current_solution;
 		GraphPartitionGA separador;
 		
-		separador = new GraphPartitionGA(G, NGen, sizeP, sizeOf, pmut, pcross);
-		best_solution = separador.run();
-		
-		for(int i=1; i< nb_run; i++)
+		if ( G.getEdgeCount() < (G.getVertexCount()*(G.getVertexCount()-1))/2 ) 
 		{
-			current_solution = separador.run();
-			if (betterthat(current_solution, best_solution))
+			separador = new GraphPartitionGA(G, NGen, sizeP, sizeOf, pmut, pcross);
+			best_solution = separador.run();
+			
+			for(int i=1; i< nb_run; i++)
 			{
-				best_solution = current_solution;
+				current_solution = separador.run();
+				if (betterthat(current_solution, best_solution))
+				{
+					best_solution = current_solution;
+				}
+					
 			}
-				
+		
+		}
+		else // El grafo fisico esta en full mesh ... no existe un grafo separador ... invento una solucion.
+		{
+			//Creo separador de grafo
+			best_solution = new GraphSeparator();
+			
+			// Set separator
+			Set<Node> set =  new HashSet<Node>();
+			
+			for(Node n : G.getVertices())
+			{
+				set.add(n);
+			}
+			
+			best_solution.setSeparator(set);
+			best_solution.setComponents(new ArrayList<Graph<Node, Link>>());
 		}
 		
+		
+		
+		System.out.println("//////GRAFO SEPARADOR////////"+ G.getVertexCount());
+		
+		for(Node n : best_solution.getSeparator())
+		{
+			System.out.println("\t" + n.getDescription());
+		}
+		
+		for (Graph<Node, Link> g_i : best_solution.getComponents()) {
+			System.out.println("\t//////COMPONENTE////");
+			for (Node u : g_i.getVertices()) {
+				System.out.println("\t\t" + u.getDescription());
+			}
+		}
+		
+		
+		System.out.println("\n\n");
 		return best_solution;
 		
 	}
