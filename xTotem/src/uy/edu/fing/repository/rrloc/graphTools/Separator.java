@@ -105,7 +105,7 @@ public class Separator {
 		
 		
 		
-		System.out.println("//////GRAFO SEPARADOR////////"+ G.getVertexCount());
+	/*	System.out.println("//////GRAFO SEPARADOR////////"+ G.getVertexCount());
 		
 		for(Node n : best_solution.getSeparator())
 		{
@@ -120,7 +120,7 @@ public class Separator {
 		}
 		
 		
-		System.out.println("\n\n");
+		System.out.println("\n\n");*/
 		return best_solution;
 		
 	}

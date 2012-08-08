@@ -10,7 +10,6 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
-import be.ac.ulg.montefiore.run.totem.domain.exception.InvalidDomainException;
 import be.ac.ulg.montefiore.run.totem.domain.exception.NodeNotFoundException;
 import be.ac.ulg.montefiore.run.totem.domain.facade.InterDomainManager;
 import be.ac.ulg.montefiore.run.totem.domain.model.BgpNeighbor;
@@ -20,7 +19,7 @@ import be.ac.ulg.montefiore.run.totem.domain.model.Domain;
 import be.ac.ulg.montefiore.run.totem.domain.model.Link;
 import be.ac.ulg.montefiore.run.totem.domain.model.Node;
 
-@SuppressWarnings("unchecked")
+
 public class CBGPDumpAlgorithm
 {
 	
@@ -100,17 +99,19 @@ public class CBGPDumpAlgorithm
 	private boolean initDescriptionTopology() throws IOException
 	{
     	String description = ((domain.getDescription() == null || domain.getDescription().equals("")) ? "AS configuration IGP/iBGP" : domain.getDescription());
-    	
-    	bw.write("print \"*** "+ description +" ***\\n\\n\""+"\n\n");
-		bw.write("# Domain AS"+ domain_num +"\n");
-		
+    	bw.write("# ===================================================================\n");
+    	bw.write("# C-BGP Export file (CLI)\n");
+    	bw.write("# Domain AS "+ domain_num +"\n");
+    	bw.write("# Description: "+ description +"\n");
+    	bw.write("# ===================================================================\n\n");
 		return false;
 	}
 	
 	private boolean initIgpTopology() throws IOException
-	{
-		bw.write("net add domain "+ domain_num +" igp" +"\n");
-        
+	{	
+		bw.write("# -------------------------------------------------------------------\n");
+		bw.write("# Physical topology\n");
+		bw.write("# -------------------------------------------------------------------\n");
         /// ADD NODES
 		List<Node> lst_nodes = domain.getAllNodes();
 		for(Node node : lst_nodes)
@@ -123,7 +124,7 @@ public class CBGPDumpAlgorithm
 			else
 			{
 				bw.write("net add node "+node.getRid()+"\n");
-				bw.write("net node "+node.getRid()+ " domain "+ domain_num +"\n");
+				//bw.write("net node "+node.getRid()+ " domain "+ domain_num +"\n");
 				nodesById.put(node.getRid(), node);
 			}
 		}
@@ -154,13 +155,50 @@ public class CBGPDumpAlgorithm
 				return true;
 			};
 		}
+		bw.write("\n");
 		/// END ADD LINKS
+		
+		/// STATIC ROUTING
+		bw.write("# -------------------------------------------------------------------\n");
+		bw.write("# Static routing\n");
+		bw.write("# -------------------------------------------------------------------\n");
+		// Vacio
+		bw.write("\n");
+		/// END STATIC ROUTING
+		
+		/// IGP ROUTING
+		bw.write("# -------------------------------------------------------------------\n");
+		bw.write("# IGP routing\n");
+		bw.write("# -------------------------------------------------------------------\n");
+		
+		bw.write("net add domain "+ domain_num +" igp" +"\n");
+		
+		lst_nodes = domain.getAllNodes();
+		for(Node node : lst_nodes)
+		{
+			if (node.getRid() == null || node.getRid().equals(""))
+			{
+				errorControl("Node "+ node.getId() +" doesn't has Router ID (Rid == NULL || Rid == EMPTY)");
+				return true;
+			}
+			else
+				bw.write("net node "+node.getRid()+ " domain "+ domain_num +"\n");
+			
+		}
+		bw.write("net domain "+ domain_num +" compute");
+		bw.write("\n\n");
+		/// END IGP ROUTING
 		
 		return false;
 	}
 	
 	private boolean initBgpTopology() throws IOException
 	{
+		/// BGP ROUTING
+		bw.write("# -------------------------------------------------------------------\n");
+		bw.write("# BGP routing\n");
+		bw.write("# -------------------------------------------------------------------\n");
+		
 		/// ADD ROUTERS BGP AND SESSIONS iBGP
 		List<BgpRouter> lst_bgps = domain.getAllBgpRouters();
 		for(BgpRouter router : lst_bgps)
@@ -168,6 +206,7 @@ public class CBGPDumpAlgorithm
 			if (nodesById.containsKey(router.getRid()))
 			{
 				bw.write("bgp add router "+ domain_num + " " +router.getRid()+"\n");
+				bw.write("bgp router "+router.getRid()+"\n");
 				
 	            // Add all originated networks
 	            List<BgpNetwork> networks = router.getAllNetworks();
