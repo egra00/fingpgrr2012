@@ -26,7 +26,7 @@ public class GraphPartitionGA
 	private double[] fit_population;
 	private int[][] offsprings;
 	
-	final double PENALIZACION = 1.0; // Usada en caso de que el grafo elegido no sea un grafo separador
+	final double PENALIZACION = 0.001; // Usada en caso de que el grafo elegido no sea un grafo separador
 	final int SIZECAKE = 10000;
 	private int[] cake;
 	
