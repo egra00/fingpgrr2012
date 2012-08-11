@@ -91,10 +91,12 @@ public class RepositoryManager extends RepositoryManagerObserver {
         // use preferences.xml to list available algorithms
         String[] algos;
         if (System.getProperty("os.name").contains("Linux") && System.getProperty("os.arch").contains("i386")) {
-            algos = PreferenceManager.getInstance().getPrefs().get("AVAILABLE-ALGORITHMS", "nl.tudelft.repository.XAMCRA.XAMCRA:be.ac.ulg.montefiore.run.totem.repository.DAMOTE.DAMOTE:be.ac.ulg.montefiore.run.totem.repository.CSPF.CSPF:be.ac.ulg.montefiore.run.totem.repository.CSPF.CSPFInvFreeBw:be.ac.ulg.montefiore.run.totem.repository.CSPF.CSPFInvCap:be.ac.ulg.montefiore.run.totem.repository.CSPF.CSPFHopCount:be.ac.ulg.montefiore.run.totem.repository.CSPF.CSPFTEMetric:be.ac.ucl.poms.repository.IGPWO.IGPWO:be.ac.ucl.ingi.totem.repository.CBGP:it.unina.repository.MIRA.MIRA").split(":");
+           // algos = PreferenceManager.getInstance().getPrefs().get("AVAILABLE-ALGORITHMS", "nl.tudelft.repository.XAMCRA.XAMCRA:be.ac.ulg.montefiore.run.totem.repository.DAMOTE.DAMOTE:be.ac.ulg.montefiore.run.totem.repository.CSPF.CSPF:be.ac.ulg.montefiore.run.totem.repository.CSPF.CSPFInvFreeBw:be.ac.ulg.montefiore.run.totem.repository.CSPF.CSPFInvCap:be.ac.ulg.montefiore.run.totem.repository.CSPF.CSPFHopCount:be.ac.ulg.montefiore.run.totem.repository.CSPF.CSPFTEMetric:be.ac.ucl.poms.repository.IGPWO.IGPWO:be.ac.ucl.ingi.totem.repository.CBGP:it.unina.repository.MIRA.MIRA").split(":");
+        	algos = PreferenceManager.getInstance().getPrefs().get("AVAILABLE-ALGORITHMS", "").split(":");
         } else {
             logger.warn("Most algorithms are designed to run on Linux platform with a 32 bits JVM. Your configuration doesn't seem to match this crierion. Some algorithms won't be available.");
-            algos = PreferenceManager.getInstance().getPrefs().get("COMPATIBLE-ALGORITHMS", "be.ac.ulg.montefiore.run.totem.repository.CSPF.CSPF:be.ac.ulg.montefiore.run.totem.repository.CSPF.CSPFInvFreeBw:be.ac.ulg.montefiore.run.totem.repository.CSPF.CSPFInvCap:be.ac.ulg.montefiore.run.totem.repository.CSPF.CSPFHopCount:be.ac.ulg.montefiore.run.totem.repository.CSPF.CSPFTEMetric").split(":");
+            //algos = PreferenceManager.getInstance().getPrefs().get("COMPATIBLE-ALGORITHMS", "be.ac.ulg.montefiore.run.totem.repository.CSPF.CSPF:be.ac.ulg.montefiore.run.totem.repository.CSPF.CSPFInvFreeBw:be.ac.ulg.montefiore.run.totem.repository.CSPF.CSPFInvCap:be.ac.ulg.montefiore.run.totem.repository.CSPF.CSPFHopCount:be.ac.ulg.montefiore.run.totem.repository.CSPF.CSPFTEMetric").split(":");
+            algos = PreferenceManager.getInstance().getPrefs().get("COMPATIBLE-ALGORITHMS", "").split(":");
         }
 
         for (int i = 0; i < algos.length; ++i) {
