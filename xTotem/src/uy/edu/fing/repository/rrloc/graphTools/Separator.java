@@ -117,8 +117,8 @@ public class Separator {
 			for (Node u : g_i.getVertices()) {
 				System.out.println("\t\t" + u.getId());
 			}
-		}
-		*/
+		}*/
+		
 		
 		System.out.println("\n\n");
 		return best_solution;

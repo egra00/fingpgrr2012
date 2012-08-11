@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import org.apache.log4j.Logger;
 
 import uy.edu.fing.repository.rrloc.algorithms.bgpsepX.bgpsep.BGPSep;
-import uy.edu.fing.repository.rrloc.algorithms.bgpsepX.bgpsepD.BGPSepD;
 import be.ac.ulg.montefiore.run.totem.repository.model.exception.AlgorithmParameterException;
 import be.ac.ulg.montefiore.run.totem.util.ParameterDescriptor;
 
