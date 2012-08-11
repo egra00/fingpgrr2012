@@ -105,31 +105,31 @@ public class Separator {
 		
 		
 		
-	/*	System.out.println("//////GRAFO SEPARADOR////////"+ G.getVertexCount());
+		/*System.out.println("//////GRAFO SEPARADOR////////"+ G.getVertexCount());
 		
 		for(Node n : best_solution.getSeparator())
 		{
-			System.out.println("\t" + n.getDescription());
+			System.out.println("\t" + n.getId());
 		}
 		
 		for (Graph<Node, Link> g_i : best_solution.getComponents()) {
 			System.out.println("\t//////COMPONENTE////");
 			for (Node u : g_i.getVertices()) {
-				System.out.println("\t\t" + u.getDescription());
+				System.out.println("\t\t" + u.getId());
 			}
 		}
+		*/
 		
-		
-		System.out.println("\n\n");*/
+		System.out.println("\n\n");
 		return best_solution;
 		
 	}
 	
 	private static boolean betterthat(GraphSeparator sol1, GraphSeparator sol2)
 	{
-		if (sol1.getSeparator().size() < sol2.getSeparator().size())
+		if (sol1.getSeparator().size() <= sol2.getSeparator().size())
 			return true;
-		else if (sol1.getSeparator().size() == sol2.getSeparator().size() && sol1.getComponents().size() < sol2.getComponents().size())
+		else if (sol1.getSeparator().size() == sol2.getSeparator().size() && sol1.getComponents().size() >= sol2.getComponents().size())
 			return true;
 		
 		return false;
