@@ -1,17 +1,20 @@
 package uy.edu.fing.repository.rrloc.algorithms.bgpsepX.bgpsep;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 import org.apache.log4j.Logger;
 
-import uy.edu.fing.repository.rrloc.algorithms.bgpsepX.iBGPSession;
-import uy.edu.fing.repository.rrloc.algorithms.bgpsepX.iBGPSessionType;
+import uy.edu.fing.repository.rrloc.algorithms.iBGPSession;
+import uy.edu.fing.repository.rrloc.algorithms.iBGPSessionType;
 import uy.edu.fing.repository.rrloc.iAlgorithm.BindAlgorithm;
 import agape.tools.Operations;
+import be.ac.ulg.montefiore.run.totem.domain.exception.InvalidDomainException;
 import be.ac.ulg.montefiore.run.totem.domain.exception.NodeNotFoundException;
+import be.ac.ulg.montefiore.run.totem.domain.facade.InterDomainManager;
 import be.ac.ulg.montefiore.run.totem.domain.model.Domain;
 import be.ac.ulg.montefiore.run.totem.domain.model.Link;
 import be.ac.ulg.montefiore.run.totem.domain.model.Node;
@@ -28,11 +31,11 @@ import edu.uci.ics.jung2.graph.UndirectedSparseMultigraph;
 
 @SuppressWarnings("unchecked")
 public class BGPSep extends BindAlgorithm {
-	protected Logger my_logger;
 	
+	private Domain domain;
 	
 	public BGPSep() {
-		my_logger = Logger.getLogger(BGPSep.class);
+		logger = Logger.getLogger(BGPSep.class);
 		params = new ArrayList<ParameterDescriptor>();
 		algorithm = new BGPSepAlgorithm();
 		
@@ -45,7 +48,26 @@ public class BGPSep extends BindAlgorithm {
 	
 	
 	@Override
-	public Object getAlgorithmParams(Domain domain) {
+	public Object getAlgorithmParams(HashMap params) 
+	{
+        String asId = (String) params.get("ASID");
+      
+        if(asId == null || asId.isEmpty()) {
+        	domain = InterDomainManager.getInstance().getDefaultDomain();
+        	if(domain == null){
+	        	logger.error("There is no default domain");
+	            return null;
+        	}
+        } else {
+            try {
+                domain = InterDomainManager.getInstance().getDomain(Integer.parseInt(asId));
+            } catch(InvalidDomainException e) {
+                logger.error("Cannot load domain " + asId);
+                return null;
+            }
+        }
+		
+		
 		// Topología IGP representada en un grafo jung 
 		Graph<Node, Link> jIGPTopology = new UndirectedSparseMultigraph<Node, Link>();
 		
@@ -58,7 +80,7 @@ public class BGPSep extends BindAlgorithm {
 					jIGPTopology.addEdge(link, link.getSrcNode(), link.getDstNode());
 				}
 			} catch (NodeNotFoundException e) {
-				my_logger.error("Parsing Totem domain to Jung graph");
+				logger.error("Parsing Totem domain to Jung graph");
 				e.printStackTrace();
 			}
 		}
@@ -72,7 +94,7 @@ public class BGPSep extends BindAlgorithm {
 	}
 
 	@Override
-	public void dumpResultInDomain(Domain domain, Object algorithmResult) throws Exception {
+	public void dumpResultInDomain(Object algorithmResult) throws Exception {
 		List<iBGPSession> iBGPTopology = (List<iBGPSession>)algorithmResult;
 		ObjectFactory factory = new ObjectFactory();
 		
@@ -125,9 +147,9 @@ public class BGPSep extends BindAlgorithm {
 	public void log(Object algorithmResult) {
 		List<iBGPSession> iBGPTopology = (List<iBGPSession>)algorithmResult;
 		
-		my_logger.debug("iBGP sessions ("+iBGPTopology.size()+")");
+		logger.debug("iBGP sessions ("+iBGPTopology.size()+")");
 		for (iBGPSession session: iBGPTopology) {
-			my_logger.debug(session.getIdLink1() + " - " + session.getIdLink2() + " -> " + session.getSessionType());
+			logger.debug(session.getIdLink1() + " - " + session.getIdLink2() + " -> " + session.getSessionType());
 		}
 		
 	}

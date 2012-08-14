@@ -5,8 +5,8 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
-import uy.edu.fing.repository.rrloc.algorithms.bgpsepX.iBGPSession;
-import uy.edu.fing.repository.rrloc.algorithms.bgpsepX.iBGPSessionType;
+import uy.edu.fing.repository.rrloc.algorithms.iBGPSession;
+import uy.edu.fing.repository.rrloc.algorithms.iBGPSessionType;
 import uy.edu.fing.repository.rrloc.algorithms.bgpsepX.bgpsep.BGPSepAlgorithm;
 import uy.edu.fing.repository.rrloc.iAlgorithm.RRLocAlgorithm;
 import agape.tools.Operations;
