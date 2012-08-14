@@ -68,6 +68,8 @@ import javax.swing.SwingUtilities;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 
+import uy.edu.fing.repository.tools.iBGPViewer.Display;
+
 import be.ac.ulg.montefiore.run.totem.chart.facade.ChartManager;
 import be.ac.ulg.montefiore.run.totem.chart.model.exception.NoSuchChartException;
 import be.ac.ulg.montefiore.run.totem.domain.exception.DomainAlreadyExistException;
@@ -148,6 +150,7 @@ public class MainWindow extends JFrame implements InterDomainManagerListener {
     static final String ACTION_SAVE_VISUAL = "Save Visualization as Image ...";
     static final String ACTION_CLOSE = "Close Topology";
     static final String ACTION_EXIT = "Exit";
+    static final String ACTION_VIEW_IBGP = "Sessions iBGP";
     static final String ACTION_LIST_NODES = "Nodes List";
     static final String ACTION_LIST_LINKS = "Links List";
     static final String ACTION_LIST_LSP = "LSP List";
@@ -416,6 +419,11 @@ public class MainWindow extends JFrame implements InterDomainManagerListener {
         //Create the menu "View"
         mbar.addMenu("View", KeyEvent.VK_V);
 
+        menuItem = new JMenuItem(ACTION_VIEW_IBGP);
+        mbar.addMenuItem(menuItem, null, new ShowSessionsIBGP());
+        menuItem.setEnabled(false);
+        buttonList.add(menuItem);
+        
         menuItem = new JMenuItem(ACTION_LIST_NODES);
         ks = KeyStroke.getKeyStroke(KeyEvent.VK_F2, 0);
         mbar.addMenuItem(menuItem, ks, new ShowNodesListListener());
@@ -1101,6 +1109,18 @@ public class MainWindow extends JFrame implements InterDomainManagerListener {
         }
     }
 
+    
+    /**
+     * The listener called when a user wants to see a Node Table
+     */
+    class ShowSessionsIBGP implements ActionListener 
+    {
+        public void actionPerformed(ActionEvent e) 
+        {
+        	(new Display(950, 550)).printTopologyIBGP();
+        }
+    }
+    
 
     /**
      * The listener called when a user wants to see a Node Table
