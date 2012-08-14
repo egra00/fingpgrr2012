@@ -2,8 +2,8 @@ package uy.edu.fing.repository.rrloc.algorithms.bgpsepX.bgpsep;
 
 import java.util.List;
 
-import uy.edu.fing.repository.rrloc.algorithms.bgpsepX.iBGPSession;
-import uy.edu.fing.repository.rrloc.algorithms.bgpsepX.iBGPSessionType;
+import uy.edu.fing.repository.rrloc.algorithms.iBGPSession;
+import uy.edu.fing.repository.rrloc.algorithms.iBGPSessionType;
 import uy.edu.fing.repository.rrloc.graphTools.GraphSeparator;
 import uy.edu.fing.repository.rrloc.graphTools.Separator;
 import uy.edu.fing.repository.rrloc.iAlgorithm.RRLocAlgorithm;

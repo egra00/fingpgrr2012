@@ -4,8 +4,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import uy.edu.fing.repository.rrloc.algorithms.bgpsepX.iBGPSession;
-import uy.edu.fing.repository.rrloc.algorithms.bgpsepX.iBGPSessionType;
+import uy.edu.fing.repository.rrloc.algorithms.iBGPSession;
+import uy.edu.fing.repository.rrloc.algorithms.iBGPSessionType;
 import uy.edu.fing.repository.rrloc.algorithms.bgpsepX.bgpsepD.BGPSepDAlgorithm;
 import uy.edu.fing.repository.rrloc.graphTools.GraphSeparator;
 import uy.edu.fing.repository.rrloc.graphTools.Separator;

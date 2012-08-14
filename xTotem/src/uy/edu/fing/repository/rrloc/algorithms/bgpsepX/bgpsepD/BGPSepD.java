@@ -11,7 +11,7 @@ import be.ac.ulg.montefiore.run.totem.util.ParameterDescriptor;
 public class BGPSepD extends BGPSep {
 	
 	public BGPSepD() {
-		my_logger = Logger.getLogger(BGPSepD.class);
+		logger = Logger.getLogger(BGPSepD.class);
 		params = new ArrayList<ParameterDescriptor>();
 		algorithm = new BGPSepDAlgorithm();
 		

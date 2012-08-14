@@ -16,8 +16,8 @@ import be.ac.ulg.montefiore.run.totem.util.ParameterDescriptor;
 @SuppressWarnings("unchecked")
 public abstract class BindAlgorithm implements TotemAlgorithm {
 	
-	private Logger logger = Logger.getLogger(BindAlgorithm.class);
-	private HashMap runningParams = null;
+	protected Logger logger;
+	protected HashMap runningParams = null;
 	
 	protected RRLocAlgorithm algorithm;
 	protected ArrayList<ParameterDescriptor> params;
@@ -30,7 +30,7 @@ public abstract class BindAlgorithm implements TotemAlgorithm {
 	 * @return the algorithm parameters 
 	 * 
 	 */
-	public abstract Object getAlgorithmParams(Domain domain);
+	public abstract Object getAlgorithmParams(HashMap params);
 	
 	/*
 	 * It is called for initialize the result parameter
@@ -48,7 +48,7 @@ public abstract class BindAlgorithm implements TotemAlgorithm {
 	 * @param algorithmResult is the result of the algorithm
 	 * 
 	 */
-	public abstract void dumpResultInDomain(Domain domain, Object algorithmResult) throws Exception;
+	public abstract void dumpResultInDomain(Object algorithmResult) throws Exception;
 	
 	/*
 	 * Used in debug mode, log the result of algorithm in logger
@@ -67,26 +67,9 @@ public abstract class BindAlgorithm implements TotemAlgorithm {
 	@Override
 	public void start(HashMap params) throws AlgorithmInitialisationException {
 		runningParams = params;
-
-        String asId = (String) params.get("ASID");
-        Domain domain;
-        if(asId == null) {
-        	domain = InterDomainManager.getInstance().getDefaultDomain();
-        	if(domain == null){
-	        	logger.error("There is no default domain");
-	            return;
-        	}
-        } else {
-            try {
-                domain = InterDomainManager.getInstance().getDomain(Integer.parseInt(asId));
-            } catch(InvalidDomainException e) {
-                logger.error("Cannot load domain " + asId);
-                return;
-            }
-        }
         logger.debug("Starting...");
         
-        Object algorithmParams = getAlgorithmParams(domain);
+        Object algorithmParams = getAlgorithmParams(params);
         Object algorithmResult = initAlgorithmResult();
         
         algorithm.run(algorithmParams, algorithmResult);
@@ -94,7 +77,7 @@ public abstract class BindAlgorithm implements TotemAlgorithm {
         log(algorithmResult);
         
         try {
-        	dumpResultInDomain(domain, algorithmResult);
+        	dumpResultInDomain(algorithmResult);
 		} catch (Exception e) {
 			logger.error("Dumping iBGP topology in Totem domain");
 			e.printStackTrace();
