@@ -11,15 +11,13 @@ import javax.swing.JOptionPane;
 
 import org.apache.log4j.Logger;
 
-import edu.uci.ics.jung2.graph.Graph;
-import edu.uci.ics.jung2.graph.UndirectedSparseMultigraph;
-
 import uy.edu.fing.repository.rrloc.algorithms.iBGPSession;
 import uy.edu.fing.repository.rrloc.algorithms.iBGPSessionType;
 import uy.edu.fing.repository.rrloc.iAlgorithm.BindAlgorithm;
-import uy.edu.fing.repository.rrloc.iAlgorithm.RRLocAlgorithm;
 import agape.tools.Operations;
+import be.ac.ulg.montefiore.run.totem.domain.exception.InvalidDomainException;
 import be.ac.ulg.montefiore.run.totem.domain.exception.NodeNotFoundException;
+import be.ac.ulg.montefiore.run.totem.domain.facade.InterDomainManager;
 import be.ac.ulg.montefiore.run.totem.domain.model.Domain;
 import be.ac.ulg.montefiore.run.totem.domain.model.Link;
 import be.ac.ulg.montefiore.run.totem.domain.model.Node;
@@ -34,6 +32,8 @@ import be.ac.ulg.montefiore.run.totem.domain.model.jaxb.impl.NodeImpl;
 import be.ac.ulg.montefiore.run.totem.repository.model.exception.AlgorithmParameterException;
 import be.ac.ulg.montefiore.run.totem.util.ParameterDescriptor;
 import be.ac.ulg.montefiore.run.totem.visualtopo.guiComponents.MainWindow;
+import edu.uci.ics.jung2.graph.Graph;
+import edu.uci.ics.jung2.graph.UndirectedSparseMultigraph;
 
 public class Optimal extends BindAlgorithm {
 
@@ -115,9 +115,26 @@ public class Optimal extends BindAlgorithm {
 	}
 
 	@Override
-	public Object getAlgorithmParams(HashMap params) {
-		List<Object> lstParams = new ArrayList<Object>();
+	public Object getAlgorithmParams(HashMap params) 
+	{
+        String asId = (String) params.get("ASID");
+        
+        if(asId == null || asId.isEmpty()) {
+        	domain = InterDomainManager.getInstance().getDefaultDomain();
+        	if(domain == null){
+	        	logger.error("There is no default domain");
+	            return null;
+        	}
+        } else {
+            try {
+                domain = InterDomainManager.getInstance().getDomain(Integer.parseInt(asId));
+            } catch(InvalidDomainException e) {
+                logger.error("Cannot load domain " + asId);
+                return null;
+            }
+        }
 		
+		List<Object> lstParams = new ArrayList<Object>();
 		// Topología IGP representada en un grafo jung 
 		Graph<Node, Link> jIGPTopology = new UndirectedSparseMultigraph<Node, Link>();
 		
