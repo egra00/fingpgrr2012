@@ -15,11 +15,11 @@ import edu.uci.ics.jung2.graph.Graph;
 public class Bates2Algorithm implements RRLocAlgorithm
 {	
 	@Override
-	public void run(Object in_params, Object out_resutl) 
+	public void run(Object in_params, Object out_result) 
 	{
 		
 		Graph<Node, Link> igp = (Graph<Node, Link>) in_params;
-		List<iBGPSession> lst_sessions = (List<iBGPSession>) out_resutl;
+		List<iBGPSession> lst_sessions = (List<iBGPSession>) out_result;
 
 		
 		Node node = Operations.getMaxDegVertex(igp);
@@ -27,7 +27,7 @@ public class Bates2Algorithm implements RRLocAlgorithm
 		Node node1 = null;
 		int deg_node1 = Integer.MIN_VALUE;
 		
-		// Escojo los 2 nodos mas conectado
+		// Escojo el segundo nodo mas conectado
 		for(Iterator<Node> ii=igp.getVertices().iterator() ; ii.hasNext(); )
 		{
 			Node node2 = ii.next();
@@ -44,24 +44,30 @@ public class Bates2Algorithm implements RRLocAlgorithm
 			
 		}
 		
-		// Hago clientes al resto de los routers con el RR
+		
+		// full-mesh entre los RRs
+		iBGPSession session = new iBGPSession(node.getId(), node1.getId(), iBGPSessionType.peer);
+		lst_sessions.add(session);
+		
+		
+		// Hago clientes al resto de los routers con el RR (node)
 		for(Iterator<Node> ii2 = igp.getVertices().iterator(); ii2.hasNext(); )
 		{
 			Node node2 = ii2.next();
-			if (node != node2)
+			if (node1 != node2 && node != node2)
 			{
-				iBGPSession session = new iBGPSession(node2.getId(), node.getId(), iBGPSessionType.client);
+				session = new iBGPSession(node2.getId(), node.getId(), iBGPSessionType.client);
 				lst_sessions.add(session);
 			}
 		}
 		
-		// Hago clientes al resto de los routers con el RR
+		// Hago clientes al resto de los routers con el RR (node1)
 		for(Iterator<Node> ii2 = igp.getVertices().iterator(); ii2.hasNext(); )
 		{
 			Node node2 = ii2.next();
-			if (node1 != node2)
+			if (node1 != node2 && node != node2)
 			{
-				iBGPSession session = new iBGPSession(node2.getId(), node1.getId(), iBGPSessionType.client);
+				session = new iBGPSession(node2.getId(), node1.getId(), iBGPSessionType.client);
 				lst_sessions.add(session);
 			}
 		}

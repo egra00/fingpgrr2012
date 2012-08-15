@@ -6,6 +6,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import javax.swing.JOptionPane;
+
 import org.apache.log4j.Logger;
 
 import uy.edu.fing.repository.rrloc.algorithms.iBGPSession;
@@ -26,13 +28,15 @@ import be.ac.ulg.montefiore.run.totem.domain.model.jaxb.BgpRouter;
 import be.ac.ulg.montefiore.run.totem.domain.model.jaxb.ObjectFactory;
 import be.ac.ulg.montefiore.run.totem.repository.model.exception.AlgorithmParameterException;
 import be.ac.ulg.montefiore.run.totem.util.ParameterDescriptor;
+import be.ac.ulg.montefiore.run.totem.visualtopo.guiComponents.MainWindow;
 import edu.uci.ics.jung2.graph.Graph;
 import edu.uci.ics.jung2.graph.UndirectedSparseMultigraph;
 
 public class Zhang  extends BindAlgorithm
 {
 	private Domain domain;
-	private int cnb;
+	private int level_one;
+	private int level_two;
 	
 	public Zhang() {
 		logger = Logger.getLogger(Zhang.class);
@@ -41,7 +45,8 @@ public class Zhang  extends BindAlgorithm
 		
 		try {
 			params.add(new ParameterDescriptor("ASID", "Domain ASID (leave blank for default).", Integer.class, null));
-			params.add(new ParameterDescriptor("C. Number", "Critical Number (by default is ten).", Integer.class, null));
+			params.add(new ParameterDescriptor("RRs Level1", "Number of routers reflector in Level 1 (by default is zero).", Integer.class, null));
+			params.add(new ParameterDescriptor("RRs Level2", "Number of routers reflector in Level 2 (by default is two).", Integer.class, null));
 		} catch (AlgorithmParameterException e) {
 			e.printStackTrace();
 		}
@@ -51,8 +56,11 @@ public class Zhang  extends BindAlgorithm
 	public Object getAlgorithmParams(HashMap params) 
 	{
         String asId = (String) params.get("ASID");
-        String number = (String) params.get("C. Number");
-        cnb = 10;
+        String level_1 = (String) params.get("RRs Level1");
+        String level_2 = (String) params.get("RRs Level2");
+        
+        level_one = 2;
+        level_two = 2;
         
         if(asId == null || asId.isEmpty()) {
         	domain = InterDomainManager.getInstance().getDefaultDomain();
@@ -69,8 +77,8 @@ public class Zhang  extends BindAlgorithm
             }
         }
         
-        if(number != null && !number.isEmpty() && Integer.parseInt(number) < domain.getNbNodes()) cnb = Integer.parseInt(number);
-		
+        if(level_1 != null && !level_1.isEmpty() && (Integer.parseInt(level_2)+Integer.parseInt(level_1)) < domain.getNbNodes()) level_one = Integer.parseInt(level_1);
+        if(level_2 != null && !level_2.isEmpty() && (Integer.parseInt(level_2)+Integer.parseInt(level_1)) < domain.getNbNodes()) level_two = Integer.parseInt(level_2);
 		
 		// Topología IGP representada en un grafo jung 
 		Graph<Node, Link> jIGPTopology = new UndirectedSparseMultigraph<Node, Link>();
@@ -90,7 +98,8 @@ public class Zhang  extends BindAlgorithm
 		}
 	
 		ZhangAlgorithm.Params par = new ZhangAlgorithm.Params();
-		par.cnb = cnb;
+		par.nbr_level1 = level_one;
+		par.nbr_level2 = level_two;
 		par.graph = jIGPTopology;
 		
 		return par;
@@ -106,49 +115,59 @@ public class Zhang  extends BindAlgorithm
 		List<iBGPSession> iBGPTopology = (List<iBGPSession>)algorithmResult;
 		ObjectFactory factory = new ObjectFactory();
 		
-		// Se elimina toda posible configuración previa
-		((DomainImpl)domain).removeBgpRouters();
+        int n = JOptionPane.YES_OPTION;
+        if (((DomainImpl)domain).getBgp() != null) 
+        {
+            n = JOptionPane.showConfirmDialog(MainWindow.getInstance(), "<html>BGP information already exists for that domain.<br>" +
+                    " This action will remove all prior existing information. Would you like to continue ?", "Warning", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        }
+        if (n == JOptionPane.YES_OPTION) 
+        {
 		
-		// Todos los routers tendrán sesiones bgp
-		for (Node router : domain.getAllNodes()) {
-			BgpRouter bgpRouter = factory.createBgpRouter();
-	        bgpRouter.setId(router.getId());
-	        bgpRouter.setRid(router.getRid());
-	        domain.addBgpRouter((BgpRouterImpl)bgpRouter);
-		}
-		
-		// Creo las sesiones
-		for (iBGPSession session : iBGPTopology) {
+			// Se elimina toda posible configuración previa
+			((DomainImpl)domain).removeBgpRouters();
 			
-			BgpRouterImpl router1 = (BgpRouterImpl)domain.getBgpRouter(session.getIdLink1());
-			BgpRouterImpl router2 = (BgpRouterImpl)domain.getBgpRouter(session.getIdLink2());
-			
-			// El router2, el destino, será reflector en caso que router1 sea su cliente
-			router2.setReflector(
-					router2.isReflector() ||
-					session.getSessionType().equals(iBGPSessionType.client));
-			
-			BgpNeighbor bgpNeighbor = factory.createBgpNeighbor();
-			bgpNeighbor.setIp(router2.getRid());
-			bgpNeighbor.setAs(domain.getASID());
-			if (router1.getNeighbors() == null) {
-				router1.setNeighbors(factory.createBgpRouterNeighborsType());
+			// Todos los routers tendrán sesiones bgp
+			for (Node router : domain.getAllNodes()) {
+				BgpRouter bgpRouter = factory.createBgpRouter();
+		        bgpRouter.setId(router.getId());
+		        bgpRouter.setRid(router.getRid());
+		        domain.addBgpRouter((BgpRouterImpl)bgpRouter);
 			}
-			router1.getNeighbors().getNeighbor().add((be.ac.ulg.montefiore.run.totem.domain.model.BgpNeighbor)bgpNeighbor);
 			
-			// El router1, el origen, será cliente en caso de tener una session de tipo client.
-			((BgpNeighborImpl)bgpNeighbor).setReflectorClient(
-					((BgpNeighborImpl)bgpNeighbor).isReflectorClient() ||
-					session.getSessionType().equals(iBGPSessionType.client));
-			
-			bgpNeighbor = factory.createBgpNeighbor();
-			bgpNeighbor.setIp(router1.getRid());
-			bgpNeighbor.setAs(domain.getASID());
-			if (router2.getNeighbors() == null) {
-				router2.setNeighbors(factory.createBgpRouterNeighborsType());
+			// Creo las sesiones
+			for (iBGPSession session : iBGPTopology) {
+				
+				BgpRouterImpl router1 = (BgpRouterImpl)domain.getBgpRouter(session.getIdLink1());
+				BgpRouterImpl router2 = (BgpRouterImpl)domain.getBgpRouter(session.getIdLink2());
+				
+				// El router2, el destino, será reflector en caso que router1 sea su cliente
+				router2.setReflector(
+						router2.isReflector() ||
+						session.getSessionType().equals(iBGPSessionType.client));
+				
+				BgpNeighbor bgpNeighbor = factory.createBgpNeighbor();
+				bgpNeighbor.setIp(router2.getRid());
+				bgpNeighbor.setAs(domain.getASID());
+				if (router1.getNeighbors() == null) {
+					router1.setNeighbors(factory.createBgpRouterNeighborsType());
+				}
+				router1.getNeighbors().getNeighbor().add((be.ac.ulg.montefiore.run.totem.domain.model.BgpNeighbor)bgpNeighbor);
+				
+				// El router1, el origen, será cliente en caso de tener una session de tipo client.
+				((BgpNeighborImpl)bgpNeighbor).setReflectorClient(
+						((BgpNeighborImpl)bgpNeighbor).isReflectorClient() ||
+						session.getSessionType().equals(iBGPSessionType.client));
+				
+				bgpNeighbor = factory.createBgpNeighbor();
+				bgpNeighbor.setIp(router1.getRid());
+				bgpNeighbor.setAs(domain.getASID());
+				if (router2.getNeighbors() == null) {
+					router2.setNeighbors(factory.createBgpRouterNeighborsType());
+				}
+				router2.getNeighbors().getNeighbor().add((be.ac.ulg.montefiore.run.totem.domain.model.BgpNeighbor)bgpNeighbor);
 			}
-			router2.getNeighbors().getNeighbor().add((be.ac.ulg.montefiore.run.totem.domain.model.BgpNeighbor)bgpNeighbor);
-		}
+        }
 	}
 
 	@Override
