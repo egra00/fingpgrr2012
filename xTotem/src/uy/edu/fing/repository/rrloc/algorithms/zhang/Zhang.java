@@ -45,7 +45,7 @@ public class Zhang  extends BindAlgorithm
 		
 		try {
 			params.add(new ParameterDescriptor("ASID", "Domain ASID (leave blank for default).", Integer.class, null));
-			params.add(new ParameterDescriptor("RRs Level1", "Number of routers reflector in Level 1 (by default is zero).", Integer.class, null));
+			params.add(new ParameterDescriptor("RRs Level1", "Number of routers reflector in Level 1 (by default is two).", Integer.class, null));
 			params.add(new ParameterDescriptor("RRs Level2", "Number of routers reflector in Level 2 (by default is two).", Integer.class, null));
 		} catch (AlgorithmParameterException e) {
 			e.printStackTrace();
