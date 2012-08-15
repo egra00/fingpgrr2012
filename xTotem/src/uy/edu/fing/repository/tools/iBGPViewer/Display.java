@@ -61,79 +61,6 @@ public class Display
 	}
 	
 	
-	/*public void printTopologyIBGP()
-	{	
-		JFrame frame = new JFrame("Viewer Sessions iBGP @Run");
-		Layout<MyNode,MyLink> layout = new  LocalLayout(toGraphPrintable());
-		layout.setSize(new Dimension(_maxX, _maxY));
-		VisualizationViewer<MyNode,MyLink> vv = new VisualizationViewer<MyNode, MyLink>(layout);
-		vv.setPreferredSize(new Dimension(_maxX + MARCO, _maxY + MARCO));
-		
-		Transformer<MyNode, Paint> vertexPaint = new Transformer<MyNode, Paint>() {
-				@Override
-				public Paint transform(MyNode node) 
-				{
-					BgpRouterImpl router1 = (BgpRouterImpl)node.getNode().getBgpRouter();
-					return (router1.isReflector() ?   Color.BLUE : Color.GREEN);
-				}
-		};
-		
-		Transformer<MyLink, Paint> edgeStrokeTransformer = new Transformer<MyLink, Paint>() {
-
-					@Override
-					public Paint transform(MyLink link) 
-					{
-						return (((BgpNeighborImpl)link.getNeighbor()).isReflectorClient() ? Color.BLACK : Color.GRAY);
-					}
-		};
-        // Show vertex and edge labels
-		vv.getRenderContext().setVertexFillPaintTransformer(vertexPaint);
-		vv.getRenderContext().setEdgeDrawPaintTransformer(edgeStrokeTransformer);
-		vv.getRenderContext().setVertexLabelTransformer(new ToStringLabeller<MyNode>());
-		
-		
-        // Create a graph mouse and add it to the visualization viewer
-        EditingModalGraphMouse gm = new EditingModalGraphMouse(vv.getRenderContext(), GraphElements.MyVertexFactory.getInstance(), GraphElements.MyEdgeFactory.getInstance());
-        
-        
-        // Set some defaults for the Edges...
-        GraphElements.MyEdgeFactory.setDefaultCapacity(192.0);
-        GraphElements.MyEdgeFactory.setDefaultWeight(5.0);
-        
-        
-        // Trying out our new popup menu mouse plugin...
-        PopupVertexEdgeMenuMousePlugin myPlugin = new PopupVertexEdgeMenuMousePlugin();
-        
-        
-        // Add some popup menus for the edges and vertices to our mouse plugin.
-        JPopupMenu edgeMenu = new MyMouseMenus.EdgeMenu(frame);
-        JPopupMenu vertexMenu = new MyMouseMenus.VertexMenu();
-        myPlugin.setEdgePopup(edgeMenu);
-        myPlugin.setVertexPopup(vertexMenu);
-        gm.remove(gm.getPopupEditingPlugin());  // Removes the existing popup editing plugin
-        
-        gm.add(myPlugin);   // Add our new plugin to the mouse
-        
-        vv.setGraphMouse(gm);
-
-        //frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.getContentPane().add(vv);
-        
-        // Let's add a menu for changing mouse modes
-        JMenuBar menuBar = new JMenuBar();
-        JMenu modeMenu = gm.getModeMenu();
-        modeMenu.setText("Mouse Mode");
-        modeMenu.setIcon(null); // I'm using this in a main menu
-        modeMenu.setPreferredSize(new Dimension(80,20)); // Change the size so I can see the text
-        
-        menuBar.add(modeMenu);
-        frame.setJMenuBar(menuBar);
-        gm.setMode(ModalGraphMouse.Mode.EDITING); // Start off in editing mode
-        frame.pack();
-        frame.setVisible(true);    
-	}*/
-	
-	
 	public void printTopologyIBGP()
 	{
 		Graph<MyNode, MyLink> ibgp = toGraphPrintable();
@@ -148,7 +75,7 @@ public class Display
 				public Paint transform(MyNode node) 
 				{
 					BgpRouterImpl router1 = (BgpRouterImpl)node.getNode().getBgpRouter();
-					return (router1.isReflector() ?   Color.BLUE : Color.GREEN);
+					return (router1!= null && router1.isReflector() ?   Color.BLUE : Color.GREEN);
 				}
 		};
 		
@@ -157,7 +84,8 @@ public class Display
 					@Override
 					public Paint transform(MyLink link) 
 					{
-						return (((BgpNeighborImpl)link.getNeighbor()).isReflectorClient() ? Color.BLACK : Color.GRAY);
+						BgpNeighborImpl router = ((BgpNeighborImpl)link.getNeighbor());
+						return (router != null && router.isReflectorClient()? Color.BLACK : Color.GRAY);
 					}
 		};
 		vv.getRenderContext().setVertexFillPaintTransformer(vertexPaint);
@@ -216,17 +144,10 @@ public class Display
 			if (yy < y1) y1 = yy;
 		}
 		
-		//System.out.println(x +"   ////    " + y);
-		//System.out.println(x1 +"   ////    " + y1);
 		Graph<MyNode, MyLink> ibgp = new UndirectedSparseMultigraph<MyNode, MyLink>();
 		
 		double escalaX = _maxX / (x - x1);
 		double escalaY = _maxY / (y - y1);
-		
-		//System.out.println(nx +"   ////    " + ny);
-		//System.out.println(rendPosX +"   ////    " + rendPosY);
-		
-		//System.out.println(escalaX  +"   ////    " + escalaY);
 		
 		for(Node node : _domain.getAllNodes())
 		{
@@ -238,12 +159,8 @@ public class Display
 			{
 				double xx = node.getLongitude() + nx;
 				double yy = node.getLatitude() + ny;
-				/*double auxX = (rendPosX ? (xx * escalaX) - x1*_maxX/(x - x1): (xx*escalaX) + x);
-				double auxY = (rendPosY ? (yy * escalaY) - y1*_maxY/(y - y1): (yy*escalaY) + y);*/
 				double auxX = (xx * escalaX) - x1*_maxX/(x - x1);
 				double auxY = (yy * escalaY) - y1*_maxY/(y - y1);
-				
-				//System.out.println( node.getRid() + "   ///   " + auxX  + "   ///   "+ auxY + "   ///   "+ xx + "   ///   "+ yy );
 				
 				MyNode n = new MyNode(node, (MARCO/2)+auxX , (MARCO/2)+auxY);
 				mynodesById.put(node.getRid(), n);

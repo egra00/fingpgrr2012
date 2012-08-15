@@ -1117,7 +1117,7 @@ public class MainWindow extends JFrame implements InterDomainManagerListener {
     {
         public void actionPerformed(ActionEvent e) 
         {
-        	(new Display(950, 550)).printTopologyIBGP();
+        	(new Display(850, 450)).printTopologyIBGP();
         }
     }
     

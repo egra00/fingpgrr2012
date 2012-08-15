@@ -1,0 +1,2254 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<domain ASID="1478">
+    <info>
+        <title>Hierarchical</title>
+        <author/>
+        <description>Jerarquica respecto al grado</description>
+        <units>
+            <unit type="bandwidth" value="mbps"/>
+            <unit type="delay" value="ms"/>
+        </units>
+        <diff-serv>
+            <priority ct="0" id="0" preemption="0"/>
+        </diff-serv>
+    </info>
+    <topology>
+        <nodes>
+            <node id="1">
+                <rid>198.32.8.201</rid>
+                <description>1</description>
+                <location latitude="59.390465" longitude="276.23062"/>
+            </node>
+            <node id="4">
+                <rid>198.32.8.204</rid>
+                <description>4</description>
+                <location latitude="-18.839998" longitude="291.0"/>
+            </node>
+            <node id="5">
+                <rid>198.32.8.205</rid>
+                <description>5</description>
+                <location latitude="-5.9999967" longitude="341.0"/>
+            </node>
+            <node id="6">
+                <rid>198.32.8.206</rid>
+                <description>6</description>
+                <location latitude="35.000008" longitude="374.0"/>
+            </node>
+            <node id="7">
+                <rid>198.32.8.207</rid>
+                <description>7</description>
+                <location latitude="58.999996" longitude="373.0"/>
+            </node>
+            <node id="8">
+                <rid>198.32.8.208</rid>
+                <description>8</description>
+                <location latitude="92.921684" longitude="358.23193"/>
+            </node>
+            <node id="9">
+                <rid>198.32.8.209</rid>
+                <description>9</description>
+                <location latitude="117.112915" longitude="329.96542"/>
+            </node>
+            <node id="10">
+                <rid>198.32.8.210</rid>
+                <description>10</description>
+                <location latitude="103.01589" longitude="229.41745"/>
+            </node>
+            <node id="11">
+                <rid>198.32.8.211</rid>
+                <description>11</description>
+                <location latitude="79.64391" longitude="218.65369"/>
+            </node>
+            <node id="12">
+                <rid>198.32.8.212</rid>
+                <description>12</description>
+                <location latitude="42.432377" longitude="211.35565"/>
+            </node>
+            <node id="13">
+                <rid>198.32.8.213</rid>
+                <description>13</description>
+                <location latitude="124.125885" longitude="262.9716"/>
+            </node>
+            <node id="14">
+                <rid>198.32.8.214</rid>
+                <description>14</description>
+                <location latitude="4.2695837" longitude="228.68973"/>
+            </node>
+            <node id="15">
+                <rid>198.32.8.215</rid>
+                <description>15</description>
+                <location latitude="-12.498467" longitude="254.57375"/>
+            </node>
+            <node id="16">
+                <rid>198.32.8.216</rid>
+                <description>16</description>
+                <location latitude="126.68667" longitude="290.0"/>
+            </node>
+            <node id="19">
+                <rid>198.32.8.219</rid>
+                <description>19</description>
+                <location latitude="-51.61444" longitude="255.43239"/>
+            </node>
+            <node id="20">
+                <rid>198.32.8.220</rid>
+                <description>20</description>
+                <location latitude="-51.0" longitude="322.0"/>
+            </node>
+            <node id="21">
+                <rid>198.32.8.221</rid>
+                <description>21</description>
+                <location latitude="-25.887089" longitude="209.85558"/>
+            </node>
+            <node id="22">
+                <rid>198.32.8.222</rid>
+                <description>22</description>
+                <location latitude="-20.924726" longitude="399.92166"/>
+            </node>
+            <node id="23">
+                <rid>198.32.8.223</rid>
+                <description>23</description>
+                <location latitude="34.68666" longitude="172.34792"/>
+            </node>
+            <node id="24">
+                <rid>198.32.8.224</rid>
+                <description>24</description>
+                <location latitude="70.85719" longitude="177.1121"/>
+            </node>
+            <node id="25">
+                <rid>198.32.8.225</rid>
+                <description>25</description>
+                <location latitude="167.30415" longitude="323.24112"/>
+            </node>
+            <node id="26">
+                <rid>198.32.8.226</rid>
+                <description>26</description>
+                <location latitude="135.30417" longitude="381.76807"/>
+            </node>
+            <node id="27">
+                <rid>198.32.8.227</rid>
+                <description>27</description>
+                <location latitude="92.31333" longitude="416.88403"/>
+            </node>
+            <node id="2">
+                <rid>198.32.8.202</rid>
+                <description>1</description>
+                <location latitude="30.000004" longitude="325.0"/>
+            </node>
+            <node id="3">
+            	<rid>198.32.8.203</rid>
+                <description>3</description>
+                <location latitude="41.45189" longitude="429.4328"/>
+            </node>
+            <node id="17">
+                <rid>198.32.8.217</rid>
+                <description>17</description>
+                <location latitude="147.05765" longitude="224.10555"/>
+            </node>
+        </nodes>
+        <links>
+            <link id="10-1">
+                <from node="10"/>
+                <to node="1"/>
+            </link>
+            <link id="9-1">
+                <from node="9"/>
+                <to node="1"/>
+            </link>
+            <link id="8-1">
+                <from node="8"/>
+                <to node="1"/>
+            </link>
+            <link id="16-1">
+                <from node="16"/>
+                <to node="1"/>
+            </link>
+            <link id="11-1">
+                <from node="11"/>
+                <to node="1"/>
+            </link>
+            <link id="12-1">
+                <from node="12"/>
+                <to node="1"/>
+            </link>
+            <link id="13-1">
+                <from node="13"/>
+                <to node="1"/>
+            </link>
+            <link id="14-1">
+                <from node="14"/>
+                <to node="1"/>
+            </link>
+            <link id="15-1">
+                <from node="15"/>
+                <to node="1"/>
+            </link>
+            <link id="4-1">
+                <from node="4"/>
+                <to node="1"/>
+            </link>
+            <link id="5-1">
+                <from node="5"/>
+                <to node="1"/>
+            </link>
+            <link id="6-1">
+                <from node="6"/>
+                <to node="1"/>
+            </link>
+            <link id="7-1">
+                <from node="7"/>
+                <to node="1"/>
+            </link>
+            <link id="24-11">
+                <from node="24"/>
+                <to node="11"/>
+            </link>
+            <link id="1-11">
+                <from node="1"/>
+                <to node="11"/>
+            </link>
+            <link id="1-10">
+                <from node="1"/>
+                <to node="10"/>
+            </link>
+            <link id="1-16">
+                <from node="1"/>
+                <to node="16"/>
+            </link>
+            <link id="1-9">
+                <from node="1"/>
+                <to node="9"/>
+            </link>
+            <link id="1-8">
+                <from node="1"/>
+                <to node="8"/>
+            </link>
+            <link id="1-7">
+                <from node="1"/>
+                <to node="7"/>
+            </link>
+            <link id="1-6">
+                <from node="1"/>
+                <to node="6"/>
+            </link>
+            <link id="1-5">
+                <from node="1"/>
+                <to node="5"/>
+            </link>
+            <link id="1-4">
+                <from node="1"/>
+                <to node="4"/>
+            </link>
+            <link id="1-15">
+                <from node="1"/>
+                <to node="15"/>
+            </link>
+            <link id="1-14">
+                <from node="1"/>
+                <to node="14"/>
+            </link>
+            <link id="1-13">
+                <from node="1"/>
+                <to node="13"/>
+            </link>
+            <link id="1-12">
+                <from node="1"/>
+                <to node="12"/>
+            </link>
+            <link id="24-12">
+                <from node="24"/>
+                <to node="12"/>
+            </link>
+            <link id="11-24">
+                <from node="11"/>
+                <to node="24"/>
+            </link>
+            <link id="12-24">
+                <from node="12"/>
+                <to node="24"/>
+            </link>
+            <link id="12-23">
+                <from node="12"/>
+                <to node="23"/>
+            </link>
+            <link id="23-12">
+                <from node="23"/>
+                <to node="12"/>
+            </link>
+            <link id="23-14">
+                <from node="23"/>
+                <to node="14"/>
+            </link>
+            <link id="14-23">
+                <from node="14"/>
+                <to node="23"/>
+            </link>
+            <link id="21-14">
+                <from node="21"/>
+                <to node="14"/>
+            </link>
+            <link id="14-21">
+                <from node="14"/>
+                <to node="21"/>
+            </link>
+            <link id="21-15">
+                <from node="21"/>
+                <to node="15"/>
+            </link>
+            <link id="15-21">
+                <from node="15"/>
+                <to node="21"/>
+            </link>
+            <link id="19-15">
+                <from node="19"/>
+                <to node="15"/>
+            </link>
+            <link id="15-19">
+                <from node="15"/>
+                <to node="19"/>
+            </link>
+            <link id="19-4">
+                <from node="19"/>
+                <to node="4"/>
+            </link>
+            <link id="4-19">
+                <from node="4"/>
+                <to node="19"/>
+            </link>
+            <link id="20-4">
+                <from node="20"/>
+                <to node="4"/>
+            </link>
+            <link id="4-20">
+                <from node="4"/>
+                <to node="20"/>
+            </link>
+            <link id="20-5">
+                <from node="20"/>
+                <to node="5"/>
+            </link>
+            <link id="5-20">
+                <from node="5"/>
+                <to node="20"/>
+            </link>
+            <link id="22-5">
+                <from node="22"/>
+                <to node="5"/>
+            </link>
+            <link id="5-22">
+                <from node="5"/>
+                <to node="22"/>
+            </link>
+            <link id="22-6">
+                <from node="22"/>
+                <to node="6"/>
+            </link>
+            <link id="6-22">
+                <from node="6"/>
+                <to node="22"/>
+            </link>
+            <link id="7-27">
+                <from node="7"/>
+                <to node="27"/>
+            </link>
+            <link id="27-7">
+                <from node="27"/>
+                <to node="7"/>
+            </link>
+            <link id="8-26">
+                <from node="8"/>
+                <to node="26"/>
+            </link>
+            <link id="26-8">
+                <from node="26"/>
+                <to node="8"/>
+            </link>
+            <link id="25-16">
+                <from node="25"/>
+                <to node="16"/>
+            </link>
+            <link id="16-25">
+                <from node="16"/>
+                <to node="25"/>
+            </link>
+            <link id="25-9">
+                <from node="25"/>
+                <to node="9"/>
+            </link>
+            <link id="9-25">
+                <from node="9"/>
+                <to node="25"/>
+            </link>
+            <link id="8-27">
+                <from node="8"/>
+                <to node="27"/>
+            </link>
+            <link id="27-8">
+                <from node="27"/>
+                <to node="8"/>
+            </link>
+            <link id="26-9">
+                <from node="26"/>
+                <to node="9"/>
+            </link>
+            <link id="9-26">
+                <from node="9"/>
+                <to node="26"/>
+            </link>
+            <link id="5-2">
+                <from node="5"/>
+                <to node="2"/>
+            </link>
+            <link id="6-2">
+                <from node="6"/>
+                <to node="2"/>
+            </link>
+            <link id="7-2">
+                <from node="7"/>
+                <to node="2"/>
+            </link>
+            <link id="8-2">
+                <from node="8"/>
+                <to node="2"/>
+            </link>
+            <link id="9-2">
+                <from node="9"/>
+                <to node="2"/>
+            </link>
+            <link id="16-2">
+                <from node="16"/>
+                <to node="2"/>
+            </link>
+            <link id="10-2">
+                <from node="10"/>
+                <to node="2"/>
+            </link>
+            <link id="11-2">
+                <from node="11"/>
+                <to node="2"/>
+            </link>
+            <link id="12-2">
+                <from node="12"/>
+                <to node="2"/>
+            </link>
+            <link id="13-2">
+                <from node="13"/>
+                <to node="2"/>
+            </link>
+            <link id="14-2">
+                <from node="14"/>
+                <to node="2"/>
+            </link>
+            <link id="15-2">
+                <from node="15"/>
+                <to node="2"/>
+            </link>
+            <link id="4-2">
+                <from node="4"/>
+                <to node="2"/>
+            </link>
+            <link id="2-4">
+                <from node="2"/>
+                <to node="4"/>
+            </link>
+            <link id="2-5">
+                <from node="2"/>
+                <to node="5"/>
+            </link>
+            <link id="2-15">
+                <from node="2"/>
+                <to node="15"/>
+            </link>
+            <link id="2-14">
+                <from node="2"/>
+                <to node="14"/>
+            </link>
+            <link id="2-13">
+                <from node="2"/>
+                <to node="13"/>
+            </link>
+            <link id="2-12">
+                <from node="2"/>
+                <to node="12"/>
+            </link>
+            <link id="2-11">
+                <from node="2"/>
+                <to node="11"/>
+            </link>
+            <link id="2-10">
+                <from node="2"/>
+                <to node="10"/>
+            </link>
+            <link id="2-16">
+                <from node="2"/>
+                <to node="16"/>
+            </link>
+            <link id="2-9">
+                <from node="2"/>
+                <to node="9"/>
+            </link>
+            <link id="2-8">
+                <from node="2"/>
+                <to node="8"/>
+            </link>
+            <link id="2-7">
+                <from node="2"/>
+                <to node="7"/>
+            </link>
+            <link id="2-6">
+                <from node="2"/>
+                <to node="6"/>
+            </link>
+            <link id="3-6">
+                <from node="3"/>
+                <to node="6"/>
+            </link>
+            <link id="3-7">
+                <from node="3"/>
+                <to node="7"/>
+            </link>
+            <link id="7-3">
+                <from node="7"/>
+                <to node="3"/>
+            </link>
+            <link id="6-3">
+                <from node="6"/>
+                <to node="3"/>
+            </link>
+            <link id="17-10">
+                <from node="17"/>
+                <to node="10"/>
+            </link>
+            <link id="17-13">
+                <from node="17"/>
+                <to node="13"/>
+            </link>
+            <link id="13-17">
+                <from node="13"/>
+                <to node="17"/>
+            </link>
+            <link id="10-17">
+                <from node="10"/>
+                <to node="17"/>
+            </link>
+        </links>
+    </topology>
+    <igp>
+        <links>
+            <link id="10-1">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="9-1">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="8-1">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="16-1">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="11-1">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="12-1">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="13-1">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="14-1">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="15-1">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="4-1">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="5-1">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="6-1">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="7-1">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="24-11">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="1-11">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="1-10">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="1-16">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="1-9">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="1-8">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="1-7">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="1-6">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="1-5">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="1-4">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="1-15">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="1-14">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="1-13">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="1-12">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="24-12">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="11-24">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="12-24">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="12-23">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="23-12">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="23-14">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="14-23">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="21-14">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="14-21">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="21-15">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="15-21">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="19-15">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="15-19">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="19-4">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="4-19">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="20-4">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="4-20">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="20-5">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="5-20">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="22-5">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="5-22">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="22-6">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="6-22">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="7-27">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="27-7">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="8-26">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="26-8">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="25-16">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="16-25">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="25-9">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="9-25">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="8-27">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="27-8">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="26-9">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="9-26">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="5-2">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="6-2">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="7-2">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="8-2">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="9-2">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="16-2">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="10-2">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="11-2">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="12-2">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="13-2">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="14-2">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="15-2">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="4-2">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="2-4">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="2-5">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="2-15">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="2-14">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="2-13">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="2-12">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="2-11">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="2-10">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="2-16">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="2-9">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="2-8">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="2-7">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="2-6">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="3-6">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="3-7">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="7-3">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="6-3">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="17-10">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="17-13">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="13-17">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="10-17">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+        </links>
+    </igp>
+    <bgp>
+        <routers>
+            <router id="1" reflector="false">
+                <rid>198.32.8.201</rid>
+                <neighbors>
+                    <neighbor as="1478" ip="198.32.8.202"/>
+                </neighbors>
+            </router>
+            <router id="4">
+                <rid>198.32.8.204</rid>
+            </router>
+            <router id="5">
+                <rid>198.32.8.205</rid>
+            </router>
+            <router id="6">
+                <rid>198.32.8.206</rid>
+            </router>
+            <router id="7">
+                <rid>198.32.8.207</rid>
+            </router>
+            <router id="8">
+                <rid>198.32.8.208</rid>
+            </router>
+            <router id="9">
+                <rid>198.32.8.209</rid>
+            </router>
+            <router id="10">
+                <rid>198.32.8.210</rid>
+            </router>
+            <router id="11">
+                <rid>198.32.8.211</rid>
+            </router>
+            <router id="12">
+                <rid>198.32.8.212</rid>
+            </router>
+            <router id="13">
+                <rid>198.32.8.213</rid>
+            </router>
+            <router id="14">
+                <rid>198.32.8.214</rid>
+            </router>
+            <router id="15">
+                <rid>198.32.8.215</rid>
+            </router>
+            <router id="16">
+                <rid>198.32.8.216</rid>
+            </router>
+            <router id="19">
+                <rid>198.32.8.219</rid>
+            </router>
+            <router id="20">
+                <rid>198.32.8.220</rid>
+            </router>
+            <router id="21">
+                <rid>198.32.8.221</rid>
+            </router>
+            <router id="22">
+                <rid>198.32.8.222</rid>
+            </router>
+            <router id="23">
+                <rid>198.32.8.223</rid>
+            </router>
+            <router id="24">
+                <rid>198.32.8.224</rid>
+            </router>
+            <router id="25">
+                <rid>198.32.8.225</rid>
+            </router>
+            <router id="26">
+                <rid>198.32.8.226</rid>
+            </router>
+            <router id="27">
+                <rid>198.32.8.227</rid>
+            </router>
+            <router id="2">
+                <rid>198.32.8.202</rid>
+                <neighbors>
+                    <neighbor as="1478" ip="198.32.8.201" reflector-client="false"/>
+                </neighbors>
+            </router>
+        </routers>
+    </bgp>
+</domain>
+

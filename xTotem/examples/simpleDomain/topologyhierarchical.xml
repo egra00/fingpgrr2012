@@ -1,0 +1,1775 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<domain ASID="1569">
+    <info>
+        <title>Topology Hierarchical </title>
+        <author/>
+        <description/>
+        <units>
+            <unit type="bandwidth" value="mbps"/>
+            <unit type="delay" value="ms"/>
+        </units>
+        <diff-serv>
+            <priority ct="0" id="0" preemption="0"/>
+        </diff-serv>
+    </info>
+    <topology>
+        <nodes>
+            <node id="0">
+                <rid>198.32.8.200</rid>
+                <description>0</description>
+                <location latitude="87.20374" longitude="430.366"/>
+            </node>
+            <node id="1">
+                <rid>198.32.8.201</rid>
+                <description>1</description>
+                <location latitude="86.24661" longitude="602.3429"/>
+            </node>
+            <node id="2">
+                <rid>198.32.8.202</rid>
+                <description>2</description>
+                <location latitude="386.9178" longitude="415.5012"/>
+            </node>
+            <node id="3">
+                <rid>198.32.8.203</rid>
+                <description>3</description>
+                <location latitude="387.57446" longitude="254.90341"/>
+            </node>
+            <node id="4">
+                <rid>198.32.8.204</rid>
+                <description>4</description>
+                <location latitude="613.92676" longitude="349.39426"/>
+            </node>
+            <node id="5">
+                <rid>198.32.8.205</rid>
+                <description>5</description>
+                <location latitude="613.56934" longitude="218.10208"/>
+            </node>
+            <node id="6">
+                <rid>198.32.8.206</rid>
+                <description>6</description>
+                <location latitude="611.9316" longitude="481.7996"/>
+            </node>
+            <node id="7">
+                <rid>198.32.8.207</rid>
+                <description>7</description>
+                <location latitude="614.0881" longitude="100.937294"/>
+            </node>
+            <node id="8">
+                <rid>198.32.8.208</rid>
+                <description>8</description>
+                <location latitude="391.05075" longitude="590.5595"/>
+            </node>
+            <node id="9">
+                <rid>198.32.8.209</rid>
+                <description>9</description>
+                <location latitude="389.6462" longitude="751.8702"/>
+            </node>
+            <node id="10">
+                <rid>198.32.8.210</rid>
+                <description>10</description>
+                <location latitude="608.72314" longitude="799.20374"/>
+            </node>
+            <node id="11">
+                <rid>198.32.8.211</rid>
+                <description>11</description>
+                <location latitude="610.3988" longitude="568.668"/>
+            </node>
+            <node id="12">
+                <rid>198.32.8.212</rid>
+                <description>12</description>
+                <location latitude="609.7727" longitude="688.4089"/>
+            </node>
+            <node id="13">
+                <rid>198.32.8.213</rid>
+                <description>13</description>
+                <location latitude="609.06573" longitude="901.46686"/>
+            </node>
+            <node id="15">
+                <rid>198.32.8.215</rid>
+                <description>15</description>
+                <location latitude="383.9156" longitude="1026.0938"/>
+            </node>
+            <node id="17">
+                <rid>198.32.8.217</rid>
+                <description>17</description>
+                <location latitude="388.44278" longitude="119.668396"/>
+            </node>
+            <node id="18">
+                <rid>198.32.8.218</rid>
+                <description>18</description>
+                <location latitude="387.81915" longitude="905.3675"/>
+            </node>
+            <node id="22">
+                <rid>198.32.8.222</rid>
+                <description>22</description>
+                <location latitude="607.08093" longitude="992.9626"/>
+            </node>
+        </nodes>
+        <links>
+            <link id="2-1">
+                <from node="2"/>
+                <to node="1"/>
+            </link>
+            <link id="3-0">
+                <from node="3"/>
+                <to node="0"/>
+            </link>
+            <link id="0-3">
+                <from node="0"/>
+                <to node="3"/>
+            </link>
+            <link id="1-2">
+                <from node="1"/>
+                <to node="2"/>
+            </link>
+            <link id="3-1">
+                <from node="3"/>
+                <to node="1"/>
+            </link>
+            <link id="1-3">
+                <from node="1"/>
+                <to node="3"/>
+            </link>
+            <link id="2-0">
+                <from node="2"/>
+                <to node="0"/>
+            </link>
+            <link id="0-2">
+                <from node="0"/>
+                <to node="2"/>
+            </link>
+            <link id="8-0">
+                <from node="8"/>
+                <to node="0"/>
+            </link>
+            <link id="0-8">
+                <from node="0"/>
+                <to node="8"/>
+            </link>
+            <link id="9-1">
+                <from node="9"/>
+                <to node="1"/>
+            </link>
+            <link id="1-9">
+                <from node="1"/>
+                <to node="9"/>
+            </link>
+            <link id="8-1">
+                <from node="8"/>
+                <to node="1"/>
+            </link>
+            <link id="1-8">
+                <from node="1"/>
+                <to node="8"/>
+            </link>
+            <link id="9-0">
+                <from node="9"/>
+                <to node="0"/>
+            </link>
+            <link id="0-9">
+                <from node="0"/>
+                <to node="9"/>
+            </link>
+            <link id="4-3">
+                <from node="4"/>
+                <to node="3"/>
+            </link>
+            <link id="3-4">
+                <from node="3"/>
+                <to node="4"/>
+            </link>
+            <link id="5-2">
+                <from node="5"/>
+                <to node="2"/>
+            </link>
+            <link id="2-5">
+                <from node="2"/>
+                <to node="5"/>
+            </link>
+            <link id="5-3">
+                <from node="5"/>
+                <to node="3"/>
+            </link>
+            <link id="3-5">
+                <from node="3"/>
+                <to node="5"/>
+            </link>
+            <link id="4-2">
+                <from node="4"/>
+                <to node="2"/>
+            </link>
+            <link id="2-4">
+                <from node="2"/>
+                <to node="4"/>
+            </link>
+            <link id="6-3">
+                <from node="6"/>
+                <to node="3"/>
+            </link>
+            <link id="7-2">
+                <from node="7"/>
+                <to node="2"/>
+            </link>
+            <link id="7-3">
+                <from node="7"/>
+                <to node="3"/>
+            </link>
+            <link id="6-2">
+                <from node="6"/>
+                <to node="2"/>
+            </link>
+            <link id="2-7">
+                <from node="2"/>
+                <to node="7"/>
+            </link>
+            <link id="3-6">
+                <from node="3"/>
+                <to node="6"/>
+            </link>
+            <link id="2-6">
+                <from node="2"/>
+                <to node="6"/>
+            </link>
+            <link id="3-7">
+                <from node="3"/>
+                <to node="7"/>
+            </link>
+            <link id="8-10">
+                <from node="8"/>
+                <to node="10"/>
+            </link>
+            <link id="8-11">
+                <from node="8"/>
+                <to node="11"/>
+            </link>
+            <link id="10-8">
+                <from node="10"/>
+                <to node="8"/>
+            </link>
+            <link id="11-8">
+                <from node="11"/>
+                <to node="8"/>
+            </link>
+            <link id="11-9">
+                <from node="11"/>
+                <to node="9"/>
+            </link>
+            <link id="9-11">
+                <from node="9"/>
+                <to node="11"/>
+            </link>
+            <link id="10-9">
+                <from node="10"/>
+                <to node="9"/>
+            </link>
+            <link id="9-10">
+                <from node="9"/>
+                <to node="10"/>
+            </link>
+            <link id="12-8">
+                <from node="12"/>
+                <to node="8"/>
+            </link>
+            <link id="13-9">
+                <from node="13"/>
+                <to node="9"/>
+            </link>
+            <link id="8-12">
+                <from node="8"/>
+                <to node="12"/>
+            </link>
+            <link id="9-13">
+                <from node="9"/>
+                <to node="13"/>
+            </link>
+            <link id="13-8">
+                <from node="13"/>
+                <to node="8"/>
+            </link>
+            <link id="8-13">
+                <from node="8"/>
+                <to node="13"/>
+            </link>
+            <link id="12-9">
+                <from node="12"/>
+                <to node="9"/>
+            </link>
+            <link id="9-12">
+                <from node="9"/>
+                <to node="12"/>
+            </link>
+            <link id="15-1">
+                <from node="15"/>
+                <to node="1"/>
+            </link>
+            <link id="18-1">
+                <from node="18"/>
+                <to node="1"/>
+            </link>
+            <link id="15-0">
+                <from node="15"/>
+                <to node="0"/>
+            </link>
+            <link id="18-0">
+                <from node="18"/>
+                <to node="0"/>
+            </link>
+            <link id="0-15">
+                <from node="0"/>
+                <to node="15"/>
+            </link>
+            <link id="1-18">
+                <from node="1"/>
+                <to node="18"/>
+            </link>
+            <link id="17-0">
+                <from node="17"/>
+                <to node="0"/>
+            </link>
+            <link id="17-1">
+                <from node="17"/>
+                <to node="1"/>
+            </link>
+            <link id="1-17">
+                <from node="1"/>
+                <to node="17"/>
+            </link>
+            <link id="0-17">
+                <from node="0"/>
+                <to node="17"/>
+            </link>
+            <link id="1-15">
+                <from node="1"/>
+                <to node="15"/>
+            </link>
+            <link id="22-18">
+                <from node="22"/>
+                <to node="18"/>
+            </link>
+            <link id="22-15">
+                <from node="22"/>
+                <to node="15"/>
+            </link>
+            <link id="15-22">
+                <from node="15"/>
+                <to node="22"/>
+            </link>
+            <link id="18-22">
+                <from node="18"/>
+                <to node="22"/>
+            </link>
+            <link id="0-18">
+                <from node="0"/>
+                <to node="18"/>
+            </link>
+        </links>
+    </topology>
+    <igp>
+        <links>
+            <link id="2-1">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="3-0">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="0-3">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="1-2">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="3-1">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="1-3">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="2-0">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="0-2">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="8-0">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="0-8">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="9-1">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="1-9">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="8-1">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="1-8">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="9-0">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="0-9">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="4-3">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="3-4">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="5-2">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="2-5">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="5-3">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="3-5">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="4-2">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="2-4">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="6-3">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="7-2">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="7-3">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="6-2">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="2-7">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="3-6">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="2-6">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="3-7">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="8-10">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="8-11">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="10-8">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="11-8">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="11-9">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="9-11">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="10-9">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="9-10">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="12-8">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="13-9">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="8-12">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="9-13">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="13-8">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="8-13">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="12-9">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="9-12">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="15-1">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="18-1">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="15-0">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="18-0">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="0-15">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="1-18">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="17-0">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="17-1">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="1-17">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="0-17">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="1-15">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="22-18">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="22-15">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="15-22">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="18-22">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+        </links>
+    </igp>
+    <bgp>
+        <routers>
+            <router id="0">
+                <rid>198.32.8.200</rid>
+                <neighbors>
+                    <neighbor as="1569" ip="198.32.8.208" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.209" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.218" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.215" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.202" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.217" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.203" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="1">
+                <rid>198.32.8.201</rid>
+                <neighbors>
+                    <neighbor as="1569" ip="198.32.8.208" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.209" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.218" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.215" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.202" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.217" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.203" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="2" reflector="true">
+                <rid>198.32.8.202</rid>
+                <neighbors>
+                    <neighbor as="1569" ip="198.32.8.208"/>
+                    <neighbor as="1569" ip="198.32.8.209"/>
+                    <neighbor as="1569" ip="198.32.8.218"/>
+                    <neighbor as="1569" ip="198.32.8.215"/>
+                    <neighbor as="1569" ip="198.32.8.208" reflector-client="false"/>
+                    <neighbor as="1569" ip="198.32.8.209" reflector-client="false"/>
+                    <neighbor as="1569" ip="198.32.8.218" reflector-client="false"/>
+                    <neighbor as="1569" ip="198.32.8.215" reflector-client="false"/>
+                    <neighbor as="1569" ip="198.32.8.217" reflector-client="false"/>
+                    <neighbor as="1569" ip="198.32.8.203" reflector-client="false"/>
+                    <neighbor as="1569" ip="198.32.8.217"/>
+                    <neighbor as="1569" ip="198.32.8.203"/>
+                    <neighbor as="1569" ip="198.32.8.207"/>
+                    <neighbor as="1569" ip="198.32.8.200"/>
+                    <neighbor as="1569" ip="198.32.8.201"/>
+                    <neighbor as="1569" ip="198.32.8.210"/>
+                    <neighbor as="1569" ip="198.32.8.204"/>
+                    <neighbor as="1569" ip="198.32.8.211"/>
+                    <neighbor as="1569" ip="198.32.8.206"/>
+                    <neighbor as="1569" ip="198.32.8.212"/>
+                    <neighbor as="1569" ip="198.32.8.205"/>
+                    <neighbor as="1569" ip="198.32.8.213"/>
+                    <neighbor as="1569" ip="198.32.8.222"/>
+                </neighbors>
+            </router>
+            <router id="3" reflector="true">
+                <rid>198.32.8.203</rid>
+                <neighbors>
+                    <neighbor as="1569" ip="198.32.8.208"/>
+                    <neighbor as="1569" ip="198.32.8.209"/>
+                    <neighbor as="1569" ip="198.32.8.218"/>
+                    <neighbor as="1569" ip="198.32.8.215"/>
+                    <neighbor as="1569" ip="198.32.8.202"/>
+                    <neighbor as="1569" ip="198.32.8.217"/>
+                    <neighbor as="1569" ip="198.32.8.208" reflector-client="false"/>
+                    <neighbor as="1569" ip="198.32.8.209" reflector-client="false"/>
+                    <neighbor as="1569" ip="198.32.8.218" reflector-client="false"/>
+                    <neighbor as="1569" ip="198.32.8.215" reflector-client="false"/>
+                    <neighbor as="1569" ip="198.32.8.202" reflector-client="false"/>
+                    <neighbor as="1569" ip="198.32.8.217" reflector-client="false"/>
+                    <neighbor as="1569" ip="198.32.8.207"/>
+                    <neighbor as="1569" ip="198.32.8.200"/>
+                    <neighbor as="1569" ip="198.32.8.201"/>
+                    <neighbor as="1569" ip="198.32.8.210"/>
+                    <neighbor as="1569" ip="198.32.8.204"/>
+                    <neighbor as="1569" ip="198.32.8.211"/>
+                    <neighbor as="1569" ip="198.32.8.206"/>
+                    <neighbor as="1569" ip="198.32.8.212"/>
+                    <neighbor as="1569" ip="198.32.8.205"/>
+                    <neighbor as="1569" ip="198.32.8.213"/>
+                    <neighbor as="1569" ip="198.32.8.222"/>
+                </neighbors>
+            </router>
+            <router id="4">
+                <rid>198.32.8.204</rid>
+                <neighbors>
+                    <neighbor as="1569" ip="198.32.8.208" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.209" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.218" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.215" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.202" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.217" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.203" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="5">
+                <rid>198.32.8.205</rid>
+                <neighbors>
+                    <neighbor as="1569" ip="198.32.8.208" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.209" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.218" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.215" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.202" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.217" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.203" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="6">
+                <rid>198.32.8.206</rid>
+                <neighbors>
+                    <neighbor as="1569" ip="198.32.8.208" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.209" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.218" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.215" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.202" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.217" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.203" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="7">
+                <rid>198.32.8.207</rid>
+                <neighbors>
+                    <neighbor as="1569" ip="198.32.8.208" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.209" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.218" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.215" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.202" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.217" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.203" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="8" reflector="true">
+                <rid>198.32.8.208</rid>
+                <neighbors>
+                    <neighbor as="1569" ip="198.32.8.209" reflector-client="false"/>
+                    <neighbor as="1569" ip="198.32.8.218" reflector-client="false"/>
+                    <neighbor as="1569" ip="198.32.8.215" reflector-client="false"/>
+                    <neighbor as="1569" ip="198.32.8.202" reflector-client="false"/>
+                    <neighbor as="1569" ip="198.32.8.217" reflector-client="false"/>
+                    <neighbor as="1569" ip="198.32.8.203" reflector-client="false"/>
+                    <neighbor as="1569" ip="198.32.8.209"/>
+                    <neighbor as="1569" ip="198.32.8.218"/>
+                    <neighbor as="1569" ip="198.32.8.215"/>
+                    <neighbor as="1569" ip="198.32.8.202"/>
+                    <neighbor as="1569" ip="198.32.8.217"/>
+                    <neighbor as="1569" ip="198.32.8.203"/>
+                    <neighbor as="1569" ip="198.32.8.207"/>
+                    <neighbor as="1569" ip="198.32.8.200"/>
+                    <neighbor as="1569" ip="198.32.8.201"/>
+                    <neighbor as="1569" ip="198.32.8.210"/>
+                    <neighbor as="1569" ip="198.32.8.204"/>
+                    <neighbor as="1569" ip="198.32.8.211"/>
+                    <neighbor as="1569" ip="198.32.8.206"/>
+                    <neighbor as="1569" ip="198.32.8.212"/>
+                    <neighbor as="1569" ip="198.32.8.205"/>
+                    <neighbor as="1569" ip="198.32.8.213"/>
+                    <neighbor as="1569" ip="198.32.8.222"/>
+                </neighbors>
+            </router>
+            <router id="9" reflector="true">
+                <rid>198.32.8.209</rid>
+                <neighbors>
+                    <neighbor as="1569" ip="198.32.8.208"/>
+                    <neighbor as="1569" ip="198.32.8.208" reflector-client="false"/>
+                    <neighbor as="1569" ip="198.32.8.218" reflector-client="false"/>
+                    <neighbor as="1569" ip="198.32.8.215" reflector-client="false"/>
+                    <neighbor as="1569" ip="198.32.8.202" reflector-client="false"/>
+                    <neighbor as="1569" ip="198.32.8.217" reflector-client="false"/>
+                    <neighbor as="1569" ip="198.32.8.203" reflector-client="false"/>
+                    <neighbor as="1569" ip="198.32.8.218"/>
+                    <neighbor as="1569" ip="198.32.8.215"/>
+                    <neighbor as="1569" ip="198.32.8.202"/>
+                    <neighbor as="1569" ip="198.32.8.217"/>
+                    <neighbor as="1569" ip="198.32.8.203"/>
+                    <neighbor as="1569" ip="198.32.8.207"/>
+                    <neighbor as="1569" ip="198.32.8.200"/>
+                    <neighbor as="1569" ip="198.32.8.201"/>
+                    <neighbor as="1569" ip="198.32.8.210"/>
+                    <neighbor as="1569" ip="198.32.8.204"/>
+                    <neighbor as="1569" ip="198.32.8.211"/>
+                    <neighbor as="1569" ip="198.32.8.206"/>
+                    <neighbor as="1569" ip="198.32.8.212"/>
+                    <neighbor as="1569" ip="198.32.8.205"/>
+                    <neighbor as="1569" ip="198.32.8.213"/>
+                    <neighbor as="1569" ip="198.32.8.222"/>
+                </neighbors>
+            </router>
+            <router id="10">
+                <rid>198.32.8.210</rid>
+                <neighbors>
+                    <neighbor as="1569" ip="198.32.8.208" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.209" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.218" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.215" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.202" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.217" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.203" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="11">
+                <rid>198.32.8.211</rid>
+                <neighbors>
+                    <neighbor as="1569" ip="198.32.8.208" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.209" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.218" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.215" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.202" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.217" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.203" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="12">
+                <rid>198.32.8.212</rid>
+                <neighbors>
+                    <neighbor as="1569" ip="198.32.8.208" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.209" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.218" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.215" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.202" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.217" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.203" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="13">
+                <rid>198.32.8.213</rid>
+                <neighbors>
+                    <neighbor as="1569" ip="198.32.8.208" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.209" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.218" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.215" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.202" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.217" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.203" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="15" reflector="true">
+                <rid>198.32.8.215</rid>
+                <neighbors>
+                    <neighbor as="1569" ip="198.32.8.208"/>
+                    <neighbor as="1569" ip="198.32.8.209"/>
+                    <neighbor as="1569" ip="198.32.8.218"/>
+                    <neighbor as="1569" ip="198.32.8.208" reflector-client="false"/>
+                    <neighbor as="1569" ip="198.32.8.209" reflector-client="false"/>
+                    <neighbor as="1569" ip="198.32.8.218" reflector-client="false"/>
+                    <neighbor as="1569" ip="198.32.8.202" reflector-client="false"/>
+                    <neighbor as="1569" ip="198.32.8.217" reflector-client="false"/>
+                    <neighbor as="1569" ip="198.32.8.203" reflector-client="false"/>
+                    <neighbor as="1569" ip="198.32.8.202"/>
+                    <neighbor as="1569" ip="198.32.8.217"/>
+                    <neighbor as="1569" ip="198.32.8.203"/>
+                    <neighbor as="1569" ip="198.32.8.207"/>
+                    <neighbor as="1569" ip="198.32.8.200"/>
+                    <neighbor as="1569" ip="198.32.8.201"/>
+                    <neighbor as="1569" ip="198.32.8.210"/>
+                    <neighbor as="1569" ip="198.32.8.204"/>
+                    <neighbor as="1569" ip="198.32.8.211"/>
+                    <neighbor as="1569" ip="198.32.8.206"/>
+                    <neighbor as="1569" ip="198.32.8.212"/>
+                    <neighbor as="1569" ip="198.32.8.205"/>
+                    <neighbor as="1569" ip="198.32.8.213"/>
+                    <neighbor as="1569" ip="198.32.8.222"/>
+                </neighbors>
+            </router>
+            <router id="17" reflector="true">
+                <rid>198.32.8.217</rid>
+                <neighbors>
+                    <neighbor as="1569" ip="198.32.8.208"/>
+                    <neighbor as="1569" ip="198.32.8.209"/>
+                    <neighbor as="1569" ip="198.32.8.218"/>
+                    <neighbor as="1569" ip="198.32.8.215"/>
+                    <neighbor as="1569" ip="198.32.8.202"/>
+                    <neighbor as="1569" ip="198.32.8.208" reflector-client="false"/>
+                    <neighbor as="1569" ip="198.32.8.209" reflector-client="false"/>
+                    <neighbor as="1569" ip="198.32.8.218" reflector-client="false"/>
+                    <neighbor as="1569" ip="198.32.8.215" reflector-client="false"/>
+                    <neighbor as="1569" ip="198.32.8.202" reflector-client="false"/>
+                    <neighbor as="1569" ip="198.32.8.203" reflector-client="false"/>
+                    <neighbor as="1569" ip="198.32.8.203"/>
+                    <neighbor as="1569" ip="198.32.8.207"/>
+                    <neighbor as="1569" ip="198.32.8.200"/>
+                    <neighbor as="1569" ip="198.32.8.201"/>
+                    <neighbor as="1569" ip="198.32.8.210"/>
+                    <neighbor as="1569" ip="198.32.8.204"/>
+                    <neighbor as="1569" ip="198.32.8.211"/>
+                    <neighbor as="1569" ip="198.32.8.206"/>
+                    <neighbor as="1569" ip="198.32.8.212"/>
+                    <neighbor as="1569" ip="198.32.8.205"/>
+                    <neighbor as="1569" ip="198.32.8.213"/>
+                    <neighbor as="1569" ip="198.32.8.222"/>
+                </neighbors>
+            </router>
+            <router id="18" reflector="true">
+                <rid>198.32.8.218</rid>
+                <neighbors>
+                    <neighbor as="1569" ip="198.32.8.208"/>
+                    <neighbor as="1569" ip="198.32.8.209"/>
+                    <neighbor as="1569" ip="198.32.8.208" reflector-client="false"/>
+                    <neighbor as="1569" ip="198.32.8.209" reflector-client="false"/>
+                    <neighbor as="1569" ip="198.32.8.215" reflector-client="false"/>
+                    <neighbor as="1569" ip="198.32.8.202" reflector-client="false"/>
+                    <neighbor as="1569" ip="198.32.8.217" reflector-client="false"/>
+                    <neighbor as="1569" ip="198.32.8.203" reflector-client="false"/>
+                    <neighbor as="1569" ip="198.32.8.215"/>
+                    <neighbor as="1569" ip="198.32.8.202"/>
+                    <neighbor as="1569" ip="198.32.8.217"/>
+                    <neighbor as="1569" ip="198.32.8.203"/>
+                    <neighbor as="1569" ip="198.32.8.207"/>
+                    <neighbor as="1569" ip="198.32.8.200"/>
+                    <neighbor as="1569" ip="198.32.8.201"/>
+                    <neighbor as="1569" ip="198.32.8.210"/>
+                    <neighbor as="1569" ip="198.32.8.204"/>
+                    <neighbor as="1569" ip="198.32.8.211"/>
+                    <neighbor as="1569" ip="198.32.8.206"/>
+                    <neighbor as="1569" ip="198.32.8.212"/>
+                    <neighbor as="1569" ip="198.32.8.205"/>
+                    <neighbor as="1569" ip="198.32.8.213"/>
+                    <neighbor as="1569" ip="198.32.8.222"/>
+                </neighbors>
+            </router>
+            <router id="22">
+                <rid>198.32.8.222</rid>
+                <neighbors>
+                    <neighbor as="1569" ip="198.32.8.208" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.209" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.218" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.215" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.202" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.217" reflector-client="true"/>
+                    <neighbor as="1569" ip="198.32.8.203" reflector-client="true"/>
+                </neighbors>
+            </router>
+        </routers>
+    </bgp>
+</domain>
+

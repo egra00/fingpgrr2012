@@ -1,4 +1,4 @@
-package uy.edu.fing.repository.rrloc.algorithms.batesX.bates1;
+package uy.edu.fing.repository.rrloc.algorithms.fullmesh;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -32,15 +32,14 @@ import be.ac.ulg.montefiore.run.totem.visualtopo.guiComponents.MainWindow;
 import edu.uci.ics.jung2.graph.Graph;
 import edu.uci.ics.jung2.graph.UndirectedSparseMultigraph;
 
-public class Bates1 extends BindAlgorithm 
+public class FullMesh extends BindAlgorithm
 {
-
-	private Domain domain;
+private Domain domain;
 	
-	public Bates1() {
-		logger = Logger.getLogger(Bates1.class);
+	public FullMesh() {
+		logger = Logger.getLogger(FullMesh.class);
 		params = new ArrayList<ParameterDescriptor>();
-		algorithm = new Bates1Algorithm();
+		algorithm = new FullMeshAlgorithm();
 		
 		try {
 			params.add(new ParameterDescriptor("ASID", "Domain ASID (leave blank for default).", Integer.class, null));
@@ -48,12 +47,13 @@ public class Bates1 extends BindAlgorithm
 			e.printStackTrace();
 		}
 	}
-		
+	
+	
 	@Override
 	public Object getAlgorithmParams(HashMap params) 
 	{
         String asId = (String) params.get("ASID");
-        
+      
         if(asId == null || asId.isEmpty()) {
         	domain = InterDomainManager.getInstance().getDefaultDomain();
         	if(domain == null){
@@ -68,6 +68,7 @@ public class Bates1 extends BindAlgorithm
                 return null;
             }
         }
+		
 		
 		// Topología IGP representada en un grafo jung 
 		Graph<Node, Link> jIGPTopology = new UndirectedSparseMultigraph<Node, Link>();
@@ -85,7 +86,7 @@ public class Bates1 extends BindAlgorithm
 				e.printStackTrace();
 			}
 		}
-		
+				
 		return jIGPTopology;
 	}
 	
@@ -165,5 +166,4 @@ public class Bates1 extends BindAlgorithm
 		}
 		
 	}
-
 }

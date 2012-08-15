@@ -6,6 +6,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import javax.swing.JOptionPane;
+
 import org.apache.log4j.Logger;
 
 import uy.edu.fing.repository.rrloc.algorithms.iBGPSession;
@@ -26,6 +28,7 @@ import be.ac.ulg.montefiore.run.totem.domain.model.jaxb.BgpRouter;
 import be.ac.ulg.montefiore.run.totem.domain.model.jaxb.ObjectFactory;
 import be.ac.ulg.montefiore.run.totem.repository.model.exception.AlgorithmParameterException;
 import be.ac.ulg.montefiore.run.totem.util.ParameterDescriptor;
+import be.ac.ulg.montefiore.run.totem.visualtopo.guiComponents.MainWindow;
 import edu.uci.ics.jung2.graph.Graph;
 import edu.uci.ics.jung2.graph.UndirectedSparseMultigraph;
 
@@ -95,49 +98,60 @@ public class Bates2  extends BindAlgorithm
 		List<iBGPSession> iBGPTopology = (List<iBGPSession>)algorithmResult;
 		ObjectFactory factory = new ObjectFactory();
 		
-		// Se elimina toda posible configuración previa
-		((DomainImpl)domain).removeBgpRouters();
 		
-		// Todos los routers tendrán sesiones bgp
-		for (Node router : domain.getAllNodes()) {
-			BgpRouter bgpRouter = factory.createBgpRouter();
-	        bgpRouter.setId(router.getId());
-	        bgpRouter.setRid(router.getRid());
-	        domain.addBgpRouter((BgpRouterImpl)bgpRouter);
-		}
+        int n = JOptionPane.YES_OPTION;
+        if (((DomainImpl)domain).getBgp() != null) 
+        {
+            n = JOptionPane.showConfirmDialog(MainWindow.getInstance(), "<html>BGP information already exists for that domain.<br>" +
+                    " This action will remove all prior existing information. Would you like to continue ?", "Warning", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        }
+        if (n == JOptionPane.YES_OPTION) 
+        {
 		
-		// Creo las sesiones
-		for (iBGPSession session : iBGPTopology) {
+			// Se elimina toda posible configuración previa
+			((DomainImpl)domain).removeBgpRouters();
 			
-			BgpRouterImpl router1 = (BgpRouterImpl)domain.getBgpRouter(session.getIdLink1());
-			BgpRouterImpl router2 = (BgpRouterImpl)domain.getBgpRouter(session.getIdLink2());
-			
-			// El router2, el destino, será reflector en caso que router1 sea su cliente
-			router2.setReflector(
-					router2.isReflector() ||
-					session.getSessionType().equals(iBGPSessionType.client));
-			
-			BgpNeighbor bgpNeighbor = factory.createBgpNeighbor();
-			bgpNeighbor.setIp(router2.getRid());
-			bgpNeighbor.setAs(domain.getASID());
-			if (router1.getNeighbors() == null) {
-				router1.setNeighbors(factory.createBgpRouterNeighborsType());
+			// Todos los routers tendrán sesiones bgp
+			for (Node router : domain.getAllNodes()) {
+				BgpRouter bgpRouter = factory.createBgpRouter();
+		        bgpRouter.setId(router.getId());
+		        bgpRouter.setRid(router.getRid());
+		        domain.addBgpRouter((BgpRouterImpl)bgpRouter);
 			}
-			router1.getNeighbors().getNeighbor().add((be.ac.ulg.montefiore.run.totem.domain.model.BgpNeighbor)bgpNeighbor);
 			
-			// El router1, el origen, será cliente en caso de tener una session de tipo client.
-			((BgpNeighborImpl)bgpNeighbor).setReflectorClient(
-					((BgpNeighborImpl)bgpNeighbor).isReflectorClient() ||
-					session.getSessionType().equals(iBGPSessionType.client));
-			
-			bgpNeighbor = factory.createBgpNeighbor();
-			bgpNeighbor.setIp(router1.getRid());
-			bgpNeighbor.setAs(domain.getASID());
-			if (router2.getNeighbors() == null) {
-				router2.setNeighbors(factory.createBgpRouterNeighborsType());
+			// Creo las sesiones
+			for (iBGPSession session : iBGPTopology) {
+				
+				BgpRouterImpl router1 = (BgpRouterImpl)domain.getBgpRouter(session.getIdLink1());
+				BgpRouterImpl router2 = (BgpRouterImpl)domain.getBgpRouter(session.getIdLink2());
+				
+				// El router2, el destino, será reflector en caso que router1 sea su cliente
+				router2.setReflector(
+						router2.isReflector() ||
+						session.getSessionType().equals(iBGPSessionType.client));
+				
+				BgpNeighbor bgpNeighbor = factory.createBgpNeighbor();
+				bgpNeighbor.setIp(router2.getRid());
+				bgpNeighbor.setAs(domain.getASID());
+				if (router1.getNeighbors() == null) {
+					router1.setNeighbors(factory.createBgpRouterNeighborsType());
+				}
+				router1.getNeighbors().getNeighbor().add((be.ac.ulg.montefiore.run.totem.domain.model.BgpNeighbor)bgpNeighbor);
+				
+				// El router1, el origen, será cliente en caso de tener una session de tipo client.
+				((BgpNeighborImpl)bgpNeighbor).setReflectorClient(
+						((BgpNeighborImpl)bgpNeighbor).isReflectorClient() ||
+						session.getSessionType().equals(iBGPSessionType.client));
+				
+				bgpNeighbor = factory.createBgpNeighbor();
+				bgpNeighbor.setIp(router1.getRid());
+				bgpNeighbor.setAs(domain.getASID());
+				if (router2.getNeighbors() == null) {
+					router2.setNeighbors(factory.createBgpRouterNeighborsType());
+				}
+				router2.getNeighbors().getNeighbor().add((be.ac.ulg.montefiore.run.totem.domain.model.BgpNeighbor)bgpNeighbor);
 			}
-			router2.getNeighbors().getNeighbor().add((be.ac.ulg.montefiore.run.totem.domain.model.BgpNeighbor)bgpNeighbor);
-		}
+        }
 	}
 
 	@Override
