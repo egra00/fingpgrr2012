@@ -14,6 +14,21 @@ import edu.uci.ics.jung2.graph.Graph;
 @SuppressWarnings("unchecked")
 public class BGPSepAlgorithm implements RRLocAlgorithm {
 	
+	
+	public boolean contiene(List<iBGPSession> lst, String n1, String n2)
+	{
+		for(iBGPSession session : lst)
+		{
+			if (session.getIdLink1().equals(n1) && session.getIdLink2().equals(n2) ||
+				session.getIdLink1().equals(n2) && session.getIdLink2().equals(n1))
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	
 	@Override
 	public void run(Object param, Object result) {
 		Graph<Node, Link> IGPTopology = (Graph<Node, Link>) param;
@@ -37,7 +52,8 @@ public class BGPSepAlgorithm implements RRLocAlgorithm {
 			//El conjunto de routes reflectors estara configurado Full Mesh
 			for (Node u : graphSeparator.getSeparator()) {
 				for (Node v : graphSeparator.getSeparator()) {
-					if (u != v) {
+					if (u != v && !contiene(i, u.getId(), v.getId())) 
+					{
 						i.add(new iBGPSession(u.getId(), v.getId(), iBGPSessionType.peer));
 					}
 				}
