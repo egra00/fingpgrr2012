@@ -14,6 +14,8 @@ public class BGPSepS extends BGPSep {
 		logger = Logger.getLogger(BGPSepS.class);
 		params = new ArrayList<ParameterDescriptor>();
 		algorithm = new BGPSepSAlgorithm();
+		name = "BGPSepS";
+		thread = new Thread(this, name);
 		
 		try {
 			params.add(new ParameterDescriptor("ASID", "Domain ASID (leave blank for default).", Integer.class, null));
