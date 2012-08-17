@@ -6,22 +6,21 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
-import be.ac.ulg.montefiore.run.totem.domain.exception.InvalidDomainException;
-import be.ac.ulg.montefiore.run.totem.domain.facade.InterDomainManager;
-import be.ac.ulg.montefiore.run.totem.domain.model.Domain;
 import be.ac.ulg.montefiore.run.totem.repository.model.TotemAlgorithm;
 import be.ac.ulg.montefiore.run.totem.repository.model.exception.AlgorithmInitialisationException;
 import be.ac.ulg.montefiore.run.totem.util.ParameterDescriptor;
 
 @SuppressWarnings("unchecked")
-public abstract class BindAlgorithm implements TotemAlgorithm {
+public abstract class BindAlgorithm implements Runnable, TotemAlgorithm {
 	
 	protected Logger logger;
 	protected HashMap runningParams = null;
-	
+	protected Thread thread;
 	protected RRLocAlgorithm algorithm;
 	protected ArrayList<ParameterDescriptor> params;
     
+    Object algorithmParams;
+    Object algorithmResult;
 	
 	/*
 	 * Used for initialize the parameters of input
@@ -69,8 +68,22 @@ public abstract class BindAlgorithm implements TotemAlgorithm {
 		runningParams = params;
         logger.debug("Starting...");
         
-        Object algorithmParams = getAlgorithmParams(params);
-        Object algorithmResult = initAlgorithmResult();
+        algorithmParams = getAlgorithmParams(params);
+        algorithmResult = initAlgorithmResult();
+        
+        thread.start();        
+        logger.debug("Finish");
+	}
+
+	@Override
+	public void stop() {
+		runningParams = null;
+		thread.interrupt();
+	}
+
+	@Override
+	public void run() 
+	{
         
         algorithm.run(algorithmParams, algorithmResult);
         
@@ -82,15 +95,10 @@ public abstract class BindAlgorithm implements TotemAlgorithm {
 			logger.error("Dumping iBGP topology in Totem domain");
 			e.printStackTrace();
 		}
-        
-        logger.debug("Finish");
+		
 	}
-
-	@Override
-	public void stop() {
-		runningParams = null;
-	}
-
+	
+	
 	@Override
 	public HashMap getRunningParameters() {
 		return (runningParams == null) ? null : (HashMap)runningParams.clone();

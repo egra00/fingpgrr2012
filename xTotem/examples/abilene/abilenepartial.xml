@@ -1,20 +1,19 @@
-<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
-<domain ASID="11537" xsi:noNamespaceSchemaLocation="http://totem.run.montefiore.ulg.ac.be/Schema/Domain-v1_3.xsd" 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<domain ASID="11537">
     <info>
         <title>Abilene Topology</title>
-        <date>2005-02-17</date>
+        <date>2005-01-01-02:00</date>
         <author>
-            Fabian Skivee - University of Liege,
-            Bruno Quoitin - Université catholique de Louvain
+            Olivier Delcourt (delcourt@run.montefiore.ulg.ac.be) - RUN - University of Liege
+            Jean Lepropre (lepropre@run.montefiore.ulg.ac.be) - RUN - University of Liege
         </author>
         <description>Topology of Abilene network - 21 feb 2005</description>
         <units>
-            <unit value="mbps" type="bandwidth"/>
-            <unit value="ms" type="delay"/>
+            <unit type="bandwidth" value="mbps"/>
+            <unit type="delay" value="ms"/>
         </units>
         <diff-serv>
-            <priority id="0" preemption="0" ct="0"/>
+            <priority ct="0" id="0" preemption="0"/>
         </diff-serv>
     </info>
     <topology>
@@ -24,8 +23,11 @@
                 <description>Seattle</description>
                 <location latitude="31.147552" longitude="66.65515"/>
                 <interfaces>
-                    <interface id="0"/>
-                    <interface id="13"/>
+                    <interface id="lo">
+                        <ip mask="198.32.12.153/32">198.32.12.153</ip>
+                    </interface>
+                    <interface id="so-0/2/0"/>
+                    <interface id="so-3/1/0"/>
                 </interfaces>
             </node>
             <node id="DNVR">
@@ -33,9 +35,12 @@
                 <description>Denver</description>
                 <location latitude="275.87833" longitude="304.29526"/>
                 <interfaces>
-                    <interface id="0"/>
-                    <interface id="1"/>
-                    <interface id="12"/>
+                    <interface id="lo">
+                        <ip mask="198.32.12.41/32">198.32.12.41</ip>
+                    </interface>
+                    <interface id="so-0/0/0"/>
+                    <interface id="so-0/1/0"/>
+                    <interface id="so-0/2/0"/>
                 </interfaces>
             </node>
             <node id="KSCY">
@@ -43,9 +48,12 @@
                 <description>Kansas City</description>
                 <location latitude="271.42868" longitude="507.15875"/>
                 <interfaces>
-                    <interface id="1"/>
-                    <interface id="2"/>
-                    <interface id="3"/>
+                    <interface id="lo">
+                        <ip mask="198.32.12.89/32">198.32.12.89</ip>
+                    </interface>
+                    <interface id="so-0/0/0"/>
+                    <interface id="so-0/1/0"/>
+                    <interface id="so-0/2/0"/>
                 </interfaces>
             </node>
             <node id="IPLS">
@@ -53,27 +61,33 @@
                 <description>Indianapolis</description>
                 <location latitude="170.0" longitude="779.0"/>
                 <interfaces>
-                    <interface id="2"/>
-                    <interface id="4"/>
-                    <interface id="5"/>
+                    <interface id="lo">
+                        <ip mask="198.32.12.177/32">198.32.12.177</ip>
+                    </interface>
+                    <interface id="so-0/0/0"/>
+                    <interface id="so-0/1/0"/>
+                    <interface id="so-3/0/0"/>
                 </interfaces>
             </node>
             <node id="CHIN">
                 <rid>198.32.8.193</rid>
                 <description>Chicago</description>
-                <location latitude="62.295105" longitude="692.634"/>
+                <location latitude="62.2951" longitude="692.634"/>
                 <interfaces>
-                    <interface id="4"/>
-                    <interface id="6"/>
+                    <interface id="so-0/0/0"/>
+                    <interface id="so-3/1/0"/>
                 </interfaces>
             </node>
             <node id="NYCM">
                 <rid>198.32.8.199</rid>
                 <description>New york City</description>
-                <location latitude="57.845455" longitude="1054.8903"/>
+                <location latitude="57.84546" longitude="1054.8903"/>
                 <interfaces>
-                    <interface id="6"/>
-                    <interface id="7"/>
+                    <interface id="lo">
+                        <ip mask="198.32.12.121/32">198.32.12.121</ip>
+                    </interface>
+                    <interface id="so-0/2/0"/>
+                    <interface id="so-3/1/0"/>
                 </interfaces>
             </node>
             <node id="WASH">
@@ -81,8 +95,11 @@
                 <description>Washington DC</description>
                 <location latitude="226.0" longitude="1033.0"/>
                 <interfaces>
-                    <interface id="7"/>
-                    <interface id="8"/>
+                    <interface id="lo">
+                        <ip mask="198.32.12.169/32">198.32.12.169</ip>
+                    </interface>
+                    <interface id="so-0/0/0"/>
+                    <interface id="so-0/2/0"/>
                 </interfaces>
             </node>
             <node id="ATLA">
@@ -90,9 +107,20 @@
                 <description>Atlanta</description>
                 <location latitude="418.0" longitude="909.0"/>
                 <interfaces>
-                    <interface id="5"/>
-                    <interface id="8"/>
-                    <interface id="9"/>
+                    <interface id="lo">
+                        <ip mask="198.32.12.9/32">198.32.12.9</ip>
+                    </interface>
+                    <interface id="so-0/0/0"/>
+                    <interface id="so-0/2/0"/>
+                    <interface id="so-3/0/0"/>
+                    <interface id="ge-2/2/2"/>
+                </interfaces>
+            </node>
+            <node id="ATLA-M5">
+                <rid>198.32.8.203</rid>
+                <location latitude="440.0" longitude="1040.0"/>
+                <interfaces>
+                    <interface id="ge-0/0/0"/>
                 </interfaces>
             </node>
             <node id="HSTN">
@@ -100,9 +128,12 @@
                 <description>Houston</description>
                 <location latitude="658.5483" longitude="518.751"/>
                 <interfaces>
-                    <interface id="3"/>
-                    <interface id="9"/>
-                    <interface id="10"/>
+                    <interface id="lo">
+                        <ip mask="198.32.12.57/32">198.32.12.57</ip>
+                    </interface>
+                    <interface id="so-0/0/0"/>
+                    <interface id="so-0/1/0"/>
+                    <interface id="so-0/2/0"/>
                 </interfaces>
             </node>
             <node id="LOSA">
@@ -110,8 +141,11 @@
                 <description>Los Angeles</description>
                 <location latitude="529.50836" longitude="92.7376"/>
                 <interfaces>
-                    <interface id="10"/>
-                    <interface id="11"/>
+                    <interface id="lo">
+                        <ip mask="198.32.12.105/32">198.32.12.105</ip>
+                    </interface>
+                    <interface id="so-0/2/0"/>
+                    <interface id="so-3/3/0"/>
                 </interfaces>
             </node>
             <node id="SNVA">
@@ -119,178 +153,193 @@
                 <description>Sunnyvale</description>
                 <location latitude="324.8245" longitude="14.490252"/>
                 <interfaces>
-                    <interface id="11"/>
-                    <interface id="12"/>
-                    <interface id="13"/>
+                    <interface id="lo">
+                        <ip mask="198.32.12.137/32">198.32.12.137</ip>
+                    </interface>
+                    <interface id="so-0/0/0"/>
+                    <interface id="so-0/1/0"/>
+                    <interface id="so-0/2/0"/>
                 </interfaces>
             </node>
         </nodes>
         <links>
             <link id="STTL-DNVR">
-                <from if="0" node="STTL"/>
-                <to if="0" node="DNVR"/>
+                <from if="so-0/2/0" node="STTL"/>
+                <to if="so-0/0/0" node="DNVR"/>
                 <bw>10000.0</bw>
                 <delay>0.0</delay>
             </link>
             <link id="DNVR-STTL">
-                <from if="0" node="DNVR"/>
-                <to if="0" node="STTL"/>
+                <from if="so-0/0/0" node="DNVR"/>
+                <to if="so-0/2/0" node="STTL"/>
                 <bw>10000.0</bw>
                 <delay>0.0</delay>
             </link>
             <link id="DNVR-KSCY">
-                <from if="1" node="DNVR"/>
-                <to if="1" node="KSCY"/>
+                <from if="so-0/2/0" node="DNVR"/>
+                <to if="so-0/0/0" node="KSCY"/>
                 <bw>10000.0</bw>
                 <delay>0.0</delay>
             </link>
             <link id="KSCY-DNVR">
-                <from if="1" node="KSCY"/>
-                <to if="1" node="DNVR"/>
+                <from if="so-0/0/0" node="KSCY"/>
+                <to if="so-0/2/0" node="DNVR"/>
                 <bw>10000.0</bw>
                 <delay>0.0</delay>
             </link>
             <link id="KSCY-IPLS">
-                <from if="2" node="KSCY"/>
-                <to if="2" node="IPLS"/>
+                <from if="so-0/2/0" node="KSCY"/>
+                <to if="so-0/0/0" node="IPLS"/>
                 <bw>10000.0</bw>
                 <delay>0.0</delay>
             </link>
             <link id="IPLS-KSCY">
-                <from if="2" node="IPLS"/>
-                <to if="2" node="KSCY"/>
+                <from if="so-0/0/0" node="IPLS"/>
+                <to if="so-0/2/0" node="KSCY"/>
                 <bw>10000.0</bw>
                 <delay>0.0</delay>
             </link>
             <link id="KSCY-HSTN">
-                <from if="3" node="KSCY"/>
-                <to if="3" node="HSTN"/>
+                <from if="so-0/1/0" node="KSCY"/>
+                <to if="so-0/2/0" node="HSTN"/>
                 <bw>10000.0</bw>
                 <delay>0.0</delay>
             </link>
             <link id="HSTN-KSCY">
-                <from if="3" node="HSTN"/>
-                <to if="3" node="KSCY"/>
+                <from if="so-0/2/0" node="HSTN"/>
+                <to if="so-0/1/0" node="KSCY"/>
                 <bw>10000.0</bw>
                 <delay>0.0</delay>
             </link>
             <link id="IPLS-CHIN">
-                <from if="4" node="IPLS"/>
-                <to if="4" node="CHIN"/>
+                <from if="so-0/1/0" node="IPLS"/>
+                <to if="so-0/0/0" node="CHIN"/>
                 <bw>10000.0</bw>
                 <delay>0.0</delay>
             </link>
             <link id="CHIN-IPLS">
-                <from if="4" node="CHIN"/>
-                <to if="4" node="IPLS"/>
+                <from if="so-0/0/0" node="CHIN"/>
+                <to if="so-0/1/0" node="IPLS"/>
                 <bw>10000.0</bw>
                 <delay>0.0</delay>
             </link>
             <link id="IPLS-ATLA">
-                <from if="5" node="IPLS"/>
-                <to if="5" node="ATLA"/>
+                <from if="so-3/0/0" node="IPLS"/>
+                <to if="so-3/0/0" node="ATLA"/>
                 <bw>10000.0</bw>
                 <delay>0.0</delay>
             </link>
             <link id="ATLA-IPLS">
-                <from if="5" node="ATLA"/>
-                <to if="5" node="IPLS"/>
+                <from if="so-3/0/0" node="ATLA"/>
+                <to if="so-3/0/0" node="IPLS"/>
+                <bw>10000.0</bw>
+                <delay>0.0</delay>
+            </link>
+            <link id="ATLAM5-ATLA">
+                <from if="ge-0/0/0" node="ATLA-M5"/>
+                <to if="ge-2/2/2" node="ATLA"/>
+                <bw>10000.0</bw>
+                <delay>0.0</delay>
+            </link>
+            <link id="ATLA-ATLAM5">
+                <from if="ge-2/2/2" node="ATLA"/>
+                <to if="ge-0/0/0" node="ATLA-M5"/>
                 <bw>10000.0</bw>
                 <delay>0.0</delay>
             </link>
             <link id="CHIN-NYCM">
-                <from if="6" node="CHIN"/>
-                <to if="6" node="NYCM"/>
+                <from if="so-3/1/0" node="CHIN"/>
+                <to if="so-3/1/0" node="NYCM"/>
                 <bw>10000.0</bw>
                 <delay>0.0</delay>
             </link>
             <link id="NYCM-CHIN">
-                <from if="6" node="NYCM"/>
-                <to if="6" node="CHIN"/>
+                <from if="so-3/1/0" node="NYCM"/>
+                <to if="so-3/1/0" node="CHIN"/>
                 <bw>10000.0</bw>
                 <delay>0.0</delay>
             </link>
             <link id="NYCM-WASH">
-                <from if="7" node="NYCM"/>
-                <to if="7" node="WASH"/>
+                <from if="so-0/2/0" node="NYCM"/>
+                <to if="so-0/0/0" node="WASH"/>
                 <bw>10000.0</bw>
                 <delay>0.0</delay>
             </link>
             <link id="WASH-NYCM">
-                <from if="7" node="WASH"/>
-                <to if="7" node="NYCM"/>
+                <from if="so-0/0/0" node="WASH"/>
+                <to if="so-0/2/0" node="NYCM"/>
                 <bw>10000.0</bw>
                 <delay>0.0</delay>
             </link>
             <link id="WASH-ATLA">
-                <from if="8" node="WASH"/>
-                <to if="8" node="ATLA"/>
+                <from if="so-0/2/0" node="WASH"/>
+                <to if="so-0/0/0" node="ATLA"/>
                 <bw>10000.0</bw>
                 <delay>0.0</delay>
             </link>
             <link id="ATLA-WASH">
-                <from if="8" node="ATLA"/>
-                <to if="8" node="WASH"/>
+                <from if="so-0/0/0" node="ATLA"/>
+                <to if="so-0/2/0" node="WASH"/>
                 <bw>10000.0</bw>
                 <delay>0.0</delay>
             </link>
             <link id="ATLA-HSTN">
-                <from if="9" node="ATLA"/>
-                <to if="9" node="HSTN"/>
+                <from if="so-0/2/0" node="ATLA"/>
+                <to if="so-0/1/0" node="HSTN"/>
                 <bw>10000.0</bw>
                 <delay>0.0</delay>
             </link>
             <link id="HSTN-ATLA">
-                <from if="9" node="HSTN"/>
-                <to if="9" node="ATLA"/>
+                <from if="so-0/1/0" node="HSTN"/>
+                <to if="so-0/2/0" node="ATLA"/>
                 <bw>10000.0</bw>
                 <delay>0.0</delay>
             </link>
             <link id="HSTN-LOSA">
-                <from if="10" node="HSTN"/>
-                <to if="10" node="LOSA"/>
+                <from if="so-0/0/0" node="HSTN"/>
+                <to if="so-0/2/0" node="LOSA"/>
                 <bw>10000.0</bw>
                 <delay>0.0</delay>
             </link>
             <link id="LOSA-HSTN">
-                <from if="10" node="LOSA"/>
-                <to if="10" node="HSTN"/>
+                <from if="so-0/2/0" node="LOSA"/>
+                <to if="so-0/0/0" node="HSTN"/>
                 <bw>10000.0</bw>
                 <delay>0.0</delay>
             </link>
             <link id="LOSA-SNVA">
-                <from if="11" node="LOSA"/>
-                <to if="11" node="SNVA"/>
+                <from if="so-3/3/0" node="LOSA"/>
+                <to if="so-0/1/0" node="SNVA"/>
                 <bw>10000.0</bw>
                 <delay>0.0</delay>
             </link>
             <link id="SNVA-LOSA">
-                <from if="11" node="SNVA"/>
-                <to if="11" node="LOSA"/>
+                <from if="so-0/1/0" node="SNVA"/>
+                <to if="so-3/3/0" node="LOSA"/>
                 <bw>10000.0</bw>
                 <delay>0.0</delay>
             </link>
             <link id="SNVA-DNVR">
-                <from if="12" node="SNVA"/>
-                <to if="12" node="DNVR"/>
+                <from if="so-0/2/0" node="SNVA"/>
+                <to if="so-0/1/0" node="DNVR"/>
                 <bw>10000.0</bw>
                 <delay>0.0</delay>
             </link>
             <link id="DNVR-SNVA">
-                <from if="12" node="DNVR"/>
-                <to if="12" node="SNVA"/>
+                <from if="so-0/1/0" node="DNVR"/>
+                <to if="so-0/2/0" node="SNVA"/>
                 <bw>10000.0</bw>
                 <delay>0.0</delay>
             </link>
             <link id="SNVA-STTL">
-                <from if="13" node="SNVA"/>
-                <to if="13" node="STTL"/>
+                <from if="so-0/0/0" node="SNVA"/>
+                <to if="so-3/1/0" node="STTL"/>
                 <bw>10000.0</bw>
                 <delay>0.0</delay>
             </link>
             <link id="STTL-SNVA">
-                <from if="13" node="STTL"/>
-                <to if="13" node="SNVA"/>
+                <from if="so-3/1/0" node="STTL"/>
+                <to if="so-0/0/0" node="SNVA"/>
                 <bw>10000.0</bw>
                 <delay>0.0</delay>
             </link>
@@ -301,6 +350,7 @@
             <link id="STTL-DNVR">
                 <static>
                     <metric>2095.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -317,6 +367,7 @@
             <link id="DNVR-STTL">
                 <static>
                     <metric>2095.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -333,6 +384,7 @@
             <link id="DNVR-KSCY">
                 <static>
                     <metric>639.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -349,6 +401,7 @@
             <link id="KSCY-DNVR">
                 <static>
                     <metric>639.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -365,6 +418,7 @@
             <link id="KSCY-IPLS">
                 <static>
                     <metric>548.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -381,6 +435,7 @@
             <link id="IPLS-KSCY">
                 <static>
                     <metric>548.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -397,6 +452,7 @@
             <link id="KSCY-HSTN">
                 <static>
                     <metric>902.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -413,6 +469,7 @@
             <link id="HSTN-KSCY">
                 <static>
                     <metric>902.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -429,6 +486,7 @@
             <link id="IPLS-CHIN">
                 <static>
                     <metric>260.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -445,6 +503,7 @@
             <link id="CHIN-IPLS">
                 <static>
                     <metric>260.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -461,6 +520,7 @@
             <link id="IPLS-ATLA">
                 <static>
                     <metric>587.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -477,6 +537,7 @@
             <link id="ATLA-IPLS">
                 <static>
                     <metric>587.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -493,6 +554,7 @@
             <link id="CHIN-NYCM">
                 <static>
                     <metric>700.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -509,6 +571,7 @@
             <link id="NYCM-CHIN">
                 <static>
                     <metric>700.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -525,6 +588,7 @@
             <link id="NYCM-WASH">
                 <static>
                     <metric>233.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -541,6 +605,7 @@
             <link id="WASH-NYCM">
                 <static>
                     <metric>233.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -557,6 +622,7 @@
             <link id="WASH-ATLA">
                 <static>
                     <metric>846.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -573,6 +639,7 @@
             <link id="ATLA-WASH">
                 <static>
                     <metric>846.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -589,6 +656,7 @@
             <link id="ATLA-HSTN">
                 <static>
                     <metric>1176.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -605,6 +673,7 @@
             <link id="HSTN-ATLA">
                 <static>
                     <metric>1176.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -621,6 +690,7 @@
             <link id="HSTN-LOSA">
                 <static>
                     <metric>1893.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -637,6 +707,7 @@
             <link id="LOSA-HSTN">
                 <static>
                     <metric>1893.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -653,6 +724,7 @@
             <link id="LOSA-SNVA">
                 <static>
                     <metric>366.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -669,6 +741,7 @@
             <link id="SNVA-LOSA">
                 <static>
                     <metric>366.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -685,6 +758,7 @@
             <link id="SNVA-DNVR">
                 <static>
                     <metric>1295.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -701,6 +775,7 @@
             <link id="DNVR-SNVA">
                 <static>
                     <metric>1295.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -717,6 +792,7 @@
             <link id="SNVA-STTL">
                 <static>
                     <metric>861.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -733,6 +809,41 @@
             <link id="STTL-SNVA">
                 <static>
                     <metric>861.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>10000.0</mrbw>
+                    <mbw>10000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">10000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">10000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="ATLAM5-ATLA">
+                <static>
+                    <metric>587.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>10000.0</mrbw>
+                    <mbw>10000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">10000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">10000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="ATLA-ATLAM5">
+                <static>
+                    <metric>587.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -748,197 +859,137 @@
             </link>
         </links>
     </igp>
-
     <bgp>
-
         <routers>
-
-            <router id="ATLA">
-                <rid>198.32.8.192</rid>
-                <neighbors>
-                    <neighbor ip="198.32.8.193" as="11537"/>
-                    <neighbor ip="198.32.8.194" as="11537"/>
-                    <neighbor ip="198.32.8.195" as="11537"/>
-                    <neighbor ip="198.32.8.196" as="11537"/>
-                    <neighbor ip="198.32.8.197" as="11537"/>
-                    <neighbor ip="198.32.8.198" as="11537"/>
-                    <neighbor ip="198.32.8.199" as="11537"/>
-                    <neighbor ip="198.32.8.200" as="11537"/>
-                    <neighbor ip="198.32.8.201" as="11537"/>
-                    <neighbor ip="198.32.8.202" as="11537"/>
-                </neighbors>
-            </router>
-
-            <router id="CHIN">
-                <rid>198.32.8.193</rid>
-                <neighbors>
-                    <neighbor ip="198.32.8.192" as="11537"/>
-                    <neighbor ip="198.32.8.194" as="11537"/>
-                    <neighbor ip="198.32.8.195" as="11537"/>
-                    <neighbor ip="198.32.8.196" as="11537"/>
-                    <neighbor ip="198.32.8.197" as="11537"/>
-                    <neighbor ip="198.32.8.198" as="11537"/>
-                    <neighbor ip="198.32.8.199" as="11537"/>
-                    <neighbor ip="198.32.8.200" as="11537"/>
-                    <neighbor ip="198.32.8.201" as="11537"/>
-                    <neighbor ip="198.32.8.202" as="11537"/>
-                    <neighbor ip="62.40.103.165" as="20965" next-hop-self="true"/>
-                </neighbors>
-            </router>
-
-            <router id="DNVR">
-                <rid>198.32.8.194</rid>
-                <neighbors>
-                    <neighbor ip="198.32.8.192" as="11537"/>
-                    <neighbor ip="198.32.8.193" as="11537"/>
-                    <neighbor ip="198.32.8.195" as="11537"/>
-                    <neighbor ip="198.32.8.196" as="11537"/>
-                    <neighbor ip="198.32.8.197" as="11537"/>
-                    <neighbor ip="198.32.8.198" as="11537"/>
-                    <neighbor ip="198.32.8.199" as="11537"/>
-                    <neighbor ip="198.32.8.200" as="11537"/>
-                    <neighbor ip="198.32.8.201" as="11537"/>
-                    <neighbor ip="198.32.8.202" as="11537"/>
-                </neighbors>
-            </router>
-
-            <router id="HSTN">
-                <rid>198.32.8.195</rid>
-                <neighbors>
-                    <neighbor ip="198.32.8.192" as="11537"/>
-                    <neighbor ip="198.32.8.193" as="11537"/>
-                    <neighbor ip="198.32.8.194" as="11537"/>
-                    <neighbor ip="198.32.8.196" as="11537"/>
-                    <neighbor ip="198.32.8.197" as="11537"/>
-                    <neighbor ip="198.32.8.198" as="11537"/>
-                    <neighbor ip="198.32.8.199" as="11537"/>
-                    <neighbor ip="198.32.8.200" as="11537"/>
-                    <neighbor ip="198.32.8.201" as="11537"/>
-                    <neighbor ip="198.32.8.202" as="11537"/>
-                </neighbors>
-            </router>
-
-            <router id="IPLS">
-                <rid>198.32.8.196</rid>
-                <neighbors>
-                    <neighbor ip="198.32.8.192" as="11537"/>
-                    <neighbor ip="198.32.8.193" as="11537"/>
-                    <neighbor ip="198.32.8.194" as="11537"/>
-                    <neighbor ip="198.32.8.195" as="11537"/>
-                    <neighbor ip="198.32.8.197" as="11537"/>
-                    <neighbor ip="198.32.8.198" as="11537"/>
-                    <neighbor ip="198.32.8.199" as="11537"/>
-                    <neighbor ip="198.32.8.200" as="11537"/>
-                    <neighbor ip="198.32.8.201" as="11537"/>
-                    <neighbor ip="198.32.8.202" as="11537"/>
-                </neighbors>
-            </router>
-
-            <router id="KSCY">
-                <rid>198.32.8.197</rid>
-                <neighbors>
-                    <neighbor ip="198.32.8.192" as="11537"/>
-                    <neighbor ip="198.32.8.193" as="11537"/>
-                    <neighbor ip="198.32.8.194" as="11537"/>
-                    <neighbor ip="198.32.8.195" as="11537"/>
-                    <neighbor ip="198.32.8.196" as="11537"/>
-                    <neighbor ip="198.32.8.198" as="11537"/>
-                    <neighbor ip="198.32.8.199" as="11537"/>
-                    <neighbor ip="198.32.8.200" as="11537"/>
-                    <neighbor ip="198.32.8.201" as="11537"/>
-                    <neighbor ip="198.32.8.202" as="11537"/>
-                </neighbors>
-            </router>
-
-            <router id="LOSA">
-                <rid>198.32.8.198</rid>
-                <neighbors>
-                    <neighbor ip="198.32.8.192" as="11537"/>
-                    <neighbor ip="198.32.8.193" as="11537"/>
-                    <neighbor ip="198.32.8.194" as="11537"/>
-                    <neighbor ip="198.32.8.195" as="11537"/>
-                    <neighbor ip="198.32.8.196" as="11537"/>
-                    <neighbor ip="198.32.8.197" as="11537"/>
-                    <neighbor ip="198.32.8.199" as="11537"/>
-                    <neighbor ip="198.32.8.200" as="11537"/>
-                    <neighbor ip="198.32.8.201" as="11537"/>
-                    <neighbor ip="198.32.8.202" as="11537"/>
-                </neighbors>
-            </router>
-
-            <router id="NYCM">
-                <rid>198.32.8.199</rid>
-                <neighbors>
-                    <neighbor ip="198.32.8.192" as="11537"/>
-                    <neighbor ip="198.32.8.193" as="11537"/>
-                    <neighbor ip="198.32.8.194" as="11537"/>
-                    <neighbor ip="198.32.8.195" as="11537"/>
-                    <neighbor ip="198.32.8.196" as="11537"/>
-                    <neighbor ip="198.32.8.197" as="11537"/>
-                    <neighbor ip="198.32.8.198" as="11537"/>
-                    <neighbor ip="198.32.8.200" as="11537"/>
-                    <neighbor ip="198.32.8.201" as="11537"/>
-                    <neighbor ip="198.32.8.202" as="11537"/>
-                    <neighbor ip="198.32.11.62" as="20965" next-hop-self="true"/>
-                </neighbors>
-            </router>
-
             <router id="STTL">
                 <rid>198.32.8.200</rid>
                 <neighbors>
-                    <neighbor ip="198.32.8.192" as="11537"/>
-                    <neighbor ip="198.32.8.193" as="11537"/>
-                    <neighbor ip="198.32.8.194" as="11537"/>
-                    <neighbor ip="198.32.8.195" as="11537"/>
-                    <neighbor ip="198.32.8.196" as="11537"/>
-                    <neighbor ip="198.32.8.197" as="11537"/>
-                    <neighbor ip="198.32.8.198" as="11537"/>
-                    <neighbor ip="198.32.8.199" as="11537"/>
-                    <neighbor ip="198.32.8.201" as="11537"/>
-                    <neighbor ip="198.32.8.202" as="11537"/>
+                    <neighbor as="11537" ip="198.32.8.195" reflector-client="true"/>
+                    <neighbor as="11537" ip="198.32.8.196" reflector-client="true"/>
+                    <neighbor as="11537" ip="198.32.8.194" reflector-client="true"/>
+                    <neighbor as="11537" ip="198.32.8.201" reflector-client="true"/>
                 </neighbors>
             </router>
-
-            <router id="SNVA">
-                <rid>198.32.8.201</rid>
+            <router id="DNVR" reflector="true">
+                <rid>198.32.8.194</rid>
                 <neighbors>
-                    <neighbor ip="198.32.8.192" as="11537"/>
-                    <neighbor ip="198.32.8.193" as="11537"/>
-                    <neighbor ip="198.32.8.194" as="11537"/>
-                    <neighbor ip="198.32.8.195" as="11537"/>
-                    <neighbor ip="198.32.8.196" as="11537"/>
-                    <neighbor ip="198.32.8.197" as="11537"/>
-                    <neighbor ip="198.32.8.198" as="11537"/>
-                    <neighbor ip="198.32.8.199" as="11537"/>
-                    <neighbor ip="198.32.8.200" as="11537"/>
-                    <neighbor ip="198.32.8.202" as="11537"/>
-                    <neighbor ip="198.9.201.11" as="1239" next-hop-self="true"/>
-                    <neighbor ip="198.9.201.24" as="3356" next-hop-self="true"/>
-                    <neighbor ip="198.9.201.89" as="2914" next-hop-self="true"/>
-                    <neighbor ip="198.9.202.89" as="2914" next-hop-self="true"/>
+                    <neighbor as="11537" ip="198.32.8.195" reflector-client="true"/>
+                    <neighbor as="11537" ip="198.32.8.196" reflector-client="true"/>
+                    <neighbor as="11537" ip="198.32.8.201" reflector-client="false"/>
+                    <neighbor as="11537" ip="198.32.8.198"/>
+                    <neighbor as="11537" ip="198.32.8.197"/>
+                    <neighbor as="11537" ip="198.32.8.200"/>
                 </neighbors>
             </router>
-
-            <router id="WASH">
+            <router id="KSCY">
+                <rid>198.32.8.197</rid>
+                <neighbors>
+                    <neighbor as="11537" ip="198.32.8.195" reflector-client="true"/>
+                    <neighbor as="11537" ip="198.32.8.196" reflector-client="true"/>
+                    <neighbor as="11537" ip="198.32.8.194" reflector-client="true"/>
+                    <neighbor as="11537" ip="198.32.8.201" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="IPLS" reflector="true">
+                <rid>198.32.8.196</rid>
+                <neighbors>
+                    <neighbor as="11537" ip="198.32.8.195"/>
+                    <neighbor as="11537" ip="198.32.8.202"/>
+                    <neighbor as="11537" ip="198.32.8.199"/>
+                    <neighbor as="11537" ip="198.32.8.193"/>
+                    <neighbor as="11537" ip="198.32.8.203"/>
+                    <neighbor as="11537" ip="198.32.8.192"/>
+                    <neighbor as="11537" ip="198.32.8.194"/>
+                    <neighbor as="11537" ip="198.32.8.198"/>
+                    <neighbor as="11537" ip="198.32.8.197"/>
+                    <neighbor as="11537" ip="198.32.8.200"/>
+                    <neighbor as="11537" ip="198.32.8.201"/>
+                </neighbors>
+            </router>
+            <router id="CHIN" reflector="false">
+                <rid>198.32.8.193</rid>
+                <neighbors>
+                    <neighbor as="11537" ip="198.32.8.195" reflector-client="true"/>
+                    <neighbor as="11537" ip="198.32.8.196" reflector-client="true"/>
+                    <neighbor as="11537" ip="198.32.8.202" reflector-client="true"/>
+                    <neighbor as="11537" ip="198.32.8.199"/>
+                </neighbors>
+            </router>
+            <router id="NYCM">
+                <rid>198.32.8.199</rid>
+                <neighbors>
+                    <neighbor as="11537" ip="198.32.8.195" reflector-client="true"/>
+                    <neighbor as="11537" ip="198.32.8.196" reflector-client="true"/>
+                    <neighbor as="11537" ip="198.32.8.202" reflector-client="true"/>
+                    <neighbor as="11537" ip="198.32.8.193" reflector-client="false"/>
+                </neighbors>
+            </router>
+            <router id="WASH" reflector="true">
                 <rid>198.32.8.202</rid>
                 <neighbors>
-                    <neighbor ip="198.32.8.192" as="11537"/>
-                    <neighbor ip="198.32.8.193" as="11537"/>
-                    <neighbor ip="198.32.8.194" as="11537"/>
-                    <neighbor ip="198.32.8.195" as="11537"/>
-                    <neighbor ip="198.32.8.196" as="11537"/>
-                    <neighbor ip="198.32.8.197" as="11537"/>
-                    <neighbor ip="198.32.8.198" as="11537"/>
-                    <neighbor ip="198.32.8.199" as="11537"/>
-                    <neighbor ip="198.32.8.200" as="11537"/>
-                    <neighbor ip="198.32.8.201" as="11537"/>
-                    <neighbor ip="62.40.103.253" as="20965" next-hop-self="true"/>
+                    <neighbor as="11537" ip="198.32.8.195" reflector-client="true"/>
+                    <neighbor as="11537" ip="198.32.8.196" reflector-client="true"/>
+                    <neighbor as="11537" ip="198.32.8.199"/>
+                    <neighbor as="11537" ip="198.32.8.193"/>
+                    <neighbor as="11537" ip="198.32.8.203"/>
+                    <neighbor as="11537" ip="198.32.8.192"/>
                 </neighbors>
             </router>
-
+            <router id="ATLA" reflector="false">
+                <rid>198.32.8.192</rid>
+                <neighbors>
+                    <neighbor as="11537" ip="198.32.8.195" reflector-client="true"/>
+                    <neighbor as="11537" ip="198.32.8.196" reflector-client="true"/>
+                    <neighbor as="11537" ip="198.32.8.202" reflector-client="true"/>
+                    <neighbor as="11537" ip="198.32.8.203"/>
+                </neighbors>
+            </router>
+            <router id="ATLA-M5">
+                <rid>198.32.8.203</rid>
+                <neighbors>
+                    <neighbor as="11537" ip="198.32.8.195" reflector-client="true"/>
+                    <neighbor as="11537" ip="198.32.8.196" reflector-client="true"/>
+                    <neighbor as="11537" ip="198.32.8.202" reflector-client="true"/>
+                    <neighbor as="11537" ip="198.32.8.192" reflector-client="false"/>
+                </neighbors>
+            </router>
+            <router id="HSTN" reflector="true">
+                <rid>198.32.8.195</rid>
+                <neighbors>
+                    <neighbor as="11537" ip="198.32.8.196" reflector-client="false"/>
+                    <neighbor as="11537" ip="198.32.8.202"/>
+                    <neighbor as="11537" ip="198.32.8.199"/>
+                    <neighbor as="11537" ip="198.32.8.193"/>
+                    <neighbor as="11537" ip="198.32.8.203"/>
+                    <neighbor as="11537" ip="198.32.8.192"/>
+                    <neighbor as="11537" ip="198.32.8.194"/>
+                    <neighbor as="11537" ip="198.32.8.198"/>
+                    <neighbor as="11537" ip="198.32.8.197"/>
+                    <neighbor as="11537" ip="198.32.8.200"/>
+                    <neighbor as="11537" ip="198.32.8.201"/>
+                </neighbors>
+            </router>
+            <router id="LOSA">
+                <rid>198.32.8.198</rid>
+                <neighbors>
+                    <neighbor as="11537" ip="198.32.8.195" reflector-client="true"/>
+                    <neighbor as="11537" ip="198.32.8.196" reflector-client="true"/>
+                    <neighbor as="11537" ip="198.32.8.194" reflector-client="true"/>
+                    <neighbor as="11537" ip="198.32.8.201" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="SNVA" reflector="true">
+                <rid>198.32.8.201</rid>
+                <neighbors>
+                    <neighbor as="11537" ip="198.32.8.195" reflector-client="true"/>
+                    <neighbor as="11537" ip="198.32.8.196" reflector-client="true"/>
+                    <neighbor as="11537" ip="198.32.8.194"/>
+                    <neighbor as="11537" ip="198.32.8.198"/>
+                    <neighbor as="11537" ip="198.32.8.197"/>
+                    <neighbor as="11537" ip="198.32.8.200"/>
+                </neighbors>
+            </router>
         </routers>
-
     </bgp>
-
 </domain>
 

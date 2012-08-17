@@ -941,7 +941,7 @@ public class RepositoryManager extends RepositoryManagerObserver {
                 return false;
             }
             AlgorithmEntry e = (AlgorithmEntry) o;
-            return e.name.equals(this.name);
+            return e == this;
         }
         public int hashCode() {
             return name.hashCode();

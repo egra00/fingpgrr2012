@@ -161,7 +161,7 @@
             <node id="35">
                 <rid>35</rid>
                 <description>35</description>
-                <location latitude="-33.484024" longitude="118.34728"/>
+                <location latitude="-34.13616" longitude="120.39065"/>
             </node>
             <node id="36">
                 <rid>36</rid>
@@ -2517,2001 +2517,1581 @@
     </igp>
     <bgp>
         <routers>
-            <router id="0" reflector="true">
+            <router id="0">
                 <rid>0</rid>
                 <neighbors>
-                    <neighbor as="45" ip="20"/>
-                    <neighbor as="45" ip="23"/>
-                    <neighbor as="45" ip="6"/>
-                    <neighbor as="45" ip="24"/>
-                    <neighbor as="45" ip="3"/>
-                    <neighbor as="45" ip="12"/>
-                    <neighbor as="45" ip="13"/>
-                    <neighbor as="45" ip="33"/>
-                    <neighbor as="45" ip="32"/>
-                    <neighbor as="45" ip="45"/>
-                    <neighbor as="45" ip="44"/>
-                    <neighbor as="45" ip="34"/>
-                    <neighbor as="45" ip="42"/>
-                    <neighbor as="45" ip="31"/>
-                    <neighbor as="45" ip="40"/>
-                    <neighbor as="45" ip="38"/>
-                    <neighbor as="45" ip="47"/>
-                    <neighbor as="45" ip="28" reflector-client="false"/>
-                    <neighbor as="45" ip="27" reflector-client="false"/>
-                    <neighbor as="45" ip="25" reflector-client="false"/>
-                    <neighbor as="45" ip="19" reflector-client="false"/>
-                    <neighbor as="45" ip="18" reflector-client="false"/>
-                    <neighbor as="45" ip="21"/>
-                    <neighbor as="45" ip="22"/>
-                    <neighbor as="45" ip="26"/>
-                    <neighbor as="45" ip="29"/>
-                    <neighbor as="45" ip="10"/>
-                    <neighbor as="45" ip="11"/>
-                    <neighbor as="45" ip="15"/>
-                    <neighbor as="45" ip="14"/>
-                    <neighbor as="45" ip="17"/>
-                    <neighbor as="45" ip="16"/>
-                    <neighbor as="45" ip="46"/>
-                    <neighbor as="45" ip="43"/>
-                    <neighbor as="45" ip="41"/>
-                    <neighbor as="45" ip="49"/>
-                    <neighbor as="45" ip="48"/>
-                    <neighbor as="45" ip="2"/>
-                    <neighbor as="45" ip="1"/>
-                    <neighbor as="45" ip="9"/>
-                    <neighbor as="45" ip="7"/>
-                    <neighbor as="45" ip="8"/>
-                    <neighbor as="45" ip="5"/>
-                    <neighbor as="45" ip="4"/>
-                    <neighbor as="45" ip="35"/>
-                    <neighbor as="45" ip="30"/>
-                    <neighbor as="45" ip="36"/>
-                    <neighbor as="45" ip="37"/>
-                    <neighbor as="45" ip="39"/>
+                    <neighbor as="45" ip="8" reflector-client="true"/>
+                    <neighbor as="45" ip="23" reflector-client="true"/>
+                    <neighbor as="45" ip="10" reflector-client="true"/>
+                    <neighbor as="45" ip="21" reflector-client="true"/>
+                    <neighbor as="45" ip="3" reflector-client="true"/>
+                    <neighbor as="45" ip="13" reflector-client="true"/>
+                    <neighbor as="45" ip="46" reflector-client="true"/>
+                    <neighbor as="45" ip="33" reflector-client="true"/>
+                    <neighbor as="45" ip="32" reflector-client="true"/>
+                    <neighbor as="45" ip="34" reflector-client="true"/>
+                    <neighbor as="45" ip="31" reflector-client="true"/>
+                    <neighbor as="45" ip="49" reflector-client="true"/>
+                    <neighbor as="45" ip="28" reflector-client="true"/>
+                    <neighbor as="45" ip="14" reflector-client="true"/>
+                    <neighbor as="45" ip="25" reflector-client="true"/>
+                    <neighbor as="45" ip="18" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="1">
                 <rid>1</rid>
                 <neighbors>
-                    <neighbor as="45" ip="20" reflector-client="true"/>
+                    <neighbor as="45" ip="8" reflector-client="true"/>
                     <neighbor as="45" ip="23" reflector-client="true"/>
-                    <neighbor as="45" ip="6" reflector-client="true"/>
-                    <neighbor as="45" ip="24" reflector-client="true"/>
+                    <neighbor as="45" ip="10" reflector-client="true"/>
+                    <neighbor as="45" ip="21" reflector-client="true"/>
                     <neighbor as="45" ip="3" reflector-client="true"/>
-                    <neighbor as="45" ip="12" reflector-client="true"/>
                     <neighbor as="45" ip="13" reflector-client="true"/>
+                    <neighbor as="45" ip="46" reflector-client="true"/>
                     <neighbor as="45" ip="33" reflector-client="true"/>
                     <neighbor as="45" ip="32" reflector-client="true"/>
-                    <neighbor as="45" ip="45" reflector-client="true"/>
-                    <neighbor as="45" ip="44" reflector-client="true"/>
                     <neighbor as="45" ip="34" reflector-client="true"/>
-                    <neighbor as="45" ip="42" reflector-client="true"/>
                     <neighbor as="45" ip="31" reflector-client="true"/>
-                    <neighbor as="45" ip="40" reflector-client="true"/>
-                    <neighbor as="45" ip="38" reflector-client="true"/>
-                    <neighbor as="45" ip="47" reflector-client="true"/>
-                    <neighbor as="45" ip="0" reflector-client="true"/>
+                    <neighbor as="45" ip="49" reflector-client="true"/>
                     <neighbor as="45" ip="28" reflector-client="true"/>
-                    <neighbor as="45" ip="27" reflector-client="true"/>
+                    <neighbor as="45" ip="14" reflector-client="true"/>
                     <neighbor as="45" ip="25" reflector-client="true"/>
-                    <neighbor as="45" ip="19" reflector-client="true"/>
                     <neighbor as="45" ip="18" reflector-client="true"/>
                 </neighbors>
             </router>
-            <router id="10">
+            <router id="10" reflector="true">
                 <rid>10</rid>
                 <neighbors>
-                    <neighbor as="45" ip="20" reflector-client="true"/>
-                    <neighbor as="45" ip="23" reflector-client="true"/>
-                    <neighbor as="45" ip="6" reflector-client="true"/>
-                    <neighbor as="45" ip="24" reflector-client="true"/>
-                    <neighbor as="45" ip="3" reflector-client="true"/>
-                    <neighbor as="45" ip="12" reflector-client="true"/>
-                    <neighbor as="45" ip="13" reflector-client="true"/>
-                    <neighbor as="45" ip="33" reflector-client="true"/>
-                    <neighbor as="45" ip="32" reflector-client="true"/>
-                    <neighbor as="45" ip="45" reflector-client="true"/>
-                    <neighbor as="45" ip="44" reflector-client="true"/>
-                    <neighbor as="45" ip="34" reflector-client="true"/>
-                    <neighbor as="45" ip="42" reflector-client="true"/>
-                    <neighbor as="45" ip="31" reflector-client="true"/>
-                    <neighbor as="45" ip="40" reflector-client="true"/>
-                    <neighbor as="45" ip="38" reflector-client="true"/>
-                    <neighbor as="45" ip="47" reflector-client="true"/>
-                    <neighbor as="45" ip="0" reflector-client="true"/>
-                    <neighbor as="45" ip="28" reflector-client="true"/>
-                    <neighbor as="45" ip="27" reflector-client="true"/>
-                    <neighbor as="45" ip="25" reflector-client="true"/>
-                    <neighbor as="45" ip="19" reflector-client="true"/>
-                    <neighbor as="45" ip="18" reflector-client="true"/>
+                    <neighbor as="45" ip="8"/>
+                    <neighbor as="45" ip="23"/>
+                    <neighbor as="45" ip="21" reflector-client="false"/>
+                    <neighbor as="45" ip="3" reflector-client="false"/>
+                    <neighbor as="45" ip="13" reflector-client="false"/>
+                    <neighbor as="45" ip="46" reflector-client="false"/>
+                    <neighbor as="45" ip="33" reflector-client="false"/>
+                    <neighbor as="45" ip="32" reflector-client="false"/>
+                    <neighbor as="45" ip="34" reflector-client="false"/>
+                    <neighbor as="45" ip="31" reflector-client="false"/>
+                    <neighbor as="45" ip="49" reflector-client="false"/>
+                    <neighbor as="45" ip="28" reflector-client="false"/>
+                    <neighbor as="45" ip="14" reflector-client="false"/>
+                    <neighbor as="45" ip="25" reflector-client="false"/>
+                    <neighbor as="45" ip="18" reflector-client="false"/>
+                    <neighbor as="45" ip="20"/>
+                    <neighbor as="45" ip="24"/>
+                    <neighbor as="45" ip="22"/>
+                    <neighbor as="45" ip="27"/>
+                    <neighbor as="45" ip="26"/>
+                    <neighbor as="45" ip="29"/>
+                    <neighbor as="45" ip="11"/>
+                    <neighbor as="45" ip="12"/>
+                    <neighbor as="45" ip="15"/>
+                    <neighbor as="45" ip="17"/>
+                    <neighbor as="45" ip="16"/>
+                    <neighbor as="45" ip="19"/>
+                    <neighbor as="45" ip="45"/>
+                    <neighbor as="45" ip="44"/>
+                    <neighbor as="45" ip="43"/>
+                    <neighbor as="45" ip="42"/>
+                    <neighbor as="45" ip="41"/>
+                    <neighbor as="45" ip="40"/>
+                    <neighbor as="45" ip="47"/>
+                    <neighbor as="45" ip="48"/>
+                    <neighbor as="45" ip="0"/>
+                    <neighbor as="45" ip="2"/>
+                    <neighbor as="45" ip="1"/>
+                    <neighbor as="45" ip="9"/>
+                    <neighbor as="45" ip="7"/>
+                    <neighbor as="45" ip="5"/>
+                    <neighbor as="45" ip="6"/>
+                    <neighbor as="45" ip="4"/>
+                    <neighbor as="45" ip="35"/>
+                    <neighbor as="45" ip="30"/>
+                    <neighbor as="45" ip="36"/>
+                    <neighbor as="45" ip="37"/>
+                    <neighbor as="45" ip="38"/>
+                    <neighbor as="45" ip="39"/>
                 </neighbors>
             </router>
             <router id="11">
                 <rid>11</rid>
                 <neighbors>
-                    <neighbor as="45" ip="20" reflector-client="true"/>
+                    <neighbor as="45" ip="8" reflector-client="true"/>
                     <neighbor as="45" ip="23" reflector-client="true"/>
-                    <neighbor as="45" ip="6" reflector-client="true"/>
-                    <neighbor as="45" ip="24" reflector-client="true"/>
+                    <neighbor as="45" ip="10" reflector-client="true"/>
+                    <neighbor as="45" ip="21" reflector-client="true"/>
                     <neighbor as="45" ip="3" reflector-client="true"/>
-                    <neighbor as="45" ip="12" reflector-client="true"/>
                     <neighbor as="45" ip="13" reflector-client="true"/>
+                    <neighbor as="45" ip="46" reflector-client="true"/>
                     <neighbor as="45" ip="33" reflector-client="true"/>
                     <neighbor as="45" ip="32" reflector-client="true"/>
-                    <neighbor as="45" ip="45" reflector-client="true"/>
-                    <neighbor as="45" ip="44" reflector-client="true"/>
                     <neighbor as="45" ip="34" reflector-client="true"/>
-                    <neighbor as="45" ip="42" reflector-client="true"/>
                     <neighbor as="45" ip="31" reflector-client="true"/>
-                    <neighbor as="45" ip="40" reflector-client="true"/>
-                    <neighbor as="45" ip="38" reflector-client="true"/>
-                    <neighbor as="45" ip="47" reflector-client="true"/>
-                    <neighbor as="45" ip="0" reflector-client="true"/>
+                    <neighbor as="45" ip="49" reflector-client="true"/>
                     <neighbor as="45" ip="28" reflector-client="true"/>
-                    <neighbor as="45" ip="27" reflector-client="true"/>
+                    <neighbor as="45" ip="14" reflector-client="true"/>
                     <neighbor as="45" ip="25" reflector-client="true"/>
-                    <neighbor as="45" ip="19" reflector-client="true"/>
                     <neighbor as="45" ip="18" reflector-client="true"/>
                 </neighbors>
             </router>
-            <router id="12" reflector="true">
+            <router id="12">
                 <rid>12</rid>
                 <neighbors>
-                    <neighbor as="45" ip="20"/>
-                    <neighbor as="45" ip="23"/>
-                    <neighbor as="45" ip="6"/>
-                    <neighbor as="45" ip="24"/>
-                    <neighbor as="45" ip="3"/>
-                    <neighbor as="45" ip="13" reflector-client="false"/>
-                    <neighbor as="45" ip="33" reflector-client="false"/>
-                    <neighbor as="45" ip="32" reflector-client="false"/>
-                    <neighbor as="45" ip="45" reflector-client="false"/>
-                    <neighbor as="45" ip="44" reflector-client="false"/>
-                    <neighbor as="45" ip="34" reflector-client="false"/>
-                    <neighbor as="45" ip="42" reflector-client="false"/>
-                    <neighbor as="45" ip="31" reflector-client="false"/>
-                    <neighbor as="45" ip="40" reflector-client="false"/>
-                    <neighbor as="45" ip="38" reflector-client="false"/>
-                    <neighbor as="45" ip="47" reflector-client="false"/>
-                    <neighbor as="45" ip="0" reflector-client="false"/>
-                    <neighbor as="45" ip="28" reflector-client="false"/>
-                    <neighbor as="45" ip="27" reflector-client="false"/>
-                    <neighbor as="45" ip="25" reflector-client="false"/>
-                    <neighbor as="45" ip="19" reflector-client="false"/>
-                    <neighbor as="45" ip="18" reflector-client="false"/>
-                    <neighbor as="45" ip="21"/>
-                    <neighbor as="45" ip="22"/>
-                    <neighbor as="45" ip="26"/>
-                    <neighbor as="45" ip="29"/>
-                    <neighbor as="45" ip="10"/>
-                    <neighbor as="45" ip="11"/>
-                    <neighbor as="45" ip="15"/>
-                    <neighbor as="45" ip="14"/>
-                    <neighbor as="45" ip="17"/>
-                    <neighbor as="45" ip="16"/>
-                    <neighbor as="45" ip="46"/>
-                    <neighbor as="45" ip="43"/>
-                    <neighbor as="45" ip="41"/>
-                    <neighbor as="45" ip="49"/>
-                    <neighbor as="45" ip="48"/>
-                    <neighbor as="45" ip="2"/>
-                    <neighbor as="45" ip="1"/>
-                    <neighbor as="45" ip="9"/>
-                    <neighbor as="45" ip="7"/>
-                    <neighbor as="45" ip="8"/>
-                    <neighbor as="45" ip="5"/>
-                    <neighbor as="45" ip="4"/>
-                    <neighbor as="45" ip="35"/>
-                    <neighbor as="45" ip="30"/>
-                    <neighbor as="45" ip="36"/>
-                    <neighbor as="45" ip="37"/>
-                    <neighbor as="45" ip="39"/>
+                    <neighbor as="45" ip="8" reflector-client="true"/>
+                    <neighbor as="45" ip="23" reflector-client="true"/>
+                    <neighbor as="45" ip="10" reflector-client="true"/>
+                    <neighbor as="45" ip="21" reflector-client="true"/>
+                    <neighbor as="45" ip="3" reflector-client="true"/>
+                    <neighbor as="45" ip="13" reflector-client="true"/>
+                    <neighbor as="45" ip="46" reflector-client="true"/>
+                    <neighbor as="45" ip="33" reflector-client="true"/>
+                    <neighbor as="45" ip="32" reflector-client="true"/>
+                    <neighbor as="45" ip="34" reflector-client="true"/>
+                    <neighbor as="45" ip="31" reflector-client="true"/>
+                    <neighbor as="45" ip="49" reflector-client="true"/>
+                    <neighbor as="45" ip="28" reflector-client="true"/>
+                    <neighbor as="45" ip="14" reflector-client="true"/>
+                    <neighbor as="45" ip="25" reflector-client="true"/>
+                    <neighbor as="45" ip="18" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="13" reflector="true">
                 <rid>13</rid>
                 <neighbors>
-                    <neighbor as="45" ip="20"/>
+                    <neighbor as="45" ip="8"/>
                     <neighbor as="45" ip="23"/>
-                    <neighbor as="45" ip="6"/>
-                    <neighbor as="45" ip="24"/>
+                    <neighbor as="45" ip="10"/>
+                    <neighbor as="45" ip="21"/>
                     <neighbor as="45" ip="3"/>
-                    <neighbor as="45" ip="12"/>
+                    <neighbor as="45" ip="46" reflector-client="false"/>
                     <neighbor as="45" ip="33" reflector-client="false"/>
                     <neighbor as="45" ip="32" reflector-client="false"/>
-                    <neighbor as="45" ip="45" reflector-client="false"/>
-                    <neighbor as="45" ip="44" reflector-client="false"/>
                     <neighbor as="45" ip="34" reflector-client="false"/>
-                    <neighbor as="45" ip="42" reflector-client="false"/>
                     <neighbor as="45" ip="31" reflector-client="false"/>
-                    <neighbor as="45" ip="40" reflector-client="false"/>
-                    <neighbor as="45" ip="38" reflector-client="false"/>
-                    <neighbor as="45" ip="47" reflector-client="false"/>
-                    <neighbor as="45" ip="0" reflector-client="false"/>
+                    <neighbor as="45" ip="49" reflector-client="false"/>
                     <neighbor as="45" ip="28" reflector-client="false"/>
-                    <neighbor as="45" ip="27" reflector-client="false"/>
+                    <neighbor as="45" ip="14" reflector-client="false"/>
                     <neighbor as="45" ip="25" reflector-client="false"/>
-                    <neighbor as="45" ip="19" reflector-client="false"/>
                     <neighbor as="45" ip="18" reflector-client="false"/>
-                    <neighbor as="45" ip="21"/>
+                    <neighbor as="45" ip="20"/>
+                    <neighbor as="45" ip="24"/>
                     <neighbor as="45" ip="22"/>
+                    <neighbor as="45" ip="27"/>
                     <neighbor as="45" ip="26"/>
                     <neighbor as="45" ip="29"/>
-                    <neighbor as="45" ip="10"/>
                     <neighbor as="45" ip="11"/>
+                    <neighbor as="45" ip="12"/>
                     <neighbor as="45" ip="15"/>
-                    <neighbor as="45" ip="14"/>
                     <neighbor as="45" ip="17"/>
                     <neighbor as="45" ip="16"/>
-                    <neighbor as="45" ip="46"/>
+                    <neighbor as="45" ip="19"/>
+                    <neighbor as="45" ip="45"/>
+                    <neighbor as="45" ip="44"/>
                     <neighbor as="45" ip="43"/>
+                    <neighbor as="45" ip="42"/>
                     <neighbor as="45" ip="41"/>
-                    <neighbor as="45" ip="49"/>
+                    <neighbor as="45" ip="40"/>
+                    <neighbor as="45" ip="47"/>
                     <neighbor as="45" ip="48"/>
+                    <neighbor as="45" ip="0"/>
                     <neighbor as="45" ip="2"/>
                     <neighbor as="45" ip="1"/>
                     <neighbor as="45" ip="9"/>
                     <neighbor as="45" ip="7"/>
-                    <neighbor as="45" ip="8"/>
                     <neighbor as="45" ip="5"/>
+                    <neighbor as="45" ip="6"/>
                     <neighbor as="45" ip="4"/>
                     <neighbor as="45" ip="35"/>
                     <neighbor as="45" ip="30"/>
                     <neighbor as="45" ip="36"/>
                     <neighbor as="45" ip="37"/>
+                    <neighbor as="45" ip="38"/>
                     <neighbor as="45" ip="39"/>
                 </neighbors>
             </router>
-            <router id="14">
+            <router id="14" reflector="true">
                 <rid>14</rid>
                 <neighbors>
-                    <neighbor as="45" ip="20" reflector-client="true"/>
-                    <neighbor as="45" ip="23" reflector-client="true"/>
-                    <neighbor as="45" ip="6" reflector-client="true"/>
-                    <neighbor as="45" ip="24" reflector-client="true"/>
-                    <neighbor as="45" ip="3" reflector-client="true"/>
-                    <neighbor as="45" ip="12" reflector-client="true"/>
-                    <neighbor as="45" ip="13" reflector-client="true"/>
-                    <neighbor as="45" ip="33" reflector-client="true"/>
-                    <neighbor as="45" ip="32" reflector-client="true"/>
-                    <neighbor as="45" ip="45" reflector-client="true"/>
-                    <neighbor as="45" ip="44" reflector-client="true"/>
-                    <neighbor as="45" ip="34" reflector-client="true"/>
-                    <neighbor as="45" ip="42" reflector-client="true"/>
-                    <neighbor as="45" ip="31" reflector-client="true"/>
-                    <neighbor as="45" ip="40" reflector-client="true"/>
-                    <neighbor as="45" ip="38" reflector-client="true"/>
-                    <neighbor as="45" ip="47" reflector-client="true"/>
-                    <neighbor as="45" ip="0" reflector-client="true"/>
-                    <neighbor as="45" ip="28" reflector-client="true"/>
-                    <neighbor as="45" ip="27" reflector-client="true"/>
-                    <neighbor as="45" ip="25" reflector-client="true"/>
-                    <neighbor as="45" ip="19" reflector-client="true"/>
-                    <neighbor as="45" ip="18" reflector-client="true"/>
+                    <neighbor as="45" ip="8"/>
+                    <neighbor as="45" ip="23"/>
+                    <neighbor as="45" ip="10"/>
+                    <neighbor as="45" ip="21"/>
+                    <neighbor as="45" ip="3"/>
+                    <neighbor as="45" ip="13"/>
+                    <neighbor as="45" ip="46"/>
+                    <neighbor as="45" ip="33"/>
+                    <neighbor as="45" ip="32"/>
+                    <neighbor as="45" ip="34"/>
+                    <neighbor as="45" ip="31"/>
+                    <neighbor as="45" ip="49"/>
+                    <neighbor as="45" ip="28"/>
+                    <neighbor as="45" ip="25" reflector-client="false"/>
+                    <neighbor as="45" ip="18" reflector-client="false"/>
+                    <neighbor as="45" ip="20"/>
+                    <neighbor as="45" ip="24"/>
+                    <neighbor as="45" ip="22"/>
+                    <neighbor as="45" ip="27"/>
+                    <neighbor as="45" ip="26"/>
+                    <neighbor as="45" ip="29"/>
+                    <neighbor as="45" ip="11"/>
+                    <neighbor as="45" ip="12"/>
+                    <neighbor as="45" ip="15"/>
+                    <neighbor as="45" ip="17"/>
+                    <neighbor as="45" ip="16"/>
+                    <neighbor as="45" ip="19"/>
+                    <neighbor as="45" ip="45"/>
+                    <neighbor as="45" ip="44"/>
+                    <neighbor as="45" ip="43"/>
+                    <neighbor as="45" ip="42"/>
+                    <neighbor as="45" ip="41"/>
+                    <neighbor as="45" ip="40"/>
+                    <neighbor as="45" ip="47"/>
+                    <neighbor as="45" ip="48"/>
+                    <neighbor as="45" ip="0"/>
+                    <neighbor as="45" ip="2"/>
+                    <neighbor as="45" ip="1"/>
+                    <neighbor as="45" ip="9"/>
+                    <neighbor as="45" ip="7"/>
+                    <neighbor as="45" ip="5"/>
+                    <neighbor as="45" ip="6"/>
+                    <neighbor as="45" ip="4"/>
+                    <neighbor as="45" ip="35"/>
+                    <neighbor as="45" ip="30"/>
+                    <neighbor as="45" ip="36"/>
+                    <neighbor as="45" ip="37"/>
+                    <neighbor as="45" ip="38"/>
+                    <neighbor as="45" ip="39"/>
                 </neighbors>
             </router>
             <router id="15">
                 <rid>15</rid>
                 <neighbors>
-                    <neighbor as="45" ip="20" reflector-client="true"/>
+                    <neighbor as="45" ip="8" reflector-client="true"/>
                     <neighbor as="45" ip="23" reflector-client="true"/>
-                    <neighbor as="45" ip="6" reflector-client="true"/>
-                    <neighbor as="45" ip="24" reflector-client="true"/>
+                    <neighbor as="45" ip="10" reflector-client="true"/>
+                    <neighbor as="45" ip="21" reflector-client="true"/>
                     <neighbor as="45" ip="3" reflector-client="true"/>
-                    <neighbor as="45" ip="12" reflector-client="true"/>
                     <neighbor as="45" ip="13" reflector-client="true"/>
+                    <neighbor as="45" ip="46" reflector-client="true"/>
                     <neighbor as="45" ip="33" reflector-client="true"/>
                     <neighbor as="45" ip="32" reflector-client="true"/>
-                    <neighbor as="45" ip="45" reflector-client="true"/>
-                    <neighbor as="45" ip="44" reflector-client="true"/>
                     <neighbor as="45" ip="34" reflector-client="true"/>
-                    <neighbor as="45" ip="42" reflector-client="true"/>
                     <neighbor as="45" ip="31" reflector-client="true"/>
-                    <neighbor as="45" ip="40" reflector-client="true"/>
-                    <neighbor as="45" ip="38" reflector-client="true"/>
-                    <neighbor as="45" ip="47" reflector-client="true"/>
-                    <neighbor as="45" ip="0" reflector-client="true"/>
+                    <neighbor as="45" ip="49" reflector-client="true"/>
                     <neighbor as="45" ip="28" reflector-client="true"/>
-                    <neighbor as="45" ip="27" reflector-client="true"/>
+                    <neighbor as="45" ip="14" reflector-client="true"/>
                     <neighbor as="45" ip="25" reflector-client="true"/>
-                    <neighbor as="45" ip="19" reflector-client="true"/>
                     <neighbor as="45" ip="18" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="16">
                 <rid>16</rid>
                 <neighbors>
-                    <neighbor as="45" ip="20" reflector-client="true"/>
+                    <neighbor as="45" ip="8" reflector-client="true"/>
                     <neighbor as="45" ip="23" reflector-client="true"/>
-                    <neighbor as="45" ip="6" reflector-client="true"/>
-                    <neighbor as="45" ip="24" reflector-client="true"/>
+                    <neighbor as="45" ip="10" reflector-client="true"/>
+                    <neighbor as="45" ip="21" reflector-client="true"/>
                     <neighbor as="45" ip="3" reflector-client="true"/>
-                    <neighbor as="45" ip="12" reflector-client="true"/>
                     <neighbor as="45" ip="13" reflector-client="true"/>
+                    <neighbor as="45" ip="46" reflector-client="true"/>
                     <neighbor as="45" ip="33" reflector-client="true"/>
                     <neighbor as="45" ip="32" reflector-client="true"/>
-                    <neighbor as="45" ip="45" reflector-client="true"/>
-                    <neighbor as="45" ip="44" reflector-client="true"/>
                     <neighbor as="45" ip="34" reflector-client="true"/>
-                    <neighbor as="45" ip="42" reflector-client="true"/>
                     <neighbor as="45" ip="31" reflector-client="true"/>
-                    <neighbor as="45" ip="40" reflector-client="true"/>
-                    <neighbor as="45" ip="38" reflector-client="true"/>
-                    <neighbor as="45" ip="47" reflector-client="true"/>
-                    <neighbor as="45" ip="0" reflector-client="true"/>
+                    <neighbor as="45" ip="49" reflector-client="true"/>
                     <neighbor as="45" ip="28" reflector-client="true"/>
-                    <neighbor as="45" ip="27" reflector-client="true"/>
+                    <neighbor as="45" ip="14" reflector-client="true"/>
                     <neighbor as="45" ip="25" reflector-client="true"/>
-                    <neighbor as="45" ip="19" reflector-client="true"/>
                     <neighbor as="45" ip="18" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="17">
                 <rid>17</rid>
                 <neighbors>
-                    <neighbor as="45" ip="20" reflector-client="true"/>
+                    <neighbor as="45" ip="8" reflector-client="true"/>
                     <neighbor as="45" ip="23" reflector-client="true"/>
-                    <neighbor as="45" ip="6" reflector-client="true"/>
-                    <neighbor as="45" ip="24" reflector-client="true"/>
+                    <neighbor as="45" ip="10" reflector-client="true"/>
+                    <neighbor as="45" ip="21" reflector-client="true"/>
                     <neighbor as="45" ip="3" reflector-client="true"/>
-                    <neighbor as="45" ip="12" reflector-client="true"/>
                     <neighbor as="45" ip="13" reflector-client="true"/>
+                    <neighbor as="45" ip="46" reflector-client="true"/>
                     <neighbor as="45" ip="33" reflector-client="true"/>
                     <neighbor as="45" ip="32" reflector-client="true"/>
-                    <neighbor as="45" ip="45" reflector-client="true"/>
-                    <neighbor as="45" ip="44" reflector-client="true"/>
                     <neighbor as="45" ip="34" reflector-client="true"/>
-                    <neighbor as="45" ip="42" reflector-client="true"/>
                     <neighbor as="45" ip="31" reflector-client="true"/>
-                    <neighbor as="45" ip="40" reflector-client="true"/>
-                    <neighbor as="45" ip="38" reflector-client="true"/>
-                    <neighbor as="45" ip="47" reflector-client="true"/>
-                    <neighbor as="45" ip="0" reflector-client="true"/>
+                    <neighbor as="45" ip="49" reflector-client="true"/>
                     <neighbor as="45" ip="28" reflector-client="true"/>
-                    <neighbor as="45" ip="27" reflector-client="true"/>
+                    <neighbor as="45" ip="14" reflector-client="true"/>
                     <neighbor as="45" ip="25" reflector-client="true"/>
-                    <neighbor as="45" ip="19" reflector-client="true"/>
                     <neighbor as="45" ip="18" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="18" reflector="true">
                 <rid>18</rid>
                 <neighbors>
-                    <neighbor as="45" ip="20"/>
+                    <neighbor as="45" ip="8"/>
                     <neighbor as="45" ip="23"/>
-                    <neighbor as="45" ip="6"/>
-                    <neighbor as="45" ip="24"/>
+                    <neighbor as="45" ip="10"/>
+                    <neighbor as="45" ip="21"/>
                     <neighbor as="45" ip="3"/>
-                    <neighbor as="45" ip="12"/>
                     <neighbor as="45" ip="13"/>
+                    <neighbor as="45" ip="46"/>
                     <neighbor as="45" ip="33"/>
                     <neighbor as="45" ip="32"/>
-                    <neighbor as="45" ip="45"/>
-                    <neighbor as="45" ip="44"/>
                     <neighbor as="45" ip="34"/>
-                    <neighbor as="45" ip="42"/>
                     <neighbor as="45" ip="31"/>
-                    <neighbor as="45" ip="40"/>
-                    <neighbor as="45" ip="38"/>
-                    <neighbor as="45" ip="47"/>
-                    <neighbor as="45" ip="0"/>
+                    <neighbor as="45" ip="49"/>
                     <neighbor as="45" ip="28"/>
-                    <neighbor as="45" ip="27"/>
+                    <neighbor as="45" ip="14"/>
                     <neighbor as="45" ip="25"/>
-                    <neighbor as="45" ip="19"/>
-                    <neighbor as="45" ip="21"/>
+                    <neighbor as="45" ip="20"/>
+                    <neighbor as="45" ip="24"/>
                     <neighbor as="45" ip="22"/>
+                    <neighbor as="45" ip="27"/>
                     <neighbor as="45" ip="26"/>
                     <neighbor as="45" ip="29"/>
-                    <neighbor as="45" ip="10"/>
                     <neighbor as="45" ip="11"/>
+                    <neighbor as="45" ip="12"/>
                     <neighbor as="45" ip="15"/>
-                    <neighbor as="45" ip="14"/>
                     <neighbor as="45" ip="17"/>
                     <neighbor as="45" ip="16"/>
-                    <neighbor as="45" ip="46"/>
+                    <neighbor as="45" ip="19"/>
+                    <neighbor as="45" ip="45"/>
+                    <neighbor as="45" ip="44"/>
                     <neighbor as="45" ip="43"/>
+                    <neighbor as="45" ip="42"/>
                     <neighbor as="45" ip="41"/>
-                    <neighbor as="45" ip="49"/>
+                    <neighbor as="45" ip="40"/>
+                    <neighbor as="45" ip="47"/>
                     <neighbor as="45" ip="48"/>
+                    <neighbor as="45" ip="0"/>
                     <neighbor as="45" ip="2"/>
                     <neighbor as="45" ip="1"/>
                     <neighbor as="45" ip="9"/>
                     <neighbor as="45" ip="7"/>
-                    <neighbor as="45" ip="8"/>
                     <neighbor as="45" ip="5"/>
+                    <neighbor as="45" ip="6"/>
                     <neighbor as="45" ip="4"/>
                     <neighbor as="45" ip="35"/>
                     <neighbor as="45" ip="30"/>
                     <neighbor as="45" ip="36"/>
                     <neighbor as="45" ip="37"/>
+                    <neighbor as="45" ip="38"/>
                     <neighbor as="45" ip="39"/>
                 </neighbors>
             </router>
-            <router id="19" reflector="true">
+            <router id="19">
                 <rid>19</rid>
                 <neighbors>
-                    <neighbor as="45" ip="20"/>
-                    <neighbor as="45" ip="23"/>
-                    <neighbor as="45" ip="6"/>
-                    <neighbor as="45" ip="24"/>
-                    <neighbor as="45" ip="3"/>
-                    <neighbor as="45" ip="12"/>
-                    <neighbor as="45" ip="13"/>
-                    <neighbor as="45" ip="33"/>
-                    <neighbor as="45" ip="32"/>
-                    <neighbor as="45" ip="45"/>
-                    <neighbor as="45" ip="44"/>
-                    <neighbor as="45" ip="34"/>
-                    <neighbor as="45" ip="42"/>
-                    <neighbor as="45" ip="31"/>
-                    <neighbor as="45" ip="40"/>
-                    <neighbor as="45" ip="38"/>
-                    <neighbor as="45" ip="47"/>
-                    <neighbor as="45" ip="0"/>
-                    <neighbor as="45" ip="28"/>
-                    <neighbor as="45" ip="27"/>
-                    <neighbor as="45" ip="25"/>
-                    <neighbor as="45" ip="18" reflector-client="false"/>
-                    <neighbor as="45" ip="21"/>
-                    <neighbor as="45" ip="22"/>
-                    <neighbor as="45" ip="26"/>
-                    <neighbor as="45" ip="29"/>
-                    <neighbor as="45" ip="10"/>
-                    <neighbor as="45" ip="11"/>
-                    <neighbor as="45" ip="15"/>
-                    <neighbor as="45" ip="14"/>
-                    <neighbor as="45" ip="17"/>
-                    <neighbor as="45" ip="16"/>
-                    <neighbor as="45" ip="46"/>
-                    <neighbor as="45" ip="43"/>
-                    <neighbor as="45" ip="41"/>
-                    <neighbor as="45" ip="49"/>
-                    <neighbor as="45" ip="48"/>
-                    <neighbor as="45" ip="2"/>
-                    <neighbor as="45" ip="1"/>
-                    <neighbor as="45" ip="9"/>
-                    <neighbor as="45" ip="7"/>
-                    <neighbor as="45" ip="8"/>
-                    <neighbor as="45" ip="5"/>
-                    <neighbor as="45" ip="4"/>
-                    <neighbor as="45" ip="35"/>
-                    <neighbor as="45" ip="30"/>
-                    <neighbor as="45" ip="36"/>
-                    <neighbor as="45" ip="37"/>
-                    <neighbor as="45" ip="39"/>
+                    <neighbor as="45" ip="8" reflector-client="true"/>
+                    <neighbor as="45" ip="23" reflector-client="true"/>
+                    <neighbor as="45" ip="10" reflector-client="true"/>
+                    <neighbor as="45" ip="21" reflector-client="true"/>
+                    <neighbor as="45" ip="3" reflector-client="true"/>
+                    <neighbor as="45" ip="13" reflector-client="true"/>
+                    <neighbor as="45" ip="46" reflector-client="true"/>
+                    <neighbor as="45" ip="33" reflector-client="true"/>
+                    <neighbor as="45" ip="32" reflector-client="true"/>
+                    <neighbor as="45" ip="34" reflector-client="true"/>
+                    <neighbor as="45" ip="31" reflector-client="true"/>
+                    <neighbor as="45" ip="49" reflector-client="true"/>
+                    <neighbor as="45" ip="28" reflector-client="true"/>
+                    <neighbor as="45" ip="14" reflector-client="true"/>
+                    <neighbor as="45" ip="25" reflector-client="true"/>
+                    <neighbor as="45" ip="18" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="2">
                 <rid>2</rid>
                 <neighbors>
-                    <neighbor as="45" ip="20" reflector-client="true"/>
+                    <neighbor as="45" ip="8" reflector-client="true"/>
                     <neighbor as="45" ip="23" reflector-client="true"/>
-                    <neighbor as="45" ip="6" reflector-client="true"/>
-                    <neighbor as="45" ip="24" reflector-client="true"/>
+                    <neighbor as="45" ip="10" reflector-client="true"/>
+                    <neighbor as="45" ip="21" reflector-client="true"/>
                     <neighbor as="45" ip="3" reflector-client="true"/>
-                    <neighbor as="45" ip="12" reflector-client="true"/>
                     <neighbor as="45" ip="13" reflector-client="true"/>
+                    <neighbor as="45" ip="46" reflector-client="true"/>
                     <neighbor as="45" ip="33" reflector-client="true"/>
                     <neighbor as="45" ip="32" reflector-client="true"/>
-                    <neighbor as="45" ip="45" reflector-client="true"/>
-                    <neighbor as="45" ip="44" reflector-client="true"/>
                     <neighbor as="45" ip="34" reflector-client="true"/>
-                    <neighbor as="45" ip="42" reflector-client="true"/>
                     <neighbor as="45" ip="31" reflector-client="true"/>
-                    <neighbor as="45" ip="40" reflector-client="true"/>
-                    <neighbor as="45" ip="38" reflector-client="true"/>
-                    <neighbor as="45" ip="47" reflector-client="true"/>
-                    <neighbor as="45" ip="0" reflector-client="true"/>
+                    <neighbor as="45" ip="49" reflector-client="true"/>
                     <neighbor as="45" ip="28" reflector-client="true"/>
-                    <neighbor as="45" ip="27" reflector-client="true"/>
+                    <neighbor as="45" ip="14" reflector-client="true"/>
                     <neighbor as="45" ip="25" reflector-client="true"/>
-                    <neighbor as="45" ip="19" reflector-client="true"/>
                     <neighbor as="45" ip="18" reflector-client="true"/>
                 </neighbors>
             </router>
-            <router id="20" reflector="true">
+            <router id="20">
                 <rid>20</rid>
                 <neighbors>
-                    <neighbor as="45" ip="23" reflector-client="false"/>
-                    <neighbor as="45" ip="6" reflector-client="false"/>
-                    <neighbor as="45" ip="24" reflector-client="false"/>
+                    <neighbor as="45" ip="8" reflector-client="true"/>
+                    <neighbor as="45" ip="23" reflector-client="true"/>
+                    <neighbor as="45" ip="10" reflector-client="true"/>
+                    <neighbor as="45" ip="21" reflector-client="true"/>
+                    <neighbor as="45" ip="3" reflector-client="true"/>
+                    <neighbor as="45" ip="13" reflector-client="true"/>
+                    <neighbor as="45" ip="46" reflector-client="true"/>
+                    <neighbor as="45" ip="33" reflector-client="true"/>
+                    <neighbor as="45" ip="32" reflector-client="true"/>
+                    <neighbor as="45" ip="34" reflector-client="true"/>
+                    <neighbor as="45" ip="31" reflector-client="true"/>
+                    <neighbor as="45" ip="49" reflector-client="true"/>
+                    <neighbor as="45" ip="28" reflector-client="true"/>
+                    <neighbor as="45" ip="14" reflector-client="true"/>
+                    <neighbor as="45" ip="25" reflector-client="true"/>
+                    <neighbor as="45" ip="18" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="21" reflector="true">
+                <rid>21</rid>
+                <neighbors>
+                    <neighbor as="45" ip="8"/>
+                    <neighbor as="45" ip="23"/>
+                    <neighbor as="45" ip="10"/>
                     <neighbor as="45" ip="3" reflector-client="false"/>
-                    <neighbor as="45" ip="12" reflector-client="false"/>
                     <neighbor as="45" ip="13" reflector-client="false"/>
+                    <neighbor as="45" ip="46" reflector-client="false"/>
                     <neighbor as="45" ip="33" reflector-client="false"/>
                     <neighbor as="45" ip="32" reflector-client="false"/>
-                    <neighbor as="45" ip="45" reflector-client="false"/>
-                    <neighbor as="45" ip="44" reflector-client="false"/>
                     <neighbor as="45" ip="34" reflector-client="false"/>
-                    <neighbor as="45" ip="42" reflector-client="false"/>
                     <neighbor as="45" ip="31" reflector-client="false"/>
-                    <neighbor as="45" ip="40" reflector-client="false"/>
-                    <neighbor as="45" ip="38" reflector-client="false"/>
-                    <neighbor as="45" ip="47" reflector-client="false"/>
-                    <neighbor as="45" ip="0" reflector-client="false"/>
+                    <neighbor as="45" ip="49" reflector-client="false"/>
                     <neighbor as="45" ip="28" reflector-client="false"/>
-                    <neighbor as="45" ip="27" reflector-client="false"/>
+                    <neighbor as="45" ip="14" reflector-client="false"/>
                     <neighbor as="45" ip="25" reflector-client="false"/>
-                    <neighbor as="45" ip="19" reflector-client="false"/>
                     <neighbor as="45" ip="18" reflector-client="false"/>
-                    <neighbor as="45" ip="21"/>
+                    <neighbor as="45" ip="20"/>
+                    <neighbor as="45" ip="24"/>
                     <neighbor as="45" ip="22"/>
+                    <neighbor as="45" ip="27"/>
                     <neighbor as="45" ip="26"/>
                     <neighbor as="45" ip="29"/>
-                    <neighbor as="45" ip="10"/>
                     <neighbor as="45" ip="11"/>
+                    <neighbor as="45" ip="12"/>
                     <neighbor as="45" ip="15"/>
-                    <neighbor as="45" ip="14"/>
                     <neighbor as="45" ip="17"/>
                     <neighbor as="45" ip="16"/>
-                    <neighbor as="45" ip="46"/>
+                    <neighbor as="45" ip="19"/>
+                    <neighbor as="45" ip="45"/>
+                    <neighbor as="45" ip="44"/>
                     <neighbor as="45" ip="43"/>
+                    <neighbor as="45" ip="42"/>
                     <neighbor as="45" ip="41"/>
-                    <neighbor as="45" ip="49"/>
+                    <neighbor as="45" ip="40"/>
+                    <neighbor as="45" ip="47"/>
                     <neighbor as="45" ip="48"/>
+                    <neighbor as="45" ip="0"/>
                     <neighbor as="45" ip="2"/>
                     <neighbor as="45" ip="1"/>
                     <neighbor as="45" ip="9"/>
                     <neighbor as="45" ip="7"/>
-                    <neighbor as="45" ip="8"/>
                     <neighbor as="45" ip="5"/>
+                    <neighbor as="45" ip="6"/>
                     <neighbor as="45" ip="4"/>
                     <neighbor as="45" ip="35"/>
                     <neighbor as="45" ip="30"/>
                     <neighbor as="45" ip="36"/>
                     <neighbor as="45" ip="37"/>
+                    <neighbor as="45" ip="38"/>
                     <neighbor as="45" ip="39"/>
-                </neighbors>
-            </router>
-            <router id="21">
-                <rid>21</rid>
-                <neighbors>
-                    <neighbor as="45" ip="20" reflector-client="true"/>
-                    <neighbor as="45" ip="23" reflector-client="true"/>
-                    <neighbor as="45" ip="6" reflector-client="true"/>
-                    <neighbor as="45" ip="24" reflector-client="true"/>
-                    <neighbor as="45" ip="3" reflector-client="true"/>
-                    <neighbor as="45" ip="12" reflector-client="true"/>
-                    <neighbor as="45" ip="13" reflector-client="true"/>
-                    <neighbor as="45" ip="33" reflector-client="true"/>
-                    <neighbor as="45" ip="32" reflector-client="true"/>
-                    <neighbor as="45" ip="45" reflector-client="true"/>
-                    <neighbor as="45" ip="44" reflector-client="true"/>
-                    <neighbor as="45" ip="34" reflector-client="true"/>
-                    <neighbor as="45" ip="42" reflector-client="true"/>
-                    <neighbor as="45" ip="31" reflector-client="true"/>
-                    <neighbor as="45" ip="40" reflector-client="true"/>
-                    <neighbor as="45" ip="38" reflector-client="true"/>
-                    <neighbor as="45" ip="47" reflector-client="true"/>
-                    <neighbor as="45" ip="0" reflector-client="true"/>
-                    <neighbor as="45" ip="28" reflector-client="true"/>
-                    <neighbor as="45" ip="27" reflector-client="true"/>
-                    <neighbor as="45" ip="25" reflector-client="true"/>
-                    <neighbor as="45" ip="19" reflector-client="true"/>
-                    <neighbor as="45" ip="18" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="22">
                 <rid>22</rid>
                 <neighbors>
-                    <neighbor as="45" ip="20" reflector-client="true"/>
+                    <neighbor as="45" ip="8" reflector-client="true"/>
                     <neighbor as="45" ip="23" reflector-client="true"/>
-                    <neighbor as="45" ip="6" reflector-client="true"/>
-                    <neighbor as="45" ip="24" reflector-client="true"/>
+                    <neighbor as="45" ip="10" reflector-client="true"/>
+                    <neighbor as="45" ip="21" reflector-client="true"/>
                     <neighbor as="45" ip="3" reflector-client="true"/>
-                    <neighbor as="45" ip="12" reflector-client="true"/>
                     <neighbor as="45" ip="13" reflector-client="true"/>
+                    <neighbor as="45" ip="46" reflector-client="true"/>
                     <neighbor as="45" ip="33" reflector-client="true"/>
                     <neighbor as="45" ip="32" reflector-client="true"/>
-                    <neighbor as="45" ip="45" reflector-client="true"/>
-                    <neighbor as="45" ip="44" reflector-client="true"/>
                     <neighbor as="45" ip="34" reflector-client="true"/>
-                    <neighbor as="45" ip="42" reflector-client="true"/>
                     <neighbor as="45" ip="31" reflector-client="true"/>
-                    <neighbor as="45" ip="40" reflector-client="true"/>
-                    <neighbor as="45" ip="38" reflector-client="true"/>
-                    <neighbor as="45" ip="47" reflector-client="true"/>
-                    <neighbor as="45" ip="0" reflector-client="true"/>
+                    <neighbor as="45" ip="49" reflector-client="true"/>
                     <neighbor as="45" ip="28" reflector-client="true"/>
-                    <neighbor as="45" ip="27" reflector-client="true"/>
+                    <neighbor as="45" ip="14" reflector-client="true"/>
                     <neighbor as="45" ip="25" reflector-client="true"/>
-                    <neighbor as="45" ip="19" reflector-client="true"/>
                     <neighbor as="45" ip="18" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="23" reflector="true">
                 <rid>23</rid>
                 <neighbors>
-                    <neighbor as="45" ip="20"/>
-                    <neighbor as="45" ip="6" reflector-client="false"/>
-                    <neighbor as="45" ip="24" reflector-client="false"/>
+                    <neighbor as="45" ip="8"/>
+                    <neighbor as="45" ip="10" reflector-client="false"/>
+                    <neighbor as="45" ip="21" reflector-client="false"/>
                     <neighbor as="45" ip="3" reflector-client="false"/>
-                    <neighbor as="45" ip="12" reflector-client="false"/>
                     <neighbor as="45" ip="13" reflector-client="false"/>
+                    <neighbor as="45" ip="46" reflector-client="false"/>
                     <neighbor as="45" ip="33" reflector-client="false"/>
                     <neighbor as="45" ip="32" reflector-client="false"/>
-                    <neighbor as="45" ip="45" reflector-client="false"/>
-                    <neighbor as="45" ip="44" reflector-client="false"/>
                     <neighbor as="45" ip="34" reflector-client="false"/>
-                    <neighbor as="45" ip="42" reflector-client="false"/>
                     <neighbor as="45" ip="31" reflector-client="false"/>
-                    <neighbor as="45" ip="40" reflector-client="false"/>
-                    <neighbor as="45" ip="38" reflector-client="false"/>
-                    <neighbor as="45" ip="47" reflector-client="false"/>
-                    <neighbor as="45" ip="0" reflector-client="false"/>
+                    <neighbor as="45" ip="49" reflector-client="false"/>
                     <neighbor as="45" ip="28" reflector-client="false"/>
-                    <neighbor as="45" ip="27" reflector-client="false"/>
+                    <neighbor as="45" ip="14" reflector-client="false"/>
                     <neighbor as="45" ip="25" reflector-client="false"/>
-                    <neighbor as="45" ip="19" reflector-client="false"/>
                     <neighbor as="45" ip="18" reflector-client="false"/>
-                    <neighbor as="45" ip="21"/>
+                    <neighbor as="45" ip="20"/>
+                    <neighbor as="45" ip="24"/>
                     <neighbor as="45" ip="22"/>
+                    <neighbor as="45" ip="27"/>
                     <neighbor as="45" ip="26"/>
                     <neighbor as="45" ip="29"/>
-                    <neighbor as="45" ip="10"/>
                     <neighbor as="45" ip="11"/>
+                    <neighbor as="45" ip="12"/>
                     <neighbor as="45" ip="15"/>
-                    <neighbor as="45" ip="14"/>
                     <neighbor as="45" ip="17"/>
                     <neighbor as="45" ip="16"/>
-                    <neighbor as="45" ip="46"/>
+                    <neighbor as="45" ip="19"/>
+                    <neighbor as="45" ip="45"/>
+                    <neighbor as="45" ip="44"/>
                     <neighbor as="45" ip="43"/>
+                    <neighbor as="45" ip="42"/>
                     <neighbor as="45" ip="41"/>
-                    <neighbor as="45" ip="49"/>
+                    <neighbor as="45" ip="40"/>
+                    <neighbor as="45" ip="47"/>
                     <neighbor as="45" ip="48"/>
+                    <neighbor as="45" ip="0"/>
                     <neighbor as="45" ip="2"/>
                     <neighbor as="45" ip="1"/>
                     <neighbor as="45" ip="9"/>
                     <neighbor as="45" ip="7"/>
-                    <neighbor as="45" ip="8"/>
                     <neighbor as="45" ip="5"/>
+                    <neighbor as="45" ip="6"/>
                     <neighbor as="45" ip="4"/>
                     <neighbor as="45" ip="35"/>
                     <neighbor as="45" ip="30"/>
                     <neighbor as="45" ip="36"/>
                     <neighbor as="45" ip="37"/>
+                    <neighbor as="45" ip="38"/>
                     <neighbor as="45" ip="39"/>
                 </neighbors>
             </router>
-            <router id="24" reflector="true">
+            <router id="24">
                 <rid>24</rid>
                 <neighbors>
-                    <neighbor as="45" ip="20"/>
-                    <neighbor as="45" ip="23"/>
-                    <neighbor as="45" ip="6"/>
-                    <neighbor as="45" ip="3" reflector-client="false"/>
-                    <neighbor as="45" ip="12" reflector-client="false"/>
-                    <neighbor as="45" ip="13" reflector-client="false"/>
-                    <neighbor as="45" ip="33" reflector-client="false"/>
-                    <neighbor as="45" ip="32" reflector-client="false"/>
-                    <neighbor as="45" ip="45" reflector-client="false"/>
-                    <neighbor as="45" ip="44" reflector-client="false"/>
-                    <neighbor as="45" ip="34" reflector-client="false"/>
-                    <neighbor as="45" ip="42" reflector-client="false"/>
-                    <neighbor as="45" ip="31" reflector-client="false"/>
-                    <neighbor as="45" ip="40" reflector-client="false"/>
-                    <neighbor as="45" ip="38" reflector-client="false"/>
-                    <neighbor as="45" ip="47" reflector-client="false"/>
-                    <neighbor as="45" ip="0" reflector-client="false"/>
-                    <neighbor as="45" ip="28" reflector-client="false"/>
-                    <neighbor as="45" ip="27" reflector-client="false"/>
-                    <neighbor as="45" ip="25" reflector-client="false"/>
-                    <neighbor as="45" ip="19" reflector-client="false"/>
-                    <neighbor as="45" ip="18" reflector-client="false"/>
-                    <neighbor as="45" ip="21"/>
-                    <neighbor as="45" ip="22"/>
-                    <neighbor as="45" ip="26"/>
-                    <neighbor as="45" ip="29"/>
-                    <neighbor as="45" ip="10"/>
-                    <neighbor as="45" ip="11"/>
-                    <neighbor as="45" ip="15"/>
-                    <neighbor as="45" ip="14"/>
-                    <neighbor as="45" ip="17"/>
-                    <neighbor as="45" ip="16"/>
-                    <neighbor as="45" ip="46"/>
-                    <neighbor as="45" ip="43"/>
-                    <neighbor as="45" ip="41"/>
-                    <neighbor as="45" ip="49"/>
-                    <neighbor as="45" ip="48"/>
-                    <neighbor as="45" ip="2"/>
-                    <neighbor as="45" ip="1"/>
-                    <neighbor as="45" ip="9"/>
-                    <neighbor as="45" ip="7"/>
-                    <neighbor as="45" ip="8"/>
-                    <neighbor as="45" ip="5"/>
-                    <neighbor as="45" ip="4"/>
-                    <neighbor as="45" ip="35"/>
-                    <neighbor as="45" ip="30"/>
-                    <neighbor as="45" ip="36"/>
-                    <neighbor as="45" ip="37"/>
-                    <neighbor as="45" ip="39"/>
+                    <neighbor as="45" ip="8" reflector-client="true"/>
+                    <neighbor as="45" ip="23" reflector-client="true"/>
+                    <neighbor as="45" ip="10" reflector-client="true"/>
+                    <neighbor as="45" ip="21" reflector-client="true"/>
+                    <neighbor as="45" ip="3" reflector-client="true"/>
+                    <neighbor as="45" ip="13" reflector-client="true"/>
+                    <neighbor as="45" ip="46" reflector-client="true"/>
+                    <neighbor as="45" ip="33" reflector-client="true"/>
+                    <neighbor as="45" ip="32" reflector-client="true"/>
+                    <neighbor as="45" ip="34" reflector-client="true"/>
+                    <neighbor as="45" ip="31" reflector-client="true"/>
+                    <neighbor as="45" ip="49" reflector-client="true"/>
+                    <neighbor as="45" ip="28" reflector-client="true"/>
+                    <neighbor as="45" ip="14" reflector-client="true"/>
+                    <neighbor as="45" ip="25" reflector-client="true"/>
+                    <neighbor as="45" ip="18" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="25" reflector="true">
                 <rid>25</rid>
                 <neighbors>
-                    <neighbor as="45" ip="20"/>
+                    <neighbor as="45" ip="8"/>
                     <neighbor as="45" ip="23"/>
-                    <neighbor as="45" ip="6"/>
-                    <neighbor as="45" ip="24"/>
+                    <neighbor as="45" ip="10"/>
+                    <neighbor as="45" ip="21"/>
                     <neighbor as="45" ip="3"/>
-                    <neighbor as="45" ip="12"/>
                     <neighbor as="45" ip="13"/>
+                    <neighbor as="45" ip="46"/>
                     <neighbor as="45" ip="33"/>
                     <neighbor as="45" ip="32"/>
-                    <neighbor as="45" ip="45"/>
-                    <neighbor as="45" ip="44"/>
                     <neighbor as="45" ip="34"/>
-                    <neighbor as="45" ip="42"/>
                     <neighbor as="45" ip="31"/>
-                    <neighbor as="45" ip="40"/>
-                    <neighbor as="45" ip="38"/>
-                    <neighbor as="45" ip="47"/>
-                    <neighbor as="45" ip="0"/>
+                    <neighbor as="45" ip="49"/>
                     <neighbor as="45" ip="28"/>
-                    <neighbor as="45" ip="27"/>
-                    <neighbor as="45" ip="19" reflector-client="false"/>
+                    <neighbor as="45" ip="14"/>
                     <neighbor as="45" ip="18" reflector-client="false"/>
-                    <neighbor as="45" ip="21"/>
+                    <neighbor as="45" ip="20"/>
+                    <neighbor as="45" ip="24"/>
                     <neighbor as="45" ip="22"/>
+                    <neighbor as="45" ip="27"/>
                     <neighbor as="45" ip="26"/>
                     <neighbor as="45" ip="29"/>
-                    <neighbor as="45" ip="10"/>
                     <neighbor as="45" ip="11"/>
+                    <neighbor as="45" ip="12"/>
                     <neighbor as="45" ip="15"/>
-                    <neighbor as="45" ip="14"/>
                     <neighbor as="45" ip="17"/>
                     <neighbor as="45" ip="16"/>
-                    <neighbor as="45" ip="46"/>
+                    <neighbor as="45" ip="19"/>
+                    <neighbor as="45" ip="45"/>
+                    <neighbor as="45" ip="44"/>
                     <neighbor as="45" ip="43"/>
+                    <neighbor as="45" ip="42"/>
                     <neighbor as="45" ip="41"/>
-                    <neighbor as="45" ip="49"/>
+                    <neighbor as="45" ip="40"/>
+                    <neighbor as="45" ip="47"/>
                     <neighbor as="45" ip="48"/>
+                    <neighbor as="45" ip="0"/>
                     <neighbor as="45" ip="2"/>
                     <neighbor as="45" ip="1"/>
                     <neighbor as="45" ip="9"/>
                     <neighbor as="45" ip="7"/>
-                    <neighbor as="45" ip="8"/>
                     <neighbor as="45" ip="5"/>
+                    <neighbor as="45" ip="6"/>
                     <neighbor as="45" ip="4"/>
                     <neighbor as="45" ip="35"/>
                     <neighbor as="45" ip="30"/>
                     <neighbor as="45" ip="36"/>
                     <neighbor as="45" ip="37"/>
+                    <neighbor as="45" ip="38"/>
                     <neighbor as="45" ip="39"/>
                 </neighbors>
             </router>
             <router id="26">
                 <rid>26</rid>
                 <neighbors>
-                    <neighbor as="45" ip="20" reflector-client="true"/>
+                    <neighbor as="45" ip="8" reflector-client="true"/>
                     <neighbor as="45" ip="23" reflector-client="true"/>
-                    <neighbor as="45" ip="6" reflector-client="true"/>
-                    <neighbor as="45" ip="24" reflector-client="true"/>
+                    <neighbor as="45" ip="10" reflector-client="true"/>
+                    <neighbor as="45" ip="21" reflector-client="true"/>
                     <neighbor as="45" ip="3" reflector-client="true"/>
-                    <neighbor as="45" ip="12" reflector-client="true"/>
                     <neighbor as="45" ip="13" reflector-client="true"/>
+                    <neighbor as="45" ip="46" reflector-client="true"/>
                     <neighbor as="45" ip="33" reflector-client="true"/>
                     <neighbor as="45" ip="32" reflector-client="true"/>
-                    <neighbor as="45" ip="45" reflector-client="true"/>
-                    <neighbor as="45" ip="44" reflector-client="true"/>
                     <neighbor as="45" ip="34" reflector-client="true"/>
-                    <neighbor as="45" ip="42" reflector-client="true"/>
                     <neighbor as="45" ip="31" reflector-client="true"/>
-                    <neighbor as="45" ip="40" reflector-client="true"/>
-                    <neighbor as="45" ip="38" reflector-client="true"/>
-                    <neighbor as="45" ip="47" reflector-client="true"/>
-                    <neighbor as="45" ip="0" reflector-client="true"/>
+                    <neighbor as="45" ip="49" reflector-client="true"/>
                     <neighbor as="45" ip="28" reflector-client="true"/>
-                    <neighbor as="45" ip="27" reflector-client="true"/>
+                    <neighbor as="45" ip="14" reflector-client="true"/>
                     <neighbor as="45" ip="25" reflector-client="true"/>
-                    <neighbor as="45" ip="19" reflector-client="true"/>
                     <neighbor as="45" ip="18" reflector-client="true"/>
                 </neighbors>
             </router>
-            <router id="27" reflector="true">
+            <router id="27">
                 <rid>27</rid>
                 <neighbors>
-                    <neighbor as="45" ip="20"/>
-                    <neighbor as="45" ip="23"/>
-                    <neighbor as="45" ip="6"/>
-                    <neighbor as="45" ip="24"/>
-                    <neighbor as="45" ip="3"/>
-                    <neighbor as="45" ip="12"/>
-                    <neighbor as="45" ip="13"/>
-                    <neighbor as="45" ip="33"/>
-                    <neighbor as="45" ip="32"/>
-                    <neighbor as="45" ip="45"/>
-                    <neighbor as="45" ip="44"/>
-                    <neighbor as="45" ip="34"/>
-                    <neighbor as="45" ip="42"/>
-                    <neighbor as="45" ip="31"/>
-                    <neighbor as="45" ip="40"/>
-                    <neighbor as="45" ip="38"/>
-                    <neighbor as="45" ip="47"/>
-                    <neighbor as="45" ip="0"/>
-                    <neighbor as="45" ip="28"/>
-                    <neighbor as="45" ip="25" reflector-client="false"/>
-                    <neighbor as="45" ip="19" reflector-client="false"/>
-                    <neighbor as="45" ip="18" reflector-client="false"/>
-                    <neighbor as="45" ip="21"/>
-                    <neighbor as="45" ip="22"/>
-                    <neighbor as="45" ip="26"/>
-                    <neighbor as="45" ip="29"/>
-                    <neighbor as="45" ip="10"/>
-                    <neighbor as="45" ip="11"/>
-                    <neighbor as="45" ip="15"/>
-                    <neighbor as="45" ip="14"/>
-                    <neighbor as="45" ip="17"/>
-                    <neighbor as="45" ip="16"/>
-                    <neighbor as="45" ip="46"/>
-                    <neighbor as="45" ip="43"/>
-                    <neighbor as="45" ip="41"/>
-                    <neighbor as="45" ip="49"/>
-                    <neighbor as="45" ip="48"/>
-                    <neighbor as="45" ip="2"/>
-                    <neighbor as="45" ip="1"/>
-                    <neighbor as="45" ip="9"/>
-                    <neighbor as="45" ip="7"/>
-                    <neighbor as="45" ip="8"/>
-                    <neighbor as="45" ip="5"/>
-                    <neighbor as="45" ip="4"/>
-                    <neighbor as="45" ip="35"/>
-                    <neighbor as="45" ip="30"/>
-                    <neighbor as="45" ip="36"/>
-                    <neighbor as="45" ip="37"/>
-                    <neighbor as="45" ip="39"/>
+                    <neighbor as="45" ip="8" reflector-client="true"/>
+                    <neighbor as="45" ip="23" reflector-client="true"/>
+                    <neighbor as="45" ip="10" reflector-client="true"/>
+                    <neighbor as="45" ip="21" reflector-client="true"/>
+                    <neighbor as="45" ip="3" reflector-client="true"/>
+                    <neighbor as="45" ip="13" reflector-client="true"/>
+                    <neighbor as="45" ip="46" reflector-client="true"/>
+                    <neighbor as="45" ip="33" reflector-client="true"/>
+                    <neighbor as="45" ip="32" reflector-client="true"/>
+                    <neighbor as="45" ip="34" reflector-client="true"/>
+                    <neighbor as="45" ip="31" reflector-client="true"/>
+                    <neighbor as="45" ip="49" reflector-client="true"/>
+                    <neighbor as="45" ip="28" reflector-client="true"/>
+                    <neighbor as="45" ip="14" reflector-client="true"/>
+                    <neighbor as="45" ip="25" reflector-client="true"/>
+                    <neighbor as="45" ip="18" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="28" reflector="true">
                 <rid>28</rid>
                 <neighbors>
-                    <neighbor as="45" ip="20"/>
+                    <neighbor as="45" ip="8"/>
                     <neighbor as="45" ip="23"/>
-                    <neighbor as="45" ip="6"/>
-                    <neighbor as="45" ip="24"/>
+                    <neighbor as="45" ip="10"/>
+                    <neighbor as="45" ip="21"/>
                     <neighbor as="45" ip="3"/>
-                    <neighbor as="45" ip="12"/>
                     <neighbor as="45" ip="13"/>
+                    <neighbor as="45" ip="46"/>
                     <neighbor as="45" ip="33"/>
                     <neighbor as="45" ip="32"/>
-                    <neighbor as="45" ip="45"/>
-                    <neighbor as="45" ip="44"/>
                     <neighbor as="45" ip="34"/>
-                    <neighbor as="45" ip="42"/>
                     <neighbor as="45" ip="31"/>
-                    <neighbor as="45" ip="40"/>
-                    <neighbor as="45" ip="38"/>
-                    <neighbor as="45" ip="47"/>
-                    <neighbor as="45" ip="0"/>
-                    <neighbor as="45" ip="27" reflector-client="false"/>
+                    <neighbor as="45" ip="49"/>
+                    <neighbor as="45" ip="14" reflector-client="false"/>
                     <neighbor as="45" ip="25" reflector-client="false"/>
-                    <neighbor as="45" ip="19" reflector-client="false"/>
                     <neighbor as="45" ip="18" reflector-client="false"/>
-                    <neighbor as="45" ip="21"/>
+                    <neighbor as="45" ip="20"/>
+                    <neighbor as="45" ip="24"/>
                     <neighbor as="45" ip="22"/>
+                    <neighbor as="45" ip="27"/>
                     <neighbor as="45" ip="26"/>
                     <neighbor as="45" ip="29"/>
-                    <neighbor as="45" ip="10"/>
                     <neighbor as="45" ip="11"/>
+                    <neighbor as="45" ip="12"/>
                     <neighbor as="45" ip="15"/>
-                    <neighbor as="45" ip="14"/>
                     <neighbor as="45" ip="17"/>
                     <neighbor as="45" ip="16"/>
-                    <neighbor as="45" ip="46"/>
+                    <neighbor as="45" ip="19"/>
+                    <neighbor as="45" ip="45"/>
+                    <neighbor as="45" ip="44"/>
                     <neighbor as="45" ip="43"/>
+                    <neighbor as="45" ip="42"/>
                     <neighbor as="45" ip="41"/>
-                    <neighbor as="45" ip="49"/>
+                    <neighbor as="45" ip="40"/>
+                    <neighbor as="45" ip="47"/>
                     <neighbor as="45" ip="48"/>
+                    <neighbor as="45" ip="0"/>
                     <neighbor as="45" ip="2"/>
                     <neighbor as="45" ip="1"/>
                     <neighbor as="45" ip="9"/>
                     <neighbor as="45" ip="7"/>
-                    <neighbor as="45" ip="8"/>
                     <neighbor as="45" ip="5"/>
+                    <neighbor as="45" ip="6"/>
                     <neighbor as="45" ip="4"/>
                     <neighbor as="45" ip="35"/>
                     <neighbor as="45" ip="30"/>
                     <neighbor as="45" ip="36"/>
                     <neighbor as="45" ip="37"/>
+                    <neighbor as="45" ip="38"/>
                     <neighbor as="45" ip="39"/>
                 </neighbors>
             </router>
             <router id="29">
                 <rid>29</rid>
                 <neighbors>
-                    <neighbor as="45" ip="20" reflector-client="true"/>
+                    <neighbor as="45" ip="8" reflector-client="true"/>
                     <neighbor as="45" ip="23" reflector-client="true"/>
-                    <neighbor as="45" ip="6" reflector-client="true"/>
-                    <neighbor as="45" ip="24" reflector-client="true"/>
+                    <neighbor as="45" ip="10" reflector-client="true"/>
+                    <neighbor as="45" ip="21" reflector-client="true"/>
                     <neighbor as="45" ip="3" reflector-client="true"/>
-                    <neighbor as="45" ip="12" reflector-client="true"/>
                     <neighbor as="45" ip="13" reflector-client="true"/>
+                    <neighbor as="45" ip="46" reflector-client="true"/>
                     <neighbor as="45" ip="33" reflector-client="true"/>
                     <neighbor as="45" ip="32" reflector-client="true"/>
-                    <neighbor as="45" ip="45" reflector-client="true"/>
-                    <neighbor as="45" ip="44" reflector-client="true"/>
                     <neighbor as="45" ip="34" reflector-client="true"/>
-                    <neighbor as="45" ip="42" reflector-client="true"/>
                     <neighbor as="45" ip="31" reflector-client="true"/>
-                    <neighbor as="45" ip="40" reflector-client="true"/>
-                    <neighbor as="45" ip="38" reflector-client="true"/>
-                    <neighbor as="45" ip="47" reflector-client="true"/>
-                    <neighbor as="45" ip="0" reflector-client="true"/>
+                    <neighbor as="45" ip="49" reflector-client="true"/>
                     <neighbor as="45" ip="28" reflector-client="true"/>
-                    <neighbor as="45" ip="27" reflector-client="true"/>
+                    <neighbor as="45" ip="14" reflector-client="true"/>
                     <neighbor as="45" ip="25" reflector-client="true"/>
-                    <neighbor as="45" ip="19" reflector-client="true"/>
                     <neighbor as="45" ip="18" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="3" reflector="true">
                 <rid>3</rid>
                 <neighbors>
-                    <neighbor as="45" ip="20"/>
+                    <neighbor as="45" ip="8"/>
                     <neighbor as="45" ip="23"/>
-                    <neighbor as="45" ip="6"/>
-                    <neighbor as="45" ip="24"/>
-                    <neighbor as="45" ip="12" reflector-client="false"/>
+                    <neighbor as="45" ip="10"/>
+                    <neighbor as="45" ip="21"/>
                     <neighbor as="45" ip="13" reflector-client="false"/>
+                    <neighbor as="45" ip="46" reflector-client="false"/>
                     <neighbor as="45" ip="33" reflector-client="false"/>
                     <neighbor as="45" ip="32" reflector-client="false"/>
-                    <neighbor as="45" ip="45" reflector-client="false"/>
-                    <neighbor as="45" ip="44" reflector-client="false"/>
                     <neighbor as="45" ip="34" reflector-client="false"/>
-                    <neighbor as="45" ip="42" reflector-client="false"/>
                     <neighbor as="45" ip="31" reflector-client="false"/>
-                    <neighbor as="45" ip="40" reflector-client="false"/>
-                    <neighbor as="45" ip="38" reflector-client="false"/>
-                    <neighbor as="45" ip="47" reflector-client="false"/>
-                    <neighbor as="45" ip="0" reflector-client="false"/>
+                    <neighbor as="45" ip="49" reflector-client="false"/>
                     <neighbor as="45" ip="28" reflector-client="false"/>
-                    <neighbor as="45" ip="27" reflector-client="false"/>
+                    <neighbor as="45" ip="14" reflector-client="false"/>
                     <neighbor as="45" ip="25" reflector-client="false"/>
-                    <neighbor as="45" ip="19" reflector-client="false"/>
                     <neighbor as="45" ip="18" reflector-client="false"/>
-                    <neighbor as="45" ip="21"/>
+                    <neighbor as="45" ip="20"/>
+                    <neighbor as="45" ip="24"/>
                     <neighbor as="45" ip="22"/>
+                    <neighbor as="45" ip="27"/>
                     <neighbor as="45" ip="26"/>
                     <neighbor as="45" ip="29"/>
-                    <neighbor as="45" ip="10"/>
                     <neighbor as="45" ip="11"/>
+                    <neighbor as="45" ip="12"/>
                     <neighbor as="45" ip="15"/>
-                    <neighbor as="45" ip="14"/>
                     <neighbor as="45" ip="17"/>
                     <neighbor as="45" ip="16"/>
-                    <neighbor as="45" ip="46"/>
+                    <neighbor as="45" ip="19"/>
+                    <neighbor as="45" ip="45"/>
+                    <neighbor as="45" ip="44"/>
                     <neighbor as="45" ip="43"/>
+                    <neighbor as="45" ip="42"/>
                     <neighbor as="45" ip="41"/>
-                    <neighbor as="45" ip="49"/>
+                    <neighbor as="45" ip="40"/>
+                    <neighbor as="45" ip="47"/>
                     <neighbor as="45" ip="48"/>
+                    <neighbor as="45" ip="0"/>
                     <neighbor as="45" ip="2"/>
                     <neighbor as="45" ip="1"/>
                     <neighbor as="45" ip="9"/>
                     <neighbor as="45" ip="7"/>
-                    <neighbor as="45" ip="8"/>
                     <neighbor as="45" ip="5"/>
+                    <neighbor as="45" ip="6"/>
                     <neighbor as="45" ip="4"/>
                     <neighbor as="45" ip="35"/>
                     <neighbor as="45" ip="30"/>
                     <neighbor as="45" ip="36"/>
                     <neighbor as="45" ip="37"/>
+                    <neighbor as="45" ip="38"/>
                     <neighbor as="45" ip="39"/>
                 </neighbors>
             </router>
             <router id="30">
                 <rid>30</rid>
                 <neighbors>
-                    <neighbor as="45" ip="20" reflector-client="true"/>
+                    <neighbor as="45" ip="8" reflector-client="true"/>
                     <neighbor as="45" ip="23" reflector-client="true"/>
-                    <neighbor as="45" ip="6" reflector-client="true"/>
-                    <neighbor as="45" ip="24" reflector-client="true"/>
+                    <neighbor as="45" ip="10" reflector-client="true"/>
+                    <neighbor as="45" ip="21" reflector-client="true"/>
                     <neighbor as="45" ip="3" reflector-client="true"/>
-                    <neighbor as="45" ip="12" reflector-client="true"/>
                     <neighbor as="45" ip="13" reflector-client="true"/>
+                    <neighbor as="45" ip="46" reflector-client="true"/>
                     <neighbor as="45" ip="33" reflector-client="true"/>
                     <neighbor as="45" ip="32" reflector-client="true"/>
-                    <neighbor as="45" ip="45" reflector-client="true"/>
-                    <neighbor as="45" ip="44" reflector-client="true"/>
                     <neighbor as="45" ip="34" reflector-client="true"/>
-                    <neighbor as="45" ip="42" reflector-client="true"/>
                     <neighbor as="45" ip="31" reflector-client="true"/>
-                    <neighbor as="45" ip="40" reflector-client="true"/>
-                    <neighbor as="45" ip="38" reflector-client="true"/>
-                    <neighbor as="45" ip="47" reflector-client="true"/>
-                    <neighbor as="45" ip="0" reflector-client="true"/>
+                    <neighbor as="45" ip="49" reflector-client="true"/>
                     <neighbor as="45" ip="28" reflector-client="true"/>
-                    <neighbor as="45" ip="27" reflector-client="true"/>
+                    <neighbor as="45" ip="14" reflector-client="true"/>
                     <neighbor as="45" ip="25" reflector-client="true"/>
-                    <neighbor as="45" ip="19" reflector-client="true"/>
                     <neighbor as="45" ip="18" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="31" reflector="true">
                 <rid>31</rid>
                 <neighbors>
-                    <neighbor as="45" ip="20"/>
+                    <neighbor as="45" ip="8"/>
                     <neighbor as="45" ip="23"/>
-                    <neighbor as="45" ip="6"/>
-                    <neighbor as="45" ip="24"/>
+                    <neighbor as="45" ip="10"/>
+                    <neighbor as="45" ip="21"/>
                     <neighbor as="45" ip="3"/>
-                    <neighbor as="45" ip="12"/>
                     <neighbor as="45" ip="13"/>
+                    <neighbor as="45" ip="46"/>
                     <neighbor as="45" ip="33"/>
                     <neighbor as="45" ip="32"/>
-                    <neighbor as="45" ip="45"/>
-                    <neighbor as="45" ip="44"/>
                     <neighbor as="45" ip="34"/>
-                    <neighbor as="45" ip="42"/>
-                    <neighbor as="45" ip="40" reflector-client="false"/>
-                    <neighbor as="45" ip="38" reflector-client="false"/>
-                    <neighbor as="45" ip="47" reflector-client="false"/>
-                    <neighbor as="45" ip="0" reflector-client="false"/>
+                    <neighbor as="45" ip="49" reflector-client="false"/>
                     <neighbor as="45" ip="28" reflector-client="false"/>
-                    <neighbor as="45" ip="27" reflector-client="false"/>
+                    <neighbor as="45" ip="14" reflector-client="false"/>
                     <neighbor as="45" ip="25" reflector-client="false"/>
-                    <neighbor as="45" ip="19" reflector-client="false"/>
                     <neighbor as="45" ip="18" reflector-client="false"/>
-                    <neighbor as="45" ip="21"/>
+                    <neighbor as="45" ip="20"/>
+                    <neighbor as="45" ip="24"/>
                     <neighbor as="45" ip="22"/>
+                    <neighbor as="45" ip="27"/>
                     <neighbor as="45" ip="26"/>
                     <neighbor as="45" ip="29"/>
-                    <neighbor as="45" ip="10"/>
                     <neighbor as="45" ip="11"/>
+                    <neighbor as="45" ip="12"/>
                     <neighbor as="45" ip="15"/>
-                    <neighbor as="45" ip="14"/>
                     <neighbor as="45" ip="17"/>
                     <neighbor as="45" ip="16"/>
-                    <neighbor as="45" ip="46"/>
+                    <neighbor as="45" ip="19"/>
+                    <neighbor as="45" ip="45"/>
+                    <neighbor as="45" ip="44"/>
                     <neighbor as="45" ip="43"/>
+                    <neighbor as="45" ip="42"/>
                     <neighbor as="45" ip="41"/>
-                    <neighbor as="45" ip="49"/>
+                    <neighbor as="45" ip="40"/>
+                    <neighbor as="45" ip="47"/>
                     <neighbor as="45" ip="48"/>
+                    <neighbor as="45" ip="0"/>
                     <neighbor as="45" ip="2"/>
                     <neighbor as="45" ip="1"/>
                     <neighbor as="45" ip="9"/>
                     <neighbor as="45" ip="7"/>
-                    <neighbor as="45" ip="8"/>
                     <neighbor as="45" ip="5"/>
+                    <neighbor as="45" ip="6"/>
                     <neighbor as="45" ip="4"/>
                     <neighbor as="45" ip="35"/>
                     <neighbor as="45" ip="30"/>
                     <neighbor as="45" ip="36"/>
                     <neighbor as="45" ip="37"/>
+                    <neighbor as="45" ip="38"/>
                     <neighbor as="45" ip="39"/>
                 </neighbors>
             </router>
             <router id="32" reflector="true">
                 <rid>32</rid>
                 <neighbors>
-                    <neighbor as="45" ip="20"/>
+                    <neighbor as="45" ip="8"/>
                     <neighbor as="45" ip="23"/>
-                    <neighbor as="45" ip="6"/>
-                    <neighbor as="45" ip="24"/>
-                    <neighbor as="45" ip="3"/>
-                    <neighbor as="45" ip="12"/>
-                    <neighbor as="45" ip="13"/>
-                    <neighbor as="45" ip="33"/>
-                    <neighbor as="45" ip="45" reflector-client="false"/>
-                    <neighbor as="45" ip="44" reflector-client="false"/>
-                    <neighbor as="45" ip="34" reflector-client="false"/>
-                    <neighbor as="45" ip="42" reflector-client="false"/>
-                    <neighbor as="45" ip="31" reflector-client="false"/>
-                    <neighbor as="45" ip="40" reflector-client="false"/>
-                    <neighbor as="45" ip="38" reflector-client="false"/>
-                    <neighbor as="45" ip="47" reflector-client="false"/>
-                    <neighbor as="45" ip="0" reflector-client="false"/>
-                    <neighbor as="45" ip="28" reflector-client="false"/>
-                    <neighbor as="45" ip="27" reflector-client="false"/>
-                    <neighbor as="45" ip="25" reflector-client="false"/>
-                    <neighbor as="45" ip="19" reflector-client="false"/>
-                    <neighbor as="45" ip="18" reflector-client="false"/>
+                    <neighbor as="45" ip="10"/>
                     <neighbor as="45" ip="21"/>
+                    <neighbor as="45" ip="3"/>
+                    <neighbor as="45" ip="13"/>
+                    <neighbor as="45" ip="46"/>
+                    <neighbor as="45" ip="33"/>
+                    <neighbor as="45" ip="34" reflector-client="false"/>
+                    <neighbor as="45" ip="31" reflector-client="false"/>
+                    <neighbor as="45" ip="49" reflector-client="false"/>
+                    <neighbor as="45" ip="28" reflector-client="false"/>
+                    <neighbor as="45" ip="14" reflector-client="false"/>
+                    <neighbor as="45" ip="25" reflector-client="false"/>
+                    <neighbor as="45" ip="18" reflector-client="false"/>
+                    <neighbor as="45" ip="20"/>
+                    <neighbor as="45" ip="24"/>
                     <neighbor as="45" ip="22"/>
+                    <neighbor as="45" ip="27"/>
                     <neighbor as="45" ip="26"/>
                     <neighbor as="45" ip="29"/>
-                    <neighbor as="45" ip="10"/>
                     <neighbor as="45" ip="11"/>
+                    <neighbor as="45" ip="12"/>
                     <neighbor as="45" ip="15"/>
-                    <neighbor as="45" ip="14"/>
                     <neighbor as="45" ip="17"/>
                     <neighbor as="45" ip="16"/>
-                    <neighbor as="45" ip="46"/>
+                    <neighbor as="45" ip="19"/>
+                    <neighbor as="45" ip="45"/>
+                    <neighbor as="45" ip="44"/>
                     <neighbor as="45" ip="43"/>
+                    <neighbor as="45" ip="42"/>
                     <neighbor as="45" ip="41"/>
-                    <neighbor as="45" ip="49"/>
+                    <neighbor as="45" ip="40"/>
+                    <neighbor as="45" ip="47"/>
                     <neighbor as="45" ip="48"/>
+                    <neighbor as="45" ip="0"/>
                     <neighbor as="45" ip="2"/>
                     <neighbor as="45" ip="1"/>
                     <neighbor as="45" ip="9"/>
                     <neighbor as="45" ip="7"/>
-                    <neighbor as="45" ip="8"/>
                     <neighbor as="45" ip="5"/>
+                    <neighbor as="45" ip="6"/>
                     <neighbor as="45" ip="4"/>
                     <neighbor as="45" ip="35"/>
                     <neighbor as="45" ip="30"/>
                     <neighbor as="45" ip="36"/>
                     <neighbor as="45" ip="37"/>
+                    <neighbor as="45" ip="38"/>
                     <neighbor as="45" ip="39"/>
                 </neighbors>
             </router>
             <router id="33" reflector="true">
                 <rid>33</rid>
                 <neighbors>
-                    <neighbor as="45" ip="20"/>
+                    <neighbor as="45" ip="8"/>
                     <neighbor as="45" ip="23"/>
-                    <neighbor as="45" ip="6"/>
-                    <neighbor as="45" ip="24"/>
-                    <neighbor as="45" ip="3"/>
-                    <neighbor as="45" ip="12"/>
-                    <neighbor as="45" ip="13"/>
-                    <neighbor as="45" ip="32" reflector-client="false"/>
-                    <neighbor as="45" ip="45" reflector-client="false"/>
-                    <neighbor as="45" ip="44" reflector-client="false"/>
-                    <neighbor as="45" ip="34" reflector-client="false"/>
-                    <neighbor as="45" ip="42" reflector-client="false"/>
-                    <neighbor as="45" ip="31" reflector-client="false"/>
-                    <neighbor as="45" ip="40" reflector-client="false"/>
-                    <neighbor as="45" ip="38" reflector-client="false"/>
-                    <neighbor as="45" ip="47" reflector-client="false"/>
-                    <neighbor as="45" ip="0" reflector-client="false"/>
-                    <neighbor as="45" ip="28" reflector-client="false"/>
-                    <neighbor as="45" ip="27" reflector-client="false"/>
-                    <neighbor as="45" ip="25" reflector-client="false"/>
-                    <neighbor as="45" ip="19" reflector-client="false"/>
-                    <neighbor as="45" ip="18" reflector-client="false"/>
+                    <neighbor as="45" ip="10"/>
                     <neighbor as="45" ip="21"/>
+                    <neighbor as="45" ip="3"/>
+                    <neighbor as="45" ip="13"/>
+                    <neighbor as="45" ip="46"/>
+                    <neighbor as="45" ip="32" reflector-client="false"/>
+                    <neighbor as="45" ip="34" reflector-client="false"/>
+                    <neighbor as="45" ip="31" reflector-client="false"/>
+                    <neighbor as="45" ip="49" reflector-client="false"/>
+                    <neighbor as="45" ip="28" reflector-client="false"/>
+                    <neighbor as="45" ip="14" reflector-client="false"/>
+                    <neighbor as="45" ip="25" reflector-client="false"/>
+                    <neighbor as="45" ip="18" reflector-client="false"/>
+                    <neighbor as="45" ip="20"/>
+                    <neighbor as="45" ip="24"/>
                     <neighbor as="45" ip="22"/>
+                    <neighbor as="45" ip="27"/>
                     <neighbor as="45" ip="26"/>
                     <neighbor as="45" ip="29"/>
-                    <neighbor as="45" ip="10"/>
                     <neighbor as="45" ip="11"/>
+                    <neighbor as="45" ip="12"/>
                     <neighbor as="45" ip="15"/>
-                    <neighbor as="45" ip="14"/>
                     <neighbor as="45" ip="17"/>
                     <neighbor as="45" ip="16"/>
-                    <neighbor as="45" ip="46"/>
+                    <neighbor as="45" ip="19"/>
+                    <neighbor as="45" ip="45"/>
+                    <neighbor as="45" ip="44"/>
                     <neighbor as="45" ip="43"/>
+                    <neighbor as="45" ip="42"/>
                     <neighbor as="45" ip="41"/>
-                    <neighbor as="45" ip="49"/>
+                    <neighbor as="45" ip="40"/>
+                    <neighbor as="45" ip="47"/>
                     <neighbor as="45" ip="48"/>
+                    <neighbor as="45" ip="0"/>
                     <neighbor as="45" ip="2"/>
                     <neighbor as="45" ip="1"/>
                     <neighbor as="45" ip="9"/>
                     <neighbor as="45" ip="7"/>
-                    <neighbor as="45" ip="8"/>
                     <neighbor as="45" ip="5"/>
+                    <neighbor as="45" ip="6"/>
                     <neighbor as="45" ip="4"/>
                     <neighbor as="45" ip="35"/>
                     <neighbor as="45" ip="30"/>
                     <neighbor as="45" ip="36"/>
                     <neighbor as="45" ip="37"/>
+                    <neighbor as="45" ip="38"/>
                     <neighbor as="45" ip="39"/>
                 </neighbors>
             </router>
             <router id="34" reflector="true">
                 <rid>34</rid>
                 <neighbors>
-                    <neighbor as="45" ip="20"/>
+                    <neighbor as="45" ip="8"/>
                     <neighbor as="45" ip="23"/>
-                    <neighbor as="45" ip="6"/>
-                    <neighbor as="45" ip="24"/>
+                    <neighbor as="45" ip="10"/>
+                    <neighbor as="45" ip="21"/>
                     <neighbor as="45" ip="3"/>
-                    <neighbor as="45" ip="12"/>
                     <neighbor as="45" ip="13"/>
+                    <neighbor as="45" ip="46"/>
                     <neighbor as="45" ip="33"/>
                     <neighbor as="45" ip="32"/>
-                    <neighbor as="45" ip="45"/>
-                    <neighbor as="45" ip="44"/>
-                    <neighbor as="45" ip="42" reflector-client="false"/>
                     <neighbor as="45" ip="31" reflector-client="false"/>
-                    <neighbor as="45" ip="40" reflector-client="false"/>
-                    <neighbor as="45" ip="38" reflector-client="false"/>
-                    <neighbor as="45" ip="47" reflector-client="false"/>
-                    <neighbor as="45" ip="0" reflector-client="false"/>
+                    <neighbor as="45" ip="49" reflector-client="false"/>
                     <neighbor as="45" ip="28" reflector-client="false"/>
-                    <neighbor as="45" ip="27" reflector-client="false"/>
+                    <neighbor as="45" ip="14" reflector-client="false"/>
                     <neighbor as="45" ip="25" reflector-client="false"/>
-                    <neighbor as="45" ip="19" reflector-client="false"/>
                     <neighbor as="45" ip="18" reflector-client="false"/>
-                    <neighbor as="45" ip="21"/>
+                    <neighbor as="45" ip="20"/>
+                    <neighbor as="45" ip="24"/>
                     <neighbor as="45" ip="22"/>
+                    <neighbor as="45" ip="27"/>
                     <neighbor as="45" ip="26"/>
                     <neighbor as="45" ip="29"/>
-                    <neighbor as="45" ip="10"/>
                     <neighbor as="45" ip="11"/>
+                    <neighbor as="45" ip="12"/>
                     <neighbor as="45" ip="15"/>
-                    <neighbor as="45" ip="14"/>
                     <neighbor as="45" ip="17"/>
                     <neighbor as="45" ip="16"/>
-                    <neighbor as="45" ip="46"/>
+                    <neighbor as="45" ip="19"/>
+                    <neighbor as="45" ip="45"/>
+                    <neighbor as="45" ip="44"/>
                     <neighbor as="45" ip="43"/>
+                    <neighbor as="45" ip="42"/>
                     <neighbor as="45" ip="41"/>
-                    <neighbor as="45" ip="49"/>
+                    <neighbor as="45" ip="40"/>
+                    <neighbor as="45" ip="47"/>
                     <neighbor as="45" ip="48"/>
+                    <neighbor as="45" ip="0"/>
                     <neighbor as="45" ip="2"/>
                     <neighbor as="45" ip="1"/>
                     <neighbor as="45" ip="9"/>
                     <neighbor as="45" ip="7"/>
-                    <neighbor as="45" ip="8"/>
                     <neighbor as="45" ip="5"/>
+                    <neighbor as="45" ip="6"/>
                     <neighbor as="45" ip="4"/>
                     <neighbor as="45" ip="35"/>
                     <neighbor as="45" ip="30"/>
                     <neighbor as="45" ip="36"/>
                     <neighbor as="45" ip="37"/>
+                    <neighbor as="45" ip="38"/>
                     <neighbor as="45" ip="39"/>
                 </neighbors>
             </router>
             <router id="35">
                 <rid>35</rid>
                 <neighbors>
-                    <neighbor as="45" ip="20" reflector-client="true"/>
+                    <neighbor as="45" ip="8" reflector-client="true"/>
                     <neighbor as="45" ip="23" reflector-client="true"/>
-                    <neighbor as="45" ip="6" reflector-client="true"/>
-                    <neighbor as="45" ip="24" reflector-client="true"/>
+                    <neighbor as="45" ip="10" reflector-client="true"/>
+                    <neighbor as="45" ip="21" reflector-client="true"/>
                     <neighbor as="45" ip="3" reflector-client="true"/>
-                    <neighbor as="45" ip="12" reflector-client="true"/>
                     <neighbor as="45" ip="13" reflector-client="true"/>
+                    <neighbor as="45" ip="46" reflector-client="true"/>
                     <neighbor as="45" ip="33" reflector-client="true"/>
                     <neighbor as="45" ip="32" reflector-client="true"/>
-                    <neighbor as="45" ip="45" reflector-client="true"/>
-                    <neighbor as="45" ip="44" reflector-client="true"/>
                     <neighbor as="45" ip="34" reflector-client="true"/>
-                    <neighbor as="45" ip="42" reflector-client="true"/>
                     <neighbor as="45" ip="31" reflector-client="true"/>
-                    <neighbor as="45" ip="40" reflector-client="true"/>
-                    <neighbor as="45" ip="38" reflector-client="true"/>
-                    <neighbor as="45" ip="47" reflector-client="true"/>
-                    <neighbor as="45" ip="0" reflector-client="true"/>
+                    <neighbor as="45" ip="49" reflector-client="true"/>
                     <neighbor as="45" ip="28" reflector-client="true"/>
-                    <neighbor as="45" ip="27" reflector-client="true"/>
+                    <neighbor as="45" ip="14" reflector-client="true"/>
                     <neighbor as="45" ip="25" reflector-client="true"/>
-                    <neighbor as="45" ip="19" reflector-client="true"/>
                     <neighbor as="45" ip="18" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="36">
                 <rid>36</rid>
                 <neighbors>
-                    <neighbor as="45" ip="20" reflector-client="true"/>
+                    <neighbor as="45" ip="8" reflector-client="true"/>
                     <neighbor as="45" ip="23" reflector-client="true"/>
-                    <neighbor as="45" ip="6" reflector-client="true"/>
-                    <neighbor as="45" ip="24" reflector-client="true"/>
+                    <neighbor as="45" ip="10" reflector-client="true"/>
+                    <neighbor as="45" ip="21" reflector-client="true"/>
                     <neighbor as="45" ip="3" reflector-client="true"/>
-                    <neighbor as="45" ip="12" reflector-client="true"/>
                     <neighbor as="45" ip="13" reflector-client="true"/>
+                    <neighbor as="45" ip="46" reflector-client="true"/>
                     <neighbor as="45" ip="33" reflector-client="true"/>
                     <neighbor as="45" ip="32" reflector-client="true"/>
-                    <neighbor as="45" ip="45" reflector-client="true"/>
-                    <neighbor as="45" ip="44" reflector-client="true"/>
                     <neighbor as="45" ip="34" reflector-client="true"/>
-                    <neighbor as="45" ip="42" reflector-client="true"/>
                     <neighbor as="45" ip="31" reflector-client="true"/>
-                    <neighbor as="45" ip="40" reflector-client="true"/>
-                    <neighbor as="45" ip="38" reflector-client="true"/>
-                    <neighbor as="45" ip="47" reflector-client="true"/>
-                    <neighbor as="45" ip="0" reflector-client="true"/>
+                    <neighbor as="45" ip="49" reflector-client="true"/>
                     <neighbor as="45" ip="28" reflector-client="true"/>
-                    <neighbor as="45" ip="27" reflector-client="true"/>
+                    <neighbor as="45" ip="14" reflector-client="true"/>
                     <neighbor as="45" ip="25" reflector-client="true"/>
-                    <neighbor as="45" ip="19" reflector-client="true"/>
                     <neighbor as="45" ip="18" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="37">
                 <rid>37</rid>
                 <neighbors>
-                    <neighbor as="45" ip="20" reflector-client="true"/>
+                    <neighbor as="45" ip="8" reflector-client="true"/>
                     <neighbor as="45" ip="23" reflector-client="true"/>
-                    <neighbor as="45" ip="6" reflector-client="true"/>
-                    <neighbor as="45" ip="24" reflector-client="true"/>
+                    <neighbor as="45" ip="10" reflector-client="true"/>
+                    <neighbor as="45" ip="21" reflector-client="true"/>
                     <neighbor as="45" ip="3" reflector-client="true"/>
-                    <neighbor as="45" ip="12" reflector-client="true"/>
                     <neighbor as="45" ip="13" reflector-client="true"/>
+                    <neighbor as="45" ip="46" reflector-client="true"/>
                     <neighbor as="45" ip="33" reflector-client="true"/>
                     <neighbor as="45" ip="32" reflector-client="true"/>
-                    <neighbor as="45" ip="45" reflector-client="true"/>
-                    <neighbor as="45" ip="44" reflector-client="true"/>
                     <neighbor as="45" ip="34" reflector-client="true"/>
-                    <neighbor as="45" ip="42" reflector-client="true"/>
                     <neighbor as="45" ip="31" reflector-client="true"/>
-                    <neighbor as="45" ip="40" reflector-client="true"/>
-                    <neighbor as="45" ip="38" reflector-client="true"/>
-                    <neighbor as="45" ip="47" reflector-client="true"/>
-                    <neighbor as="45" ip="0" reflector-client="true"/>
+                    <neighbor as="45" ip="49" reflector-client="true"/>
                     <neighbor as="45" ip="28" reflector-client="true"/>
-                    <neighbor as="45" ip="27" reflector-client="true"/>
+                    <neighbor as="45" ip="14" reflector-client="true"/>
                     <neighbor as="45" ip="25" reflector-client="true"/>
-                    <neighbor as="45" ip="19" reflector-client="true"/>
                     <neighbor as="45" ip="18" reflector-client="true"/>
                 </neighbors>
             </router>
-            <router id="38" reflector="true">
+            <router id="38">
                 <rid>38</rid>
                 <neighbors>
-                    <neighbor as="45" ip="20"/>
-                    <neighbor as="45" ip="23"/>
-                    <neighbor as="45" ip="6"/>
-                    <neighbor as="45" ip="24"/>
-                    <neighbor as="45" ip="3"/>
-                    <neighbor as="45" ip="12"/>
-                    <neighbor as="45" ip="13"/>
-                    <neighbor as="45" ip="33"/>
-                    <neighbor as="45" ip="32"/>
-                    <neighbor as="45" ip="45"/>
-                    <neighbor as="45" ip="44"/>
-                    <neighbor as="45" ip="34"/>
-                    <neighbor as="45" ip="42"/>
-                    <neighbor as="45" ip="31"/>
-                    <neighbor as="45" ip="40"/>
-                    <neighbor as="45" ip="47" reflector-client="false"/>
-                    <neighbor as="45" ip="0" reflector-client="false"/>
-                    <neighbor as="45" ip="28" reflector-client="false"/>
-                    <neighbor as="45" ip="27" reflector-client="false"/>
-                    <neighbor as="45" ip="25" reflector-client="false"/>
-                    <neighbor as="45" ip="19" reflector-client="false"/>
-                    <neighbor as="45" ip="18" reflector-client="false"/>
-                    <neighbor as="45" ip="21"/>
-                    <neighbor as="45" ip="22"/>
-                    <neighbor as="45" ip="26"/>
-                    <neighbor as="45" ip="29"/>
-                    <neighbor as="45" ip="10"/>
-                    <neighbor as="45" ip="11"/>
-                    <neighbor as="45" ip="15"/>
-                    <neighbor as="45" ip="14"/>
-                    <neighbor as="45" ip="17"/>
-                    <neighbor as="45" ip="16"/>
-                    <neighbor as="45" ip="46"/>
-                    <neighbor as="45" ip="43"/>
-                    <neighbor as="45" ip="41"/>
-                    <neighbor as="45" ip="49"/>
-                    <neighbor as="45" ip="48"/>
-                    <neighbor as="45" ip="2"/>
-                    <neighbor as="45" ip="1"/>
-                    <neighbor as="45" ip="9"/>
-                    <neighbor as="45" ip="7"/>
-                    <neighbor as="45" ip="8"/>
-                    <neighbor as="45" ip="5"/>
-                    <neighbor as="45" ip="4"/>
-                    <neighbor as="45" ip="35"/>
-                    <neighbor as="45" ip="30"/>
-                    <neighbor as="45" ip="36"/>
-                    <neighbor as="45" ip="37"/>
-                    <neighbor as="45" ip="39"/>
+                    <neighbor as="45" ip="8" reflector-client="true"/>
+                    <neighbor as="45" ip="23" reflector-client="true"/>
+                    <neighbor as="45" ip="10" reflector-client="true"/>
+                    <neighbor as="45" ip="21" reflector-client="true"/>
+                    <neighbor as="45" ip="3" reflector-client="true"/>
+                    <neighbor as="45" ip="13" reflector-client="true"/>
+                    <neighbor as="45" ip="46" reflector-client="true"/>
+                    <neighbor as="45" ip="33" reflector-client="true"/>
+                    <neighbor as="45" ip="32" reflector-client="true"/>
+                    <neighbor as="45" ip="34" reflector-client="true"/>
+                    <neighbor as="45" ip="31" reflector-client="true"/>
+                    <neighbor as="45" ip="49" reflector-client="true"/>
+                    <neighbor as="45" ip="28" reflector-client="true"/>
+                    <neighbor as="45" ip="14" reflector-client="true"/>
+                    <neighbor as="45" ip="25" reflector-client="true"/>
+                    <neighbor as="45" ip="18" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="39">
                 <rid>39</rid>
                 <neighbors>
-                    <neighbor as="45" ip="20" reflector-client="true"/>
+                    <neighbor as="45" ip="8" reflector-client="true"/>
                     <neighbor as="45" ip="23" reflector-client="true"/>
-                    <neighbor as="45" ip="6" reflector-client="true"/>
-                    <neighbor as="45" ip="24" reflector-client="true"/>
+                    <neighbor as="45" ip="10" reflector-client="true"/>
+                    <neighbor as="45" ip="21" reflector-client="true"/>
                     <neighbor as="45" ip="3" reflector-client="true"/>
-                    <neighbor as="45" ip="12" reflector-client="true"/>
                     <neighbor as="45" ip="13" reflector-client="true"/>
+                    <neighbor as="45" ip="46" reflector-client="true"/>
                     <neighbor as="45" ip="33" reflector-client="true"/>
                     <neighbor as="45" ip="32" reflector-client="true"/>
-                    <neighbor as="45" ip="45" reflector-client="true"/>
-                    <neighbor as="45" ip="44" reflector-client="true"/>
                     <neighbor as="45" ip="34" reflector-client="true"/>
-                    <neighbor as="45" ip="42" reflector-client="true"/>
                     <neighbor as="45" ip="31" reflector-client="true"/>
-                    <neighbor as="45" ip="40" reflector-client="true"/>
-                    <neighbor as="45" ip="38" reflector-client="true"/>
-                    <neighbor as="45" ip="47" reflector-client="true"/>
-                    <neighbor as="45" ip="0" reflector-client="true"/>
+                    <neighbor as="45" ip="49" reflector-client="true"/>
                     <neighbor as="45" ip="28" reflector-client="true"/>
-                    <neighbor as="45" ip="27" reflector-client="true"/>
+                    <neighbor as="45" ip="14" reflector-client="true"/>
                     <neighbor as="45" ip="25" reflector-client="true"/>
-                    <neighbor as="45" ip="19" reflector-client="true"/>
                     <neighbor as="45" ip="18" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="4">
                 <rid>4</rid>
                 <neighbors>
-                    <neighbor as="45" ip="20" reflector-client="true"/>
+                    <neighbor as="45" ip="8" reflector-client="true"/>
                     <neighbor as="45" ip="23" reflector-client="true"/>
-                    <neighbor as="45" ip="6" reflector-client="true"/>
-                    <neighbor as="45" ip="24" reflector-client="true"/>
+                    <neighbor as="45" ip="10" reflector-client="true"/>
+                    <neighbor as="45" ip="21" reflector-client="true"/>
                     <neighbor as="45" ip="3" reflector-client="true"/>
-                    <neighbor as="45" ip="12" reflector-client="true"/>
                     <neighbor as="45" ip="13" reflector-client="true"/>
+                    <neighbor as="45" ip="46" reflector-client="true"/>
                     <neighbor as="45" ip="33" reflector-client="true"/>
                     <neighbor as="45" ip="32" reflector-client="true"/>
-                    <neighbor as="45" ip="45" reflector-client="true"/>
-                    <neighbor as="45" ip="44" reflector-client="true"/>
                     <neighbor as="45" ip="34" reflector-client="true"/>
-                    <neighbor as="45" ip="42" reflector-client="true"/>
                     <neighbor as="45" ip="31" reflector-client="true"/>
-                    <neighbor as="45" ip="40" reflector-client="true"/>
-                    <neighbor as="45" ip="38" reflector-client="true"/>
-                    <neighbor as="45" ip="47" reflector-client="true"/>
-                    <neighbor as="45" ip="0" reflector-client="true"/>
+                    <neighbor as="45" ip="49" reflector-client="true"/>
                     <neighbor as="45" ip="28" reflector-client="true"/>
-                    <neighbor as="45" ip="27" reflector-client="true"/>
+                    <neighbor as="45" ip="14" reflector-client="true"/>
                     <neighbor as="45" ip="25" reflector-client="true"/>
-                    <neighbor as="45" ip="19" reflector-client="true"/>
                     <neighbor as="45" ip="18" reflector-client="true"/>
                 </neighbors>
             </router>
-            <router id="40" reflector="true">
+            <router id="40">
                 <rid>40</rid>
                 <neighbors>
-                    <neighbor as="45" ip="20"/>
-                    <neighbor as="45" ip="23"/>
-                    <neighbor as="45" ip="6"/>
-                    <neighbor as="45" ip="24"/>
-                    <neighbor as="45" ip="3"/>
-                    <neighbor as="45" ip="12"/>
-                    <neighbor as="45" ip="13"/>
-                    <neighbor as="45" ip="33"/>
-                    <neighbor as="45" ip="32"/>
-                    <neighbor as="45" ip="45"/>
-                    <neighbor as="45" ip="44"/>
-                    <neighbor as="45" ip="34"/>
-                    <neighbor as="45" ip="42"/>
-                    <neighbor as="45" ip="31"/>
-                    <neighbor as="45" ip="38" reflector-client="false"/>
-                    <neighbor as="45" ip="47" reflector-client="false"/>
-                    <neighbor as="45" ip="0" reflector-client="false"/>
-                    <neighbor as="45" ip="28" reflector-client="false"/>
-                    <neighbor as="45" ip="27" reflector-client="false"/>
-                    <neighbor as="45" ip="25" reflector-client="false"/>
-                    <neighbor as="45" ip="19" reflector-client="false"/>
-                    <neighbor as="45" ip="18" reflector-client="false"/>
-                    <neighbor as="45" ip="21"/>
-                    <neighbor as="45" ip="22"/>
-                    <neighbor as="45" ip="26"/>
-                    <neighbor as="45" ip="29"/>
-                    <neighbor as="45" ip="10"/>
-                    <neighbor as="45" ip="11"/>
-                    <neighbor as="45" ip="15"/>
-                    <neighbor as="45" ip="14"/>
-                    <neighbor as="45" ip="17"/>
-                    <neighbor as="45" ip="16"/>
-                    <neighbor as="45" ip="46"/>
-                    <neighbor as="45" ip="43"/>
-                    <neighbor as="45" ip="41"/>
-                    <neighbor as="45" ip="49"/>
-                    <neighbor as="45" ip="48"/>
-                    <neighbor as="45" ip="2"/>
-                    <neighbor as="45" ip="1"/>
-                    <neighbor as="45" ip="9"/>
-                    <neighbor as="45" ip="7"/>
-                    <neighbor as="45" ip="8"/>
-                    <neighbor as="45" ip="5"/>
-                    <neighbor as="45" ip="4"/>
-                    <neighbor as="45" ip="35"/>
-                    <neighbor as="45" ip="30"/>
-                    <neighbor as="45" ip="36"/>
-                    <neighbor as="45" ip="37"/>
-                    <neighbor as="45" ip="39"/>
+                    <neighbor as="45" ip="8" reflector-client="true"/>
+                    <neighbor as="45" ip="23" reflector-client="true"/>
+                    <neighbor as="45" ip="10" reflector-client="true"/>
+                    <neighbor as="45" ip="21" reflector-client="true"/>
+                    <neighbor as="45" ip="3" reflector-client="true"/>
+                    <neighbor as="45" ip="13" reflector-client="true"/>
+                    <neighbor as="45" ip="46" reflector-client="true"/>
+                    <neighbor as="45" ip="33" reflector-client="true"/>
+                    <neighbor as="45" ip="32" reflector-client="true"/>
+                    <neighbor as="45" ip="34" reflector-client="true"/>
+                    <neighbor as="45" ip="31" reflector-client="true"/>
+                    <neighbor as="45" ip="49" reflector-client="true"/>
+                    <neighbor as="45" ip="28" reflector-client="true"/>
+                    <neighbor as="45" ip="14" reflector-client="true"/>
+                    <neighbor as="45" ip="25" reflector-client="true"/>
+                    <neighbor as="45" ip="18" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="41">
                 <rid>41</rid>
                 <neighbors>
-                    <neighbor as="45" ip="20" reflector-client="true"/>
+                    <neighbor as="45" ip="8" reflector-client="true"/>
                     <neighbor as="45" ip="23" reflector-client="true"/>
-                    <neighbor as="45" ip="6" reflector-client="true"/>
-                    <neighbor as="45" ip="24" reflector-client="true"/>
+                    <neighbor as="45" ip="10" reflector-client="true"/>
+                    <neighbor as="45" ip="21" reflector-client="true"/>
                     <neighbor as="45" ip="3" reflector-client="true"/>
-                    <neighbor as="45" ip="12" reflector-client="true"/>
                     <neighbor as="45" ip="13" reflector-client="true"/>
+                    <neighbor as="45" ip="46" reflector-client="true"/>
                     <neighbor as="45" ip="33" reflector-client="true"/>
                     <neighbor as="45" ip="32" reflector-client="true"/>
-                    <neighbor as="45" ip="45" reflector-client="true"/>
-                    <neighbor as="45" ip="44" reflector-client="true"/>
                     <neighbor as="45" ip="34" reflector-client="true"/>
-                    <neighbor as="45" ip="42" reflector-client="true"/>
                     <neighbor as="45" ip="31" reflector-client="true"/>
-                    <neighbor as="45" ip="40" reflector-client="true"/>
-                    <neighbor as="45" ip="38" reflector-client="true"/>
-                    <neighbor as="45" ip="47" reflector-client="true"/>
-                    <neighbor as="45" ip="0" reflector-client="true"/>
+                    <neighbor as="45" ip="49" reflector-client="true"/>
                     <neighbor as="45" ip="28" reflector-client="true"/>
-                    <neighbor as="45" ip="27" reflector-client="true"/>
+                    <neighbor as="45" ip="14" reflector-client="true"/>
                     <neighbor as="45" ip="25" reflector-client="true"/>
-                    <neighbor as="45" ip="19" reflector-client="true"/>
                     <neighbor as="45" ip="18" reflector-client="true"/>
                 </neighbors>
             </router>
-            <router id="42" reflector="true">
+            <router id="42">
                 <rid>42</rid>
                 <neighbors>
-                    <neighbor as="45" ip="20"/>
-                    <neighbor as="45" ip="23"/>
-                    <neighbor as="45" ip="6"/>
-                    <neighbor as="45" ip="24"/>
-                    <neighbor as="45" ip="3"/>
-                    <neighbor as="45" ip="12"/>
-                    <neighbor as="45" ip="13"/>
-                    <neighbor as="45" ip="33"/>
-                    <neighbor as="45" ip="32"/>
-                    <neighbor as="45" ip="45"/>
-                    <neighbor as="45" ip="44"/>
-                    <neighbor as="45" ip="34"/>
-                    <neighbor as="45" ip="31" reflector-client="false"/>
-                    <neighbor as="45" ip="40" reflector-client="false"/>
-                    <neighbor as="45" ip="38" reflector-client="false"/>
-                    <neighbor as="45" ip="47" reflector-client="false"/>
-                    <neighbor as="45" ip="0" reflector-client="false"/>
-                    <neighbor as="45" ip="28" reflector-client="false"/>
-                    <neighbor as="45" ip="27" reflector-client="false"/>
-                    <neighbor as="45" ip="25" reflector-client="false"/>
-                    <neighbor as="45" ip="19" reflector-client="false"/>
-                    <neighbor as="45" ip="18" reflector-client="false"/>
-                    <neighbor as="45" ip="21"/>
-                    <neighbor as="45" ip="22"/>
-                    <neighbor as="45" ip="26"/>
-                    <neighbor as="45" ip="29"/>
-                    <neighbor as="45" ip="10"/>
-                    <neighbor as="45" ip="11"/>
-                    <neighbor as="45" ip="15"/>
-                    <neighbor as="45" ip="14"/>
-                    <neighbor as="45" ip="17"/>
-                    <neighbor as="45" ip="16"/>
-                    <neighbor as="45" ip="46"/>
-                    <neighbor as="45" ip="43"/>
-                    <neighbor as="45" ip="41"/>
-                    <neighbor as="45" ip="49"/>
-                    <neighbor as="45" ip="48"/>
-                    <neighbor as="45" ip="2"/>
-                    <neighbor as="45" ip="1"/>
-                    <neighbor as="45" ip="9"/>
-                    <neighbor as="45" ip="7"/>
-                    <neighbor as="45" ip="8"/>
-                    <neighbor as="45" ip="5"/>
-                    <neighbor as="45" ip="4"/>
-                    <neighbor as="45" ip="35"/>
-                    <neighbor as="45" ip="30"/>
-                    <neighbor as="45" ip="36"/>
-                    <neighbor as="45" ip="37"/>
-                    <neighbor as="45" ip="39"/>
+                    <neighbor as="45" ip="8" reflector-client="true"/>
+                    <neighbor as="45" ip="23" reflector-client="true"/>
+                    <neighbor as="45" ip="10" reflector-client="true"/>
+                    <neighbor as="45" ip="21" reflector-client="true"/>
+                    <neighbor as="45" ip="3" reflector-client="true"/>
+                    <neighbor as="45" ip="13" reflector-client="true"/>
+                    <neighbor as="45" ip="46" reflector-client="true"/>
+                    <neighbor as="45" ip="33" reflector-client="true"/>
+                    <neighbor as="45" ip="32" reflector-client="true"/>
+                    <neighbor as="45" ip="34" reflector-client="true"/>
+                    <neighbor as="45" ip="31" reflector-client="true"/>
+                    <neighbor as="45" ip="49" reflector-client="true"/>
+                    <neighbor as="45" ip="28" reflector-client="true"/>
+                    <neighbor as="45" ip="14" reflector-client="true"/>
+                    <neighbor as="45" ip="25" reflector-client="true"/>
+                    <neighbor as="45" ip="18" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="43">
                 <rid>43</rid>
                 <neighbors>
-                    <neighbor as="45" ip="20" reflector-client="true"/>
+                    <neighbor as="45" ip="8" reflector-client="true"/>
                     <neighbor as="45" ip="23" reflector-client="true"/>
-                    <neighbor as="45" ip="6" reflector-client="true"/>
-                    <neighbor as="45" ip="24" reflector-client="true"/>
+                    <neighbor as="45" ip="10" reflector-client="true"/>
+                    <neighbor as="45" ip="21" reflector-client="true"/>
                     <neighbor as="45" ip="3" reflector-client="true"/>
-                    <neighbor as="45" ip="12" reflector-client="true"/>
                     <neighbor as="45" ip="13" reflector-client="true"/>
+                    <neighbor as="45" ip="46" reflector-client="true"/>
                     <neighbor as="45" ip="33" reflector-client="true"/>
                     <neighbor as="45" ip="32" reflector-client="true"/>
-                    <neighbor as="45" ip="45" reflector-client="true"/>
-                    <neighbor as="45" ip="44" reflector-client="true"/>
                     <neighbor as="45" ip="34" reflector-client="true"/>
-                    <neighbor as="45" ip="42" reflector-client="true"/>
                     <neighbor as="45" ip="31" reflector-client="true"/>
-                    <neighbor as="45" ip="40" reflector-client="true"/>
-                    <neighbor as="45" ip="38" reflector-client="true"/>
-                    <neighbor as="45" ip="47" reflector-client="true"/>
-                    <neighbor as="45" ip="0" reflector-client="true"/>
+                    <neighbor as="45" ip="49" reflector-client="true"/>
                     <neighbor as="45" ip="28" reflector-client="true"/>
-                    <neighbor as="45" ip="27" reflector-client="true"/>
+                    <neighbor as="45" ip="14" reflector-client="true"/>
                     <neighbor as="45" ip="25" reflector-client="true"/>
-                    <neighbor as="45" ip="19" reflector-client="true"/>
                     <neighbor as="45" ip="18" reflector-client="true"/>
                 </neighbors>
             </router>
-            <router id="44" reflector="true">
+            <router id="44">
                 <rid>44</rid>
                 <neighbors>
-                    <neighbor as="45" ip="20"/>
-                    <neighbor as="45" ip="23"/>
-                    <neighbor as="45" ip="6"/>
-                    <neighbor as="45" ip="24"/>
-                    <neighbor as="45" ip="3"/>
-                    <neighbor as="45" ip="12"/>
-                    <neighbor as="45" ip="13"/>
-                    <neighbor as="45" ip="33"/>
-                    <neighbor as="45" ip="32"/>
-                    <neighbor as="45" ip="45"/>
-                    <neighbor as="45" ip="34" reflector-client="false"/>
-                    <neighbor as="45" ip="42" reflector-client="false"/>
-                    <neighbor as="45" ip="31" reflector-client="false"/>
-                    <neighbor as="45" ip="40" reflector-client="false"/>
-                    <neighbor as="45" ip="38" reflector-client="false"/>
-                    <neighbor as="45" ip="47" reflector-client="false"/>
-                    <neighbor as="45" ip="0" reflector-client="false"/>
-                    <neighbor as="45" ip="28" reflector-client="false"/>
-                    <neighbor as="45" ip="27" reflector-client="false"/>
-                    <neighbor as="45" ip="25" reflector-client="false"/>
-                    <neighbor as="45" ip="19" reflector-client="false"/>
-                    <neighbor as="45" ip="18" reflector-client="false"/>
-                    <neighbor as="45" ip="21"/>
-                    <neighbor as="45" ip="22"/>
-                    <neighbor as="45" ip="26"/>
-                    <neighbor as="45" ip="29"/>
-                    <neighbor as="45" ip="10"/>
-                    <neighbor as="45" ip="11"/>
-                    <neighbor as="45" ip="15"/>
-                    <neighbor as="45" ip="14"/>
-                    <neighbor as="45" ip="17"/>
-                    <neighbor as="45" ip="16"/>
-                    <neighbor as="45" ip="46"/>
-                    <neighbor as="45" ip="43"/>
-                    <neighbor as="45" ip="41"/>
-                    <neighbor as="45" ip="49"/>
-                    <neighbor as="45" ip="48"/>
-                    <neighbor as="45" ip="2"/>
-                    <neighbor as="45" ip="1"/>
-                    <neighbor as="45" ip="9"/>
-                    <neighbor as="45" ip="7"/>
-                    <neighbor as="45" ip="8"/>
-                    <neighbor as="45" ip="5"/>
-                    <neighbor as="45" ip="4"/>
-                    <neighbor as="45" ip="35"/>
-                    <neighbor as="45" ip="30"/>
-                    <neighbor as="45" ip="36"/>
-                    <neighbor as="45" ip="37"/>
-                    <neighbor as="45" ip="39"/>
-                </neighbors>
-            </router>
-            <router id="45" reflector="true">
-                <rid>45</rid>
-                <neighbors>
-                    <neighbor as="45" ip="20"/>
-                    <neighbor as="45" ip="23"/>
-                    <neighbor as="45" ip="6"/>
-                    <neighbor as="45" ip="24"/>
-                    <neighbor as="45" ip="3"/>
-                    <neighbor as="45" ip="12"/>
-                    <neighbor as="45" ip="13"/>
-                    <neighbor as="45" ip="33"/>
-                    <neighbor as="45" ip="32"/>
-                    <neighbor as="45" ip="44" reflector-client="false"/>
-                    <neighbor as="45" ip="34" reflector-client="false"/>
-                    <neighbor as="45" ip="42" reflector-client="false"/>
-                    <neighbor as="45" ip="31" reflector-client="false"/>
-                    <neighbor as="45" ip="40" reflector-client="false"/>
-                    <neighbor as="45" ip="38" reflector-client="false"/>
-                    <neighbor as="45" ip="47" reflector-client="false"/>
-                    <neighbor as="45" ip="0" reflector-client="false"/>
-                    <neighbor as="45" ip="28" reflector-client="false"/>
-                    <neighbor as="45" ip="27" reflector-client="false"/>
-                    <neighbor as="45" ip="25" reflector-client="false"/>
-                    <neighbor as="45" ip="19" reflector-client="false"/>
-                    <neighbor as="45" ip="18" reflector-client="false"/>
-                    <neighbor as="45" ip="21"/>
-                    <neighbor as="45" ip="22"/>
-                    <neighbor as="45" ip="26"/>
-                    <neighbor as="45" ip="29"/>
-                    <neighbor as="45" ip="10"/>
-                    <neighbor as="45" ip="11"/>
-                    <neighbor as="45" ip="15"/>
-                    <neighbor as="45" ip="14"/>
-                    <neighbor as="45" ip="17"/>
-                    <neighbor as="45" ip="16"/>
-                    <neighbor as="45" ip="46"/>
-                    <neighbor as="45" ip="43"/>
-                    <neighbor as="45" ip="41"/>
-                    <neighbor as="45" ip="49"/>
-                    <neighbor as="45" ip="48"/>
-                    <neighbor as="45" ip="2"/>
-                    <neighbor as="45" ip="1"/>
-                    <neighbor as="45" ip="9"/>
-                    <neighbor as="45" ip="7"/>
-                    <neighbor as="45" ip="8"/>
-                    <neighbor as="45" ip="5"/>
-                    <neighbor as="45" ip="4"/>
-                    <neighbor as="45" ip="35"/>
-                    <neighbor as="45" ip="30"/>
-                    <neighbor as="45" ip="36"/>
-                    <neighbor as="45" ip="37"/>
-                    <neighbor as="45" ip="39"/>
-                </neighbors>
-            </router>
-            <router id="46">
-                <rid>46</rid>
-                <neighbors>
-                    <neighbor as="45" ip="20" reflector-client="true"/>
+                    <neighbor as="45" ip="8" reflector-client="true"/>
                     <neighbor as="45" ip="23" reflector-client="true"/>
-                    <neighbor as="45" ip="6" reflector-client="true"/>
-                    <neighbor as="45" ip="24" reflector-client="true"/>
+                    <neighbor as="45" ip="10" reflector-client="true"/>
+                    <neighbor as="45" ip="21" reflector-client="true"/>
                     <neighbor as="45" ip="3" reflector-client="true"/>
-                    <neighbor as="45" ip="12" reflector-client="true"/>
                     <neighbor as="45" ip="13" reflector-client="true"/>
+                    <neighbor as="45" ip="46" reflector-client="true"/>
                     <neighbor as="45" ip="33" reflector-client="true"/>
                     <neighbor as="45" ip="32" reflector-client="true"/>
-                    <neighbor as="45" ip="45" reflector-client="true"/>
-                    <neighbor as="45" ip="44" reflector-client="true"/>
                     <neighbor as="45" ip="34" reflector-client="true"/>
-                    <neighbor as="45" ip="42" reflector-client="true"/>
                     <neighbor as="45" ip="31" reflector-client="true"/>
-                    <neighbor as="45" ip="40" reflector-client="true"/>
-                    <neighbor as="45" ip="38" reflector-client="true"/>
-                    <neighbor as="45" ip="47" reflector-client="true"/>
-                    <neighbor as="45" ip="0" reflector-client="true"/>
+                    <neighbor as="45" ip="49" reflector-client="true"/>
                     <neighbor as="45" ip="28" reflector-client="true"/>
-                    <neighbor as="45" ip="27" reflector-client="true"/>
+                    <neighbor as="45" ip="14" reflector-client="true"/>
                     <neighbor as="45" ip="25" reflector-client="true"/>
-                    <neighbor as="45" ip="19" reflector-client="true"/>
                     <neighbor as="45" ip="18" reflector-client="true"/>
                 </neighbors>
             </router>
-            <router id="47" reflector="true">
-                <rid>47</rid>
+            <router id="45">
+                <rid>45</rid>
                 <neighbors>
-                    <neighbor as="45" ip="20"/>
+                    <neighbor as="45" ip="8" reflector-client="true"/>
+                    <neighbor as="45" ip="23" reflector-client="true"/>
+                    <neighbor as="45" ip="10" reflector-client="true"/>
+                    <neighbor as="45" ip="21" reflector-client="true"/>
+                    <neighbor as="45" ip="3" reflector-client="true"/>
+                    <neighbor as="45" ip="13" reflector-client="true"/>
+                    <neighbor as="45" ip="46" reflector-client="true"/>
+                    <neighbor as="45" ip="33" reflector-client="true"/>
+                    <neighbor as="45" ip="32" reflector-client="true"/>
+                    <neighbor as="45" ip="34" reflector-client="true"/>
+                    <neighbor as="45" ip="31" reflector-client="true"/>
+                    <neighbor as="45" ip="49" reflector-client="true"/>
+                    <neighbor as="45" ip="28" reflector-client="true"/>
+                    <neighbor as="45" ip="14" reflector-client="true"/>
+                    <neighbor as="45" ip="25" reflector-client="true"/>
+                    <neighbor as="45" ip="18" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="46" reflector="true">
+                <rid>46</rid>
+                <neighbors>
+                    <neighbor as="45" ip="8"/>
                     <neighbor as="45" ip="23"/>
-                    <neighbor as="45" ip="6"/>
-                    <neighbor as="45" ip="24"/>
-                    <neighbor as="45" ip="3"/>
-                    <neighbor as="45" ip="12"/>
-                    <neighbor as="45" ip="13"/>
-                    <neighbor as="45" ip="33"/>
-                    <neighbor as="45" ip="32"/>
-                    <neighbor as="45" ip="45"/>
-                    <neighbor as="45" ip="44"/>
-                    <neighbor as="45" ip="34"/>
-                    <neighbor as="45" ip="42"/>
-                    <neighbor as="45" ip="31"/>
-                    <neighbor as="45" ip="40"/>
-                    <neighbor as="45" ip="38"/>
-                    <neighbor as="45" ip="0" reflector-client="false"/>
-                    <neighbor as="45" ip="28" reflector-client="false"/>
-                    <neighbor as="45" ip="27" reflector-client="false"/>
-                    <neighbor as="45" ip="25" reflector-client="false"/>
-                    <neighbor as="45" ip="19" reflector-client="false"/>
-                    <neighbor as="45" ip="18" reflector-client="false"/>
+                    <neighbor as="45" ip="10"/>
                     <neighbor as="45" ip="21"/>
+                    <neighbor as="45" ip="3"/>
+                    <neighbor as="45" ip="13"/>
+                    <neighbor as="45" ip="33" reflector-client="false"/>
+                    <neighbor as="45" ip="32" reflector-client="false"/>
+                    <neighbor as="45" ip="34" reflector-client="false"/>
+                    <neighbor as="45" ip="31" reflector-client="false"/>
+                    <neighbor as="45" ip="49" reflector-client="false"/>
+                    <neighbor as="45" ip="28" reflector-client="false"/>
+                    <neighbor as="45" ip="14" reflector-client="false"/>
+                    <neighbor as="45" ip="25" reflector-client="false"/>
+                    <neighbor as="45" ip="18" reflector-client="false"/>
+                    <neighbor as="45" ip="20"/>
+                    <neighbor as="45" ip="24"/>
                     <neighbor as="45" ip="22"/>
+                    <neighbor as="45" ip="27"/>
                     <neighbor as="45" ip="26"/>
                     <neighbor as="45" ip="29"/>
-                    <neighbor as="45" ip="10"/>
                     <neighbor as="45" ip="11"/>
+                    <neighbor as="45" ip="12"/>
                     <neighbor as="45" ip="15"/>
-                    <neighbor as="45" ip="14"/>
                     <neighbor as="45" ip="17"/>
                     <neighbor as="45" ip="16"/>
-                    <neighbor as="45" ip="46"/>
+                    <neighbor as="45" ip="19"/>
+                    <neighbor as="45" ip="45"/>
+                    <neighbor as="45" ip="44"/>
                     <neighbor as="45" ip="43"/>
+                    <neighbor as="45" ip="42"/>
                     <neighbor as="45" ip="41"/>
-                    <neighbor as="45" ip="49"/>
+                    <neighbor as="45" ip="40"/>
+                    <neighbor as="45" ip="47"/>
                     <neighbor as="45" ip="48"/>
+                    <neighbor as="45" ip="0"/>
                     <neighbor as="45" ip="2"/>
                     <neighbor as="45" ip="1"/>
                     <neighbor as="45" ip="9"/>
                     <neighbor as="45" ip="7"/>
-                    <neighbor as="45" ip="8"/>
                     <neighbor as="45" ip="5"/>
+                    <neighbor as="45" ip="6"/>
                     <neighbor as="45" ip="4"/>
                     <neighbor as="45" ip="35"/>
                     <neighbor as="45" ip="30"/>
                     <neighbor as="45" ip="36"/>
                     <neighbor as="45" ip="37"/>
+                    <neighbor as="45" ip="38"/>
                     <neighbor as="45" ip="39"/>
+                </neighbors>
+            </router>
+            <router id="47">
+                <rid>47</rid>
+                <neighbors>
+                    <neighbor as="45" ip="8" reflector-client="true"/>
+                    <neighbor as="45" ip="23" reflector-client="true"/>
+                    <neighbor as="45" ip="10" reflector-client="true"/>
+                    <neighbor as="45" ip="21" reflector-client="true"/>
+                    <neighbor as="45" ip="3" reflector-client="true"/>
+                    <neighbor as="45" ip="13" reflector-client="true"/>
+                    <neighbor as="45" ip="46" reflector-client="true"/>
+                    <neighbor as="45" ip="33" reflector-client="true"/>
+                    <neighbor as="45" ip="32" reflector-client="true"/>
+                    <neighbor as="45" ip="34" reflector-client="true"/>
+                    <neighbor as="45" ip="31" reflector-client="true"/>
+                    <neighbor as="45" ip="49" reflector-client="true"/>
+                    <neighbor as="45" ip="28" reflector-client="true"/>
+                    <neighbor as="45" ip="14" reflector-client="true"/>
+                    <neighbor as="45" ip="25" reflector-client="true"/>
+                    <neighbor as="45" ip="18" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="48">
                 <rid>48</rid>
                 <neighbors>
-                    <neighbor as="45" ip="20" reflector-client="true"/>
+                    <neighbor as="45" ip="8" reflector-client="true"/>
                     <neighbor as="45" ip="23" reflector-client="true"/>
-                    <neighbor as="45" ip="6" reflector-client="true"/>
-                    <neighbor as="45" ip="24" reflector-client="true"/>
+                    <neighbor as="45" ip="10" reflector-client="true"/>
+                    <neighbor as="45" ip="21" reflector-client="true"/>
                     <neighbor as="45" ip="3" reflector-client="true"/>
-                    <neighbor as="45" ip="12" reflector-client="true"/>
                     <neighbor as="45" ip="13" reflector-client="true"/>
+                    <neighbor as="45" ip="46" reflector-client="true"/>
                     <neighbor as="45" ip="33" reflector-client="true"/>
                     <neighbor as="45" ip="32" reflector-client="true"/>
-                    <neighbor as="45" ip="45" reflector-client="true"/>
-                    <neighbor as="45" ip="44" reflector-client="true"/>
                     <neighbor as="45" ip="34" reflector-client="true"/>
-                    <neighbor as="45" ip="42" reflector-client="true"/>
                     <neighbor as="45" ip="31" reflector-client="true"/>
-                    <neighbor as="45" ip="40" reflector-client="true"/>
-                    <neighbor as="45" ip="38" reflector-client="true"/>
-                    <neighbor as="45" ip="47" reflector-client="true"/>
-                    <neighbor as="45" ip="0" reflector-client="true"/>
+                    <neighbor as="45" ip="49" reflector-client="true"/>
                     <neighbor as="45" ip="28" reflector-client="true"/>
-                    <neighbor as="45" ip="27" reflector-client="true"/>
+                    <neighbor as="45" ip="14" reflector-client="true"/>
                     <neighbor as="45" ip="25" reflector-client="true"/>
-                    <neighbor as="45" ip="19" reflector-client="true"/>
                     <neighbor as="45" ip="18" reflector-client="true"/>
                 </neighbors>
             </router>
-            <router id="49">
+            <router id="49" reflector="true">
                 <rid>49</rid>
                 <neighbors>
-                    <neighbor as="45" ip="20" reflector-client="true"/>
-                    <neighbor as="45" ip="23" reflector-client="true"/>
-                    <neighbor as="45" ip="6" reflector-client="true"/>
-                    <neighbor as="45" ip="24" reflector-client="true"/>
-                    <neighbor as="45" ip="3" reflector-client="true"/>
-                    <neighbor as="45" ip="12" reflector-client="true"/>
-                    <neighbor as="45" ip="13" reflector-client="true"/>
-                    <neighbor as="45" ip="33" reflector-client="true"/>
-                    <neighbor as="45" ip="32" reflector-client="true"/>
-                    <neighbor as="45" ip="45" reflector-client="true"/>
-                    <neighbor as="45" ip="44" reflector-client="true"/>
-                    <neighbor as="45" ip="34" reflector-client="true"/>
-                    <neighbor as="45" ip="42" reflector-client="true"/>
-                    <neighbor as="45" ip="31" reflector-client="true"/>
-                    <neighbor as="45" ip="40" reflector-client="true"/>
-                    <neighbor as="45" ip="38" reflector-client="true"/>
-                    <neighbor as="45" ip="47" reflector-client="true"/>
-                    <neighbor as="45" ip="0" reflector-client="true"/>
-                    <neighbor as="45" ip="28" reflector-client="true"/>
-                    <neighbor as="45" ip="27" reflector-client="true"/>
-                    <neighbor as="45" ip="25" reflector-client="true"/>
-                    <neighbor as="45" ip="19" reflector-client="true"/>
-                    <neighbor as="45" ip="18" reflector-client="true"/>
-                </neighbors>
-            </router>
-            <router id="5">
-                <rid>5</rid>
-                <neighbors>
-                    <neighbor as="45" ip="20" reflector-client="true"/>
-                    <neighbor as="45" ip="23" reflector-client="true"/>
-                    <neighbor as="45" ip="6" reflector-client="true"/>
-                    <neighbor as="45" ip="24" reflector-client="true"/>
-                    <neighbor as="45" ip="3" reflector-client="true"/>
-                    <neighbor as="45" ip="12" reflector-client="true"/>
-                    <neighbor as="45" ip="13" reflector-client="true"/>
-                    <neighbor as="45" ip="33" reflector-client="true"/>
-                    <neighbor as="45" ip="32" reflector-client="true"/>
-                    <neighbor as="45" ip="45" reflector-client="true"/>
-                    <neighbor as="45" ip="44" reflector-client="true"/>
-                    <neighbor as="45" ip="34" reflector-client="true"/>
-                    <neighbor as="45" ip="42" reflector-client="true"/>
-                    <neighbor as="45" ip="31" reflector-client="true"/>
-                    <neighbor as="45" ip="40" reflector-client="true"/>
-                    <neighbor as="45" ip="38" reflector-client="true"/>
-                    <neighbor as="45" ip="47" reflector-client="true"/>
-                    <neighbor as="45" ip="0" reflector-client="true"/>
-                    <neighbor as="45" ip="28" reflector-client="true"/>
-                    <neighbor as="45" ip="27" reflector-client="true"/>
-                    <neighbor as="45" ip="25" reflector-client="true"/>
-                    <neighbor as="45" ip="19" reflector-client="true"/>
-                    <neighbor as="45" ip="18" reflector-client="true"/>
-                </neighbors>
-            </router>
-            <router id="6" reflector="true">
-                <rid>6</rid>
-                <neighbors>
-                    <neighbor as="45" ip="20"/>
+                    <neighbor as="45" ip="8"/>
                     <neighbor as="45" ip="23"/>
-                    <neighbor as="45" ip="24" reflector-client="false"/>
-                    <neighbor as="45" ip="3" reflector-client="false"/>
-                    <neighbor as="45" ip="12" reflector-client="false"/>
-                    <neighbor as="45" ip="13" reflector-client="false"/>
-                    <neighbor as="45" ip="33" reflector-client="false"/>
-                    <neighbor as="45" ip="32" reflector-client="false"/>
-                    <neighbor as="45" ip="45" reflector-client="false"/>
-                    <neighbor as="45" ip="44" reflector-client="false"/>
-                    <neighbor as="45" ip="34" reflector-client="false"/>
-                    <neighbor as="45" ip="42" reflector-client="false"/>
-                    <neighbor as="45" ip="31" reflector-client="false"/>
-                    <neighbor as="45" ip="40" reflector-client="false"/>
-                    <neighbor as="45" ip="38" reflector-client="false"/>
-                    <neighbor as="45" ip="47" reflector-client="false"/>
-                    <neighbor as="45" ip="0" reflector-client="false"/>
-                    <neighbor as="45" ip="28" reflector-client="false"/>
-                    <neighbor as="45" ip="27" reflector-client="false"/>
-                    <neighbor as="45" ip="25" reflector-client="false"/>
-                    <neighbor as="45" ip="19" reflector-client="false"/>
-                    <neighbor as="45" ip="18" reflector-client="false"/>
+                    <neighbor as="45" ip="10"/>
                     <neighbor as="45" ip="21"/>
+                    <neighbor as="45" ip="3"/>
+                    <neighbor as="45" ip="13"/>
+                    <neighbor as="45" ip="46"/>
+                    <neighbor as="45" ip="33"/>
+                    <neighbor as="45" ip="32"/>
+                    <neighbor as="45" ip="34"/>
+                    <neighbor as="45" ip="31"/>
+                    <neighbor as="45" ip="28" reflector-client="false"/>
+                    <neighbor as="45" ip="14" reflector-client="false"/>
+                    <neighbor as="45" ip="25" reflector-client="false"/>
+                    <neighbor as="45" ip="18" reflector-client="false"/>
+                    <neighbor as="45" ip="20"/>
+                    <neighbor as="45" ip="24"/>
                     <neighbor as="45" ip="22"/>
+                    <neighbor as="45" ip="27"/>
                     <neighbor as="45" ip="26"/>
                     <neighbor as="45" ip="29"/>
-                    <neighbor as="45" ip="10"/>
                     <neighbor as="45" ip="11"/>
+                    <neighbor as="45" ip="12"/>
                     <neighbor as="45" ip="15"/>
-                    <neighbor as="45" ip="14"/>
                     <neighbor as="45" ip="17"/>
                     <neighbor as="45" ip="16"/>
-                    <neighbor as="45" ip="46"/>
+                    <neighbor as="45" ip="19"/>
+                    <neighbor as="45" ip="45"/>
+                    <neighbor as="45" ip="44"/>
                     <neighbor as="45" ip="43"/>
+                    <neighbor as="45" ip="42"/>
                     <neighbor as="45" ip="41"/>
-                    <neighbor as="45" ip="49"/>
+                    <neighbor as="45" ip="40"/>
+                    <neighbor as="45" ip="47"/>
                     <neighbor as="45" ip="48"/>
+                    <neighbor as="45" ip="0"/>
                     <neighbor as="45" ip="2"/>
                     <neighbor as="45" ip="1"/>
                     <neighbor as="45" ip="9"/>
                     <neighbor as="45" ip="7"/>
-                    <neighbor as="45" ip="8"/>
                     <neighbor as="45" ip="5"/>
+                    <neighbor as="45" ip="6"/>
                     <neighbor as="45" ip="4"/>
                     <neighbor as="45" ip="35"/>
                     <neighbor as="45" ip="30"/>
                     <neighbor as="45" ip="36"/>
                     <neighbor as="45" ip="37"/>
+                    <neighbor as="45" ip="38"/>
                     <neighbor as="45" ip="39"/>
+                </neighbors>
+            </router>
+            <router id="5">
+                <rid>5</rid>
+                <neighbors>
+                    <neighbor as="45" ip="8" reflector-client="true"/>
+                    <neighbor as="45" ip="23" reflector-client="true"/>
+                    <neighbor as="45" ip="10" reflector-client="true"/>
+                    <neighbor as="45" ip="21" reflector-client="true"/>
+                    <neighbor as="45" ip="3" reflector-client="true"/>
+                    <neighbor as="45" ip="13" reflector-client="true"/>
+                    <neighbor as="45" ip="46" reflector-client="true"/>
+                    <neighbor as="45" ip="33" reflector-client="true"/>
+                    <neighbor as="45" ip="32" reflector-client="true"/>
+                    <neighbor as="45" ip="34" reflector-client="true"/>
+                    <neighbor as="45" ip="31" reflector-client="true"/>
+                    <neighbor as="45" ip="49" reflector-client="true"/>
+                    <neighbor as="45" ip="28" reflector-client="true"/>
+                    <neighbor as="45" ip="14" reflector-client="true"/>
+                    <neighbor as="45" ip="25" reflector-client="true"/>
+                    <neighbor as="45" ip="18" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="6">
+                <rid>6</rid>
+                <neighbors>
+                    <neighbor as="45" ip="8" reflector-client="true"/>
+                    <neighbor as="45" ip="23" reflector-client="true"/>
+                    <neighbor as="45" ip="10" reflector-client="true"/>
+                    <neighbor as="45" ip="21" reflector-client="true"/>
+                    <neighbor as="45" ip="3" reflector-client="true"/>
+                    <neighbor as="45" ip="13" reflector-client="true"/>
+                    <neighbor as="45" ip="46" reflector-client="true"/>
+                    <neighbor as="45" ip="33" reflector-client="true"/>
+                    <neighbor as="45" ip="32" reflector-client="true"/>
+                    <neighbor as="45" ip="34" reflector-client="true"/>
+                    <neighbor as="45" ip="31" reflector-client="true"/>
+                    <neighbor as="45" ip="49" reflector-client="true"/>
+                    <neighbor as="45" ip="28" reflector-client="true"/>
+                    <neighbor as="45" ip="14" reflector-client="true"/>
+                    <neighbor as="45" ip="25" reflector-client="true"/>
+                    <neighbor as="45" ip="18" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="7">
                 <rid>7</rid>
                 <neighbors>
-                    <neighbor as="45" ip="20" reflector-client="true"/>
+                    <neighbor as="45" ip="8" reflector-client="true"/>
                     <neighbor as="45" ip="23" reflector-client="true"/>
-                    <neighbor as="45" ip="6" reflector-client="true"/>
-                    <neighbor as="45" ip="24" reflector-client="true"/>
+                    <neighbor as="45" ip="10" reflector-client="true"/>
+                    <neighbor as="45" ip="21" reflector-client="true"/>
                     <neighbor as="45" ip="3" reflector-client="true"/>
-                    <neighbor as="45" ip="12" reflector-client="true"/>
                     <neighbor as="45" ip="13" reflector-client="true"/>
+                    <neighbor as="45" ip="46" reflector-client="true"/>
                     <neighbor as="45" ip="33" reflector-client="true"/>
                     <neighbor as="45" ip="32" reflector-client="true"/>
-                    <neighbor as="45" ip="45" reflector-client="true"/>
-                    <neighbor as="45" ip="44" reflector-client="true"/>
                     <neighbor as="45" ip="34" reflector-client="true"/>
-                    <neighbor as="45" ip="42" reflector-client="true"/>
                     <neighbor as="45" ip="31" reflector-client="true"/>
-                    <neighbor as="45" ip="40" reflector-client="true"/>
-                    <neighbor as="45" ip="38" reflector-client="true"/>
-                    <neighbor as="45" ip="47" reflector-client="true"/>
-                    <neighbor as="45" ip="0" reflector-client="true"/>
+                    <neighbor as="45" ip="49" reflector-client="true"/>
                     <neighbor as="45" ip="28" reflector-client="true"/>
-                    <neighbor as="45" ip="27" reflector-client="true"/>
+                    <neighbor as="45" ip="14" reflector-client="true"/>
                     <neighbor as="45" ip="25" reflector-client="true"/>
-                    <neighbor as="45" ip="19" reflector-client="true"/>
                     <neighbor as="45" ip="18" reflector-client="true"/>
                 </neighbors>
             </router>
-            <router id="8">
+            <router id="8" reflector="true">
                 <rid>8</rid>
                 <neighbors>
-                    <neighbor as="45" ip="20" reflector-client="true"/>
-                    <neighbor as="45" ip="23" reflector-client="true"/>
-                    <neighbor as="45" ip="6" reflector-client="true"/>
-                    <neighbor as="45" ip="24" reflector-client="true"/>
-                    <neighbor as="45" ip="3" reflector-client="true"/>
-                    <neighbor as="45" ip="12" reflector-client="true"/>
-                    <neighbor as="45" ip="13" reflector-client="true"/>
-                    <neighbor as="45" ip="33" reflector-client="true"/>
-                    <neighbor as="45" ip="32" reflector-client="true"/>
-                    <neighbor as="45" ip="45" reflector-client="true"/>
-                    <neighbor as="45" ip="44" reflector-client="true"/>
-                    <neighbor as="45" ip="34" reflector-client="true"/>
-                    <neighbor as="45" ip="42" reflector-client="true"/>
-                    <neighbor as="45" ip="31" reflector-client="true"/>
-                    <neighbor as="45" ip="40" reflector-client="true"/>
-                    <neighbor as="45" ip="38" reflector-client="true"/>
-                    <neighbor as="45" ip="47" reflector-client="true"/>
-                    <neighbor as="45" ip="0" reflector-client="true"/>
-                    <neighbor as="45" ip="28" reflector-client="true"/>
-                    <neighbor as="45" ip="27" reflector-client="true"/>
-                    <neighbor as="45" ip="25" reflector-client="true"/>
-                    <neighbor as="45" ip="19" reflector-client="true"/>
-                    <neighbor as="45" ip="18" reflector-client="true"/>
+                    <neighbor as="45" ip="23" reflector-client="false"/>
+                    <neighbor as="45" ip="10" reflector-client="false"/>
+                    <neighbor as="45" ip="21" reflector-client="false"/>
+                    <neighbor as="45" ip="3" reflector-client="false"/>
+                    <neighbor as="45" ip="13" reflector-client="false"/>
+                    <neighbor as="45" ip="46" reflector-client="false"/>
+                    <neighbor as="45" ip="33" reflector-client="false"/>
+                    <neighbor as="45" ip="32" reflector-client="false"/>
+                    <neighbor as="45" ip="34" reflector-client="false"/>
+                    <neighbor as="45" ip="31" reflector-client="false"/>
+                    <neighbor as="45" ip="49" reflector-client="false"/>
+                    <neighbor as="45" ip="28" reflector-client="false"/>
+                    <neighbor as="45" ip="14" reflector-client="false"/>
+                    <neighbor as="45" ip="25" reflector-client="false"/>
+                    <neighbor as="45" ip="18" reflector-client="false"/>
+                    <neighbor as="45" ip="20"/>
+                    <neighbor as="45" ip="24"/>
+                    <neighbor as="45" ip="22"/>
+                    <neighbor as="45" ip="27"/>
+                    <neighbor as="45" ip="26"/>
+                    <neighbor as="45" ip="29"/>
+                    <neighbor as="45" ip="11"/>
+                    <neighbor as="45" ip="12"/>
+                    <neighbor as="45" ip="15"/>
+                    <neighbor as="45" ip="17"/>
+                    <neighbor as="45" ip="16"/>
+                    <neighbor as="45" ip="19"/>
+                    <neighbor as="45" ip="45"/>
+                    <neighbor as="45" ip="44"/>
+                    <neighbor as="45" ip="43"/>
+                    <neighbor as="45" ip="42"/>
+                    <neighbor as="45" ip="41"/>
+                    <neighbor as="45" ip="40"/>
+                    <neighbor as="45" ip="47"/>
+                    <neighbor as="45" ip="48"/>
+                    <neighbor as="45" ip="0"/>
+                    <neighbor as="45" ip="2"/>
+                    <neighbor as="45" ip="1"/>
+                    <neighbor as="45" ip="9"/>
+                    <neighbor as="45" ip="7"/>
+                    <neighbor as="45" ip="5"/>
+                    <neighbor as="45" ip="6"/>
+                    <neighbor as="45" ip="4"/>
+                    <neighbor as="45" ip="35"/>
+                    <neighbor as="45" ip="30"/>
+                    <neighbor as="45" ip="36"/>
+                    <neighbor as="45" ip="37"/>
+                    <neighbor as="45" ip="38"/>
+                    <neighbor as="45" ip="39"/>
                 </neighbors>
             </router>
             <router id="9">
                 <rid>9</rid>
                 <neighbors>
-                    <neighbor as="45" ip="20" reflector-client="true"/>
+                    <neighbor as="45" ip="8" reflector-client="true"/>
                     <neighbor as="45" ip="23" reflector-client="true"/>
-                    <neighbor as="45" ip="6" reflector-client="true"/>
-                    <neighbor as="45" ip="24" reflector-client="true"/>
+                    <neighbor as="45" ip="10" reflector-client="true"/>
+                    <neighbor as="45" ip="21" reflector-client="true"/>
                     <neighbor as="45" ip="3" reflector-client="true"/>
-                    <neighbor as="45" ip="12" reflector-client="true"/>
                     <neighbor as="45" ip="13" reflector-client="true"/>
+                    <neighbor as="45" ip="46" reflector-client="true"/>
                     <neighbor as="45" ip="33" reflector-client="true"/>
                     <neighbor as="45" ip="32" reflector-client="true"/>
-                    <neighbor as="45" ip="45" reflector-client="true"/>
-                    <neighbor as="45" ip="44" reflector-client="true"/>
                     <neighbor as="45" ip="34" reflector-client="true"/>
-                    <neighbor as="45" ip="42" reflector-client="true"/>
                     <neighbor as="45" ip="31" reflector-client="true"/>
-                    <neighbor as="45" ip="40" reflector-client="true"/>
-                    <neighbor as="45" ip="38" reflector-client="true"/>
-                    <neighbor as="45" ip="47" reflector-client="true"/>
-                    <neighbor as="45" ip="0" reflector-client="true"/>
+                    <neighbor as="45" ip="49" reflector-client="true"/>
                     <neighbor as="45" ip="28" reflector-client="true"/>
-                    <neighbor as="45" ip="27" reflector-client="true"/>
+                    <neighbor as="45" ip="14" reflector-client="true"/>
                     <neighbor as="45" ip="25" reflector-client="true"/>
-                    <neighbor as="45" ip="19" reflector-client="true"/>
                     <neighbor as="45" ip="18" reflector-client="true"/>
                 </neighbors>
             </router>
