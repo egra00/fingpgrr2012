@@ -71,8 +71,12 @@ public abstract class BindAlgorithm implements Runnable, TotemAlgorithm {
         algorithmParams = getAlgorithmParams(params);
         algorithmResult = initAlgorithmResult();
         
-        thread.start();        
-        logger.debug("Finish");
+        
+		if(algorithmParams != null && algorithmResult != null)
+		{
+		    thread.start();        
+		    logger.debug("Finish");
+		}
 	}
 
 	@Override
@@ -84,7 +88,6 @@ public abstract class BindAlgorithm implements Runnable, TotemAlgorithm {
 	@Override
 	public void run() 
 	{
-        
         algorithm.run(algorithmParams, algorithmResult);
         
         log(algorithmResult);
@@ -95,7 +98,6 @@ public abstract class BindAlgorithm implements Runnable, TotemAlgorithm {
 			logger.error("Dumping iBGP topology in Totem domain");
 			e.printStackTrace();
 		}
-		
 	}
 	
 	
