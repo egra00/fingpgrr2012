@@ -21,7 +21,7 @@
     <topology>
         <nodes>
             <node id="0">
-            	<rid>198.32.8.200</rid>
+                <rid>198.32.8.200</rid>
                 <description>0</description>
                 <location latitude="208.2415" longitude="838.55426"/>
                 <interfaces>
@@ -30,7 +30,7 @@
                 </interfaces>
             </node>
             <node id="1">
-            	<rid>198.32.8.201</rid>
+                <rid>198.32.8.201</rid>
                 <description>1</description>
                 <location latitude="101.763374" longitude="440.31927"/>
                 <interfaces>
@@ -39,7 +39,7 @@
                 </interfaces>
             </node>
             <node id="2">
-            	<rid>198.32.8.202</rid>
+                <rid>198.32.8.202</rid>
                 <description>2</description>
                 <location latitude="415.12964" longitude="550.6321"/>
                 <interfaces>
@@ -50,7 +50,7 @@
                 </interfaces>
             </node>
             <node id="3">
-            	<rid>198.32.8.203</rid>
+                <rid>198.32.8.203</rid>
                 <description>3</description>
                 <location latitude="630.0" longitude="310.0"/>
                 <interfaces>
@@ -59,7 +59,7 @@
                 </interfaces>
             </node>
             <node id="4">
-            	<rid>198.32.8.204</rid>
+                <rid>198.32.8.204</rid>
                 <description>4</description>
                 <location latitude="750.73584" longitude="632.094"/>
                 <interfaces>

@@ -1,19 +1,20 @@
 package uy.edu.fing.repository.tools.iBGPViewer.model;
 
-import be.ac.ulg.montefiore.run.totem.domain.model.Node;
 
 public class MyNode 
 {
 	private double x;
 	private double y;
-	private Node node;
+	private String rid;
+	private boolean rr;
 	
 	
-	public MyNode(Node n, double xx, double yy)
+	public MyNode(String _rid, double _x, double _y, boolean _rr)
 	{
-		x = xx;
-		y = yy;
-		node = n;
+		x = _x;
+		y = _y;
+		rid = _rid;
+		rr = _rr;
 	}
 	
 	public double getX() {
@@ -31,14 +32,22 @@ public class MyNode
 	
 	public String toString() 
 	{
-		return node.getRid(); 
+		return rid; 
 	}
 
-	public Node getNode() {
-		return node;
+	public String getNode() {
+		return rid;
 	}
 
-	public void setNode(Node node) {
-		this.node = node;
+	public void setNode(String _rid) {
+		rid = _rid;
+	}
+
+	public boolean isRr() {
+		return rr;
+	}
+
+	public void setRr(boolean rr) {
+		this.rr = rr;
 	}
 }
