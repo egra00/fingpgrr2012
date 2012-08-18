@@ -1,35 +1,45 @@
 package uy.edu.fing.repository.tools.iBGPViewer.model;
 
-import be.ac.ulg.montefiore.run.totem.domain.model.BgpNeighbor;
-import be.ac.ulg.montefiore.run.totem.domain.model.BgpRouter;
 
 public class MyLink 
 {
 	
-	private BgpRouter router;
-	private BgpNeighbor neighbor;
+	private String r1;
+	private String r2;
+	private TypeMylink type;
 	
-	public MyLink(BgpRouter r, BgpNeighbor n)
+	public MyLink(String _r1, String _r2, TypeMylink _type)
 	{
-		router = r;
-		neighbor = n;
+		r1 = _r1;
+		r2 = _r2;
+		type = _type;
 	}
 
-	public BgpRouter getRouter() {
-		return router;
+	public String getR1() {
+		return r1;
 	}
 
-	public void setRouter(BgpRouter router) {
-		this.router = router;
+	public void setR1(String r1) {
+		this.r1 = r1;
 	}
 
-	public BgpNeighbor getNeighbor() {
-		return neighbor;
+	public String getR2() {
+		return r2;
 	}
 
-	public void setNeighbor(BgpNeighbor neighbor) {
-		this.neighbor = neighbor;
+	public void setR2(String r2) {
+		this.r2 = r2;
 	}
+
+	public TypeMylink getType() {
+		return type;
+	}
+
+	public void setType(TypeMylink type) {
+		this.type = type;
+	}
+
+
 
 
 

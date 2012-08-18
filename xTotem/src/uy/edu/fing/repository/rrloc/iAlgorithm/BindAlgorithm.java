@@ -77,6 +77,8 @@ public abstract class BindAlgorithm implements Runnable, TotemAlgorithm {
 		    thread.start();        
 		    logger.debug("Finish");
 		}
+		else
+			logger.debug("Incorrect initialization of input parameters or output parameters");
 	}
 
 	@Override
