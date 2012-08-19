@@ -34,7 +34,8 @@ import be.ac.ulg.montefiore.run.totem.domain.model.impl.BgpRouterImpl;
 import be.ac.ulg.montefiore.run.totem.visualtopo.guiComponents.MainWindow;
 import edu.uci.ics.jung2.algorithms.layout.Layout;
 import edu.uci.ics.jung2.graph.Graph;
-import edu.uci.ics.jung2.graph.UndirectedSparseMultigraph;
+import edu.uci.ics.jung2.graph.SparseMultigraph;
+import edu.uci.ics.jung2.graph.util.EdgeType;
 import edu.uci.ics.jung2.visualization.VisualizationViewer;
 import edu.uci.ics.jung2.visualization.control.DefaultModalGraphMouse;
 import edu.uci.ics.jung2.visualization.control.ModalGraphMouse.Mode;
@@ -341,7 +342,7 @@ public class ManagerGUIViewer
 			if (yy < y1) y1 = yy;
 		}
 		
-		Graph<MyNode, MyLink> ibgp = new UndirectedSparseMultigraph<MyNode, MyLink>();
+		Graph<MyNode, MyLink> ibgp = new SparseMultigraph<MyNode, MyLink>();
 		
 		double escalaX = _maxX / (x - x1);
 		double escalaY = _maxY / (y - y1);
@@ -389,7 +390,7 @@ public class ManagerGUIViewer
 	                    	{
 	                    		linksById.add(linkId);
 	                    		TypeMylink type = ( ((BgpNeighborImpl)neighbor).isReflectorClient()? TypeMylink.client: TypeMylink.peer);
-	                    		ibgp.addEdge(new MyLink(router.getRid(), neighbor.getAddress(), type), mynodesById.get(router.getRid()), mynodesById.get(neighbor.getAddress()));
+	                    		ibgp.addEdge(new MyLink(router.getRid(), neighbor.getAddress(), type), mynodesById.get(router.getRid()), mynodesById.get(neighbor.getAddress()), EdgeType.DIRECTED);
 	                    	}
 	                    }              	
 	                }     
