@@ -4,9 +4,9 @@ import java.util.List;
 
 import uy.edu.fing.repository.rrloc.algorithms.iBGPSession;
 import uy.edu.fing.repository.rrloc.algorithms.iBGPSessionType;
-import uy.edu.fing.repository.rrloc.graphTools.GraphSeparator;
-import uy.edu.fing.repository.rrloc.graphTools.Separator;
 import uy.edu.fing.repository.rrloc.iAlgorithm.RRLocAlgorithm;
+import uy.edu.fing.repository.rrloc.tools.graph.GraphSeparator;
+import uy.edu.fing.repository.rrloc.tools.graph.Separator;
 import be.ac.ulg.montefiore.run.totem.domain.model.Link;
 import be.ac.ulg.montefiore.run.totem.domain.model.Node;
 import edu.uci.ics.jung2.graph.Graph;
