@@ -1,4 +1,4 @@
-package uy.edu.fing.repository.rrloc.graphTools;
+package uy.edu.fing.repository.rrloc.tools.graph;
 
 import java.util.List;
 import java.util.Set;
