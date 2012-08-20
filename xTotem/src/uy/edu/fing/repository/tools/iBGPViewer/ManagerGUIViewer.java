@@ -127,12 +127,13 @@ public class ManagerGUIViewer
 					@Override
 					public Paint transform(MyLink link) 
 					{
-						return (link.getType() == TypeMylink.client ? Color.BLACK : Color.GRAY);
+						return (link.getType() == TypeMylink.client ? Color.BLACK : Color.RED);
 					}
 		};
 		vv.getRenderContext().setVertexFillPaintTransformer(vertexPaint);
 		vv.getRenderContext().setEdgeDrawPaintTransformer(edgeStrokeTransformer);
 		vv.getRenderContext().setVertexLabelTransformer(new ToStringLabeller<MyNode>());
+		vv.setBackground(Color.WHITE);
 
 		DefaultModalGraphMouse<MyNode, MyLink> gm = new DefaultModalGraphMouse<MyNode, MyLink>();
 		gm.setMode(Mode.TRANSFORMING);
@@ -187,13 +188,14 @@ public class ManagerGUIViewer
 					@Override
 					public Paint transform(MyLink link) 
 					{
-						return (link.getType() == TypeMylink.client ? Color.BLACK : Color.GRAY);
+						return (link.getType() == TypeMylink.client ? Color.BLACK : Color.RED);
 					}
 		};
 		vv.getRenderContext().setVertexFillPaintTransformer(vertexPaint);
 		vv.getRenderContext().setEdgeDrawPaintTransformer(edgeStrokeTransformer);
 		vv.getRenderContext().setVertexLabelTransformer(new ToStringLabeller<MyNode>());
-
+		vv.setBackground(Color.WHITE);
+		
 		DefaultModalGraphMouse<MyNode, MyLink> gm = new DefaultModalGraphMouse<MyNode, MyLink>();
 		gm.setMode(Mode.TRANSFORMING);
 		vv.setGraphMouse(gm);
@@ -246,13 +248,14 @@ public class ManagerGUIViewer
 					@Override
 					public Paint transform(MyLink link) 
 					{
-						return (link.getType() == TypeMylink.client ? Color.BLACK : Color.GRAY);
+						return (link.getType() == TypeMylink.client ? Color.BLACK : Color.RED);
 					}
 		};
 		vv.getRenderContext().setVertexFillPaintTransformer(vertexPaint);
 		vv.getRenderContext().setEdgeDrawPaintTransformer(edgeStrokeTransformer);
 		vv.getRenderContext().setVertexLabelTransformer(new ToStringLabeller<MyNode>());
-
+		vv.setBackground(Color.WHITE);
+		
 		DefaultModalGraphMouse<MyNode, MyLink> gm = new DefaultModalGraphMouse<MyNode, MyLink>();
 		gm.setMode(Mode.TRANSFORMING);
 		vv.setGraphMouse(gm);
@@ -277,6 +280,8 @@ public class ManagerGUIViewer
 		
 		map.put(ctrl_K , "Konsole");
 		mapaAccion.put("Konsole",frame.Accion_CTRLK());
+		
+		
 		
 		Data data = new Data();
 		data.key = keys_ibgps;

@@ -42,6 +42,7 @@ public class MyJFrame extends JFrame
 		return new AbstractAction() { 
 			public void actionPerformed(ActionEvent e) 
 			{ 
+				System.out.println("Konsole   "+_key +"   /   "+ ibgp_key);
 			} 
 		};
 	}
