@@ -51,10 +51,19 @@ import edu.uci.ics.jung2.algorithms.layout.Layout;
 import edu.uci.ics.jung2.algorithms.shortestpath.DijkstraShortestPath;
 import edu.uci.ics.jung2.graph.DirectedGraph;
 import edu.uci.ics.jung2.graph.DirectedSparseGraph;
+import edu.uci.ics.jung2.graph.DirectedSparseMultigraph;
 import edu.uci.ics.jung2.graph.Graph;
+import edu.uci.ics.jung2.graph.UndirectedSparseGraph;
 import edu.uci.ics.jung2.graph.UndirectedSparseMultigraph;
 import edu.uci.ics.jung2.visualization.BasicVisualizationServer;
+import edu.uci.ics.jung2.visualization.VisualizationViewer;
+import uy.edu.fing.repository.rrloc.algorithms.iBGPSession;
+import uy.edu.fing.repository.rrloc.algorithms.iBGPSessionType;
 import uy.edu.fing.repository.rrloc.iAlgorithm.RRLocAlgorithm;
+
+import ilog.concert.*;
+import ilog.cplex.*;
+import ilog.cplex.IloCplex.UnknownObjectException;
 
 public class OptimalAlgorithm implements RRLocAlgorithm{
 
@@ -63,49 +72,65 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 		
 		//Obtain parameters
 		Graph<Node, Link> IGPGraph = (Graph<Node, Link>)((List<Object>)inParams).get(0);
-		List<BgpRouter> BGPRouters = (List<BgpRouter>)((List<Object>)inParams).get(1);
-//		List<Node> BGPRouters = (List<Node>)((List<Object>)inParams).get(1);
+//		List<BgpRouter> BGPRouters = (List<BgpRouter>)((List<Object>)inParams).get(1);
+		List<Node> BGPRouters = (List<Node>)((List<Object>)inParams).get(1);
 		List<Node> nextHops = (List<Node>)((List<Object>)inParams).get(2);
 		Domain domain = (Domain)((List<Object>)inParams).get(3);
+		
+		// List of sessions
+		List<iBGPSession> lstSessions = (List<iBGPSession>) outResutl;
+		
+		/*for(int y = 0; y < BGPRouters.size(); y++){
+			System.out.println(y+" - "+BGPRouters.get(y).getId());
+		}*/
 		
 		int BGPRoutersSize = BGPRouters.size();
 		int nextHopsSize = nextHops.size();
 		int n = IGPGraph.getVertexCount();	
 		
-		//Build the model
-		CPModel m = new CPModel();
+		System.out.println("BGP Routers = "+BGPRoutersSize);
+		System.out.println("next Hops = "+nextHopsSize);
+		
+		try {
+			
+	     IloCplex cplex = new IloCplex();
+	     
+	     cplex.setParam(IloCplex.IntParam.MIPSearch, IloCplex.MIPSearch.Traditional);
 				
 		//Structure declaration
-		IntegerVariable[][] UP = new IntegerVariable[n][n];
-		IntegerVariable[][] DOWN = new IntegerVariable[n][n];
 		
+		IloNumVar[][] UP = new IloNumVar[BGPRoutersSize][nextHopsSize];
+		IloNumVar[][] DOWN = new IloNumVar[BGPRoutersSize][nextHopsSize];
 		
-		// For each variable, we define its name and the boundaries of its domain
-		for (int i = 0; i < n; i++) {
-			for (int j = 0; j < n; j++) {
-				UP[i][j] = makeIntVar("up_" + i + "_" + j, 0, 1);
-				m.addVariable(UP[i][j]); // Associate the variable to the model
+		// For each variable, we define its type, boundaries of its domain and name
+		for (int i = 0; i < BGPRoutersSize; i++) {
+			for (int j = 0; j < nextHopsSize; j++) {
+				UP[i][j] = cplex.numVar(0, 1, IloNumVarType.Int, "UP["+i+"]["+j+"]");
+				DOWN[i][j] = cplex.numVar(0, 1, IloNumVarType.Int, "DOWN["+i+"]["+j+"]");
 			}
 		}
 		
-		for (int i = 0; i < n; i++) {
-			for (int j = 0; j < n; j++) {
-				DOWN[i][j] = makeIntVar("down_" + i + "_" + j, 0, 1);
-				m.addVariable(DOWN[i][j]);
+		// Each variable must appear in at least one constraint or the objective function (CPLEX)
+		for (int i = 0; i < BGPRoutersSize; i++) {
+			for (int j = 0; j < nextHopsSize; j++) {
+				if(BGPRouters.get(i).getId()==nextHops.get(j).getId()){
+					cplex.addEq(UP[i][j], 0);
+					cplex.addEq(DOWN[i][j], 0);
+				}
 			}
 		}
 		
 		//Adding the constraint for the function to minimise
 		
 		//Calculating the length of the shortest IGP path from i to j
-		int MINHOPS[][] = new int[n][n];
+		int MINHOPS[][] = new int[BGPRoutersSize][nextHopsSize];
  
 		Object[] nodes = IGPGraph.getVertices().toArray();
 		
-		for(int i = 0; i < n; i++) {
-            for(int j = 0; j < n; j++) {
-            	if(i!=j){
-            		MINHOPS[i][j]= hops(IGPGraph,((Node)nodes[i]).getRid(),((Node)nodes[j]).getRid());
+		for(int i = 0; i < BGPRoutersSize; i++) {
+            for(int j = 0; j < nextHopsSize; j++) {
+            	if(BGPRouters.get(i).getId()!=nextHops.get(j).getId()){
+            		MINHOPS[i][j]= hops(IGPGraph,((Node)nodes[i]).getId(),((Node)nodes[j]).getId());
             	}
             }
 		}
@@ -118,53 +143,50 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 		System.out.println();
 		}*/
 		
-        IntegerVariable R_aux = makeIntVar("R_aux", 0, 10000000);
-        IntegerVariable[] z_array = new IntegerVariable[n*n];
-        
-        for(int i = 0; i < n; i++) {
-            for(int j = 0; j < n; j++) {
-                z_array[i*n+j] = makeIntVar("z_" + i +"_" + j, 0, 10000);
-                m.addConstraint(eq(mult(MINHOPS[i][j],sum(UP[i][j],DOWN[i][j])), z_array[i*n+j]));
-                
-            }
-        }
-        m.addConstraint(eq(sum(z_array), R_aux));
+		IloNumExpr[] ExpAux = new IloNumExpr[BGPRoutersSize*nextHopsSize];
+		
+		for(int i = 0; i < BGPRoutersSize; i++) {
+			for(int j = 0; j < nextHopsSize; j++) {
+				if(BGPRouters.get(i).getId()!=nextHops.get(j).getId())
+					ExpAux[i*BGPRoutersSize+j] = cplex.prod(MINHOPS[i][j],cplex.sum(UP[i][j],DOWN[i][j]));
+				else
+					ExpAux[i*BGPRoutersSize+j] = UP[i][i];
+			}
+		}
+		
+		cplex.addMinimize(cplex.sum(ExpAux));
 		
 		//Adding domain constraints to the model
 		
-		// ∀u, v ∈ R, up(u, v) + down(u, v) ≤ 1  ---> up(u, v) ≤ 1 - down(u, v)
-		for (int i = 0; i < n; i++) {
-		for (int j = 0; j < n; j++) {
-			if(i!=j){
-				Constraint c = (leq(UP[i][j], plus(1,neg(DOWN[i][j]))));
-				m.addConstraint(c);
+		// ∀u, v ∈ R, up(u, v) + down(u, v) ≤ 1 
+		for (int i = 0; i < BGPRoutersSize; i++) {
+			for (int j = 0; j < nextHopsSize; j++) {
+				if(BGPRouters.get(i).getId()!=nextHops.get(j).getId())
+					cplex.addRange(0,cplex.sum(UP[i][j], DOWN[i][j]),1);
 			}
-		}
 		}
 		
 		// ∀u, v ∈ R, up(u, v) = down(v, u)
-		for (int i = 0; i < n; i++) {
-			for (int j = 0; j < n; j++) {
-				if(j>i){
-					Constraint c = (eq(UP[i][j] , DOWN[j][i]));
-					m.addConstraint(c);
-				}
+		for (int i = 0; i < BGPRoutersSize; i++) {
+			for (int j = 0; j < nextHopsSize; j++) {
+				if(BGPRouters.get(i).getId()!=nextHops.get(j).getId())
+					cplex.addEq(UP[i][j], DOWN[j][i]);
 			}
 		}
 		
-		//printGraph(IGPGraph,"Grafo IGP");
+		//printGraph_(IGPGraph,"Grafo IGP");
 		
 		//Building satellite graphs
 
 		List<Graph<Node, Link>> satellites = new ArrayList<Graph<Node, Link>>();
 		
-		System.out.println("BGPRouters.size() = "+BGPRoutersSize);
-		System.out.println("nextHops.size() = "+nextHopsSize);
+		String[] satNames = new String[BGPRoutersSize*nextHopsSize];
 		
 		for (int i = 0; i < BGPRoutersSize; i++) {
 			for (int j = 0; j < nextHopsSize; j++) {
 				
-				BgpRouter br = BGPRouters.get(i);
+				//BgpRouter br = BGPRouters.get(i);
+				Node br = BGPRouters.get(i);
 				Node nod = nextHops.get(j);
 				
 				if(br.getRid()!=nod.getRid()){
@@ -172,16 +194,17 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 					Graph<Node, Link> sat = new UndirectedSparseMultigraph<Node, Link>();
 					
 					Node no = nextHops.get(j);
-					//BgpRouter r = BGPRouters.get(i);
+					//BgpRouter no = BGPRouters.get(i);
 					
-					BgpRouter r = BGPRouters.get(i);
+					//BgpRouter r = BGPRouters.get(i);
+					Node r = BGPRouters.get(i);
 					
 					//Build N(n,r)
 					List<Node> lstNnr = new ArrayList<Node>();
 					Iterator<Node> iter = nextHops.iterator();
 					while(iter.hasNext()){
 						Node np = (Node)iter.next();
-						if(dist(IGPGraph,r.getRid(),np.getRid())>dist(IGPGraph,r.getRid(),no.getRid()))
+						if(dist(IGPGraph,r.getId(),np.getId())>dist(IGPGraph,r.getId(),no.getId()))
 							lstNnr.add(np);
 					}
 					
@@ -189,65 +212,50 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 					//W(n, r) = {w ∈ R|∀n′ ∈ N(n, r), dist(w, n) < dist(w, n′ )}
 					
 					//Adding vertices
-					Iterator<BgpRouter> it = BGPRouters.iterator();
+					//Iterator<BgpRouter> it = BGPRouters.iterator();
+					Iterator<Node> it = BGPRouters.iterator();
 					
 					while(it.hasNext()){
-						BgpRouter w = it.next();
+						//BgpRouter w = it.next();
+						Node w = it.next();
 						boolean addRouter = true;
 						
 						Iterator<Node> it2 = lstNnr.iterator();
 						
 						while((it2.hasNext()) && addRouter){
 							Node node = it2.next();
-							if(dist(IGPGraph,w.getRid(),no.getRid())>=dist(IGPGraph,w.getRid(),node.getRid())){
+							if(dist(IGPGraph,w.getId(),no.getId())>=dist(IGPGraph,w.getId(),node.getId())){
 								addRouter = false;
 							}
 						}
 						
 						if(addRouter){
-							sat.addVertex(findColRId(IGPGraph.getVertices(),w.getRid())); 
+							sat.addVertex(findColNodeId(IGPGraph.getVertices(),w.getId())); 
 						}
 					}
 					
 					//Adding edges
 					Collection<Node> vertices = sat.getVertices();
 					Iterator<Node> i1 = vertices.iterator();
-					Iterator<Node> i2 = vertices.iterator();
 					
 					while(i1.hasNext()){
 						Node node = (Node)i1.next();
 						
-						if(collectionNcontains(vertices,node)){
+						Iterator<Node> i2 = vertices.iterator();
 							
-							while(i2.hasNext()){
-								Node node2 = (Node)i2.next();
-								
-								if(node2.getId()!=node.getId() && collectionNcontains(vertices,node2)){
-									Link l = new LinkImpl(domain,node.getId()+"_"+node2.getId(),node.getId(),node2.getId(),0);
-									sat.addEdge(l, node, node2);
-								}
+						while(i2.hasNext()){
+							Node node2 = (Node)i2.next();
+	
+							if(node2.getId()!=node.getId()){ 
+								Link l = new LinkImpl(domain,node.getId()+"_"+node2.getId(),node.getId(),node2.getId(),0);
+								sat.addEdge(l, node, node2);
 							}
 						}
 					}
 					
-					//printGraph(sat,"Grafo Satelite ("+no.getId()+","+r.getId()+")");
-					
-					/*Collection<Link> edges = IGPGraph.getEdges();
-					Iterator<Link> ite = edges.iterator();
-					Collection<Node> vertices = sat.getVertices();
-					
-					while(ite.hasNext()){
-						Link l = (Link)ite.next();
-						try {
-							if(collectionNcontains(vertices,l.getSrcNode()) && collectionNcontains(vertices,l.getDstNode())){
-								sat.addEdge(l, l.getSrcNode(), l.getDstNode());
-							}
-						}
-						catch(NodeNotFoundException e){
-							System.out.println("Error while building satellite graphs.");
-							e.printStackTrace();
-						}
-					}*/
+					//printGraph_(sat,"Grafo Satelite ("+no.getId()+","+r.getId()+")");
+						
+					satNames[satellites.size()]="Grafo Satelite ("+no.getId()+","+r.getId()+")";
 					
 					satellites.add(sat);
 				}
@@ -257,385 +265,205 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 
 		//Adding max-flow min-cut constraints to the model
 		
-		IntegerVariable[][] arrayRestrictions = new IntegerVariable[satellites.size()][];
-		
-		for(int y = 0; y < satellites.size(); y++){
-			arrayRestrictions[y] = new IntegerVariable[satellites.get(y).getEdgeCount()*2+satellites.get(y).getVertexCount()];	
-			for(int z = 0; z < (satellites.get(y).getEdgeCount()*2+satellites.get(y).getVertexCount()); z++){
-				arrayRestrictions[y][z] = makeIntVar("arrayRestrictions_" + y + "_" + z, 0, 1);
-				m.addVariable(arrayRestrictions[y][z]);
-			}
-		}
-		
-		/*List<IntegerVariable[]> arrayRestrictions = new ArrayList<IntegerVariable[]>();
-		
-		for(int y = 0; y < satellites.size(); y++){
-			IntegerVariable[] iv = new IntegerVariable[satellites.get(y).getEdgeCount()];	
-			for (int l = 0; l < satellites.get(y).getEdgeCount(); l++) {
-				iv[l] = makeIntVar("arrayRestrictions_" + y + "_" + l, 0, 1);
-				m.addVariable(iv[l]); // Associate the variable to the model
-			}
-			arrayRestrictions.add(iv);
-		}*/
-		
-		// For each variable, we define its name and the boundaries of its domain
-		/*for (int k = 0; k < satellites.size(); k++) {
-			for (int l = 0; l < satellites.get(k).getEdgeCount(); l++) {
-				arrayRestrictions[k][l] = makeIntVar("arrayRestrictions_" + k + "_" + l, 0, 1);
-				m.addVariable(arrayRestrictions[k][l]); // Associate the variable to the model
-			}
-		}*/
-		
 		//Solving the MIP without max-flow min-cut constraints
 		
-		CPSolver s = new CPSolver();
+		System.out.println("####Solucion 0##############################################################################");
 		
-		//Constraint c2 = (eq(UP[5][5] , 1));
-		//m.addConstraint(c2);
+		//System.out.println(cplex.toString());
 		
-		//CPModel mBK = copyModel(m);
-		s.read(m);
-		s.solve();
+		boolean res = cplex.solve();
 		
-		/*Constraint c3 = eq(DOWN[5][5],1);
-		SConstraint sc3 = s.makeSConstraint(c3);
-		s.post(sc3);*/
+		lstSessions = printSolution(IGPGraph,cplex,UP,DOWN,BGPRouters,nextHops,BGPRoutersSize, nextHopsSize);
 		
-		System.out.println("------------------------------------------------------------------");
-		System.out.println(s.summaryToString());
-		System.out.println("------------------------------------------------------------------");
-		
-		
-		/*boolean[][] newContraintsUP = new boolean[n][n];
-		boolean[][] newContraintsDOWN = new boolean[n][n];
-		
-		for (int k = 0; k < n; k++) {
-			for (int l = 0; l < n; l++) {
-				newContraintsUP[k][l] = false;
-				newContraintsDOWN[k][l] = false;
-			}
-		}*/
-		
-		int[][] UP_Aux = new int[n][n];
-		int[][] DOWN_Aux = new int[n][n];
-		
-		for (int k = 0; k < n; k++) {
-			for (int l = 0; l < n; l++) {
-				UP_Aux[k][l] = 0;
-				DOWN_Aux[k][l] = 0;
-			}
-		}
+		System.out.println("####Fin Solucion 0##############################################################################");
 		
 		int satIndex = 0;
-		
-		//List<Constraint> lstConstraints = new ArrayList<Constraint>();
 		
 		for(int i = 0; i< BGPRoutersSize; i++){
 			for(int j = 0; j< nextHopsSize; j++){
 				
-				BgpRouter br = BGPRouters.get(i);
+				//BgpRouter br = BGPRouters.get(i);
+				Node br = BGPRouters.get(i);
 				Node nod = nextHops.get(j);
 				
-				//if(i!=j){
 				if(br.getRid()!=nod.getRid()){
 					
 					//Adding the new constraints to the model
-					/*for (int k = 0; k < n; k++) {
-						for (int l = 0; l < n; l++) {
-							if(newContraintsUP[k][l]==true){
-								m.addConstraint(eq(UP[k][l],1));
-							}
-							if(newContraintsDOWN[k][l]==true){
-								m.addConstraint(eq(DOWN[k][l],1));
-							}
-						}
-					}
-					
-					for (int k = 0; k < n; k++) {
-						for (int l = 0; l < n; l++) {
-							newContraintsUP[k][l] = false;
-							newContraintsDOWN[k][l] = false;
-						}
-					}*/
-					
-					/*System.out.println("Satelite numero: " + satIndex);
-					System.out.println("UP:");
-					
-					for (int k = 0; k < n; k++) {
-						for (int l = 0; l < n; l++) {
-							System.out.print(s.getVar(UP[k][l]).getVal() + " ");
-						}
-						System.out.println();
-					}
-					
-					System.out.println("DOWN:");
-					
-					for (int k = 0; k < n; k++) {
-						for (int l = 0; l < n; l++) {
-							System.out.print(s.getVar(DOWN[k][l]).getVal() + " ");
-						}
-						System.out.println();
-					}*/
-					
-					/*if(primero){
-						System.out.println("UP primero:");
-						for (int k = 0; k < n; k++) {
-							for (int l = 0; l < n; l++) {
-								System.out.print(s.getVar(UP[k][l]).getVal() + " ");
-							}
-							System.out.println();
-						}
-						System.out.println("DOWN primero:");
-						for (int k = 0; k < n; k++) {
-							for (int l = 0; l < n; l++) {
-								System.out.print(s.getVar(DOWN[k][l]).getVal() + " ");
-							}
-							System.out.println();
-						}
-					}*/
-					
-					for (int k = 0; k < n; k++) {
-						for (int l = 0; l < n; l++) {
-							if(s.getVar(UP[k][l]).getVal()==1)
-								UP_Aux[k][l] = 1;
-							else
-								UP_Aux[k][l] = 0;
-							
-							if(s.getVar(DOWN[k][l]).getVal()==1)
-								DOWN_Aux[k][l] = 1;
-							else
-								DOWN_Aux[k][l] = 0;
-						}
-					}
-					
-					for (int k = 0; k < n; k++) {
-						for (int l = 0; l < n; l++) {
-							if(UP_Aux[k][l]==1){
-								//m.addConstraint(eq(UP[k][l],1));
-								s.addConstraint(eq(UP[k][l],1));
-								//s.post(s.makeSConstraint(eq(UP[k][l],1)));
-								//s.eq(s.getVar(UP[k][l]),1);
-							}
-							if(DOWN_Aux[k][l]==1){
-								//m.addConstraint(eq(DOWN[k][l],1));
-								s.addConstraint(eq(DOWN[k][l],1));
-								//s.eq(s.getVar(DOWN[k][l]),1);
-								//s.post(s.makeSConstraint(eq(DOWN[k][l],1)));
-							}
-						}
-					}
-					
-					s.solve();
 					
 					Graph<Node,Link> gsat = satellites.get(satIndex);
-					//System.out.println("Satelite numero "+ satIndex);
 					
 					//Extending satellite graph
-					Graph<MetaNode,ExtendedLink> eg = CreateExtendedGraph(IGPGraph, gsat, UP, DOWN, s);
+					Graph<MetaNode,ExtendedLink> eg = CreateExtendedGraph(IGPGraph, gsat, UP, DOWN, cplex, BGPRouters, nextHops);
 					
-					//printGraph2(eg,"Grafo satelite de " + satIndex);
+					//printGraph2_(eg,satNames[satIndex]);
 					
 					if(!existsPath(eg,BGPRouters.get(i).getId(),nextHops.get(j).getId())){
 
-						MetaNode src = findColId(eg.getVertices(),BGPRouters.get(i).getId());
-						MetaNode dst = findColId(eg.getVertices(),nextHops.get(j).getId());
+						MetaNode src = findColMetaNodeId(eg.getVertices(),BGPRouters.get(i).getId());
+						MetaNode dst = findColMetaNodeId(eg.getVertices(),nextHops.get(j).getId());
+						
+						//System.out.println("METANODO SRC = "+src.getId());
+						//System.out.println("METANODO DST = "+dst.getId());
+						
+						//printGraph2(eg,src.getId()+" - "+dst.getId());
 						
 						if(src.getId()!=BGPRouters.get(i).getId()){
-							System.out.println("ERROR AL BUSCAR METANODO SRC");
+							System.out.println("ERROR SEARCHING SRC METANODE");
 						}
 						
 						if(dst.getId()!=nextHops.get(j).getId()){
-							System.out.println("ERROR AL BUSCAR METANODO DST");
+							System.out.println("ERROR SEARCHING DST METANODE");
 						}
 						
-						//ExtendedLinkFactory factory = new ExtendedLinkFactory();
 						//Calculating max flow min cut edges        
-						//EdmondsKarpMaxFlow<MetaNode,ExtendedLink> ek = new EdmondsKarpMaxFlow((DirectedGraph) eg, src, dst, new TransformerExtendedLinkCapacity(), new HashMap<ExtendedLink,Integer>(), factory);
-	
-						//ek.evaluate(); // This computes the max flow
 						
 						//Adding restrictions
-						//Set<ExtendedLink> minCutEdges = ek.getMinCutEdges(); 
-						//Collection<ExtendedLink> minCutEdges = eg.getEdges();
-						//System.out.println("COMIENZO DE RESTRICCION");
+						
 						Set<ExtendedLink> minCutEdges = getRestrictionEdges(eg,src,dst);
-						//System.out.println("Cantidad de links para la restriccion: " + minCutEdges.size());
-						//System.out.println("FIN DE RESTRICCION");
+						
+						int minCutEdgesSize = minCutEdges.size();
+						
+						IloNumVar[] restrictionEdges = new IloNumVar[minCutEdgesSize];
+						
+						String[] restrictionEdgesNames = new String[minCutEdgesSize];
+						
+						for(int k=0; k<minCutEdgesSize; k++){
+							restrictionEdgesNames[k] = "restrictionEdge_"+satIndex+"_"+i+"_"+j+"_"+k;
+						}
+						
+						restrictionEdges = cplex.numVarArray(minCutEdgesSize, 0, 1, IloNumVarType.Int, restrictionEdgesNames);
+						
+						//System.out.println("Cantidad de links para la restriccion: " + minCutEdgesSize);
+						
 						Iterator<ExtendedLink> it = minCutEdges.iterator();
 						
 						it = minCutEdges.iterator();
 						
 						//Adding the restriction
-
-						//IntegerVariable[] arrayRestrictions = new IntegerVariable[minCutEdges.size()];
-						
-						// For each variable, we define its name and the boundaries of its domain
-						/*for (int k = 0; k < minCutEdges.size(); k++) {
-							arrayRestrictions[k] = makeIntVar("arrayRestrictions_" + i + "_" + j + "_" + k, 0, 1);
-							m.addVariable(arrayRestrictions[k]); // Associate the variable to the model
-						}*/
 						
 						int k = 0;
 						
 						while(it.hasNext()){
 							ExtendedLink el = (ExtendedLink)it.next();
-	
-							int indexI = IndexOf(gsat,el.getSrc().getId());
-							int indexJ = IndexOf(gsat,el.getDst().getId());
+							
+							int indexI = IndexOf(BGPRouters,el.getSrc().getId());
+							int indexJ = IndexOf(nextHops,el.getDst().getId());
 							
 							if(el.getSrc().getType()==MetaNodeType.SRC){
-								//m.addConstraint(eq(arrayRestrictions[satIndex][k],UP[indexI][indexJ]));
-								s.addConstraint(eq(arrayRestrictions[satIndex][k],UP[indexI][indexJ]));
-								//s.eq(s.getVar(arrayRestrictions[satIndex][k]),s.getVar(UP[indexI][indexJ]));
-								//s.post(s.makeSConstraint(eq(arrayRestrictions[satIndex][k],UP[indexI][indexJ])));
-								//lstConstraints.add(eq(arrayRestrictions[satIndex][k],UP[indexI][indexJ]));
+								cplex.addEq(restrictionEdges[k],UP[indexI][indexJ]);
 							}
 							else{
-								//m.addConstraint(eq(arrayRestrictions[satIndex][k],DOWN[indexI][indexJ]));
-								s.addConstraint(eq(arrayRestrictions[satIndex][k],DOWN[indexI][indexJ]));
-								//s.eq(s.getVar(arrayRestrictions[satIndex][k]),s.getVar(DOWN[indexI][indexJ]));
-								//s.post(s.makeSConstraint(eq(arrayRestrictions[satIndex][k],DOWN[indexI][indexJ])));
-								//lstConstraints.add(eq(arrayRestrictions[satIndex][k],DOWN[indexI][indexJ]));
+								cplex.addEq(restrictionEdges[k],DOWN[indexI][indexJ]);
 							}
 							k++;		
 						}
 						
-						for(int p = k; p < (gsat.getEdgeCount()*2+gsat.getVertexCount()); p++){
-							//m.addConstraint(eq(arrayRestrictions[satIndex][p],0));
-							//s.addConstraint(eq(arrayRestrictions.get(satIndex)[p],0));
-							s.addConstraint(eq(arrayRestrictions[satIndex][p],0));	
-							//s.eq(s.getVar(arrayRestrictions[satIndex][p]),0);	
-							//s.post(s.makeSConstraint(eq(arrayRestrictions[satIndex][p],0)));
-							//lstConstraints.add(eq(arrayRestrictions[satIndex][p],0));
-						}
+						cplex.addRange(1, cplex.sum(restrictionEdges), minCutEdgesSize);
 						
-						//m.addConstraint(geq(sum(arrayRestrictions[satIndex]), 1));
+						System.out.println("####Solucion "+(satIndex+1)+"##############################################################################");
 						
-						//s.addConstraint(geq(sum(arrayRestrictions.get(satIndex)), 1));
-						s.addConstraint(geq(sum(arrayRestrictions[satIndex]), 1));
-						//SConstraint scc = s.makeSConstraint(geq(sum(arrayRestrictions[satIndex]), 1));
-						//s.post(scc);
-						//s.geq(s.sum(s.getVar(arrayRestrictions[satIndex])),1);
-						//lstConstraints.add(geq(sum(arrayRestrictions[satIndex]), 1));
+						//System.out.println(cplex.toString());
 						
 						//Solving the MIP with the new constraints
-						//s.clear();
+						res = cplex.solve();
 						
-						//s = new CPSolver();
-						//s.read(m);
+						lstSessions = printSolution(IGPGraph,cplex,UP,DOWN,BGPRouters,nextHops,BGPRoutersSize,nextHopsSize);
 						
-						/*Iterator<Constraint> itc = lstConstraints.iterator();
-						
-						while(itc.hasNext()){
-							Constraint c = (Constraint)itc.next();
-							s.addConstraint(c);
-						}*/
-						
-						System.out.println("------------------------------------------------------------------");
-						System.out.println(s.summaryToString());
-						System.out.println("------------------------------------------------------------------");
-
+						System.out.println("####Fin Solucion "+(satIndex+1)+"##############################################################################");
 					}
 					
 					satIndex++;
 				}
-			
 			}
 		}
 		
 		// Print the solution
-		List<String> reflectors = new ArrayList<String>();
-		int sessions = 0;
+		if(res){
+			lstSessions = printSolution(IGPGraph,cplex,UP,DOWN,BGPRouters,nextHops,BGPRoutersSize, nextHopsSize);
+			
+			//System.out.println("Largo lista sesiones = "+ lstSessions.size());
+	     }
+	     else {
+	        System.out.println(" No solution found ");
+	     }
 		
-		System.out.println("UP Matrix:");
-		for (int i = 0; i < n; i++) {
-			for (int j = 0; j < n; j++) {
-				int value =  s.getVar(UP[i][j]).getVal();
-				String rid = ((Node)IGPGraph.getVertices().toArray()[j]).getId();
-				System.out.print(MessageFormat.format("{0} ", value));
-				if(value==1) sessions++;
-				if(value==1 && !reflectors.contains(rid)){
-					reflectors.add(rid);
-				}
-			}
-		System.out.println();
-		}
+		cplex.end();
 		
-		System.out.println("DOWN Matrix:");
-		for (int i = 0; i < n; i++) {
-			for (int j = 0; j < n; j++) {
-				int value =  s.getVar(DOWN[i][j]).getVal();
-				if(value==1) sessions++;
-				System.out.print(MessageFormat.format("{0} ", value));
-			}
-		System.out.println();
-		}
-		
-		System.out.println("Route reflectors IDs("+reflectors.size()+"):");
-		Iterator<String> it = reflectors.iterator();
-		while(it.hasNext()){
-			System.out.println((String)it.next());
-		}
-		
-		System.out.println("Number of sessions: "+sessions);
+		 }
+	      catch (IloException e) {
+	         System.err.println("Concert exception caught: " + e);
+	      }
 		
 	}
 	
-	/*private static CPModel copyModel(CPModel m){
-		
-		CPModel model = new CPModel();
-		
-		//Copying variables
-	
-		Iterator<Variable> it = m.getConstVarIterator();
-		
-		while(it.hasNext()){
-			model.addVariable((Variable)it.next());
+	private static List<iBGPSession> printSolution(Graph<Node, Link> IGPGraph, IloCplex cplex, IloNumVar[][] UP, IloNumVar[][] DOWN, List<Node> BGPRouters, List<Node> nextHops,int BGPRoutersSize, int nextHopsSize){
+		try{
+			System.out.println("--------------------------------------------");
+	        System.out.println();
+	        System.out.println("Solution found:");
+	        System.out.println(" Objective value = " + cplex.getObjValue());
+	        System.out.println();
+	        
+			List<String> reflectors = new ArrayList<String>();
+			List<iBGPSession> lstSessions = new ArrayList<iBGPSession>();
+			int sessions = 0;
+			
+			System.out.println("UP Matrix:");
+			for (int i = 0; i < BGPRoutersSize; i++) {
+				for (int j = 0; j < nextHopsSize; j++) {
+					long value = Math.round(cplex.getValue(UP[i][j]));
+					String rid = BGPRouters.get(i).getId();
+					String rid2 = nextHops.get(j).getId();
+					System.out.print(value+" ");
+					if(value==1.0){
+						lstSessions.add(new iBGPSession(rid,rid2, iBGPSessionType.peer));
+						sessions++;
+					}
+					if(value==1.0 && !reflectors.contains(rid2)){
+						reflectors.add(rid2);
+					}
+				}
+			System.out.println();
+			}
+			
+			System.out.println("DOWN Matrix:");
+			for (int i = 0; i < BGPRoutersSize; i++) {
+				for (int j = 0; j < nextHopsSize; j++) {
+					long value = Math.round(cplex.getValue(DOWN[i][j]));
+					String rid = BGPRouters.get(i).getId();
+					String rid2 = nextHops.get(j).getId();
+					System.out.print(value+" ");
+					if(value==1.0){
+						lstSessions.add(new iBGPSession(rid2,rid, iBGPSessionType.peer));
+						sessions++;
+					}
+					if(value==1.0 && !reflectors.contains(rid)){
+						reflectors.add(rid);
+					}
+				}
+			System.out.println();
+			}
+			
+			System.out.println("Route reflectors IDs("+reflectors.size()+"):");
+			Iterator<String> it = reflectors.iterator();
+			while(it.hasNext()){
+				System.out.println((String)it.next());
+			}
+			
+			System.out.println("Number of sessions: "+sessions);
+	        
+	        System.out.println("--------------------------------------------");
+	        
+	        return lstSessions;
 		}
-		
-		Iterator<IntegerExpressionVariable> it2 = m.getExprVarIterator();
-		
-		while(it2.hasNext()){
-			model.addVariable((IntegerExpressionVariable)it2.next());
+		catch (IloException e) {
+		   System.err.println("Concert exception caught: " + e);
+		   return null;
 		}
-		
-		Iterator<IntegerVariable> it3 = m.getIntVarIterator();
-		
-		while(it3.hasNext()){
-			model.addVariable((IntegerVariable)it3.next());
-		}
-		
-		Iterator<MultipleVariables> it4 = m.getMultipleVarIterator();
-		
-		while(it4.hasNext()){
-			model.addVariable((MultipleVariables)it4.next());
-		}
-		
-		Iterator<RealVariable> it5 = m.getRealVarIterator();
-		
-		while(it5.hasNext()){
-			model.addVariable((RealVariable)it5.next());
-		}
-		
-		Iterator<SetVariable> it6 = m.getSetVarIterator();
-		
-		while(it6.hasNext()){
-			model.addVariable((SetVariable)it6.next());
-		}
-		
-		//Copying constraints
-		
-		Iterator<Constraint> itc = m.getConstraintIterator();
-		
-		while(itc.hasNext()){
-			model.addConstraint(itc.next());
-		}
-		
-		return model;
-	}*/
+	}
 	
 	private boolean existsPath(Graph<MetaNode,ExtendedLink> eg, String Idi, String Idj) {
-		Graph<MetaNode,ExtendedLink> egAux = new DirectedSparseGraph<MetaNode,ExtendedLink>();
+		Graph<MetaNode,ExtendedLink> egAux = new UndirectedSparseGraph<MetaNode,ExtendedLink>();
 		Iterator<MetaNode> it = eg.getVertices().iterator();
 		
 		while(it.hasNext()){
@@ -651,9 +479,11 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 				egAux.addEdge(el,el.getSrc(),el.getDst());
 		}
 		
+		//printGraph2_(egAux,Idi+" - "+Idj);
+		
 		Transformer<ExtendedLink,Integer> tr = new TransformerExtendedLink();
 		DijkstraShortestPath<MetaNode, ExtendedLink> s = new DijkstraShortestPath<MetaNode, ExtendedLink>(egAux,tr);
-		List<ExtendedLink> edges = s.getPath(findColId(egAux.getVertices(),Idi),findColId(egAux.getVertices(),Idj));
+		List<ExtendedLink> edges = s.getPath(findColMetaNodeId(egAux.getVertices(),Idi),findColMetaNodeId(egAux.getVertices(),Idj));
 		
 		if(edges.size()>0)
 			return true;
@@ -676,7 +506,7 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 		return found;
 	}
 	
-	private static boolean collectionNcontains(Collection<Node> c, Node n){
+	/*private static boolean collectionNcontains(Collection<Node> c, Node n){
 		Iterator<Node> it = c.iterator();
 		
 		boolean found = false;
@@ -689,7 +519,7 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 		}
 		
 		return found;
-	}
+	}*/
 	
 	private static Set<ExtendedLink> getRestrictionEdges(Graph<MetaNode,ExtendedLink> eg, MetaNode src, MetaNode dst){
 		
@@ -705,15 +535,13 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 			
 			ExtendedLink el = (ExtendedLink)it.next();
 			
-			if(el.getCapacity()==1){
+			if(el.getCapacity()!=0){
 				if(!listMNcontains(reachableMetaNodes,el.getDst())){
 					reachableMetaNodes.add(el.getDst());
 				}
 			}
 			
 		}
-		
-		//System.out.println("Alcanzables: " + reachableMetaNodes.size());
 		
 		it = lst.iterator();
 		
@@ -722,7 +550,6 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 			ExtendedLink el = (ExtendedLink)it.next();
 			
 			if(listMNcontains(reachableMetaNodes,el.getSrc()) && el.getDst().getId()==dst.getId() && el.getCapacity()==0){
-				//System.out.println("---------------------------------------------------------------------------Agregue");
 				links.add(el);
 			}
 			
@@ -731,10 +558,10 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 		return links;
 	}
 
-	private static float dist(Graph<Node, Link> IGPGraph,String ridw,String ridn){ 
+	private static float dist(Graph<Node, Link> IGPGraph,String idw,String idn){ 
 		Transformer<Link,Float> tr = new TransformerLink();
 		DijkstraShortestPath<Node, Link> s = new DijkstraShortestPath<Node, Link>(IGPGraph,tr);
-		List<Link> edges = s.getPath(findColRId(IGPGraph.getVertices(),ridw),findColRId(IGPGraph.getVertices(),ridn));
+		List<Link> edges = s.getPath(findColNodeId(IGPGraph.getVertices(),idw),findColNodeId(IGPGraph.getVertices(),idn));
 		Iterator<Link> it = edges.iterator();
 		float sum = 0;
 		while(it.hasNext()){
@@ -744,20 +571,20 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 		return sum;
 	}
 	
-	private static int hops(Graph<Node, Link> IGPGraph,String ridw,String ridn){ 
+	private static int hops(Graph<Node, Link> IGPGraph,String idw,String idn){ 
 		Transformer<Link,Float> tr = new TransformerLink();
 		DijkstraShortestPath<Node, Link> s = new DijkstraShortestPath<Node, Link>(IGPGraph,tr);
-		List<Link> edges = s.getPath(findColRId(IGPGraph.getVertices(),ridw),findColRId(IGPGraph.getVertices(),ridn));
+		List<Link> edges = s.getPath(findColNodeId(IGPGraph.getVertices(),idw),findColNodeId(IGPGraph.getVertices(),idn));
 		return edges.size();
 	}
 	
-	private static Node findColRId(Collection<Node> c, String rid){
+	private static Node findColNodeId(Collection<Node> c, String id){
 		Iterator<Node> it = c.iterator();
 		boolean found = false;
 		Node n = null;
 		while(!found && it.hasNext()){
 			n = it.next();
-			if(n.getRid().equals(rid))
+			if(n.getId().equals(id))
 				found = true;
 		}
 		if(found)
@@ -766,7 +593,7 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 			return null;
 	} 
 	
-	private static MetaNode findColId(Collection<MetaNode> c, String id){
+	private static MetaNode findColMetaNodeId(Collection<MetaNode> c, String id){
 		Iterator<MetaNode> it = c.iterator();
 		boolean found = false;
 		MetaNode n = null;
@@ -781,7 +608,7 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 			return null;
 	} 
 	
-	private static Graph<MetaNode,ExtendedLink> CreateExtendedGraph(Graph<Node, Link> IGPGraph, Graph<Node,Link> g, IntegerVariable[][] UP,IntegerVariable[][] DOWN, CPSolver s){
+	private static Graph<MetaNode,ExtendedLink> CreateExtendedGraph(Graph<Node, Link> IGPGraph, Graph<Node,Link> g, IloNumVar[][] UP, IloNumVar[][] DOWN, IloCplex cplex, List<Node> BGPRouters, List<Node> nextHops){
 		
 		Graph<MetaNode,ExtendedLink> eg = new DirectedSparseGraph<MetaNode,ExtendedLink>();
 		
@@ -806,40 +633,31 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 		Collection<Link> lstLinks = g.getEdges();
 		Iterator<Link> itl = lstLinks.iterator();
 		
-//		while(itl.hasNext()){
-//			Link l = (Link)itl.next();
-//				try{	
-////					if(s.getVar(UP[IndexOf(IGPGraph,l.getSrcNode().getId())][IndexOf(IGPGraph,l.getDstNode().getId())]).getVal()==1){ //Exists an UP session between the nodes
-//						ExtendedLink elUP = new ExtendedLink(0);
-//						eg.addEdge(elUP,getMetaNode(MetaNodeType.SRC,eg,l.getSrcNode().getId()),getMetaNode(MetaNodeType.SRC,eg,l.getDstNode().getId()));
-////					}
-////					else if(s.getVar(DOWN[IndexOf(IGPGraph,l.getSrcNode().getId())][IndexOf(IGPGraph,l.getDstNode().getId())]).getVal()==1){ //Exists an DOWN session between the nodes
-//						ExtendedLink elDOWN = new ExtendedLink(0);
-//						eg.addEdge(elDOWN,getMetaNode(MetaNodeType.DST,eg,l.getSrcNode().getId()),getMetaNode(MetaNodeType.DST,eg,l.getDstNode().getId()));
-////					}	
-//				}
-//				catch(NodeNotFoundException e){
-//					System.out.println("Error while creating the extended graphs.");
-//				}
-//		}
-		
 		while(itl.hasNext()){
 			Link l = (Link)itl.next();
 				try{	
 					MetaNode m1SRC = getMetaNode(MetaNodeType.SRC,eg,l.getSrcNode().getId());
-					MetaNode m2SRC = getMetaNode(MetaNodeType.SRC,eg,l.getDstNode().getId());
 					MetaNode m1DST = getMetaNode(MetaNodeType.DST,eg,l.getSrcNode().getId());
+					
+					MetaNode m2SRC = getMetaNode(MetaNodeType.SRC,eg,l.getDstNode().getId());
 					MetaNode m2DST = getMetaNode(MetaNodeType.DST,eg,l.getDstNode().getId());
 					
-					if(s.getVar(UP[IndexOf(IGPGraph,l.getSrcNode().getId())][IndexOf(IGPGraph,l.getDstNode().getId())]).getVal()==1) //Exists an UP session between the nodes
-						eg.addEdge(new ExtendedLink(1,m1SRC,m2SRC),m1SRC,m2SRC);
-					else
-						eg.addEdge(new ExtendedLink(0,m1SRC,m2SRC),m1SRC,m2SRC);
+					try {
+						
+						if(cplex.getValue(UP[IndexOf(BGPRouters,l.getSrcNode().getId())][IndexOf(nextHops,l.getDstNode().getId())])==1.0) //Exists an UP session between the nodes
+							eg.addEdge(new ExtendedLink(1,m1SRC,m2SRC),m1SRC,m2SRC);
+						else
+							eg.addEdge(new ExtendedLink(0,m1SRC,m2SRC),m1SRC,m2SRC);
+						
+						if(cplex.getValue(DOWN[IndexOf(BGPRouters,l.getSrcNode().getId())][IndexOf(nextHops,l.getDstNode().getId())])==1.0) //Exists an DOWN session between the nodes
+							eg.addEdge(new ExtendedLink(1,m1DST,m2DST),m1DST,m2DST);	
+						else
+							eg.addEdge(new ExtendedLink(0,m1DST,m2DST),m1DST,m2DST);
+						
+					} catch (IloException e) {
+						e.printStackTrace();
+					}
 					
-					if(s.getVar(DOWN[IndexOf(IGPGraph,l.getSrcNode().getId())][IndexOf(IGPGraph,l.getDstNode().getId())]).getVal()==1) //Exists an DOWN session between the nodes
-						eg.addEdge(new ExtendedLink(1,m1DST,m2DST),m1DST,m2DST);	
-					else
-						eg.addEdge(new ExtendedLink(0,m1DST,m2DST),m1DST,m2DST);
 				}
 				catch(NodeNotFoundException e){
 					System.out.println("Error while creating the extended graphs.");
@@ -868,10 +686,10 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 			return null;
 	}
 	
-	private static int IndexOf(Graph<Node,Link> IGP, String id){
+	private static int IndexOf(List<Node> lst, String id){
 		int p = 0;
 		boolean found = false;
-		Iterator<Node> it = IGP.getVertices().iterator();
+		Iterator<Node> it = lst.iterator();
 		
 		while(it.hasNext() && !found){
 			Node n = (Node)it.next();
@@ -919,5 +737,63 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 		frame.setVisible(true);
 		
 	}
+	
+	public static void printGraph_(Graph<Node,Link> g,String title){
+		 
+		Layout<Node,Link> layout = new CircleLayout(g);
+		layout.setSize(new Dimension(300,300));
+		VisualizationViewer<Node,Link> vv = new VisualizationViewer<Node, Link>(layout);
+		vv.setPreferredSize(new Dimension(350,350));
+		Transformer<Node, String> vertexPaint = new Transformer<Node, String>() {
+		@Override
+		public String transform(Node node) 
+		{
+		return node.getId();
+		}
+		};
+		 
+		vv.getRenderContext().setVertexLabelTransformer(vertexPaint);
+		 
+		JFrame frame = new JFrame(title);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().add(vv);
+		frame.pack();
+		frame.setVisible(true);
+		 
+		}
+		 
+		private static void printGraph2_(Graph<MetaNode,ExtendedLink> g,String title){
+		 
+		Layout<MetaNode,ExtendedLink> layout = new CircleLayout(g);
+		layout.setSize(new Dimension(300,300));
+		VisualizationViewer<MetaNode,ExtendedLink> vv = new VisualizationViewer<MetaNode,ExtendedLink>(layout);
+		vv.setPreferredSize(new Dimension(350,350)); //Sets the viewing area size
+		 
+		Transformer<MetaNode, String> vertexString = new Transformer<MetaNode, String>() {
+		@Override
+		public String transform(MetaNode node) 
+		{
+		return node.getId();
+		}
+		};
+		 
+		Transformer<ExtendedLink, String> edgeString = new Transformer<ExtendedLink, String>() {
+		@Override
+		public String transform(ExtendedLink link) 
+		{
+		return String.valueOf(link.getCapacity());
+		}
+		};
+		 
+		vv.getRenderContext().setVertexLabelTransformer(vertexString);
+		vv.getRenderContext().setEdgeLabelTransformer(edgeString);
+		 
+		JFrame frame = new JFrame(title);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().add(vv);
+		frame.pack();
+		frame.setVisible(true);
+		 
+		}
 
 }
