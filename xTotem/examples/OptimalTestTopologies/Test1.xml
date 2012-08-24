@@ -17,14 +17,17 @@
             <node id="STTL">
                 <rid>127.0.0.2</rid>
                 <type>CORE</type>
+                <location latitude="126.976234" longitude="424.82944"/>
             </node>
             <node id="DNVR">
                 <rid>127.0.0.1</rid>
                 <type>CORE</type>
+                <location latitude="266.51196" longitude="280.80655"/>
             </node>
             <node id="CHIN">
                 <rid>127.0.0.3</rid>
                 <type>EDGE</type>
+                <location latitude="312.7462" longitude="469.52563"/>
             </node>
         </nodes>
         <links>
