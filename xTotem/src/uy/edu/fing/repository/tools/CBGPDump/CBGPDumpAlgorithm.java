@@ -18,6 +18,7 @@ import be.ac.ulg.montefiore.run.totem.domain.model.BgpRouter;
 import be.ac.ulg.montefiore.run.totem.domain.model.Domain;
 import be.ac.ulg.montefiore.run.totem.domain.model.Link;
 import be.ac.ulg.montefiore.run.totem.domain.model.Node;
+import be.ac.ulg.montefiore.run.totem.domain.model.jaxb.impl.BgpRouterImpl;
 
 
 public class CBGPDumpAlgorithm
@@ -98,11 +99,9 @@ public class CBGPDumpAlgorithm
 	
 	private boolean initDescriptionTopology() throws IOException
 	{
-    	String description = ((domain.getDescription() == null || domain.getDescription().equals("")) ? "AS configuration IGP/iBGP" : domain.getDescription());
     	bw.write("# ===================================================================\n");
     	bw.write("# C-BGP Export file (CLI)\n");
     	bw.write("# Domain AS "+ domain_num +"\n");
-    	bw.write("# Description: "+ description +"\n");
     	bw.write("# ===================================================================\n\n");
 		return false;
 	}
@@ -231,15 +230,14 @@ public class CBGPDumpAlgorithm
 	                    	logger.error("WARNING: no node for neighbor " + neighbor.getAddress());
 	                
 	                    bw.write("\t");
-	                    if(neighbor.isReflectorClient())
+	                    bw.write("add peer "+ domain_num +" "+ neighbor.getAddress() +"\n");
+	                    
+	                    if(((BgpRouterImpl)router).isReflector())
 	                    {
-	                        bw.write("add peer "+ domain_num +" "+ neighbor.getAddress() +" rr-client "+"\n");
+	                    	bw.write("\t");
+	                        bw.write("peer "+ neighbor.getAddress() +" rr-client "+"\n");
 	                    }
-	                    else
-	                    {
-	                        bw.write("add peer "+ domain_num +" "+ neighbor.getAddress() +"\n");
-	                    }
-	
+
 	                    bw.write("\t");
 	                    bw.write("peer "+ neighbor.getAddress() +" up "+"\n");
 	                }
@@ -249,7 +247,15 @@ public class CBGPDumpAlgorithm
 			}
 		}
 		/// END ROUTERS BGP AND SESSIONS iBGP
-
+		bw.write("\n");
+		
+		
+		/// START SIMULATION
+		bw.write("# -------------------------------------------------------------------\n");
+		bw.write("# Start simulation\n");
+		bw.write("# -------------------------------------------------------------------\n");
+		bw.write("sim run\n");
+		/// END START SIMULATION
 		return false;
 	}
 	
