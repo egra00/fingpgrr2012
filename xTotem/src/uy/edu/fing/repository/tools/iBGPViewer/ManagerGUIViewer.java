@@ -365,7 +365,7 @@ public class ManagerGUIViewer
 				double auxX = (xx * escalaX) - x1*_maxX/(x - x1);
 				double auxY = (yy * escalaY) - y1*_maxY/(y - y1);
 				
-				MyNode n = new MyNode(node.getRid(), (MARCO/2)+auxX , (MARCO/2)+auxY, (node.getBgpRouter() != null && ((BgpRouterImpl)node.getBgpRouter()).isReflector() ? true: false));
+				MyNode n = new MyNode(node.getId(), (MARCO/2)+auxX , (MARCO/2)+auxY, (node.getBgpRouter() != null && ((BgpRouterImpl)node.getBgpRouter()).isReflector() ? true: false));
 				mynodesById.put(node.getRid(), n);
 				nodesById.put(node.getRid(), node);
 				ibgp.addVertex(n);
@@ -394,8 +394,7 @@ public class ManagerGUIViewer
 	                    	if (!linksById.contains(linkId))
 	                    	{
 	                    		linksById.add(linkId);
-	                    		TypeMylink type = ( ((BgpNeighborImpl)neighbor).isReflectorClient()? TypeMylink.client: TypeMylink.peer);
-	                    		ibgp.addEdge(new MyLink(router.getRid(), neighbor.getAddress(), type), mynodesById.get(router.getRid()), mynodesById.get(neighbor.getAddress()), EdgeType.DIRECTED);
+	                    		ibgp.addEdge(new MyLink(router.getId(), nodesById.get(neighbor.getAddress()).getId(), TypeMylink.client), mynodesById.get(router.getRid()), mynodesById.get(neighbor.getAddress()), EdgeType.DIRECTED);
 	                    	}
 	                    }              	
 	                }     
@@ -421,8 +420,7 @@ public class ManagerGUIViewer
                     	if (!linksById.contains(linkId))
                     	{
                     		linksById.add(linkId);
-                    		TypeMylink type = ( ((BgpNeighborImpl)neighbor).isReflectorClient()? TypeMylink.client: TypeMylink.peer);
-                    		ibgp.addEdge(new MyLink(router.getRid(), neighbor.getAddress(), type), mynodesById.get(router.getRid()), mynodesById.get(neighbor.getAddress()));
+                    		ibgp.addEdge(new MyLink(router.getId(), nodesById.get(neighbor.getAddress()).getId(), TypeMylink.peer), mynodesById.get(router.getRid()), mynodesById.get(neighbor.getAddress()));
                     	}           	
 	                }     
 	            }
