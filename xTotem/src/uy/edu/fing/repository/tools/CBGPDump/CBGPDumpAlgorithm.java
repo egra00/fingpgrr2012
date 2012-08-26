@@ -197,6 +197,7 @@ public class CBGPDumpAlgorithm
 		bw.write("# -------------------------------------------------------------------\n");
 		bw.write("# BGP routing\n");
 		bw.write("# -------------------------------------------------------------------\n");
+		bw.write("bgp options msg-monitor " + "AS" + domain_num + "-trace.bgp" +"\n\n");
 		
 		/// ADD ROUTERS BGP AND SESSIONS iBGP
 		List<BgpRouter> lst_bgps = domain.getAllBgpRouters();
@@ -235,19 +236,26 @@ public class CBGPDumpAlgorithm
 	                    if(((BgpRouterImpl)router).isReflector())
 	                    {
 	                    	bw.write("\t");
-	                        bw.write("peer "+ neighbor.getAddress() +" rr-client "+"\n");
+	                        bw.write("peer "+ neighbor.getAddress() +" rr-client"+"\n");
 	                    }
 
 	                    bw.write("\t");
-	                    bw.write("peer "+ neighbor.getAddress() +" up "+"\n");
+	                    bw.write("peer "+ neighbor.getAddress() +" up"+"\n");
 	                }
 	            }
 	            bw.write("\t");
 	            bw.write("exit"+"\n");
 			}
 		}
-		/// END ROUTERS BGP AND SESSIONS iBGP
 		bw.write("\n");
+		/// END ROUTERS BGP AND SESSIONS iBGP
+		
+		/// SCENARIO TO SIMULATE
+		bw.write("# -------------------------------------------------------------------\n");
+		bw.write("# Scenario to simulate\n");
+		bw.write("# -------------------------------------------------------------------\n");
+		bw.write("\n");
+		/// END SCENARIO TO SIMULATE
 		
 		
 		/// START SIMULATION
@@ -256,6 +264,7 @@ public class CBGPDumpAlgorithm
 		bw.write("# -------------------------------------------------------------------\n");
 		bw.write("sim run\n");
 		/// END START SIMULATION
+		
 		return false;
 	}
 	

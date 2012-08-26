@@ -1,0 +1,378 @@
+# ===================================================================
+# C-BGP Export file (CLI)
+# Domain AS 11537
+# ===================================================================
+
+# -------------------------------------------------------------------
+# Physical topology
+# -------------------------------------------------------------------
+net add node 198.32.8.200
+net add node 198.32.8.194
+net add node 198.32.8.197
+net add node 198.32.8.196
+net add node 198.32.8.193
+net add node 198.32.8.199
+net add node 198.32.8.202
+net add node 198.32.8.192
+net add node 198.32.8.203
+net add node 198.32.8.195
+net add node 198.32.8.198
+net add node 198.32.8.201
+net add link 198.32.8.200 198.32.8.194
+net link 198.32.8.200 198.32.8.194 igp-weight --bidir 2095
+net add link 198.32.8.194 198.32.8.197
+net link 198.32.8.194 198.32.8.197 igp-weight --bidir 639
+net add link 198.32.8.197 198.32.8.196
+net link 198.32.8.197 198.32.8.196 igp-weight --bidir 548
+net add link 198.32.8.197 198.32.8.195
+net link 198.32.8.197 198.32.8.195 igp-weight --bidir 902
+net add link 198.32.8.196 198.32.8.193
+net link 198.32.8.196 198.32.8.193 igp-weight --bidir 260
+net add link 198.32.8.196 198.32.8.192
+net link 198.32.8.196 198.32.8.192 igp-weight --bidir 587
+net add link 198.32.8.203 198.32.8.192
+net link 198.32.8.203 198.32.8.192 igp-weight --bidir 587
+net add link 198.32.8.193 198.32.8.199
+net link 198.32.8.193 198.32.8.199 igp-weight --bidir 700
+net add link 198.32.8.199 198.32.8.202
+net link 198.32.8.199 198.32.8.202 igp-weight --bidir 233
+net add link 198.32.8.202 198.32.8.192
+net link 198.32.8.202 198.32.8.192 igp-weight --bidir 846
+net add link 198.32.8.192 198.32.8.195
+net link 198.32.8.192 198.32.8.195 igp-weight --bidir 1176
+net add link 198.32.8.195 198.32.8.198
+net link 198.32.8.195 198.32.8.198 igp-weight --bidir 1893
+net add link 198.32.8.198 198.32.8.201
+net link 198.32.8.198 198.32.8.201 igp-weight --bidir 366
+net add link 198.32.8.201 198.32.8.194
+net link 198.32.8.201 198.32.8.194 igp-weight --bidir 1295
+net add link 198.32.8.201 198.32.8.200
+net link 198.32.8.201 198.32.8.200 igp-weight --bidir 861
+
+# -------------------------------------------------------------------
+# Static routing
+# -------------------------------------------------------------------
+
+# -------------------------------------------------------------------
+# IGP routing
+# -------------------------------------------------------------------
+net add domain 11537 igp
+net node 198.32.8.200 domain 11537
+net node 198.32.8.194 domain 11537
+net node 198.32.8.197 domain 11537
+net node 198.32.8.196 domain 11537
+net node 198.32.8.193 domain 11537
+net node 198.32.8.199 domain 11537
+net node 198.32.8.202 domain 11537
+net node 198.32.8.192 domain 11537
+net node 198.32.8.203 domain 11537
+net node 198.32.8.195 domain 11537
+net node 198.32.8.198 domain 11537
+net node 198.32.8.201 domain 11537
+net domain 11537 compute
+
+# -------------------------------------------------------------------
+# BGP routing
+# -------------------------------------------------------------------
+bgp options msg-monitor AS11537-trace.bgp
+
+bgp add router 11537 198.32.8.200
+bgp router 198.32.8.200
+	add peer 11537 198.32.8.202
+	peer 198.32.8.202 rr-client 
+	peer 198.32.8.202 up 
+	add peer 11537 198.32.8.197
+	peer 198.32.8.197 rr-client 
+	peer 198.32.8.197 up 
+	add peer 11537 198.32.8.195
+	peer 198.32.8.195 rr-client 
+	peer 198.32.8.195 up 
+	add peer 11537 198.32.8.201
+	peer 198.32.8.201 rr-client 
+	peer 198.32.8.201 up 
+	add peer 11537 198.32.8.198
+	peer 198.32.8.198 rr-client 
+	peer 198.32.8.198 up 
+	add peer 11537 198.32.8.194
+	peer 198.32.8.194 rr-client 
+	peer 198.32.8.194 up 
+	exit
+bgp add router 11537 198.32.8.194
+bgp router 198.32.8.194
+	add peer 11537 198.32.8.202
+	peer 198.32.8.202 up 
+	add peer 11537 198.32.8.197
+	peer 198.32.8.197 up 
+	add peer 11537 198.32.8.195
+	peer 198.32.8.195 up 
+	add peer 11537 198.32.8.200
+	peer 198.32.8.200 up 
+	add peer 11537 198.32.8.201
+	peer 198.32.8.201 up 
+	exit
+bgp add router 11537 198.32.8.197
+bgp router 198.32.8.197
+	add peer 11537 198.32.8.202
+	peer 198.32.8.202 rr-client 
+	peer 198.32.8.202 up 
+	add peer 11537 198.32.8.195
+	peer 198.32.8.195 rr-client 
+	peer 198.32.8.195 up 
+	add peer 11537 198.32.8.199
+	peer 198.32.8.199 rr-client 
+	peer 198.32.8.199 up 
+	add peer 11537 198.32.8.193
+	peer 198.32.8.193 rr-client 
+	peer 198.32.8.193 up 
+	add peer 11537 198.32.8.192
+	peer 198.32.8.192 rr-client 
+	peer 198.32.8.192 up 
+	add peer 11537 198.32.8.196
+	peer 198.32.8.196 rr-client 
+	peer 198.32.8.196 up 
+	add peer 11537 198.32.8.198
+	peer 198.32.8.198 rr-client 
+	peer 198.32.8.198 up 
+	add peer 11537 198.32.8.194
+	peer 198.32.8.194 rr-client 
+	peer 198.32.8.194 up 
+	add peer 11537 198.32.8.200
+	peer 198.32.8.200 rr-client 
+	peer 198.32.8.200 up 
+	add peer 11537 198.32.8.201
+	peer 198.32.8.201 rr-client 
+	peer 198.32.8.201 up 
+	exit
+bgp add router 11537 198.32.8.196
+bgp router 198.32.8.196
+	add peer 11537 198.32.8.202
+	peer 198.32.8.202 up 
+	add peer 11537 198.32.8.197
+	peer 198.32.8.197 up 
+	add peer 11537 198.32.8.195
+	peer 198.32.8.195 up 
+	add peer 11537 198.32.8.193
+	peer 198.32.8.193 up 
+	add peer 11537 198.32.8.192
+	peer 198.32.8.192 up 
+	exit
+bgp add router 11537 198.32.8.193
+bgp router 198.32.8.193
+	add peer 11537 198.32.8.202
+	peer 198.32.8.202 rr-client 
+	peer 198.32.8.202 up 
+	add peer 11537 198.32.8.197
+	peer 198.32.8.197 rr-client 
+	peer 198.32.8.197 up 
+	add peer 11537 198.32.8.195
+	peer 198.32.8.195 rr-client 
+	peer 198.32.8.195 up 
+	add peer 11537 198.32.8.192
+	peer 198.32.8.192 rr-client 
+	peer 198.32.8.192 up 
+	add peer 11537 198.32.8.199
+	peer 198.32.8.199 rr-client 
+	peer 198.32.8.199 up 
+	add peer 11537 198.32.8.196
+	peer 198.32.8.196 rr-client 
+	peer 198.32.8.196 up 
+	exit
+bgp add router 11537 198.32.8.199
+bgp router 198.32.8.199
+	add peer 11537 198.32.8.202
+	peer 198.32.8.202 up 
+	add peer 11537 198.32.8.197
+	peer 198.32.8.197 up 
+	add peer 11537 198.32.8.195
+	peer 198.32.8.195 up 
+	add peer 11537 198.32.8.193
+	peer 198.32.8.193 up 
+	add peer 11537 198.32.8.192
+	peer 198.32.8.192 up 
+	exit
+bgp add router 11537 198.32.8.202
+bgp router 198.32.8.202
+	add peer 11537 198.32.8.197
+	peer 198.32.8.197 rr-client 
+	peer 198.32.8.197 up 
+	add peer 11537 198.32.8.195
+	peer 198.32.8.195 rr-client 
+	peer 198.32.8.195 up 
+	add peer 11537 198.32.8.199
+	peer 198.32.8.199 rr-client 
+	peer 198.32.8.199 up 
+	add peer 11537 198.32.8.193
+	peer 198.32.8.193 rr-client 
+	peer 198.32.8.193 up 
+	add peer 11537 198.32.8.192
+	peer 198.32.8.192 rr-client 
+	peer 198.32.8.192 up 
+	add peer 11537 198.32.8.196
+	peer 198.32.8.196 rr-client 
+	peer 198.32.8.196 up 
+	add peer 11537 198.32.8.198
+	peer 198.32.8.198 rr-client 
+	peer 198.32.8.198 up 
+	add peer 11537 198.32.8.194
+	peer 198.32.8.194 rr-client 
+	peer 198.32.8.194 up 
+	add peer 11537 198.32.8.200
+	peer 198.32.8.200 rr-client 
+	peer 198.32.8.200 up 
+	add peer 11537 198.32.8.201
+	peer 198.32.8.201 rr-client 
+	peer 198.32.8.201 up 
+	exit
+bgp add router 11537 198.32.8.192
+bgp router 198.32.8.192
+	add peer 11537 198.32.8.203
+	peer 198.32.8.203 rr-client 
+	peer 198.32.8.203 up 
+	add peer 11537 198.32.8.202
+	peer 198.32.8.202 rr-client 
+	peer 198.32.8.202 up 
+	add peer 11537 198.32.8.197
+	peer 198.32.8.197 rr-client 
+	peer 198.32.8.197 up 
+	add peer 11537 198.32.8.195
+	peer 198.32.8.195 rr-client 
+	peer 198.32.8.195 up 
+	add peer 11537 198.32.8.193
+	peer 198.32.8.193 rr-client 
+	peer 198.32.8.193 up 
+	add peer 11537 198.32.8.199
+	peer 198.32.8.199 rr-client 
+	peer 198.32.8.199 up 
+	add peer 11537 198.32.8.196
+	peer 198.32.8.196 rr-client 
+	peer 198.32.8.196 up 
+	exit
+bgp add router 11537 198.32.8.203
+bgp router 198.32.8.203
+	add peer 11537 198.32.8.192
+	peer 198.32.8.192 up 
+	exit
+bgp add router 11537 198.32.8.195
+bgp router 198.32.8.195
+	add peer 11537 198.32.8.202
+	peer 198.32.8.202 rr-client 
+	peer 198.32.8.202 up 
+	add peer 11537 198.32.8.197
+	peer 198.32.8.197 rr-client 
+	peer 198.32.8.197 up 
+	add peer 11537 198.32.8.199
+	peer 198.32.8.199 rr-client 
+	peer 198.32.8.199 up 
+	add peer 11537 198.32.8.193
+	peer 198.32.8.193 rr-client 
+	peer 198.32.8.193 up 
+	add peer 11537 198.32.8.192
+	peer 198.32.8.192 rr-client 
+	peer 198.32.8.192 up 
+	add peer 11537 198.32.8.196
+	peer 198.32.8.196 rr-client 
+	peer 198.32.8.196 up 
+	add peer 11537 198.32.8.198
+	peer 198.32.8.198 rr-client 
+	peer 198.32.8.198 up 
+	add peer 11537 198.32.8.194
+	peer 198.32.8.194 rr-client 
+	peer 198.32.8.194 up 
+	add peer 11537 198.32.8.200
+	peer 198.32.8.200 rr-client 
+	peer 198.32.8.200 up 
+	add peer 11537 198.32.8.201
+	peer 198.32.8.201 rr-client 
+	peer 198.32.8.201 up 
+	exit
+bgp add router 11537 198.32.8.198
+bgp router 198.32.8.198
+	add peer 11537 198.32.8.202
+	peer 198.32.8.202 up 
+	add peer 11537 198.32.8.197
+	peer 198.32.8.197 up 
+	add peer 11537 198.32.8.195
+	peer 198.32.8.195 up 
+	add peer 11537 198.32.8.200
+	peer 198.32.8.200 up 
+	add peer 11537 198.32.8.201
+	peer 198.32.8.201 up 
+	exit
+bgp add router 11537 198.32.8.201
+bgp router 198.32.8.201
+	add peer 11537 198.32.8.202
+	peer 198.32.8.202 rr-client 
+	peer 198.32.8.202 up 
+	add peer 11537 198.32.8.197
+	peer 198.32.8.197 rr-client 
+	peer 198.32.8.197 up 
+	add peer 11537 198.32.8.195
+	peer 198.32.8.195 rr-client 
+	peer 198.32.8.195 up 
+	add peer 11537 198.32.8.200
+	peer 198.32.8.200 rr-client 
+	peer 198.32.8.200 up 
+	add peer 11537 198.32.8.198
+	peer 198.32.8.198 rr-client 
+	peer 198.32.8.198 up 
+	add peer 11537 198.32.8.194
+	peer 198.32.8.194 rr-client 
+	peer 198.32.8.194 up 
+	exit
+
+# -------------------------------------------------------------------
+# Scenario to simulate
+# -------------------------------------------------------------------
+net add node 3.0.0.1
+net add node 3.0.0.2
+net add domain 3 igp
+net node 3.0.0.2 domain 3
+net node 3.0.0.1 domain 3
+net add link 198.32.8.200 3.0.0.1
+net add link 198.32.8.195 3.0.0.2
+net add link 3.0.0.1 3.0.0.2
+net link 3.0.0.1 3.0.0.2 igp-weight --bidir 5
+net domain 3 compute
+
+net node 198.32.8.200 route add --oif=3.0.0.1 --gw=3.0.0.1 3.0.0.1/32 0
+
+bgp router 198.32.8.200
+	add peer 3 3.0.0.1
+	peer 3.0.0.1 virtual
+	peer 3.0.0.1 next-hop-self
+	peer 3.0.0.1 up
+	peer 3.0.0.1 recv "BGP4|0|A|198.32.8.200|2|3.0.0.0/8|3 3356 7018|IGP|3.0.0.1|0|0"
+	exit
+
+
+net node 198.32.8.195 route add --oif=3.0.0.2 --gw=3.0.0.2 3.0.0.2/32 0
+bgp router 198.32.8.195
+	add peer 3 3.0.0.2
+	peer 3.0.0.2 virtual
+	peer 3.0.0.2 next-hop-self
+	peer 3.0.0.2 up
+	peer 3.0.0.2 recv "BGP4|1|A|198.32.8.195|2|3.0.0.0/8|3 3356 7018|IGP|3.0.0.2|0|0"
+	exit
+
+# -------------------------------------------------------------------
+# Start simulation
+# -------------------------------------------------------------------
+sim run
+
+print "\nPING: 198.32.8.195 -> 198.32.8.200\n"
+net node 198.32.8.195 ping 198.32.8.200
+
+print "\n198.32.8.200\n"
+net node 198.32.8.200 show rt *
+
+print "\n198.32.8.195\n"
+net node 198.32.8.195 show rt *
+
+print "\n198.32.8.202\n"
+net node 198.32.8.202 show rt *
+
+print "\n198.32.8.199\n"
+net node 198.32.8.199 show rt *
+
+print "\nRECORD-ROPUTE: 198.32.8.196 -> 3.0.0.1\n"
+net node 198.32.8.196 record-route 3.0.0.1
