@@ -1,0 +1,145 @@
+# ===================================================================
+# C-BGP Export file (CLI)
+# Domain AS 10013
+# ===================================================================
+
+# -------------------------------------------------------------------
+# Physical topology
+# -------------------------------------------------------------------
+net add node 198.32.8.200
+net add node 198.32.8.201
+net add node 198.32.8.202
+net add node 198.32.8.203
+net add node 198.32.8.204
+net add link 198.32.8.200 198.32.8.202
+net link 198.32.8.200 198.32.8.202 igp-weight --bidir 5
+net add link 198.32.8.200 198.32.8.201
+net link 198.32.8.200 198.32.8.201 igp-weight --bidir 5
+net add link 198.32.8.201 198.32.8.202
+net link 198.32.8.201 198.32.8.202 igp-weight --bidir 5
+net add link 198.32.8.204 198.32.8.202
+net link 198.32.8.204 198.32.8.202 igp-weight --bidir 5
+net add link 198.32.8.203 198.32.8.202
+net link 198.32.8.203 198.32.8.202 igp-weight --bidir 5
+net add link 198.32.8.203 198.32.8.204
+net link 198.32.8.203 198.32.8.204 igp-weight --bidir 5
+
+# -------------------------------------------------------------------
+# Static routing
+# -------------------------------------------------------------------
+
+# -------------------------------------------------------------------
+# IGP routing
+# -------------------------------------------------------------------
+net add domain 10013 igp
+net node 198.32.8.200 domain 10013
+net node 198.32.8.201 domain 10013
+net node 198.32.8.202 domain 10013
+net node 198.32.8.203 domain 10013
+net node 198.32.8.204 domain 10013
+net domain 10013 compute
+
+
+# -------------------------------------------------------------------
+# BGP routing
+# -------------------------------------------------------------------
+bgp add router 10013 198.32.8.200
+bgp router 198.32.8.200
+	add peer 10013 198.32.8.202
+	peer 198.32.8.202 up 
+	add peer 10013 198.32.8.201
+	peer 198.32.8.201 up 
+	exit
+bgp add router 10013 198.32.8.201
+bgp router 198.32.8.201
+	add peer 10013 198.32.8.202
+	peer 198.32.8.202 up 
+	add peer 10013 198.32.8.200
+	peer 198.32.8.200 up 
+	exit
+bgp add router 10013 198.32.8.202
+bgp router 198.32.8.202
+	add peer 10013 198.32.8.200
+	peer 198.32.8.200 rr-client 
+	peer 198.32.8.200 up 
+	add peer 10013 198.32.8.201
+	peer 198.32.8.201 rr-client 
+	peer 198.32.8.201 up 
+	add peer 10013 198.32.8.204
+	peer 198.32.8.204 rr-client 
+	peer 198.32.8.204 up 
+	add peer 10013 198.32.8.203
+	peer 198.32.8.203 rr-client 
+	peer 198.32.8.203 up 
+	exit
+bgp add router 10013 198.32.8.203
+bgp router 198.32.8.203
+	add peer 10013 198.32.8.202
+	peer 198.32.8.202 up 
+	add peer 10013 198.32.8.204
+	peer 198.32.8.204 up 
+	exit
+bgp add router 10013 198.32.8.204
+bgp router 198.32.8.204
+	add peer 10013 198.32.8.202
+	peer 198.32.8.202 up 
+	add peer 10013 198.32.8.203
+	peer 198.32.8.203 up 
+	exit
+
+# -------------------------------------------------------------------
+# Scenario to simulate
+# -------------------------------------------------------------------
+net add node 3.0.0.1
+net add node 3.0.0.2
+net add domain 3 igp
+net node 3.0.0.2 domain 3
+net node 3.0.0.1 domain 3
+net add link 198.32.8.204 3.0.0.1
+net add link 198.32.8.201 3.0.0.2
+net add link 3.0.0.1 3.0.0.2
+net link 3.0.0.1 3.0.0.2 igp-weight --bidir 5
+net domain 3 compute
+
+net node 198.32.8.204 route add --oif=3.0.0.1 --gw=3.0.0.1 3.0.0.1/32 0
+
+bgp router 198.32.8.204
+	add peer 3 3.0.0.1
+	peer 3.0.0.1 virtual
+	peer 3.0.0.1 next-hop-self
+	peer 3.0.0.1 up
+	peer 3.0.0.1 recv "BGP4|0|A|198.32.8.204|2|3.0.0.0/8|3 3356 7018|IGP|3.0.0.1|0|0"
+	exit
+
+
+net node 198.32.8.201 route add --oif=3.0.0.2 --gw=3.0.0.2 3.0.0.2/32 0
+bgp router 198.32.8.201
+	add peer 3 3.0.0.2
+	peer 3.0.0.2 virtual
+	peer 3.0.0.2 next-hop-self
+	peer 3.0.0.2 up
+	peer 3.0.0.2 recv "BGP4|1|A|198.32.8.201|2|3.0.0.0/8|3 3356 7018|IGP|3.0.0.2|0|0"
+	exit
+
+# -------------------------------------------------------------------
+# Start simulation
+# -------------------------------------------------------------------
+sim run
+
+print "\nPING: 198.32.8.201 -> 198.32.8.204\n"
+net node 198.32.8.201 ping 198.32.8.204
+
+print "\n198.32.8.204\n"
+net node 198.32.8.204 show rt *
+
+print "\n198.32.8.201\n"
+net node 198.32.8.201 show rt *
+
+print "\n198.32.8.202\n"
+net node 198.32.8.202 show rt *
+
+print "\n198.32.8.203\n"
+net node 198.32.8.203 show rt *
+
+print "\nRECORD-ROPUTE: 198.32.8.201 -> 3.0.0.1\n"
+net node 198.32.8.201 record-route 3.0.0.1
