@@ -1,6 +1,8 @@
 package uy.edu.fing.repository.rrloc.algorithms.bgpsepX.bgpsep;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import uy.edu.fing.repository.rrloc.algorithms.iBGPSession;
 import uy.edu.fing.repository.rrloc.algorithms.iBGPSessionType;
@@ -13,20 +15,6 @@ import edu.uci.ics.jung2.graph.Graph;
 
 @SuppressWarnings("unchecked")
 public class BGPSepAlgorithm implements RRLocAlgorithm {
-	
-	
-	public boolean contiene(List<iBGPSession> lst, String n1, String n2)
-	{
-		for(iBGPSession session : lst)
-		{
-			if (session.getIdLink1().equals(n1) && session.getIdLink2().equals(n2) ||
-				session.getIdLink1().equals(n2) && session.getIdLink2().equals(n1))
-			{
-				return true;
-			}
-		}
-		return false;
-	}
 	
 	
 	@Override
@@ -50,12 +38,11 @@ public class BGPSepAlgorithm implements RRLocAlgorithm {
 			GraphSeparator graphSeparator = Separator.GraphPartitionAE(15, IGPTopology ,50, 60, 100, 0.01, 0.1);
 			
 			//El conjunto de routes reflectors estara configurado Full Mesh
+			Set<Node> aux_set = new HashSet<Node>(graphSeparator.getSeparator());
 			for (Node u : graphSeparator.getSeparator()) {
-				for (Node v : graphSeparator.getSeparator()) {
-					if (u != v && !contiene(i, u.getId(), v.getId())) 
-					{
-						i.add(new iBGPSession(u.getId(), v.getId(), iBGPSessionType.peer));
-					}
+				aux_set.remove(u);
+				for (Node v : aux_set) {
+					i.add(new iBGPSession(u.getId(), v.getId(), iBGPSessionType.peer));
 				}
 			}
 			
