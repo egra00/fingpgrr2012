@@ -23,20 +23,6 @@ public class BGPSepSAlgorithm extends BGPSepDAlgorithm {
 	private DijkstraShortestPath<Node, Link> dijkstra;
 
 	
-	public boolean contiene(List<iBGPSession> lst, String n1, String n2)
-	{
-		for(iBGPSession session : lst)
-		{
-			if (session.getIdLink1().equals(n1) && session.getIdLink2().equals(n2) ||
-				session.getIdLink1().equals(n2) && session.getIdLink2().equals(n1))
-			{
-				return true;
-			}
-		}
-		return false;
-	}
-	
-	
 	public Node getNode(Link link, Node node) // Dado un link "link" y un nodo "node" doy el extremo del que no es "node"
 	{
 		try 
@@ -57,6 +43,7 @@ public class BGPSepSAlgorithm extends BGPSepDAlgorithm {
 	public List<Node> toPathNode(Node u, Node v)
 	{
 		List<Node> lst = new LinkedList<Node>();
+		
 		List<Link> path = dijkstra.getPath(u, v);
 		
 		Node u_i = u;
@@ -85,7 +72,7 @@ public class BGPSepSAlgorithm extends BGPSepDAlgorithm {
 		
 		/* Step 2: Choose a graph separator S in G'.V */
 		
-		GraphSeparator graphSeparator = Separator.GraphPartitionAE(15, G ,50, 60, 100, 0.01, 0.1);
+		GraphSeparator graphSeparator = Separator.GraphPartitionAE(15, Gp ,50, 60, 100, 0.01, 0.1);
 		Set<Node> S = graphSeparator.getSeparator();
 		List<Graph<Node, Link>> G1m = graphSeparator.getComponents();
 		dijkstra = new DijkstraShortestPath<Node, Link>(Gp);
@@ -114,11 +101,11 @@ public class BGPSepSAlgorithm extends BGPSepDAlgorithm {
 		}
 		
 		/* Step 4: Fully mesh the routers in S+ */
+		Set<Node> aux_set = new HashSet<Node>(Splus);
 		for (Node u : Splus) {
-			for (Node v : Splus) {
-				if (u != v && !contiene (I, u.getId(), v.getId())) {
-					I.add(new iBGPSession(u.getId(), v.getId(), iBGPSessionType.peer));
-				}
+			aux_set.remove(u);
+			for (Node v : aux_set) {
+				I.add(new iBGPSession(u.getId(), v.getId(), iBGPSessionType.peer));
 			}
 		}
 		
@@ -144,11 +131,11 @@ public class BGPSepSAlgorithm extends BGPSepDAlgorithm {
 		for (Graph<Node, Link> Gi : G1m) { // Foreach connected componet
 			Set<Node> GiV_Splus = new HashSet<Node>(Gi.getVertices());
 			GiV_Splus.removeAll(Splus);
+			aux_set = new HashSet<Node>(GiV_Splus);
 			for (Node u : GiV_Splus) {
-				for (Node v : GiV_Splus) {
-					if (u != v && !contiene (I, u.getId(), v.getId())) {
-						I.add(new iBGPSession(u.getId(), v.getId(), iBGPSessionType.peer));
-					}
+				aux_set.remove(u);
+				for (Node v : aux_set) {
+					I.add(new iBGPSession(u.getId(), v.getId(), iBGPSessionType.peer));
 				}
 			}
 		}
