@@ -41,6 +41,7 @@ public class Bates1 extends BindAlgorithm
 
 	private Domain domain;
 	private String name;
+	private int pops;
 	
 	public Bates1() {
 		logger = Logger.getLogger(Bates1.class);
@@ -51,6 +52,7 @@ public class Bates1 extends BindAlgorithm
 		
 		try {
 			params.add(new ParameterDescriptor("ASID", "Domain ASID (leave blank for default).", Integer.class, null));
+			params.add(new ParameterDescriptor("Amount PoPs", "Amount of PoPs (by default is two).", Integer.class, null));
 		} catch (AlgorithmParameterException e) {
 			e.printStackTrace();
 		}
@@ -60,6 +62,8 @@ public class Bates1 extends BindAlgorithm
 	public Object getAlgorithmParams(HashMap params) 
 	{
         String asId = (String) params.get("ASID");
+        String popsS = (String) params.get("Amount PoPs");
+        pops = 2;
         
         if(asId == null || asId.isEmpty()) {
         	domain = InterDomainManager.getInstance().getDefaultDomain();
@@ -76,6 +80,8 @@ public class Bates1 extends BindAlgorithm
             }
         }
 		
+        if(popsS != null && !popsS.isEmpty() && pops <= domain.getNbNodes()) pops = Integer.parseInt(popsS);
+        
 		// Topología IGP representada en un grafo jung 
 		Graph<Node, Link> jIGPTopology = new UndirectedSparseMultigraph<Node, Link>();
 		
@@ -93,7 +99,11 @@ public class Bates1 extends BindAlgorithm
 			}
 		}
 		
-		return jIGPTopology;
+		Bates1Algorithm.Params param = new Bates1Algorithm.Params();
+		param.graph = jIGPTopology;
+		param.pops = pops;
+		
+		return param;
 	}
 	
 	@Override

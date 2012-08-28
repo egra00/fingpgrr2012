@@ -31,7 +31,7 @@ public class KMedoids
 	
 	private double _FitTotal; // Inicializada luego de hacer Evaluate()
 
-		
+	private int[] _mut_cpy;
 	
 	public KMedoids(Coord[] coord, int pop, int nb_gen, int tam_popu, int tam_offs, double p_mut, double p_cross)
 	{
@@ -49,6 +49,7 @@ public class KMedoids
 		offsprings = new int[_sizeoffs][];
 		
 		cake = new int[SIZECAKE];
+		_mut_cpy = new int[_tam_individuo];
 	}
 	
 	public void Initialization()
@@ -84,11 +85,11 @@ public class KMedoids
 			if(!medoids.contains(i)) indi[i] = medoids.get(index);
 		}
 		
-		for(int i = 0; i<_tam_individuo; i++)
+		/*for(int i = 0; i<_tam_individuo; i++)
 		{	
 			System.out.print("-"+indi[i]);
 		}
-		System.out.println("");
+		System.out.println("");*/
 		
 		return indi;
 	}
@@ -104,51 +105,98 @@ public class KMedoids
 	private void cross(int[] ind1, int[] ind2)
 	{
 		Random ram = new Random();
-		int med1 = ind1[ram.nextInt(_tam_individuo)];
-		int med2 = ind2[ram.nextInt(_tam_individuo)];
+		int med1 = 0;
+		int med2 = 0;
+		int index;
+		List<Integer> meds_ind1 = new LinkedList<Integer>();
+		List<Integer> meds_ind2 = new LinkedList<Integer>();
+		boolean exito_ind1 = false;
+		boolean exito_ind2 = false;
 		
-		ind1[med1] = ind1[med2];
-		ind2[med2] = ind2[med1];
-		
-		for(int j=0; j<_tam_individuo; j++)
+		for(int j=0; j<_tam_individuo && (meds_ind1.size()<_pops || meds_ind2.size()<_pops); j++)
 		{
-			if (ind1[j]==med1) ind1[j] = med2;
-			
-			if (ind2[j]==med2) ind2[j] = med1;
+			if (ind1[j] == j) meds_ind1.add(j);
+			if (ind2[j] == j) meds_ind2.add(j);
 		}
 		
-		ind1[med2] = med2;
-		ind2[med1] = med1;
+		for(int j=0; j<3 && !exito_ind1; j++)
+		{
+			index = ram.nextInt(_pops);
+			med1 = meds_ind1.get(index);
+			if(!meds_ind2.contains(med1)) exito_ind1 = true;
+			
+		}
+		
+		for(int j=0; j<3 && !exito_ind2; j++)
+		{
+			index = ram.nextInt(_pops);
+			med2 = meds_ind2.get(index);
+			if(!meds_ind1.contains(med2)) exito_ind2 = true;
+			
+		}
+		
+		if (exito_ind1 && exito_ind2)
+		{
+			for(int j=0; j<_tam_individuo; j++)
+			{
+				if (ind1[j] == med1) ind1[j] = med2;
+				if (ind2[j] == med2) ind2[j] = med1;
+			}
+			
+			ind1[med2] = med2;
+			ind2[med1] = med1;
+		}
 	}
 	
 	public void Mutation()
 	{
+		Random ram = new Random();
 		for(int i =0; i<_sizeoffs; i++)
 		{
-			mut(offsprings[i]);
+			if(Math.random() <= _pmut) mut(offsprings[i], ram);
 		}
 	}
 	
 	
-	private void mut(int[] ind)
+	private void mut(int[] ind, Random ram)
 	{
-		Random ram = new Random();
-		int index;
-		int aux;
+		int index = ram.nextInt(_tam_individuo);
+		int pos = index;
+		int j=0;
 		
-		for(int j=0; j<_tam_individuo; j+=2)
+		System.arraycopy(ind, 0, _mut_cpy, 0, _tam_individuo);
+	
+	/*	for(int k = 0; k<_tam_individuo; k++)
+		{	
+			System.out.print("-"+_mut_cpy[k]);
+		}*/
+		
+		
+		for( ; j<_tam_individuo; )
 		{
-			if(Math.random() <= _pmut)
+			while (_mut_cpy[pos] == pos) 
+				pos = (++pos) % _tam_individuo;
+			
+			while (j<_tam_individuo && _mut_cpy[j] == j) j++;
+			
+			
+			if (j<_tam_individuo)
 			{
-				index = ram.nextInt(_tam_individuo);
-				if (ind[index]!=index && ind[j]!=j)
-				{
-					aux = ind[index];
-					ind[index] = ind[j];
-					ind[j] = aux;
-				}
+				ind[pos] = _mut_cpy[j];
+				
+				pos = ((++pos)%_tam_individuo);
+				j++;
 			}
 		}
+		
+	/*	System.out.print("   /  " +index+ "  /  ");
+		
+		for(int k = 0; k<_tam_individuo; k++)
+		{	
+			System.out.print("-"+ind[k]);
+		}
+		
+		System.out.println("\n");*/
 	}
 	
 	public void Recombine()
@@ -270,14 +318,14 @@ public class KMedoids
 		this.Initialization();
 		this.Evaluate();
 		
-	/*	for(int i=0; i<_nbgen; i++)
+		for(int i=0; i<_nbgen; i++)
 		{
 			this.Selection();
 			this.Recombine();
 			this.Remplace();
 			this.Evaluate();
 		}
-*/
+
 		return this.GetBestSolution();	
 	}
 }
