@@ -52,7 +52,7 @@ public class Bates1 extends BindAlgorithm
 		
 		try {
 			params.add(new ParameterDescriptor("ASID", "Domain ASID (leave blank for default).", Integer.class, null));
-			params.add(new ParameterDescriptor("Amount PoPs", "Amount of PoPs (by default is two).", Integer.class, null));
+			params.add(new ParameterDescriptor("Amount PoPs", "Amount of PoPs (by default is one).", Integer.class, null));
 		} catch (AlgorithmParameterException e) {
 			e.printStackTrace();
 		}
@@ -63,7 +63,7 @@ public class Bates1 extends BindAlgorithm
 	{
         String asId = (String) params.get("ASID");
         String popsS = (String) params.get("Amount PoPs");
-        pops = 2;
+        pops = 1;
         
         if(asId == null || asId.isEmpty()) {
         	domain = InterDomainManager.getInstance().getDefaultDomain();
