@@ -44,23 +44,23 @@ public class KMedoidsGA
 			}
 		}
 		
-		HashMap<Integer, Set<Node>> hash = new HashMap<Integer, Set<Node>>();;
+		HashMap<Integer, Set<Node>> hash = new HashMap<Integer, Set<Node>>();
 		List<Graph<Node, Link>> lst_pops = new 	LinkedList<Graph<Node, Link>>();
 		int i=0;
 		
-		System.out.println("////////////////////");
+		/*System.out.println("////////////////////   "+ _fitness_best_solution);
 		for(int k = 0; k<G.getVertexCount(); k++)
 		{	
 			System.out.print("-"+_best_solution[k]);
 		}
-		System.out.println("");
+		System.out.println("");*/
 		
 		for(Node node : G.getVertices())
 		{
 			int med = _best_solution[i];
 			if(!hash.containsKey(med))
 			{
-				System.out.println("/////MED: "+ med);
+				//System.out.println("/////MED: "+ med);
 				Set<Node> set = new HashSet<Node>();
 				hash.put(med, set);
 			}
@@ -72,11 +72,11 @@ public class KMedoidsGA
 		Graph<Node, Link> subG;
 		Graph<Node, Link> aux = Operations.copyUndirectedSparseGraph(G);
 		
-		System.out.println("/////TAM: "+ hash.values().size());
+	//	System.out.println("/////TAM: "+ hash.values().size());
 		
 		for(Set<Node> set : hash.values())
 		{
-			System.out.println("MED TAM  /  "+set.size());
+			//System.out.println("MED TAM  /  "+set.size());
 			subG = Operations.copyUndirectedSparseGraph(aux);
 			Operations.removeAllVertices(aux, set);
 			Operations.removeAllVertices(subG, new HashSet<Node>(aux.getVertices()));

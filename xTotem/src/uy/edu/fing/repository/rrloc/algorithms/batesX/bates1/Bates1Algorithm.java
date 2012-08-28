@@ -18,6 +18,12 @@ import edu.uci.ics.jung2.graph.Graph;
 public class Bates1Algorithm implements RRLocAlgorithm
 {
 	
+	public static class Params
+	{
+		public int pops;
+		public Graph<Node, Link> graph;
+	}
+	
 	public List<Node> toList(Graph<Node, Link> igp)
 	{
 		List<Node> lst = new LinkedList<Node>();
@@ -30,21 +36,37 @@ public class Bates1Algorithm implements RRLocAlgorithm
 	@Override
 	public void run(Object in_params, Object out_result) 
 	{
-		Graph<Node, Link> igp = (Graph<Node, Link>) in_params;
+		int _pops = ((Params) in_params).pops;
+		Graph<Node, Link> igp = ((Params) in_params).graph;
 		List<iBGPSession> lst_sessions = (List<iBGPSession>) out_result;
 		
-		List<Graph<Node, Link>> lst_pops = KMedoidsGA.kMedoids(1, igp, 3 ,1, 6, 10, 0.01, 0.1);
+		List<Graph<Node, Link>> lst_pops = KMedoidsGA.kMedoids(30, igp, _pops, 70, 80, 120, 0.3, 0.6);
+		List<Node> lst_PoPs_RRs = new LinkedList<Node>();
 		
 		for (Graph<Node, Link> g : lst_pops)
 		{
-			System.out.println("////Tamaño grafo     "+g.getVertexCount());
-			PoPs(g, lst_sessions);
+			//System.out.println("////Tamaño grafo     "+g.getVertexCount());
+			lst_PoPs_RRs.addAll(PoPs(g, lst_sessions));
 		}
+		
+		for(;!lst_PoPs_RRs.isEmpty();)
+		{
+			Node n1 = lst_PoPs_RRs.remove(0);
+			for(Node n2 : lst_PoPs_RRs)
+			{
+				iBGPSession session = new iBGPSession(n2.getId(), n1.getId(), iBGPSessionType.peer);
+				lst_sessions.add(session);
+			}
+		}
+		
+		
 	}
 	
 	
-	public void PoPs(Graph<Node, Link> igp, List<iBGPSession> lst_sessions)
+	public List<Node> PoPs(Graph<Node, Link> igp, List<iBGPSession> lst_sessions)
 	{
+		List<Node> lst = new LinkedList<Node>();
+		
 		if(igp.getEdgeCount()>0)
 		{
 			// Escojo el mas conectado, solo 1
@@ -72,7 +94,11 @@ public class Bates1Algorithm implements RRLocAlgorithm
 					lst_sessions.add(session);
 				}
 			}
+			
+			lst.add(node);
 		}
-
+		
+		
+		return lst;
 	}
 }
