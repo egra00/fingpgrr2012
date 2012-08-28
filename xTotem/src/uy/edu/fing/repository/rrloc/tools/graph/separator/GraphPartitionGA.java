@@ -1,10 +1,12 @@
-package uy.edu.fing.repository.rrloc.tools.graph;
+package uy.edu.fing.repository.rrloc.tools.graph.separator;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Random;
 import java.util.Set;
+
+import uy.edu.fing.repository.rrloc.tools.graph.separator.model.GraphSeparator;
 
 import agape.tools.Components;
 import agape.tools.Operations;
@@ -257,7 +259,7 @@ public class GraphPartitionGA
 		
 		double desviacion = Math.sqrt(sum/(cantCompConex-1));
 		
-		return ((double)(_tam_individuo - tamIndi)/_tam_individuo) + ((double)cantCompConex/(_tam_individuo-1)) + (1/Math.exp(desviacion)) + PENALIZACION;
+		return ((double)(_tam_individuo - tamIndi)/_tam_individuo) + ((double)cantCompConex/(_tam_individuo-1)) + (1/(1+Math.sqrt(desviacion))) + PENALIZACION;
 	}
 	
 	public void Remplace()

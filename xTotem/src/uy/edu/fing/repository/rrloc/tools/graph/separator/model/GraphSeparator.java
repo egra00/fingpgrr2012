@@ -1,4 +1,4 @@
-package uy.edu.fing.repository.rrloc.tools.graph;
+package uy.edu.fing.repository.rrloc.tools.graph.separator.model;
 
 import java.util.List;
 import java.util.Set;

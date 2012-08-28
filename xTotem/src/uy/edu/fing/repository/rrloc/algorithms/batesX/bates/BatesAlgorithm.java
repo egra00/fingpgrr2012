@@ -68,6 +68,16 @@ public class BatesAlgorithm implements RRLocAlgorithm{
 				iBGPSession session = new iBGPSession(node2.getId(), node1.getId(), iBGPSessionType.client);
 				lst_sessions.add(session);
 			}
-		}	
+		}
+		
+		for( ; !lst.isEmpty() ; )
+		{
+			Node n1 = lst.remove(0);
+			for(Node n2 : lst)
+			{
+				iBGPSession session = new iBGPSession(n2.getId(), n1.getId(), iBGPSessionType.peer);
+				lst_sessions.add(session);
+			}
+		}
 	}
 }

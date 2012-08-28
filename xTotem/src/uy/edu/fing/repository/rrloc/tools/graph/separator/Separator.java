@@ -1,4 +1,4 @@
-package uy.edu.fing.repository.rrloc.tools.graph;
+package uy.edu.fing.repository.rrloc.tools.graph.separator;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -11,6 +11,8 @@ import java.util.Set;
 
 import org.ejml.alg.dense.decomposition.SingularMatrixException;
 import org.ejml.simple.SimpleMatrix;
+
+import uy.edu.fing.repository.rrloc.tools.graph.separator.model.GraphSeparator;
 
 import agape.algos.Separators;
 import agape.tools.Components;
