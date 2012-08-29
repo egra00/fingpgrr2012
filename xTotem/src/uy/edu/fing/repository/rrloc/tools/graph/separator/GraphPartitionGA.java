@@ -2,12 +2,10 @@ package uy.edu.fing.repository.rrloc.tools.graph.separator;
 
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.Random;
 import java.util.Set;
 
 import uy.edu.fing.repository.rrloc.tools.graph.separator.model.GraphSeparator;
-
 import agape.tools.Components;
 import agape.tools.Operations;
 import be.ac.ulg.montefiore.run.totem.domain.model.Link;
@@ -247,19 +245,15 @@ public class GraphPartitionGA
 
 		media = media/cantCompConex;
 
-		Iterator<Set<Node>> ii = Components.getAllConnectedComponent(aux).iterator();
 		double sum = 0;
 		int x;
-		while(ii.hasNext())
+		for(Set<Node> set_aux : Components.getAllConnectedComponent(aux))
 		{
-			x = ii.next().size();
-			sum += (x-media)*(x-media); 
+			x = set_aux.size();
+			sum += Math.abs(x-media); 
 		}
-	
 		
-		double desviacion = Math.sqrt(sum/(cantCompConex-1));
-		
-		return ((double)(_tam_individuo - tamIndi)/_tam_individuo) + ((double)cantCompConex/(_tam_individuo-1)) + (1/(1+Math.sqrt(desviacion))) + PENALIZACION;
+		return ((double)(_tam_individuo - tamIndi)/_tam_individuo) + ((double)cantCompConex/(_tam_individuo-1)) + (1/(1+Math.sqrt(sum))) + PENALIZACION;
 	}
 	
 	public void Remplace()

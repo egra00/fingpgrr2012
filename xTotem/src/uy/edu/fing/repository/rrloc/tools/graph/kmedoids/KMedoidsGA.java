@@ -30,6 +30,7 @@ public class KMedoidsGA
 			cant++;
 		}
 		
+		
 		KMedoids km = new KMedoids(coord, pops, nGen, sizeP, sizeOf, pmut, pcross);
 		_best_solution = km.run();
 		_fitness_best_solution = km.get_fitness_best_sol_global();
@@ -48,7 +49,18 @@ public class KMedoidsGA
 		List<Graph<Node, Link>> lst_pops = new 	LinkedList<Graph<Node, Link>>();
 		int i=0;
 		
-		/*System.out.println("////////////////////   "+ _fitness_best_solution);
+		/*int mmm =0;
+		for(Node node : G.getVertices())
+		{
+			System.out.print("    /   "+ mmm+": "+node.getId());
+			mmm++;
+		}
+		System.out.println("");*/
+		
+		
+		//System.out.println("////////////////////   "+ _fitness_best_solution +"   ////SUM    "+ Math.pow(((1-_fitness_best_solution)/_fitness_best_solution), 2));
+		
+		/*System.out.println("////////////////////   "+ _fitness_best_solution );
 		for(int k = 0; k<G.getVertexCount(); k++)
 		{	
 			System.out.print("-"+_best_solution[k]);

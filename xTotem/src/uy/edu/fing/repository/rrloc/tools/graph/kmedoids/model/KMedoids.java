@@ -1,7 +1,5 @@
 package uy.edu.fing.repository.rrloc.tools.graph.kmedoids.model;
 
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Random;
 
 public class KMedoids 
@@ -15,27 +13,33 @@ public class KMedoids
 	double _pcross;
 	Coord[] _coord;
 	private int[][] population;
+	private int[][] meds_populations;
 	private double[] fit_population;
+	private int[][] meds_offsprings;
+	private double _max_value_manhattan;
+	
 	private int[][] offsprings;
 	
 	final int SIZECAKE = 10000;
+	final int SELF = -1;
 	private int[] cake;
 	
 	// Conservo la mejor solucion global
 	private int[] _best_sol_global;
+	private int[] _best_sol_global_meds;
 	private double _fitness_best_sol_global;
 
 	// Conservo la mejor solucion en cada generacion
 	private int[] _best_sol_iter; // Inicializada luego de hacer Evaluate()
+	private int[] _best_sol_iter_meds; // Inicializada luego de hacer Evaluate()
 	private double _fitness_best_sol_iter; // Inicializada luego de hacer Evaluate()
 	
 	private double _FitTotal; // Inicializada luego de hacer Evaluate()
 
-	private int[] _mut_cpy;
 	
-	public KMedoids(Coord[] coord, int pop, int nb_gen, int tam_popu, int tam_offs, double p_mut, double p_cross)
+	public KMedoids(Coord[] coord, int pops, int nb_gen, int tam_popu, int tam_offs, double p_mut, double p_cross)
 	{
-		_pops = pop;
+		_pops = pops;
 		_nbgen = nb_gen;
 		_sizepopu = tam_popu;
 		_sizeoffs = tam_offs;
@@ -45,11 +49,24 @@ public class KMedoids
 		_tam_individuo = _coord.length;
 		
 		population = new int[_sizepopu][];
-		fit_population = new double[_sizepopu];
+		meds_populations = new int[_sizepopu][];
 		offsprings = new int[_sizeoffs][];
+		meds_offsprings = new int[_sizeoffs][];
+		
+		fit_population = new double[_sizepopu];
 		
 		cake = new int[SIZECAKE];
-		_mut_cpy = new int[_tam_individuo];
+		
+		double max_dist =0;
+		double aux;
+		for(int i=0; i<_tam_individuo; i++)
+		{
+			aux = Math.abs(coord[i].get_x()) + Math.abs(coord[i].get_y());
+			if (aux > max_dist) max_dist = aux;
+		}
+		
+		_max_value_manhattan = 2*max_dist*(_tam_individuo - _pops);
+		
 	}
 	
 	public void Initialization()
@@ -58,39 +75,29 @@ public class KMedoids
 		Random ram = new Random();
 		
 		for(int i =0; i<_sizepopu; i++)
-			population[i] = randomIndi(ram);
+			population[i] = randomIndi(i, ram);
+		
+		//for(;;);
 	}
 	
-	private int[] randomIndi(Random ram) 
+	private int[] randomIndi(int _indi_id, Random ram) 
 	{
 		int[] indi = new int[_tam_individuo];
+		int[] meds = new int[_pops];
+		int delta = ram.nextInt(_tam_individuo/_pops)+1;
+		int index = ram.nextInt(_tam_individuo);
 		
-		List<Integer> lst = new LinkedList<Integer>();
-		for(int i=0; i<_tam_individuo; i++)
-			lst.add(i);
-		
-		List<Integer> medoids = new LinkedList<Integer>();
 		for(int i=0; i<_pops; i++)
-		{
-			int index = ram.nextInt(lst.size());
-			int med = lst.remove(index);
-			
-			medoids.add(indi[med] = med);
-		}
-			
-		Random ram1 = new Random();
-		for(int i = 0; i<_tam_individuo; i++)
-		{	
-			int index = ram1.nextInt(_pops);
-			if(!medoids.contains(i)) indi[i] = medoids.get(index);
-		}
+			meds[i] = (delta*i + index)% _tam_individuo;
 		
-		/*for(int i = 0; i<_tam_individuo; i++)
-		{	
-			System.out.print("-"+indi[i]);
-		}
-		System.out.println("");*/
+		for(int i=0; i<_tam_individuo; i++)
+			indi[i] = ram.nextInt(_pops);
 		
+		
+		for(int i=0; i<_pops; i++)
+			indi[meds[i]] = SELF;
+		
+		meds_populations[_indi_id] = meds;		
 		return indi;
 	}
 	
@@ -98,105 +105,103 @@ public class KMedoids
 	{
 		for(int i =0; i+1<_sizeoffs; i=i+2)
 		{
-			 if (Math.random() <= _pcross) cross(offsprings[i],offsprings[i+1]);
+			 if (Math.random() <= _pcross) cross(offsprings[i], meds_offsprings[i], offsprings[i+1], meds_offsprings[i+1]);
 		}
 	}
 	
-	private void cross(int[] ind1, int[] ind2)
+	private void cross(int[] ind1, int[] meds_ind1, int[] ind2, int[] meds_ind2)
 	{
 		Random ram = new Random();
-		int med1 = 0;
-		int med2 = 0;
-		int index;
-		List<Integer> meds_ind1 = new LinkedList<Integer>();
-		List<Integer> meds_ind2 = new LinkedList<Integer>();
-		boolean exito_ind1 = false;
-		boolean exito_ind2 = false;
+		int p_cross = ram.nextInt(_pops);
+		int aux;
 		
-		for(int j=0; j<_tam_individuo && (meds_ind1.size()<_pops || meds_ind2.size()<_pops); j++)
+		for(int i =0; i<p_cross; i++)
 		{
-			if (ind1[j] == j) meds_ind1.add(j);
-			if (ind2[j] == j) meds_ind2.add(j);
-		}
-		
-		for(int j=0; j<3 && !exito_ind1; j++)
-		{
-			index = ram.nextInt(_pops);
-			med1 = meds_ind1.get(index);
-			if(!meds_ind2.contains(med1)) exito_ind1 = true;
+			change(meds_ind1, meds_ind2[i], meds_ind1[i]);
+			change(meds_ind1, meds_ind1[i], meds_ind2[i]);
 			
+			aux = meds_ind1[i];
+			meds_ind1[i] = meds_ind2[i];
+			meds_ind2[i] = aux;
 		}
 		
-		for(int j=0; j<3 && !exito_ind2; j++)
+		p_cross = ram.nextInt(_tam_individuo);
+		for(int j=0; j<p_cross; j++)
 		{
-			index = ram.nextInt(_pops);
-			med2 = meds_ind2.get(index);
-			if(!meds_ind1.contains(med2)) exito_ind2 = true;
-			
+			aux = ind1[j];
+			ind1[j] = ind2[j];
+			ind2[j] = aux;
 		}
 		
-		if (exito_ind1 && exito_ind2)
+		// corrijo individuos
+		for(int i =0; i<_tam_individuo; i++)
 		{
-			for(int j=0; j<_tam_individuo; j++)
+			if(ind1[i] == SELF)
 			{
-				if (ind1[j] == med1) ind1[j] = med2;
-				if (ind2[j] == med2) ind2[j] = med1;
+				ind1[i] = ram.nextInt(_pops);
 			}
 			
-			ind1[med2] = med2;
-			ind2[med1] = med1;
+			if(ind2[i] == SELF)
+			{
+				ind2[i] = ram.nextInt(_pops);
+			}
 		}
+		
+		for(int i=0; i<_pops; i++)
+		{
+			ind1[meds_ind1[i]] = SELF;
+			ind2[meds_ind2[i]] = SELF;
+		}
+		// end corrijo individuos
+	}
+	
+	private void change(int[] _array, int _old, int _new)
+	{
+		for(int i=0; i<_pops; i++)
+			if(_array[i] == _old) _array[i] = _new;
 	}
 	
 	public void Mutation()
 	{
-		Random ram = new Random();
 		for(int i =0; i<_sizeoffs; i++)
-		{
-			if(Math.random() <= _pmut) mut(offsprings[i], ram);
-		}
+			mut(offsprings[i], meds_offsprings[i]);
 	}
 	
 	
-	private void mut(int[] ind, Random ram)
+	private void mut(int[] indi, int[] meds)
 	{
-		int index = ram.nextInt(_tam_individuo);
-		int pos = index;
-		int j=0;
+		Random ram = new Random();
+		int _new_med;
 		
-		System.arraycopy(ind, 0, _mut_cpy, 0, _tam_individuo);
-	
-	/*	for(int k = 0; k<_tam_individuo; k++)
-		{	
-			System.out.print("-"+_mut_cpy[k]);
-		}*/
-		
-		
-		for( ; j<_tam_individuo; )
+		for(int i=0; i<_pops; i++)
 		{
-			while (_mut_cpy[pos] == pos) 
-				pos = (++pos) % _tam_individuo;
-			
-			while (j<_tam_individuo && _mut_cpy[j] == j) j++;
-			
-			
-			if (j<_tam_individuo)
+			if (Math.random() <= _pmut)
 			{
-				ind[pos] = _mut_cpy[j];
+				_new_med = ram.nextInt(_tam_individuo);
+				change(meds, _new_med, meds[i]);
 				
-				pos = ((++pos)%_tam_individuo);
-				j++;
+				meds[i] = _new_med;
 			}
 		}
 		
-	/*	System.out.print("   /  " +index+ "  /  ");
-		
-		for(int k = 0; k<_tam_individuo; k++)
-		{	
-			System.out.print("-"+ind[k]);
+		// corrijo individuos
+		for(int i=0; i<_tam_individuo; i++)
+		{
+			if (indi[i] == SELF)
+			{
+				indi[i] = ram.nextInt(_pops);
+			}
+			else if (Math.random() <= _pmut)
+			{
+				indi[i] = ram.nextInt(_pops);
+			}	
 		}
 		
-		System.out.println("\n");*/
+		
+		for(int i=0; i<_pops; i++)
+			indi[meds[i]] = SELF;
+		// end corrijo individuos
+		
 	}
 	
 	public void Recombine()
@@ -233,31 +238,37 @@ public class KMedoids
 		for(int i=0; i<_sizeoffs; i++)
 		{
 			index = cake[ram.nextInt(_size_cake)];
-			cpy = new int[_tam_individuo];
 			
+			cpy = new int[_tam_individuo];
 			System.arraycopy(population[index], 0, cpy, 0, _tam_individuo);
 			offsprings[i] = cpy;
+			
+			cpy = new int[_pops];
+			System.arraycopy(meds_populations[index], 0, cpy, 0, _pops);
+			meds_offsprings[i] = cpy;
 		}
 	}
 	
 	
 	public void Evaluate()
 	{	
-		fit_population[0] = fitness_function(population[0]);
+		fit_population[0] = fitness_function(0, population[0]);
 		_FitTotal = fit_population[0];
 		
 		_best_sol_iter = population[0];
+		_best_sol_iter_meds = meds_populations[0];
 		_fitness_best_sol_iter = fit_population[0];
 
 		
 		for(int i=1; i<_sizepopu; i++)
 		{
-			fit_population[i] = fitness_function(population[i]);
+			fit_population[i] = fitness_function(i, population[i]);
 			_FitTotal += fit_population[i];
 			
 			if (_fitness_best_sol_iter <= fit_population[i])
 			{
 				_best_sol_iter = population[i];
+				_best_sol_iter_meds = meds_populations[i];
 				_fitness_best_sol_iter = fit_population[i];
 			}
 		}
@@ -270,21 +281,28 @@ public class KMedoids
 		if (_fitness_best_sol_global <= _fitness_best_sol_iter)
 		{
 			_best_sol_global = _best_sol_iter;
+			_best_sol_global_meds = _best_sol_iter_meds;
 			_fitness_best_sol_global = _fitness_best_sol_iter;
 		}
 	}
 	
-	private  double fitness_function(int[] indi) 
+	private  double fitness_function(int _indi_id,int[] indi) 
 	{
 		double sum = 0;
-		
+		Coord coord;
 		for(int i = 0; i < _tam_individuo; i++)
 		{
-			sum += Math.abs(_coord[indi[i]].get_x() - _coord[i].get_x()) + Math.abs(_coord[indi[i]].get_y() - _coord[i].get_y());
+			if(indi[i] != SELF) 
+			{
+				coord = _coord[meds_populations[_indi_id][indi[i]]];
+				sum += Math.abs(coord.get_x() - _coord[i].get_x()) + Math.abs(coord.get_y() - _coord[i].get_y());
+			}
 		}
 		
-		//System.out.println(sum +"  ///   "+ (1+Math.sqrt(sum)) +"  /// "+ 1/(1+Math.sqrt(sum)));
-		return  1/(1+Math.sqrt(sum));
+		//return  1/(1+Math.sqrt(sum));
+		//System.out.println(sum);
+		
+		return (_max_value_manhattan - sum);
 	}
 	
 	public void Remplace()
@@ -296,6 +314,7 @@ public class KMedoids
 		{
 			index = ram.nextInt(_sizeoffs);
 			population[i] = offsprings[index];
+			meds_populations[i] = meds_offsprings[index];
 		}
 	}
 	
@@ -305,6 +324,15 @@ public class KMedoids
 		int[] cpy = new int[_tam_individuo];
 		
 		System.arraycopy(_best_sol_global, 0, cpy, 0, _tam_individuo);
+		
+		for(int i=0; i<_tam_individuo; i++)
+		{
+			if (cpy[i] == SELF)
+				cpy[i] = i;
+			else
+				cpy[i] = _best_sol_global_meds[cpy[i]];
+		}
+		
 		return cpy;
 	}
 	
