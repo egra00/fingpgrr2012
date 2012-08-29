@@ -3,6 +3,7 @@ package uy.edu.fing.repository.rrloc.algorithms.batesX.bates1;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
 
 import uy.edu.fing.repository.rrloc.algorithms.iBGPSession;
 import uy.edu.fing.repository.rrloc.algorithms.iBGPSessionType;
@@ -40,7 +41,7 @@ public class Bates1Algorithm implements RRLocAlgorithm
 		Graph<Node, Link> igp = ((Params) in_params).graph;
 		List<iBGPSession> lst_sessions = (List<iBGPSession>) out_result;
 		
-		List<Graph<Node, Link>> lst_pops = KMedoidsGA.kMedoids(30, igp, _pops, 70, 80, 120, 0.3, 0.6);
+		List<Graph<Node, Link>> lst_pops = KMedoidsGA.kMedoids(15, igp, _pops ,50, 60, 100, 0.01, 0.1);
 		List<Node> lst_PoPs_RRs = new LinkedList<Node>();
 		
 		for (Graph<Node, Link> g : lst_pops)
@@ -66,37 +67,44 @@ public class Bates1Algorithm implements RRLocAlgorithm
 	public List<Node> PoPs(Graph<Node, Link> igp, List<iBGPSession> lst_sessions)
 	{
 		List<Node> lst = new LinkedList<Node>();
+		Node node;
 		
 		if(igp.getEdgeCount()>0)
 		{
 			// Escojo el mas conectado, solo 1
-			Node node = Operations.getMaxDegVertex(igp);
-			
-			// Hago clientes al resto de los routers con el RR
-			for(Iterator<Node> ii2 = igp.getVertices().iterator(); ii2.hasNext(); )
-			{
-				Node node2 = ii2.next();
-				if (node != node2)
-				{
-					iBGPSession session = new iBGPSession(node2.getId(), node.getId(), iBGPSessionType.client);
-					lst_sessions.add(session);
-				}
-			}
-			
-			List<Node> aux = toList(igp);
-			aux.remove(node);
-			for(;!aux.isEmpty();)
-			{
-				Node n1 = aux.remove(0);
-				for(Node n2 : aux)
-				{
-					iBGPSession session = new iBGPSession(n2.getId(), n1.getId(), iBGPSessionType.peer);
-					lst_sessions.add(session);
-				}
-			}
-			
-			lst.add(node);
+			node = Operations.getMaxDegVertex(igp);
 		}
+		else
+		{
+			// Escojo uno al azar
+			node = toList(igp).get((new Random()).nextInt(igp.getVertexCount()));
+		}
+
+		
+		// Hago clientes al resto de los routers con el RR
+		for(Iterator<Node> ii2 = igp.getVertices().iterator(); ii2.hasNext(); )
+		{
+			Node node2 = ii2.next();
+			if (node != node2)
+			{
+				iBGPSession session = new iBGPSession(node2.getId(), node.getId(), iBGPSessionType.client);
+				lst_sessions.add(session);
+			}
+		}
+		
+		List<Node> aux = toList(igp);
+		aux.remove(node);
+		for(;!aux.isEmpty();)
+		{
+			Node n1 = aux.remove(0);
+			for(Node n2 : aux)
+			{
+				iBGPSession session = new iBGPSession(n2.getId(), n1.getId(), iBGPSessionType.peer);
+				lst_sessions.add(session);
+			}
+		}
+		
+		lst.add(node);
 		
 		
 		return lst;

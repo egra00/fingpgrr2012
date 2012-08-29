@@ -63,7 +63,7 @@ public class Bates1 extends BindAlgorithm
 	{
         String asId = (String) params.get("ASID");
         String popsS = (String) params.get("Amount PoPs");
-        pops = 1;
+        pops = 3;
         
         if(asId == null || asId.isEmpty()) {
         	domain = InterDomainManager.getInstance().getDefaultDomain();
