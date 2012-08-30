@@ -72,7 +72,6 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 		
 		//Obtain parameters
 		Graph<Node, Link> IGPGraph = (Graph<Node, Link>)((List<Object>)inParams).get(0);
-//		List<BgpRouter> BGPRouters = (List<BgpRouter>)((List<Object>)inParams).get(1);
 		List<Node> BGPRouters = (List<Node>)((List<Object>)inParams).get(1);
 		List<Node> nextHops = (List<Node>)((List<Object>)inParams).get(2);
 		Domain domain = (Domain)((List<Object>)inParams).get(3);
@@ -99,12 +98,12 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 				
 		//Structure declaration
 		
-		IloNumVar[][] UP = new IloNumVar[BGPRoutersSize][nextHopsSize];
-		IloNumVar[][] DOWN = new IloNumVar[BGPRoutersSize][nextHopsSize];
+		IloNumVar[][] UP = new IloNumVar[BGPRoutersSize][BGPRoutersSize];
+		IloNumVar[][] DOWN = new IloNumVar[BGPRoutersSize][BGPRoutersSize];
 		
 		// For each variable, we define its type, boundaries of its domain and name
 		for (int i = 0; i < BGPRoutersSize; i++) {
-			for (int j = 0; j < nextHopsSize; j++) {
+			for (int j = 0; j < BGPRoutersSize; j++) {
 				UP[i][j] = cplex.numVar(0, 1, IloNumVarType.Int, "UP["+i+"]["+j+"]");
 				DOWN[i][j] = cplex.numVar(0, 1, IloNumVarType.Int, "DOWN["+i+"]["+j+"]");
 			}
@@ -112,8 +111,8 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 		
 		// Each variable must appear in at least one constraint or the objective function (CPLEX)
 		for (int i = 0; i < BGPRoutersSize; i++) {
-			for (int j = 0; j < nextHopsSize; j++) {
-				if(BGPRouters.get(i).getId()==nextHops.get(j).getId()){
+			for (int j = 0; j < BGPRoutersSize; j++) {
+				if(i==j){
 					cplex.addEq(UP[i][j], 0);
 					cplex.addEq(DOWN[i][j], 0);
 				}
@@ -123,34 +122,26 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 		//Adding the constraint for the function to minimise
 		
 		//Calculating the length of the shortest IGP path from i to j
-		int MINHOPS[][] = new int[BGPRoutersSize][nextHopsSize];
+		int MINHOPS[][] = new int[n][n];
  
 		Object[] nodes = IGPGraph.getVertices().toArray();
 		
-		for(int i = 0; i < BGPRoutersSize; i++) {
-            for(int j = 0; j < nextHopsSize; j++) {
-            	if(BGPRouters.get(i).getId()!=nextHops.get(j).getId()){
+		for(int i = 0; i < n; i++) {
+            for(int j = 0; j < n; j++) {
+            	if(i!=j){
             		MINHOPS[i][j]= hops(IGPGraph,((Node)nodes[i]).getId(),((Node)nodes[j]).getId());
             	}
             }
 		}
 		
-		/*System.out.println("MINHOPS:");
-		for (int i = 0; i < n; i++) {
-			for (int j = 0; j < n; j++) {
-				System.out.print(MINHOPS[i][j]+" ");
-			}
-		System.out.println();
-		}*/
-		
-		IloNumExpr[] ExpAux = new IloNumExpr[BGPRoutersSize*nextHopsSize];
+		IloNumExpr[] ExpAux = new IloNumExpr[BGPRoutersSize*BGPRoutersSize];
 		
 		for(int i = 0; i < BGPRoutersSize; i++) {
-			for(int j = 0; j < nextHopsSize; j++) {
-				if(BGPRouters.get(i).getId()!=nextHops.get(j).getId())
+			for(int j = 0; j < BGPRoutersSize; j++) {
+				if(i!=j)
 					ExpAux[i*BGPRoutersSize+j] = cplex.prod(MINHOPS[i][j],cplex.sum(UP[i][j],DOWN[i][j]));
 				else
-					ExpAux[i*BGPRoutersSize+j] = UP[i][i];
+					ExpAux[i*BGPRoutersSize+j] = UP[i][j];
 			}
 		}
 		
@@ -160,16 +151,16 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 		
 		// ∀u, v ∈ R, up(u, v) + down(u, v) ≤ 1 
 		for (int i = 0; i < BGPRoutersSize; i++) {
-			for (int j = 0; j < nextHopsSize; j++) {
-				if(BGPRouters.get(i).getId()!=nextHops.get(j).getId())
+			for (int j = 0; j < BGPRoutersSize; j++) {
+				if(i!=j)
 					cplex.addRange(0,cplex.sum(UP[i][j], DOWN[i][j]),1);
 			}
 		}
 		
 		// ∀u, v ∈ R, up(u, v) = down(v, u)
 		for (int i = 0; i < BGPRoutersSize; i++) {
-			for (int j = 0; j < nextHopsSize; j++) {
-				if(BGPRouters.get(i).getId()!=nextHops.get(j).getId())
+			for (int j = 0; j < BGPRoutersSize; j++) {
+				if(i!=j)
 					cplex.addEq(UP[i][j], DOWN[j][i]);
 			}
 		}
@@ -185,7 +176,6 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 		for (int i = 0; i < BGPRoutersSize; i++) {
 			for (int j = 0; j < nextHopsSize; j++) {
 				
-				//BgpRouter br = BGPRouters.get(i);
 				Node br = BGPRouters.get(i);
 				Node nod = nextHops.get(j);
 				
@@ -193,18 +183,12 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 					
 					Graph<Node, Link> sat = new UndirectedSparseMultigraph<Node, Link>();
 					
-					Node no = nextHops.get(j);
-					//BgpRouter no = BGPRouters.get(i);
-					
-					//BgpRouter r = BGPRouters.get(i);
-					Node r = BGPRouters.get(i);
-					
 					//Build N(n,r)
 					List<Node> lstNnr = new ArrayList<Node>();
 					Iterator<Node> iter = nextHops.iterator();
 					while(iter.hasNext()){
 						Node np = (Node)iter.next();
-						if(dist(IGPGraph,r.getId(),np.getId())>dist(IGPGraph,r.getId(),no.getId()))
+						if(dist(IGPGraph,br.getId(),np.getId())>dist(IGPGraph,br.getId(),nod.getId()))
 							lstNnr.add(np);
 					}
 					
@@ -212,11 +196,9 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 					//W(n, r) = {w ∈ R|∀n′ ∈ N(n, r), dist(w, n) < dist(w, n′ )}
 					
 					//Adding vertices
-					//Iterator<BgpRouter> it = BGPRouters.iterator();
 					Iterator<Node> it = BGPRouters.iterator();
 					
 					while(it.hasNext()){
-						//BgpRouter w = it.next();
 						Node w = it.next();
 						boolean addRouter = true;
 						
@@ -224,7 +206,7 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 						
 						while((it2.hasNext()) && addRouter){
 							Node node = it2.next();
-							if(dist(IGPGraph,w.getId(),no.getId())>=dist(IGPGraph,w.getId(),node.getId())){
+							if(dist(IGPGraph,w.getId(),nod.getId())>=dist(IGPGraph,w.getId(),node.getId())){
 								addRouter = false;
 							}
 						}
@@ -255,7 +237,7 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 					
 					//printGraph_(sat,"Grafo Satelite ("+no.getId()+","+r.getId()+")");
 						
-					satNames[satellites.size()]="Grafo Satelite ("+no.getId()+","+r.getId()+")";
+					satNames[satellites.size()]="Grafo Satelite ("+nod.getId()+","+br.getId()+")";
 					
 					satellites.add(sat);
 				}
@@ -269,11 +251,11 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 		
 		System.out.println("####Solucion 0##############################################################################");
 		
-		//System.out.println(cplex.toString());
+		System.out.println(cplex.toString());
 		
 		boolean res = cplex.solve();
 		
-		lstSessions = printSolution(IGPGraph,cplex,UP,DOWN,BGPRouters,nextHops,BGPRoutersSize, nextHopsSize);
+		printSolution(IGPGraph,cplex,UP,DOWN,BGPRouters,BGPRoutersSize);
 		
 		System.out.println("####Fin Solucion 0##############################################################################");
 		
@@ -282,7 +264,6 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 		for(int i = 0; i< BGPRoutersSize; i++){
 			for(int j = 0; j< nextHopsSize; j++){
 				
-				//BgpRouter br = BGPRouters.get(i);
 				Node br = BGPRouters.get(i);
 				Node nod = nextHops.get(j);
 				
@@ -297,21 +278,18 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 					
 					//printGraph2_(eg,satNames[satIndex]);
 					
-					if(!existsPath(eg,BGPRouters.get(i).getId(),nextHops.get(j).getId())){
+					if(!existsPath(eg,br.getId(),nod.getId())){
 
-						MetaNode src = findColMetaNodeId(eg.getVertices(),BGPRouters.get(i).getId());
-						MetaNode dst = findColMetaNodeId(eg.getVertices(),nextHops.get(j).getId());
-						
-						//System.out.println("METANODO SRC = "+src.getId());
-						//System.out.println("METANODO DST = "+dst.getId());
+						MetaNode src = findColMetaNodeId(eg.getVertices(),br.getId());
+						MetaNode dst = findColMetaNodeId(eg.getVertices(),nod.getId());
 						
 						//printGraph2(eg,src.getId()+" - "+dst.getId());
 						
-						if(src.getId()!=BGPRouters.get(i).getId()){
+						if(src.getId()!=br.getId()){
 							System.out.println("ERROR SEARCHING SRC METANODE");
 						}
 						
-						if(dst.getId()!=nextHops.get(j).getId()){
+						if(dst.getId()!=nod.getId()){
 							System.out.println("ERROR SEARCHING DST METANODE");
 						}
 						
@@ -333,8 +311,6 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 						
 						restrictionEdges = cplex.numVarArray(minCutEdgesSize, 0, 1, IloNumVarType.Int, restrictionEdgesNames);
 						
-						//System.out.println("Cantidad de links para la restriccion: " + minCutEdgesSize);
-						
 						Iterator<ExtendedLink> it = minCutEdges.iterator();
 						
 						it = minCutEdges.iterator();
@@ -347,7 +323,7 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 							ExtendedLink el = (ExtendedLink)it.next();
 							
 							int indexI = IndexOf(BGPRouters,el.getSrc().getId());
-							int indexJ = IndexOf(nextHops,el.getDst().getId());
+							int indexJ = IndexOf(BGPRouters,el.getDst().getId());
 							
 							if(el.getSrc().getType()==MetaNodeType.SRC){
 								cplex.addEq(restrictionEdges[k],UP[indexI][indexJ]);
@@ -362,12 +338,12 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 						
 						System.out.println("####Solucion "+(satIndex+1)+"##############################################################################");
 						
-						//System.out.println(cplex.toString());
+						System.out.println(cplex.toString());
 						
 						//Solving the MIP with the new constraints
 						res = cplex.solve();
 						
-						lstSessions = printSolution(IGPGraph,cplex,UP,DOWN,BGPRouters,nextHops,BGPRoutersSize,nextHopsSize);
+						printSolution(IGPGraph,cplex,UP,DOWN,BGPRouters,BGPRoutersSize);
 						
 						System.out.println("####Fin Solucion "+(satIndex+1)+"##############################################################################");
 					}
@@ -379,9 +355,8 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 		
 		// Print the solution
 		if(res){
-			lstSessions = printSolution(IGPGraph,cplex,UP,DOWN,BGPRouters,nextHops,BGPRoutersSize, nextHopsSize);
-			
-			//System.out.println("Largo lista sesiones = "+ lstSessions.size());
+			printSolution(IGPGraph,cplex,UP,DOWN,BGPRouters,BGPRoutersSize);
+			createSessionList(lstSessions,cplex,UP,DOWN,BGPRouters,BGPRoutersSize);
 	     }
 	     else {
 	        System.out.println(" No solution found ");
@@ -396,7 +371,7 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 		
 	}
 	
-	private static List<iBGPSession> printSolution(Graph<Node, Link> IGPGraph, IloCplex cplex, IloNumVar[][] UP, IloNumVar[][] DOWN, List<Node> BGPRouters, List<Node> nextHops,int BGPRoutersSize, int nextHopsSize){
+	private static void printSolution(Graph<Node, Link> IGPGraph, IloCplex cplex, IloNumVar[][] UP, IloNumVar[][] DOWN, List<Node> BGPRouters,int BGPRoutersSize){
 		try{
 			System.out.println("--------------------------------------------");
 	        System.out.println();
@@ -405,18 +380,15 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 	        System.out.println();
 	        
 			List<String> reflectors = new ArrayList<String>();
-			List<iBGPSession> lstSessions = new ArrayList<iBGPSession>();
 			int sessions = 0;
 			
 			System.out.println("UP Matrix:");
 			for (int i = 0; i < BGPRoutersSize; i++) {
-				for (int j = 0; j < nextHopsSize; j++) {
+				for (int j = 0; j < BGPRoutersSize; j++) {
 					long value = Math.round(cplex.getValue(UP[i][j]));
-					String rid = BGPRouters.get(i).getId();
-					String rid2 = nextHops.get(j).getId();
+					String rid2 = BGPRouters.get(j).getId();
 					System.out.print(value+" ");
 					if(value==1.0){
-						lstSessions.add(new iBGPSession(rid,rid2, iBGPSessionType.peer));
 						sessions++;
 					}
 					if(value==1.0 && !reflectors.contains(rid2)){
@@ -428,13 +400,11 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 			
 			System.out.println("DOWN Matrix:");
 			for (int i = 0; i < BGPRoutersSize; i++) {
-				for (int j = 0; j < nextHopsSize; j++) {
+				for (int j = 0; j < BGPRoutersSize; j++) {
 					long value = Math.round(cplex.getValue(DOWN[i][j]));
 					String rid = BGPRouters.get(i).getId();
-					String rid2 = nextHops.get(j).getId();
 					System.out.print(value+" ");
 					if(value==1.0){
-						lstSessions.add(new iBGPSession(rid2,rid, iBGPSessionType.peer));
 						sessions++;
 					}
 					if(value==1.0 && !reflectors.contains(rid)){
@@ -454,11 +424,33 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 	        
 	        System.out.println("--------------------------------------------");
 	        
-	        return lstSessions;
 		}
 		catch (IloException e) {
 		   System.err.println("Concert exception caught: " + e);
-		   return null;
+		}
+	}
+	
+	private static void createSessionList(List<iBGPSession> lstSessions, IloCplex cplex, IloNumVar[][] UP, IloNumVar[][] DOWN, List<Node> BGPRouters,int BGPRoutersSize){
+		try{
+	     
+			for (int i = 0; i < BGPRoutersSize; i++) {
+				for (int j = 0; j < BGPRoutersSize; j++) {
+					long value = Math.round(cplex.getValue(UP[i][j]));
+					if(value==1.0)
+						lstSessions.add(new iBGPSession(BGPRouters.get(i).getId(),BGPRouters.get(j).getId(), iBGPSessionType.client));
+				}
+			}
+			
+			for (int i = 0; i < BGPRoutersSize; i++) {
+				for (int j = 0; j < BGPRoutersSize; j++) {
+					long value = Math.round(cplex.getValue(DOWN[i][j]));
+					if(value==1.0)
+						lstSessions.add(new iBGPSession(BGPRouters.get(j).getId(),BGPRouters.get(i).getId(), iBGPSessionType.client));
+				}
+			}
+		}
+		catch (IloException e) {
+		   System.err.println("Concert exception caught: " + e);
 		}
 	}
 	
@@ -485,8 +477,9 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 		DijkstraShortestPath<MetaNode, ExtendedLink> s = new DijkstraShortestPath<MetaNode, ExtendedLink>(egAux,tr);
 		List<ExtendedLink> edges = s.getPath(findColMetaNodeId(egAux.getVertices(),Idi),findColMetaNodeId(egAux.getVertices(),Idj));
 		
-		if(edges.size()>0)
+		if(edges.size()>0){
 			return true;
+		}
 		else
 			return false;
 	}
@@ -505,21 +498,6 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 		
 		return found;
 	}
-	
-	/*private static boolean collectionNcontains(Collection<Node> c, Node n){
-		Iterator<Node> it = c.iterator();
-		
-		boolean found = false;
-		
-		while(it.hasNext() && !found){
-			Node n2 = (Node)it.next();
-			if(n2.getId() == n.getId()){
-				found = true;
-			}
-		}
-		
-		return found;
-	}*/
 	
 	private static Set<ExtendedLink> getRestrictionEdges(Graph<MetaNode,ExtendedLink> eg, MetaNode src, MetaNode dst){
 		
@@ -644,12 +622,12 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 					
 					try {
 						
-						if(cplex.getValue(UP[IndexOf(BGPRouters,l.getSrcNode().getId())][IndexOf(nextHops,l.getDstNode().getId())])==1.0) //Exists an UP session between the nodes
+						if(cplex.getValue(UP[IndexOf(BGPRouters,l.getSrcNode().getId())][IndexOf(BGPRouters,l.getDstNode().getId())])==1.0) //Exists an UP session between the nodes
 							eg.addEdge(new ExtendedLink(1,m1SRC,m2SRC),m1SRC,m2SRC);
 						else
 							eg.addEdge(new ExtendedLink(0,m1SRC,m2SRC),m1SRC,m2SRC);
 						
-						if(cplex.getValue(DOWN[IndexOf(BGPRouters,l.getSrcNode().getId())][IndexOf(nextHops,l.getDstNode().getId())])==1.0) //Exists an DOWN session between the nodes
+						if(cplex.getValue(DOWN[IndexOf(BGPRouters,l.getSrcNode().getId())][IndexOf(BGPRouters,l.getDstNode().getId())])==1.0) //Exists an DOWN session between the nodes
 							eg.addEdge(new ExtendedLink(1,m1DST,m2DST),m1DST,m2DST);	
 						else
 							eg.addEdge(new ExtendedLink(0,m1DST,m2DST),m1DST,m2DST);
@@ -708,7 +686,7 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 	
 	private static void printGraph(Graph<Node,Link> g,String title){
 		
-		Layout<Node,Link> layout = new CircleLayout(g);
+		Layout<Node,Link> layout = new CircleLayout<Node,Link>(g);
 		layout.setSize(new Dimension(300,300));
 		BasicVisualizationServer<Node,Link> vv =
 				new BasicVisualizationServer<Node,Link>(layout);
@@ -724,7 +702,7 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 	
 	private static void printGraph2(Graph<MetaNode,ExtendedLink> g,String title){
 		
-		Layout<MetaNode,ExtendedLink> layout = new CircleLayout(g);
+		Layout<MetaNode,ExtendedLink> layout = new CircleLayout<MetaNode,ExtendedLink>(g);
 		layout.setSize(new Dimension(300,300));
 		BasicVisualizationServer<MetaNode,ExtendedLink> vv =
 				new BasicVisualizationServer<MetaNode,ExtendedLink>(layout);
@@ -740,7 +718,7 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 	
 	public static void printGraph_(Graph<Node,Link> g,String title){
 		 
-		Layout<Node,Link> layout = new CircleLayout(g);
+		Layout<Node,Link> layout = new CircleLayout<Node,Link>(g);
 		layout.setSize(new Dimension(300,300));
 		VisualizationViewer<Node,Link> vv = new VisualizationViewer<Node, Link>(layout);
 		vv.setPreferredSize(new Dimension(350,350));
@@ -764,7 +742,7 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 		 
 		private static void printGraph2_(Graph<MetaNode,ExtendedLink> g,String title){
 		 
-		Layout<MetaNode,ExtendedLink> layout = new CircleLayout(g);
+		Layout<MetaNode,ExtendedLink> layout = new CircleLayout<MetaNode,ExtendedLink>(g);
 		layout.setSize(new Dimension(300,300));
 		VisualizationViewer<MetaNode,ExtendedLink> vv = new VisualizationViewer<MetaNode,ExtendedLink>(layout);
 		vv.setPreferredSize(new Dimension(350,350)); //Sets the viewing area size
