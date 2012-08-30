@@ -195,9 +195,9 @@ public class Optimal extends BindAlgorithm {
 		Iterator<Node> it = domain.getAllNodes().iterator();
 		while(it.hasNext()){
 			Node n = it.next();
-			//if(((NodeImpl)n).getType()==NodeType.EDGE){
+			if(((NodeImpl)n).getType()==NodeType.EDGE){
 				lstNextHops.add(n);
-			//}
+			}
 		}
 		lstParams.add(lstNextHops);
 		lstParams.add(domain);
