@@ -46,7 +46,6 @@ public class Bates1Algorithm implements RRLocAlgorithm
 		
 		for (Graph<Node, Link> g : lst_pops)
 		{
-			//System.out.println("////Tamaño grafo     "+g.getVertexCount());
 			lst_PoPs_RRs.addAll(PoPs(g, lst_sessions));
 		}
 		
