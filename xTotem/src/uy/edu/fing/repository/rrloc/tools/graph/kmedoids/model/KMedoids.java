@@ -21,7 +21,6 @@ public class KMedoids
 	private int[][] offsprings;
 	
 	final int SIZECAKE = 10000;
-	final int SELF = -1;
 	private int[] cake;
 	
 	// Conservo la mejor solucion global
@@ -76,8 +75,6 @@ public class KMedoids
 		
 		for(int i =0; i<_sizepopu; i++)
 			population[i] = randomIndi(i, ram);
-		
-		//for(;;);
 	}
 	
 	private int[] randomIndi(int _indi_id, Random ram) 
@@ -93,11 +90,8 @@ public class KMedoids
 		for(int i=0; i<_tam_individuo; i++)
 			indi[i] = ram.nextInt(_pops);
 		
+		meds_populations[_indi_id] = meds;
 		
-		for(int i=0; i<_pops; i++)
-			indi[meds[i]] = SELF;
-		
-		meds_populations[_indi_id] = meds;		
 		return indi;
 	}
 	
@@ -133,26 +127,33 @@ public class KMedoids
 			ind2[j] = aux;
 		}
 		
-		// corrijo individuos
-		for(int i =0; i<_tam_individuo; i++)
+		correctness_centroids(ind1, meds_ind1);
+		correctness_centroids(ind2, meds_ind2);
+	}
+	
+	private void correctness_centroids(int[] indi, int[] meds)
+	{
+		int my_med;
+		double max_dist;
+		double dist_aux;
+		
+		for(int i = 0; i < _tam_individuo; i++)
 		{
-			if(ind1[i] == SELF)
+			max_dist = dist(_coord[meds[0]], _coord[i]);
+			my_med = 0;
+			for(int j = 1; j<_pops; j++)
 			{
-				ind1[i] = ram.nextInt(_pops);
+				dist_aux =  dist(_coord[meds[j]], _coord[i]);
+				
+				if (dist_aux < max_dist)
+				{
+					my_med = j;
+					max_dist = dist_aux;
+				}
 			}
 			
-			if(ind2[i] == SELF)
-			{
-				ind2[i] = ram.nextInt(_pops);
-			}
-		}
-		
-		for(int i=0; i<_pops; i++)
-		{
-			ind1[meds_ind1[i]] = SELF;
-			ind2[meds_ind2[i]] = SELF;
-		}
-		// end corrijo individuos
+			indi[i] = my_med;
+		}		
 	}
 	
 	private void change(int[] _array, int _old, int _new)
@@ -184,24 +185,10 @@ public class KMedoids
 			}
 		}
 		
-		// corrijo individuos
 		for(int i=0; i<_tam_individuo; i++)
 		{
-			if (indi[i] == SELF)
-			{
-				indi[i] = ram.nextInt(_pops);
-			}
-			else if (Math.random() <= _pmut)
-			{
-				indi[i] = ram.nextInt(_pops);
-			}	
+			if (Math.random() <= _pmut)	indi[i] = ram.nextInt(_pops);
 		}
-		
-		
-		for(int i=0; i<_pops; i++)
-			indi[meds[i]] = SELF;
-		// end corrijo individuos
-		
 	}
 	
 	public void Recombine()
@@ -221,7 +208,7 @@ public class KMedoids
 		for(int i=0; (i < _sizepopu) && (_size_cake < SIZECAKE); i++)
 		{
 			portions = (int)Math.floor((fit_population[i]/_FitTotal)*10000);
-			//System.out.println(portions);
+
 			for(j=_size_cake; (j < SIZECAKE) && (j < _size_cake + portions); j++)
 			{
 				cake[j] = i;
@@ -252,7 +239,7 @@ public class KMedoids
 	
 	public void Evaluate()
 	{	
-		fit_population[0] = fitness_function(0, population[0]);
+		fit_population[0] = fitness_function(meds_populations[0], population[0]);
 		_FitTotal = fit_population[0];
 		
 		_best_sol_iter = population[0];
@@ -262,7 +249,7 @@ public class KMedoids
 		
 		for(int i=1; i<_sizepopu; i++)
 		{
-			fit_population[i] = fitness_function(i, population[i]);
+			fit_population[i] = fitness_function(meds_populations[i], population[i]);
 			_FitTotal += fit_population[i];
 			
 			if (_fitness_best_sol_iter <= fit_population[i])
@@ -286,23 +273,19 @@ public class KMedoids
 		}
 	}
 	
-	private  double fitness_function(int _indi_id,int[] indi) 
+	private  double fitness_function(int[] meds, int[] indi) 
 	{
 		double sum = 0;
-		Coord coord;
-		for(int i = 0; i < _tam_individuo; i++)
-		{
-			if(indi[i] != SELF) 
-			{
-				coord = _coord[meds_populations[_indi_id][indi[i]]];
-				sum += Math.abs(coord.get_x() - _coord[i].get_x()) + Math.abs(coord.get_y() - _coord[i].get_y());
-			}
-		}
 		
-		//return  1/(1+Math.sqrt(sum));
-		//System.out.println(sum);
+		for(int i = 0; i < _tam_individuo; i++)
+			sum += dist(_coord[meds[indi[i]]], _coord[i]);		
 		
 		return (_max_value_manhattan - sum);
+	}
+	
+	private double dist(Coord coord1, Coord coord2) // distancia manhattan
+	{
+		return Math.abs(coord1.get_x() - coord2.get_x()) + Math.abs(coord1.get_y() - coord2.get_y());
 	}
 	
 	public void Remplace()
@@ -319,19 +302,20 @@ public class KMedoids
 	}
 	
 	
-	public int[] GetBestSolution()
+	public int[] GetBestSolution() // retorna celulas
 	{	
 		int[] cpy = new int[_tam_individuo];
 		
+		/// CORRECCION DE CENTROIDES
+		correctness_centroids(_best_sol_global, _best_sol_global_meds);
+		/// END CORRECCION DE CENTROIDES
+		
 		System.arraycopy(_best_sol_global, 0, cpy, 0, _tam_individuo);
 		
+		// CREO CELULAS
 		for(int i=0; i<_tam_individuo; i++)
-		{
-			if (cpy[i] == SELF)
-				cpy[i] = i;
-			else
-				cpy[i] = _best_sol_global_meds[cpy[i]];
-		}
+			cpy[i] = _best_sol_global_meds[cpy[i]];
+		// END CREO CELULAS
 		
 		return cpy;
 	}
