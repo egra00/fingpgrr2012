@@ -1,4 +1,4 @@
-package uy.edu.fing.repository.rrloc.algorithms.batesX.bates1;
+package uy.edu.fing.repository.rrloc.algorithms.batesX.batesY;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -36,22 +36,24 @@ import be.ac.ulg.montefiore.run.totem.visualtopo.guiComponents.TopoChooser;
 import edu.uci.ics.jung2.graph.Graph;
 import edu.uci.ics.jung2.graph.UndirectedSparseMultigraph;
 
-public class Bates1 extends BindAlgorithm 
+public class BatesY extends BindAlgorithm 
 {
 
 	private Domain domain;
 	private String name;
 	private int pops;
+	private int rrs_pop;
 	
-	public Bates1() {
-		logger = Logger.getLogger(Bates1.class);
+	public BatesY() {
+		logger = Logger.getLogger(BatesY.class);
 		params = new ArrayList<ParameterDescriptor>();
-		algorithm = new Bates1Algorithm();
-		name = "Bates1";
+		algorithm = new BatesYAlgorithm();
+		name = "BatesY";
 		thread = new Thread(this, name);
 		
 		try {
 			params.add(new ParameterDescriptor("ASID", "Domain ASID (leave blank for default).", Integer.class, null));
+			params.add(new ParameterDescriptor("RRs by PoP", "Amount of RRs by PoPs (by default is one).", Integer.class, null));
 			params.add(new ParameterDescriptor("Amount PoPs", "Amount of PoPs (by default is one).", Integer.class, null));
 		} catch (AlgorithmParameterException e) {
 			e.printStackTrace();
@@ -62,8 +64,10 @@ public class Bates1 extends BindAlgorithm
 	public Object getAlgorithmParams(HashMap params) 
 	{
         String asId = (String) params.get("ASID");
+        String rrs_popS = (String) params.get("RRs by PoP");
         String popsS = (String) params.get("Amount PoPs");
         pops = 1;
+        rrs_pop = 1;
         
         if(asId == null || asId.isEmpty()) {
         	domain = InterDomainManager.getInstance().getDefaultDomain();
@@ -80,7 +84,8 @@ public class Bates1 extends BindAlgorithm
             }
         }
 		
-        if(popsS != null && !popsS.isEmpty() && pops <= domain.getNbNodes()) pops = Integer.parseInt(popsS);
+        if(popsS != null && !popsS.isEmpty() && Integer.parseInt(popsS) <= domain.getNbNodes()) pops = Integer.parseInt(popsS);
+        if(rrs_popS != null && !rrs_popS.isEmpty() && Integer.parseInt(rrs_popS) <= domain.getNbNodes()) rrs_pop = Integer.parseInt(rrs_popS);
         
 		// Topología IGP representada en un grafo jung 
 		Graph<Node, Link> jIGPTopology = new UndirectedSparseMultigraph<Node, Link>();
@@ -99,9 +104,10 @@ public class Bates1 extends BindAlgorithm
 			}
 		}
 		
-		Bates1Algorithm.Params param = new Bates1Algorithm.Params();
+		BatesYAlgorithm.Params param = new BatesYAlgorithm.Params();
 		param.graph = jIGPTopology;
 		param.pops = pops;
+		param.rrs = rrs_pop;
 		
 		return param;
 	}
