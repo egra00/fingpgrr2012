@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<domain ASID="6457">
+<domain ASID="1728">
     <info>
         <title>OptimalTest1</title>
         <author>Diego Agriel</author>
@@ -39,6 +39,14 @@
                 <from node="DNVR"/>
                 <to node="CHIN"/>
             </link>
+            <link id="DNVR-STTL">
+                <from node="DNVR"/>
+                <to node="STTL"/>
+            </link>
+            <link id="CHIN-DNVR">
+                <from node="CHIN"/>
+                <to node="DNVR"/>
+            </link>
         </links>
     </topology>
     <igp>
@@ -63,6 +71,40 @@
             <link id="DNVR-CHIN">
                 <static>
                     <metric>7.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="DNVR-STTL">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="CHIN-DNVR">
+                <static>
+                    <metric>645.1613</metric>
                     <te-metric>1.0</te-metric>
                     <mrbw>155000.0</mrbw>
                     <mbw>155000.0</mbw>
