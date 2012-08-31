@@ -89,10 +89,16 @@ public class Zhang  extends BindAlgorithm
         }
         
         if(popsS != null && !popsS.isEmpty() && Integer.parseInt(popsS) <= domain.getNbNodes()) pops = Integer.parseInt(popsS);
-        if(level_1 != null && !level_1.isEmpty() && (Integer.parseInt(level_2)+Integer.parseInt(level_1)) < domain.getNbNodes()) level_one = Integer.parseInt(level_1);
-        if(level_2 != null && !level_2.isEmpty() && (Integer.parseInt(level_2)+Integer.parseInt(level_1)) < domain.getNbNodes()) level_two = Integer.parseInt(level_2);
+        if(level_1 != null && !level_1.isEmpty() && (Integer.parseInt(level_1)) < domain.getNbNodes()) level_one = Integer.parseInt(level_1);        
+        if(level_2 != null && !level_2.isEmpty() && (Integer.parseInt(level_2)) < domain.getNbNodes()) level_two = Integer.parseInt(level_2);
+        
+        if(level_one + level_two > domain.getNbNodes())
+        {
+        	level_one = 2;
+        	level_two = 2;
+        }
 		
-		// Topología IGP representada en un grafo jung 
+		// Topologia IGP representada en un grafo jung 
 		Graph<Node, Link> jIGPTopology = new UndirectedSparseMultigraph<Node, Link>();
 		
 		// Cargo un nodo Jung con los datos necesarios para realizar el algoritmo
