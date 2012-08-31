@@ -41,6 +41,7 @@ public class Zhang  extends BindAlgorithm
 	private Domain domain;
 	private int level_one;
 	private int level_two;
+	private int pops;
 	private String name;
 	
 	public Zhang() {
@@ -54,6 +55,7 @@ public class Zhang  extends BindAlgorithm
 			params.add(new ParameterDescriptor("ASID", "Domain ASID (leave blank for default).", Integer.class, null));
 			params.add(new ParameterDescriptor("RRs Level1", "Number of routers reflector in Level 1 (by default is two).", Integer.class, null));
 			params.add(new ParameterDescriptor("RRs Level2", "Number of routers reflector in Level 2 (by default is two).", Integer.class, null));
+			params.add(new ParameterDescriptor("Amount PoPs", "Amount of PoPs (by default is one).", Integer.class, null));
 		} catch (AlgorithmParameterException e) {
 			e.printStackTrace();
 		}
@@ -65,9 +67,11 @@ public class Zhang  extends BindAlgorithm
         String asId = (String) params.get("ASID");
         String level_1 = (String) params.get("RRs Level1");
         String level_2 = (String) params.get("RRs Level2");
+        String popsS = (String) params.get("Amount PoPs");
         
         level_one = 2;
         level_two = 2;
+        pops = 1; 
         
         if(asId == null || asId.isEmpty()) {
         	domain = InterDomainManager.getInstance().getDefaultDomain();
@@ -84,6 +88,7 @@ public class Zhang  extends BindAlgorithm
             }
         }
         
+        if(popsS != null && !popsS.isEmpty() && Integer.parseInt(popsS) <= domain.getNbNodes()) pops = Integer.parseInt(popsS);
         if(level_1 != null && !level_1.isEmpty() && (Integer.parseInt(level_2)+Integer.parseInt(level_1)) < domain.getNbNodes()) level_one = Integer.parseInt(level_1);
         if(level_2 != null && !level_2.isEmpty() && (Integer.parseInt(level_2)+Integer.parseInt(level_1)) < domain.getNbNodes()) level_two = Integer.parseInt(level_2);
 		
@@ -107,6 +112,7 @@ public class Zhang  extends BindAlgorithm
 		ZhangAlgorithm.Params par = new ZhangAlgorithm.Params();
 		par.nbr_level1 = level_one;
 		par.nbr_level2 = level_two;
+		par.pops = pops;
 		par.graph = jIGPTopology;
 		
 		return par;
