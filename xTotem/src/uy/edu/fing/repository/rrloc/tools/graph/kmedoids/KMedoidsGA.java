@@ -1,14 +1,11 @@
 package uy.edu.fing.repository.rrloc.tools.graph.kmedoids;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
 
 import uy.edu.fing.repository.rrloc.tools.graph.kmedoids.model.Coord;
 import uy.edu.fing.repository.rrloc.tools.graph.kmedoids.model.KMedoids;
-import agape.tools.Operations;
 import be.ac.ulg.montefiore.run.totem.domain.model.Link;
 import be.ac.ulg.montefiore.run.totem.domain.model.Node;
 import edu.uci.ics.jung2.graph.Graph;
@@ -16,7 +13,7 @@ import edu.uci.ics.jung2.graph.Graph;
 public class KMedoidsGA 
 {
 	
-	public static List<Graph<Node, Link>> kMedoids(int nb_run, Graph<Node,Link> G, int pops, int nGen, int sizeP, int sizeOf, double pmut, double pcross)
+	public static List<List<Node>> kMedoids(int nb_run, Graph<Node,Link> G, int pops, int nGen, int sizeP, int sizeOf, double pmut, double pcross)
 	{
 		Coord[] coord = new Coord[G.getVertexCount()];
 		int cant = 0;
@@ -45,8 +42,8 @@ public class KMedoidsGA
 			}
 		}
 		
-		HashMap<Integer, Set<Node>> hash = new HashMap<Integer, Set<Node>>();
-		List<Graph<Node, Link>> lst_pops = new 	LinkedList<Graph<Node, Link>>();
+		HashMap<Integer, List<Node>> hash = new HashMap<Integer, List<Node>>();
+		List<List<Node>> lst_pops = new LinkedList<List<Node>>();
 		int i=0;
 		
 		for(Node node : G.getVertices())
@@ -55,7 +52,7 @@ public class KMedoidsGA
 			if(!hash.containsKey(med))
 			{
 
-				Set<Node> set = new HashSet<Node>();
+				List<Node> set = new LinkedList<Node>();
 				hash.put(med, set);
 			}
 			
@@ -63,18 +60,9 @@ public class KMedoidsGA
 			i++;
 		}
 		
-		Graph<Node, Link> subG;
-		Graph<Node, Link> aux = Operations.copyUndirectedSparseGraph(G);
 		
-
-		
-		for(Set<Node> set : hash.values())
-		{
-			subG = Operations.copyUndirectedSparseGraph(aux);
-			Operations.removeAllVertices(aux, set);
-			Operations.removeAllVertices(subG, new HashSet<Node>(aux.getVertices()));
-			lst_pops.add(subG);
-		}
+		for(List<Node> set : hash.values())
+			lst_pops.add(set);
 				
 		return lst_pops;
 	}

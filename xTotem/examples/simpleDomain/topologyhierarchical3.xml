@@ -17,7 +17,7 @@
             <node id="1">
                 <rid>198.32.8.201</rid>
                 <description>1</description>
-                <location latitude="-14.000004" longitude="101.0"/>
+                <location latitude="-14.000007" longitude="101.0"/>
             </node>
             <node id="2">
                 <rid>198.32.8.202</rid>
@@ -32,17 +32,17 @@
             <node id="4">
                 <rid>198.32.8.204</rid>
                 <description>4</description>
-                <location latitude="98.0" longitude="111.99999"/>
+                <location latitude="98.00001" longitude="111.99999"/>
             </node>
             <node id="5">
                 <rid>198.32.8.205</rid>
                 <description>5</description>
-                <location latitude="107.0" longitude="346.0"/>
+                <location latitude="108.64489" longitude="347.64487"/>
             </node>
             <node id="6">
                 <rid>198.32.8.206</rid>
                 <description>6</description>
-                <location latitude="94.000015" longitude="363.0"/>
+                <location latitude="92.35513" longitude="366.28976"/>
             </node>
             <node id="8">
                 <rid>198.32.8.208</rid>
@@ -57,17 +57,17 @@
             <node id="10">
                 <rid>198.32.8.210</rid>
                 <description>10</description>
-                <location latitude="-56.284462" longitude="383.3895"/>
+                <location latitude="-56.284462" longitude="383.38953"/>
             </node>
             <node id="11">
                 <rid>198.32.8.211</rid>
                 <description>11</description>
-                <location latitude="-44.49207" longitude="400.4921"/>
+                <location latitude="-44.49207" longitude="400.49213"/>
             </node>
             <node id="12">
                 <rid>198.32.8.212</rid>
                 <description>12</description>
-                <location latitude="-25.27771" longitude="416.52228"/>
+                <location latitude="-25.277712" longitude="416.52228"/>
             </node>
             <node id="13">
                 <rid>198.32.8.213</rid>
@@ -82,7 +82,7 @@
             <node id="15">
                 <rid>198.32.8.215</rid>
                 <description>15</description>
-                <location latitude="119.25174" longitude="380.40958"/>
+                <location latitude="119.25175" longitude="380.40958"/>
             </node>
             <node id="16">
                 <rid>198.32.8.216</rid>
@@ -102,12 +102,12 @@
             <node id="19">
                 <rid>198.32.8.219</rid>
                 <description>19</description>
-                <location latitude="-33.06349" longitude="443.93652"/>
+                <location latitude="-33.06349" longitude="443.9365"/>
             </node>
             <node id="20">
                 <rid>198.32.8.220</rid>
                 <description>20</description>
-                <location latitude="-51.50794" longitude="433.9524"/>
+                <location latitude="-51.50794" longitude="433.95242"/>
             </node>
             <node id="21">
                 <rid>198.32.8.221</rid>
@@ -117,7 +117,7 @@
             <node id="22">
                 <rid>198.32.8.222</rid>
                 <description>22</description>
-                <location latitude="-71.977646" longitude="410.97513"/>
+                <location latitude="-71.977646" longitude="410.9751"/>
             </node>
             <node id="23">
                 <rid>198.32.8.223</rid>
@@ -137,7 +137,7 @@
             <node id="26">
                 <rid>198.32.8.226</rid>
                 <description>26</description>
-                <location latitude="89.83552" longitude="70.543"/>
+                <location latitude="89.83551" longitude="70.543"/>
             </node>
             <node id="27">
                 <rid>198.32.8.227</rid>
@@ -147,22 +147,22 @@
             <node id="28">
                 <rid>198.32.8.228</rid>
                 <description>28</description>
-                <location latitude="106.698425" longitude="33.555557"/>
+                <location latitude="106.69842" longitude="33.555557"/>
             </node>
             <node id="29">
                 <rid>198.32.8.229</rid>
                 <description>29</description>
-                <location latitude="126.92062" longitude="45.031746"/>
+                <location latitude="126.920616" longitude="45.031746"/>
             </node>
             <node id="30">
                 <rid>198.32.8.230</rid>
                 <description>30</description>
-                <location latitude="83.90958" longitude="36.045006"/>
+                <location latitude="83.909584" longitude="36.045006"/>
             </node>
             <node id="31">
                 <rid>198.32.8.231</rid>
                 <description>31</description>
-                <location latitude="-25.806858" longitude="72.58829"/>
+                <location latitude="-25.80686" longitude="72.58829"/>
             </node>
             <node id="32">
                 <rid>198.32.8.232</rid>
@@ -177,7 +177,7 @@
             <node id="34">
                 <rid>198.32.8.234</rid>
                 <description>34</description>
-                <location latitude="-27.676128" longitude="36.436962"/>
+                <location latitude="-27.67613" longitude="36.436962"/>
             </node>
             <node id="35">
                 <rid>198.32.8.235</rid>
@@ -197,7 +197,7 @@
             <node id="7">
                 <rid>198.32.8.207</rid>
                 <description>7</description>
-                <location latitude="167.0" longitude="191.99998"/>
+                <location latitude="164.25851" longitude="194.19316"/>
             </node>
             <node id="38">
                 <rid>198.32.8.238</rid>
@@ -222,7 +222,7 @@
             <node id="42">
                 <rid>198.32.8.242</rid>
                 <description>42</description>
-                <location latitude="219.98586" longitude="188.29294"/>
+                <location latitude="219.98584" longitude="188.29294"/>
             </node>
             <node id="43">
                 <rid>198.32.8.243</rid>
@@ -232,7 +232,7 @@
             <node id="44">
                 <rid>198.32.8.244</rid>
                 <description>44</description>
-                <location latitude="219.86511" longitude="168.00035"/>
+                <location latitude="219.8651" longitude="168.00035"/>
             </node>
             <node id="45">
                 <rid>198.32.8.245</rid>
@@ -681,14 +681,6 @@
                 <from node="12"/>
                 <to node="22"/>
             </link>
-            <link id="6-2">
-                <from node="6"/>
-                <to node="2"/>
-            </link>
-            <link id="1-5">
-                <from node="1"/>
-                <to node="5"/>
-            </link>
             <link id="6-9">
                 <from node="6"/>
                 <to node="9"/>
@@ -703,14 +695,6 @@
             </link>
             <link id="8-5">
                 <from node="8"/>
-                <to node="5"/>
-            </link>
-            <link id="2-6">
-                <from node="2"/>
-                <to node="6"/>
-            </link>
-            <link id="1-5-1">
-                <from node="1"/>
                 <to node="5"/>
             </link>
             <link id="3-1">
@@ -897,10 +881,6 @@
                 <from node="38"/>
                 <to node="5"/>
             </link>
-            <link id="38-5-1">
-                <from node="38"/>
-                <to node="5"/>
-            </link>
             <link id="38-3">
                 <from node="38"/>
                 <to node="3"/>
@@ -928,6 +908,10 @@
             <link id="38-39">
                 <from node="38"/>
                 <to node="39"/>
+            </link>
+            <link id="5-38">
+                <from node="5"/>
+                <to node="38"/>
             </link>
         </links>
     </topology>
@@ -2803,40 +2787,6 @@
                     </rbw>
                 </dynamic>
             </link>
-            <link id="6-2">
-                <static>
-                    <metric>645.1613</metric>
-                    <te-metric>1.0</te-metric>
-                    <mrbw>155000.0</mrbw>
-                    <mbw>155000.0</mbw>
-                    <diff-serv>
-                        <bcm>MAM</bcm>
-                        <bc id="0">155000.0</bc>
-                    </diff-serv>
-                </static>
-                <dynamic>
-                    <rbw>
-                        <priority id="0">155000.0</priority>
-                    </rbw>
-                </dynamic>
-            </link>
-            <link id="1-5">
-                <static>
-                    <metric>645.1613</metric>
-                    <te-metric>1.0</te-metric>
-                    <mrbw>155000.0</mrbw>
-                    <mbw>155000.0</mbw>
-                    <diff-serv>
-                        <bcm>MAM</bcm>
-                        <bc id="0">155000.0</bc>
-                    </diff-serv>
-                </static>
-                <dynamic>
-                    <rbw>
-                        <priority id="0">155000.0</priority>
-                    </rbw>
-                </dynamic>
-            </link>
             <link id="6-9">
                 <static>
                     <metric>645.1613</metric>
@@ -2889,40 +2839,6 @@
                 </dynamic>
             </link>
             <link id="8-5">
-                <static>
-                    <metric>645.1613</metric>
-                    <te-metric>1.0</te-metric>
-                    <mrbw>155000.0</mrbw>
-                    <mbw>155000.0</mbw>
-                    <diff-serv>
-                        <bcm>MAM</bcm>
-                        <bc id="0">155000.0</bc>
-                    </diff-serv>
-                </static>
-                <dynamic>
-                    <rbw>
-                        <priority id="0">155000.0</priority>
-                    </rbw>
-                </dynamic>
-            </link>
-            <link id="2-6">
-                <static>
-                    <metric>645.1613</metric>
-                    <te-metric>1.0</te-metric>
-                    <mrbw>155000.0</mrbw>
-                    <mbw>155000.0</mbw>
-                    <diff-serv>
-                        <bcm>MAM</bcm>
-                        <bc id="0">155000.0</bc>
-                    </diff-serv>
-                </static>
-                <dynamic>
-                    <rbw>
-                        <priority id="0">155000.0</priority>
-                    </rbw>
-                </dynamic>
-            </link>
-            <link id="1-5-1">
                 <static>
                     <metric>645.1613</metric>
                     <te-metric>1.0</te-metric>
@@ -3721,23 +3637,6 @@
                     </rbw>
                 </dynamic>
             </link>
-            <link id="38-5-1">
-                <static>
-                    <metric>645.1613</metric>
-                    <te-metric>1.0</te-metric>
-                    <mrbw>155000.0</mrbw>
-                    <mbw>155000.0</mbw>
-                    <diff-serv>
-                        <bcm>MAM</bcm>
-                        <bc id="0">155000.0</bc>
-                    </diff-serv>
-                </static>
-                <dynamic>
-                    <rbw>
-                        <priority id="0">155000.0</priority>
-                    </rbw>
-                </dynamic>
-            </link>
             <link id="38-3">
                 <static>
                     <metric>645.1613</metric>
@@ -3841,6 +3740,23 @@
                 </dynamic>
             </link>
             <link id="38-39">
+                <static>
+                    <metric>645.1613</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="5-38">
                 <static>
                     <metric>645.1613</metric>
                     <te-metric>1.0</te-metric>
