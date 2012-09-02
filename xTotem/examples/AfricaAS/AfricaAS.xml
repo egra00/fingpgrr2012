@@ -15,63 +15,63 @@
         <nodes>
             <node id="0">
                 <rid>0</rid>
-                <location latitude="16.641598" longitude="12.608883"/>
+                <location latitude="16.641596" longitude="12.608884"/>
             </node>
             <node id="1">
                 <rid>1</rid>
-                <location latitude="-14.796476" longitude="31.048437"/>
+                <location latitude="-10.826566" longitude="27.337433"/>
             </node>
             <node id="10">
                 <rid>10</rid>
-                <location latitude="-22.316626" longitude="19.661547"/>
+                <location latitude="-20.935787" longitude="22.164316"/>
             </node>
             <node id="11">
                 <rid>11</rid>
-                <location latitude="25.000517" longitude="-0.93365914"/>
+                <location latitude="25.000517" longitude="-0.93365943"/>
             </node>
             <node id="12">
                 <rid>12</rid>
-                <location latitude="17.995539" longitude="-10.534903"/>
+                <location latitude="17.909237" longitude="-8.808854"/>
             </node>
             <node id="13">
                 <rid>13</rid>
-                <location latitude="22.041645" longitude="8.941761"/>
+                <location latitude="22.041647" longitude="8.941761"/>
             </node>
             <node id="14">
                 <rid>14</rid>
-                <location latitude="11.052064" longitude="-0.7425497"/>
+                <location latitude="13.468532" longitude="-1.0877602"/>
             </node>
             <node id="2">
                 <rid>2</rid>
-                <location latitude="7.0066414" longitude="-7.768133"/>
+                <location latitude="7.7833633" longitude="-4.8338513"/>
             </node>
             <node id="3">
                 <rid>3</rid>
-                <location latitude="-14.257957" longitude="39.74199"/>
+                <location latitude="-14.171655" longitude="36.89401"/>
             </node>
             <node id="4">
                 <rid>4</rid>
-                <location latitude="-17.751133" longitude="27.548534"/>
+                <location latitude="-14.04013" longitude="24.700556"/>
             </node>
             <node id="5">
                 <rid>5</rid>
-                <location latitude="-22.18986" longitude="34.46835"/>
+                <location latitude="-20.463812" longitude="33.08751"/>
             </node>
             <node id="6">
                 <rid>6</rid>
-                <location latitude="16.89275" longitude="1.9630299"/>
+                <location latitude="14.735189" longitude="4.6384053"/>
             </node>
             <node id="7">
                 <rid>7</rid>
-                <location latitude="12.16177" longitude="14.01053"/>
+                <location latitude="12.16177" longitude="14.010531"/>
             </node>
             <node id="8">
                 <rid>8</rid>
-                <location latitude="12.162595" longitude="-10.781674"/>
+                <location latitude="12.421501" longitude="-9.141929"/>
             </node>
             <node id="9">
                 <rid>9</rid>
-                <location latitude="-22.92321" longitude="27.269821"/>
+                <location latitude="-22.146488" longitude="27.269821"/>
             </node>
         </nodes>
         <links>

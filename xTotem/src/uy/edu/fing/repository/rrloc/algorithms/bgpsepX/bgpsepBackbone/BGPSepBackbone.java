@@ -1,4 +1,4 @@
-package uy.edu.fing.repository.rrloc.algorithms.batesX.batesY;
+package uy.edu.fing.repository.rrloc.algorithms.bgpsepX.bgpsepBackbone;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -36,19 +36,18 @@ import be.ac.ulg.montefiore.run.totem.visualtopo.guiComponents.TopoChooser;
 import edu.uci.ics.jung2.graph.Graph;
 import edu.uci.ics.jung2.graph.UndirectedSparseMultigraph;
 
-public class BatesY extends BindAlgorithm 
+public class BGPSepBackbone extends BindAlgorithm 
 {
-
 	private Domain domain;
-	private String name;
+	protected String name;
 	private int pops;
 	private int rrs_pop;
 	
-	public BatesY() {
-		logger = Logger.getLogger(BatesY.class);
+	public BGPSepBackbone() {
+		logger = Logger.getLogger(BGPSepBackbone.class);
 		params = new ArrayList<ParameterDescriptor>();
-		algorithm = new BatesYAlgorithm();
-		name = "BatesY";
+		algorithm = new BGPSepBackboneAlgorithm();
+		name = "BGPSepBackbone";
 		thread = new Thread(this, name);
 		
 		try {
@@ -59,11 +58,12 @@ public class BatesY extends BindAlgorithm
 			e.printStackTrace();
 		}
 	}
-		
+	
+	
 	@Override
 	public Object getAlgorithmParams(HashMap params) 
 	{
-        String asId = (String) params.get("ASID");
+		String asId = (String) params.get("ASID");
         String rrs_popS = (String) params.get("RRs by PoP");
         String popsS = (String) params.get("Amount PoPs");
         pops = 1;
@@ -104,7 +104,7 @@ public class BatesY extends BindAlgorithm
 			}
 		}
 		
-		BatesYAlgorithm.Params param = new BatesYAlgorithm.Params();
+		BGPSepBackboneAlgorithm.Params param = new BGPSepBackboneAlgorithm.Params();
 		param.graph = jIGPTopology;
 		param.pops = pops;
 		param.rrs = rrs_pop;
@@ -116,8 +116,9 @@ public class BatesY extends BindAlgorithm
 	public Object initAlgorithmResult() {
 		return new ArrayList<iBGPSession>();
 	}
-
-	public void saveTopo() {
+	
+	
+    public void saveTopo() {
         TopoChooser saver = new TopoChooser();
         File file = saver.saveTopo(MainWindow.getInstance());
         if (file != null) {
@@ -134,7 +135,7 @@ public class BatesY extends BindAlgorithm
         }
     }
 
-	@Override
+    @Override
 	public void dumpResultInDomain(Object algorithmResult) throws Exception {
 		List<iBGPSession> iBGPTopology = (List<iBGPSession>)algorithmResult;
 		
@@ -212,5 +213,4 @@ public class BatesY extends BindAlgorithm
 		}
 		
 	}
-
 }
