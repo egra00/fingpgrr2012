@@ -19,7 +19,6 @@ public class BatesZAlgorithm implements RRLocAlgorithm
 
 	public static class Params
 	{
-		public int rrs;
 		public int pops;
 		public Graph<Node, Link> graph;
 	}
@@ -32,7 +31,6 @@ public class BatesZAlgorithm implements RRLocAlgorithm
 	@Override
 	public void run(Object in_params, Object out_result) 
 	{
-		int _rrs = ((Params) in_params).rrs;
 		int _pops = ((Params) in_params).pops;
 		Graph<Node, Link> igp = ((Params) in_params).graph;
 		List<iBGPSession> lst_sessions = (List<iBGPSession>) out_result;
@@ -42,7 +40,7 @@ public class BatesZAlgorithm implements RRLocAlgorithm
 		
 		for (List<Node> cell : lst_cells)
 		{
-			lst_PoPs_RRs.addAll(BatesZPoP(igp, cell, _rrs, lst_sessions));
+			lst_PoPs_RRs.addAll(BatesZPoP(igp, cell, lst_sessions));
 		}
 		
 		for(;!lst_PoPs_RRs.isEmpty();)
@@ -59,13 +57,16 @@ public class BatesZAlgorithm implements RRLocAlgorithm
 	}
 	
 	
-	public List<Node> BatesZPoP(Graph<Node, Link> igp, List<Node> cell, int rrs, List<iBGPSession> lst_sessions)
+	public List<Node> BatesZPoP(Graph<Node, Link> igp, List<Node> cell, List<iBGPSession> lst_sessions)
 	{
 		List<Node> lst_rrs_pop = new LinkedList<Node>();
-		List<Node> lst_node = lst_nodes_order_by_priority(igp, cell);
+		int[] rrs = new int[1];
+		List<Node> lst_node = lst_nodes_order_by_priority(igp, cell, rrs);
+		
+		
 		
 		// Escojo los routers reflectors del PoP
-		for(int cant = 0 ; !lst_node.isEmpty() && cant < rrs; cant++) 
+		for(int cant = 0 ; !lst_node.isEmpty() && cant < rrs[0]; cant++) 
 		{
 			lst_rrs_pop.add(lst_node.remove(0));
 		}
@@ -97,7 +98,7 @@ public class BatesZAlgorithm implements RRLocAlgorithm
 	}
 	
 	
-	public List<Node> lst_nodes_order_by_priority(Graph<Node, Link> igp, List<Node> cell)
+	public List<Node> lst_nodes_order_by_priority(Graph<Node, Link> igp, List<Node> cell, int[] rrs )
 	{
 		List<Node> lst_nodes = new LinkedList<Node>();
 		List<Node> lst_nodes_aux = new LinkedList<Node>();
@@ -112,6 +113,9 @@ public class BatesZAlgorithm implements RRLocAlgorithm
 			}
 		}
 		
+		
+		rrs[0] = lst_nodes.size();
+
 		
 		//Ordeno los nodos por grado el resto de los nodos en la cell
 		for(Node node : cell) 

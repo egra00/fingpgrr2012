@@ -17,17 +17,17 @@
             <node id="1">
                 <rid>198.32.8.201</rid>
                 <description>1</description>
-                <location latitude="2.7543397" longitude="288.6892"/>
+                <location latitude="22.644707" longitude="288.6892"/>
             </node>
             <node id="2">
                 <rid>198.32.8.202</rid>
                 <description>2</description>
-                <location latitude="9.726171" longitude="346.0657"/>
+                <location latitude="21.22528" longitude="315.60858"/>
             </node>
             <node id="3">
                 <rid>198.32.8.203</rid>
                 <description>3</description>
-                <location latitude="40.961903" longitude="305.68677"/>
+                <location latitude="5.5321913" longitude="316.2535"/>
             </node>
             <node id="4">
                 <rid>198.32.8.204</rid>
@@ -37,12 +37,12 @@
             <node id="6">
                 <rid>198.32.8.206</rid>
                 <description>6</description>
-                <location latitude="-5.6624327" longitude="117.33016"/>
+                <location latitude="-5.6624312" longitude="117.33016"/>
             </node>
             <node id="7">
                 <rid>198.32.8.207</rid>
                 <description>7</description>
-                <location latitude="-18.382912" longitude="94.55838"/>
+                <location latitude="-18.38291" longitude="94.55838"/>
             </node>
             <node id="8">
                 <rid>198.32.8.208</rid>
@@ -57,7 +57,7 @@
             <node id="10">
                 <rid>198.32.8.210</rid>
                 <description>10</description>
-                <location latitude="85.9873" longitude="208.92699"/>
+                <location latitude="85.98729" longitude="208.92699"/>
             </node>
             <node id="11">
                 <rid>198.32.8.211</rid>
@@ -72,12 +72,12 @@
             <node id="13">
                 <rid>198.32.8.213</rid>
                 <description>13</description>
-                <location latitude="103.495926" longitude="239.57613"/>
+                <location latitude="103.49592" longitude="239.57613"/>
             </node>
             <node id="14">
                 <rid>198.32.8.214</rid>
                 <description>14</description>
-                <location latitude="98.23916" longitude="140.14165"/>
+                <location latitude="98.23917" longitude="140.14165"/>
             </node>
             <node id="15">
                 <rid>198.32.8.215</rid>
@@ -97,12 +97,12 @@
             <node id="18">
                 <rid>198.32.8.218</rid>
                 <description>18</description>
-                <location latitude="-36.271957" longitude="252.19894"/>
+                <location latitude="-36.271957" longitude="252.19893"/>
             </node>
             <node id="5">
                 <rid>198.32.8.205</rid>
                 <description>5</description>
-                <location latitude="16.848223" longitude="308.32678"/>
+                <location latitude="40.468025" longitude="315.1641"/>
             </node>
         </nodes>
         <links>
@@ -314,12 +314,12 @@
                 <from node="2"/>
                 <to node="5"/>
             </link>
-            <link id="13-3">
+            <link id="13-1">
                 <from node="13"/>
-                <to node="3"/>
+                <to node="1"/>
             </link>
-            <link id="3-13">
-                <from node="3"/>
+            <link id="1-13">
+                <from node="1"/>
                 <to node="13"/>
             </link>
         </links>
@@ -1210,7 +1210,7 @@
                     </rbw>
                 </dynamic>
             </link>
-            <link id="13-3">
+            <link id="13-1">
                 <static>
                     <metric>645.1613</metric>
                     <te-metric>1.0</te-metric>
@@ -1227,7 +1227,7 @@
                     </rbw>
                 </dynamic>
             </link>
-            <link id="3-13">
+            <link id="1-13">
                 <static>
                     <metric>645.1613</metric>
                     <te-metric>1.0</te-metric>
