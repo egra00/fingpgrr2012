@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import uy.edu.fing.repository.rrloc.algorithms.iBGPSession;
-import uy.edu.fing.repository.rrloc.algorithms.batesX.batesY.BatesYAlgorithm;
+import uy.edu.fing.repository.rrloc.algorithms.batesX.batesZ.BatesZAlgorithm;
 import uy.edu.fing.repository.rrloc.algorithms.bgpsepX.bgpsepD.BGPSepDAlgorithm;
 import uy.edu.fing.repository.rrloc.iAlgorithm.RRLocAlgorithm;
 import uy.edu.fing.repository.rrloc.tools.graph.kmedoids.KMedoidsGA;
@@ -19,7 +19,6 @@ public class BGPSepBackboneAlgorithm implements RRLocAlgorithm
 
 	public static class Params
 	{
-		public int rrs;
 		public int pops;
 		public Graph<Node, Link> graph;
 	}
@@ -27,7 +26,6 @@ public class BGPSepBackboneAlgorithm implements RRLocAlgorithm
 	@Override
 	public void run(Object in_params, Object out_result) 
 	{
-		int _rrs = ((Params) in_params).rrs;
 		int _pops = ((Params) in_params).pops;
 		Graph<Node, Link> igp = ((Params) in_params).graph;
 		List<iBGPSession> lst_sessions = (List<iBGPSession>) out_result;
@@ -35,16 +33,18 @@ public class BGPSepBackboneAlgorithm implements RRLocAlgorithm
 		List<List<Node>> lst_cells = KMedoidsGA.kMedoids(15, igp, _pops ,50, 60, 100, 0.01, 0.1);
 		List<Node> lst_PoPs_RRs = new LinkedList<Node>();
 		
-		BatesYAlgorithm bates = new BatesYAlgorithm();
+		BatesZAlgorithm bates = new BatesZAlgorithm();
 		
 		
 		for (List<Node> cell : lst_cells)
 		{
-			lst_PoPs_RRs.addAll(bates.BatesYPoP(igp, cell, _rrs, lst_sessions));
+			lst_PoPs_RRs.addAll(bates.BatesZPoP(igp, cell, lst_sessions));
 		}
+		
 		
 		Graph<Node, Link> core =  backbone_net(igp, lst_PoPs_RRs);
 		BGPSepDAlgorithm bgpsepD = new BGPSepDAlgorithm();
+		
 		
 		bgpsepD.run(core, lst_sessions);	
 	}
