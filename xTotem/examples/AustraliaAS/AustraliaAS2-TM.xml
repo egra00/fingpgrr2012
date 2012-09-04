@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TrafficMatrixFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://totem.run.montefiore.ulg.ac.be/Schema/TrafficMatrix-v1_1.xsd">
+  <IntraTM ASID="0">
+  </IntraTM>
+</TrafficMatrixFile>
