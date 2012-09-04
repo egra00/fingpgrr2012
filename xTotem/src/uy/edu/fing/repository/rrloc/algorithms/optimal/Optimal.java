@@ -36,6 +36,7 @@ import be.ac.ulg.montefiore.run.totem.util.ParameterDescriptor;
 import be.ac.ulg.montefiore.run.totem.visualtopo.graph.GraphManager;
 import be.ac.ulg.montefiore.run.totem.visualtopo.guiComponents.MainWindow;
 import be.ac.ulg.montefiore.run.totem.visualtopo.guiComponents.TopoChooser;
+import edu.uci.ics.jung2.graph.DirectedSparseMultigraph;
 import edu.uci.ics.jung2.graph.Graph;
 import edu.uci.ics.jung2.graph.UndirectedSparseMultigraph;
 
@@ -166,16 +167,16 @@ public class Optimal extends BindAlgorithm {
 		
 		List<Object> lstParams = new ArrayList<Object>();
 		// Topología IGP representada en un grafo jung 
-		Graph<Node, Link> jIGPTopology = new UndirectedSparseMultigraph<Node, Link>();
+		Graph<Node, Link> jIGPTopology = new DirectedSparseMultigraph<Node, Link>();
 		
 		// Cargo un nodo Jung con los datos necesarios para realizar el algoritmo
 		Operations.addAllVertices(jIGPTopology, (Set<Node>)(new HashSet<Node>(domain.getAllNodes())));
 		for (Link link : domain.getAllLinks()) {
 			try {
 				// Elimino la direccionalidad del grafo
-				if (jIGPTopology.findEdge(link.getDstNode(), link.getSrcNode()) == null) {
+				//if (jIGPTopology.findEdge(link.getDstNode(), link.getSrcNode()) == null) {
 					jIGPTopology.addEdge(link, link.getSrcNode(), link.getDstNode());
-				}
+				//}
 			} catch (NodeNotFoundException e) {
 				logger.error("Parsing Totem domain to Jung graph");
 				e.printStackTrace();
