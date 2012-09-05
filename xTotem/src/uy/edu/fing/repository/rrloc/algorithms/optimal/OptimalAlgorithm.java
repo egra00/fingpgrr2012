@@ -283,6 +283,8 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 						
 						if(minCutEdgesSize==0){
 							System.out.println("ERROR: MINCUTEDGES SIZE IS 0");
+							cplex.end();
+							System.exit(1);
 						}
 						
 						IloNumVar[] restrictionEdges = new IloNumVar[minCutEdgesSize];
@@ -363,172 +365,9 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 		
 	}
 	
-	private static void printSolution(Graph<Node, Link> IGPGraph, IloCplex cplex, IloNumVar[][] UP, IloNumVar[][] DOWN, List<Node> BGPRouters,int BGPRoutersSize){
-		try{
-			System.out.println("--------------------------------------------");
-	        System.out.println();
-	        System.out.println("Solution found:");
-	        System.out.println(" Objective value = " + cplex.getObjValue());
-	        System.out.println();
-	        
-			List<String> reflectors = new ArrayList<String>();
-			int sessions = 0;
-			
-			System.out.println("UP Matrix:");
-			for (int i = 0; i < BGPRoutersSize; i++) {
-				for (int j = 0; j < BGPRoutersSize; j++) {
-					long value = Math.round(cplex.getValue(UP[i][j]));
-					String rid2 = BGPRouters.get(j).getId();
-					System.out.print(value+" ");
-					if(value==1.0){
-						sessions++;
-					}
-					if(value==1.0 && !reflectors.contains(rid2)){
-						reflectors.add(rid2);
-					}
-				}
-			System.out.println();
-			}
-			
-			System.out.println("DOWN Matrix:");
-			for (int i = 0; i < BGPRoutersSize; i++) {
-				for (int j = 0; j < BGPRoutersSize; j++) {
-					long value = Math.round(cplex.getValue(DOWN[i][j]));
-					String rid = BGPRouters.get(i).getId();
-					System.out.print(value+" ");
-					if(value==1.0){
-						sessions++;
-					}
-					if(value==1.0 && !reflectors.contains(rid)){
-						reflectors.add(rid);
-					}
-				}
-			System.out.println();
-			}
-			
-			System.out.println("Route reflectors IDs("+reflectors.size()+"):");
-			Iterator<String> it = reflectors.iterator();
-			while(it.hasNext()){
-				System.out.println((String)it.next());
-			}
-			
-			System.out.println("Number of sessions: "+sessions);
-	        
-	        System.out.println("--------------------------------------------");
-	        
-		}
-		catch (IloException e) {
-		   System.err.println("Concert exception caught: " + e);
-		}
-	}
-	
-	private static void createSessionList(List<iBGPSession> lstSessions, IloCplex cplex, IloNumVar[][] UP, IloNumVar[][] DOWN, List<Node> BGPRouters,int BGPRoutersSize){
-		try{
-	     
-			for (int i = 0; i < BGPRoutersSize; i++) {
-				for (int j = 0; j < BGPRoutersSize; j++) {
-					long value = Math.round(cplex.getValue(UP[i][j]));
-					if(value==1.0)
-						lstSessions.add(new iBGPSession(BGPRouters.get(i).getId(),BGPRouters.get(j).getId(), iBGPSessionType.client));
-				}
-			}
-			
-			for (int i = 0; i < BGPRoutersSize; i++) {
-				for (int j = 0; j < BGPRoutersSize; j++) {
-					long value = Math.round(cplex.getValue(DOWN[i][j]));
-					if(value==1.0)
-						lstSessions.add(new iBGPSession(BGPRouters.get(j).getId(),BGPRouters.get(i).getId(), iBGPSessionType.client));
-				}
-			}
-		}
-		catch (IloException e) {
-		   System.err.println("Concert exception caught: " + e);
-		}
-	}
-	
-	private boolean existsPath(Graph<MetaNode,ExtendedLink> eg, String idn, String idr) {
-		Graph<MetaNode,ExtendedLink> egAux = new DirectedSparseGraph<MetaNode,ExtendedLink>();
-		Iterator<MetaNode> it = eg.getVertices().iterator();
-		
-		while(it.hasNext()){
-			MetaNode mn = (MetaNode)it.next();
-			egAux.addVertex(mn);
-		}
-
-		Iterator<ExtendedLink> it2 = eg.getEdges().iterator();
-		
-		while(it2.hasNext()){
-			ExtendedLink el = (ExtendedLink)it2.next();
-			if(el.getCapacity()!=0)
-				egAux.addEdge(el,el.getSrc(),el.getDst());
-		}
-		
-		//printGraph2_(egAux,"EXIST PATH? "+idn+" - "+idr);
-		
-		Transformer<ExtendedLink,Integer> tr = new TransformerExtendedLink();
-		DijkstraShortestPath<MetaNode, ExtendedLink> s = new DijkstraShortestPath<MetaNode, ExtendedLink>(egAux,tr);
-		List<ExtendedLink> edges = s.getPath(getMetaNode(MetaNodeType.SRC,egAux,idn),getMetaNode(MetaNodeType.DST,egAux,idr));
-		
-		if(edges.size()>0){
-			return true;
-		}
-		else
-			return false;
-	}
-	
-	private static boolean listMNcontains(List<MetaNode> lst, MetaNode m){
-		Iterator<MetaNode> it = lst.iterator();
-		
-		boolean found = false;
-		
-		while(it.hasNext() && !found){
-			MetaNode mn = (MetaNode)it.next();
-			if(mn.getId() == m.getId()){
-				found = true;
-			}
-		}
-		
-		return found;
-	}
-	
-	private static Set<ExtendedLink> getRestrictionEdges(Graph<MetaNode,ExtendedLink> eg, MetaNode src, MetaNode dst){
-		
-		Set<ExtendedLink> links = new HashSet<ExtendedLink>();
-		
-		Collection<ExtendedLink> lst = eg.getEdges(); 
-		
-		List<MetaNode> reachableMetaNodes = new ArrayList<MetaNode>();
-		reachableMetaNodes.add(src);
-		Iterator<ExtendedLink> it = lst.iterator();
-		
-		while(it.hasNext()){
-			
-			ExtendedLink el = (ExtendedLink)it.next();
-			
-			if(el.getCapacity()!=0){
-				if(!listMNcontains(reachableMetaNodes,el.getDst())){
-					reachableMetaNodes.add(el.getDst());
-				}
-			}
-			
-		}
-		
-		it = lst.iterator();
-		
-		while(it.hasNext()){
-			
-			ExtendedLink el = (ExtendedLink)it.next();
-			
-			if(listMNcontains(reachableMetaNodes,el.getSrc()) && el.getDst().getId()==dst.getId() && el.getCapacity()==0){
-				links.add(el);
-			}
-			
-		}
-		
-		return links;
-	}
-
 	private static float dist(Graph<Node, Link> IGPGraph,Node src,Node dst){ 
+		//Returns the sum of the IGP metric in the links contained in the shortest path from node 'src' to node 'dst'
+		
 		Transformer<Link,Float> tr = new TransformerLink();
 		DijkstraShortestPath<Node, Link> s = new DijkstraShortestPath<Node, Link>(IGPGraph,tr);
 		List<Link> edges = s.getPath(src,dst);
@@ -542,6 +381,9 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 	}
 	
 	private static int hops(Graph<Node, Link> IGPGraph,Node n1,Node n2){ 
+
+		//Returns the number of routers in the shortest path from node 'n1' to node 'n2'
+		
 		Transformer<Link,Float> tr = new TransformerLink();
 		DijkstraShortestPath<Node, Link> s = new DijkstraShortestPath<Node, Link>(IGPGraph,tr);
 		List<Link> edges = s.getPath(n1,n2);
@@ -549,6 +391,7 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 	}
 	
 	private static Graph<MetaNode,ExtendedLink> CreateExtendedGraph(Graph<Node, Link> IGPGraph, Graph<Node,Link> g, IloNumVar[][] UP, IloNumVar[][] DOWN, IloCplex cplex, List<Node> BGPRouters, List<Node> nextHops){
+		//Creates the extended graph from the graph 'g'
 		
 		Graph<MetaNode,ExtendedLink> eg = new DirectedSparseGraph<MetaNode,ExtendedLink>();
 		
@@ -600,15 +443,188 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 					
 				}
 				catch(NodeNotFoundException e){
-					System.out.println("Error while creating the extended graphs.");
+					System.out.println("ERROR: COLUDN'T CREATE THE EXTENDED GRAPHS");
 				}
 		}
 		
 		return eg;
 	} 
 	
-	private static MetaNode getMetaNode(MetaNodeType type, Graph<MetaNode,ExtendedLink> eg, String id){
+	private static boolean existsPath(Graph<MetaNode,ExtendedLink> eg, String idn, String idr) {
 
+		//Returns true if exists a path from the node with id 'idn' to the node with id 'idr' in the graph 'eg', false otherwise
+		
+		Graph<MetaNode,ExtendedLink> egAux = new DirectedSparseGraph<MetaNode,ExtendedLink>();
+		Iterator<MetaNode> it = eg.getVertices().iterator();
+		
+		while(it.hasNext()){
+			MetaNode mn = (MetaNode)it.next();
+			egAux.addVertex(mn);
+		}
+
+		Iterator<ExtendedLink> it2 = eg.getEdges().iterator();
+		
+		while(it2.hasNext()){
+			ExtendedLink el = (ExtendedLink)it2.next();
+			if(el.getCapacity()!=0)
+				egAux.addEdge(el,el.getSrc(),el.getDst());
+		}
+		
+		//printGraph2_(egAux,"EXIST PATH? "+idn+" - "+idr);
+		
+		Transformer<ExtendedLink,Integer> tr = new TransformerExtendedLink();
+		DijkstraShortestPath<MetaNode, ExtendedLink> s = new DijkstraShortestPath<MetaNode, ExtendedLink>(egAux,tr);
+		List<ExtendedLink> edges = s.getPath(getMetaNode(MetaNodeType.SRC,egAux,idn),getMetaNode(MetaNodeType.DST,egAux,idr));
+		
+		if(edges.size()>0){
+			return true;
+		}
+		else
+			return false;
+	}
+	
+	private static Set<ExtendedLink> getRestrictionEdges(Graph<MetaNode,ExtendedLink> eg, MetaNode src, MetaNode dst){
+		//Computes the set of links from node 'src' to node 'dst' to create the restriction 
+		
+		Set<ExtendedLink> links = new HashSet<ExtendedLink>();
+		
+		Collection<ExtendedLink> lst = eg.getEdges(); 
+		
+		List<MetaNode> reachableMetaNodes = new ArrayList<MetaNode>();
+		reachableMetaNodes.add(src);
+		Iterator<ExtendedLink> it = lst.iterator();
+		
+		while(it.hasNext()){
+			
+			ExtendedLink el = (ExtendedLink)it.next();
+			
+			if(el.getCapacity()!=0){
+				if(!listMNcontains(reachableMetaNodes,el.getDst())){
+					reachableMetaNodes.add(el.getDst());
+				}
+			}
+			
+		}
+		
+		it = lst.iterator();
+		
+		while(it.hasNext()){
+			
+			ExtendedLink el = (ExtendedLink)it.next();
+			
+			if(listMNcontains(reachableMetaNodes,el.getSrc()) && el.getDst().getId()==dst.getId() && el.getCapacity()==0){
+				links.add(el);
+			}
+			
+		}
+		
+		return links;
+	}
+	
+	private static void printSolution(Graph<Node, Link> IGPGraph, IloCplex cplex, IloNumVar[][] UP, IloNumVar[][] DOWN, List<Node> BGPRouters,int BGPRoutersSize){
+		//Prints in the standard output information about the solution found by the solver 
+		
+		try{
+			System.out.println("--------------------------------------------");
+	        System.out.println();
+	        System.out.println("Solution found:");
+	        System.out.println(" Objective value = " + cplex.getObjValue());
+	        System.out.println();
+	        
+			List<String> reflectors = new ArrayList<String>();
+			int sessions = 0;
+			
+			System.out.println("UP Matrix:");
+			for (int i = 0; i < BGPRoutersSize; i++) {
+				for (int j = 0; j < BGPRoutersSize; j++) {
+					long value = Math.round(cplex.getValue(UP[i][j]));
+					String rid2 = BGPRouters.get(j).getId();
+					System.out.print(value+" ");
+					if(value==1.0){
+						sessions++;
+					}
+					if(value==1.0 && !reflectors.contains(rid2)){
+						reflectors.add(rid2);
+					}
+				}
+			System.out.println();
+			}
+			
+			System.out.println("DOWN Matrix:");
+			for (int i = 0; i < BGPRoutersSize; i++) {
+				for (int j = 0; j < BGPRoutersSize; j++) {
+					long value = Math.round(cplex.getValue(DOWN[i][j]));
+					String rid = BGPRouters.get(i).getId();
+					System.out.print(value+" ");
+					if(value==1.0 && !reflectors.contains(rid)){
+						reflectors.add(rid);
+					}
+				}
+			System.out.println();
+			}
+			
+			System.out.println("Route reflectors IDs("+reflectors.size()+"):");
+			Iterator<String> it = reflectors.iterator();
+			while(it.hasNext()){
+				System.out.println((String)it.next());
+			}
+			
+			System.out.println("Number of sessions: "+sessions);
+	        
+	        System.out.println("--------------------------------------------");
+	        
+		}
+		catch (IloException e) {
+		   System.err.println("Concert exception caught: " + e);
+		}
+	}
+	
+	private static void createSessionList(List<iBGPSession> lstSessions, IloCplex cplex, IloNumVar[][] UP, IloNumVar[][] DOWN, List<Node> BGPRouters,int BGPRoutersSize){
+		//Creates the list of sessions to dump them in the Totem domain
+		
+		try{
+	     
+			for (int i = 0; i < BGPRoutersSize; i++) {
+				for (int j = 0; j < BGPRoutersSize; j++) {
+					long value = Math.round(cplex.getValue(UP[i][j]));
+					if(value==1.0)
+						lstSessions.add(new iBGPSession(BGPRouters.get(i).getId(),BGPRouters.get(j).getId(), iBGPSessionType.client));
+				}
+			}
+			
+			for (int i = 0; i < BGPRoutersSize; i++) {
+				for (int j = 0; j < BGPRoutersSize; j++) {
+					long value = Math.round(cplex.getValue(DOWN[i][j]));
+					if(value==1.0)
+						lstSessions.add(new iBGPSession(BGPRouters.get(j).getId(),BGPRouters.get(i).getId(), iBGPSessionType.client));
+				}
+			}
+		}
+		catch (IloException e) {
+		   System.err.println("Concert exception caught: " + e);
+		}
+	}
+
+	private static boolean listMNcontains(List<MetaNode> lst, MetaNode m){
+		//Returns true if the metanode 'm' is contained in the list 'lst', false otherwise
+		
+		Iterator<MetaNode> it = lst.iterator();
+		
+		boolean found = false;
+		
+		while(it.hasNext() && !found){
+			MetaNode mn = (MetaNode)it.next();
+			if(mn.getId() == m.getId()){
+				found = true;
+			}
+		}
+		
+		return found;
+	}
+	
+	private static MetaNode getMetaNode(MetaNodeType type, Graph<MetaNode,ExtendedLink> eg, String id){
+		//Returns the metanode in the graph 'eg' with id 'id' and type 'type', null if not found
+		
 		boolean found = false;
 		Iterator<MetaNode> it = eg.getVertices().iterator();
 		MetaNode mn = null;
@@ -627,6 +643,8 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 	}
 	
 	private static int IndexOf(List<Node> lst, String id){
+		//Returns the index in the list 'lst' of the node with id 'id'
+		
 		int p = 0;
 		boolean found = false;
 		Iterator<Node> it = lst.iterator();
@@ -647,6 +665,7 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 	}
 	
 	private static void printGraph(Graph<Node,Link> g,String title){
+		//Draws in a new window the grap 'g' and it's information 
 		
 		Layout<Node,Link> layout = new CircleLayout<Node,Link>(g);
 		layout.setSize(new Dimension(300,300));
@@ -663,6 +682,7 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 	}
 	
 	private static void printGraph2(Graph<MetaNode,ExtendedLink> g,String title){
+		//Draws in a new window the grap 'g' and it's information 
 		
 		Layout<MetaNode,ExtendedLink> layout = new CircleLayout<MetaNode,ExtendedLink>(g);
 		layout.setSize(new Dimension(300,300));
@@ -678,8 +698,9 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 		
 	}
 	
-	public static void printGraph_(Graph<Node,Link> g,String title){
-		 
+	private static void printGraph_(Graph<Node,Link> g,String title){
+		//Draws in a new window the grap 'g' and it's information 
+		
 		Layout<Node,Link> layout = new CircleLayout<Node,Link>(g);
 		layout.setSize(new Dimension(300,300));
 		VisualizationViewer<Node,Link> vv = new VisualizationViewer<Node, Link>(layout);
@@ -702,8 +723,9 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 		 
 		}
 		 
-		private static void printGraph2_(Graph<MetaNode,ExtendedLink> g,String title){
-		 
+	private static void printGraph2_(Graph<MetaNode,ExtendedLink> g,String title){
+		//Draws in a new window the grap 'g' and it's information 
+		
 		Layout<MetaNode,ExtendedLink> layout = new CircleLayout<MetaNode,ExtendedLink>(g);
 		layout.setSize(new Dimension(300,300));
 		VisualizationViewer<MetaNode,ExtendedLink> vv = new VisualizationViewer<MetaNode,ExtendedLink>(layout);
