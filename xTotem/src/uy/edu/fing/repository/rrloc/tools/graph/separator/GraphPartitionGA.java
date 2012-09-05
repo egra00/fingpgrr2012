@@ -2,6 +2,7 @@ package uy.edu.fing.repository.rrloc.tools.graph.separator;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Random;
 import java.util.Set;
 
@@ -26,19 +27,16 @@ public class GraphPartitionGA
 	private double[] fit_population;
 	private int[][] offsprings;
 	
-	final double PENALIZACION = 0.001; // Usada en caso de que el grafo elegido no sea un grafo separador
 	final int SIZECAKE = 10000;
 	private int[] cake;
 	
 	// Conservo la mejor solucion global
 	private int[] _best_sol_global;
 	private double _fitness_best_sol_global;
-	private boolean _isSeparator_best_sol_global;
 	
 	// Conservo la mejor solucion en cada generacion
 	private int[] _best_sol_iter; // Inicializada luego de hacer Evaluate()
 	private double _fitness_best_sol_iter; // Inicializada luego de hacer Evaluate()
-	private boolean _isSeparator_best_sol_iter; // Inicializada luego de hacer Evaluate()
 	
 	private double _FitTotal; // Inicializada luego de hacer Evaluate()
 
@@ -56,18 +54,22 @@ public class GraphPartitionGA
 		population = new int[_sizepopu][];
 		fit_population = new double[_sizepopu];
 		offsprings = new int[_sizeoffs][];
-		
+	
 		cake = new int[SIZECAKE];
 	}
 	
 	public void Initialization()
 	{
-		_isSeparator_best_sol_global = false;
-		_fitness_best_sol_global = PENALIZACION; // Cualquier solucion tiene valor de fitness mayor estricto a PENALIZACION
+		_fitness_best_sol_global = 0; // Cualquier solucion tiene valor de fitness mayor estricto a PENALIZACION
 		
 		for(int i =0; i<_sizepopu; i++)
 		{			
 			population[i] = randomIndi(Math.random());
+			/*for(int j=0; j<_tam_individuo;j++)
+			{
+				System.out.print("-"+population[i][j]);
+			}
+			System.out.print("\n");*/
 		}
 	}
 	
@@ -77,7 +79,7 @@ public class GraphPartitionGA
 		
 		for(int i = 0; i<_tam_individuo; i++)
 		{	
-			if (Math.random() < seed)
+			if (Math.random() <= seed)
 				indi[i] = 0;
 			else
 				indi[i] = 1;
@@ -112,18 +114,21 @@ public class GraphPartitionGA
 	{
 		for(int i =0; i<_sizeoffs; i++)
 		{
-			mut(offsprings[i]);
+			mut(offsprings[i], Math.random());
 		}
 	}
 	
 	
-	private void mut(int[] ind)
+	private void mut(int[] indi, double seed)
 	{
 		for(int j=0; j<_tam_individuo; j++)
 		{
 			if(Math.random() <= _pmut)
 			{
-				ind[j]=(ind[j]+1)%2;
+				if (Math.random() <= seed)
+					indi[j] = 0;
+				else
+					indi[j] = 1;
 			}
 		}
 	}
@@ -171,29 +176,21 @@ public class GraphPartitionGA
 	
 	public void Evaluate()
 	{
-		_fitness_best_sol_iter = PENALIZACION;
-		_isSeparator_best_sol_iter = false;
-		
-		
 		fit_population[0] = fitness_function(population[0]);
 		_FitTotal = fit_population[0];
-		if (PENALIZACION < fit_population[0]) // Cualquier solucion tiene valor de fitness mayor estricto a PENALIZACION
-		{
-			_best_sol_iter = population[0];
-			_fitness_best_sol_iter = fit_population[0];
-			_isSeparator_best_sol_iter = true;
-		}
 		
+		_best_sol_iter = population[0];
+		_fitness_best_sol_iter = fit_population[0];
+	
 		for(int i=1; i<_sizepopu; i++)
 		{
 			fit_population[i] = fitness_function(population[i]);
 			_FitTotal += fit_population[i];
 			
-			if ((PENALIZACION < fit_population[i]) && _fitness_best_sol_iter <= fit_population[i])
+			if (_fitness_best_sol_iter <= fit_population[i])
 			{
 				_best_sol_iter = population[i];
 				_fitness_best_sol_iter = fit_population[i];
-				_isSeparator_best_sol_iter = true;
 			}
 		}
 		
@@ -202,15 +199,14 @@ public class GraphPartitionGA
 	
 	public void SetGlobalBestSolution()
 	{
-		if (_isSeparator_best_sol_iter && _fitness_best_sol_global <= _fitness_best_sol_iter)
+		if (_fitness_best_sol_global <= _fitness_best_sol_iter)
 		{
 			_best_sol_global = _best_sol_iter;
 			_fitness_best_sol_global = _fitness_best_sol_iter;
-			_isSeparator_best_sol_global = true;
 		}
 	}
 	
-	private  double fitness_function(int[] indi) 
+	public  double fitness_function(int[] indi) 
 	{
 		// Set separator
 		Set<Node> set =  new HashSet<Node>();
@@ -219,7 +215,7 @@ public class GraphPartitionGA
 		
 		for(Node n : _G.getVertices())
 		{
-			if (indi[i]==1) 
+			if (indi[i]>0) 
 			{
 				set.add(n);
 				tamIndi++;
@@ -230,30 +226,29 @@ public class GraphPartitionGA
 		// Components
 		Graph<Node, Link> aux = Operations.copyUndirectedSparseGraph(_G);
 		Operations.removeAllVertices(aux, set);
+		List<Set<Node>> lst_ccs = Components.getAllConnectedComponent(aux);
+		
 		int cantCompConex = 0;
 		double media = 0;
-		
-		for (Set<Node> cc : Components.getAllConnectedComponent(aux)) {
+		for (Set<Node> cc : lst_ccs){
 			media += cc.size();
 			cantCompConex++;
 		}
-		
-		if (cantCompConex <= 1) // No es un grafo separador, penalizo 
-		{
-			return PENALIZACION;
-		}
-
+				
 		media = media/cantCompConex;
 
-		double sum = 0;
-		int x;
-		for(Set<Node> set_aux : Components.getAllConnectedComponent(aux))
-		{
-			x = set_aux.size();
-			sum += Math.abs(x-media); 
-		}
+		double balanced = 0;
+		for(Set<Node> cc : lst_ccs)
+			balanced += Math.abs(cc.size() - media);
+
+		return  evaluate_guy(tamIndi, balanced, cantCompConex);	
+	}
+	
+	private double evaluate_guy(double _tam_separator, double _balanced_separator, double _cant_component){		
+		if(_cant_component > 1) 
+			return (_tam_individuo - _tam_separator) + ((_tam_individuo - _balanced_separator)/_tam_separator) + _cant_component;
 		
-		return ((double)(_tam_individuo - tamIndi)/_tam_individuo) + ((double)cantCompConex/(_tam_individuo-1)) + (1/(1+Math.sqrt(sum))) + PENALIZACION;
+		return (_tam_individuo - _tam_separator)/2;
 	}
 	
 	public void Remplace()
@@ -271,14 +266,11 @@ public class GraphPartitionGA
 	
 	public GraphSeparator GetBestSolution()
 	{	
-		if (!_isSeparator_best_sol_global)
+		if (!is_separator(_best_sol_global))
 		{
 			return this.run();
 		}
-			 
-		
-		int[] indi = _best_sol_global;
-		
+			 		
 		//Creo separador de grafo
 		GraphSeparator SG = new GraphSeparator();
 		
@@ -288,7 +280,7 @@ public class GraphPartitionGA
 		
 		for(Node n : _G.getVertices())
 		{
-			if (indi[i]==1) 
+			if (_best_sol_global[i] > 0) 
 				set.add(n);
 			i++;
 		}
@@ -309,6 +301,30 @@ public class GraphPartitionGA
 	}
 	
 	
+	public double get_fitness_best_sol_global() 
+	{
+		return _fitness_best_sol_global;
+	}
+	
+	private boolean is_separator(int[] indi) 
+	{
+		// Set separator
+		Set<Node> set =  new HashSet<Node>();
+		int i = 0;
+		for(Node n : _G.getVertices())
+		{
+			if (indi[i]>0) set.add(n);
+			i++;
+		}
+		
+		// Components
+		Graph<Node, Link> aux = Operations.copyUndirectedSparseGraph(_G);
+		Operations.removeAllVertices(aux, set);
+		List<Set<Node>> lst_ccs = Components.getAllConnectedComponent(aux);
+				
+		return (lst_ccs.size() > 1);
+	}
+
 	public GraphSeparator run()
 	{		
 		this.Initialization();
