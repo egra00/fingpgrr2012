@@ -13,7 +13,6 @@ import org.ejml.alg.dense.decomposition.SingularMatrixException;
 import org.ejml.simple.SimpleMatrix;
 
 import uy.edu.fing.repository.rrloc.tools.graph.separator.model.GraphSeparator;
-
 import agape.algos.Separators;
 import agape.tools.Components;
 import agape.tools.Operations;
@@ -69,24 +68,29 @@ public class Separator {
 	static public GraphSeparator GraphPartitionAE(int nb_run, Graph<Node,Link> G, int NGen, int sizeP, int sizeOf, double pmut, double pcross)
 	{
 		GraphSeparator best_solution;
+		double fit_best_solution;
 		GraphSeparator current_solution;
+		double fit_current_solution;
+		
 		GraphPartitionGA separador;
 		
 		if ( G.getEdgeCount() < (G.getVertexCount()*(G.getVertexCount()-1))/2 ) 
 		{
 			separador = new GraphPartitionGA(G, NGen, sizeP, sizeOf, pmut, pcross);
 			best_solution = separador.run();
+			fit_best_solution = separador.get_fitness_best_sol_global();
 			
 			for(int i=1; i< nb_run; i++)
 			{
 				current_solution = separador.run();
-				if (betterthat(current_solution, best_solution))
+				fit_current_solution = separador.get_fitness_best_sol_global();
+				if (fit_best_solution <= fit_current_solution)
 				{
 					best_solution = current_solution;
+					fit_best_solution = fit_current_solution;
 				}
 					
-			}
-		
+			}	
 		}
 		else // El grafo fisico esta en full mesh ... no existe un grafo separador ... invento una solucion.
 		{
@@ -104,37 +108,7 @@ public class Separator {
 			best_solution.setSeparator(set);
 			best_solution.setComponents(new ArrayList<Graph<Node, Link>>());
 		}
-		
-		
-		
-		/*System.out.println("//////GRAFO SEPARADOR////////"+ G.getVertexCount());
-		
-		for(Node n : best_solution.getSeparator())
-		{
-			System.out.println("\t" + n.getId());
-		}
-		
-		for (Graph<Node, Link> g_i : best_solution.getComponents()) {
-			System.out.println("\t//////COMPONENTE////");
-			for (Node u : g_i.getVertices()) {
-				System.out.println("\t\t" + u.getId());
-			}
-		}*/
-		
-		
-		System.out.println("\n\n");
 		return best_solution;
-		
-	}
-	
-	private static boolean betterthat(GraphSeparator sol1, GraphSeparator sol2)
-	{
-		if (sol1.getSeparator().size() <= sol2.getSeparator().size())
-			return true;
-		else if (sol1.getSeparator().size() == sol2.getSeparator().size() && sol1.getComponents().size() >= sol2.getComponents().size())
-			return true;
-		
-		return false;
 	}
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	/////////////////////////////////////////////////FIN: Approach Evolutive (GA) /////////////////////////////////////////////////////
