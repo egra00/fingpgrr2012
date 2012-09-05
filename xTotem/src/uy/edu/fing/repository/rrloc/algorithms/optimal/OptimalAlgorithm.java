@@ -381,7 +381,6 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 	}
 	
 	private static int hops(Graph<Node, Link> IGPGraph,Node n1,Node n2){ 
-
 		//Returns the number of routers in the shortest path from node 'n1' to node 'n2'
 		
 		Transformer<Link,Float> tr = new TransformerLink();
@@ -451,7 +450,6 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 	} 
 	
 	private static boolean existsPath(Graph<MetaNode,ExtendedLink> eg, String idn, String idr) {
-
 		//Returns true if exists a path from the node with id 'idn' to the node with id 'idr' in the graph 'eg', false otherwise
 		
 		Graph<MetaNode,ExtendedLink> egAux = new DirectedSparseGraph<MetaNode,ExtendedLink>();
