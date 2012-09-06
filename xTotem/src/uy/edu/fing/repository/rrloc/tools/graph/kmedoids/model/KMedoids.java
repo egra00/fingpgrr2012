@@ -75,6 +75,9 @@ public class KMedoids
 		
 		for(int i =0; i<_sizepopu; i++)
 			population[i] = randomIndi(i, ram);
+		
+		
+		for(;;);
 	}
 	
 	private int[] randomIndi(int _indi_id, Random ram) 
@@ -83,14 +86,18 @@ public class KMedoids
 		int[] meds = new int[_pops];
 		int delta = ram.nextInt(_tam_individuo/_pops)+1;
 		int index = ram.nextInt(_tam_individuo);
-		
+	
 		for(int i=0; i<_pops; i++)
 			meds[i] = (delta*i + index)% _tam_individuo;
 		
 		for(int i=0; i<_tam_individuo; i++)
-			indi[i] = ram.nextInt(_pops);
+			indi[i] =  ram.nextInt(_pops); //(int)(_pops*Math.abs(Math.cos(Math.PI/Math.random())));
 		
 		meds_populations[_indi_id] = meds;
+		
+		for(int i=0; i<_tam_individuo; i++)
+			System.out.print("-"+indi[i]);
+		System.out.print("\n");
 		
 		return indi;
 	}
@@ -99,28 +106,32 @@ public class KMedoids
 	{
 		for(int i =0; i+1<_sizeoffs; i=i+2)
 		{
-			 if (Math.random() <= _pcross) cross(offsprings[i], meds_offsprings[i], offsprings[i+1], meds_offsprings[i+1]);
+			 if (Math.random() <= _pcross) 
+				 cross(offsprings[i], meds_offsprings[i], offsprings[i+1], meds_offsprings[i+1]);
 		}
 	}
 	
 	private void cross(int[] ind1, int[] meds_ind1, int[] ind2, int[] meds_ind2)
 	{
 		Random ram = new Random();
-		int p_cross = ram.nextInt(_pops);
+		int pointB = ram.nextInt(_pops);
+		int pointA = ram.nextInt(pointB + 1);
 		int aux;
 		
-		for(int i =0; i<p_cross; i++)
+		for(int i=pointA; i<pointB; i++)
 		{
-			change(meds_ind1, meds_ind2[i], meds_ind1[i]);
-			change(meds_ind1, meds_ind1[i], meds_ind2[i]);
+			change_pops(meds_ind1, meds_ind2[i], meds_ind1[i]);
+			change_pops(meds_ind1, meds_ind1[i], meds_ind2[i]);
 			
 			aux = meds_ind1[i];
 			meds_ind1[i] = meds_ind2[i];
 			meds_ind2[i] = aux;
 		}
 		
-		p_cross = ram.nextInt(_tam_individuo);
-		for(int j=0; j<p_cross; j++)
+		pointB = ram.nextInt(_tam_individuo);
+		pointA = ram.nextInt(pointB + 1);
+		
+		for(int j=pointA; j<pointB; j++)
 		{
 			aux = ind1[j];
 			ind1[j] = ind2[j];
@@ -131,7 +142,7 @@ public class KMedoids
 		correctness_centroids(ind2, meds_ind2);
 	}
 	
-	private void correctness_centroids(int[] indi, int[] meds)
+	private double correctness_centroids(int[] indi, int[] meds)
 	{
 		int my_med;
 		double max_dist;
@@ -153,10 +164,12 @@ public class KMedoids
 			}
 			
 			indi[i] = my_med;
-		}		
+		}
+		
+		return fitness_function(meds, indi);
 	}
 	
-	private void change(int[] _array, int _old, int _new)
+	private void change_pops(int[] _array, int _old, int _new)
 	{
 		for(int i=0; i<_pops; i++)
 			if(_array[i] == _old) _array[i] = _new;
@@ -179,7 +192,7 @@ public class KMedoids
 			if (Math.random() <= _pmut)
 			{
 				_new_med = ram.nextInt(_tam_individuo);
-				change(meds, _new_med, meds[i]);
+				change_pops(meds, _new_med, meds[i]);
 				
 				meds[i] = _new_med;
 			}
@@ -187,7 +200,8 @@ public class KMedoids
 		
 		for(int i=0; i<_tam_individuo; i++)
 		{
-			if (Math.random() <= _pmut)	indi[i] = ram.nextInt(_pops);
+			if (Math.random() <= _pmut)	
+				indi[i] = ram.nextInt(_pops);
 		}
 	}
 	
@@ -265,6 +279,7 @@ public class KMedoids
 	
 	public void SetGlobalBestSolution()
 	{
+		_fitness_best_sol_iter = fitness_function(_best_sol_iter_meds, _best_sol_iter);
 		if (_fitness_best_sol_global <= _fitness_best_sol_iter)
 		{
 			_best_sol_global = _best_sol_iter;
@@ -305,10 +320,6 @@ public class KMedoids
 	public int[] GetBestSolution() // retorna celulas
 	{	
 		int[] cpy = new int[_tam_individuo];
-		
-		/// CORRECCION DE CENTROIDES
-		correctness_centroids(_best_sol_global, _best_sol_global_meds);
-		/// END CORRECCION DE CENTROIDES
 		
 		System.arraycopy(_best_sol_global, 0, cpy, 0, _tam_individuo);
 		

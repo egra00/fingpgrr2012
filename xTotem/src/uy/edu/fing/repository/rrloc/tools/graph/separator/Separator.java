@@ -90,7 +90,7 @@ public class Separator {
 					fit_best_solution = fit_current_solution;
 				}
 					
-			}	
+			}
 		}
 		else // El grafo fisico esta en full mesh ... no existe un grafo separador ... invento una solucion.
 		{
