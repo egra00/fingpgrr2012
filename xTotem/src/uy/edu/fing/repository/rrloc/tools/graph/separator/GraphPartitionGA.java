@@ -65,11 +65,6 @@ public class GraphPartitionGA
 		for(int i =0; i<_sizepopu; i++)
 		{			
 			population[i] = randomIndi(Math.random());
-			/*for(int j=0; j<_tam_individuo;j++)
-			{
-				System.out.print("-"+population[i][j]);
-			}
-			System.out.print("\n");*/
 		}
 	}
 	
@@ -99,10 +94,11 @@ public class GraphPartitionGA
 	private void cross(int[] ind1, int[] ind2)
 	{
 		Random ram = new Random();
-		int pointCross = ram.nextInt(_tam_individuo);
+		int pointB = ram.nextInt(_tam_individuo);
+		int pointA = ram.nextInt(pointB + 1);
 		int aux;
 		
-		for(int j=0; j<pointCross; j++)
+		for(int j=pointA; j<pointB; j++)
 		{
 			aux = ind1[j];
 			ind1[j] = ind2[j];
@@ -248,7 +244,7 @@ public class GraphPartitionGA
 		if(_cant_component > 1) 
 			return (_tam_individuo - _tam_separator) + ((_tam_individuo - _balanced_separator)/_tam_separator) + _cant_component;
 		
-		return (_tam_individuo - _tam_separator)/2;
+		return 1;
 	}
 	
 	public void Remplace()
