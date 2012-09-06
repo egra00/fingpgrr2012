@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<domain ASID="0">
+<domain ASID="890765">
     <info>
         <title>Test 3</title>
         <author>Diego Agriel</author>
@@ -22,17 +22,17 @@
             <node id="CANE">
                 <rid>127.0.0.1</rid>
                 <type>CORE</type>
-                <location latitude="37.69515" longitude="558.80566"/>
+                <location latitude="277.37173" longitude="492.7464"/>
             </node>
             <node id="ROCH">
                 <rid>127.0.0.4</rid>
                 <type>CORE</type>
-                <location latitude="73.746735" longitude="128.3206"/>
+                <location latitude="251.59862" longitude="373.07867"/>
             </node>
             <node id="MALD">
                 <rid>127.0.0.3</rid>
                 <type>EDGE</type>
-                <location latitude="82.77503" longitude="864.62744"/>
+                <location latitude="260.62692" longitude="635.11383"/>
             </node>
             <node id="SALT">
                 <rid>127.0.0.5</rid>
