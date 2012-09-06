@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<domain ASID="0">
+<domain ASID="65485">
     <info>
         <title>OptimalTest1</title>
         <author>Diego Agriel</author>
@@ -17,14 +17,17 @@
             <node id="STTL">
                 <rid>127.0.0.2</rid>
                 <type>CORE</type>
+                <location latitude="391.41718" longitude="137.36739"/>
             </node>
             <node id="DNVR">
                 <rid>127.0.0.1</rid>
                 <type>EDGE</type>
+                <location latitude="258.32776" longitude="128.39227"/>
             </node>
             <node id="CHIN">
                 <rid>127.0.0.3</rid>
                 <type>EDGE</type>
+                <location latitude="137.43071" longitude="120.12674"/>
             </node>
         </nodes>
         <links>
