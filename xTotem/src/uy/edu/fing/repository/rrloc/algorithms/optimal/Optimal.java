@@ -26,6 +26,7 @@ import be.ac.ulg.montefiore.run.totem.domain.model.Node;
 import be.ac.ulg.montefiore.run.totem.domain.model.impl.BgpNeighborImpl;
 import be.ac.ulg.montefiore.run.totem.domain.model.impl.BgpRouterImpl;
 import be.ac.ulg.montefiore.run.totem.domain.model.impl.DomainImpl;
+import be.ac.ulg.montefiore.run.totem.domain.model.impl.LinkImpl;
 import be.ac.ulg.montefiore.run.totem.domain.model.jaxb.BgpNeighbor;
 import be.ac.ulg.montefiore.run.totem.domain.model.jaxb.BgpRouter;
 import be.ac.ulg.montefiore.run.totem.domain.model.jaxb.NodeType;
@@ -173,10 +174,15 @@ public class Optimal extends BindAlgorithm {
 		Operations.addAllVertices(jIGPTopology, (Set<Node>)(new HashSet<Node>(domain.getAllNodes())));
 		for (Link link : domain.getAllLinks()) {
 			try {
-				// Elimino la direccionalidad del grafo
-				//if (jIGPTopology.findEdge(link.getDstNode(), link.getSrcNode()) == null) {
+				if (jIGPTopology.findEdge(link.getSrcNode(), link.getDstNode()) == null) {
 					jIGPTopology.addEdge(link, link.getSrcNode(), link.getDstNode());
-				//}
+				}
+				// Elimino la direccionalidad del grafo
+				if (jIGPTopology.findEdge(link.getDstNode(), link.getSrcNode()) == null) {
+					Link l = new LinkImpl(domain,link.getDstNode().getId()+"_"+link.getSrcNode().getId(),link.getDstNode().getId(),link.getSrcNode().getId(),link.getBandwidth());
+					((LinkImpl)l).getIgpLink().getStatic().setMetric(link.getMetric());
+					jIGPTopology.addEdge(l, l.getSrcNode(), l.getDstNode());
+				}
 			} catch (NodeNotFoundException e) {
 				logger.error("Parsing Totem domain to Jung graph");
 				e.printStackTrace();
