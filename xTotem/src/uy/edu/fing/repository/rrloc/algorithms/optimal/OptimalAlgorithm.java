@@ -232,7 +232,6 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 		if(!res){
 			System.out.println("ERROR: MIP SOLVER COULDN'T FOUND A SOLUTION");
 			cplex.end();
-			System.exit(1);
 		}
 		
 		printSolution(IGPGraph,cplex,UP,DOWN,BGPRouters,BGPRoutersSize);
@@ -284,7 +283,6 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 						if(minCutEdgesSize==0){
 							System.out.println("ERROR: MINCUTEDGES SIZE IS 0");
 							cplex.end();
-							System.exit(1);
 						}
 						
 						IloNumVar[] restrictionEdges = new IloNumVar[minCutEdgesSize];
@@ -332,7 +330,6 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 						if(!res){
 							System.out.println("ERROR: MIP SOLVER COULDN'T FOUND A SOLUTION");
 							cplex.end();
-							System.exit(1);
 						}
 						
 						printSolution(IGPGraph,cplex,UP,DOWN,BGPRouters,BGPRoutersSize);
@@ -353,7 +350,6 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 	     else {
 			System.out.println("ERROR: MIP SOLVER COULDN'T FOUND A SOLUTION");
 			cplex.end();
-			System.exit(1);
 	     }
 		
 		cplex.end();
@@ -496,15 +492,17 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 			
 			ExtendedLink el = (ExtendedLink)it.next();
 			
-			if(el.getCapacity()!=0){
-				if(!listMNcontains(reachableMetaNodes,el.getDst())){
-					reachableMetaNodes.add(el.getDst());
-				}
+			if(!listMNcontains(reachableMetaNodes,el.getDst()) && el.getCapacity()!=0 && existsPath(eg,src.getId(),el.getDst().getId())){
+				reachableMetaNodes.add(el.getDst());
 			}
 			
 		}
 		
+		System.out.println("Reacheables: "+reachableMetaNodes.size());
+		
 		it = lst.iterator();
+		
+		System.out.println("Destino: "+dst.getId());
 		
 		while(it.hasNext()){
 			
@@ -612,7 +610,7 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 		
 		while(it.hasNext() && !found){
 			MetaNode mn = (MetaNode)it.next();
-			if(mn.getId() == m.getId()){
+			if(mn.getId() == m.getId() && mn.getType()==m.getType()){
 				found = true;
 			}
 		}
