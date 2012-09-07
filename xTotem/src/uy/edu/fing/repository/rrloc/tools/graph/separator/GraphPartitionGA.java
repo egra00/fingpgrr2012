@@ -85,15 +85,15 @@ public class GraphPartitionGA
 	
 	public void Crossover()
 	{
+		Random ram = new Random();
 		for(int i =0; i+1<_sizeoffs; i=i+2)
 		{
-			 if (Math.random() <= _pcross) cross(offsprings[i],offsprings[i+1]);
+			 if (Math.random() <= _pcross) cross(offsprings[i], offsprings[i+1], ram);
 		}
 	}
 	
-	private void cross(int[] ind1, int[] ind2)
+	private void cross(int[] ind1, int[] ind2, Random ram)
 	{
-		Random ram = new Random();
 		int pointB = ram.nextInt(_tam_individuo);
 		int pointA = ram.nextInt(pointB + 1);
 		int aux;

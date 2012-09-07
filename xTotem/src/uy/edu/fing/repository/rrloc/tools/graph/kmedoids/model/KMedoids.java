@@ -71,51 +71,61 @@ public class KMedoids
 	public void Initialization()
 	{
 		_fitness_best_sol_global = 0;
-		Random ram = new Random();
+		Random ram1 = new Random();
+		Random ram2 = new Random();
 		
 		for(int i =0; i<_sizepopu; i++)
-			population[i] = randomIndi(i, ram);
-		
-		
-		for(;;);
+			population[i] = randomIndi(i, ram1, ram2);
 	}
 	
-	private int[] randomIndi(int _indi_id, Random ram) 
+	private int[] randomIndi(int _indi_id, Random ram,  Random ram1) 
 	{
 		int[] indi = new int[_tam_individuo];
 		int[] meds = new int[_pops];
+		double alfa = ((double)ram.nextInt(_sizepopu+1))/_sizepopu;
+		int beta = ram1.nextInt(_pops);
 		int delta = ram.nextInt(_tam_individuo/_pops)+1;
-		int index = ram.nextInt(_tam_individuo);
-	
+		int index = ram1.nextInt(_tam_individuo);
+		int num = 0;
+		
 		for(int i=0; i<_pops; i++)
 			meds[i] = (delta*i + index)% _tam_individuo;
 		
 		for(int i=0; i<_tam_individuo; i++)
-			indi[i] =  ram.nextInt(_pops); //(int)(_pops*Math.abs(Math.cos(Math.PI/Math.random())));
+		{
+					
+			num = (int)((alfa*ram.nextInt(_pops)) + beta);
+			
+			if (num < 0)
+				indi[i] = 0;
+			else if(num >= _pops)
+				indi[i] = _pops-1;
+			else
+				indi[i] =  num;
+		}
+			
 		
 		meds_populations[_indi_id] = meds;
-		
-		for(int i=0; i<_tam_individuo; i++)
-			System.out.print("-"+indi[i]);
-		System.out.print("\n");
 		
 		return indi;
 	}
 	
+	
 	public void Crossover()
 	{
+		Random ram1 = new Random();
+		Random ram2 = new Random();
 		for(int i =0; i+1<_sizeoffs; i=i+2)
 		{
 			 if (Math.random() <= _pcross) 
-				 cross(offsprings[i], meds_offsprings[i], offsprings[i+1], meds_offsprings[i+1]);
+				 cross(offsprings[i], meds_offsprings[i], offsprings[i+1], meds_offsprings[i+1], ram1 , ram2);
 		}
 	}
 	
-	private void cross(int[] ind1, int[] meds_ind1, int[] ind2, int[] meds_ind2)
+	private void cross(int[] ind1, int[] meds_ind1, int[] ind2, int[] meds_ind2, Random ram1, Random ram2)
 	{
-		Random ram = new Random();
-		int pointB = ram.nextInt(_pops);
-		int pointA = ram.nextInt(pointB + 1);
+		int pointB = ram1.nextInt(_pops);
+		int pointA = ram2.nextInt(pointB + 1);
 		int aux;
 		
 		for(int i=pointA; i<pointB; i++)
@@ -128,8 +138,9 @@ public class KMedoids
 			meds_ind2[i] = aux;
 		}
 		
-		pointB = ram.nextInt(_tam_individuo);
-		pointA = ram.nextInt(pointB + 1);
+		
+		pointB = ram1.nextInt(_tam_individuo);
+		pointA = ram2.nextInt(pointB + 1);
 		
 		for(int j=pointA; j<pointB; j++)
 		{
@@ -177,15 +188,19 @@ public class KMedoids
 	
 	public void Mutation()
 	{
+		Random ram1 = new Random();
+		Random ram2 = new Random();
 		for(int i =0; i<_sizeoffs; i++)
-			mut(offsprings[i], meds_offsprings[i]);
+			mut(offsprings[i], meds_offsprings[i], ram1, ram2);
 	}
 	
 	
-	private void mut(int[] indi, int[] meds)
+	private void mut(int[] indi, int[] meds, Random ram,  Random ram1)
 	{
-		Random ram = new Random();
 		int _new_med;
+		double alfa = ((double)ram.nextInt(_sizeoffs+1))/_sizeoffs;
+		int beta = ram1.nextInt(_pops);
+		int num = 0;
 		
 		for(int i=0; i<_pops; i++)
 		{
@@ -201,7 +216,17 @@ public class KMedoids
 		for(int i=0; i<_tam_individuo; i++)
 		{
 			if (Math.random() <= _pmut)	
-				indi[i] = ram.nextInt(_pops);
+			{
+				num = (int)((alfa*ram1.nextInt(_pops)) + beta);
+				
+				if (num < 0)
+					indi[i] = 0;
+				else if(num >= _pops)
+					indi[i] = _pops-1;
+				else
+					indi[i] = num;
+			}
+				
 		}
 	}
 	
@@ -303,7 +328,7 @@ public class KMedoids
 		return Math.abs(coord1.get_x() - coord2.get_x()) + Math.abs(coord1.get_y() - coord2.get_y());
 	}
 	
-	public void Remplace()
+	public void Replace()
 	{
 		Random ram = new Random();
 		int index;
@@ -345,7 +370,7 @@ public class KMedoids
 		{
 			this.Selection();
 			this.Recombine();
-			this.Remplace();
+			this.Replace();
 			this.Evaluate();
 		}
 
