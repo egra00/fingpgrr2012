@@ -82,7 +82,8 @@ public class KMedoids
 	{
 		int[] indi = new int[_tam_individuo];
 		int[] meds = new int[_pops];
-		double alfa = ((double)ram.nextInt(_sizepopu+1))/_sizepopu;
+		int sig = (ram1.nextInt(2)==0 ? 1 : -1);
+		double alfa = sig*(((double)ram.nextInt(_sizepopu))/(_sizepopu-1));
 		int beta = ram1.nextInt(_pops);
 		int delta = ram.nextInt(_tam_individuo/_pops)+1;
 		int index = ram1.nextInt(_tam_individuo);
@@ -104,7 +105,6 @@ public class KMedoids
 				indi[i] =  num;
 		}
 			
-		
 		meds_populations[_indi_id] = meds;
 		
 		return indi;
@@ -198,7 +198,8 @@ public class KMedoids
 	private void mut(int[] indi, int[] meds, Random ram,  Random ram1)
 	{
 		int _new_med;
-		double alfa = ((double)ram.nextInt(_sizeoffs+1))/_sizeoffs;
+		int sig = (ram1.nextInt(2)==0 ? 1 : -1);
+		double alfa = sig*(((double)ram.nextInt(_sizeoffs))/(_sizeoffs-1));
 		int beta = ram1.nextInt(_pops);
 		int num = 0;
 		
@@ -217,7 +218,7 @@ public class KMedoids
 		{
 			if (Math.random() <= _pmut)	
 			{
-				num = (int)((alfa*ram1.nextInt(_pops)) + beta);
+				num = (int)((alfa*ram.nextInt(_pops)) + beta);
 				
 				if (num < 0)
 					indi[i] = 0;
