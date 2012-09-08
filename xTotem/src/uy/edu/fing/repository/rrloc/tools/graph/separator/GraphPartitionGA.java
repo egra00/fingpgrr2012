@@ -39,6 +39,12 @@ public class GraphPartitionGA
 	private double _fitness_best_sol_iter; // Inicializada luego de hacer Evaluate()
 	
 	private double _FitTotal; // Inicializada luego de hacer Evaluate()
+	
+	private double _more_latitude; // Inicializada luego de hacer get_frame();
+	private double _less_latitude; // Inicializada luego de hacer get_frame();
+	
+	private double _more_longitude; // Inicializada luego de hacer get_frame();
+	private double _less_longitude; // Inicializada luego de hacer get_frame();
 
 	
 	public GraphPartitionGA(Graph<Node,Link> G, int nb_gen, int tam_popu, int tam_offs, double p_mut, double p_cross)
@@ -56,31 +62,115 @@ public class GraphPartitionGA
 		offsprings = new int[_sizeoffs][];
 	
 		cake = new int[SIZECAKE];
+		
+		_more_latitude = Double.MIN_VALUE;
+		_less_latitude = Double.MAX_VALUE;
+		
+		_more_longitude = Double.MIN_VALUE;
+		_less_longitude = Double.MAX_VALUE;
+		
+		this.get_frame();
 	}
+	
+	
+	private void get_frame()
+	{
+		_more_latitude = Double.MIN_VALUE;
+		_less_latitude = Double.MAX_VALUE;
+		
+		_more_longitude = Double.MIN_VALUE;
+		_less_longitude = Double.MAX_VALUE;
+		
+		double lon;
+		double lat;
+		
+		for(Node node: _G.getVertices())
+		{
+			lat = node.getLatitude();
+			lon = node.getLongitude();
+			
+			if(_more_latitude < lat) _more_latitude = lat;
+			if(_more_longitude < lon) _more_longitude = lon;
+			
+			if(_less_latitude > lat) _less_latitude = lat;
+			if(_less_longitude > lon) _less_longitude = lon;		
+		}
+		
+		_more_latitude++;
+		_less_latitude--;
+		
+		_more_longitude++;
+		_less_longitude--;
+	}
+	
 	
 	public void Initialization()
 	{
-		_fitness_best_sol_global = 0; // Cualquier solucion tiene valor de fitness mayor estricto a PENALIZACION
+		_fitness_best_sol_global = 0;
+		Random ram = new Random();
 		
 		for(int i =0; i<_sizepopu; i++)
 		{			
-			population[i] = randomIndi(Math.random());
+			population[i] = randomIndi(Math.random(), ram);
 		}
+		
+		//for(;;);
 	}
 	
-	private int[] randomIndi(double seed) 
+	private int[] randomIndi(double seed, Random ram) 
 	{
 		int[] indi = new int[_tam_individuo];
-		
-		for(int i = 0; i<_tam_individuo; i++)
-		{	
-			if (Math.random() <= seed)
-				indi[i] = 0;
-			else
-				indi[i] = 1;
+			
+		if (Math.random() <= seed)
+		{
+			longuitudinal_cut(indi, ram);
+		}
+		else
+		{
+			latitudinal_cut(indi, ram);
 		}
 		
 		return indi;
+	}
+	
+	private void longuitudinal_cut(int[] indi, Random ram)
+	{
+		double pointB = ram.nextInt((int)_more_longitude - (int)_less_longitude) + Math.random();
+		double pointA = ram.nextInt(((int)pointB) + 1) + Math.random();
+		
+		pointB += _less_longitude;
+		pointA += _less_longitude;
+		
+		int pos=0;
+		for(Node node : _G.getVertices())
+		{
+			if(pointA <= node.getLongitude() && node.getLongitude() <= pointB)
+				indi[pos] = 1;
+			else
+				indi[pos] = 0;
+			
+			pos++;
+		}
+	}
+	
+	private void latitudinal_cut(int[] indi, Random ram)
+	{
+		double pointB = ram.nextInt((int)_more_latitude - (int)_less_latitude) + Math.random();
+		double pointA = ram.nextInt(((int)pointB) + 1) + Math.random();
+		
+		pointB += _less_latitude;
+		pointA += _less_latitude;
+		
+		int pos=0;
+		for(Node node : _G.getVertices())
+		{
+			if(pointA <= node.getLatitude() && node.getLatitude() <= pointB)
+				indi[pos] = 1;
+			else
+				indi[pos] = 0;
+			
+			pos++;
+		}
 	}
 	
 	public void Crossover()

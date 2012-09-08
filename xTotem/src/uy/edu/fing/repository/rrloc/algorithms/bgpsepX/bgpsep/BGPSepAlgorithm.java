@@ -33,7 +33,7 @@ public class BGPSepAlgorithm implements RRLocAlgorithm {
 
 		}
 		else if (IGPTopology.getVertexCount() > 2) {
-			GraphSeparator graphSeparator = Separator.GraphPartitionAE(20, IGPTopology ,50, 80, 140, 0.01, 0.1);
+			GraphSeparator graphSeparator = Separator.GraphPartitionAE(20, IGPTopology ,50, 200, 350, 0.01, 0.1);
 			
 			//El conjunto de routes reflectors estara configurado Full Mesh
 			Set<Node> aux_set = new HashSet<Node>(graphSeparator.getSeparator());
@@ -45,7 +45,7 @@ public class BGPSepAlgorithm implements RRLocAlgorithm {
 			}
 			
 			// Cada router en la componente debe ser un cliente de todos
-			// los route reflectos
+			// los route reflectos	
 			for (Graph<Node, Link> g_i : graphSeparator.getComponents()) {
 				for (Node u : g_i.getVertices()) {
 					for (Node v : graphSeparator.getSeparator()) {
