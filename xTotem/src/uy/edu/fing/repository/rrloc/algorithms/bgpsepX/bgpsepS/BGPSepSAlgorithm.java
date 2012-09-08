@@ -72,7 +72,7 @@ public class BGPSepSAlgorithm extends BGPSepDAlgorithm {
 		
 		/* Step 2: Choose a graph separator S in G'.V */
 		
-		GraphSeparator graphSeparator = Separator.GraphPartitionAE(20, Gp ,50, 80, 140, 0.01, 0.1);
+		GraphSeparator graphSeparator = Separator.GraphPartitionAE(20, Gp ,50, 200, 350, 0.01, 0.1);
 		Set<Node> S = graphSeparator.getSeparator();
 		List<Graph<Node, Link>> G1m = graphSeparator.getComponents();
 		dijkstra = new DijkstraShortestPath<Node, Link>(Gp);
