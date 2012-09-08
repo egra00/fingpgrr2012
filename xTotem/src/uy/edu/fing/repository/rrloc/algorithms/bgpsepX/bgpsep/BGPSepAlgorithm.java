@@ -22,10 +22,7 @@ public class BGPSepAlgorithm implements RRLocAlgorithm {
 		Graph<Node, Link> IGPTopology = (Graph<Node, Link>) param;
 		List<iBGPSession> i = (List<iBGPSession>) result;
 		
-		if (IGPTopology.getVertexCount() < 2) {
-			//i = vacio
-		}
-		else if (IGPTopology.getVertexCount() == 2) {
+		if (IGPTopology.getVertexCount() == 2) {
 			Node u = ((Node)IGPTopology.getVertices().toArray()[0]);
 			Node v = ((Node)IGPTopology.getVertices().toArray()[1]);
 			
@@ -33,8 +30,9 @@ public class BGPSepAlgorithm implements RRLocAlgorithm {
 					u.getId(), 
 					v.getId(), 
 					iBGPSessionType.peer));
+
 		}
-		else {
+		else if (IGPTopology.getVertexCount() > 2) {
 			GraphSeparator graphSeparator = Separator.GraphPartitionAE(20, IGPTopology ,50, 80, 140, 0.01, 0.1);
 			
 			//El conjunto de routes reflectors estara configurado Full Mesh
@@ -56,7 +54,6 @@ public class BGPSepAlgorithm implements RRLocAlgorithm {
 				}
 				run(g_i, i);
 			}
-			
 		}
 	}
 	

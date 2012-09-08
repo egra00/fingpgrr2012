@@ -242,12 +242,12 @@ public class GraphPartitionGA
 	
 	private double evaluate_guy(double _tam_separator, double _balanced_separator, double _cant_component){		
 		if(_cant_component > 1) 
-			return (_tam_individuo - _tam_separator) + ((_tam_individuo - _balanced_separator)/_tam_separator) + _cant_component;
+			return ((_tam_individuo - _balanced_separator)/_tam_separator) + 1;
 		
 		return 1;
 	}
 	
-	public void Remplace()
+	public void Replace()
 	{
 		Random ram = new Random();
 		int index;
@@ -330,7 +330,7 @@ public class GraphPartitionGA
 		{
 			this.Selection();
 			this.Recombine();
-			this.Remplace();
+			this.Replace();
 			this.Evaluate();
 		}
 
