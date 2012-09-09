@@ -20,7 +20,7 @@ public class KMedoids
 	
 	private int[][] offsprings;
 	
-	final int SIZECAKE = 10000;
+	final int SIZECAKE = 100000;
 	private int[] cake;
 	
 	// Conservo la mejor solucion global
@@ -247,7 +247,7 @@ public class KMedoids
 		
 		for(int i=0; (i < _sizepopu) && (_size_cake < SIZECAKE); i++)
 		{
-			portions = (int)Math.floor((fit_population[i]/_FitTotal)*10000);
+			portions = (int)Math.floor((fit_population[i]/_FitTotal)*SIZECAKE);
 
 			for(j=_size_cake; (j < SIZECAKE) && (j < _size_cake + portions); j++)
 			{
