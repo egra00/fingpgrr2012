@@ -27,7 +27,7 @@ public class GraphPartitionGA
 	private double[] fit_population;
 	private int[][] offsprings;
 	
-	final int SIZECAKE = 10000;
+	final int SIZECAKE = 100000;
 	private int[] cake;
 	
 	// Conservo la mejor solucion global
@@ -107,36 +107,35 @@ public class GraphPartitionGA
 	public void Initialization()
 	{
 		_fitness_best_sol_global = 0;
-		Random ram = new Random();
+		Random ram1 = new Random();
+		Random ram2 = new Random();
 		
 		for(int i =0; i<_sizepopu; i++)
 		{			
-			population[i] = randomIndi(Math.random(), ram);
+			population[i] = randomIndi(Math.random(), ram1, ram2);
 		}
-		
-		//for(;;);
 	}
 	
-	private int[] randomIndi(double seed, Random ram) 
+	private int[] randomIndi(double seed, Random ram1, Random ram2) 
 	{
 		int[] indi = new int[_tam_individuo];
 			
 		if (Math.random() <= seed)
 		{
-			longuitudinal_cut(indi, ram);
+			longuitudinal_cut(indi, ram1, ram2);
 		}
 		else
 		{
-			latitudinal_cut(indi, ram);
+			latitudinal_cut(indi, ram1, ram2);
 		}
 		
 		return indi;
 	}
 	
-	private void longuitudinal_cut(int[] indi, Random ram)
+	private void longuitudinal_cut(int[] indi, Random ram1, Random ram2)
 	{
-		double pointB = ram.nextInt((int)_more_longitude - (int)_less_longitude) + Math.random();
-		double pointA = ram.nextInt(((int)pointB) + 1) + Math.random();
+		double pointB = ram1.nextInt((int)_more_longitude - (int)_less_longitude) + Math.random();
+		double pointA = ram2.nextInt(((int)pointB) + 1) + Math.random();
 		
 		pointB += _less_longitude;
 		pointA += _less_longitude;
@@ -153,10 +152,10 @@ public class GraphPartitionGA
 		}
 	}
 	
-	private void latitudinal_cut(int[] indi, Random ram)
+	private void latitudinal_cut(int[] indi, Random ram1, Random ram2)
 	{
-		double pointB = ram.nextInt((int)_more_latitude - (int)_less_latitude) + Math.random();
-		double pointA = ram.nextInt(((int)pointB) + 1) + Math.random();
+		double pointB = ram1.nextInt((int)_more_latitude - (int)_less_latitude) + Math.random();
+		double pointA = ram2.nextInt(((int)pointB) + 1) + Math.random();
 		
 		pointB += _less_latitude;
 		pointA += _less_latitude;
@@ -235,7 +234,7 @@ public class GraphPartitionGA
 		
 		for(int i=0; (i < _sizepopu) && (_size_cake < SIZECAKE); i++)
 		{
-			portions = (int)Math.floor((fit_population[i]/_FitTotal)*10000);
+			portions = (int)Math.floor((fit_population[i]/_FitTotal)*SIZECAKE);
 			for(j=_size_cake; (j < SIZECAKE) && (j < _size_cake + portions); j++)
 			{
 				cake[j] = i;
@@ -331,8 +330,8 @@ public class GraphPartitionGA
 	}
 	
 	private double evaluate_guy(double _tam_separator, double _balanced_separator, double _cant_component){		
-		if(_cant_component > 1) 
-			return ((_tam_individuo - _balanced_separator)/_tam_separator) + 1;
+		if(_cant_component > 1)
+			return ((((2*_tam_individuo) + 1)/(_balanced_separator + 1)) * (_tam_individuo/_tam_separator)) + 1;
 		
 		return 1;
 	}
@@ -354,6 +353,7 @@ public class GraphPartitionGA
 	{	
 		if (!is_separator(_best_sol_global))
 		{
+			System.out.println("QUE PASO MI VIEJO");
 			return this.run();
 		}
 			 		

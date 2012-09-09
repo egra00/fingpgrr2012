@@ -1,6 +1,7 @@
 package uy.edu.fing.repository.rrloc.algorithms.bgpsepX.bgpsep;
 
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
@@ -23,8 +24,9 @@ public class BGPSepAlgorithm implements RRLocAlgorithm {
 		List<iBGPSession> i = (List<iBGPSession>) result;
 		
 		if (IGPTopology.getVertexCount() == 2) {
-			Node u = ((Node)IGPTopology.getVertices().toArray()[0]);
-			Node v = ((Node)IGPTopology.getVertices().toArray()[1]);
+			Iterator<Node> ii = IGPTopology.getVertices().iterator();
+			Node u = ii.next();
+			Node v = ii.next();
 			
 			i.add(new iBGPSession(
 					u.getId(), 

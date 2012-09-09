@@ -2002,11 +2002,6 @@
         <to if="0" node="303"/>
         <bw>10000000000</bw>
       </link>
-      <link id="113_150">
-        <from if="0" node="113"/>
-        <to if="0" node="150"/>
-        <bw>10000000000</bw>
-      </link>
       <link id="113_243">
         <from if="0" node="113"/>
         <to if="0" node="243"/>
@@ -7079,11 +7074,6 @@
       <link id="112_303">
         <static>
           <metric>175.036308465203</metric>
-        </static>
-      </link>
-      <link id="113_150">
-        <static>
-          <metric>924.96612028937</metric>
         </static>
       </link>
       <link id="113_243">
