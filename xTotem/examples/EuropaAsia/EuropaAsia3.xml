@@ -5057,11 +5057,6 @@
         <to if="0" node="222"/>
         <bw>155000000</bw>
       </link>
-      <link id="346_100">
-        <from if="0" node="346"/>
-        <to if="0" node="100"/>
-        <bw>10000000000</bw>
-      </link>
       <link id="346_170">
         <from if="0" node="346"/>
         <to if="0" node="170"/>
@@ -5830,11 +5825,6 @@
       <link id="93_167">
         <from if="0" node="93"/>
         <to if="0" node="167"/>
-        <bw>10000000000</bw>
-      </link>
-      <link id="93_346">
-        <from if="0" node="93"/>
-        <to if="0" node="346"/>
         <bw>10000000000</bw>
       </link>
       <link id="94_13">
@@ -9201,11 +9191,6 @@
           <metric>414.642179169975</metric>
         </static>
       </link>
-      <link id="346_100">
-        <static>
-          <metric>1003.46996398223</metric>
-        </static>
-      </link>
       <link id="346_170">
         <static>
           <metric>1728.88440453013</metric>
@@ -9974,11 +9959,6 @@
       <link id="93_167">
         <static>
           <metric>1786.63383904263</metric>
-        </static>
-      </link>
-      <link id="93_346">
-        <static>
-          <metric>2610.06759426886</metric>
         </static>
       </link>
       <link id="94_13">

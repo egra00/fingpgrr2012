@@ -107,28 +107,28 @@ public class GraphPartitionGA
 	public void Initialization()
 	{
 		_fitness_best_sol_global = 0;
+		Random ram0 = new Random();
 		Random ram1 = new Random();
 		Random ram2 = new Random();
 		
 		for(int i =0; i<_sizepopu; i++)
 		{			
-			population[i] = randomIndi(Math.random(), ram1, ram2);
+			population[i] = randomIndi(ram0, ram1, ram2);
 		}
 	}
 	
-	private int[] randomIndi(double seed, Random ram1, Random ram2) 
+	private int[] randomIndi(Random ram0, Random ram1, Random ram2) 
 	{
 		int[] indi = new int[_tam_individuo];
-			
-		if (Math.random() <= seed)
-		{
-			longuitudinal_cut(indi, ram1, ram2);
-		}
-		else
-		{
-			latitudinal_cut(indi, ram1, ram2);
-		}
+		int sel = ram0.nextInt(3);
 		
+		if (sel == 0)
+			longuitudinal_cut(indi, ram1, ram2);
+		else if (sel == 1)
+			latitudinal_cut(indi, ram1, ram2);
+		else
+			diagonal_cut(indi, ram1, ram2);
+			
 		return indi;
 	}
 	
@@ -170,6 +170,42 @@ public class GraphPartitionGA
 			
 			pos++;
 		}
+	}
+	
+	
+	private void diagonal_cut(int[] indi, Random ram1, Random ram2)
+	{
+		double point1_X = _less_longitude + ram1.nextInt((int)_more_longitude - (int)_less_longitude) + Math.random();
+		double point1_Y = _less_latitude + ram2.nextInt((int)_more_latitude - (int)_less_latitude) + Math.random();
+	
+		double point2_X = _less_longitude + ram1.nextInt((int)_more_longitude - (int)_less_longitude) + Math.random();
+		double point2_Y = _less_latitude + ram2.nextInt((int)_more_latitude - (int)_less_latitude) + Math.random();
+		
+		double _a = (point1_X - point2_X)/(point1_Y - point2_Y);
+		double _b = point2_Y - _a*point2_X;
+		double _bp = _b - ram2.nextInt(1+(int)Math.min(point1_Y, point2_Y) - (int)_less_latitude) + Math.random();
+		
+		
+		int pos=0;
+		double lat;
+		double lon;
+		for(Node node : _G.getVertices())
+		{
+			lat = node.getLatitude();
+			lon = node.getLongitude();
+			if(lat <= evaluate_recta(_a, lon, _bp) && lat <= evaluate_recta(_a, lon, _b))
+				indi[pos] = 1;
+			else
+				indi[pos] = 0;
+			
+			pos++;
+		}
+		
+	}
+	
+	private double evaluate_recta(double a, double x, double b)
+	{
+		return a*x+b;
 	}
 	
 	public void Crossover()
@@ -352,10 +388,7 @@ public class GraphPartitionGA
 	public GraphSeparator GetBestSolution()
 	{	
 		if (!is_separator(_best_sol_global))
-		{
-			System.out.println("QUE PASO MI VIEJO");
 			return this.run();
-		}
 			 		
 		//Creo separador de grafo
 		GraphSeparator SG = new GraphSeparator();
