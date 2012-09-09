@@ -82,9 +82,18 @@ public class KMedoids
 	{
 		int[] indi = new int[_tam_individuo];
 		int[] meds = new int[_pops];
-		int sig = (ram1.nextInt(2)==0 ? 1 : -1);
-		double alfa = sig*(((double)ram.nextInt(_sizepopu))/(_sizepopu-1));
-		int beta = ram1.nextInt(_pops);
+		
+		
+		double point1_X = ram.nextInt(_pops) + Math.random();
+		double point1_Y = ram1.nextInt(_pops) + Math.random();
+	
+		double point2_X = ram.nextInt(_pops) + Math.random();
+		double point2_Y = ram1.nextInt(_pops) + Math.random();
+		
+		double _a = (point1_X - point2_X)/(point1_Y - point2_Y);
+		double _b = point2_Y - _a*point2_X;
+		
+		
 		int delta = ram.nextInt(_tam_individuo/_pops)+1;
 		int index = ram1.nextInt(_tam_individuo);
 		int num = 0;
@@ -95,7 +104,7 @@ public class KMedoids
 		for(int i=0; i<_tam_individuo; i++)
 		{
 					
-			num = (int)((alfa*ram.nextInt(_pops)) + beta);
+			num = (int)((_a*ram.nextInt(_pops)) +_b);
 			
 			if (num < 0)
 				indi[i] = 0;
@@ -105,7 +114,7 @@ public class KMedoids
 				indi[i] =  num;
 		}
 			
-		meds_populations[_indi_id] = meds;
+		meds_populations[_indi_id] = meds;	
 		
 		return indi;
 	}
@@ -198,9 +207,14 @@ public class KMedoids
 	private void mut(int[] indi, int[] meds, Random ram,  Random ram1)
 	{
 		int _new_med;
-		int sig = (ram1.nextInt(2)==0 ? 1 : -1);
-		double alfa = sig*(((double)ram.nextInt(_sizeoffs))/(_sizeoffs-1));
-		int beta = ram1.nextInt(_pops);
+		double point1_X = ram.nextInt(_pops) + Math.random();
+		double point1_Y = ram1.nextInt(_pops) + Math.random();
+	
+		double point2_X = ram.nextInt(_pops) + Math.random();
+		double point2_Y = ram1.nextInt(_pops) + Math.random();
+		
+		double _a = (point1_X - point2_X)/(point1_Y - point2_Y);
+		double _b = point2_Y - _a*point2_X;
 		int num = 0;
 		
 		for(int i=0; i<_pops; i++)
@@ -218,7 +232,7 @@ public class KMedoids
 		{
 			if (Math.random() <= _pmut)	
 			{
-				num = (int)((alfa*ram.nextInt(_pops)) + beta);
+				num = (int)((_a*ram.nextInt(_pops)) + _b);
 				
 				if (num < 0)
 					indi[i] = 0;
