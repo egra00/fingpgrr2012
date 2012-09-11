@@ -68,7 +68,7 @@ import javax.swing.SwingUtilities;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 
-import uy.edu.fing.repository.tools.iBGPViewer.ManagerGUIViewer;
+import uy.edu.fing.repository.tools.iBGPViewer.ManagerIbgpConfiguracionViewer;
 import be.ac.ulg.montefiore.run.totem.chart.facade.ChartManager;
 import be.ac.ulg.montefiore.run.totem.chart.model.exception.NoSuchChartException;
 import be.ac.ulg.montefiore.run.totem.domain.exception.DomainAlreadyExistException;
@@ -1116,8 +1116,7 @@ public class MainWindow extends JFrame implements InterDomainManagerListener {
     {
         public void actionPerformed(ActionEvent e) 
         {
-        	//(new Display(750, 350)).printTopologyIBGP();
-        	ManagerGUIViewer.getInstance().showSessionsIbgp(InterDomainManager.getInstance().getDefaultDomain());
+        	ManagerIbgpConfiguracionViewer.getInstance().show(InterDomainManager.getInstance().getDefaultDomain());
         }
     }
     
