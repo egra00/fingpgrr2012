@@ -372,7 +372,7 @@ public class ManagerIbgpConfiguracionViewer {
         });
 		
 		
-		Data data = _list_description.get(0);
+		Data data = _list_description.get(_pos);
 		
 		_frame.invalidate();
 		_frame.setTitle("Domain: "+ data.id + " - " +data.description);
@@ -417,7 +417,7 @@ public class ManagerIbgpConfiguracionViewer {
 		gm.setMode(Mode.TRANSFORMING);
 		vv.setGraphMouse(gm);
 		
-		Data data = _list_description.get(0);
+		Data data = _list_description.get(_pos);
 
 		JFrame _frame = new JFrame();
 		_frame.setTitle("Domain: "+ data.id + " - " +data.description);
