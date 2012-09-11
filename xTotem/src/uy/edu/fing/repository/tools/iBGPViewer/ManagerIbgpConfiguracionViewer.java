@@ -146,6 +146,8 @@ public class ManagerIbgpConfiguracionViewer {
 		_list_description.add(0, data);
 		
     	showIbgp();
+    	
+    	rebuild();
     }
     
     
