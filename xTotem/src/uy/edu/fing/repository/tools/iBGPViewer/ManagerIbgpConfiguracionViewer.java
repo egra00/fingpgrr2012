@@ -156,7 +156,7 @@ public class ManagerIbgpConfiguracionViewer {
         if (dialog == null) {
         	dialog = new JDialog(_frame, "Domains currently loaded");
         	dialog.setContentPane(jsc);
-        	dialog.setSize(400, 250);
+        	dialog.setSize(200, 250);
             dialog.addWindowListener(new WindowListener() {
                 public void windowOpened(WindowEvent e) {}
                 public void windowClosing(WindowEvent e) {}
