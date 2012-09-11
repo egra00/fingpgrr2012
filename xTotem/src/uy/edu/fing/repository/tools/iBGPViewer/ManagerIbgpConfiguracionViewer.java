@@ -71,7 +71,7 @@ public class ManagerIbgpConfiguracionViewer {
 	private int _maxY;
 	private List<Graph<MyNode, MyLink>> _list_configurations_ibgp;
 	private List<Data> _list_description;
-	private Map<Integer, List<Graph<MyNode, MyLink>>> _hash_configurations_ibgp;
+	private Map<Integer, Integer> _hash_configurations_ibgp;
 
 	public class Data
 	{
@@ -89,7 +89,7 @@ public class ManagerIbgpConfiguracionViewer {
 		_app_icon = new ImageIcon(MainWindow.class.getResource("/resources/img/icon.gif")).getImage();
 		_frame.setIconImage(_app_icon);
 		_logger = Logger.getLogger(ManagerIbgpConfiguracionViewer.class);
-		_hash_configurations_ibgp = new HashMap<Integer, List<Graph<MyNode,MyLink>>>();
+		_hash_configurations_ibgp = new HashMap<Integer, Integer>();
 		_list_configurations_ibgp = new LinkedList<Graph<MyNode,MyLink>>();
 		_list_description = new LinkedList<Data>();
 	}
@@ -134,15 +134,16 @@ public class ManagerIbgpConfiguracionViewer {
     	Graph<MyNode,MyLink> ibgp = toGraphPrintable(domain);
 		_list_configurations_ibgp.add(0, ibgp);
 		if (_hash_configurations_ibgp.get(domain.getASID()) == null)
-			_hash_configurations_ibgp.put(domain.getASID(), new LinkedList<Graph<MyNode,MyLink>>());
+			_hash_configurations_ibgp.put(domain.getASID(), 0);
 		
-		List<Graph<MyNode,MyLink>> lst = _hash_configurations_ibgp.get(domain.getASID());
+		int aux = _hash_configurations_ibgp.get(domain.getASID());
 		
-		lst.add(ibgp);
+		aux++;
+		_hash_configurations_ibgp.put(domain.getASID(), aux);
 		
 		Data data = new Data();
 		data.id = domain.getASID();
-		data.description = "Configuration IBGP: "+ lst.size();
+		data.description = "Configuration IBGP: "+ aux;
 		_list_description.add(0, data);
 		
     	showIbgp();
