@@ -69,14 +69,14 @@ public class ManagerIbgpConfiguracionViewer {
 	private Logger _logger;
 	private int _maxX;
 	private int _maxY;
-	private List<Graph<MyNode, MyLink>> _list_configurations_ibgp;
-	private List<Data> _list_description;
+	private List<Data> _list_configurations_ibgp;
 	private Map<Integer, Integer> _hash_configurations_ibgp;
 
 	public class Data
 	{
-		String description;
 		int id;
+		String description;
+		Graph<MyNode, MyLink> ibgp;
 	}
 	
 	private ManagerIbgpConfiguracionViewer() 
@@ -86,12 +86,12 @@ public class ManagerIbgpConfiguracionViewer {
 		dialog = null;
 		_frame = new JFrame();
 		btGroup = null;
-		_app_icon = new ImageIcon(MainWindow.class.getResource("/resources/img/icon.gif")).getImage();
+		_app_icon = new ImageIcon(ManagerIbgpConfiguracionViewer.class.getResource("/resources/img/icon.gif")).getImage();
 		_frame.setIconImage(_app_icon);
+		_frame.setLocation(MainWindow.getInstance().getX() + 100, MainWindow.getInstance().getY() + 100);
 		_logger = Logger.getLogger(ManagerIbgpConfiguracionViewer.class);
 		_hash_configurations_ibgp = new HashMap<Integer, Integer>();
-		_list_configurations_ibgp = new LinkedList<Graph<MyNode,MyLink>>();
-		_list_description = new LinkedList<Data>();
+		_list_configurations_ibgp = new LinkedList<Data>();
 	}
 
     public static ManagerIbgpConfiguracionViewer getInstance() {
@@ -130,21 +130,19 @@ public class ManagerIbgpConfiguracionViewer {
     }
 	
     public void show(Domain domain) 
-    {
-    	Graph<MyNode,MyLink> ibgp = toGraphPrintable(domain);
-		_list_configurations_ibgp.add(0, ibgp);
+    { 	
 		if (_hash_configurations_ibgp.get(domain.getASID()) == null)
 			_hash_configurations_ibgp.put(domain.getASID(), 0);
 		
-		int aux = _hash_configurations_ibgp.get(domain.getASID());
-		
-		aux++;
+		int aux = _hash_configurations_ibgp.get(domain.getASID()) + 1;
 		_hash_configurations_ibgp.put(domain.getASID(), aux);
 		
 		Data data = new Data();
 		data.id = domain.getASID();
 		data.description = "Configuration IBGP: "+ aux;
-		_list_description.add(0, data);
+		data.ibgp = toGraphPrintable(domain);
+		
+		_list_configurations_ibgp.add(0, data);
 		
     	showIbgp();
     	
@@ -157,7 +155,8 @@ public class ManagerIbgpConfiguracionViewer {
         if (dialog == null) {
         	dialog = new JDialog(_frame, "Domains currently loaded");
         	dialog.setContentPane(jsc);
-        	dialog.setSize(200, 250);
+        	dialog.setSize(200, 300);
+        	dialog.setLocation(_frame.getX() + _frame.getWidth(), _frame.getY());
             dialog.addWindowListener(new WindowListener() {
                 public void windowOpened(WindowEvent e) {}
                 public void windowClosing(WindowEvent e) {}
@@ -169,6 +168,7 @@ public class ManagerIbgpConfiguracionViewer {
             });
         } else {
         	dialog.setContentPane(jsc);
+        	dialog.setLocation(_frame.getX() + _frame.getWidth(), _frame.getY());
         }
     }
 
@@ -202,7 +202,7 @@ public class ManagerIbgpConfiguracionViewer {
 		public DomainPanel(int _domain_pos) {
 			setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
-			Data data = _list_description.get(_domain_pos);
+			Data data = _list_configurations_ibgp.get(_domain_pos);
 			
             JRadioButton btn = new JRadioButton("ASID: " + data.id);
 			this.add(btn);
@@ -234,7 +234,6 @@ public class ManagerIbgpConfiguracionViewer {
 
         public void actionPerformed(ActionEvent e) {
 			disassociate(id);
-			rebuild();
         }
     }
     
@@ -270,7 +269,8 @@ public class ManagerIbgpConfiguracionViewer {
   
 	public void showIbgp()
 	{	
-		Layout<MyNode,MyLink> layout = new  LocalLayout(_list_configurations_ibgp.get(0));
+		Data data = _list_configurations_ibgp.get(0);
+		Layout<MyNode,MyLink> layout = new  LocalLayout(data.ibgp);
 		layout.setSize(new Dimension(_maxX, _maxY));
 		VisualizationViewer<MyNode,MyLink> vv = new VisualizationViewer<MyNode, MyLink>(layout);
 		vv.setPreferredSize(new Dimension(_maxX + MARCO, _maxY + MARCO));
@@ -312,9 +312,7 @@ public class ManagerIbgpConfiguracionViewer {
                 ManagerIbgpConfiguracionViewer.getInstance().showPanel();
             }
         });
-		
-		Data data = _list_description.get(0);
-		
+				
 		_frame.invalidate();
 		_frame.setTitle("Domain: "+ data.id + " - " +data.description);
 		_frame.getContentPane().removeAll();
@@ -328,7 +326,8 @@ public class ManagerIbgpConfiguracionViewer {
 	
 	public void change(int _pos)
 	{	
-		Layout<MyNode,MyLink> layout = new  LocalLayout(_list_configurations_ibgp.get(_pos));
+		Data data = _list_configurations_ibgp.get(_pos);
+		Layout<MyNode,MyLink> layout = new  LocalLayout(data.ibgp);
 		layout.setSize(new Dimension(_maxX, _maxY));
 		VisualizationViewer<MyNode,MyLink> vv = new VisualizationViewer<MyNode, MyLink>(layout);
 		vv.setPreferredSize(new Dimension(_maxX + MARCO, _maxY + MARCO));
@@ -370,9 +369,6 @@ public class ManagerIbgpConfiguracionViewer {
                 ManagerIbgpConfiguracionViewer.getInstance().showPanel();
             }
         });
-		
-		
-		Data data = _list_description.get(_pos);
 		
 		_frame.invalidate();
 		_frame.setTitle("Domain: "+ data.id + " - " +data.description);
@@ -387,7 +383,8 @@ public class ManagerIbgpConfiguracionViewer {
     
 	public void disassociate(int _pos)
 	{	
-		Layout<MyNode,MyLink> layout = new  LocalLayout(_list_configurations_ibgp.get(_pos));
+		Data data = _list_configurations_ibgp.get(_pos);
+		Layout<MyNode,MyLink> layout = new  LocalLayout(data.ibgp);
 		layout.setSize(new Dimension(_maxX, _maxY));
 		VisualizationViewer<MyNode,MyLink> vv = new VisualizationViewer<MyNode, MyLink>(layout);
 		vv.setPreferredSize(new Dimension(_maxX + MARCO, _maxY + MARCO));
@@ -416,12 +413,11 @@ public class ManagerIbgpConfiguracionViewer {
 		DefaultModalGraphMouse<MyNode, MyLink> gm = new DefaultModalGraphMouse<MyNode, MyLink>();
 		gm.setMode(Mode.TRANSFORMING);
 		vv.setGraphMouse(gm);
-		
-		Data data = _list_description.get(_pos);
 
 		JFrame _frame = new JFrame();
 		_frame.setTitle("Domain: "+ data.id + " - " +data.description);
-		_frame.setIconImage(new ImageIcon(MainWindow.class.getResource("/resources/img/icon.gif")).getImage());
+		_frame.setIconImage(new ImageIcon(ManagerIbgpConfiguracionViewer.class.getResource("/resources/img/icon.gif")).getImage());
+		_frame.setLocation(MainWindow.getInstance().getX() + 250, MainWindow.getInstance().getY() + 100);
 		_frame.getContentPane().add(vv);
 		_frame.pack();
 		_frame.validate();
