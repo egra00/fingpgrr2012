@@ -1,12 +1,9 @@
 package uy.edu.fing.repository.rrloc.algorithms;
 
-
-
-
 public class iBGPSession {
-	private String idLink1;
-	private String idLink2;
-	private iBGPSessionType sessionType;
+	protected String idLink1;
+	protected String idLink2;
+	protected iBGPSessionType sessionType;
 	
 	public iBGPSession(String idLink1, String idLink2, iBGPSessionType sessionType) {
 		this.idLink1 = idLink1;
