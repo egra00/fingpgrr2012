@@ -10,7 +10,7 @@ import be.ac.ulg.montefiore.run.totem.repository.model.TotemAlgorithm;
 import be.ac.ulg.montefiore.run.totem.repository.model.exception.AlgorithmInitialisationException;
 import be.ac.ulg.montefiore.run.totem.util.ParameterDescriptor;
 
-@SuppressWarnings("unchecked")
+@SuppressWarnings({"unchecked", "rawtypes"})
 public abstract class BindAlgorithm implements Runnable, TotemAlgorithm {
 	
 	protected Logger logger;

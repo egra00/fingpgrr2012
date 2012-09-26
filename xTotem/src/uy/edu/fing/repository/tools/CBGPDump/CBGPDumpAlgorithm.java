@@ -18,6 +18,8 @@ import be.ac.ulg.montefiore.run.totem.domain.model.BgpRouter;
 import be.ac.ulg.montefiore.run.totem.domain.model.Domain;
 import be.ac.ulg.montefiore.run.totem.domain.model.Link;
 import be.ac.ulg.montefiore.run.totem.domain.model.Node;
+import be.ac.ulg.montefiore.run.totem.domain.model.impl.BgpNeighborImpl;
+import be.ac.ulg.montefiore.run.totem.domain.model.jaxb.BgpFilter.RuleType.ActionType;
 import be.ac.ulg.montefiore.run.totem.domain.model.jaxb.impl.BgpRouterImpl;
 
 
@@ -204,7 +206,7 @@ public class CBGPDumpAlgorithm
 		for(BgpRouter router : lst_bgps)
 		{
 			if (nodesById.containsKey(router.getRid()))
-			{
+			{	
 				bw.write("bgp add router "+ domain_num + " " +router.getRid()+"\n");
 				bw.write("bgp router "+router.getRid()+"\n");
 				
@@ -249,6 +251,42 @@ public class CBGPDumpAlgorithm
 		}
 		bw.write("\n");
 		/// END ROUTERS BGP AND SESSIONS iBGP
+		
+		/// START BGP FILTERS
+		
+		bw.write("# -------------------------------------------------------------------\n");
+		bw.write("# BGP filters\n");
+		bw.write("# -------------------------------------------------------------------\n");
+		bw.write("\n");
+		
+		for(BgpRouter router : lst_bgps) {
+			// For all neighbor
+			for (BgpNeighbor n : router.getAllNeighbors()) {
+				BgpNeighborImpl neighbor = (BgpNeighborImpl)n;
+				
+				if (neighbor.getFilters() == null) {
+					continue;
+				}
+				
+				// In
+				if (neighbor.getFilters().getInFilter() != null && neighbor.getFilters().getInFilter().getRule() != null) {
+					for (Object a : neighbor.getFilters().getInFilter().getRule().getAction()) {
+						ActionType action = (ActionType)a;
+						bw.write(action.getValue() + "\n");
+					}
+				}
+				
+				//Out
+				if (neighbor.getFilters().getOutFilter() != null && neighbor.getFilters().getOutFilter().getRule() != null) {
+					for (Object a : neighbor.getFilters().getOutFilter().getRule().getAction()) {
+						ActionType action = (ActionType)a;
+						bw.write(action.getValue() + "\n");
+					}
+				}
+			}
+		}
+		bw.write("\n");
+		/// END BGP FILTERS
 		
 		/// SCENARIO TO SIMULATE
 		bw.write("# -------------------------------------------------------------------\n");
