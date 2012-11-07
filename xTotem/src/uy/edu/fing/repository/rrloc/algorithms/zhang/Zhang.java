@@ -1,13 +1,10 @@
 package uy.edu.fing.repository.rrloc.algorithms.zhang;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-
-import javax.swing.JOptionPane;
 
 import org.apache.log4j.Logger;
 
@@ -19,7 +16,6 @@ import agape.tools.Operations;
 import be.ac.ulg.montefiore.run.totem.domain.exception.InvalidDomainException;
 import be.ac.ulg.montefiore.run.totem.domain.exception.NodeNotFoundException;
 import be.ac.ulg.montefiore.run.totem.domain.facade.InterDomainManager;
-import be.ac.ulg.montefiore.run.totem.domain.model.Domain;
 import be.ac.ulg.montefiore.run.totem.domain.model.Link;
 import be.ac.ulg.montefiore.run.totem.domain.model.Node;
 import be.ac.ulg.montefiore.run.totem.domain.model.impl.BgpNeighborImpl;
@@ -30,19 +26,13 @@ import be.ac.ulg.montefiore.run.totem.domain.model.jaxb.BgpRouter;
 import be.ac.ulg.montefiore.run.totem.domain.model.jaxb.ObjectFactory;
 import be.ac.ulg.montefiore.run.totem.repository.model.exception.AlgorithmParameterException;
 import be.ac.ulg.montefiore.run.totem.util.ParameterDescriptor;
-import be.ac.ulg.montefiore.run.totem.visualtopo.graph.GraphManager;
-import be.ac.ulg.montefiore.run.totem.visualtopo.guiComponents.MainWindow;
-import be.ac.ulg.montefiore.run.totem.visualtopo.guiComponents.TopoChooser;
 import edu.uci.ics.jung2.graph.Graph;
 import edu.uci.ics.jung2.graph.UndirectedSparseMultigraph;
 
-public class Zhang  extends BindAlgorithm
-{
-	private Domain domain;
+public class Zhang  extends BindAlgorithm {
 	private int level_one;
 	private int level_two;
 	private int pops;
-	private String name;
 	
 	public Zhang() {
 		logger = Logger.getLogger(Zhang.class);
@@ -129,42 +119,12 @@ public class Zhang  extends BindAlgorithm
 		return new ArrayList<iBGPSession>();
 	}
 
-	public void saveTopo() {
-        TopoChooser saver = new TopoChooser();
-        File file = saver.saveTopo(MainWindow.getInstance());
-        if (file != null) {
-        	GraphManager.getInstance().updateLocation();
-            try {
-                String filename = file.getAbsolutePath();
-                if (!filename.toLowerCase().endsWith(".xml")) {
-                    filename = filename.concat(".xml");
-                }
-                InterDomainManager.getInstance().saveDomain(domain.getASID(), filename);
-            } catch (Exception e) {
-                MainWindow.getInstance().errorMessage("The domain could not be saved");
-            }
-        }
-    }
-
 	@Override
 	public void dumpResultInDomain(Object algorithmResult) throws Exception {
 		List<iBGPSession> iBGPTopology = (List<iBGPSession>)algorithmResult;
 		
 		ManagerRRLocAlgorithm.getInstance().lock(domain.getASID());
 		
-		String information = "BGP information will change for the domain " + domain.getASID() + "\n";
-		String description = (domain.getDescription() == null || domain.getDescription().isEmpty() ? "No description" : domain .getDescription() ) + "\n";
-		String action = "This action saves the previous version and will delete all existing information. Would you like to continue?" + "\n";
-		String title = "@Run " + name + " algorithm reports";
-		
-        int n = JOptionPane.showConfirmDialog(MainWindow.getInstance(), information + description + action, title, JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-        
-        
-        if (n == JOptionPane.YES_OPTION) 
-        {
-        	saveTopo();
-        }
-        	
     	ObjectFactory factory = new ObjectFactory();
     	
 		// Se elimina toda posible configuracion previa
