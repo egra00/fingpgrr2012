@@ -25,32 +25,37 @@
 */
 package be.ac.ulg.montefiore.run.totem.core;
 
-import org.apache.log4j.xml.DOMConfigurator;
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.Enumeration;
-import java.net.URL;
+import java.awt.Font;
 import java.io.File;
 import java.io.FileFilter;
-import java.awt.*;
+import java.net.URL;
+import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.Locale;
 
+import javax.swing.SwingUtilities;
+import javax.swing.UIDefaults;
+import javax.swing.UIManager;
+import javax.swing.plaf.FontUIResource;
+
+import org.apache.log4j.xml.DOMConfigurator;
+
+import be.ac.ulg.montefiore.run.totem.domain.exception.DomainAlreadyExistException;
+import be.ac.ulg.montefiore.run.totem.domain.exception.InvalidDomainException;
+import be.ac.ulg.montefiore.run.totem.domain.facade.InterDomainManager;
 import be.ac.ulg.montefiore.run.totem.netController.facade.NetworkControllerManager;
 import be.ac.ulg.montefiore.run.totem.repository.facade.RepositoryManager;
 import be.ac.ulg.montefiore.run.totem.scenario.facade.ScenarioManager;
-import be.ac.ulg.montefiore.run.totem.scenario.model.jaxb.Scenario;
+import be.ac.ulg.montefiore.run.totem.scenario.generation.GenerateScenario;
 import be.ac.ulg.montefiore.run.totem.scenario.generation.LSPWorstCaseLinkFailure;
 import be.ac.ulg.montefiore.run.totem.scenario.generation.OneLSPbyDemand;
-import be.ac.ulg.montefiore.run.totem.scenario.generation.GenerateScenario;
-import be.ac.ulg.montefiore.run.totem.scenario.generation.WorstCaseLinkFailure;
 import be.ac.ulg.montefiore.run.totem.scenario.generation.PrimaryBackupFullMesh;
+import be.ac.ulg.montefiore.run.totem.scenario.generation.WorstCaseLinkFailure;
+import be.ac.ulg.montefiore.run.totem.scenario.model.jaxb.Scenario;
 import be.ac.ulg.montefiore.run.totem.scenario.persistence.ScenarioFactory;
 import be.ac.ulg.montefiore.run.totem.trafficMatrix.facade.TrafficMatrixManager;
 import be.ac.ulg.montefiore.run.totem.util.XMLFilesValidator;
-import be.ac.ulg.montefiore.run.totem.domain.facade.InterDomainManager;
 import be.ac.ulg.montefiore.run.totem.visualtopo.guiComponents.MainWindow;
-
-import javax.swing.*;
-import javax.swing.plaf.FontUIResource;
 
 /*
  * Changes:
@@ -112,6 +117,14 @@ public class Totem {
      */
     private static void printUsage() {
         System.out.println("Usage : ");
+        System.out.println("\t -rrloc_bgpsep <topology.xml> : start BGPSEP algorithm running over the topology specifies in topology.xml.");
+        System.out.println("\t -rrloc_bgpsepB <topology.xml> : start BGPSEPBackbone algorithm running over the topology specifies in topology.xml.");
+        System.out.println("\t -rrloc_bgpsepD <topology.xml> : start BGPSEPD algorithm running over the topology specifies in topology.xml.");
+        System.out.println("\t -rrloc_bgpsepS <topology.xml> : start BGPSEPS algorithm running over the topology specifies in topology.xml.");
+        System.out.println("\t -rrloc_cbr <topology.xml> : start CBR algorithm running over the topology specifies in topology.xml.");
+        System.out.println("\t -rrloc_fullmesh <topology.xml> : start FULLMESH algorithm running over the topology specifies in topology.xml.");
+        System.out.println("\t -rrloc_optimal <topology.xml> : start OPTIMAL algorithm running over the topology specifies in topology.xml.");
+        System.out.println("\t -rrloc_zhang <topology.xml> : start ZHANG algorithm running over the topology specifies in topology.xml.");
         System.out.println("\t -demo : start the GUI with increased font size (so it can be projected).");
         System.out.println("\t -s <scenario.xml> [stopOnError]: execute a scenario. If stopOnError is present, scenario execution will stop on first error.");
         System.out.println("\t -dir <directory_name> [stopOnError]: execute all the scenario files in the specified directory.  If stopOnError is present, each scenario execution will stop on first error.");
@@ -328,6 +341,85 @@ public class Totem {
                 }
                 MainWindow.getInstance();
                 return;
+            }
+            else if (args[0].equals("-rrloc_bgpsep") || 
+            		args[0].equals("-rrloc_bgpsepB") || 
+            		args[0].equals("-rrloc_bgpsepD") || 
+            		args[0].equals("-rrloc_bgpsepS") || 
+            		args[0].equals("-rrloc_cbr") || 
+            		args[0].equals("-rrloc_fullmesh") || 
+            		args[0].equals("-rrloc_optimal") || 
+            		args[0].equals("-rrloc_zhang")) {
+            	
+            	if (args.length < 2)
+            		endError("Please specify the topology file.");
+            	
+            	HashMap<String, String> params = new HashMap<String, String>();
+            	
+            	int i = 2;
+            	while (i < args.length-1) {
+                    if (args[i].startsWith("-")) {
+                        if (params.put(args[i], args[i+1]) != null) {
+                            System.out.println("Multiple values for parameter " + args[i]);
+                            printUsage();
+                            System.exit(1);
+                        }
+                    } else {
+                        endError("Parse error");
+                    }
+                    i+=2;
+                }
+
+                if (i != args.length) {
+                    endError("Parse error");
+                }
+
+            	
+            	File file = new File(args[1]);
+
+                if (!file.exists() || file.isDirectory()) {
+                    endError("File does not exist or is a directory.");
+                    return;
+                }
+                
+                try {
+                    InterDomainManager.getInstance().loadDomain(file.getAbsolutePath(), true, false, false);
+                } catch (InvalidDomainException e1) {
+                    e1.printStackTrace();
+                    endError("Invalid Domain file " + (e1.getMessage() == null ? "" : (": " + e1.getMessage())));
+                } catch (DomainAlreadyExistException e1) {
+                	e1.printStackTrace();
+                	endError("A domain with the same ASID already exists.");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    endError("An unexpected error occurs: " + e.getClass().getSimpleName());
+                }
+
+                if (args[0].equals("-rrloc_bgpsep")) {
+                	RepositoryManager.getInstance().startAlgo("BGPSep", params);
+                }
+                else if (args[0].equals("-rrloc_bgpsepB")) {
+                	RepositoryManager.getInstance().startAlgo("BGPSepBackbone", params);
+                }
+                else if (args[0].equals("-rrloc_bgpsepD")) {
+                	RepositoryManager.getInstance().startAlgo("BGPSepD", params);
+                }
+				else if (args[0].equals("-rrloc_bgpsepS")) {
+					RepositoryManager.getInstance().startAlgo("BGPSepS", params);
+				}
+				else if (args[0].equals("-rrloc_cbr")) {
+					RepositoryManager.getInstance().startAlgo("Cbr", params);
+				}
+				else if (args[0].equals("-rrloc_fullmesh")) {
+					RepositoryManager.getInstance().startAlgo("FullMesh", params);
+				}
+				else if (args[0].equals("-rrloc_optimal")) {
+					RepositoryManager.getInstance().startAlgo("Optimal", params);
+				}
+				else if (args[0].equals("-rrloc_zhang")) {
+					RepositoryManager.getInstance().startAlgo("Zhang", params);
+				}
+            	
             }
             else {
                 printUsage();

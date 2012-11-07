@@ -1,14 +1,22 @@
 package uy.edu.fing.repository.rrloc.iAlgorithm;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import javax.swing.JOptionPane;
+
 import org.apache.log4j.Logger;
 
+import be.ac.ulg.montefiore.run.totem.domain.facade.InterDomainManager;
+import be.ac.ulg.montefiore.run.totem.domain.model.Domain;
 import be.ac.ulg.montefiore.run.totem.repository.model.TotemAlgorithm;
 import be.ac.ulg.montefiore.run.totem.repository.model.exception.AlgorithmInitialisationException;
 import be.ac.ulg.montefiore.run.totem.util.ParameterDescriptor;
+import be.ac.ulg.montefiore.run.totem.visualtopo.graph.GraphManager;
+import be.ac.ulg.montefiore.run.totem.visualtopo.guiComponents.MainWindow;
+import be.ac.ulg.montefiore.run.totem.visualtopo.guiComponents.TopoChooser;
 
 @SuppressWarnings({"unchecked", "rawtypes"})
 public abstract class BindAlgorithm implements Runnable, TotemAlgorithm {
@@ -18,6 +26,9 @@ public abstract class BindAlgorithm implements Runnable, TotemAlgorithm {
 	protected Thread thread;
 	protected RRLocAlgorithm algorithm;
 	protected ArrayList<ParameterDescriptor> params;
+	
+	protected Domain domain;
+	protected String name;
     
     Object algorithmParams;
     Object algorithmResult;
@@ -72,10 +83,14 @@ public abstract class BindAlgorithm implements Runnable, TotemAlgorithm {
         algorithmResult = initAlgorithmResult();
         
         
-		if(algorithmParams != null && algorithmResult != null)
-		{
-		    thread.start();        
-		    logger.debug("Finish");
+		if(algorithmParams != null && algorithmResult != null) {
+			if (!MainWindow.cliMode()) {
+			    thread.start();
+			    logger.debug("Finish");
+			}
+			else {
+				run();
+			}
 		}
 		else
 			logger.debug("Incorrect initialization of input parameters or output parameters");
@@ -95,7 +110,11 @@ public abstract class BindAlgorithm implements Runnable, TotemAlgorithm {
         log(algorithmResult);
         
         try {
+        	saveTopo();
         	dumpResultInDomain(algorithmResult);
+        	if (MainWindow.cliMode()) {
+        		save(new File((domain.getName() == null) || domain.getName().isEmpty() ? "topology_out" : domain.getDescription()));
+        	}
 		} catch (Exception e) {
 			logger.error("Dumping iBGP topology in Totem domain");
 			e.printStackTrace();
@@ -113,4 +132,42 @@ public abstract class BindAlgorithm implements Runnable, TotemAlgorithm {
 		
 		return (List<ParameterDescriptor>) params.clone();
 	}
+	
+	public void saveTopo() {
+    	File file = null;
+    	
+    	if (!MainWindow.cliMode()) {
+    		String information = "BGP information will change for the domain " + domain.getASID() + "\n";
+			String description = (domain.getDescription() == null || domain.getDescription().isEmpty() ? "No description" : domain .getDescription() ) + "\n";
+			String action = "This action saves the previous version and will delete all existing information. Would you like to continue?" + "\n";
+			String title = "@Run " + name + " algorithm reports";
+			
+	        int n = JOptionPane.showConfirmDialog(MainWindow.getInstance(), information + description + action, title, JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+	        
+	        if (n != JOptionPane.YES_OPTION) {
+	        	return;
+	        }
+	        
+	        TopoChooser saver = new TopoChooser();
+	        file = saver.saveTopo(MainWindow.getInstance());
+    	}
+    	else {
+    		file = new File((domain.getName() == null) || domain.getName().isEmpty() ? "topology_in" : domain.getDescription());
+    	}
+    	
+        save(file);
+    }
+    
+	protected void save(File file) {
+    	GraphManager.getInstance().updateLocation();
+        try {
+            String filename = file.getAbsolutePath();
+            if (!filename.toLowerCase().endsWith(".xml")) {
+                filename = filename.concat(".xml");
+            }
+            InterDomainManager.getInstance().saveDomain(domain.getASID(), filename);
+        } catch (Exception e) {
+            MainWindow.getInstance().errorMessage("The domain could not be saved");
+        }
+    }
 }

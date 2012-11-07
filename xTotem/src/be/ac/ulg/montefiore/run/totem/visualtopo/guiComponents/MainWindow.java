@@ -227,7 +227,15 @@ public class MainWindow extends JFrame implements InterDomainManagerListener {
         }
         return mainWindow;
     }
-
+    
+    /**
+     * Returns true if Totem is in CLI mode
+     * 
+     * @return returns true if Totem is in CLI mode
+     */
+    public static synchronized boolean cliMode() {
+    	return mainWindow == null;
+    }
 
     /**
      * A simple method that is called by the constructor to initialise the different
