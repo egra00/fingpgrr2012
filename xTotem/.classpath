@@ -36,5 +36,6 @@
 	<classpathentry kind="lib" path="lib/java/jung2-201/collections-generic-4.01.jar"/>
 	<classpathentry kind="lib" path="lib/java/ejml-0.19.jar"/>
 	<classpathentry kind="lib" path="lib/java/choco-solver-2.1.5.jar"/>
+	<classpathentry kind="lib" path="/home/diego/cplex/cplex/lib/cplex.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
