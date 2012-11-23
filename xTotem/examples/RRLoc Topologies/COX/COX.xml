@@ -18,167 +18,167 @@
             <node id="LV">
                 <rid>1.0.0.1</rid>
                 <type>CORE</type>
-                <location latitude="-119.71892" longitude="280.29196"/>
+                <location latitude="1959.9023" longitude="-548.049"/>
             </node>
             <node id="PAL">
                 <rid>1.0.0.2</rid>
                 <type>EDGE</type>
-                <location latitude="-123.074684" longitude="257.35788"/>
+                <location latitude="1920.6843" longitude="-816.07263"/>
             </node>
             <node id="STAB">
                 <rid>1.0.0.2</rid>
                 <type>CORE</type>
-                <location latitude="-112.40671" longitude="254.04897"/>
+                <location latitude="2045.3577" longitude="-854.74274"/>
             </node>
             <node id="LANG">
                 <rid>1.0.0.3</rid>
                 <type>CORE</type>
-                <location latitude="-108.83565" longitude="262.21826"/>
+                <location latitude="2087.0913" longitude="-759.2708"/>
             </node>
             <node id="ORC">
                 <rid>1.0.0.4</rid>
                 <type>CORE</type>
-                <location latitude="-99.81557" longitude="265.2153"/>
+                <location latitude="2192.506" longitude="-724.2453"/>
             </node>
             <node id="SDIE">
                 <rid>1.0.0.5</rid>
                 <type>CORE</type>
-                <location latitude="-90.82236" longitude="276.62643"/>
+                <location latitude="2297.6074" longitude="-590.8869"/>
             </node>
             <node id="PHX">
                 <rid>1.0.0.6</rid>
                 <type>CORE</type>
-                <location latitude="-99.3352" longitude="288.88425"/>
+                <location latitude="2198.12" longitude="-447.63358"/>
             </node>
             <node id="TUC">
                 <rid>1.0.0.7</rid>
                 <type>CORE</type>
-                <location latitude="-88.347244" longitude="295.11215"/>
+                <location latitude="2326.533" longitude="-374.85"/>
             </node>
             <node id="SVALL">
                 <rid>1.0.0.9</rid>
                 <type>CORE</type>
-                <location latitude="-140.55655" longitude="293.58655"/>
+                <location latitude="1716.379" longitude="-392.67923"/>
             </node>
             <node id="OMH">
                 <rid>1.0.0.10</rid>
                 <type>CORE</type>
-                <location latitude="-136.56749" longitude="329.9795"/>
+                <location latitude="1762.9978" longitude="32.633976"/>
             </node>
             <node id="KAN">
                 <rid>1.0.0.11</rid>
                 <type>CORE</type>
-                <location latitude="-127.01905" longitude="340.68015"/>
+                <location latitude="1874.5878" longitude="157.68927"/>
             </node>
             <node id="WICH">
                 <rid>1.0.0.12</rid>
                 <type>CORE</type>
-                <location latitude="-118.31511" longitude="326.2066"/>
+                <location latitude="1976.3077" longitude="-11.458601"/>
             </node>
             <node id="OKL">
                 <rid>1.0.0.13</rid>
                 <type>CORE</type>
-                <location latitude="-114.69022" longitude="334.3792"/>
+                <location latitude="2018.671" longitude="84.05217"/>
             </node>
             <node id="TUL">
                 <rid>1.0.0.14</rid>
                 <type>CORE</type>
-                <location latitude="-118.42799" longitude="343.05954"/>
+                <location latitude="1974.9885" longitude="185.49684"/>
             </node>
             <node id="FORT">
                 <rid>1.0.0.15</rid>
                 <type>CORE</type>
-                <location latitude="-108.03789" longitude="346.0691"/>
+                <location latitude="2096.415" longitude="220.66823"/>
             </node>
             <node id="BENT">
                 <rid>1.0.0.16</rid>
                 <type>CORE</type>
-                <location latitude="-114.30625" longitude="353.21304"/>
+                <location latitude="2023.158" longitude="304.15775"/>
             </node>
             <node id="DALL">
                 <rid>1.0.0.17</rid>
                 <type>CORE</type>
-                <location latitude="-93.67583" longitude="338.62552"/>
+                <location latitude="2264.2595" longitude="133.67741"/>
             </node>
             <node id="BAT">
                 <rid>1.0.0.18</rid>
                 <type>CORE</type>
-                <location latitude="-93.025665" longitude="369.53275"/>
+                <location latitude="2271.858" longitude="494.8808"/>
             </node>
             <node id="LAF">
                 <rid>1.0.0.19</rid>
                 <type>CORE</type>
-                <location latitude="-85.97262" longitude="362.21533"/>
+                <location latitude="2354.2847" longitude="409.36444"/>
             </node>
             <node id="NEWO">
                 <rid>1.0.0.20</rid>
                 <type>CORE</type>
-                <location latitude="-88.42412" longitude="376.3854"/>
+                <location latitude="2325.6348" longitude="574.9657"/>
             </node>
             <node id="PENS">
                 <rid>1.0.0.21</rid>
                 <type>CORE</type>
-                <location latitude="-95.06628" longitude="389.5603"/>
+                <location latitude="2248.01" longitude="728.93677"/>
             </node>
             <node id="GAIN">
                 <rid>1.0.0.22</rid>
                 <type>CORE</type>
-                <location latitude="-88.806274" longitude="407.89233"/>
+                <location latitude="2321.1687" longitude="943.1779"/>
             </node>
             <node id="MAC">
                 <rid>1.0.0.23</rid>
                 <type>CORE</type>
-                <location latitude="-101.62589" longitude="406.55386"/>
+                <location latitude="2171.3499" longitude="927.53534"/>
             </node>
             <node id="ATL">
                 <rid>1.0.0.24</rid>
                 <type>EDGE</type>
-                <location latitude="-109.45344" longitude="392.70197"/>
+                <location latitude="2079.8713" longitude="765.65234"/>
             </node>
             <node id="CHI">
                 <rid>1.0.0.25</rid>
                 <type>EDGE</type>
-                <location latitude="-139.64859" longitude="370.20624"/>
+                <location latitude="1726.9901" longitude="502.75165"/>
             </node>
             <node id="CLE">
                 <rid>1.0.0.26</rid>
                 <type>CORE</type>
-                <location latitude="-135.433" longitude="399.1892"/>
+                <location latitude="1776.2562" longitude="841.46674"/>
             </node>
             <node id="ASH">
                 <rid>1.0.0.27</rid>
                 <type>CORE</type>
-                <location latitude="-127.98182" longitude="425.23312"/>
+                <location latitude="1863.3358" longitude="1145.8344"/>
             </node>
             <node id="NOVA">
                 <rid>1.0.0.28</rid>
                 <type>CORE</type>
-                <location latitude="-127.96801" longitude="431.49606"/>
+                <location latitude="1863.4973" longitude="1219.0271"/>
             </node>
             <node id="HAMP">
                 <rid>1.0.0.29</rid>
                 <type>CORE</type>
-                <location latitude="-117.0908" longitude="434.88022"/>
+                <location latitude="1990.6158" longitude="1258.577"/>
             </node>
             <node id="ROA">
                 <rid>1.0.0.30</rid>
                 <type>CORE</type>
-                <location latitude="-116.82645" longitude="423.37216"/>
+                <location latitude="1993.7056" longitude="1124.0856"/>
             </node>
             <node id="NY">
                 <rid>1.0.0.31</rid>
                 <type>EDGE</type>
-                <location latitude="-133.79309" longitude="444.69272"/>
+                <location latitude="1795.4215" longitude="1373.2524"/>
             </node>
             <node id="MAN">
                 <rid>1.0.0.32</rid>
                 <type>CORE</type>
-                <location latitude="-139.33241" longitude="445.49414"/>
+                <location latitude="1730.6849" longitude="1382.6187"/>
             </node>
             <node id="PROV">
                 <rid>1.0.0.34</rid>
                 <type>CORE</type>
-                <location latitude="-143.0231" longitude="454.42453"/>
+                <location latitude="1687.5532" longitude="1486.9851"/>
             </node>
         </nodes>
         <links>
@@ -2665,52 +2665,172 @@
             <link id="ORC-ASH">
                 <static>
                     <metric>32.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="ASH-ORC">
                 <static>
                     <metric>32.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="OKL-DALL">
                 <static>
                     <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="DALL-OKL">
                 <static>
                     <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="DALL-PHX">
                 <static>
                     <metric>7.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="PHX-DALL">
                 <static>
                     <metric>7.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="ATL-HAMP">
                 <static>
                     <metric>6.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="HAMP-ATL">
                 <static>
                     <metric>6.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="PROV-ASH">
                 <static>
                     <metric>5.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="ASH-PROV">
                 <static>
                     <metric>5.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
         </links>
     </igp>
