@@ -1,0 +1,2718 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<domain ASID="2">
+    <info>
+        <title>COX</title>
+        <date>2012-11-12-02:00</date>
+        <author>Diego Agriel</author>
+        <description>Cox national IP backbone</description>
+        <units>
+            <unit type="bandwidth" value="mbps"/>
+            <unit type="delay" value="ms"/>
+        </units>
+        <diff-serv>
+            <priority ct="0" id="0" preemption="0"/>
+        </diff-serv>
+    </info>
+    <topology>
+        <nodes>
+            <node id="LV">
+                <rid>1.0.0.1</rid>
+                <type>CORE</type>
+                <location latitude="-119.71892" longitude="280.29196"/>
+            </node>
+            <node id="PAL">
+                <rid>1.0.0.2</rid>
+                <type>EDGE</type>
+                <location latitude="-123.074684" longitude="257.35788"/>
+            </node>
+            <node id="STAB">
+                <rid>1.0.0.2</rid>
+                <type>CORE</type>
+                <location latitude="-112.40671" longitude="254.04897"/>
+            </node>
+            <node id="LANG">
+                <rid>1.0.0.3</rid>
+                <type>CORE</type>
+                <location latitude="-108.83565" longitude="262.21826"/>
+            </node>
+            <node id="ORC">
+                <rid>1.0.0.4</rid>
+                <type>CORE</type>
+                <location latitude="-99.81557" longitude="265.2153"/>
+            </node>
+            <node id="SDIE">
+                <rid>1.0.0.5</rid>
+                <type>CORE</type>
+                <location latitude="-90.82236" longitude="276.62643"/>
+            </node>
+            <node id="PHX">
+                <rid>1.0.0.6</rid>
+                <type>CORE</type>
+                <location latitude="-99.3352" longitude="288.88425"/>
+            </node>
+            <node id="TUC">
+                <rid>1.0.0.7</rid>
+                <type>CORE</type>
+                <location latitude="-88.347244" longitude="295.11215"/>
+            </node>
+            <node id="SVALL">
+                <rid>1.0.0.9</rid>
+                <type>CORE</type>
+                <location latitude="-140.55655" longitude="293.58655"/>
+            </node>
+            <node id="OMH">
+                <rid>1.0.0.10</rid>
+                <type>CORE</type>
+                <location latitude="-136.56749" longitude="329.9795"/>
+            </node>
+            <node id="KAN">
+                <rid>1.0.0.11</rid>
+                <type>CORE</type>
+                <location latitude="-127.01905" longitude="340.68015"/>
+            </node>
+            <node id="WICH">
+                <rid>1.0.0.12</rid>
+                <type>CORE</type>
+                <location latitude="-118.31511" longitude="326.2066"/>
+            </node>
+            <node id="OKL">
+                <rid>1.0.0.13</rid>
+                <type>CORE</type>
+                <location latitude="-114.69022" longitude="334.3792"/>
+            </node>
+            <node id="TUL">
+                <rid>1.0.0.14</rid>
+                <type>CORE</type>
+                <location latitude="-118.42799" longitude="343.05954"/>
+            </node>
+            <node id="FORT">
+                <rid>1.0.0.15</rid>
+                <type>CORE</type>
+                <location latitude="-108.03789" longitude="346.0691"/>
+            </node>
+            <node id="BENT">
+                <rid>1.0.0.16</rid>
+                <type>CORE</type>
+                <location latitude="-114.30625" longitude="353.21304"/>
+            </node>
+            <node id="DALL">
+                <rid>1.0.0.17</rid>
+                <type>CORE</type>
+                <location latitude="-93.67583" longitude="338.62552"/>
+            </node>
+            <node id="BAT">
+                <rid>1.0.0.18</rid>
+                <type>CORE</type>
+                <location latitude="-93.025665" longitude="369.53275"/>
+            </node>
+            <node id="LAF">
+                <rid>1.0.0.19</rid>
+                <type>CORE</type>
+                <location latitude="-85.97262" longitude="362.21533"/>
+            </node>
+            <node id="NEWO">
+                <rid>1.0.0.20</rid>
+                <type>CORE</type>
+                <location latitude="-88.42412" longitude="376.3854"/>
+            </node>
+            <node id="PENS">
+                <rid>1.0.0.21</rid>
+                <type>CORE</type>
+                <location latitude="-95.06628" longitude="389.5603"/>
+            </node>
+            <node id="GAIN">
+                <rid>1.0.0.22</rid>
+                <type>CORE</type>
+                <location latitude="-88.806274" longitude="407.89233"/>
+            </node>
+            <node id="MAC">
+                <rid>1.0.0.23</rid>
+                <type>CORE</type>
+                <location latitude="-101.62589" longitude="406.55386"/>
+            </node>
+            <node id="ATL">
+                <rid>1.0.0.24</rid>
+                <type>EDGE</type>
+                <location latitude="-109.45344" longitude="392.70197"/>
+            </node>
+            <node id="CHI">
+                <rid>1.0.0.25</rid>
+                <type>EDGE</type>
+                <location latitude="-139.64859" longitude="370.20624"/>
+            </node>
+            <node id="CLE">
+                <rid>1.0.0.26</rid>
+                <type>CORE</type>
+                <location latitude="-135.433" longitude="399.1892"/>
+            </node>
+            <node id="ASH">
+                <rid>1.0.0.27</rid>
+                <type>CORE</type>
+                <location latitude="-127.98182" longitude="425.23312"/>
+            </node>
+            <node id="NOVA">
+                <rid>1.0.0.28</rid>
+                <type>CORE</type>
+                <location latitude="-127.96801" longitude="431.49606"/>
+            </node>
+            <node id="HAMP">
+                <rid>1.0.0.29</rid>
+                <type>CORE</type>
+                <location latitude="-117.0908" longitude="434.88022"/>
+            </node>
+            <node id="ROA">
+                <rid>1.0.0.30</rid>
+                <type>CORE</type>
+                <location latitude="-116.82645" longitude="423.37216"/>
+            </node>
+            <node id="NY">
+                <rid>1.0.0.31</rid>
+                <type>EDGE</type>
+                <location latitude="-133.79309" longitude="444.69272"/>
+            </node>
+            <node id="MAN">
+                <rid>1.0.0.32</rid>
+                <type>CORE</type>
+                <location latitude="-139.33241" longitude="445.49414"/>
+            </node>
+            <node id="PROV">
+                <rid>1.0.0.34</rid>
+                <type>CORE</type>
+                <location latitude="-143.0231" longitude="454.42453"/>
+            </node>
+        </nodes>
+        <links>
+            <link id="MAN-PROV">
+                <from node="MAN"/>
+                <to node="PROV"/>
+            </link>
+            <link id="PROV-MAN">
+                <from node="PROV"/>
+                <to node="MAN"/>
+            </link>
+            <link id="NY-PROV">
+                <from node="NY"/>
+                <to node="PROV"/>
+            </link>
+            <link id="PROV-NY">
+                <from node="PROV"/>
+                <to node="NY"/>
+            </link>
+            <link id="CLE-PROV">
+                <from node="CLE"/>
+                <to node="PROV"/>
+            </link>
+            <link id="PROV-CLE">
+                <from node="PROV"/>
+                <to node="CLE"/>
+            </link>
+            <link id="ASH-NY">
+                <from node="ASH"/>
+                <to node="NY"/>
+            </link>
+            <link id="NY-ASH">
+                <from node="NY"/>
+                <to node="ASH"/>
+            </link>
+            <link id="ASH-NOVA">
+                <from node="ASH"/>
+                <to node="NOVA"/>
+            </link>
+            <link id="NOVA-ASH">
+                <from node="NOVA"/>
+                <to node="ASH"/>
+            </link>
+            <link id="NOVA-HAMP">
+                <from node="NOVA"/>
+                <to node="HAMP"/>
+            </link>
+            <link id="HAMP-NOVA">
+                <from node="HAMP"/>
+                <to node="NOVA"/>
+            </link>
+            <link id="ROA-HAMP">
+                <from node="ROA"/>
+                <to node="HAMP"/>
+            </link>
+            <link id="HAMP-ROA">
+                <from node="HAMP"/>
+                <to node="ROA"/>
+            </link>
+            <link id="ROA-ASH">
+                <from node="ROA"/>
+                <to node="ASH"/>
+            </link>
+            <link id="ASH-ROA">
+                <from node="ASH"/>
+                <to node="ROA"/>
+            </link>
+            <link id="ATL-MAC">
+                <from node="ATL"/>
+                <to node="MAC"/>
+            </link>
+            <link id="MAC-ATL">
+                <from node="MAC"/>
+                <to node="ATL"/>
+            </link>
+            <link id="ATL-GAIN">
+                <from node="ATL"/>
+                <to node="GAIN"/>
+            </link>
+            <link id="GAIN-ATL">
+                <from node="GAIN"/>
+                <to node="ATL"/>
+            </link>
+            <link id="ATL-PENS">
+                <from node="ATL"/>
+                <to node="PENS"/>
+            </link>
+            <link id="PENS-ATL">
+                <from node="PENS"/>
+                <to node="ATL"/>
+            </link>
+            <link id="ATL-NEWO">
+                <from node="ATL"/>
+                <to node="NEWO"/>
+            </link>
+            <link id="NEWO-ATL">
+                <from node="NEWO"/>
+                <to node="ATL"/>
+            </link>
+            <link id="ATL-BAT">
+                <from node="ATL"/>
+                <to node="BAT"/>
+            </link>
+            <link id="BAT-ATL">
+                <from node="BAT"/>
+                <to node="ATL"/>
+            </link>
+            <link id="ATL-DALL">
+                <from node="ATL"/>
+                <to node="DALL"/>
+            </link>
+            <link id="DALL-ATL">
+                <from node="DALL"/>
+                <to node="ATL"/>
+            </link>
+            <link id="BAT-LAF">
+                <from node="BAT"/>
+                <to node="LAF"/>
+            </link>
+            <link id="LAF-BAT">
+                <from node="LAF"/>
+                <to node="BAT"/>
+            </link>
+            <link id="BAT-NEWO">
+                <from node="BAT"/>
+                <to node="NEWO"/>
+            </link>
+            <link id="NEWO-BAT">
+                <from node="NEWO"/>
+                <to node="BAT"/>
+            </link>
+            <link id="PENS-BAT">
+                <from node="PENS"/>
+                <to node="BAT"/>
+            </link>
+            <link id="BAT-PENS">
+                <from node="BAT"/>
+                <to node="PENS"/>
+            </link>
+            <link id="BAT-GAIN">
+                <from node="BAT"/>
+                <to node="GAIN"/>
+            </link>
+            <link id="BAT-GAIN-1">
+                <from node="BAT"/>
+                <to node="GAIN"/>
+            </link>
+            <link id="MAC-BAT">
+                <from node="MAC"/>
+                <to node="BAT"/>
+            </link>
+            <link id="BAT-MAC">
+                <from node="BAT"/>
+                <to node="MAC"/>
+            </link>
+            <link id="CHI-CLE">
+                <from node="CHI"/>
+                <to node="CLE"/>
+            </link>
+            <link id="CLE-CHI">
+                <from node="CLE"/>
+                <to node="CHI"/>
+            </link>
+            <link id="CHI-OMH">
+                <from node="CHI"/>
+                <to node="OMH"/>
+            </link>
+            <link id="OMH-CHI">
+                <from node="OMH"/>
+                <to node="CHI"/>
+            </link>
+            <link id="DALL-BAT">
+                <from node="DALL"/>
+                <to node="BAT"/>
+            </link>
+            <link id="BAT-DALL">
+                <from node="BAT"/>
+                <to node="DALL"/>
+            </link>
+            <link id="DALL-ASH">
+                <from node="DALL"/>
+                <to node="ASH"/>
+            </link>
+            <link id="ASH-DALL">
+                <from node="ASH"/>
+                <to node="DALL"/>
+            </link>
+            <link id="FORT-BENT">
+                <from node="FORT"/>
+                <to node="BENT"/>
+            </link>
+            <link id="BENT-FORT">
+                <from node="BENT"/>
+                <to node="FORT"/>
+            </link>
+            <link id="KAN-BENT">
+                <from node="KAN"/>
+                <to node="BENT"/>
+            </link>
+            <link id="BENT-KAN">
+                <from node="BENT"/>
+                <to node="KAN"/>
+            </link>
+            <link id="FORT-KAN">
+                <from node="FORT"/>
+                <to node="KAN"/>
+            </link>
+            <link id="KAN-FORT">
+                <from node="KAN"/>
+                <to node="FORT"/>
+            </link>
+            <link id="TUL-KAN">
+                <from node="TUL"/>
+                <to node="KAN"/>
+            </link>
+            <link id="KAN-TUL">
+                <from node="KAN"/>
+                <to node="TUL"/>
+            </link>
+            <link id="OKL-TUL">
+                <from node="OKL"/>
+                <to node="TUL"/>
+            </link>
+            <link id="TUL-OKL">
+                <from node="TUL"/>
+                <to node="OKL"/>
+            </link>
+            <link id="OKL-KAN">
+                <from node="OKL"/>
+                <to node="KAN"/>
+            </link>
+            <link id="KAN-OKL">
+                <from node="KAN"/>
+                <to node="OKL"/>
+            </link>
+            <link id="KAN-WICH">
+                <from node="KAN"/>
+                <to node="WICH"/>
+            </link>
+            <link id="WICH-KAN">
+                <from node="WICH"/>
+                <to node="KAN"/>
+            </link>
+            <link id="FORT-DALL">
+                <from node="FORT"/>
+                <to node="DALL"/>
+            </link>
+            <link id="DALL-FORT">
+                <from node="DALL"/>
+                <to node="FORT"/>
+            </link>
+            <link id="DALL-KAN">
+                <from node="DALL"/>
+                <to node="KAN"/>
+            </link>
+            <link id="KAN-DALL">
+                <from node="KAN"/>
+                <to node="DALL"/>
+            </link>
+            <link id="OMH-KAN">
+                <from node="OMH"/>
+                <to node="KAN"/>
+            </link>
+            <link id="KAN-OMH">
+                <from node="KAN"/>
+                <to node="OMH"/>
+            </link>
+            <link id="OKL-CHI">
+                <from node="OKL"/>
+                <to node="CHI"/>
+            </link>
+            <link id="CHI-OKL">
+                <from node="CHI"/>
+                <to node="OKL"/>
+            </link>
+            <link id="CHI-KAN">
+                <from node="CHI"/>
+                <to node="KAN"/>
+            </link>
+            <link id="KAN-CHI">
+                <from node="KAN"/>
+                <to node="CHI"/>
+            </link>
+            <link id="SVALL-OMH">
+                <from node="SVALL"/>
+                <to node="OMH"/>
+            </link>
+            <link id="OMH-SVALL">
+                <from node="OMH"/>
+                <to node="SVALL"/>
+            </link>
+            <link id="PHX-TUC">
+                <from node="PHX"/>
+                <to node="TUC"/>
+            </link>
+            <link id="TUC-PHX">
+                <from node="TUC"/>
+                <to node="PHX"/>
+            </link>
+            <link id="PHX-LV">
+                <from node="PHX"/>
+                <to node="LV"/>
+            </link>
+            <link id="LV-PHX">
+                <from node="LV"/>
+                <to node="PHX"/>
+            </link>
+            <link id="PAL-LV">
+                <from node="PAL"/>
+                <to node="LV"/>
+            </link>
+            <link id="LV-PAL">
+                <from node="LV"/>
+                <to node="PAL"/>
+            </link>
+            <link id="PAL-STAB">
+                <from node="PAL"/>
+                <to node="STAB"/>
+            </link>
+            <link id="STAB-PAL">
+                <from node="STAB"/>
+                <to node="PAL"/>
+            </link>
+            <link id="STAB-ORC">
+                <from node="STAB"/>
+                <to node="ORC"/>
+            </link>
+            <link id="ORC-STAB">
+                <from node="ORC"/>
+                <to node="STAB"/>
+            </link>
+            <link id="ORC-LANG">
+                <from node="ORC"/>
+                <to node="LANG"/>
+            </link>
+            <link id="LANG-ORC">
+                <from node="LANG"/>
+                <to node="ORC"/>
+            </link>
+            <link id="LANG-PAL">
+                <from node="LANG"/>
+                <to node="PAL"/>
+            </link>
+            <link id="PAL-LANG">
+                <from node="PAL"/>
+                <to node="LANG"/>
+            </link>
+            <link id="ORC-SDIE">
+                <from node="ORC"/>
+                <to node="SDIE"/>
+            </link>
+            <link id="SDIE-ORC">
+                <from node="SDIE"/>
+                <to node="ORC"/>
+            </link>
+            <link id="SDIE-PHX">
+                <from node="SDIE"/>
+                <to node="PHX"/>
+            </link>
+            <link id="PHX-SDIE">
+                <from node="PHX"/>
+                <to node="SDIE"/>
+            </link>
+            <link id="PAL-SDIE">
+                <from node="PAL"/>
+                <to node="SDIE"/>
+            </link>
+            <link id="SDIE-PAL">
+                <from node="SDIE"/>
+                <to node="PAL"/>
+            </link>
+            <link id="PHX-LANG">
+                <from node="PHX"/>
+                <to node="LANG"/>
+            </link>
+            <link id="LANG-PHX">
+                <from node="LANG"/>
+                <to node="PHX"/>
+            </link>
+            <link id="LANG-LV">
+                <from node="LANG"/>
+                <to node="LV"/>
+            </link>
+            <link id="LV-LANG">
+                <from node="LV"/>
+                <to node="LANG"/>
+            </link>
+            <link id="LV-SDIE">
+                <from node="LV"/>
+                <to node="SDIE"/>
+            </link>
+            <link id="SDIE-LV">
+                <from node="SDIE"/>
+                <to node="LV"/>
+            </link>
+            <link id="SDIE-DALL">
+                <from node="SDIE"/>
+                <to node="DALL"/>
+            </link>
+            <link id="DALL-SDIE">
+                <from node="DALL"/>
+                <to node="SDIE"/>
+            </link>
+            <link id="SDIE-ATL">
+                <from node="SDIE"/>
+                <to node="ATL"/>
+            </link>
+            <link id="ATL-SDIE">
+                <from node="ATL"/>
+                <to node="SDIE"/>
+            </link>
+            <link id="OMH-LV">
+                <from node="OMH"/>
+                <to node="LV"/>
+            </link>
+            <link id="LV-OMH">
+                <from node="LV"/>
+                <to node="OMH"/>
+            </link>
+            <link id="LV-ASH">
+                <from node="LV"/>
+                <to node="ASH"/>
+            </link>
+            <link id="ASH-LV">
+                <from node="ASH"/>
+                <to node="LV"/>
+            </link>
+            <link id="SDIE-KAN">
+                <from node="SDIE"/>
+                <to node="KAN"/>
+            </link>
+            <link id="KAN-SDIE">
+                <from node="KAN"/>
+                <to node="SDIE"/>
+            </link>
+            <link id="CHI-PROV">
+                <from node="CHI"/>
+                <to node="PROV"/>
+            </link>
+            <link id="PROV-CHI">
+                <from node="PROV"/>
+                <to node="CHI"/>
+            </link>
+            <link id="CHI-ATL">
+                <from node="CHI"/>
+                <to node="ATL"/>
+            </link>
+            <link id="ATL-CHI">
+                <from node="ATL"/>
+                <to node="CHI"/>
+            </link>
+            <link id="OKL-PAL">
+                <from node="OKL"/>
+                <to node="PAL"/>
+            </link>
+            <link id="PAL-OKL">
+                <from node="PAL"/>
+                <to node="OKL"/>
+            </link>
+            <link id="ATL-ASH">
+                <from node="ATL"/>
+                <to node="ASH"/>
+            </link>
+            <link id="ASH-ATL">
+                <from node="ASH"/>
+                <to node="ATL"/>
+            </link>
+            <link id="ORC-ASH">
+                <from node="ORC"/>
+                <to node="ASH"/>
+            </link>
+            <link id="ASH-ORC">
+                <from node="ASH"/>
+                <to node="ORC"/>
+            </link>
+            <link id="OKL-DALL">
+                <from node="OKL"/>
+                <to node="DALL"/>
+            </link>
+            <link id="DALL-OKL">
+                <from node="DALL"/>
+                <to node="OKL"/>
+            </link>
+            <link id="DALL-PHX">
+                <from node="DALL"/>
+                <to node="PHX"/>
+            </link>
+            <link id="PHX-DALL">
+                <from node="PHX"/>
+                <to node="DALL"/>
+            </link>
+            <link id="ATL-HAMP">
+                <from node="ATL"/>
+                <to node="HAMP"/>
+            </link>
+            <link id="HAMP-ATL">
+                <from node="HAMP"/>
+                <to node="ATL"/>
+            </link>
+            <link id="PROV-ASH">
+                <from node="PROV"/>
+                <to node="ASH"/>
+            </link>
+            <link id="ASH-PROV">
+                <from node="ASH"/>
+                <to node="PROV"/>
+            </link>
+        </links>
+    </topology>
+    <igp>
+        <links>
+            <link id="MAN-PROV">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="PROV-MAN">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="NY-PROV">
+                <static>
+                    <metric>2.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="PROV-NY">
+                <static>
+                    <metric>2.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="CLE-PROV">
+                <static>
+                    <metric>5.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="PROV-CLE">
+                <static>
+                    <metric>5.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="ASH-NY">
+                <static>
+                    <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="NY-ASH">
+                <static>
+                    <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="ASH-NOVA">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="NOVA-ASH">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="NOVA-HAMP">
+                <static>
+                    <metric>2.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="HAMP-NOVA">
+                <static>
+                    <metric>2.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="ROA-HAMP">
+                <static>
+                    <metric>2.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="HAMP-ROA">
+                <static>
+                    <metric>2.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="ROA-ASH">
+                <static>
+                    <metric>2.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="ASH-ROA">
+                <static>
+                    <metric>2.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="ATL-MAC">
+                <static>
+                    <metric>2.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="MAC-ATL">
+                <static>
+                    <metric>2.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="ATL-GAIN">
+                <static>
+                    <metric>4.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="GAIN-ATL">
+                <static>
+                    <metric>4.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="ATL-PENS">
+                <static>
+                    <metric>4.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="PENS-ATL">
+                <static>
+                    <metric>4.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="ATL-NEWO">
+                <static>
+                    <metric>6.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="NEWO-ATL">
+                <static>
+                    <metric>6.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="ATL-BAT">
+                <static>
+                    <metric>7.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="BAT-ATL">
+                <static>
+                    <metric>7.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="ATL-DALL">
+                <static>
+                    <metric>12.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="DALL-ATL">
+                <static>
+                    <metric>12.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="BAT-LAF">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="LAF-BAT">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="BAT-NEWO">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="NEWO-BAT">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="PENS-BAT">
+                <static>
+                    <metric>5.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="BAT-PENS">
+                <static>
+                    <metric>5.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="BAT-GAIN">
+                <static>
+                    <metric>8.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="BAT-GAIN-1">
+                <static>
+                    <metric>8.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="MAC-BAT">
+                <static>
+                    <metric>10.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="BAT-MAC">
+                <static>
+                    <metric>10.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="CHI-CLE">
+                <static>
+                    <metric>5.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="CLE-CHI">
+                <static>
+                    <metric>5.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="CHI-OMH">
+                <static>
+                    <metric>7.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="OMH-CHI">
+                <static>
+                    <metric>7.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="DALL-BAT">
+                <static>
+                    <metric>5.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="BAT-DALL">
+                <static>
+                    <metric>5.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="DALL-ASH">
+                <static>
+                    <metric>18.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="ASH-DALL">
+                <static>
+                    <metric>18.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="FORT-BENT">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="BENT-FORT">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="KAN-BENT">
+                <static>
+                    <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="BENT-KAN">
+                <static>
+                    <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="FORT-KAN">
+                <static>
+                    <metric>4.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="KAN-FORT">
+                <static>
+                    <metric>4.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="TUL-KAN">
+                <static>
+                    <metric>2.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="KAN-TUL">
+                <static>
+                    <metric>2.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="OKL-TUL">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="TUL-OKL">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="OKL-KAN">
+                <static>
+                    <metric>4.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="KAN-OKL">
+                <static>
+                    <metric>4.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="KAN-WICH">
+                <static>
+                    <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="WICH-KAN">
+                <static>
+                    <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="FORT-DALL">
+                <static>
+                    <metric>4.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="DALL-FORT">
+                <static>
+                    <metric>4.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="DALL-KAN">
+                <static>
+                    <metric>9.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="KAN-DALL">
+                <static>
+                    <metric>9.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="OMH-KAN">
+                <static>
+                    <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="KAN-OMH">
+                <static>
+                    <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="OKL-CHI">
+                <static>
+                    <metric>12.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="CHI-OKL">
+                <static>
+                    <metric>12.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="CHI-KAN">
+                <static>
+                    <metric>7.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="KAN-CHI">
+                <static>
+                    <metric>7.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="SVALL-OMH">
+                <static>
+                    <metric>10.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="OMH-SVALL">
+                <static>
+                    <metric>10.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="PHX-TUC">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="TUC-PHX">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="PHX-LV">
+                <static>
+                    <metric>4.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="LV-PHX">
+                <static>
+                    <metric>4.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="PAL-LV">
+                <static>
+                    <metric>4.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="LV-PAL">
+                <static>
+                    <metric>4.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="PAL-STAB">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="STAB-PAL">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="STAB-ORC">
+                <static>
+                    <metric>2.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="ORC-STAB">
+                <static>
+                    <metric>2.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="ORC-LANG">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="LANG-ORC">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="LANG-PAL">
+                <static>
+                    <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="PAL-LANG">
+                <static>
+                    <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="ORC-SDIE">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="SDIE-ORC">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="SDIE-PHX">
+                <static>
+                    <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="PHX-SDIE">
+                <static>
+                    <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="PAL-SDIE">
+                <static>
+                    <metric>8.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="SDIE-PAL">
+                <static>
+                    <metric>8.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="PHX-LANG">
+                <static>
+                    <metric>5.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="LANG-PHX">
+                <static>
+                    <metric>5.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="LANG-LV">
+                <static>
+                    <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="LV-LANG">
+                <static>
+                    <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="LV-SDIE">
+                <static>
+                    <metric>4.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="SDIE-LV">
+                <static>
+                    <metric>4.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="SDIE-DALL">
+                <static>
+                    <metric>10.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="DALL-SDIE">
+                <static>
+                    <metric>10.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="SDIE-ATL">
+                <static>
+                    <metric>26.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="ATL-SDIE">
+                <static>
+                    <metric>26.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="OMH-LV">
+                <static>
+                    <metric>16.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="LV-OMH">
+                <static>
+                    <metric>16.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="LV-ASH">
+                <static>
+                    <metric>35.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="ASH-LV">
+                <static>
+                    <metric>35.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="SDIE-KAN">
+                <static>
+                    <metric>26.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="KAN-SDIE">
+                <static>
+                    <metric>26.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="CHI-PROV">
+                <static>
+                    <metric>15.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="PROV-CHI">
+                <static>
+                    <metric>15.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="CHI-ATL">
+                <static>
+                    <metric>12.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="ATL-CHI">
+                <static>
+                    <metric>12.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="OKL-PAL">
+                <static>
+                    <metric>24.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="PAL-OKL">
+                <static>
+                    <metric>24.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="ATL-ASH">
+                <static>
+                    <metric>8.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="ASH-ATL">
+                <static>
+                    <metric>8.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="ORC-ASH">
+                <static>
+                    <metric>32.0</metric>
+                </static>
+            </link>
+            <link id="ASH-ORC">
+                <static>
+                    <metric>32.0</metric>
+                </static>
+            </link>
+            <link id="OKL-DALL">
+                <static>
+                    <metric>3.0</metric>
+                </static>
+            </link>
+            <link id="DALL-OKL">
+                <static>
+                    <metric>3.0</metric>
+                </static>
+            </link>
+            <link id="DALL-PHX">
+                <static>
+                    <metric>7.0</metric>
+                </static>
+            </link>
+            <link id="PHX-DALL">
+                <static>
+                    <metric>7.0</metric>
+                </static>
+            </link>
+            <link id="ATL-HAMP">
+                <static>
+                    <metric>6.0</metric>
+                </static>
+            </link>
+            <link id="HAMP-ATL">
+                <static>
+                    <metric>6.0</metric>
+                </static>
+            </link>
+            <link id="PROV-ASH">
+                <static>
+                    <metric>5.0</metric>
+                </static>
+            </link>
+            <link id="ASH-PROV">
+                <static>
+                    <metric>5.0</metric>
+                </static>
+            </link>
+        </links>
+    </igp>
+</domain>
+
