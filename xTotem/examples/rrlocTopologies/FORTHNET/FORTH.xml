@@ -18,32 +18,32 @@
             <node id="SERR">
                 <rid>1.0.0.1</rid>
                 <type>CORE</type>
-                <location latitude="-84.072975" longitude="25.952665"/>
+                <location latitude="-84.072975" longitude="25.952663"/>
             </node>
             <node id="KAV">
                 <rid>1.0.0.2</rid>
                 <type>CORE</type>
-                <location latitude="-70.30079" longitude="55.13659"/>
+                <location latitude="-70.30079" longitude="55.136593"/>
             </node>
             <node id="KOM">
                 <rid>1.0.0.3</rid>
                 <type>CORE</type>
-                <location latitude="-85.38461" longitude="78.09024"/>
+                <location latitude="-85.38461" longitude="78.09025"/>
             </node>
             <node id="ALEX">
                 <rid>1.0.0.4</rid>
                 <type>CORE</type>
-                <location latitude="-79.154335" longitude="98.74852"/>
+                <location latitude="-79.154335" longitude="98.74853"/>
             </node>
             <node id="THESS">
                 <rid>1.0.0.5</rid>
                 <type>EDGE</type>
-                <location latitude="-55.87278" longitude="22.673574"/>
+                <location latitude="-55.87278" longitude="22.673573"/>
             </node>
             <node id="LAR">
                 <rid>1.0.0.6</rid>
                 <type>CORE</type>
-                <location latitude="-26.765282" longitude="12.828897"/>
+                <location latitude="-26.765282" longitude="12.828895"/>
             </node>
             <node id="IOA">
                 <rid>1.0.0.7</rid>
@@ -53,22 +53,22 @@
             <node id="PAT">
                 <rid>1.0.0.8</rid>
                 <type>CORE</type>
-                <location latitude="14.418147" longitude="-20.98274"/>
+                <location latitude="14.418145" longitude="-20.98274"/>
             </node>
             <node id="TRIP">
                 <rid>1.0.0.9</rid>
                 <type>CORE</type>
-                <location latitude="36.457096" longitude="-1.1380645"/>
+                <location latitude="36.457096" longitude="-1.1380632"/>
             </node>
             <node id="ATH">
                 <rid>1.0.0.10</rid>
                 <type>EDGE</type>
-                <location latitude="4.134616" longitude="46.28304"/>
+                <location latitude="4.1346154" longitude="46.28304"/>
             </node>
             <node id="CHAL">
                 <rid>1.0.0.11</rid>
                 <type>CORE</type>
-                <location latitude="-13.572487" longitude="46.93885"/>
+                <location latitude="-13.572489" longitude="46.938847"/>
             </node>
             <node id="PHO">
                 <rid>1.0.0.12</rid>
@@ -78,7 +78,7 @@
             <node id="CHAN">
                 <rid>1.0.0.13</rid>
                 <type>CORE</type>
-                <location latitude="85.38461" longitude="39.086292"/>
+                <location latitude="85.38461" longitude="39.0863"/>
             </node>
             <node id="HERA">
                 <rid>1.0.0.14</rid>
@@ -88,12 +88,12 @@
             <node id="AGNIK">
                 <rid>1.0.0.15</rid>
                 <type>CORE</type>
-                <location latitude="83.745056" longitude="96.14251"/>
+                <location latitude="83.745056" longitude="96.1425"/>
             </node>
             <node id="DRA">
                 <rid>1.0.0.16</rid>
                 <type>CORE</type>
-                <location latitude="-84.61538" longitude="46.051285"/>
+                <location latitude="-84.61538" longitude="46.05129"/>
             </node>
             <node id="XAN">
                 <rid>1.0.0.17</rid>
@@ -103,17 +103,17 @@
             <node id="POLY">
                 <rid>1.0.0.18</rid>
                 <type>CORE</type>
-                <location latitude="-44.615383" longitude="57.205128"/>
+                <location latitude="-44.615383" longitude="57.20513"/>
             </node>
             <node id="KIL">
                 <rid>1.0.0.19</rid>
                 <type>CORE</type>
-                <location latitude="-76.92307" longitude="8.743591"/>
+                <location latitude="-76.92307" longitude="8.743592"/>
             </node>
             <node id="EDE">
                 <rid>1.0.0.20</rid>
                 <type>CORE</type>
-                <location latitude="-67.69231" longitude="-2.025639"/>
+                <location latitude="-67.69231" longitude="-2.0256405"/>
             </node>
             <node id="FLOR">
                 <rid>1.0.0.21</rid>
@@ -123,17 +123,17 @@
             <node id="VER">
                 <rid>1.0.0.22</rid>
                 <type>CORE</type>
-                <location latitude="-53.461536" longitude="3.7435918"/>
+                <location latitude="-53.461536" longitude="3.743589"/>
             </node>
             <node id="KOZ">
                 <rid>1.0.0.23</rid>
                 <type>CORE</type>
-                <location latitude="-41.923077" longitude="-6.6410236"/>
+                <location latitude="-41.923077" longitude="-6.6410213"/>
             </node>
             <node id="KAT">
                 <rid>1.0.0.24</rid>
                 <type>CORE</type>
-                <location latitude="-44.615383" longitude="14.128207"/>
+                <location latitude="-44.615383" longitude="14.128205"/>
             </node>
             <node id="KAS">
                 <rid>1.0.0.25</rid>
@@ -143,17 +143,17 @@
             <node id="GREV">
                 <rid>1.0.0.26</rid>
                 <type>CORE</type>
-                <location latitude="-45.76923" longitude="-24.717947"/>
+                <location latitude="-45.76923" longitude="-24.717949"/>
             </node>
             <node id="COR">
                 <rid>1.0.0.27</rid>
                 <type>CORE</type>
-                <location latitude="-32.692307" longitude="-69.71794"/>
+                <location latitude="-32.692303" longitude="-69.71794"/>
             </node>
             <node id="IGO">
                 <rid>1.0.0.28</rid>
                 <type>CORE</type>
-                <location latitude="-16.923077" longitude="-62.41025"/>
+                <location latitude="-16.923073" longitude="-62.41025"/>
             </node>
             <node id="PREV">
                 <rid>1.0.0.29</rid>
@@ -163,47 +163,47 @@
             <node id="ART">
                 <rid>1.0.0.30</rid>
                 <type>CORE</type>
-                <location latitude="-13.461537" longitude="-23.5641"/>
+                <location latitude="-13.4615345" longitude="-23.5641"/>
             </node>
             <node id="TRI">
                 <rid>1.0.0.31</rid>
                 <type>CORE</type>
-                <location latitude="-23.461538" longitude="-5.871793"/>
+                <location latitude="-23.461535" longitude="-5.8717957"/>
             </node>
             <node id="KAR">
                 <rid>1.0.0.32</rid>
                 <type>CORE</type>
-                <location latitude="-15.76923" longitude="9.897438"/>
+                <location latitude="-15.769232" longitude="9.897441"/>
             </node>
             <node id="KARP">
                 <rid>1.0.0.33</rid>
                 <type>CORE</type>
-                <location latitude="-9.615384" longitude="-6.256408"/>
+                <location latitude="-9.615386" longitude="-6.2564054"/>
             </node>
             <node id="VOL">
                 <rid>1.0.0.34</rid>
                 <type>CORE</type>
-                <location latitude="-17.692307" longitude="31.435898"/>
+                <location latitude="-17.692307" longitude="31.4359"/>
             </node>
             <node id="AGR">
                 <rid>1.0.0.35</rid>
                 <type>CORE</type>
-                <location latitude="4.706779E-7" longitude="-27.025639"/>
+                <location latitude="-1.4893573E-6" longitude="-27.025639"/>
             </node>
             <node id="LEF">
                 <rid>1.0.0.36</rid>
                 <type>CORE</type>
-                <location latitude="7.692308" longitude="-54.33333"/>
+                <location latitude="7.6923084" longitude="-54.33333"/>
             </node>
             <node id="MES">
                 <rid>1.0.0.37</rid>
                 <type>CORE</type>
-                <location latitude="9.615385" longitude="-33.948715"/>
+                <location latitude="9.615383" longitude="-33.948715"/>
             </node>
             <node id="ARG">
                 <rid>1.0.0.38</rid>
                 <type>CORE</type>
-                <location latitude="20.76923" longitude="-42.02564"/>
+                <location latitude="20.769226" longitude="-42.02564"/>
             </node>
             <node id="ZAK">
                 <rid>1.0.0.39</rid>
@@ -213,97 +213,97 @@
             <node id="PYR">
                 <rid>1.0.0.40</rid>
                 <type>CORE</type>
-                <location latitude="36.923077" longitude="-22.410254"/>
+                <location latitude="36.923077" longitude="-22.410255"/>
             </node>
             <node id="ARGO">
                 <rid>1.0.0.41</rid>
                 <type>CORE</type>
-                <location latitude="36.923077" longitude="26.820515"/>
+                <location latitude="36.923077" longitude="26.820513"/>
             </node>
             <node id="SPA">
                 <rid>1.0.0.42</rid>
                 <type>CORE</type>
-                <location latitude="58.076923" longitude="10.666669"/>
+                <location latitude="58.076927" longitude="10.666667"/>
             </node>
             <node id="KAL">
                 <rid>1.0.0.43</rid>
                 <type>CORE</type>
-                <location latitude="51.53846" longitude="-11.256408"/>
+                <location latitude="51.538467" longitude="-11.256409"/>
             </node>
             <node id="LESB">
                 <rid>1.0.0.44</rid>
                 <type>CORE</type>
-                <location latitude="-25.384615" longitude="106.4359"/>
+                <location latitude="-25.384617" longitude="106.4359"/>
             </node>
             <node id="CHI">
                 <rid>1.0.0.45</rid>
                 <type>CORE</type>
-                <location latitude="-0.3846149" longitude="103.74359"/>
+                <location latitude="-0.38461763" longitude="103.74359"/>
             </node>
             <node id="SAM">
                 <rid>1.0.0.46</rid>
                 <type>CORE</type>
-                <location latitude="21.538462" longitude="119.128204"/>
+                <location latitude="21.538458" longitude="119.128204"/>
             </node>
             <node id="MYK">
                 <rid>1.0.0.47</rid>
                 <type>CORE</type>
-                <location latitude="26.153847" longitude="77.589745"/>
+                <location latitude="26.153852" longitude="77.589745"/>
             </node>
             <node id="SYR">
                 <rid>1.0.0.48</rid>
                 <type>CORE</type>
-                <location latitude="25.384615" longitude="64.128204"/>
+                <location latitude="25.384619" longitude="64.12821"/>
             </node>
             <node id="SAN">
                 <rid>1.0.0.49</rid>
                 <type>CORE</type>
-                <location latitude="57.30769" longitude="77.97436"/>
+                <location latitude="57.307693" longitude="77.97435"/>
             </node>
             <node id="CORI">
                 <rid>1.0.0.50</rid>
                 <type>CORE</type>
-                <location latitude="14.230769" longitude="19.128206"/>
+                <location latitude="14.23077" longitude="19.12821"/>
             </node>
             <node id="ITE">
                 <rid>1.0.0.51</rid>
                 <type>CORE</type>
-                <location latitude="5.7692313" longitude="-7.7948694"/>
+                <location latitude="5.769234" longitude="-7.79487"/>
             </node>
             <node id="LIV">
                 <rid>1.0.0.52</rid>
                 <type>CORE</type>
-                <location latitude="-1.9230764" longitude="22.589745"/>
+                <location latitude="-1.9230758" longitude="22.589743"/>
             </node>
             <node id="LAM">
                 <rid>1.0.0.53</rid>
                 <type>CORE</type>
-                <location latitude="-11.153846" longitude="18.358976"/>
+                <location latitude="-11.153844" longitude="18.358976"/>
             </node>
             <node id="INO">
                 <rid>1.0.0.54</rid>
                 <type>CORE</type>
-                <location latitude="-10.76923" longitude="34.12821"/>
+                <location latitude="-10.769228" longitude="34.128212"/>
             </node>
             <node id="SKI">
                 <rid>1.0.0.55</rid>
                 <type>CORE</type>
-                <location latitude="-30.76923" longitude="51.435898"/>
+                <location latitude="-30.76923" longitude="51.4359"/>
             </node>
             <node id="MOI">
                 <rid>1.0.0.56</rid>
                 <type>CORE</type>
-                <location latitude="96.15385" longitude="59.51282"/>
+                <location latitude="96.15385" longitude="59.512814"/>
             </node>
             <node id="RETH">
                 <rid>1.0.0.57</rid>
                 <type>CORE</type>
-                <location latitude="93.07692" longitude="45.28205"/>
+                <location latitude="93.07692" longitude="45.282055"/>
             </node>
             <node id="IER">
                 <rid>1.0.0.58</rid>
                 <type>CORE</type>
-                <location latitude="95.0" longitude="90.28205"/>
+                <location latitude="95.0" longitude="90.28206"/>
             </node>
             <node id="SIT">
                 <rid>1.0.0.59</rid>
@@ -313,7 +313,7 @@
             <node id="HERS">
                 <rid>1.0.0.60</rid>
                 <type>CORE</type>
-                <location latitude="77.30769" longitude="77.97436"/>
+                <location latitude="77.30769" longitude="77.97435"/>
             </node>
         </nodes>
         <links>
@@ -1272,452 +1272,1532 @@
             <link id="KAV-DRA">
                 <static>
                     <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="DRA-KAV">
                 <static>
                     <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="KAV-XAN">
                 <static>
                     <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="XAN-KAV">
                 <static>
                     <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="THESS-KIL">
                 <static>
                     <metric>2.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="KIL-THESS">
                 <static>
                     <metric>2.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="THESS-EDE">
                 <static>
                     <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="EDE-THESS">
                 <static>
                     <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="THESS-FLOR">
                 <static>
                     <metric>5.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="FLOR-THESS">
                 <static>
                     <metric>5.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="THESS-VER">
                 <static>
                     <metric>2.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="VER-THESS">
                 <static>
                     <metric>2.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="THESS-KOZ">
                 <static>
                     <metric>4.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="KOZ-THESS">
                 <static>
                     <metric>4.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="THESS-KAT">
                 <static>
                     <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="KAT-THESS">
                 <static>
                     <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="IOA-KAS">
                 <static>
                     <metric>4.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="KAS-IOA">
                 <static>
                     <metric>4.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="IOA-GREV">
                 <static>
                     <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="GREV-IOA">
                 <static>
                     <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="IOA-COR">
                 <static>
                     <metric>2.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="COR-IOA">
                 <static>
                     <metric>2.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="IOA-IGO">
                 <static>
                     <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="IGO-IOA">
                 <static>
                     <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="IOA-PREV">
                 <static>
                     <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="PREV-IOA">
                 <static>
                     <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="IOA-ART">
                 <static>
                     <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="ART-IOA">
                 <static>
                     <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="TRI-LAR">
                 <static>
                     <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="LAR-TRI">
                 <static>
                     <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="LAR-KAR">
                 <static>
                     <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="KAR-LAR">
                 <static>
                     <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="LAR-VOL">
                 <static>
                     <metric>2.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="VOL-LAR">
                 <static>
                     <metric>2.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="LAR-KARP">
                 <static>
                     <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="KARP-LAR">
                 <static>
                     <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="PAT-MES">
                 <static>
                     <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="MES-PAT">
                 <static>
                     <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="PAT-AGR">
                 <static>
                     <metric>2.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="AGR-PAT">
                 <static>
                     <metric>2.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="PAT-LEF">
                 <static>
                     <metric>4.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="LEF-PAT">
                 <static>
                     <metric>4.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="PAT-ARG">
                 <static>
                     <metric>4.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="ARG-PAT">
                 <static>
                     <metric>4.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="PAT-ZAK">
                 <static>
                     <metric>4.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="ZAK-PAT">
                 <static>
                     <metric>4.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="PAT-PYR">
                 <static>
                     <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="PYR-PAT">
                 <static>
                     <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="TRIP-KAL">
                 <static>
                     <metric>2.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="KAL-TRIP">
                 <static>
                     <metric>2.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="TRIP-ARGO">
                 <static>
                     <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="ARGO-TRIP">
                 <static>
                     <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="TRIP-SPA">
                 <static>
                     <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="SPA-TRIP">
                 <static>
                     <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="THESS-POLY">
                 <static>
                     <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="POLY-THESS">
                 <static>
                     <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="CHAL-SKI">
                 <static>
                     <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="SKI-CHAL">
                 <static>
                     <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="ATH-INO">
                 <static>
                     <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="INO-ATH">
                 <static>
                     <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="ATH-LAM">
                 <static>
                     <metric>5.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="LAM-ATH">
                 <static>
                     <metric>5.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="ATH-LIV">
                 <static>
                     <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="LIV-ATH">
                 <static>
                     <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="ATH-ITE">
                 <static>
                     <metric>5.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="ITE-ATH">
                 <static>
                     <metric>5.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="ATH-CORI">
                 <static>
                     <metric>2.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="CORI-ATH">
                 <static>
                     <metric>2.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="ATH-LESB">
                 <static>
                     <metric>9.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="LESB-ATH">
                 <static>
                     <metric>9.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="ATH-CHI">
                 <static>
                     <metric>7.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="CHI-ATH">
                 <static>
                     <metric>7.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="ATH-SAM">
                 <static>
                     <metric>10.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="SAM-ATH">
                 <static>
                     <metric>10.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="ATH-MYK">
                 <static>
                     <metric>6.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="MYK-ATH">
                 <static>
                     <metric>6.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="ATH-SYR">
                 <static>
                     <metric>4.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="SYR-ATH">
                 <static>
                     <metric>4.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="ATH-SAN">
                 <static>
                     <metric>8.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="SAN-ATH">
                 <static>
                     <metric>8.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="HERA-RETH">
                 <static>
                     <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="RETH-HERA">
                 <static>
                     <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="HERA-MOI">
                 <static>
                     <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="MOI-HERA">
                 <static>
                     <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="HERA-HERS">
                 <static>
                     <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="HERS-HERA">
                 <static>
                     <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="AGNIK-IER">
                 <static>
                     <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="IER-AGNIK">
                 <static>
                     <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="AGNIK-SIT">
                 <static>
                     <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
             <link id="SIT-AGNIK">
                 <static>
                     <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
                 </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
             </link>
         </links>
     </igp>
