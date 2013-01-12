@@ -35,7 +35,8 @@ public class BGPSepAlgorithm implements RRLocAlgorithm {
 
 		}
 		else if (IGPTopology.getVertexCount() > 2) {
-			GraphSeparator graphSeparator = Separator.GraphPartitionAE(20, IGPTopology ,50, 200, 350, 0.01, 0.1);
+			//GraphSeparator graphSeparator = Separator.GraphPartitionAE(20, IGPTopology ,50, 200, 350, 0.01, 0.1);
+			GraphSeparator graphSeparator = Separator.GRASPBisection(IGPTopology, 25000, 0.05, 0.02);
 			
 			//El conjunto de routes reflectors estara configurado Full Mesh
 			Set<Node> aux_set = new HashSet<Node>(graphSeparator.getSeparator());

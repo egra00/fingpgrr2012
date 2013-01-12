@@ -12,6 +12,8 @@ import java.util.Set;
 import org.ejml.alg.dense.decomposition.SingularMatrixException;
 import org.ejml.simple.SimpleMatrix;
 
+import uy.edu.fing.repository.rrloc.tools.graph.separator.bisection.Bisection_GRASP;
+import uy.edu.fing.repository.rrloc.tools.graph.separator.bisection.Bisector;
 import uy.edu.fing.repository.rrloc.tools.graph.separator.model.GraphSeparator;
 import agape.algos.Separators;
 import agape.tools.Components;
@@ -56,6 +58,88 @@ public class Separator {
 	///////////////////////////////////////////////////FIN: Minimal AB-separator //////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
+	
+	
+	
+	
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	//////////////////////////////////////////////////// Approach GRASP (GA) //////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	static public GraphSeparator GRASPBisection(Graph<Node, Link> G, int max_iter, double alfa, double beta) {
+		GraphSeparator best_solution;
+
+		if (G.getEdgeCount() < (G.getVertexCount() * (G.getVertexCount() - 1)) / 2) 
+		{
+			int _G[][] = new int[G.getVertexCount()][G.getVertexCount()];
+			
+			int m=0;
+			int j=0;
+			
+			for(Node u : G.getVertices())
+			{
+				j=0;
+				for(Node v : G.getVertices())
+				{
+					if (G.findEdge(u, v)!=null) 
+						_G[m][j] = 1;
+					else
+						_G[m][j] = 0;
+					j++;
+				}
+				m++;
+			}
+				
+			Bisection_GRASP bisection = new Bisection_GRASP();
+			Bisector bisector = bisection.run(_G, G.getVertexCount(), max_iter, alfa , beta);
+			
+			//Creo separador de grafo
+			best_solution = new GraphSeparator();
+			
+			// Set separator
+			Set<Node> set =  new HashSet<Node>();
+			int i = 0;
+			
+			for(Node n : G.getVertices())
+			{
+				if (bisector.getS().contains(i)) set.add(n);
+				i++;
+			}
+			
+			best_solution.setSeparator(set);
+			best_solution.setComponents(new ArrayList<Graph<Node, Link>>());
+			
+			// Components
+			Graph<Node, Link> aux = Operations.copyUndirectedSparseGraph(G);
+			Operations.removeAllVertices(aux, set);
+			for (Set<Node> iter : Components.getAllConnectedComponent(aux)) {
+				Graph<Node, Link> component = new UndirectedSparseGraph<Node, Link>();
+				Operations.subGraph(aux, component, iter);
+				best_solution.getComponents().add(component);
+			}			
+		} 
+		else // El grafo fisico esta en full mesh ... no existe un grafo separador ... invento una solucion.
+		{
+			// Creo separador de grafo
+			best_solution = new GraphSeparator();
+
+			// Set separator
+			Set<Node> set = new HashSet<Node>();
+
+			for (Node n : G.getVertices()) {
+				set.add(n);
+			}
+
+			best_solution.setSeparator(set);
+			best_solution.setComponents(new ArrayList<Graph<Node, Link>>());
+		}
+		
+		return best_solution;
+	}
+
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////FIN: Approach GRASP (GA) /////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 	
 	
 	
