@@ -18,7 +18,7 @@ public class Bisection_GRASP
 		
 		for(int i=0; i<MaxIter; i++)
 		{
-			System.out.println("ITERACION "+ i+"..");
+			//System.out.println("ITERACION "+ i+"..");
 			Bisector current_solution = Construct_Greedy_Randomized_Solution(G, Size, ran0, ran1);
 			current_solution = Local_Search(G, Size, ran2, ran3, current_solution);
 			if (current_solution.isBetter(alfa, beta, best_solution))
