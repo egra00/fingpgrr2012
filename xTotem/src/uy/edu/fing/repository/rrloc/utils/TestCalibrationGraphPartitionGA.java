@@ -29,7 +29,7 @@ public class TestCalibrationGraphPartitionGA
 	// (int nb_run, Graph<Node,Link> G, int NGen, int sizeP, int sizeOf, double pmut, double pcross)
 	// (20, IGPTopology ,50, 200, 350, 0.01, 0.1)
 	
-	static public int MAX_TEST = 2;
+	static public int MAX_TEST = 30;
 	
 	static public int MIN_SIZEP = 100;
 	static public int MAX_SIZEP = 200;
