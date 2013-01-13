@@ -1,0 +1,651 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<domain ASID="8654" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://totem.run.montefiore.ulg.ac.be/Schema/Domain-v1_0.xsd">
+  <info>
+    <title>test15</title>
+    <description>This file was modified by Emiliano Saenz</description>
+    <units>
+         <unit type="bandwidth" value="mbps"/>
+         <unit type="delay" value="ms"/>
+    </units>
+  </info>
+  <topology>
+    <nodes>
+      <node id="0">
+        <rid>0</rid>
+        <description>0</description>
+        <location latitude="47.864227217016" longitude="-76.6573361098988"/>
+      </node>
+      <node id="1">
+        <rid>1</rid>
+        <description>1</description>
+        <location latitude="47.467650115609" longitude="117.028482857928"/>
+      </node>
+      <node id="10">
+        <rid>10</rid>
+        <description>10</description>
+        <location latitude="11.2619090534196" longitude="-19.8603335101289"/>
+      </node>
+      <node id="11">
+        <rid>11</rid>
+        <description>11</description>
+        <location latitude="1.23734008512329" longitude="127.933858882072"/>
+      </node>
+      <node id="12">
+        <rid>12</rid>
+        <description>12</description>
+        <location latitude="-48.0962443147078" longitude="38.0728664405724"/>
+      </node>
+      <node id="13">
+        <rid>13</rid>
+        <description>13</description>
+        <location latitude="-83.6352373737539" longitude="32.1704562437706"/>
+      </node>
+      <node id="14">
+        <rid>14</rid>
+        <description>14</description>
+        <location latitude="43.1208483188141" longitude="-149.383065604079"/>
+      </node>
+      <node id="15">
+        <rid>15</rid>
+        <description>15</description>
+        <location latitude="76.1613732363203" longitude="-3.14453410842546"/>
+      </node>
+      <node id="16">
+        <rid>16</rid>
+        <description>16</description>
+        <location latitude="84.5762851343753" longitude="-118.815818686145"/>
+      </node>
+      <node id="17">
+        <rid>17</rid>
+        <description>17</description>
+        <location latitude="42.0994659654546" longitude="80.1356644600138"/>
+      </node>
+      <node id="18">
+        <rid>18</rid>
+        <description>18</description>
+        <location latitude="56.1231322792372" longitude="-168.0991700829"/>
+      </node>
+      <node id="19">
+        <rid>19</rid>
+        <description>19</description>
+        <location latitude="-32.5884279553814" longitude="-155.905013565203"/>
+      </node>
+      <node id="2">
+        <rid>2</rid>
+        <description>2</description>
+        <location latitude="54.0867696759136" longitude="-98.292191994468"/>
+      </node>
+      <node id="20">
+        <rid>20</rid>
+        <description>20</description>
+        <location latitude="-35.5648828867882" longitude="157.960768505786"/>
+      </node>
+      <node id="21">
+        <rid>21</rid>
+        <description>21</description>
+        <location latitude="-71.0573528794494" longitude="-19.4446902385995"/>
+      </node>
+      <node id="22">
+        <rid>22</rid>
+        <description>22</description>
+        <location latitude="79.8277967393938" longitude="-63.3589271511458"/>
+      </node>
+      <node id="23">
+        <rid>23</rid>
+        <description>23</description>
+        <location latitude="83.4938931575864" longitude="99.2391714663613"/>
+      </node>
+      <node id="24">
+        <rid>24</rid>
+        <description>24</description>
+        <location latitude="-14.8388861240844" longitude="-30.3889880711806"/>
+      </node>
+      <node id="25">
+        <rid>25</rid>
+        <description>25</description>
+        <location latitude="-22.0611558355735" longitude="-108.183047569934"/>
+      </node>
+      <node id="26">
+        <rid>26</rid>
+        <description>26</description>
+        <location latitude="-40.2999538079229" longitude="176.101342425726"/>
+      </node>
+      <node id="27">
+        <rid>27</rid>
+        <description>27</description>
+        <location latitude="9.53353447905911" longitude="107.373552139285"/>
+      </node>
+      <node id="28">
+        <rid>28</rid>
+        <description>28</description>
+        <location latitude="52.0802731277089" longitude="117.764399218756"/>
+      </node>
+      <node id="29">
+        <rid>29</rid>
+        <description>29</description>
+        <location latitude="7.97325987337373" longitude="172.5964504684"/>
+      </node>
+      <node id="3">
+        <rid>3</rid>
+        <description>3</description>
+        <location latitude="-68.076933438192" longitude="78.1420716124733"/>
+      </node>
+      <node id="30">
+        <rid>30</rid>
+        <description>30</description>
+        <location latitude="-0.181292811736284" longitude="-175.219382642249"/>
+      </node>
+      <node id="31">
+        <rid>31</rid>
+        <description>31</description>
+        <location latitude="6.38816647044635" longitude="142.453636790226"/>
+      </node>
+      <node id="32">
+        <rid>32</rid>
+        <description>32</description>
+        <location latitude="12.6751460098845" longitude="36.2114874120046"/>
+      </node>
+      <node id="33">
+        <rid>33</rid>
+        <description>33</description>
+        <location latitude="-87.5493083479525" longitude="-133.633510499452"/>
+      </node>
+      <node id="34">
+        <rid>34</rid>
+        <description>34</description>
+        <location latitude="5.97447836858407" longitude="-26.8546366600081"/>
+      </node>
+      <node id="35">
+        <rid>35</rid>
+        <description>35</description>
+        <location latitude="-28.7657339783799" longitude="-123.915376145097"/>
+      </node>
+      <node id="36">
+        <rid>36</rid>
+        <description>36</description>
+        <location latitude="32.9146030156764" longitude="-173.661177458699"/>
+      </node>
+      <node id="37">
+        <rid>37</rid>
+        <description>37</description>
+        <location latitude="-78.1283026712067" longitude="52.9573053619082"/>
+      </node>
+      <node id="38">
+        <rid>38</rid>
+        <description>38</description>
+        <location latitude="-35.0982249922663" longitude="-145.544765949155"/>
+      </node>
+      <node id="39">
+        <rid>39</rid>
+        <description>39</description>
+        <location latitude="-5.81717269455496" longitude="85.5145623543153"/>
+      </node>
+      <node id="4">
+        <rid>4</rid>
+        <description>4</description>
+        <location latitude="-33.9087163404454" longitude="-16.029345642492"/>
+      </node>
+      <node id="40">
+        <rid>40</rid>
+        <description>40</description>
+        <location latitude="-88.1267386863985" longitude="-163.59836458449"/>
+      </node>
+      <node id="41">
+        <rid>41</rid>
+        <description>41</description>
+        <location latitude="-71.6435881396036" longitude="-152.209062732765"/>
+      </node>
+      <node id="42">
+        <rid>42</rid>
+        <description>42</description>
+        <location latitude="-65.9997528266143" longitude="141.547764154742"/>
+      </node>
+      <node id="43">
+        <rid>43</rid>
+        <description>43</description>
+        <location latitude="-10.1247447199863" longitude="62.341204092392"/>
+      </node>
+      <node id="44">
+        <rid>44</rid>
+        <description>44</description>
+        <location latitude="-61.462331795166" longitude="2.7849483491282"/>
+      </node>
+      <node id="5">
+        <rid>5</rid>
+        <description>5</description>
+        <location latitude="37.1629931011562" longitude="93.7208773213318"/>
+      </node>
+      <node id="6">
+        <rid>6</rid>
+        <description>6</description>
+        <location latitude="76.8222740561578" longitude="-52.4270802362683"/>
+      </node>
+      <node id="7">
+        <rid>7</rid>
+        <description>7</description>
+        <location latitude="-32.6741146960642" longitude="-97.0801055456327"/>
+      </node>
+      <node id="8">
+        <rid>8</rid>
+        <description>8</description>
+        <location latitude="-21.9818003176599" longitude="-28.5904778275965"/>
+      </node>
+      <node id="9">
+        <rid>9</rid>
+        <description>9</description>
+        <location latitude="65.7845858897655" longitude="-144.946940053352"/>
+      </node>
+    </nodes>
+    <links>
+      <link id="0_6">
+        <from if="0" node="0"/>
+        <to if="0" node="6"/>
+      </link>
+      <link id="1_17">
+        <from if="0" node="1"/>
+        <to if="0" node="17"/>
+      </link>
+      <link id="10_34">
+        <from if="0" node="10"/>
+        <to if="0" node="34"/>
+      </link>
+      <link id="11_31">
+        <from if="0" node="11"/>
+        <to if="0" node="31"/>
+      </link>
+      <link id="12_4">
+        <from if="0" node="12"/>
+        <to if="0" node="4"/>
+      </link>
+      <link id="13_12">
+        <from if="0" node="13"/>
+        <to if="0" node="12"/>
+      </link>
+      <link id="14_2">
+        <from if="0" node="14"/>
+        <to if="0" node="2"/>
+      </link>
+      <link id="15_22">
+        <from if="0" node="15"/>
+        <to if="0" node="22"/>
+      </link>
+      <link id="16_9">
+        <from if="0" node="16"/>
+        <to if="0" node="9"/>
+      </link>
+      <link id="17_5">
+        <from if="0" node="17"/>
+        <to if="0" node="5"/>
+      </link>
+      <link id="18_36">
+        <from if="0" node="18"/>
+        <to if="0" node="36"/>
+      </link>
+      <link id="19_38">
+        <from if="0" node="19"/>
+        <to if="0" node="38"/>
+      </link>
+      <link id="2_0">
+        <from if="0" node="2"/>
+        <to if="0" node="0"/>
+      </link>
+      <link id="20_42">
+        <from if="0" node="20"/>
+        <to if="0" node="42"/>
+      </link>
+      <link id="21_40">
+        <from if="0" node="21"/>
+        <to if="0" node="40"/>
+      </link>
+      <link id="22_23">
+        <from if="0" node="22"/>
+        <to if="0" node="23"/>
+      </link>
+      <link id="23_16">
+        <from if="0" node="23"/>
+        <to if="0" node="16"/>
+      </link>
+      <link id="24_8">
+        <from if="0" node="24"/>
+        <to if="0" node="8"/>
+      </link>
+      <link id="25_14">
+        <from if="0" node="25"/>
+        <to if="0" node="14"/>
+      </link>
+      <link id="26_19">
+        <from if="0" node="26"/>
+        <to if="0" node="19"/>
+      </link>
+      <link id="27_32">
+        <from if="0" node="27"/>
+        <to if="0" node="32"/>
+      </link>
+      <link id="28_1">
+        <from if="0" node="28"/>
+        <to if="0" node="1"/>
+      </link>
+      <link id="29_30">
+        <from if="0" node="29"/>
+        <to if="0" node="30"/>
+      </link>
+      <link id="3_37">
+        <from if="0" node="3"/>
+        <to if="0" node="37"/>
+      </link>
+      <link id="30_20">
+        <from if="0" node="30"/>
+        <to if="0" node="20"/>
+      </link>
+      <link id="31_29">
+        <from if="0" node="31"/>
+        <to if="0" node="29"/>
+      </link>
+      <link id="32_43">
+        <from if="0" node="32"/>
+        <to if="0" node="43"/>
+      </link>
+      <link id="33_41">
+        <from if="0" node="33"/>
+        <to if="0" node="41"/>
+      </link>
+      <link id="34_24">
+        <from if="0" node="34"/>
+        <to if="0" node="24"/>
+      </link>
+      <link id="35_7">
+        <from if="0" node="35"/>
+        <to if="0" node="7"/>
+      </link>
+      <link id="36_28">
+        <from if="0" node="36"/>
+        <to if="0" node="28"/>
+      </link>
+      <link id="37_13">
+        <from if="0" node="37"/>
+        <to if="0" node="13"/>
+      </link>
+      <link id="38_35">
+        <from if="0" node="38"/>
+        <to if="0" node="35"/>
+      </link>
+      <link id="39_11">
+        <from if="0" node="39"/>
+        <to if="0" node="11"/>
+      </link>
+      <link id="4_10">
+        <from if="0" node="4"/>
+        <to if="0" node="10"/>
+      </link>
+      <link id="40_33">
+        <from if="0" node="40"/>
+        <to if="0" node="33"/>
+      </link>
+      <link id="41_26">
+        <from if="0" node="41"/>
+        <to if="0" node="26"/>
+      </link>
+      <link id="42_3">
+        <from if="0" node="42"/>
+        <to if="0" node="3"/>
+      </link>
+      <link id="43_39">
+        <from if="0" node="43"/>
+        <to if="0" node="39"/>
+      </link>
+      <link id="44_21">
+        <from if="0" node="44"/>
+        <to if="0" node="21"/>
+      </link>
+      <link id="5_27">
+        <from if="0" node="5"/>
+        <to if="0" node="27"/>
+      </link>
+      <link id="6_15">
+        <from if="0" node="6"/>
+        <to if="0" node="15"/>
+      </link>
+      <link id="7_25">
+        <from if="0" node="7"/>
+        <to if="0" node="25"/>
+      </link>
+      <link id="8_44">
+        <from if="0" node="8"/>
+        <to if="0" node="44"/>
+      </link>
+      <link id="9_18">
+        <from if="0" node="9"/>
+        <to if="0" node="18"/>
+      </link>
+    </links>
+  </topology>
+  <igp>
+    <links>
+      <link id="0_6">
+        <static>
+          <metric>3390.92833439694</metric>
+        </static>
+      </link>
+      <link id="1_17">
+        <static>
+          <metric>2941.35531623236</metric>
+        </static>
+      </link>
+      <link id="10_34">
+        <static>
+          <metric>967.114623678072</metric>
+        </static>
+      </link>
+      <link id="11_31">
+        <static>
+          <metric>1708.12833520194</metric>
+        </static>
+      </link>
+      <link id="12_4">
+        <static>
+          <metric>4695.1086124523</metric>
+        </static>
+      </link>
+      <link id="13_12">
+        <static>
+          <metric>3953.5722401416</metric>
+        </static>
+      </link>
+      <link id="14_2">
+        <static>
+          <metric>3851.94052436141</metric>
+        </static>
+      </link>
+      <link id="15_22">
+        <static>
+          <metric>1377.27598946685</metric>
+        </static>
+      </link>
+      <link id="16_9">
+        <static>
+          <metric>2165.18839967573</metric>
+        </static>
+      </link>
+      <link id="17_5">
+        <static>
+          <metric>1283.5981199717</metric>
+        </static>
+      </link>
+      <link id="18_36">
+        <static>
+          <metric>2614.41618598584</metric>
+        </static>
+      </link>
+      <link id="19_38">
+        <static>
+          <metric>995.49687360739</metric>
+        </static>
+      </link>
+      <link id="2_0">
+        <static>
+          <metric>1655.51662634589</metric>
+        </static>
+      </link>
+      <link id="20_42">
+        <static>
+          <metric>3547.88995636421</metric>
+        </static>
+      </link>
+      <link id="21_40">
+        <static>
+          <metric>2276.88703088012</metric>
+        </static>
+      </link>
+      <link id="22_23">
+        <static>
+          <metric>1832.95048278469</metric>
+        </static>
+      </link>
+      <link id="23_16">
+        <static>
+          <metric>1253.64522538539</metric>
+        </static>
+      </link>
+      <link id="24_8">
+        <static>
+          <metric>816.056255171285</metric>
+        </static>
+      </link>
+      <link id="25_14">
+        <static>
+          <metric>8377.62728758372</metric>
+        </static>
+      </link>
+      <link id="26_19">
+        <static>
+          <metric>2631.9256389714</metric>
+        </static>
+      </link>
+      <link id="27_32">
+        <static>
+          <metric>7744.88506300762</metric>
+        </static>
+      </link>
+      <link id="28_1">
+        <static>
+          <metric>515.284237731194</metric>
+        </static>
+      </link>
+      <link id="29_30">
+        <static>
+          <metric>1625.65646404758</metric>
+        </static>
+      </link>
+      <link id="3_37">
+        <static>
+          <metric>1357.70118737473</metric>
+        </static>
+      </link>
+      <link id="30_20">
+        <static>
+          <metric>4811.55596882594</metric>
+        </static>
+      </link>
+      <link id="31_29">
+        <static>
+          <metric>3327.29047053876</metric>
+        </static>
+      </link>
+      <link id="32_43">
+        <static>
+          <metric>3838.53083435581</metric>
+        </static>
+      </link>
+      <link id="33_41">
+        <static>
+          <metric>1783.7506878481</metric>
+        </static>
+      </link>
+      <link id="34_24">
+        <static>
+          <metric>2345.43448800879</metric>
+        </static>
+      </link>
+      <link id="35_7">
+        <static>
+          <metric>2593.00362180006</metric>
+        </static>
+      </link>
+      <link id="36_28">
+        <static>
+          <metric>5766.69779921619</metric>
+        </static>
+      </link>
+      <link id="37_13">
+        <static>
+          <metric>703.610345803203</metric>
+        </static>
+      </link>
+      <link id="38_35">
+        <static>
+          <metric>2152.45101242181</metric>
+        </static>
+      </link>
+      <link id="39_11">
+        <static>
+          <metric>4771.71967898841</metric>
+        </static>
+      </link>
+      <link id="4_10">
+        <static>
+          <metric>5035.89842972953</metric>
+        </static>
+      </link>
+      <link id="40_33">
+        <static>
+          <metric>138.802999325957</metric>
+        </static>
+      </link>
+      <link id="41_26">
+        <static>
+          <metric>3899.34871407497</metric>
+        </static>
+      </link>
+      <link id="42_3">
+        <static>
+          <metric>2636.78616895846</metric>
+        </static>
+      </link>
+      <link id="43_39">
+        <static>
+          <metric>2593.83604924874</metric>
+        </static>
+      </link>
+      <link id="44_21">
+        <static>
+          <metric>1441.39972660576</metric>
+        </static>
+      </link>
+      <link id="5_27">
+        <static>
+          <metric>3362.50399731755</metric>
+        </static>
+      </link>
+      <link id="6_15">
+        <static>
+          <metric>1243.9312456745</metric>
+        </static>
+      </link>
+      <link id="7_25">
+        <static>
+          <metric>1607.64018762987</metric>
+        </static>
+      </link>
+      <link id="8_44">
+        <static>
+          <metric>5001.03594825385</metric>
+        </static>
+      </link>
+      <link id="9_18">
+        <static>
+          <metric>1630.13284093682</metric>
+        </static>
+      </link>
+    </links>
+  </igp>
+</domain>
