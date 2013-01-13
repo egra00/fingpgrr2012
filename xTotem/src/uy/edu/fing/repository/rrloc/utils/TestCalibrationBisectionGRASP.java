@@ -27,19 +27,19 @@ import be.ac.ulg.montefiore.run.totem.repository.facade.RepositoryManager;
 	
 public class TestCalibrationBisectionGRASP 
 {
-	static public int MAX_TEST = 3;
+	static public int MAX_TEST = 30;
 	
-	static public int MAX_ITER = 25000;
-	static public int MIN_ITER = 25000;
-	static public int STEPS_ITER = 25000;
+	static public int MAX_ITER = 30000;
+	static public int MIN_ITER = 10000;
+	static public int STEPS_ITER = 10000;
 
 	static public double MAX_BETA = 0.02;
-	static public double MIN_BETA = 0.02;
-	static public int  STEPS_BETA = 1;
+	static public double MIN_BETA = 0.01;
+	static public int  STEPS_BETA = 5;
 	
 	static public double MAX_ALFA = 0.05;
-	static public double MIN_ALFA = 0.05;
-	static public int  STEPS_ALFA = 1;
+	static public double MIN_ALFA = 0.04;
+	static public int  STEPS_ALFA = 5;
 	
 	
     public static void init(){
@@ -98,6 +98,7 @@ public class TestCalibrationBisectionGRASP
 	    		int can_iter_best = 0;
 	    		double alfa_best = 0;
 	    		double beta_best = 0;
+	    		long time_best = 0;
 	    		
 	    		for(int can_iter=MIN_ITER; can_iter<=MAX_ITER; can_iter+=STEPS_ITER)
 	    		{
@@ -107,13 +108,18 @@ public class TestCalibrationBisectionGRASP
 	    				for(int m=0; m<STEPS_BETA; m++)
 	    				{
 	    					double beta= MIN_BETA + ((MAX_BETA - MIN_BETA)/STEPS_BETA)*m;
+	    					
+	    					long time_in = System.currentTimeMillis();
 	    					GraphSeparator gs = Separator.GRASPBisection(G, can_iter, alfa, beta);
-	    					if(isBetter(gs, gs_best, 0.05, 0.02))
+	    					long time_out = System.currentTimeMillis();
+	    					
+	    					if(isBetter(gs, gs_best, MAX_ALFA, MAX_BETA))
 	    					{
 	    						gs_best = gs;
 	    						can_iter_best = can_iter;
 	    						alfa_best = alfa;
 	    						beta_best = beta;
+	    						time_best = time_out - time_in;
 	    					}
 	    					
 	    				}
@@ -140,7 +146,7 @@ public class TestCalibrationBisectionGRASP
 				for(Graph<Node, Link> comp : gs_best.getComponents())
 					balanced += Math.abs(comp.getVertexCount() - media);
 				System.out.println("\tBalanced: "+ balanced);
-				
+				System.out.println("Time (ms): "+ time_best);
 				System.out.println("##################################################### FIN TEST "+i+ " #####################################################\n" );
 	    	
 	        	

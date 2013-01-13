@@ -12,8 +12,9 @@ import java.util.Set;
 import org.ejml.alg.dense.decomposition.SingularMatrixException;
 import org.ejml.simple.SimpleMatrix;
 
-import uy.edu.fing.repository.rrloc.tools.graph.separator.bisection.Bisection_GRASP;
-import uy.edu.fing.repository.rrloc.tools.graph.separator.bisection.Bisector;
+import uy.edu.fing.repository.rrloc.tools.graph.separator.ApproachGA.GraphPartitionGA;
+import uy.edu.fing.repository.rrloc.tools.graph.separator.ApproachGRASP.Bisection_GRASP;
+import uy.edu.fing.repository.rrloc.tools.graph.separator.ApproachGRASP.Bisector;
 import uy.edu.fing.repository.rrloc.tools.graph.separator.model.GraphSeparator;
 import agape.algos.Separators;
 import agape.tools.Components;

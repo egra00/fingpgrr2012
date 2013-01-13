@@ -26,28 +26,30 @@ import edu.uci.ics.jung2.graph.UndirectedSparseMultigraph;
 	
 public class TestCalibrationGraphPartitionGA 
 {
-	static public int MAX_TEST = 3;
+	// (int nb_run, Graph<Node,Link> G, int NGen, int sizeP, int sizeOf, double pmut, double pcross)
+	// (20, IGPTopology ,50, 200, 350, 0.01, 0.1)
 	
-	static public int MIN_SIZEP = 0;
-	static public int MAX_SIZEP = 0;
-	static public int STEPS_SIZEP = 0;
+	static public int MAX_TEST = 2;
 	
-	static public int STEPS_PMUT = 0;
-	static public int MIN_PMUT = 0;
-	static public int MAX_PMUT = 0;
+	static public int MIN_SIZEP = 100;
+	static public int MAX_SIZEP = 200;
+	static public int STEPS_SIZEP = 100;
 	
-	static public int STEPS_PCROSS = 0;
-	static public int MIN_CROSS = 0;
-	static public int MAX_CROSS = 0;
+	static public int STEPS_PMUT = 5;
+	static public double MIN_PMUT = 0.01;
+	static public double MAX_PMUT = 0.04;
 	
-	static public int STEPS_NGEN = 0;
-	static public int MAX_NGEN = 0;
-	static public int MIN_NGEN = 0;
+	static public int STEPS_PCROSS = 5;
+	static public double MIN_CROSS = 0.1;
+	static public double MAX_CROSS = 0.4;
 	
+	static public int STEPS_NGEN = 25;
+	static public int MAX_NGEN = 25;
+	static public int MIN_NGEN = 25;
 	
-	static public int MIN_NB_RUN = 0;
-	static public int MAX_NB_RUN = 0;
-	static public int STEPS_NB_RUN = 0;
+	static public int MIN_NB_RUN = 10;
+	static public int MAX_NB_RUN = 10;
+	static public int STEPS_NB_RUN = 10;
 
 	
     public static void init(){
@@ -109,19 +111,24 @@ public class TestCalibrationGraphPartitionGA
 	    		int sizeOf_best =0;
 	    		double pmut_best = 0;
 	    		double pcross_best = 0;
+	    		long time_best = 0;
 
-	    		for(int nb_run= MIN_NB_RUN; nb_run<MAX_NB_RUN; nb_run+= STEPS_NB_RUN)
-	    			for(int NGen= MIN_NGEN; NGen<MAX_NGEN; NGen+= STEPS_NGEN)
-	    				for(int sizeP= MIN_SIZEP; sizeP<MAX_SIZEP; sizeP+= STEPS_SIZEP)
+	    		for(int nb_run= MIN_NB_RUN; nb_run<=MAX_NB_RUN; nb_run+= STEPS_NB_RUN)
+	    			for(int NGen= MIN_NGEN; NGen<=MAX_NGEN; NGen+= STEPS_NGEN)
+	    				for(int sizeP= MIN_SIZEP; sizeP<=MAX_SIZEP; sizeP+= STEPS_SIZEP)
 	    				{
-	    					int sizeOf = (int)(1 + 0.6)*sizeP;
+	    					int sizeOf = (int)((1 + 0.6)*sizeP);
 	    	    			for(int j=0; j<STEPS_PMUT; j++)
 	    	    			{
 	    	    				double pmut= MIN_PMUT + ((MAX_PMUT - MIN_PMUT)/STEPS_PMUT)*j;
 	    	    				for(int m=0; m<STEPS_PCROSS; m++)
 	    	    				{
 	    	    					double pcross= MIN_CROSS + ((MAX_CROSS - MIN_CROSS)/STEPS_PCROSS)*m;
+	    	    					
+	    	    					long time_in = System.currentTimeMillis();
 	    	    					GraphSeparator gs = Separator.GraphPartitionAE(nb_run, G, NGen, sizeP, sizeOf, pmut, pcross);
+	    	    					long time_out = System.currentTimeMillis();
+	    	    					
 	    	    					if(isBetter(gs, gs_best))
 	    	    					{
 	    	    						gs_best = gs;
@@ -131,6 +138,7 @@ public class TestCalibrationGraphPartitionGA
 	    	    			    		sizeOf_best = sizeOf;
 	    	    			    		pmut_best = pmut;
 	    	    			    		pcross_best = pcross;
+	    	    			    		time_best = time_out - time_in;
 	    	    					}
 	    	    					
 	    	    				}
@@ -159,6 +167,7 @@ public class TestCalibrationGraphPartitionGA
 					balanced += Math.abs(comp.getVertexCount() - media);
 				System.out.println("\tBalanced: "+ balanced);
 				
+				System.out.println("Time (ms): "+ time_best);
 				System.out.println("##################################################### FIN TEST "+i+ " #####################################################\n" );
 	    	
 	        	

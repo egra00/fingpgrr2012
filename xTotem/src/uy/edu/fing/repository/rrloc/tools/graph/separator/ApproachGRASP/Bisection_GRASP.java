@@ -1,4 +1,4 @@
-package uy.edu.fing.repository.rrloc.tools.graph.separator.bisection;
+package uy.edu.fing.repository.rrloc.tools.graph.separator.ApproachGRASP;
 
 import java.util.LinkedList;
 import java.util.List;

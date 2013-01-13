@@ -1,4 +1,4 @@
-package uy.edu.fing.repository.rrloc.tools.graph.separator;
+package uy.edu.fing.repository.rrloc.tools.graph.separator.ApproachGA;
 
 import java.util.ArrayList;
 import java.util.HashSet;
