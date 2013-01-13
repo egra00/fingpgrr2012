@@ -1,833 +1,379 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<domain ASID="11537" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="http://totem.run.montefiore.ulg.ac.be/Schema/Domain-v1_3.xsd">
+<domain ASID="10013">
     <info>
-        <title>Abilene Topology</title>
-        <date>2005-01-01</date>
-        <author>
-            Olivier Delcourt (delcourt@run.montefiore.ulg.ac.be) - RUN - University of Liege
-            Jean Lepropre (lepropre@run.montefiore.ulg.ac.be) - RUN - University of Liege
-        </author>
-        <description>Topology of Abilene network - 21 feb 2005</description>
+        <title>test1</title>
+        <date>2004-04-07-03:00</date>
+        <author>RUN - University of Liege</author>
+        <description>
+			Perl script of the Research Unit in Networking (RUN) of the University of Liege
+			TOTEM Project (http://totem.info.ucl.ac.be/)
+		</description>
         <units>
-            <unit type="bandwidth" value="mbps"/>
+            <unit type="bandwidth" value="kbps"/>
             <unit type="delay" value="ms"/>
         </units>
         <diff-serv>
             <priority ct="0" id="0" preemption="0"/>
+            <priority ct="0" id="1" preemption="1"/>
+            <priority ct="0" id="2" preemption="2"/>
         </diff-serv>
     </info>
     <topology>
         <nodes>
-            <node id="STTL">
+            <node id="0">
                 <rid>198.32.8.200</rid>
-                <description>Seattle</description>
-                <location latitude="31.147552" longitude="66.65515"/>
+                <description>0</description>
+                <location latitude="208.2415" longitude="838.55426"/>
                 <interfaces>
-                    <interface id="lo">
-                        <ip mask="198.32.12.153/32">198.32.12.153</ip>
-                    </interface>
-                    <interface id="so-0/2/0"/>
-                    <interface id="so-3/1/0"/>
+                    <interface id="0"/>
+                    <interface id="1"/>
                 </interfaces>
             </node>
-            <node id="DNVR">
-                <rid>198.32.8.194</rid>
-                <description>Denver</description>
-                <location latitude="275.87833" longitude="304.29526"/>
-                <interfaces>
-                    <interface id="lo">
-                        <ip mask="198.32.12.41/32">198.32.12.41</ip>
-                    </interface>
-                    <interface id="so-0/0/0"/>
-                    <interface id="so-0/1/0"/>
-                    <interface id="so-0/2/0"/>
-                </interfaces>
-            </node>
-            <node id="KSCY">
-                <rid>198.32.8.197</rid>
-                <description>Kansas City</description>
-                <location latitude="271.42868" longitude="507.15875"/>
-                <interfaces>
-                    <interface id="lo">
-                        <ip mask="198.32.12.89/32">198.32.12.89</ip>
-                    </interface>
-                    <interface id="so-0/0/0"/>
-                    <interface id="so-0/1/0"/>
-                    <interface id="so-0/2/0"/>
-                </interfaces>
-            </node>
-            <node id="IPLS">
-                <rid>198.32.8.196</rid>
-                <description>Indianapolis</description>
-                <location latitude="170.0" longitude="779.0"/>
-                <interfaces>
-                    <interface id="lo">
-                        <ip mask="198.32.12.177/32">198.32.12.177</ip>
-                    </interface>
-                    <interface id="so-0/0/0"/>
-                    <interface id="so-0/1/0"/>
-                    <interface id="so-3/0/0"/>
-                </interfaces>
-            </node>
-            <node id="CHIN">
-                <rid>198.32.8.193</rid>
-                <description>Chicago</description>
-                <location latitude="62.295105" longitude="692.634"/>
-                <interfaces>
-                    <interface id="so-0/0/0"/>
-                    <interface id="so-3/1/0"/>
-                </interfaces>
-            </node>
-            <node id="NYCM">
-                <rid>198.32.8.199</rid>
-                <description>New york City</description>
-                <location latitude="57.845455" longitude="1054.8903"/>
-                <interfaces>
-                    <interface id="lo">
-                        <ip mask="198.32.12.121/32">198.32.12.121</ip>
-                    </interface>
-                    <interface id="so-0/2/0"/>
-                    <interface id="so-3/1/0"/>
-                </interfaces>
-            </node>
-            <node id="WASH">
-                <rid>198.32.8.202</rid>
-                <description>Washington DC</description>
-                <location latitude="226.0" longitude="1033.0"/>
-                <interfaces>
-                    <interface id="lo">
-                        <ip mask="198.32.12.169/32">198.32.12.169</ip>
-                    </interface>
-                    <interface id="so-0/0/0"/>
-                    <interface id="so-0/2/0"/>
-                </interfaces>
-            </node>
-            <node id="ATLA">
-                <rid>198.32.8.192</rid>
-                <description>Atlanta</description>
-                <location latitude="418.0" longitude="909.0"/>
-                <interfaces>
-                    <interface id="lo">
-                        <ip mask="198.32.12.9/32">198.32.12.9</ip>
-                    </interface>
-                    <interface id="so-0/0/0"/>
-                    <interface id="so-0/2/0"/>
-                    <interface id="so-3/0/0"/>
-                    <interface id="ge-2/2/2"/>
-                </interfaces>
-            </node>
-            <node id="ATLA-M5">
-                <rid>198.32.8.203</rid>
-	        <location latitude="440.0" longitude="1040.0"/>
-                <interfaces>
-                    <interface id="ge-0/0/0"/>
-                </interfaces>
-            </node>
-            <node id="HSTN">
-                <rid>198.32.8.195</rid>
-                <description>Houston</description>
-                <location latitude="658.5483" longitude="518.751"/>
-                <interfaces>
-                    <interface id="lo">
-                        <ip mask="198.32.12.57/32">198.32.12.57</ip>
-                    </interface>
-                    <interface id="so-0/0/0"/>
-                    <interface id="so-0/1/0"/>
-                    <interface id="so-0/2/0"/>
-                </interfaces>
-            </node>
-            <node id="LOSA">
-                <rid>198.32.8.198</rid>
-                <description>Los Angeles</description>
-                <location latitude="529.50836" longitude="92.7376"/>
-                <interfaces>
-                    <interface id="lo">
-                        <ip mask="198.32.12.105/32">198.32.12.105</ip>
-                    </interface>
-                    <interface id="so-0/2/0"/>
-                    <interface id="so-3/3/0"/>
-                </interfaces>
-            </node>
-            <node id="SNVA">
+            <node id="1">
                 <rid>198.32.8.201</rid>
-                <description>Sunnyvale</description>
-                <location latitude="324.8245" longitude="14.490252"/>
+                <description>1</description>
+                <location latitude="101.763374" longitude="440.31927"/>
                 <interfaces>
-                    <interface id="lo">
-                        <ip mask="198.32.12.137/32">198.32.12.137</ip>
-                    </interface>
-                    <interface id="so-0/0/0"/>
-                    <interface id="so-0/1/0"/>
-                    <interface id="so-0/2/0"/>
+                    <interface id="0"/>
+                    <interface id="1"/>
+                </interfaces>
+            </node>
+            <node id="2">
+                <rid>198.32.8.202</rid>
+                <description>2</description>
+                <location latitude="415.12964" longitude="550.6321"/>
+                <interfaces>
+                    <interface id="0"/>
+                    <interface id="1"/>
+                    <interface id="2"/>
+                    <interface id="3"/>
+                </interfaces>
+            </node>
+            <node id="3">
+                <rid>198.32.8.203</rid>
+                <description>3</description>
+                <location latitude="630.0" longitude="310.0"/>
+                <interfaces>
+                    <interface id="3"/>
+                    <interface id="4"/>
+                </interfaces>
+            </node>
+            <node id="4">
+                <rid>198.32.8.204</rid>
+                <description>4</description>
+                <location latitude="750.73584" longitude="632.094"/>
+                <interfaces>
+                    <interface id="2"/>
+                    <interface id="4"/>
                 </interfaces>
             </node>
         </nodes>
         <links>
-            <link id="STTL-DNVR">
-                <from if="so-0/2/0" node="STTL"/>
-                <to if="so-0/0/0" node="DNVR"/>
-                <bw>10000.0</bw>
-                <delay>0.0</delay>
+            <link id="0_0 -&gt; 2_0">
+                <from if="0" node="0"/>
+                <to if="0" node="2"/>
+                <bw>200000.0</bw>
+                <delay>1.4270346</delay>
             </link>
-            <link id="DNVR-STTL">
-                <from if="so-0/0/0" node="DNVR"/>
-                <to if="so-0/2/0" node="STTL"/>
-                <bw>10000.0</bw>
-                <delay>0.0</delay>
+            <link id="2_0 -&gt; 0_0">
+                <from if="0" node="2"/>
+                <to if="0" node="0"/>
+                <bw>200000.0</bw>
+                <delay>1.4270346</delay>
             </link>
-            <link id="DNVR-KSCY">
-                <from if="so-0/2/0" node="DNVR"/>
-                <to if="so-0/0/0" node="KSCY"/>
-                <bw>10000.0</bw>
-                <delay>0.0</delay>
+            <link id="0_1 -&gt; 1_1">
+                <from if="1" node="0"/>
+                <to if="1" node="1"/>
+                <bw>200000.0</bw>
+                <delay>1.4270346</delay>
             </link>
-            <link id="KSCY-DNVR">
-                <from if="so-0/0/0" node="KSCY"/>
-                <to if="so-0/2/0" node="DNVR"/>
-                <bw>10000.0</bw>
-                <delay>0.0</delay>
+            <link id="1_1 -&gt; 0_1">
+                <from if="1" node="1"/>
+                <to if="1" node="0"/>
+                <bw>200000.0</bw>
+                <delay>1.4270346</delay>
             </link>
-            <link id="KSCY-IPLS">
-                <from if="so-0/2/0" node="KSCY"/>
-                <to if="so-0/0/0" node="IPLS"/>
-                <bw>10000.0</bw>
-                <delay>0.0</delay>
+            <link id="1_1 -&gt; 2_1">
+                <from if="1" node="1"/>
+                <to if="1" node="2"/>
+                <bw>200000.0</bw>
+                <delay>1.4270346</delay>
             </link>
-            <link id="IPLS-KSCY">
-                <from if="so-0/0/0" node="IPLS"/>
-                <to if="so-0/2/0" node="KSCY"/>
-                <bw>10000.0</bw>
-                <delay>0.0</delay>
+            <link id="2_1 -&gt; 1_1">
+                <from if="1" node="2"/>
+                <to if="1" node="1"/>
+                <bw>200000.0</bw>
+                <delay>1.4270346</delay>
             </link>
-            <link id="KSCY-HSTN">
-                <from if="so-0/1/0" node="KSCY"/>
-                <to if="so-0/2/0" node="HSTN"/>
-                <bw>10000.0</bw>
-                <delay>0.0</delay>
+            <link id="4_2 -&gt; 2_2">
+                <from if="2" node="4"/>
+                <to if="2" node="2"/>
+                <bw>200000.0</bw>
+                <delay>1.4270346</delay>
             </link>
-            <link id="HSTN-KSCY">
-                <from if="so-0/2/0" node="HSTN"/>
-                <to if="so-0/1/0" node="KSCY"/>
-                <bw>10000.0</bw>
-                <delay>0.0</delay>
+            <link id="2_2 -&gt; 4_2">
+                <from if="2" node="2"/>
+                <to if="2" node="4"/>
+                <bw>200000.0</bw>
+                <delay>1.4270346</delay>
             </link>
-            <link id="IPLS-CHIN">
-                <from if="so-0/1/0" node="IPLS"/>
-                <to if="so-0/0/0" node="CHIN"/>
-                <bw>10000.0</bw>
-                <delay>0.0</delay>
+            <link id="3_3 -&gt; 2_3">
+                <from if="3" node="3"/>
+                <to if="3" node="2"/>
+                <bw>200000.0</bw>
+                <delay>1.4270346</delay>
             </link>
-            <link id="CHIN-IPLS">
-                <from if="so-0/0/0" node="CHIN"/>
-                <to if="so-0/1/0" node="IPLS"/>
-                <bw>10000.0</bw>
-                <delay>0.0</delay>
+            <link id="2_3 -&gt; 3_3">
+                <from if="3" node="2"/>
+                <to if="3" node="3"/>
+                <bw>200000.0</bw>
+                <delay>1.4270346</delay>
             </link>
-            <link id="IPLS-ATLA">
-                <from if="so-3/0/0" node="IPLS"/>
-                <to if="so-3/0/0" node="ATLA"/>
-                <bw>10000.0</bw>
-                <delay>0.0</delay>
+            <link id="3_4 -&gt; 4_4">
+                <from if="4" node="3"/>
+                <to if="4" node="4"/>
+                <bw>200000.0</bw>
+                <delay>1.4270346</delay>
             </link>
-            <link id="ATLA-IPLS">
-                <from if="so-3/0/0" node="ATLA"/>
-                <to if="so-3/0/0" node="IPLS"/>
-                <bw>10000.0</bw>
-                <delay>0.0</delay>
-            </link>
-            <link id="ATLAM5-ATLA">
-                <from if="ge-0/0/0" node="ATLA-M5"/>
-                <to if="ge-2/2/2" node="ATLA"/>
-                <bw>10000.0</bw>
-                <delay>0.0</delay>
-            </link>
-            <link id="ATLA-ATLAM5">
-                <from if="ge-2/2/2" node="ATLA"/>
-                <to if="ge-0/0/0" node="ATLA-M5"/>
-                <bw>10000.0</bw>
-                <delay>0.0</delay>
-            </link>
-            <link id="CHIN-NYCM">
-                <from if="so-3/1/0" node="CHIN"/>
-                <to if="so-3/1/0" node="NYCM"/>
-                <bw>10000.0</bw>
-                <delay>0.0</delay>
-            </link>
-            <link id="NYCM-CHIN">
-                <from if="so-3/1/0" node="NYCM"/>
-                <to if="so-3/1/0" node="CHIN"/>
-                <bw>10000.0</bw>
-                <delay>0.0</delay>
-            </link>
-            <link id="NYCM-WASH">
-                <from if="so-0/2/0" node="NYCM"/>
-                <to if="so-0/0/0" node="WASH"/>
-                <bw>10000.0</bw>
-                <delay>0.0</delay>
-            </link>
-            <link id="WASH-NYCM">
-                <from if="so-0/0/0" node="WASH"/>
-                <to if="so-0/2/0" node="NYCM"/>
-                <bw>10000.0</bw>
-                <delay>0.0</delay>
-            </link>
-            <link id="WASH-ATLA">
-                <from if="so-0/2/0" node="WASH"/>
-                <to if="so-0/0/0" node="ATLA"/>
-                <bw>10000.0</bw>
-                <delay>0.0</delay>
-            </link>
-            <link id="ATLA-WASH">
-                <from if="so-0/0/0" node="ATLA"/>
-                <to if="so-0/2/0" node="WASH"/>
-                <bw>10000.0</bw>
-                <delay>0.0</delay>
-            </link>
-            <link id="ATLA-HSTN">
-                <from if="so-0/2/0" node="ATLA"/>
-                <to if="so-0/1/0" node="HSTN"/>
-                <bw>10000.0</bw>
-                <delay>0.0</delay>
-            </link>
-            <link id="HSTN-ATLA">
-                <from if="so-0/1/0" node="HSTN"/>
-                <to if="so-0/2/0" node="ATLA"/>
-                <bw>10000.0</bw>
-                <delay>0.0</delay>
-            </link>
-            <link id="HSTN-LOSA">
-                <from if="so-0/0/0" node="HSTN"/>
-                <to if="so-0/2/0" node="LOSA"/>
-                <bw>10000.0</bw>
-                <delay>0.0</delay>
-            </link>
-            <link id="LOSA-HSTN">
-                <from if="so-0/2/0" node="LOSA"/>
-                <to if="so-0/0/0" node="HSTN"/>
-                <bw>10000.0</bw>
-                <delay>0.0</delay>
-            </link>
-            <link id="LOSA-SNVA">
-                <from if="so-3/3/0" node="LOSA"/>
-                <to if="so-0/1/0" node="SNVA"/>
-                <bw>10000.0</bw>
-                <delay>0.0</delay>
-            </link>
-            <link id="SNVA-LOSA">
-                <from if="so-0/1/0" node="SNVA"/>
-                <to if="so-3/3/0" node="LOSA"/>
-                <bw>10000.0</bw>
-                <delay>0.0</delay>
-            </link>
-            <link id="SNVA-DNVR">
-                <from if="so-0/2/0" node="SNVA"/>
-                <to if="so-0/1/0" node="DNVR"/>
-                <bw>10000.0</bw>
-                <delay>0.0</delay>
-            </link>
-            <link id="DNVR-SNVA">
-                <from if="so-0/1/0" node="DNVR"/>
-                <to if="so-0/2/0" node="SNVA"/>
-                <bw>10000.0</bw>
-                <delay>0.0</delay>
-            </link>
-            <link id="SNVA-STTL">
-                <from if="so-0/0/0" node="SNVA"/>
-                <to if="so-3/1/0" node="STTL"/>
-                <bw>10000.0</bw>
-                <delay>0.0</delay>
-            </link>
-            <link id="STTL-SNVA">
-                <from if="so-3/1/0" node="STTL"/>
-                <to if="so-0/0/0" node="SNVA"/>
-                <bw>10000.0</bw>
-                <delay>0.0</delay>
+            <link id="4_4 -&gt; 3_4">
+                <from if="4" node="4"/>
+                <to if="4" node="3"/>
+                <bw>200000.0</bw>
+                <delay>1.4270346</delay>
             </link>
         </links>
     </topology>
     <igp>
         <links>
-            <link id="STTL-DNVR">
+            <link id="0_0 -&gt; 2_0">
                 <static>
-                    <metric>2095.0</metric>
-                    <mrbw>10000.0</mrbw>
-                    <mbw>10000.0</mbw>
+                    <metric>5.0E-6</metric>
+                    <te-metric>5.0E-6</te-metric>
+                    <mrbw>200000.0</mrbw>
+                    <mbw>200000.0</mbw>
                     <diff-serv>
                         <bcm>MAM</bcm>
-                        <bc id="0">10000.0</bc>
+                        <bc id="0">200000.0</bc>
                     </diff-serv>
                 </static>
                 <dynamic>
                     <rbw>
-                        <priority id="0">10000.0</priority>
+                        <priority id="0">200000.0</priority>
+                        <priority id="1">200000.0</priority>
+                        <priority id="2">200000.0</priority>
                     </rbw>
                 </dynamic>
             </link>
-            <link id="DNVR-STTL">
+            <link id="2_0 -&gt; 0_0">
                 <static>
-                    <metric>2095.0</metric>
-                    <mrbw>10000.0</mrbw>
-                    <mbw>10000.0</mbw>
+                    <metric>5.0E-6</metric>
+                    <te-metric>5.0E-6</te-metric>
+                    <mrbw>200000.0</mrbw>
+                    <mbw>200000.0</mbw>
                     <diff-serv>
                         <bcm>MAM</bcm>
-                        <bc id="0">10000.0</bc>
+                        <bc id="0">200000.0</bc>
                     </diff-serv>
                 </static>
                 <dynamic>
                     <rbw>
-                        <priority id="0">10000.0</priority>
+                        <priority id="0">200000.0</priority>
+                        <priority id="1">200000.0</priority>
+                        <priority id="2">200000.0</priority>
                     </rbw>
                 </dynamic>
             </link>
-            <link id="DNVR-KSCY">
+            <link id="0_1 -&gt; 1_1">
                 <static>
-                    <metric>639.0</metric>
-                    <mrbw>10000.0</mrbw>
-                    <mbw>10000.0</mbw>
+                    <metric>5.0E-6</metric>
+                    <te-metric>5.0E-6</te-metric>
+                    <mrbw>200000.0</mrbw>
+                    <mbw>200000.0</mbw>
                     <diff-serv>
                         <bcm>MAM</bcm>
-                        <bc id="0">10000.0</bc>
+                        <bc id="0">200000.0</bc>
                     </diff-serv>
                 </static>
                 <dynamic>
                     <rbw>
-                        <priority id="0">10000.0</priority>
+                        <priority id="0">200000.0</priority>
+                        <priority id="1">200000.0</priority>
+                        <priority id="2">200000.0</priority>
                     </rbw>
                 </dynamic>
             </link>
-            <link id="KSCY-DNVR">
+            <link id="1_1 -&gt; 0_1">
                 <static>
-                    <metric>639.0</metric>
-                    <mrbw>10000.0</mrbw>
-                    <mbw>10000.0</mbw>
+                    <metric>5.0E-6</metric>
+                    <te-metric>5.0E-6</te-metric>
+                    <mrbw>200000.0</mrbw>
+                    <mbw>200000.0</mbw>
                     <diff-serv>
                         <bcm>MAM</bcm>
-                        <bc id="0">10000.0</bc>
+                        <bc id="0">200000.0</bc>
                     </diff-serv>
                 </static>
                 <dynamic>
                     <rbw>
-                        <priority id="0">10000.0</priority>
+                        <priority id="0">200000.0</priority>
+                        <priority id="1">200000.0</priority>
+                        <priority id="2">200000.0</priority>
                     </rbw>
                 </dynamic>
             </link>
-            <link id="KSCY-IPLS">
+            <link id="1_1 -&gt; 2_1">
                 <static>
-                    <metric>548.0</metric>
-                    <mrbw>10000.0</mrbw>
-                    <mbw>10000.0</mbw>
+                    <metric>5.0E-6</metric>
+                    <te-metric>5.0E-6</te-metric>
+                    <mrbw>200000.0</mrbw>
+                    <mbw>200000.0</mbw>
                     <diff-serv>
                         <bcm>MAM</bcm>
-                        <bc id="0">10000.0</bc>
+                        <bc id="0">200000.0</bc>
                     </diff-serv>
                 </static>
                 <dynamic>
                     <rbw>
-                        <priority id="0">10000.0</priority>
+                        <priority id="0">200000.0</priority>
+                        <priority id="1">200000.0</priority>
+                        <priority id="2">200000.0</priority>
                     </rbw>
                 </dynamic>
             </link>
-            <link id="IPLS-KSCY">
+            <link id="2_1 -&gt; 1_1">
                 <static>
-                    <metric>548.0</metric>
-                    <mrbw>10000.0</mrbw>
-                    <mbw>10000.0</mbw>
+                    <metric>5.0E-6</metric>
+                    <te-metric>5.0E-6</te-metric>
+                    <mrbw>200000.0</mrbw>
+                    <mbw>200000.0</mbw>
                     <diff-serv>
                         <bcm>MAM</bcm>
-                        <bc id="0">10000.0</bc>
+                        <bc id="0">200000.0</bc>
                     </diff-serv>
                 </static>
                 <dynamic>
                     <rbw>
-                        <priority id="0">10000.0</priority>
+                        <priority id="0">200000.0</priority>
+                        <priority id="1">200000.0</priority>
+                        <priority id="2">200000.0</priority>
                     </rbw>
                 </dynamic>
             </link>
-            <link id="KSCY-HSTN">
+            <link id="4_2 -&gt; 2_2">
                 <static>
-                    <metric>902.0</metric>
-                    <mrbw>10000.0</mrbw>
-                    <mbw>10000.0</mbw>
+                    <metric>5.0E-6</metric>
+                    <te-metric>5.0E-6</te-metric>
+                    <mrbw>200000.0</mrbw>
+                    <mbw>200000.0</mbw>
                     <diff-serv>
                         <bcm>MAM</bcm>
-                        <bc id="0">10000.0</bc>
+                        <bc id="0">200000.0</bc>
                     </diff-serv>
                 </static>
                 <dynamic>
                     <rbw>
-                        <priority id="0">10000.0</priority>
+                        <priority id="0">200000.0</priority>
+                        <priority id="1">200000.0</priority>
+                        <priority id="2">200000.0</priority>
                     </rbw>
                 </dynamic>
             </link>
-            <link id="HSTN-KSCY">
+            <link id="2_2 -&gt; 4_2">
                 <static>
-                    <metric>902.0</metric>
-                    <mrbw>10000.0</mrbw>
-                    <mbw>10000.0</mbw>
+                    <metric>5.0E-6</metric>
+                    <te-metric>5.0E-6</te-metric>
+                    <mrbw>200000.0</mrbw>
+                    <mbw>200000.0</mbw>
                     <diff-serv>
                         <bcm>MAM</bcm>
-                        <bc id="0">10000.0</bc>
+                        <bc id="0">200000.0</bc>
                     </diff-serv>
                 </static>
                 <dynamic>
                     <rbw>
-                        <priority id="0">10000.0</priority>
+                        <priority id="0">200000.0</priority>
+                        <priority id="1">200000.0</priority>
+                        <priority id="2">200000.0</priority>
                     </rbw>
                 </dynamic>
             </link>
-            <link id="IPLS-CHIN">
+            <link id="3_3 -&gt; 2_3">
                 <static>
-                    <metric>260.0</metric>
-                    <mrbw>10000.0</mrbw>
-                    <mbw>10000.0</mbw>
+                    <metric>1.0E-5</metric>
+                    <te-metric>1.0E-5</te-metric>
+                    <mrbw>200000.0</mrbw>
+                    <mbw>200000.0</mbw>
                     <diff-serv>
                         <bcm>MAM</bcm>
-                        <bc id="0">10000.0</bc>
+                        <bc id="0">200000.0</bc>
                     </diff-serv>
                 </static>
                 <dynamic>
                     <rbw>
-                        <priority id="0">10000.0</priority>
+                        <priority id="0">200000.0</priority>
+                        <priority id="1">200000.0</priority>
+                        <priority id="2">200000.0</priority>
                     </rbw>
                 </dynamic>
             </link>
-            <link id="CHIN-IPLS">
+            <link id="2_3 -&gt; 3_3">
                 <static>
-                    <metric>260.0</metric>
-                    <mrbw>10000.0</mrbw>
-                    <mbw>10000.0</mbw>
+                    <metric>1.0E-5</metric>
+                    <te-metric>1.0E-5</te-metric>
+                    <mrbw>200000.0</mrbw>
+                    <mbw>200000.0</mbw>
                     <diff-serv>
                         <bcm>MAM</bcm>
-                        <bc id="0">10000.0</bc>
+                        <bc id="0">200000.0</bc>
                     </diff-serv>
                 </static>
                 <dynamic>
                     <rbw>
-                        <priority id="0">10000.0</priority>
+                        <priority id="0">200000.0</priority>
+                        <priority id="1">200000.0</priority>
+                        <priority id="2">200000.0</priority>
                     </rbw>
                 </dynamic>
             </link>
-            <link id="IPLS-ATLA">
+            <link id="3_4 -&gt; 4_4">
                 <static>
-                    <metric>587.0</metric>
-                    <mrbw>10000.0</mrbw>
-                    <mbw>10000.0</mbw>
+                    <metric>1.0E-5</metric>
+                    <te-metric>1.0E-5</te-metric>
+                    <mrbw>200000.0</mrbw>
+                    <mbw>200000.0</mbw>
                     <diff-serv>
                         <bcm>MAM</bcm>
-                        <bc id="0">10000.0</bc>
+                        <bc id="0">200000.0</bc>
                     </diff-serv>
                 </static>
                 <dynamic>
                     <rbw>
-                        <priority id="0">10000.0</priority>
+                        <priority id="0">200000.0</priority>
+                        <priority id="1">200000.0</priority>
+                        <priority id="2">200000.0</priority>
                     </rbw>
                 </dynamic>
             </link>
-            <link id="ATLA-IPLS">
+            <link id="4_4 -&gt; 3_4">
                 <static>
-                    <metric>587.0</metric>
-                    <mrbw>10000.0</mrbw>
-                    <mbw>10000.0</mbw>
+                    <metric>1.0E-5</metric>
+                    <te-metric>1.0E-5</te-metric>
+                    <mrbw>200000.0</mrbw>
+                    <mbw>200000.0</mbw>
                     <diff-serv>
                         <bcm>MAM</bcm>
-                        <bc id="0">10000.0</bc>
+                        <bc id="0">200000.0</bc>
                     </diff-serv>
                 </static>
                 <dynamic>
                     <rbw>
-                        <priority id="0">10000.0</priority>
-                    </rbw>
-                </dynamic>
-            </link>
-            <link id="CHIN-NYCM">
-                <static>
-                    <metric>700.0</metric>
-                    <mrbw>10000.0</mrbw>
-                    <mbw>10000.0</mbw>
-                    <diff-serv>
-                        <bcm>MAM</bcm>
-                        <bc id="0">10000.0</bc>
-                    </diff-serv>
-                </static>
-                <dynamic>
-                    <rbw>
-                        <priority id="0">10000.0</priority>
-                    </rbw>
-                </dynamic>
-            </link>
-            <link id="NYCM-CHIN">
-                <static>
-                    <metric>700.0</metric>
-                    <mrbw>10000.0</mrbw>
-                    <mbw>10000.0</mbw>
-                    <diff-serv>
-                        <bcm>MAM</bcm>
-                        <bc id="0">10000.0</bc>
-                    </diff-serv>
-                </static>
-                <dynamic>
-                    <rbw>
-                        <priority id="0">10000.0</priority>
-                    </rbw>
-                </dynamic>
-            </link>
-            <link id="NYCM-WASH">
-                <static>
-                    <metric>233.0</metric>
-                    <mrbw>10000.0</mrbw>
-                    <mbw>10000.0</mbw>
-                    <diff-serv>
-                        <bcm>MAM</bcm>
-                        <bc id="0">10000.0</bc>
-                    </diff-serv>
-                </static>
-                <dynamic>
-                    <rbw>
-                        <priority id="0">10000.0</priority>
-                    </rbw>
-                </dynamic>
-            </link>
-            <link id="WASH-NYCM">
-                <static>
-                    <metric>233.0</metric>
-                    <mrbw>10000.0</mrbw>
-                    <mbw>10000.0</mbw>
-                    <diff-serv>
-                        <bcm>MAM</bcm>
-                        <bc id="0">10000.0</bc>
-                    </diff-serv>
-                </static>
-                <dynamic>
-                    <rbw>
-                        <priority id="0">10000.0</priority>
-                    </rbw>
-                </dynamic>
-            </link>
-            <link id="WASH-ATLA">
-                <static>
-                    <metric>846.0</metric>
-                    <mrbw>10000.0</mrbw>
-                    <mbw>10000.0</mbw>
-                    <diff-serv>
-                        <bcm>MAM</bcm>
-                        <bc id="0">10000.0</bc>
-                    </diff-serv>
-                </static>
-                <dynamic>
-                    <rbw>
-                        <priority id="0">10000.0</priority>
-                    </rbw>
-                </dynamic>
-            </link>
-            <link id="ATLA-WASH">
-                <static>
-                    <metric>846.0</metric>
-                    <mrbw>10000.0</mrbw>
-                    <mbw>10000.0</mbw>
-                    <diff-serv>
-                        <bcm>MAM</bcm>
-                        <bc id="0">10000.0</bc>
-                    </diff-serv>
-                </static>
-                <dynamic>
-                    <rbw>
-                        <priority id="0">10000.0</priority>
-                    </rbw>
-                </dynamic>
-            </link>
-            <link id="ATLA-HSTN">
-                <static>
-                    <metric>1176.0</metric>
-                    <mrbw>10000.0</mrbw>
-                    <mbw>10000.0</mbw>
-                    <diff-serv>
-                        <bcm>MAM</bcm>
-                        <bc id="0">10000.0</bc>
-                    </diff-serv>
-                </static>
-                <dynamic>
-                    <rbw>
-                        <priority id="0">10000.0</priority>
-                    </rbw>
-                </dynamic>
-            </link>
-            <link id="HSTN-ATLA">
-                <static>
-                    <metric>1176.0</metric>
-                    <mrbw>10000.0</mrbw>
-                    <mbw>10000.0</mbw>
-                    <diff-serv>
-                        <bcm>MAM</bcm>
-                        <bc id="0">10000.0</bc>
-                    </diff-serv>
-                </static>
-                <dynamic>
-                    <rbw>
-                        <priority id="0">10000.0</priority>
-                    </rbw>
-                </dynamic>
-            </link>
-            <link id="HSTN-LOSA">
-                <static>
-                    <metric>1893.0</metric>
-                    <mrbw>10000.0</mrbw>
-                    <mbw>10000.0</mbw>
-                    <diff-serv>
-                        <bcm>MAM</bcm>
-                        <bc id="0">10000.0</bc>
-                    </diff-serv>
-                </static>
-                <dynamic>
-                    <rbw>
-                        <priority id="0">10000.0</priority>
-                    </rbw>
-                </dynamic>
-            </link>
-            <link id="LOSA-HSTN">
-                <static>
-                    <metric>1893.0</metric>
-                    <mrbw>10000.0</mrbw>
-                    <mbw>10000.0</mbw>
-                    <diff-serv>
-                        <bcm>MAM</bcm>
-                        <bc id="0">10000.0</bc>
-                    </diff-serv>
-                </static>
-                <dynamic>
-                    <rbw>
-                        <priority id="0">10000.0</priority>
-                    </rbw>
-                </dynamic>
-            </link>
-            <link id="LOSA-SNVA">
-                <static>
-                    <metric>366.0</metric>
-                    <mrbw>10000.0</mrbw>
-                    <mbw>10000.0</mbw>
-                    <diff-serv>
-                        <bcm>MAM</bcm>
-                        <bc id="0">10000.0</bc>
-                    </diff-serv>
-                </static>
-                <dynamic>
-                    <rbw>
-                        <priority id="0">10000.0</priority>
-                    </rbw>
-                </dynamic>
-            </link>
-            <link id="SNVA-LOSA">
-                <static>
-                    <metric>366.0</metric>
-                    <mrbw>10000.0</mrbw>
-                    <mbw>10000.0</mbw>
-                    <diff-serv>
-                        <bcm>MAM</bcm>
-                        <bc id="0">10000.0</bc>
-                    </diff-serv>
-                </static>
-                <dynamic>
-                    <rbw>
-                        <priority id="0">10000.0</priority>
-                    </rbw>
-                </dynamic>
-            </link>
-            <link id="SNVA-DNVR">
-                <static>
-                    <metric>1295.0</metric>
-                    <mrbw>10000.0</mrbw>
-                    <mbw>10000.0</mbw>
-                    <diff-serv>
-                        <bcm>MAM</bcm>
-                        <bc id="0">10000.0</bc>
-                    </diff-serv>
-                </static>
-                <dynamic>
-                    <rbw>
-                        <priority id="0">10000.0</priority>
-                    </rbw>
-                </dynamic>
-            </link>
-            <link id="DNVR-SNVA">
-                <static>
-                    <metric>1295.0</metric>
-                    <mrbw>10000.0</mrbw>
-                    <mbw>10000.0</mbw>
-                    <diff-serv>
-                        <bcm>MAM</bcm>
-                        <bc id="0">10000.0</bc>
-                    </diff-serv>
-                </static>
-                <dynamic>
-                    <rbw>
-                        <priority id="0">10000.0</priority>
-                    </rbw>
-                </dynamic>
-            </link>
-            <link id="SNVA-STTL">
-                <static>
-                    <metric>861.0</metric>
-                    <mrbw>10000.0</mrbw>
-                    <mbw>10000.0</mbw>
-                    <diff-serv>
-                        <bcm>MAM</bcm>
-                        <bc id="0">10000.0</bc>
-                    </diff-serv>
-                </static>
-                <dynamic>
-                    <rbw>
-                        <priority id="0">10000.0</priority>
-                    </rbw>
-                </dynamic>
-            </link>
-            <link id="STTL-SNVA">
-                <static>
-                    <metric>861.0</metric>
-                    <mrbw>10000.0</mrbw>
-                    <mbw>10000.0</mbw>
-                    <diff-serv>
-                        <bcm>MAM</bcm>
-                        <bc id="0">10000.0</bc>
-                    </diff-serv>
-                </static>
-                <dynamic>
-                    <rbw>
-                        <priority id="0">10000.0</priority>
-                    </rbw>
-                </dynamic>
-            </link>
-            <link id="ATLAM5-ATLA">
-                <static>
-                    <metric>587.0</metric>
-                    <mrbw>10000.0</mrbw>
-                    <mbw>10000.0</mbw>
-                    <diff-serv>
-                        <bcm>MAM</bcm>
-                        <bc id="0">10000.0</bc>
-                    </diff-serv>
-                </static>
-                <dynamic>
-                    <rbw>
-                        <priority id="0">10000.0</priority>
-                    </rbw>
-                </dynamic>
-            </link>
-            <link id="ATLA-ATLAM5">
-                <static>
-                    <metric>587.0</metric>
-                    <mrbw>10000.0</mrbw>
-                    <mbw>10000.0</mbw>
-                    <diff-serv>
-                        <bcm>MAM</bcm>
-                        <bc id="0">10000.0</bc>
-                    </diff-serv>
-                </static>
-                <dynamic>
-                    <rbw>
-                        <priority id="0">10000.0</priority>
+                        <priority id="0">200000.0</priority>
+                        <priority id="1">200000.0</priority>
+                        <priority id="2">200000.0</priority>
                     </rbw>
                 </dynamic>
             </link>
         </links>
     </igp>
 </domain>
+

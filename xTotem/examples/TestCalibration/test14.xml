@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<domain ASID="97579" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://totem.run.montefiore.ulg.ac.be/Schema/Domain-v1_0.xsd">
+  <info>
+    <title>test14</title>
+    <description>This file was modified by Emiliano Saenz</description>
+    <units>
+         <unit type="bandwidth" value="mbps"/>
+         <unit type="delay" value="ms"/>
+    </units>
+  </info>
+  <topology>
+    <nodes>
+      <node id="0">
+        <rid>0</rid>
+        <description>0</description>
+        <location latitude="44.8546184622541" longitude="-86.8843432995696"/>
+      </node>
+      <node id="1">
+        <rid>1</rid>
+        <description>1</description>
+        <location latitude="49.3478416347808" longitude="158.860437297089"/>
+      </node>
+      <node id="10">
+        <rid>10</rid>
+        <description>10</description>
+        <location latitude="-16.9818629284978" longitude="31.6858396921107"/>
+      </node>
+      <node id="11">
+        <rid>11</rid>
+        <description>11</description>
+        <location latitude="-27.8669466855838" longitude="-147.474193122294"/>
+      </node>
+      <node id="12">
+        <rid>12</rid>
+        <description>12</description>
+        <location latitude="-89.2304588426339" longitude="-114.315593175634"/>
+      </node>
+      <node id="13">
+        <rid>13</rid>
+        <description>13</description>
+        <location latitude="-44.6385858475359" longitude="66.3274047212671"/>
+      </node>
+      <node id="14">
+        <rid>14</rid>
+        <description>14</description>
+        <location latitude="43.2990828372377" longitude="7.25002795364006"/>
+      </node>
+      <node id="15">
+        <rid>15</rid>
+        <description>15</description>
+        <location latitude="84.0155632862773" longitude="110.34354106153"/>
+      </node>
+      <node id="16">
+        <rid>16</rid>
+        <description>16</description>
+        <location latitude="7.00664029724692" longitude="-7.76813370024101"/>
+      </node>
+      <node id="17">
+        <rid>17</rid>
+        <description>17</description>
+        <location latitude="22.2149280318196" longitude="72.122700156646"/>
+      </node>
+      <node id="18">
+        <rid>18</rid>
+        <description>18</description>
+        <location latitude="83.5893199064228" longitude="90.8020787191476"/>
+      </node>
+      <node id="19">
+        <rid>19</rid>
+        <description>19</description>
+        <location latitude="-84.1326639008021" longitude="15.6505874831304"/>
+      </node>
+      <node id="2">
+        <rid>2</rid>
+        <description>2</description>
+        <location latitude="15.2958558939255" longitude="144.662628937139"/>
+      </node>
+      <node id="20">
+        <rid>20</rid>
+        <description>20</description>
+        <location latitude="10.4870401450694" longitude="40.0412362015892"/>
+      </node>
+      <node id="21">
+        <rid>21</rid>
+        <description>21</description>
+        <location latitude="38.0798722158654" longitude="143.29262860606"/>
+      </node>
+      <node id="22">
+        <rid>22</rid>
+        <description>22</description>
+        <location latitude="-16.5673800604051" longitude="29.3696879371244"/>
+      </node>
+      <node id="23">
+        <rid>23</rid>
+        <description>23</description>
+        <location latitude="-20.051022055119" longitude="40.9260824644331"/>
+      </node>
+      <node id="24">
+        <rid>24</rid>
+        <description>24</description>
+        <location latitude="26.559981824019" longitude="-34.9486581922984"/>
+      </node>
+      <node id="25">
+        <rid>25</rid>
+        <description>25</description>
+        <location latitude="70.6015646033156" longitude="-140.188073381299"/>
+      </node>
+      <node id="26">
+        <rid>26</rid>
+        <description>26</description>
+        <location latitude="18.3372669938953" longitude="164.939724050771"/>
+      </node>
+      <node id="27">
+        <rid>27</rid>
+        <description>27</description>
+        <location latitude="87.5013194642172" longitude="142.89073572816"/>
+      </node>
+      <node id="28">
+        <rid>28</rid>
+        <description>28</description>
+        <location latitude="26.1150510420146" longitude="-38.0840034841593"/>
+      </node>
+      <node id="29">
+        <rid>29</rid>
+        <description>29</description>
+        <location latitude="-87.1266710930108" longitude="23.8955452778673"/>
+      </node>
+      <node id="3">
+        <rid>3</rid>
+        <description>3</description>
+        <location latitude="-55.6096419944193" longitude="-12.779031505013"/>
+      </node>
+      <node id="4">
+        <rid>4</rid>
+        <description>4</description>
+        <location latitude="15.6399592676962" longitude="23.9000535911215"/>
+      </node>
+      <node id="5">
+        <rid>5</rid>
+        <description>5</description>
+        <location latitude="-6.12026402899048" longitude="-38.4926186071193"/>
+      </node>
+      <node id="6">
+        <rid>6</rid>
+        <description>6</description>
+        <location latitude="-24.3092634568185" longitude="-35.3323293834949"/>
+      </node>
+      <node id="7">
+        <rid>7</rid>
+        <description>7</description>
+        <location latitude="58.3520968415733" longitude="86.5623837227928"/>
+      </node>
+      <node id="8">
+        <rid>8</rid>
+        <description>8</description>
+        <location latitude="42.9887934516461" longitude="-168.498016196269"/>
+      </node>
+      <node id="9">
+        <rid>9</rid>
+        <description>9</description>
+        <location latitude="-44.938521157727" longitude="-177.970888321505"/>
+      </node>
+    </nodes>
+    <links>
+      <link id="0_28">
+        <from if="0" node="0"/>
+        <to if="0" node="28"/>
+      </link>
+      <link id="1_21">
+        <from if="0" node="1"/>
+        <to if="0" node="21"/>
+      </link>
+      <link id="10_22">
+        <from if="0" node="10"/>
+        <to if="0" node="22"/>
+      </link>
+      <link id="11_9">
+        <from if="0" node="11"/>
+        <to if="0" node="9"/>
+      </link>
+      <link id="12_29">
+        <from if="0" node="12"/>
+        <to if="0" node="29"/>
+      </link>
+      <link id="13_23">
+        <from if="0" node="13"/>
+        <to if="0" node="23"/>
+      </link>
+      <link id="14_4">
+        <from if="0" node="14"/>
+        <to if="0" node="4"/>
+      </link>
+      <link id="15_18">
+        <from if="0" node="15"/>
+        <to if="0" node="18"/>
+      </link>
+      <link id="16_4">
+        <from if="0" node="16"/>
+        <to if="0" node="4"/>
+      </link>
+      <link id="17_20">
+        <from if="0" node="17"/>
+        <to if="0" node="20"/>
+      </link>
+      <link id="18_7">
+        <from if="0" node="18"/>
+        <to if="0" node="7"/>
+      </link>
+      <link id="19_3">
+        <from if="0" node="19"/>
+        <to if="0" node="3"/>
+      </link>
+      <link id="2_21">
+        <from if="0" node="2"/>
+        <to if="0" node="21"/>
+      </link>
+      <link id="20_4">
+        <from if="0" node="20"/>
+        <to if="0" node="4"/>
+      </link>
+      <link id="21_7">
+        <from if="0" node="21"/>
+        <to if="0" node="7"/>
+      </link>
+      <link id="22_4">
+        <from if="0" node="22"/>
+        <to if="0" node="4"/>
+      </link>
+      <link id="23_10">
+        <from if="0" node="23"/>
+        <to if="0" node="10"/>
+      </link>
+      <link id="24_16">
+        <from if="0" node="24"/>
+        <to if="0" node="16"/>
+      </link>
+      <link id="25_27">
+        <from if="0" node="25"/>
+        <to if="0" node="27"/>
+      </link>
+      <link id="26_2">
+        <from if="0" node="26"/>
+        <to if="0" node="2"/>
+      </link>
+      <link id="27_15">
+        <from if="0" node="27"/>
+        <to if="0" node="15"/>
+      </link>
+      <link id="28_24">
+        <from if="0" node="28"/>
+        <to if="0" node="24"/>
+      </link>
+      <link id="29_19">
+        <from if="0" node="29"/>
+        <to if="0" node="19"/>
+      </link>
+      <link id="3_22">
+        <from if="0" node="3"/>
+        <to if="0" node="22"/>
+      </link>
+      <link id="5_16">
+        <from if="0" node="5"/>
+        <to if="0" node="16"/>
+      </link>
+      <link id="6_5">
+        <from if="0" node="6"/>
+        <to if="0" node="5"/>
+      </link>
+      <link id="7_17">
+        <from if="0" node="7"/>
+        <to if="0" node="17"/>
+      </link>
+      <link id="8_1">
+        <from if="0" node="8"/>
+        <to if="0" node="1"/>
+      </link>
+      <link id="9_12">
+        <from if="0" node="9"/>
+        <to if="0" node="12"/>
+      </link>
+    </links>
+  </topology>
+  <igp>
+    <links>
+      <link id="0_28">
+        <static>
+        </static>
+      </link>
+      <link id="1_21">
+        <static>
+        </static>
+      </link>
+      <link id="10_22">
+        <static>
+        </static>
+      </link>
+      <link id="11_9">
+        <static>
+        </static>
+      </link>
+      <link id="12_29">
+        <static>
+        </static>
+      </link>
+      <link id="13_23">
+        <static>
+        </static>
+      </link>
+      <link id="14_4">
+        <static>
+        </static>
+      </link>
+      <link id="15_18">
+        <static>
+        </static>
+      </link>
+      <link id="16_4">
+        <static>
+        </static>
+      </link>
+      <link id="17_20">
+        <static>
+        </static>
+      </link>
+      <link id="18_7">
+        <static>
+        </static>
+      </link>
+      <link id="19_3">
+        <static>
+        </static>
+      </link>
+      <link id="2_21">
+        <static>
+        </static>
+      </link>
+      <link id="20_4">
+        <static>
+        </static>
+      </link>
+      <link id="21_7">
+        <static>
+        </static>
+      </link>
+      <link id="22_4">
+        <static>
+        </static>
+      </link>
+      <link id="23_10">
+        <static>
+        </static>
+      </link>
+      <link id="24_16">
+        <static>
+        </static>
+      </link>
+      <link id="25_27">
+        <static>
+        </static>
+      </link>
+      <link id="26_2">
+        <static>
+        </static>
+      </link>
+      <link id="27_15">
+        <static>
+        </static>
+      </link>
+      <link id="28_24">
+        <static>
+        </static>
+      </link>
+      <link id="29_19">
+        <static>
+        </static>
+      </link>
+      <link id="3_22">
+        <static>
+        </static>
+      </link>
+      <link id="5_16">
+        <static>
+        </static>
+      </link>
+      <link id="6_5">
+        <static>
+        </static>
+      </link>
+      <link id="7_17">
+        <static>
+        </static>
+      </link>
+      <link id="8_1">
+        <static>
+        </static>
+      </link>
+      <link id="9_12">
+        <static>
+        </static>
+      </link>
+    </links>
+  </igp>
+</domain>
