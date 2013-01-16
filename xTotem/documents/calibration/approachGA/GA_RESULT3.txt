@@ -1,0 +1,597 @@
+Buildfile: /tmp/xTotem/build.xml
+
+TestCalibrationGraphPartitionGA:
+     [java] Init Logging from JAR with config file : /resources/log4j.xml
+     [java] ##################################################### TEST 0 #####################################################
+     [java] Parameters: 10	25	500	800	0.01	0.2
+     [java] Graph: 12	15	0.056818181818181816
+     [java] Separator: 2	0.16666666666666666	2
+     [java] Detail  of components:
+     [java] 		 C0 :5
+     [java] 		 C1 :5
+     [java] 	Media: 5.0
+     [java] 	Balanced: 0.0
+     [java] Time (ms): 2669
+     [java] ##################################################### FIN TEST 0 #####################################################
+     [java] 
+     [java] ##################################################### TEST 1 #####################################################
+     [java] Parameters: 10	25	500	800	0.01	0.2
+     [java] Graph: 5	6	0.15
+     [java] Separator: 1	0.2	2
+     [java] Detail  of components:
+     [java] 		 C0 :2
+     [java] 		 C1 :2
+     [java] 	Media: 2.0
+     [java] 	Balanced: 0.0
+     [java] Time (ms): 983
+     [java] ##################################################### FIN TEST 1 #####################################################
+     [java] 
+     [java] ##################################################### TEST 2 #####################################################
+     [java] Parameters: 10	25	500	800	0.01	0.2
+     [java] Graph: 6	5	0.08333333333333333
+     [java] Separator: 2	0.3333333333333333	4
+     [java] Detail  of components:
+     [java] 		 C0 :1
+     [java] 		 C1 :1
+     [java] 		 C2 :1
+     [java] 		 C3 :1
+     [java] 	Media: 1.0
+     [java] 	Balanced: 0.0
+     [java] Time (ms): 807
+     [java] ##################################################### FIN TEST 2 #####################################################
+     [java] 
+     [java] ##################################################### TEST 3 #####################################################
+     [java] Parameters: 10	25	500	800	0.01	0.2
+     [java] Graph: 9	9	0.0625
+     [java] Separator: 3	0.3333333333333333	6
+     [java] Detail  of components:
+     [java] 		 C0 :1
+     [java] 		 C1 :1
+     [java] 		 C2 :1
+     [java] 		 C3 :1
+     [java] 		 C4 :1
+     [java] 		 C5 :1
+     [java] 	Media: 1.0
+     [java] 	Balanced: 0.0
+     [java] Time (ms): 1318
+     [java] ##################################################### FIN TEST 3 #####################################################
+     [java] 
+     [java] ##################################################### TEST 4 #####################################################
+     [java] Parameters: 10	25	500	800	0.01	0.2
+     [java] Graph: 18	32	0.05228758169934641
+     [java] Separator: 7	0.3888888888888889	11
+     [java] Detail  of components:
+     [java] 		 C0 :1
+     [java] 		 C1 :1
+     [java] 		 C2 :1
+     [java] 		 C3 :1
+     [java] 		 C4 :1
+     [java] 		 C5 :1
+     [java] 		 C6 :1
+     [java] 		 C7 :1
+     [java] 		 C8 :1
+     [java] 		 C9 :1
+     [java] 		 C10 :1
+     [java] 	Media: 1.0
+     [java] 	Balanced: 0.0
+     [java] Time (ms): 3082
+     [java] ##################################################### FIN TEST 4 #####################################################
+     [java] 
+     [java] ##################################################### TEST 5 #####################################################
+     [java] Parameters: 10	25	100	160	0.01	0.2
+     [java] Graph: 23	31	0.030632411067193676
+     [java] Separator: 14	0.6086956521739131	9
+     [java] Detail  of components:
+     [java] 		 C0 :1
+     [java] 		 C1 :1
+     [java] 		 C2 :1
+     [java] 		 C3 :1
+     [java] 		 C4 :1
+     [java] 		 C5 :1
+     [java] 		 C6 :1
+     [java] 		 C7 :1
+     [java] 		 C8 :1
+     [java] 	Media: 1.0
+     [java] 	Balanced: 0.0
+     [java] Time (ms): 648
+     [java] ##################################################### FIN TEST 5 #####################################################
+     [java] 
+     [java] ##################################################### TEST 6 #####################################################
+     [java] Parameters: 10	25	400	640	0.01	0.2
+     [java] Graph: 26	48	0.036923076923076927
+     [java] Separator: 16	0.6153846153846154	10
+     [java] Detail  of components:
+     [java] 		 C0 :1
+     [java] 		 C1 :1
+     [java] 		 C2 :1
+     [java] 		 C3 :1
+     [java] 		 C4 :1
+     [java] 		 C5 :1
+     [java] 		 C6 :1
+     [java] 		 C7 :1
+     [java] 		 C8 :1
+     [java] 		 C9 :1
+     [java] 	Media: 1.0
+     [java] 	Balanced: 0.0
+     [java] Time (ms): 3159
+     [java] ##################################################### FIN TEST 6 #####################################################
+     [java] 
+     [java] ##################################################### TEST 7 #####################################################
+     [java] Parameters: 10	25	200	320	0.01	0.2
+     [java] Graph: 45	84	0.021212121212121213
+     [java] Separator: 28	0.6222222222222222	17
+     [java] Detail  of components:
+     [java] 		 C0 :1
+     [java] 		 C1 :1
+     [java] 		 C2 :1
+     [java] 		 C3 :1
+     [java] 		 C4 :1
+     [java] 		 C5 :1
+     [java] 		 C6 :1
+     [java] 		 C7 :1
+     [java] 		 C8 :1
+     [java] 		 C9 :1
+     [java] 		 C10 :1
+     [java] 		 C11 :1
+     [java] 		 C12 :1
+     [java] 		 C13 :1
+     [java] 		 C14 :1
+     [java] 		 C15 :1
+     [java] 		 C16 :1
+     [java] 	Media: 1.0
+     [java] 	Balanced: 0.0
+     [java] Time (ms): 3051
+     [java] ##################################################### FIN TEST 7 #####################################################
+     [java] 
+     [java] ##################################################### TEST 8 #####################################################
+     [java] Parameters: 10	25	300	480	0.01	0.2
+     [java] Graph: 18	27	0.04411764705882353
+     [java] Separator: 6	0.3333333333333333	4
+     [java] Detail  of components:
+     [java] 		 C0 :3
+     [java] 		 C1 :3
+     [java] 		 C2 :3
+     [java] 		 C3 :3
+     [java] 	Media: 3.0
+     [java] 	Balanced: 0.0
+     [java] Time (ms): 2359
+     [java] ##################################################### FIN TEST 8 #####################################################
+     [java] 
+     [java] ##################################################### TEST 9 #####################################################
+     [java] Parameters: 10	25	500	800	0.01	0.2
+     [java] Graph: 15	27	0.06428571428571428
+     [java] Separator: 4	0.26666666666666666	11
+     [java] Detail  of components:
+     [java] 		 C0 :1
+     [java] 		 C1 :1
+     [java] 		 C2 :1
+     [java] 		 C3 :1
+     [java] 		 C4 :1
+     [java] 		 C5 :1
+     [java] 		 C6 :1
+     [java] 		 C7 :1
+     [java] 		 C8 :1
+     [java] 		 C9 :1
+     [java] 		 C10 :1
+     [java] 	Media: 1.0
+     [java] 	Balanced: 0.0
+     [java] Time (ms): 2767
+     [java] ##################################################### FIN TEST 9 #####################################################
+     [java] 
+     [java] ##################################################### TEST 10 #####################################################
+     [java] Parameters: 10	25	100	160	0.01	0.2
+     [java] Graph: 25	64	0.05333333333333334
+     [java] Separator: 9	0.36	2
+     [java] Detail  of components:
+     [java] 		 C0 :8
+     [java] 		 C1 :8
+     [java] 	Media: 8.0
+     [java] 	Balanced: 0.0
+     [java] Time (ms): 1171
+     [java] ##################################################### FIN TEST 10 #####################################################
+     [java] 
+     [java] ##################################################### TEST 11 #####################################################
+     [java] Parameters: 10	25	100	160	0.01	0.2
+     [java] Graph: 50	102	0.020816326530612245
+     [java] Separator: 29	0.58	21
+     [java] Detail  of components:
+     [java] 		 C0 :1
+     [java] 		 C1 :1
+     [java] 		 C2 :1
+     [java] 		 C3 :1
+     [java] 		 C4 :1
+     [java] 		 C5 :1
+     [java] 		 C6 :1
+     [java] 		 C7 :1
+     [java] 		 C8 :1
+     [java] 		 C9 :1
+     [java] 		 C10 :1
+     [java] 		 C11 :1
+     [java] 		 C12 :1
+     [java] 		 C13 :1
+     [java] 		 C14 :1
+     [java] 		 C15 :1
+     [java] 		 C16 :1
+     [java] 		 C17 :1
+     [java] 		 C18 :1
+     [java] 		 C19 :1
+     [java] 		 C20 :1
+     [java] 	Media: 1.0
+     [java] 	Balanced: 0.0
+     [java] Time (ms): 1728
+     [java] ##################################################### FIN TEST 11 #####################################################
+     [java] 
+     [java] ##################################################### TEST 12 #####################################################
+     [java] Parameters: 10	25	500	800	0.01	0.2
+     [java] Graph: 25	65	0.05416666666666667
+     [java] Separator: 9	0.36	2
+     [java] Detail  of components:
+     [java] 		 C0 :8
+     [java] 		 C1 :8
+     [java] 	Media: 8.0
+     [java] 	Balanced: 0.0
+     [java] Time (ms): 6005
+     [java] ##################################################### FIN TEST 12 #####################################################
+     [java] 
+     [java] ##################################################### TEST 13 #####################################################
+     [java] Parameters: 10	25	400	640	0.01	0.2
+     [java] Graph: 25	64	0.05333333333333334
+     [java] Separator: 13	0.52	3
+     [java] Detail  of components:
+     [java] 		 C0 :4
+     [java] 		 C1 :4
+     [java] 		 C2 :4
+     [java] 	Media: 4.0
+     [java] 	Balanced: 0.0
+     [java] Time (ms): 4469
+     [java] ##################################################### FIN TEST 13 #####################################################
+     [java] 
+     [java] ##################################################### TEST 14 #####################################################
+     [java] Parameters: 10	25	500	800	0.01	0.2
+     [java] Graph: 30	29	0.016666666666666666
+     [java] Separator: 1	0.03333333333333333	2
+     [java] Detail  of components:
+     [java] 		 C0 :18
+     [java] 		 C1 :11
+     [java] 	Media: 14.5
+     [java] 	Balanced: 7.0
+     [java] Time (ms): 7092
+     [java] ##################################################### FIN TEST 14 #####################################################
+     [java] 
+     [java] ##################################################### TEST 15 #####################################################
+     [java] Parameters: 10	25	500	800	0.01	0.2
+     [java] Graph: 45	45	0.011363636363636364
+     [java] Separator: 3	0.06666666666666667	3
+     [java] Detail  of components:
+     [java] 		 C0 :14
+     [java] 		 C1 :14
+     [java] 		 C2 :14
+     [java] 	Media: 14.0
+     [java] 	Balanced: 0.0
+     [java] Time (ms): 11284
+     [java] ##################################################### FIN TEST 15 #####################################################
+     [java] 
+     [java] ##################################################### TEST 16 #####################################################
+     [java] Parameters: 10	25	100	160	0.01	0.2
+     [java] Graph: 50	139	0.02836734693877551
+     [java] Separator: 14	0.28	2
+     [java] Detail  of components:
+     [java] 		 C0 :18
+     [java] 		 C1 :18
+     [java] 	Media: 18.0
+     [java] 	Balanced: 0.0
+     [java] Time (ms): 3468
+     [java] ##################################################### FIN TEST 16 #####################################################
+     [java] 
+     [java] ##################################################### TEST 17 #####################################################
+     [java] Parameters: 10	25	100	160	0.01	0.2
+     [java] Graph: 55	133	0.02239057239057239
+     [java] Separator: 43	0.7818181818181819	12
+     [java] Detail  of components:
+     [java] 		 C0 :1
+     [java] 		 C1 :1
+     [java] 		 C2 :1
+     [java] 		 C3 :1
+     [java] 		 C4 :1
+     [java] 		 C5 :1
+     [java] 		 C6 :1
+     [java] 		 C7 :1
+     [java] 		 C8 :1
+     [java] 		 C9 :1
+     [java] 		 C10 :1
+     [java] 		 C11 :1
+     [java] 	Media: 1.0
+     [java] 	Balanced: 0.0
+     [java] Time (ms): 3190
+     [java] ##################################################### FIN TEST 17 #####################################################
+     [java] 
+     [java] ##################################################### TEST 18 #####################################################
+     [java] Parameters: 10	25	100	160	0.01	0.2
+     [java] Graph: 60	122	0.017231638418079096
+     [java] Separator: 36	0.6	24
+     [java] Detail  of components:
+     [java] 		 C0 :1
+     [java] 		 C1 :1
+     [java] 		 C2 :1
+     [java] 		 C3 :1
+     [java] 		 C4 :1
+     [java] 		 C5 :1
+     [java] 		 C6 :1
+     [java] 		 C7 :1
+     [java] 		 C8 :1
+     [java] 		 C9 :1
+     [java] 		 C10 :1
+     [java] 		 C11 :1
+     [java] 		 C12 :1
+     [java] 		 C13 :1
+     [java] 		 C14 :1
+     [java] 		 C15 :1
+     [java] 		 C16 :1
+     [java] 		 C17 :1
+     [java] 		 C18 :1
+     [java] 		 C19 :1
+     [java] 		 C20 :1
+     [java] 		 C21 :1
+     [java] 		 C22 :1
+     [java] 		 C23 :1
+     [java] 	Media: 1.0
+     [java] 	Balanced: 0.0
+     [java] Time (ms): 2046
+     [java] ##################################################### FIN TEST 18 #####################################################
+     [java] 
+     [java] ##################################################### TEST 19 #####################################################
+     [java] Parameters: 10	25	300	480	0.01	0.2
+     [java] Graph: 65	128	0.015384615384615385
+     [java] Separator: 33	0.5076923076923077	2
+     [java] Detail  of components:
+     [java] 		 C0 :16
+     [java] 		 C1 :16
+     [java] 	Media: 16.0
+     [java] 	Balanced: 0.0
+     [java] Time (ms): 7231
+     [java] ##################################################### FIN TEST 19 #####################################################
+     [java] 
+     [java] ##################################################### TEST 20 #####################################################
+     [java] Parameters: 10	25	100	160	0.01	0.2
+     [java] Graph: 70	197	0.02039337474120083
+     [java] Separator: 26	0.37142857142857144	2
+     [java] Detail  of components:
+     [java] 		 C0 :22
+     [java] 		 C1 :22
+     [java] 	Media: 22.0
+     [java] 	Balanced: 0.0
+     [java] Time (ms): 4727
+     [java] ##################################################### FIN TEST 20 #####################################################
+     [java] 
+     [java] ##################################################### TEST 21 #####################################################
+     [java] Parameters: 10	25	400	640	0.01	0.2
+     [java] Graph: 75	148	0.013333333333333334
+     [java] Separator: 5	0.06666666666666667	2
+     [java] Detail  of components:
+     [java] 		 C0 :35
+     [java] 		 C1 :35
+     [java] 	Media: 35.0
+     [java] 	Balanced: 0.0
+     [java] Time (ms): 22760
+     [java] ##################################################### FIN TEST 21 #####################################################
+     [java] 
+     [java] ##################################################### TEST 22 #####################################################
+     [java] Parameters: 10	25	200	320	0.01	0.2
+     [java] Graph: 80	228	0.018037974683544303
+     [java] Separator: 36	0.45	2
+     [java] Detail  of components:
+     [java] 		 C0 :22
+     [java] 		 C1 :22
+     [java] 	Media: 22.0
+     [java] 	Balanced: 0.0
+     [java] Time (ms): 10318
+     [java] ##################################################### FIN TEST 22 #####################################################
+     [java] 
+     [java] ##################################################### TEST 23 #####################################################
+     [java] Parameters: 10	25	400	640	0.01	0.2
+     [java] Graph: 90	188	0.011735330836454432
+     [java] Separator: 60	0.6666666666666666	30
+     [java] Detail  of components:
+     [java] 		 C0 :1
+     [java] 		 C1 :1
+     [java] 		 C2 :1
+     [java] 		 C3 :1
+     [java] 		 C4 :1
+     [java] 		 C5 :1
+     [java] 		 C6 :1
+     [java] 		 C7 :1
+     [java] 		 C8 :1
+     [java] 		 C9 :1
+     [java] 		 C10 :1
+     [java] 		 C11 :1
+     [java] 		 C12 :1
+     [java] 		 C13 :1
+     [java] 		 C14 :1
+     [java] 		 C15 :1
+     [java] 		 C16 :1
+     [java] 		 C17 :1
+     [java] 		 C18 :1
+     [java] 		 C19 :1
+     [java] 		 C20 :1
+     [java] 		 C21 :1
+     [java] 		 C22 :1
+     [java] 		 C23 :1
+     [java] 		 C24 :1
+     [java] 		 C25 :1
+     [java] 		 C26 :1
+     [java] 		 C27 :1
+     [java] 		 C28 :1
+     [java] 		 C29 :1
+     [java] 	Media: 1.0
+     [java] 	Balanced: 0.0
+     [java] Time (ms): 12788
+     [java] ##################################################### FIN TEST 23 #####################################################
+     [java] 
+     [java] ##################################################### TEST 24 #####################################################
+     [java] Parameters: 10	25	500	800	0.01	0.2
+     [java] Graph: 95	272	0.01522956326987682
+     [java] Separator: 29	0.30526315789473685	2
+     [java] Detail  of components:
+     [java] 		 C0 :33
+     [java] 		 C1 :33
+     [java] 	Media: 33.0
+     [java] 	Balanced: 0.0
+     [java] Time (ms): 33424
+     [java] ##################################################### FIN TEST 24 #####################################################
+     [java] 
+     [java] ##################################################### TEST 25 #####################################################
+     [java] Parameters: 10	25	200	320	0.01	0.2
+     [java] Graph: 112	224	0.009009009009009009
+     [java] Separator: 67	0.5982142857142857	45
+     [java] Detail  of components:
+     [java] 		 C0 :1
+     [java] 		 C1 :1
+     [java] 		 C2 :1
+     [java] 		 C3 :1
+     [java] 		 C4 :1
+     [java] 		 C5 :1
+     [java] 		 C6 :1
+     [java] 		 C7 :1
+     [java] 		 C8 :1
+     [java] 		 C9 :1
+     [java] 		 C10 :1
+     [java] 		 C11 :1
+     [java] 		 C12 :1
+     [java] 		 C13 :1
+     [java] 		 C14 :1
+     [java] 		 C15 :1
+     [java] 		 C16 :1
+     [java] 		 C17 :1
+     [java] 		 C18 :1
+     [java] 		 C19 :1
+     [java] 		 C20 :1
+     [java] 		 C21 :1
+     [java] 		 C22 :1
+     [java] 		 C23 :1
+     [java] 		 C24 :1
+     [java] 		 C25 :1
+     [java] 		 C26 :1
+     [java] 		 C27 :1
+     [java] 		 C28 :1
+     [java] 		 C29 :1
+     [java] 		 C30 :1
+     [java] 		 C31 :1
+     [java] 		 C32 :1
+     [java] 		 C33 :1
+     [java] 		 C34 :1
+     [java] 		 C35 :1
+     [java] 		 C36 :1
+     [java] 		 C37 :1
+     [java] 		 C38 :1
+     [java] 		 C39 :1
+     [java] 		 C40 :1
+     [java] 		 C41 :1
+     [java] 		 C42 :1
+     [java] 		 C43 :1
+     [java] 		 C44 :1
+     [java] 	Media: 1.0
+     [java] 	Balanced: 0.0
+     [java] Time (ms): 8229
+     [java] ##################################################### FIN TEST 25 #####################################################
+     [java] 
+     [java] ##################################################### TEST 26 #####################################################
+     [java] Parameters: 10	25	100	160	0.01	0.2
+     [java] Graph: 100	284	0.014343434343434344
+     [java] Separator: 24	0.24	2
+     [java] Detail  of components:
+     [java] 		 C0 :38
+     [java] 		 C1 :38
+     [java] 	Media: 38.0
+     [java] 	Balanced: 0.0
+     [java] Time (ms): 7215
+     [java] ##################################################### FIN TEST 26 #####################################################
+     [java] 
+     [java] ##################################################### TEST 27 #####################################################
+     [java] Parameters: 10	25	100	160	0.01	0.2
+     [java] Graph: 100	203	0.010252525252525253
+     [java] Separator: 48	0.48	52
+     [java] Detail  of components:
+     [java] 		 C0 :1
+     [java] 		 C1 :1
+     [java] 		 C2 :1
+     [java] 		 C3 :1
+     [java] 		 C4 :1
+     [java] 		 C5 :1
+     [java] 		 C6 :1
+     [java] 		 C7 :1
+     [java] 		 C8 :1
+     [java] 		 C9 :1
+     [java] 		 C10 :1
+     [java] 		 C11 :1
+     [java] 		 C12 :1
+     [java] 		 C13 :1
+     [java] 		 C14 :1
+     [java] 		 C15 :1
+     [java] 		 C16 :1
+     [java] 		 C17 :1
+     [java] 		 C18 :1
+     [java] 		 C19 :1
+     [java] 		 C20 :1
+     [java] 		 C21 :1
+     [java] 		 C22 :1
+     [java] 		 C23 :1
+     [java] 		 C24 :1
+     [java] 		 C25 :1
+     [java] 		 C26 :1
+     [java] 		 C27 :1
+     [java] 		 C28 :1
+     [java] 		 C29 :1
+     [java] 		 C30 :1
+     [java] 		 C31 :1
+     [java] 		 C32 :1
+     [java] 		 C33 :1
+     [java] 		 C34 :1
+     [java] 		 C35 :1
+     [java] 		 C36 :1
+     [java] 		 C37 :1
+     [java] 		 C38 :1
+     [java] 		 C39 :1
+     [java] 		 C40 :1
+     [java] 		 C41 :1
+     [java] 		 C42 :1
+     [java] 		 C43 :1
+     [java] 		 C44 :1
+     [java] 		 C45 :1
+     [java] 		 C46 :1
+     [java] 		 C47 :1
+     [java] 		 C48 :1
+     [java] 		 C49 :1
+     [java] 		 C50 :1
+     [java] 		 C51 :1
+     [java] 	Media: 1.0
+     [java] 	Balanced: 0.0
+     [java] Time (ms): 3885
+     [java] ##################################################### FIN TEST 27 #####################################################
+     [java] 
+     [java] ##################################################### TEST 28 #####################################################
+     [java] Parameters: 10	25	400	640	0.01	0.2
+     [java] Graph: 100	198	0.01
+     [java] Separator: 6	0.06	2
+     [java] Detail  of components:
+     [java] 		 C0 :47
+     [java] 		 C1 :47
+     [java] 	Media: 47.0
+     [java] 	Balanced: 0.0
+     [java] Time (ms): 29423
+     [java] ##################################################### FIN TEST 28 #####################################################
+     [java] 
+     [java] ##################################################### TEST 29 #####################################################
+     [java] Parameters: 10	25	200	320	0.01	0.2
+     [java] Graph: 100	104	0.0052525252525252525
+     [java] Separator: 6	0.06	2
+     [java] Detail  of components:
+     [java] 		 C0 :47
+     [java] 		 C1 :47
+     [java] 	Media: 47.0
+     [java] 	Balanced: 0.0
+     [java] Time (ms): 9686
+     [java] ##################################################### FIN TEST 29 #####################################################
+     [java] 
+
+BUILD SUCCESSFUL
+Total time: 20 minutes 14 seconds

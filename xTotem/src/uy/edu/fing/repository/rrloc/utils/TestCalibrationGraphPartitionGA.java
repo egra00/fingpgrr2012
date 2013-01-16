@@ -86,7 +86,7 @@ public class TestCalibrationGraphPartitionGA
 		{
 	        try 
 	        {
-	        	Domain domain = DomainFactory.loadDomain("examples/TestCalibration/test"+i+".xml", false, false); 
+	        	Domain domain = DomainFactory.loadDomain("topologies/TestCalibration/test"+i+".xml", false, false); 
 	    		Graph<Node, Link> G = new UndirectedSparseMultigraph<Node, Link>();
 	    		
 	    		Operations.addAllVertices(G, (Set<Node>)(new HashSet<Node>(domain.getAllNodes())));
@@ -118,10 +118,10 @@ public class TestCalibrationGraphPartitionGA
 	    				for(int sizeP= MIN_SIZEP; sizeP<=MAX_SIZEP; sizeP+= STEPS_SIZEP)
 	    				{
 	    					int sizeOf = (int)((1 + 0.6)*sizeP);
-	    	    			for(int j=0; j<STEPS_PMUT; j++)
+	    	    			for(int j=0; j<=STEPS_PMUT; j++)
 	    	    			{
 	    	    				double pmut= MIN_PMUT + ((MAX_PMUT - MIN_PMUT)/STEPS_PMUT)*j;
-	    	    				for(int m=0; m<STEPS_PCROSS; m++)
+	    	    				for(int m=0; m<=STEPS_PCROSS; m++)
 	    	    				{
 	    	    					double pcross= MIN_CROSS + ((MAX_CROSS - MIN_CROSS)/STEPS_PCROSS)*m;
 	    	    					

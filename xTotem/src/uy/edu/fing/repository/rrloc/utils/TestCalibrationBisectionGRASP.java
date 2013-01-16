@@ -76,7 +76,7 @@ public class TestCalibrationBisectionGRASP
 		{
 	        try 
 	        {
-	        	Domain domain = DomainFactory.loadDomain("examples/TestCalibration/test"+i+".xml", false, false); 
+	        	Domain domain = DomainFactory.loadDomain("toplogies/TestCalibration/test"+i+".xml", false, false); 
 	    		Graph<Node, Link> G = new UndirectedSparseMultigraph<Node, Link>();
 	    		
 	    		Operations.addAllVertices(G, (Set<Node>)(new HashSet<Node>(domain.getAllNodes())));
@@ -102,10 +102,10 @@ public class TestCalibrationBisectionGRASP
 	    		
 	    		for(int can_iter=MIN_ITER; can_iter<=MAX_ITER; can_iter+=STEPS_ITER)
 	    		{
-	    			for(int j=0; j<STEPS_ALFA; j++)
+	    			for(int j=0; j<=STEPS_ALFA; j++)
 	    			{
 	    				double alfa= MIN_ALFA + ((MAX_ALFA - MIN_ALFA)/STEPS_ALFA)*j;
-	    				for(int m=0; m<STEPS_BETA; m++)
+	    				for(int m=0; m<=STEPS_BETA; m++)
 	    				{
 	    					double beta= MIN_BETA + ((MAX_BETA - MIN_BETA)/STEPS_BETA)*m;
 	    					

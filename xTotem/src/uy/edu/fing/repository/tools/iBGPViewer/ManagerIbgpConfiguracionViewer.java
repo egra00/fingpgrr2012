@@ -524,7 +524,7 @@ public class ManagerIbgpConfiguracionViewer {
 	                    	if (!linksById.contains(linkId))
 	                    	{
 	                    		linksById.add(linkId);
-	                    		//ibgp.addEdge(new MyLink(router.getId(), nodesById.get(neighbor.getAddress()).getId(), TypeMylink.client), mynodesById.get(router.getRid()), mynodesById.get(neighbor.getAddress()), EdgeType.DIRECTED);
+	                    		ibgp.addEdge(new MyLink(router.getId(), nodesById.get(neighbor.getAddress()).getId(), TypeMylink.client), mynodesById.get(router.getRid()), mynodesById.get(neighbor.getAddress()), EdgeType.DIRECTED);
 	                    	}
 	                    }              	
 	                }     
@@ -550,7 +550,7 @@ public class ManagerIbgpConfiguracionViewer {
                     	if (!linksById.contains(linkId))
                     	{
                     		linksById.add(linkId);
-                    		//ibgp.addEdge(new MyLink(router.getId(), nodesById.get(neighbor.getAddress()).getId(), TypeMylink.peer), mynodesById.get(router.getRid()), mynodesById.get(neighbor.getAddress()));
+                    		ibgp.addEdge(new MyLink(router.getId(), nodesById.get(neighbor.getAddress()).getId(), TypeMylink.peer), mynodesById.get(router.getRid()), mynodesById.get(neighbor.getAddress()));
                     	}           	
 	                }     
 	            }
