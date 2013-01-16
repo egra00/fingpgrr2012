@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="." default="build" name="xTotem">
+    <property environment="env"/>
+    <property name="workspace_loc:xTotem" value="."/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.6"/>
+    <property name="source" value="1.6"/>
+    <path id="xTotem.classpath">
+        <pathelement location="bin"/>
+        <pathelement location="lib/java/ant-contrib-1.0b3.jar"/>
+        <pathelement location="lib/java/Brite_modified.jar"/>
+        <pathelement location="lib/java/catalina-ant.jar"/>
+        <pathelement location="lib/java/CBGP.jar"/>
+        <pathelement location="lib/java/colt.jar"/>
+        <pathelement location="lib/java/commons-collections-3.1.jar"/>
+        <pathelement location="lib/java/epsgraphics.jar"/>
+        <pathelement location="lib/java/jax-qname.jar"/>
+        <pathelement location="lib/java/jaxb-api.jar"/>
+        <pathelement location="lib/java/jaxb-impl.jar"/>
+        <pathelement location="lib/java/jaxb-libs.jar"/>
+        <pathelement location="lib/java/jaxb-xjc.jar"/>
+        <pathelement location="lib/java/jcommon-1.0.0.jar"/>
+        <pathelement location="lib/java/jfreechart-1.0.0.jar"/>
+        <pathelement location="lib/java/jgrapht-0.5.2.jar"/>
+        <pathelement location="lib/java/jrobin-1.5.2.jar"/>
+        <pathelement location="lib/java/junit.jar"/>
+        <pathelement location="lib/java/log4j-1.2.8.jar"/>
+        <pathelement location="lib/java/relaxngDatatype.jar"/>
+        <pathelement location="lib/java/xsdlib.jar"/>
+        <pathelement location="lib/java/agape/guava-r07.jar"/>
+        <pathelement location="lib/java/jung-1.7.6.jar"/>
+        <pathelement location="lib/java/jung2-201/jung-3d.jar"/>
+        <pathelement location="lib/java/jung2-201/jung-algorithms.jar"/>
+        <pathelement location="lib/java/jung2-201/jung-api.jar"/>
+        <pathelement location="lib/java/jung2-201/jung-graph-impl.jar"/>
+        <pathelement location="lib/java/jung2-201/jung-io.jar"/>
+        <pathelement location="lib/java/jung2-201/jung-jai.jar"/>
+        <pathelement location="lib/java/jung2-201/jung-visualization.jar"/>
+        <pathelement location="lib/java/agape/agape-dependencies.jar"/>
+        <pathelement location="lib/java/agape/agape.jar"/>
+        <pathelement location="lib/java/jung2-201/collections-generic-4.01.jar"/>
+        <pathelement location="lib/java/ejml-0.19.jar"/>
+        <pathelement location="lib/java/choco-solver-2.1.5.jar"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="xTotem.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target name="TestCalibrationBisectionGRASP">
+        <java classname="uy.edu.fing.repository.rrloc.utils.TestCalibrationBisectionGRASP" failonerror="true" fork="yes">
+            <classpath refid="xTotem.classpath"/>
+        </java>
+    </target>
+    <target name="Totem">
+        <java classname="be.ac.ulg.montefiore.run.totem.core.Totem" failonerror="true" fork="yes">
+            <env key="LD_LIBRARY_PATH" value="${workspace_loc:xTotem}/lib"/>
+            <jvmarg line="-Xmx512m -Djava.ext.dirs=${workspace_loc:xTotem}/lib/java -Djava.library.path=${workspace_loc:xTotem}/lib"/>
+            <classpath refid="xTotem.classpath"/>
+        </java>
+    </target>
+    <target name="TestCalibrationGraphPartitionGA">
+        <java classname="uy.edu.fing.repository.rrloc.utils.TestCalibrationGraphPartitionGA" failonerror="true" fork="yes">
+            <classpath refid="xTotem.classpath"/>
+        </java>
+    </target>
+</project>

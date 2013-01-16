@@ -35,34 +35,63 @@ public class BGPSepAlgorithm implements RRLocAlgorithm {
 
 		}
 		else if (IGPTopology.getVertexCount() > 2) {
-			GraphSeparator graphSeparator = Separator.GraphPartitionAE(15, IGPTopology ,50, 200, 320, 0.04, 0.4);
-			//GraphSeparator graphSeparator = Separator.GRASPBisection(IGPTopology, 25000, 0.05, 0.02);
+			
+			
+//			long time_in = System.currentTimeMillis();
+//			//GraphSeparator graphSeparator = Separator.GRASPBisection(IGPTopology, 25000, 0.035, 0.014);
+//			GraphSeparator graphSeparator = Separator.GraphPartitionAE(15, IGPTopology ,50, 500, 800, 0.01, 0.2);
+//			long time_out = System.currentTimeMillis();
+//			
+//			System.out.println("Graph: "+IGPTopology.getVertexCount()+"\t"+IGPTopology.getEdgeCount()+"\t"+(((double)IGPTopology.getEdgeCount())/(IGPTopology.getVertexCount() * (IGPTopology.getVertexCount() - 1)) / 2));
+//			
+//			System.out.println("Separator: "+graphSeparator.getSeparator().size()+"\t"+ ((double)(graphSeparator.getSeparator().size()))/IGPTopology.getVertexCount()+"\t"+graphSeparator.getComponents().size());
+//			int can=0;
+//			double media=0;
+//			System.out.println("Detail  of components:");
+//			for(Graph<Node, Link> comp: graphSeparator.getComponents())
+//			{
+//				System.out.println("\t\t C"+can+": "+comp.getVertexCount());
+//				media+= comp.getVertexCount();
+//				can++;
+//			}
+//			media = media/graphSeparator.getComponents().size();
+//			System.out.println("\tMedia: "+ media);
+//			double balanced =0;
+//			for(Graph<Node, Link> comp : graphSeparator.getComponents())
+//				balanced += Math.abs(comp.getVertexCount() - media);
+//			System.out.println("\tBalanced: "+ balanced);
+//			System.out.println("Time (ms): "+ (time_out - time_in));
+//			
+//						for (Node u : graphSeparator.getSeparator()) {
+//				for (Node v : graphSeparator.getSeparator()) {
+//					i.add(new iBGPSession(u.getId(), v.getId(), iBGPSessionType.client));
+//				}
+//			} 
+			
+			
+			GraphSeparator graphSeparator = Separator.GRASPBisection(IGPTopology, 25000, 0.035, 0.014);
 			
 			//El conjunto de routes reflectors estara configurado Full Mesh
-			/*Set<Node> aux_set = new HashSet<Node>(graphSeparator.getSeparator());
+			Set<Node> aux_set = new HashSet<Node>(graphSeparator.getSeparator());
 			for (Node u : graphSeparator.getSeparator()) {
 				aux_set.remove(u);
 				for (Node v : aux_set) {
-					i.add(new iBGPSession(u.getId(), v.getId(), iBGPSessionType.client));
-				}
-			}*/
-			
-			for (Node u : graphSeparator.getSeparator()) {
-				for (Node v : graphSeparator.getSeparator()) {
-					i.add(new iBGPSession(u.getId(), v.getId(), iBGPSessionType.client));
+					i.add(new iBGPSession(u.getId(), v.getId(), iBGPSessionType.peer));
 				}
 			}
 			
+
+			
 			// Cada router en la componente debe ser un cliente de todos
 			// los route reflectos	
-			/*for (Graph<Node, Link> g_i : graphSeparator.getComponents()) {
+			for (Graph<Node, Link> g_i : graphSeparator.getComponents()) {
 				for (Node u : g_i.getVertices()) {
 					for (Node v : graphSeparator.getSeparator()) {
 						i.add(new iBGPSession(u.getId(), v.getId(), iBGPSessionType.client));
 					}
 				}
 				run(g_i, i);
-			}*/
+			}
 		}
 	}
 	
