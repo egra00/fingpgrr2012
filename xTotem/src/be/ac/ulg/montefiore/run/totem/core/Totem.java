@@ -419,12 +419,15 @@ public class Totem {
 				else if (args[0].equals("-rrloc_zhang")) {
 					RepositoryManager.getInstance().startAlgo("Zhang", params);
 				}
-            	
+                System.out.println("Success! running in background");
+                System.out.println("Wait for the results");
+                
             }
             else {
                 printUsage();
             }
-            System.out.println("Goodbye ...");
+            
+            System.out.println("Goodbye...");
         } else {
             MainWindow.getInstance();
         }
