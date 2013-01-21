@@ -41,6 +41,10 @@ public class TestCalibrationBisectionGRASP
 	static public double MIN_ALFA = 0.04;
 	static public int  STEPS_ALFA = 5;
 	
+	static public double MAX_GAMA = 0.15;
+	static public double MIN_GAMA = 0.10;
+	static public int  STEPS_GAMA = 5;
+	
 	
     public static void init(){
         String log4jFile = "log4j.xml";
@@ -98,6 +102,7 @@ public class TestCalibrationBisectionGRASP
 	    		int can_iter_best = 0;
 	    		double alfa_best = 0;
 	    		double beta_best = 0;
+	    		double gama_best = 0;
 	    		long time_best = 0;
 	    		
 	    		for(int can_iter=MIN_ITER; can_iter<=MAX_ITER; can_iter+=STEPS_ITER)
@@ -109,25 +114,31 @@ public class TestCalibrationBisectionGRASP
 	    				{
 	    					double beta= MIN_BETA + ((MAX_BETA - MIN_BETA)/STEPS_BETA)*m;
 	    					
-	    					long time_in = System.currentTimeMillis();
-	    					GraphSeparator gs = Separator.GRASPBisection(G, can_iter, alfa, beta);
-	    					long time_out = System.currentTimeMillis();
+		    				for(int l=0; l<=STEPS_GAMA; l++)
+		    				{
+		    					double gama = MIN_GAMA + ((MAX_GAMA - MIN_GAMA)/STEPS_GAMA)*l;
 	    					
-	    					if(isBetter(gs, gs_best, MAX_ALFA, MAX_BETA))
-	    					{
-	    						gs_best = gs;
-	    						can_iter_best = can_iter;
-	    						alfa_best = alfa;
-	    						beta_best = beta;
-	    						time_best = time_out - time_in;
-	    					}
+		    					long time_in = System.currentTimeMillis();
+		    					GraphSeparator gs = Separator.GRASPBisection(G, can_iter, alfa, beta, gama);
+		    					long time_out = System.currentTimeMillis();
+		    					
+		    					if(isBetter(gs, gs_best, MAX_ALFA, MAX_BETA))
+		    					{
+		    						gs_best = gs;
+		    						can_iter_best = can_iter;
+		    						alfa_best = alfa;
+		    						beta_best = beta;
+		    						gama_best = gama;
+		    						time_best = time_out - time_in;
+		    					}
+		    				}
 	    					
 	    				}
 	    			}
 	    		}
 	    		
 	    		System.out.println("##################################################### TEST "+i+ " #####################################################" );
-				System.out.println("Parameters: "+can_iter_best+"\t"+alfa_best+"\t"+beta_best+"\t");
+				System.out.println("Parameters: "+can_iter_best+"\t"+alfa_best+"\t"+beta_best+"\t"+gama_best);
 				System.out.println("Graph: "+G.getVertexCount()+"\t"+G.getEdgeCount()+"\t"+(((double)G.getEdgeCount())/(G.getVertexCount() * (G.getVertexCount() - 1)) / 2));
 				
 				System.out.println("Separator: "+gs_best.getSeparator().size()+"\t"+ ((double)(gs_best.getSeparator().size()))/G.getVertexCount()+"\t"+gs_best.getComponents().size());

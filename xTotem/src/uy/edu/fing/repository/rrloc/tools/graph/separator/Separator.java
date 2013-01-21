@@ -66,7 +66,7 @@ public class Separator {
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//////////////////////////////////////////////////// Approach GRASP (GA) //////////////////////////////////////////////////////////
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	static public GraphSeparator GRASPBisection(Graph<Node, Link> G, int max_iter, double alfa, double beta) {
+	static public GraphSeparator GRASPBisection(Graph<Node, Link> G, int max_iter, double alfa, double beta, double gama) {
 		GraphSeparator best_solution;
 
 		if (G.getEdgeCount() < (G.getVertexCount() * (G.getVertexCount() - 1)) / 2) 
@@ -91,7 +91,7 @@ public class Separator {
 			}
 				
 			Bisection_GRASP bisection = new Bisection_GRASP();
-			Bisector bisector = bisection.run(_G, G.getVertexCount(), max_iter, alfa , beta);
+			Bisector bisector = bisection.run(_G, G.getVertexCount(), max_iter, alfa , beta, gama);
 			
 			//Creo separador de grafo
 			best_solution = new GraphSeparator();

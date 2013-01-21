@@ -37,39 +37,39 @@ public class BGPSepAlgorithm implements RRLocAlgorithm {
 		else if (IGPTopology.getVertexCount() > 2) {
 			
 			
-//			long time_in = System.currentTimeMillis();
-//			//GraphSeparator graphSeparator = Separator.GRASPBisection(IGPTopology, 25000, 0.035, 0.014);
-//			GraphSeparator graphSeparator = Separator.GraphPartitionAE(15, IGPTopology ,50, 500, 800, 0.01, 0.2);
-//			long time_out = System.currentTimeMillis();
-//			
-//			System.out.println("Graph: "+IGPTopology.getVertexCount()+"\t"+IGPTopology.getEdgeCount()+"\t"+(((double)IGPTopology.getEdgeCount())/(IGPTopology.getVertexCount() * (IGPTopology.getVertexCount() - 1)) / 2));
-//			
-//			System.out.println("Separator: "+graphSeparator.getSeparator().size()+"\t"+ ((double)(graphSeparator.getSeparator().size()))/IGPTopology.getVertexCount()+"\t"+graphSeparator.getComponents().size());
-//			int can=0;
-//			double media=0;
-//			System.out.println("Detail  of components:");
-//			for(Graph<Node, Link> comp: graphSeparator.getComponents())
-//			{
-//				System.out.println("\t\t C"+can+": "+comp.getVertexCount());
-//				media+= comp.getVertexCount();
-//				can++;
-//			}
-//			media = media/graphSeparator.getComponents().size();
-//			System.out.println("\tMedia: "+ media);
-//			double balanced =0;
-//			for(Graph<Node, Link> comp : graphSeparator.getComponents())
-//				balanced += Math.abs(comp.getVertexCount() - media);
-//			System.out.println("\tBalanced: "+ balanced);
-//			System.out.println("Time (ms): "+ (time_out - time_in));
-//			
-//						for (Node u : graphSeparator.getSeparator()) {
-//				for (Node v : graphSeparator.getSeparator()) {
-//					i.add(new iBGPSession(u.getId(), v.getId(), iBGPSessionType.client));
-//				}
-//			} 
+			/*long time_in = System.currentTimeMillis();
+			GraphSeparator graphSeparator = Separator.GRASPBisection(IGPTopology, 25000, 0.035, 0.014, 0.15);
+			//GraphSeparator graphSeparator = Separator.GraphPartitionAE(15, IGPTopology ,50, 500, 800, 0.01, 0.2);
+			long time_out = System.currentTimeMillis();
+			
+			System.out.println("Graph: "+IGPTopology.getVertexCount()+"\t"+IGPTopology.getEdgeCount()+"\t"+(((double)IGPTopology.getEdgeCount())/(IGPTopology.getVertexCount() * (IGPTopology.getVertexCount() - 1)) / 2));
+			
+			System.out.println("Separator: "+graphSeparator.getSeparator().size()+"\t"+ ((double)(graphSeparator.getSeparator().size()))/IGPTopology.getVertexCount()+"\t"+graphSeparator.getComponents().size());
+			int can=0;
+			double media=0;
+			System.out.println("Detail  of components:");
+			for(Graph<Node, Link> comp: graphSeparator.getComponents())
+			{
+				System.out.println("\t\t C"+can+": "+comp.getVertexCount());
+				media+= comp.getVertexCount();
+				can++;
+			}
+			media = media/graphSeparator.getComponents().size();
+			System.out.println("\tMedia: "+ media);
+			double balanced =0;
+			for(Graph<Node, Link> comp : graphSeparator.getComponents())
+				balanced += Math.abs(comp.getVertexCount() - media);
+			System.out.println("\tBalanced: "+ balanced);
+			System.out.println("Time (ms): "+ (time_out - time_in));
+			
+			for (Node u : graphSeparator.getSeparator()) {
+				for (Node v : graphSeparator.getSeparator()) {
+					i.add(new iBGPSession(u.getId(), v.getId(), iBGPSessionType.client));
+				}
+			}*/ 
 			
 			
-			GraphSeparator graphSeparator = Separator.GRASPBisection(IGPTopology, 25000, 0.035, 0.014);
+			GraphSeparator graphSeparator = Separator.GRASPBisection(IGPTopology, 25000, 0.035, 0.014, 0.15);
 			
 			//El conjunto de routes reflectors estara configurado Full Mesh
 			Set<Node> aux_set = new HashSet<Node>(graphSeparator.getSeparator());
