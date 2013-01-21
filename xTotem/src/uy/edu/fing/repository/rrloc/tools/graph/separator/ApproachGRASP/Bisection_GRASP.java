@@ -7,7 +7,7 @@ import java.util.Set;
 
 public class Bisection_GRASP 
 {
-	public Bisector run(int[][] G, int Size, int MaxIter, double alfa, double beta)
+	public Bisector run(int[][] G, int Size, int MaxIter, double alfa, double beta, double gama)
 	{
 		Bisector best_solution = new Bisector();
 		
@@ -18,9 +18,8 @@ public class Bisection_GRASP
 		
 		for(int i=0; i<MaxIter; i++)
 		{
-			//System.out.println("ITERACION "+ i+"..");
 			Bisector current_solution = Construct_Greedy_Randomized_Solution(G, Size, ran0, ran1);
-			current_solution = Local_Search(G, Size, ran2, ran3, current_solution);
+			current_solution = Local_Search(G, Size, ran2, ran3, current_solution, gama);
 			if (current_solution.isBetter(alfa, beta, best_solution))
 				best_solution = current_solution;
 		}
@@ -74,7 +73,7 @@ public class Bisection_GRASP
 	}
 	
 
-	private Bisector Local_Search(int[][] G, int Size, Random ran0, Random ran1, Bisector solution)
+	private Bisector Local_Search(int[][] G, int Size, Random ran0, Random ran1, Bisector solution, double gama)
 	{
 		List<Integer> _l;
 		boolean follow = true;
@@ -84,7 +83,7 @@ public class Bisection_GRASP
 		{
 			follow = false;
 
-			if(solution.getC1().size()<=solution.getC2().size() && !(_l=Nodes_Of_Border_Between_S_C(solution.getS(), solution.getC1(), solution.getC2(), G)).isEmpty())
+			if(solution.getC1().size()<=(1+ gama)*solution.getC2().size() && !(_l=Nodes_Of_Border_Between_S_C(solution.getS(), solution.getC1(), solution.getC2(), G)).isEmpty())
 			{	
 				follow = true;
 				
@@ -95,10 +94,10 @@ public class Bisection_GRASP
 					solution.getS().remove(node);
 					solution.getC1().add(node);
 				}
-				while(solution.getC1().size()<=solution.getC2().size() && !_l.isEmpty());
+				while(solution.getC1().size()<=(1+ gama)*solution.getC2().size() && !_l.isEmpty());
 			}
 			
-			if((solution.getC2().size()<=solution.getC1().size() && !(_l=Nodes_Of_Border_Between_S_C(solution.getS(), solution.getC2(), solution.getC1(), G)).isEmpty()))
+			if((solution.getC2().size()<=(1+ gama)*solution.getC1().size() && !(_l=Nodes_Of_Border_Between_S_C(solution.getS(), solution.getC2(), solution.getC1(), G)).isEmpty()))
 			{
 				follow = true;
 				
@@ -109,13 +108,10 @@ public class Bisection_GRASP
 					solution.getS().remove(node);
 					solution.getC2().add(node);
 				}
-				while(solution.getC2().size()<=solution.getC1().size() && !_l.isEmpty());
+				while(solution.getC2().size()<=(1+ gama)*solution.getC1().size() && !_l.isEmpty());
 			}
 		}
-		
-		if (solution.getC1().size()<=0 || solution.getC2().size()<=0 || solution.getS().size()<=0) 
-			System.out.println("ANDA MAAAAALLLLLLLLLLLLLLLLLLLL");
-		
+				
 		return solution;
 	}
 	
