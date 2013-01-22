@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project basedir="." default="build" name="xTotem">
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+<project basedir="." default="build" name="Totem">
     <property environment="env"/>
-    <property name="workspace_loc:xTotem" value="."/>
+    <property name="ECLIPSE_HOME" value="../../eclipse"/>
+    <property name="workspace_loc:Totem" value="."/>
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="1.6"/>
     <property name="source" value="1.6"/>
-    <path id="xTotem.classpath">
+    <path id="Totem.classpath">
         <pathelement location="bin"/>
         <pathelement location="lib/java/ant-contrib-1.0b3.jar"/>
         <pathelement location="lib/java/Brite_modified.jar"/>
@@ -41,12 +47,12 @@
         <pathelement location="lib/java/jung2-201/collections-generic-4.01.jar"/>
         <pathelement location="lib/java/ejml-0.19.jar"/>
         <pathelement location="lib/java/choco-solver-2.1.5.jar"/>
+        <pathelement location="/usr/local/cplex122/cplex/lib/cplex.jar"/>
     </path>
     <target name="init">
         <mkdir dir="bin"/>
         <copy includeemptydirs="false" todir="bin">
             <fileset dir="src">
-                <exclude name="**/*.launch"/>
                 <exclude name="**/*.java"/>
             </fileset>
         </copy>
@@ -61,25 +67,27 @@
         <echo message="${ant.project.name}: ${ant.file}"/>
         <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
             <src path="src"/>
-            <classpath refid="xTotem.classpath"/>
+            <classpath refid="Totem.classpath"/>
         </javac>
     </target>
     <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
-    <target name="TestCalibrationBisectionGRASP">
-        <java classname="uy.edu.fing.repository.rrloc.utils.TestCalibrationBisectionGRASP" failonerror="true" fork="yes">
-            <classpath refid="xTotem.classpath"/>
-        </java>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
     </target>
     <target name="Totem">
         <java classname="be.ac.ulg.montefiore.run.totem.core.Totem" failonerror="true" fork="yes">
-            <env key="LD_LIBRARY_PATH" value="${workspace_loc:xTotem}/lib"/>
-            <jvmarg line="-Xmx512m -Djava.ext.dirs=${workspace_loc:xTotem}/lib/java -Djava.library.path=${workspace_loc:xTotem}/lib"/>
-            <classpath refid="xTotem.classpath"/>
-        </java>
-    </target>
-    <target name="TestCalibrationGraphPartitionGA">
-        <java classname="uy.edu.fing.repository.rrloc.utils.TestCalibrationGraphPartitionGA" failonerror="true" fork="yes">
-            <classpath refid="xTotem.classpath"/>
+            <jvmarg line="-d32 -Xmx512m -Djava.ext.dirs=${workspace_loc:Totem}/lib/java -Djava.library.path=${workspace_loc:Totem}/lib"/>
+            <classpath refid="Totem.classpath"/>
         </java>
     </target>
 </project>
