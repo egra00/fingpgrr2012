@@ -109,11 +109,17 @@ public abstract class BindAlgorithm implements Runnable, TotemAlgorithm {
         
         log(algorithmResult);
         
+        String path = domain.getURI().getPath();
+        path = path.endsWith(".xml") ? path.substring(0, path.length() - 4) : path;
+        path += "-" + name;
+        
         try {
-        	saveTopo();
         	dumpResultInDomain(algorithmResult);
         	if (MainWindow.cliMode()) {
-        		save(new File((domain.getName() == null) || domain.getName().isEmpty() ? "topology_out" : domain.getDescription()));
+        		save(new File(path));
+        	}
+        	else {
+        		saveTopo();
         	}
 		} catch (Exception e) {
 			logger.error("Dumping iBGP topology in Totem domain");
@@ -136,24 +142,19 @@ public abstract class BindAlgorithm implements Runnable, TotemAlgorithm {
 	public void saveTopo() {
     	File file = null;
     	
-    	if (!MainWindow.cliMode()) {
-    		String information = "BGP information will change for the domain " + domain.getASID() + "\n";
-			String description = (domain.getDescription() == null || domain.getDescription().isEmpty() ? "No description" : domain .getDescription() ) + "\n";
-			String action = "This action saves the previous version and will delete all existing information. Would you like to continue?" + "\n";
-			String title = "@Run " + name + " algorithm reports";
-			
-	        int n = JOptionPane.showConfirmDialog(MainWindow.getInstance(), information + description + action, title, JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-	        
-	        if (n != JOptionPane.YES_OPTION) {
-	        	return;
-	        }
-	        
-	        TopoChooser saver = new TopoChooser();
-	        file = saver.saveTopo(MainWindow.getInstance());
-    	}
-    	else {
-    		file = new File((domain.getName() == null) || domain.getName().isEmpty() ? "topology_in" : domain.getDescription());
-    	}
+		String information = "BGP information will change for the domain " + domain.getASID() + "\n";
+		String description = (domain.getDescription() == null || domain.getDescription().isEmpty() ? "No description" : domain .getDescription() ) + "\n";
+		String action = "This action saves the previous version and will delete all existing information. Would you like to continue?" + "\n";
+		String title = "@Run " + name + " algorithm reports";
+		
+        int n = JOptionPane.showConfirmDialog(MainWindow.getInstance(), information + description + action, title, JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        
+        if (n != JOptionPane.YES_OPTION) {
+        	return;
+        }
+        
+        TopoChooser saver = new TopoChooser();
+        file = saver.saveTopo(MainWindow.getInstance());
     	
         save(file);
     }
