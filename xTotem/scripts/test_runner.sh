@@ -7,7 +7,7 @@ for test_file in `find ${test_path} -name '*.xml'`
 do 
 	for algoritm in "${all_algoritms[@]}"
 	do
-		echo "${totem_script} -rrloc_${algoritm} ${test_file}"
+		`${totem_script} -rrloc_${algoritm} ${test_file}`
 	done
 done
 
