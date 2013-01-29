@@ -38,8 +38,7 @@ import edu.uci.ics.jung2.graph.UndirectedSparseMultigraph;
 
 public class Bates extends BindAlgorithm {
 	private int cant_rr;
-	private String name;
-	
+
 	public Bates() {
 		logger = Logger.getLogger(Bates.class);
 		params = new ArrayList<ParameterDescriptor>();

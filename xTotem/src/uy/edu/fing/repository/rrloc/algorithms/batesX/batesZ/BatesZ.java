@@ -37,7 +37,6 @@ import edu.uci.ics.jung2.graph.Graph;
 import edu.uci.ics.jung2.graph.UndirectedSparseMultigraph;
 
 public class BatesZ extends BindAlgorithm {
-	private String name;
 	private int pops;
 	
 	public BatesZ() {
