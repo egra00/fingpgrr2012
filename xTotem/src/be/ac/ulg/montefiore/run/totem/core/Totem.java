@@ -125,6 +125,9 @@ public class Totem {
         System.out.println("\t -rrloc_fullmesh <topology.xml> : start FULLMESH algorithm running over the topology specifies in topology.xml.");
         System.out.println("\t -rrloc_optimal <topology.xml> : start OPTIMAL algorithm running over the topology specifies in topology.xml.");
         System.out.println("\t -rrloc_zhang <topology.xml> : start ZHANG algorithm running over the topology specifies in topology.xml.");
+        System.out.println("\t -rrloc_bates <topology.xml> : start BATES algorithm running over the topology specifies in topology.xml.");
+        System.out.println("\t -rrloc_batesY <topology.xml> : start BATESY algorithm running over the topology specifies in topology.xml.");
+        System.out.println("\t -rrloc_batesZ <topology.xml> : start BATESZ algorithm running over the topology specifies in topology.xml.");
         System.out.println("\t -demo : start the GUI with increased font size (so it can be projected).");
         System.out.println("\t -s <scenario.xml> [stopOnError]: execute a scenario. If stopOnError is present, scenario execution will stop on first error.");
         System.out.println("\t -dir <directory_name> [stopOnError]: execute all the scenario files in the specified directory.  If stopOnError is present, each scenario execution will stop on first error.");
@@ -349,7 +352,10 @@ public class Totem {
             		args[0].equals("-rrloc_cbr") || 
             		args[0].equals("-rrloc_fullmesh") || 
             		args[0].equals("-rrloc_optimal") || 
-            		args[0].equals("-rrloc_zhang")) {
+            		args[0].equals("-rrloc_zhang") ||
+            		args[0].equals("-rrloc_bates") ||
+            		args[0].equals("-rrloc_batesY") ||
+            		args[0].equals("-rrloc_batesZ")) {
             	
             	if (args.length < 2)
             		endError("Please specify the topology file.");
@@ -418,6 +424,15 @@ public class Totem {
 				}
 				else if (args[0].equals("-rrloc_zhang")) {
 					RepositoryManager.getInstance().startAlgo("Zhang", params);
+				}
+				else if (args[0].equals("-rrloc_bates")) {
+					RepositoryManager.getInstance().startAlgo("Bates", params);
+				}
+				else if (args[0].equals("-rrloc_batesY")) {
+					RepositoryManager.getInstance().startAlgo("BatesY", params);
+				}
+				else if (args[0].equals("-rrloc_batesZ")) {
+					RepositoryManager.getInstance().startAlgo("BatesZ", params);
 				}
                 System.out.println("Success! running in background");
                 System.out.println("Wait for the results");
