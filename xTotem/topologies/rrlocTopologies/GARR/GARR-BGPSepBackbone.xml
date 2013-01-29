@@ -1,0 +1,3113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<domain ASID="128">
+    <info>
+        <title>GARR</title>
+        <date>2012-11-09-02:00</date>
+        <author>Diego Agriel</author>
+        <description>Topology of the backbone of the italian network GARR</description>
+        <units>
+            <unit type="bandwidth" value="mbps"/>
+            <unit type="delay" value="ms"/>
+        </units>
+        <diff-serv>
+            <priority ct="0" id="0" preemption="0"/>
+        </diff-serv>
+    </info>
+    <topology>
+        <nodes>
+            <node id="SS">
+                <rid>1.0.0.0</rid>
+                <type>CORE</type>
+                <location latitude="547.19006" longitude="12.144043"/>
+            </node>
+            <node id="CA-1">
+                <rid>1.0.0.1</rid>
+                <type>CORE</type>
+                <location latitude="654.7045" longitude="20.77084"/>
+            </node>
+            <node id="RM-1">
+                <rid>1.0.0.2</rid>
+                <type>CORE</type>
+                <location latitude="500.04605" longitude="188.05296"/>
+            </node>
+            <node id="RM-2">
+                <rid>1.0.0.3</rid>
+                <type>EDGE</type>
+                <location latitude="503.87863" longitude="144.97691"/>
+            </node>
+            <node id="FRA">
+                <rid>1.0.0.4</rid>
+                <type>CORE</type>
+                <location latitude="539.6881" longitude="186.86119"/>
+            </node>
+            <node id="FUC">
+                <rid>1.0.0.5</rid>
+                <type>CORE</type>
+                <location latitude="467.4783" longitude="225.88278"/>
+            </node>
+            <node id="AQ">
+                <rid>1.0.0.7</rid>
+                <type>CORE</type>
+                <location latitude="453.69904" longitude="252.26683"/>
+            </node>
+            <node id="AQ-1">
+                <rid>1.0.0.6</rid>
+                <type>CORE</type>
+                <location latitude="434.9424" longitude="232.02367"/>
+            </node>
+            <node id="PG">
+                <rid>1.0.0.8</rid>
+                <type>CORE</type>
+                <location latitude="415.0664" longitude="184.20682"/>
+            </node>
+            <node id="Ur">
+                <rid>1.0.0.9</rid>
+                <type>CORE</type>
+                <location latitude="345.0627" longitude="235.9021"/>
+            </node>
+            <node id="AN">
+                <rid>1.0.0.10</rid>
+                <type>CORE</type>
+                <location latitude="372.35736" longitude="275.26703"/>
+            </node>
+            <node id="NA">
+                <rid>1.0.0.11</rid>
+                <type>CORE</type>
+                <location latitude="521.3711" longitude="231.66843"/>
+            </node>
+            <node id="SA">
+                <rid>1.0.0.12</rid>
+                <type>CORE</type>
+                <location latitude="552.4397" longitude="261.29532"/>
+            </node>
+            <node id="CB">
+                <rid>1.0.0.13</rid>
+                <type>CORE</type>
+                <location latitude="479.8721" longitude="301.31467"/>
+            </node>
+            <node id="FG">
+                <rid>1.0.0.14</rid>
+                <type>CORE</type>
+                <location latitude="489.16522" longitude="354.26044"/>
+            </node>
+            <node id="BA">
+                <rid>1.0.0.15</rid>
+                <type>CORE</type>
+                <location latitude="536.29584" longitude="414.49036"/>
+            </node>
+            <node id="PZ">
+                <rid>1.0.0.16</rid>
+                <type>CORE</type>
+                <location latitude="546.4188" longitude="357.57697"/>
+            </node>
+            <node id="MT">
+                <rid>1.0.0.17</rid>
+                <type>CORE</type>
+                <location latitude="572.9778" longitude="390.84784"/>
+            </node>
+            <node id="BR">
+                <rid>1.0.0.18</rid>
+                <type>CORE</type>
+                <location latitude="538.5312" longitude="467.29422"/>
+            </node>
+            <node id="LE">
+                <rid>1.0.0.19</rid>
+                <type>CORE</type>
+                <location latitude="574.80273" longitude="457.8639"/>
+            </node>
+            <node id="CS">
+                <rid>1.0.0.20</rid>
+                <type>CORE</type>
+                <location latitude="577.68176" longitude="344.1136"/>
+            </node>
+            <node id="CZ">
+                <rid>1.0.0.21</rid>
+                <type>CORE</type>
+                <location latitude="613.1377" longitude="376.5948"/>
+            </node>
+            <node id="ME">
+                <rid>1.0.0.22</rid>
+                <type>CORE</type>
+                <location latitude="628.48267" longitude="305.14777"/>
+            </node>
+            <node id="CT">
+                <rid>1.0.0.23</rid>
+                <type>EDGE</type>
+                <location latitude="699.76666" longitude="285.46793"/>
+            </node>
+            <node id="PA">
+                <rid>1.0.0.24</rid>
+                <type>CORE</type>
+                <location latitude="654.5015" longitude="234.50426"/>
+            </node>
+            <node id="PA-2">
+                <rid>1.0.0.25</rid>
+                <type>CORE</type>
+                <location latitude="655.3927" longitude="185.54623"/>
+            </node>
+            <node id="FI">
+                <rid>1.0.0.26</rid>
+                <type>CORE</type>
+                <location latitude="277.6146" longitude="134.85518"/>
+            </node>
+            <node id="FI-1">
+                <rid>1.0.0.27</rid>
+                <type>EDGE</type>
+                <location latitude="288.05716" longitude="178.63152"/>
+            </node>
+            <node id="PI">
+                <rid>1.0.0.28</rid>
+                <type>CORE</type>
+                <location latitude="304.43515" longitude="103.45032"/>
+            </node>
+            <node id="BO-1">
+                <rid>1.0.0.29</rid>
+                <type>CORE</type>
+                <location latitude="183.46289" longitude="216.40704"/>
+            </node>
+            <node id="BO-3">
+                <rid>1.0.0.30</rid>
+                <type>CORE</type>
+                <location latitude="192.2946" longitude="179.4632"/>
+            </node>
+            <node id="FE">
+                <rid>1.0.0.31</rid>
+                <type>CORE</type>
+                <location latitude="202.5695" longitude="271.7343"/>
+            </node>
+            <node id="PD-1">
+                <rid>1.0.0.32</rid>
+                <type>EDGE</type>
+                <location latitude="181.34373" longitude="297.9823"/>
+            </node>
+            <node id="PD-2">
+                <rid>1.0.0.33</rid>
+                <type>CORE</type>
+                <location latitude="174.0207" longitude="251.40742"/>
+            </node>
+            <node id="VE">
+                <rid>1.0.0.34</rid>
+                <type>CORE</type>
+                <location latitude="181.95558" longitude="349.57834"/>
+            </node>
+            <node id="TS-1">
+                <rid>1.0.0.35</rid>
+                <type>CORE</type>
+                <location latitude="159.07655" longitude="415.4789"/>
+            </node>
+            <node id="TN">
+                <rid>1.0.0.36</rid>
+                <type>CORE</type>
+                <location latitude="119.11706" longitude="267.6372"/>
+            </node>
+            <node id="BS">
+                <rid>1.0.0.37</rid>
+                <type>CORE</type>
+                <location latitude="115.71863" longitude="160.83003"/>
+            </node>
+            <node id="MI-1">
+                <rid>1.0.0.38</rid>
+                <type>EDGE</type>
+                <location latitude="67.396034" longitude="128.07094"/>
+            </node>
+            <node id="MI-2">
+                <rid>1.0.0.39</rid>
+                <type>EDGE</type>
+                <location latitude="81.0142" longitude="69.67217"/>
+            </node>
+            <node id="MI-3">
+                <rid>1.0.0.40</rid>
+                <type>CORE</type>
+                <location latitude="111.06512" longitude="115.136055"/>
+            </node>
+            <node id="MI-4">
+                <rid>1.0.0.41</rid>
+                <type>CORE</type>
+                <location latitude="47.32325" longitude="70.900536"/>
+            </node>
+            <node id="CO">
+                <rid>1.0.0.42</rid>
+                <type>EDGE</type>
+                <location latitude="44.4853" longitude="107.163994"/>
+            </node>
+            <node id="PV">
+                <rid>1.0.0.43</rid>
+                <type>CORE</type>
+                <location latitude="122.18085" longitude="49.749237"/>
+            </node>
+            <node id="PV-1">
+                <rid>1.0.0.44</rid>
+                <type>CORE</type>
+                <location latitude="132.19576" longitude="87.36438"/>
+            </node>
+            <node id="GE">
+                <rid>1.0.0.45</rid>
+                <type>CORE</type>
+                <location latitude="172.3586" longitude="72.499405"/>
+            </node>
+            <node id="TO">
+                <rid>1.0.0.46</rid>
+                <type>EDGE</type>
+                <location latitude="134.34917" longitude="15.496544"/>
+            </node>
+        </nodes>
+        <links>
+            <link id="CT-ME">
+                <from node="CT"/>
+                <to node="ME"/>
+            </link>
+            <link id="ME-CT">
+                <from node="ME"/>
+                <to node="CT"/>
+            </link>
+            <link id="PA-CT">
+                <from node="PA"/>
+                <to node="CT"/>
+            </link>
+            <link id="CT-PA">
+                <from node="CT"/>
+                <to node="PA"/>
+            </link>
+            <link id="PA-2-PA">
+                <from node="PA-2"/>
+                <to node="PA"/>
+            </link>
+            <link id="PA-PA-2">
+                <from node="PA"/>
+                <to node="PA-2"/>
+            </link>
+            <link id="CT-NA">
+                <from node="CT"/>
+                <to node="NA"/>
+            </link>
+            <link id="NA-CT">
+                <from node="NA"/>
+                <to node="CT"/>
+            </link>
+            <link id="NA-SA">
+                <from node="NA"/>
+                <to node="SA"/>
+            </link>
+            <link id="SA-NA">
+                <from node="SA"/>
+                <to node="NA"/>
+            </link>
+            <link id="CT-CS">
+                <from node="CT"/>
+                <to node="CS"/>
+            </link>
+            <link id="CS-CT">
+                <from node="CS"/>
+                <to node="CT"/>
+            </link>
+            <link id="CS-CZ">
+                <from node="CS"/>
+                <to node="CZ"/>
+            </link>
+            <link id="CZ-CS">
+                <from node="CZ"/>
+                <to node="CS"/>
+            </link>
+            <link id="NA-CB">
+                <from node="NA"/>
+                <to node="CB"/>
+            </link>
+            <link id="CB-NA">
+                <from node="CB"/>
+                <to node="NA"/>
+            </link>
+            <link id="BA-MT">
+                <from node="BA"/>
+                <to node="MT"/>
+            </link>
+            <link id="MT-BA">
+                <from node="MT"/>
+                <to node="BA"/>
+            </link>
+            <link id="BA-PZ">
+                <from node="BA"/>
+                <to node="PZ"/>
+            </link>
+            <link id="PZ-BA">
+                <from node="PZ"/>
+                <to node="BA"/>
+            </link>
+            <link id="BA-BR">
+                <from node="BA"/>
+                <to node="BR"/>
+            </link>
+            <link id="BR-BA">
+                <from node="BR"/>
+                <to node="BA"/>
+            </link>
+            <link id="BA-LE">
+                <from node="BA"/>
+                <to node="LE"/>
+            </link>
+            <link id="LE-BA">
+                <from node="LE"/>
+                <to node="BA"/>
+            </link>
+            <link id="BA-FG">
+                <from node="BA"/>
+                <to node="FG"/>
+            </link>
+            <link id="FG-BA">
+                <from node="FG"/>
+                <to node="BA"/>
+            </link>
+            <link id="CT-RM-1">
+                <from node="CT"/>
+                <to node="RM-1"/>
+            </link>
+            <link id="RM-1-CT">
+                <from node="RM-1"/>
+                <to node="CT"/>
+            </link>
+            <link id="RM-1-RM-2">
+                <from node="RM-1"/>
+                <to node="RM-2"/>
+            </link>
+            <link id="RM-2-RM-1">
+                <from node="RM-2"/>
+                <to node="RM-1"/>
+            </link>
+            <link id="RM-1-FRA">
+                <from node="RM-1"/>
+                <to node="FRA"/>
+            </link>
+            <link id="FRA-RM-1">
+                <from node="FRA"/>
+                <to node="RM-1"/>
+            </link>
+            <link id="RM-2-FUC">
+                <from node="RM-2"/>
+                <to node="FUC"/>
+            </link>
+            <link id="FUC-RM-2">
+                <from node="FUC"/>
+                <to node="RM-2"/>
+            </link>
+            <link id="AQ-AQ-1">
+                <from node="AQ"/>
+                <to node="AQ-1"/>
+            </link>
+            <link id="AQ-1-AQ">
+                <from node="AQ-1"/>
+                <to node="AQ"/>
+            </link>
+            <link id="RM-2-AQ-1">
+                <from node="RM-2"/>
+                <to node="AQ-1"/>
+            </link>
+            <link id="AQ-1-RM-2">
+                <from node="AQ-1"/>
+                <to node="RM-2"/>
+            </link>
+            <link id="AN-Ur">
+                <from node="AN"/>
+                <to node="Ur"/>
+            </link>
+            <link id="Ur-AN">
+                <from node="Ur"/>
+                <to node="AN"/>
+            </link>
+            <link id="RM-2-AN">
+                <from node="RM-2"/>
+                <to node="AN"/>
+            </link>
+            <link id="AN-RM-2">
+                <from node="AN"/>
+                <to node="RM-2"/>
+            </link>
+            <link id="RM-2-PG">
+                <from node="RM-2"/>
+                <to node="PG"/>
+            </link>
+            <link id="PG-RM-2">
+                <from node="PG"/>
+                <to node="RM-2"/>
+            </link>
+            <link id="RM-2-FRA">
+                <from node="RM-2"/>
+                <to node="FRA"/>
+            </link>
+            <link id="FRA-RM-2">
+                <from node="FRA"/>
+                <to node="RM-2"/>
+            </link>
+            <link id="RM-2-CA-1">
+                <from node="RM-2"/>
+                <to node="CA-1"/>
+            </link>
+            <link id="CA-1-RM-2">
+                <from node="CA-1"/>
+                <to node="RM-2"/>
+            </link>
+            <link id="CA-1-RM-1">
+                <from node="CA-1"/>
+                <to node="RM-1"/>
+            </link>
+            <link id="RM-1-CA-1">
+                <from node="RM-1"/>
+                <to node="CA-1"/>
+            </link>
+            <link id="SS-CA-1">
+                <from node="SS"/>
+                <to node="CA-1"/>
+            </link>
+            <link id="CA-1-SS">
+                <from node="CA-1"/>
+                <to node="SS"/>
+            </link>
+            <link id="FI-FI-1">
+                <from node="FI"/>
+                <to node="FI-1"/>
+            </link>
+            <link id="FI-1-FI">
+                <from node="FI-1"/>
+                <to node="FI"/>
+            </link>
+            <link id="PI-FI-1">
+                <from node="PI"/>
+                <to node="FI-1"/>
+            </link>
+            <link id="FI-1-PI">
+                <from node="FI-1"/>
+                <to node="PI"/>
+            </link>
+            <link id="FI-1-BO-1">
+                <from node="FI-1"/>
+                <to node="BO-1"/>
+            </link>
+            <link id="BO-1-FI-1">
+                <from node="BO-1"/>
+                <to node="FI-1"/>
+            </link>
+            <link id="BO-1-BO-3">
+                <from node="BO-1"/>
+                <to node="BO-3"/>
+            </link>
+            <link id="BO-3-BO-1">
+                <from node="BO-3"/>
+                <to node="BO-1"/>
+            </link>
+            <link id="BO-1-FE">
+                <from node="BO-1"/>
+                <to node="FE"/>
+            </link>
+            <link id="FE-BO-1">
+                <from node="FE"/>
+                <to node="BO-1"/>
+            </link>
+            <link id="RM-2-PI">
+                <from node="RM-2"/>
+                <to node="PI"/>
+            </link>
+            <link id="PI-RM-2">
+                <from node="PI"/>
+                <to node="RM-2"/>
+            </link>
+            <link id="GE-PI">
+                <from node="GE"/>
+                <to node="PI"/>
+            </link>
+            <link id="PI-GE">
+                <from node="PI"/>
+                <to node="GE"/>
+            </link>
+            <link id="BO-1-AN">
+                <from node="BO-1"/>
+                <to node="AN"/>
+            </link>
+            <link id="AN-BO-1">
+                <from node="AN"/>
+                <to node="BO-1"/>
+            </link>
+            <link id="BO-1-BA">
+                <from node="BO-1"/>
+                <to node="BA"/>
+            </link>
+            <link id="BA-BO-1">
+                <from node="BA"/>
+                <to node="BO-1"/>
+            </link>
+            <link id="PD-1-TS-1">
+                <from node="PD-1"/>
+                <to node="TS-1"/>
+            </link>
+            <link id="TS-1-PD-1">
+                <from node="TS-1"/>
+                <to node="PD-1"/>
+            </link>
+            <link id="PD-2-VE">
+                <from node="PD-2"/>
+                <to node="VE"/>
+            </link>
+            <link id="VE-PD-2">
+                <from node="VE"/>
+                <to node="PD-2"/>
+            </link>
+            <link id="PD-2-PD-1">
+                <from node="PD-2"/>
+                <to node="PD-1"/>
+            </link>
+            <link id="PD-1-PD-2">
+                <from node="PD-1"/>
+                <to node="PD-2"/>
+            </link>
+            <link id="PD-1-TN">
+                <from node="PD-1"/>
+                <to node="TN"/>
+            </link>
+            <link id="TN-PD-1">
+                <from node="TN"/>
+                <to node="PD-1"/>
+            </link>
+            <link id="TO-PI">
+                <from node="TO"/>
+                <to node="PI"/>
+            </link>
+            <link id="PI-TO">
+                <from node="PI"/>
+                <to node="TO"/>
+            </link>
+            <link id="TO-MI-2">
+                <from node="TO"/>
+                <to node="MI-2"/>
+            </link>
+            <link id="MI-2-TO">
+                <from node="MI-2"/>
+                <to node="TO"/>
+            </link>
+            <link id="MI-2-PV">
+                <from node="MI-2"/>
+                <to node="PV"/>
+            </link>
+            <link id="PV-MI-2">
+                <from node="PV"/>
+                <to node="MI-2"/>
+            </link>
+            <link id="PV-PV-1">
+                <from node="PV"/>
+                <to node="PV-1"/>
+            </link>
+            <link id="PV-1-PV">
+                <from node="PV-1"/>
+                <to node="PV"/>
+            </link>
+            <link id="MI-2-MI-3">
+                <from node="MI-2"/>
+                <to node="MI-3"/>
+            </link>
+            <link id="MI-3-MI-2">
+                <from node="MI-3"/>
+                <to node="MI-2"/>
+            </link>
+            <link id="MI-3-MI-1">
+                <from node="MI-3"/>
+                <to node="MI-1"/>
+            </link>
+            <link id="MI-1-MI-3">
+                <from node="MI-1"/>
+                <to node="MI-3"/>
+            </link>
+            <link id="MI-1-CO">
+                <from node="MI-1"/>
+                <to node="CO"/>
+            </link>
+            <link id="CO-MI-1">
+                <from node="CO"/>
+                <to node="MI-1"/>
+            </link>
+            <link id="MI-4-CO">
+                <from node="MI-4"/>
+                <to node="CO"/>
+            </link>
+            <link id="CO-MI-4">
+                <from node="CO"/>
+                <to node="MI-4"/>
+            </link>
+            <link id="MI-4-MI-2">
+                <from node="MI-4"/>
+                <to node="MI-2"/>
+            </link>
+            <link id="MI-2-MI-4">
+                <from node="MI-2"/>
+                <to node="MI-4"/>
+            </link>
+            <link id="GE-MI-2">
+                <from node="GE"/>
+                <to node="MI-2"/>
+            </link>
+            <link id="MI-2-GE">
+                <from node="MI-2"/>
+                <to node="GE"/>
+            </link>
+            <link id="MI-3-BS">
+                <from node="MI-3"/>
+                <to node="BS"/>
+            </link>
+            <link id="BS-MI-3">
+                <from node="BS"/>
+                <to node="MI-3"/>
+            </link>
+            <link id="MI-1-BO-1">
+                <from node="MI-1"/>
+                <to node="BO-1"/>
+            </link>
+            <link id="BO-1-MI-1">
+                <from node="BO-1"/>
+                <to node="MI-1"/>
+            </link>
+            <link id="TN-MI-2">
+                <from node="TN"/>
+                <to node="MI-2"/>
+            </link>
+            <link id="MI-2-TN">
+                <from node="MI-2"/>
+                <to node="TN"/>
+            </link>
+            <link id="CO-TS-1">
+                <from node="CO"/>
+                <to node="TS-1"/>
+            </link>
+            <link id="TS-1-CO">
+                <from node="TS-1"/>
+                <to node="CO"/>
+            </link>
+            <link id="CO-MI-2">
+                <from node="CO"/>
+                <to node="MI-2"/>
+            </link>
+            <link id="MI-2-CO">
+                <from node="MI-2"/>
+                <to node="CO"/>
+            </link>
+            <link id="BO-1-RM-2">
+                <from node="BO-1"/>
+                <to node="RM-2"/>
+            </link>
+            <link id="RM-2-BO-1">
+                <from node="RM-2"/>
+                <to node="BO-1"/>
+            </link>
+            <link id="NA-BA">
+                <from node="NA"/>
+                <to node="BA"/>
+            </link>
+            <link id="BA-NA">
+                <from node="BA"/>
+                <to node="NA"/>
+            </link>
+        </links>
+    </topology>
+    <igp>
+        <links>
+            <link id="CT-ME">
+                <static>
+                    <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="ME-CT">
+                <static>
+                    <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="PA-CT">
+                <static>
+                    <metric>5.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="CT-PA">
+                <static>
+                    <metric>5.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="PA-2-PA">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="PA-PA-2">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="CT-NA">
+                <static>
+                    <metric>9.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="NA-CT">
+                <static>
+                    <metric>9.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="NA-SA">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="SA-NA">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="CT-CS">
+                <static>
+                    <metric>7.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="CS-CT">
+                <static>
+                    <metric>7.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="CS-CZ">
+                <static>
+                    <metric>2.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="CZ-CS">
+                <static>
+                    <metric>2.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="NA-CB">
+                <static>
+                    <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="CB-NA">
+                <static>
+                    <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="BA-MT">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="MT-BA">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="BA-PZ">
+                <static>
+                    <metric>2.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="PZ-BA">
+                <static>
+                    <metric>2.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="BA-BR">
+                <static>
+                    <metric>2.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="BR-BA">
+                <static>
+                    <metric>2.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="BA-LE">
+                <static>
+                    <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="LE-BA">
+                <static>
+                    <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="BA-FG">
+                <static>
+                    <metric>4.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="FG-BA">
+                <static>
+                    <metric>4.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="CT-RM-1">
+                <static>
+                    <metric>13.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="RM-1-CT">
+                <static>
+                    <metric>13.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="RM-1-RM-2">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="RM-2-RM-1">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="RM-1-FRA">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="FRA-RM-1">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="RM-2-FUC">
+                <static>
+                    <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="FUC-RM-2">
+                <static>
+                    <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="AQ-AQ-1">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="AQ-1-AQ">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="RM-2-AQ-1">
+                <static>
+                    <metric>4.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="AQ-1-RM-2">
+                <static>
+                    <metric>4.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="AN-Ur">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="Ur-AN">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="RM-2-AN">
+                <static>
+                    <metric>6.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="AN-RM-2">
+                <static>
+                    <metric>6.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="RM-2-PG">
+                <static>
+                    <metric>5.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="PG-RM-2">
+                <static>
+                    <metric>5.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="RM-2-FRA">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="FRA-RM-2">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="RM-2-CA-1">
+                <static>
+                    <metric>9.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="CA-1-RM-2">
+                <static>
+                    <metric>9.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="CA-1-RM-1">
+                <static>
+                    <metric>11.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="RM-1-CA-1">
+                <static>
+                    <metric>11.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="SS-CA-1">
+                <static>
+                    <metric>5.0</metric>
+                    <te-metric>0.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="CA-1-SS">
+                <static>
+                    <metric>5.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="FI-FI-1">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="FI-1-FI">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="PI-FI-1">
+                <static>
+                    <metric>2.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="FI-1-PI">
+                <static>
+                    <metric>2.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="FI-1-BO-1">
+                <static>
+                    <metric>4.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="BO-1-FI-1">
+                <static>
+                    <metric>4.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="BO-1-BO-3">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="BO-3-BO-1">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="BO-1-FE">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="FE-BO-1">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="RM-2-PI">
+                <static>
+                    <metric>8.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="PI-RM-2">
+                <static>
+                    <metric>8.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="GE-PI">
+                <static>
+                    <metric>6.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="PI-GE">
+                <static>
+                    <metric>6.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="BO-1-AN">
+                <static>
+                    <metric>6.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="AN-BO-1">
+                <static>
+                    <metric>6.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="BO-1-BA">
+                <static>
+                    <metric>12.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="BA-BO-1">
+                <static>
+                    <metric>12.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="PD-1-TS-1">
+                <static>
+                    <metric>4.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="TS-1-PD-1">
+                <static>
+                    <metric>4.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="PD-2-VE">
+                <static>
+                    <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="VE-PD-2">
+                <static>
+                    <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="PD-2-PD-1">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="PD-1-PD-2">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="PD-1-TN">
+                <static>
+                    <metric>2.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="TN-PD-1">
+                <static>
+                    <metric>2.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="TO-PI">
+                <static>
+                    <metric>10.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="PI-TO">
+                <static>
+                    <metric>10.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="TO-MI-2">
+                <static>
+                    <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="MI-2-TO">
+                <static>
+                    <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="MI-2-PV">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="PV-MI-2">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="PV-PV-1">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="PV-1-PV">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="MI-2-MI-3">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="MI-3-MI-2">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="MI-3-MI-1">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="MI-1-MI-3">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="MI-1-CO">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="CO-MI-1">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="MI-4-CO">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="CO-MI-4">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="MI-4-MI-2">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="MI-2-MI-4">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="GE-MI-2">
+                <static>
+                    <metric>4.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="MI-2-GE">
+                <static>
+                    <metric>4.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="MI-3-BS">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="BS-MI-3">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="MI-1-BO-1">
+                <static>
+                    <metric>5.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="BO-1-MI-1">
+                <static>
+                    <metric>5.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="TN-MI-2">
+                <static>
+                    <metric>4.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="MI-2-TN">
+                <static>
+                    <metric>4.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="CO-TS-1">
+                <static>
+                    <metric>8.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="TS-1-CO">
+                <static>
+                    <metric>8.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="CO-MI-2">
+                <static>
+                    <metric>2.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="MI-2-CO">
+                <static>
+                    <metric>2.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="BO-1-RM-2">
+                <static>
+                    <metric>10.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="RM-2-BO-1">
+                <static>
+                    <metric>10.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="NA-BA">
+                <static>
+                    <metric>6.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="BA-NA">
+                <static>
+                    <metric>6.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+        </links>
+    </igp>
+    <bgp>
+        <routers>
+            <router id="SS">
+                <rid>1.0.0.0</rid>
+                <neighbors>
+                    <neighbor as="128" ip="1.0.0.3" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.2" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.24" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.12" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="CA-1">
+                <rid>1.0.0.1</rid>
+                <neighbors>
+                    <neighbor as="128" ip="1.0.0.3" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.2" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.24" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.12" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="RM-1" reflector="true">
+                <rid>1.0.0.2</rid>
+                <neighbors>
+                    <neighbor as="128" ip="1.0.0.1"/>
+                    <neighbor as="128" ip="1.0.0.4"/>
+                    <neighbor as="128" ip="1.0.0.25"/>
+                    <neighbor as="128" ip="1.0.0.0"/>
+                    <neighbor as="128" ip="1.0.0.29"/>
+                    <neighbor as="128" ip="1.0.0.11"/>
+                    <neighbor as="128" ip="1.0.0.15"/>
+                    <neighbor as="128" ip="1.0.0.23"/>
+                    <neighbor as="128" ip="1.0.0.10"/>
+                    <neighbor as="128" ip="1.0.0.3"/>
+                    <neighbor as="128" ip="1.0.0.27"/>
+                    <neighbor as="128" ip="1.0.0.28"/>
+                </neighbors>
+            </router>
+            <router id="RM-2" reflector="true">
+                <rid>1.0.0.3</rid>
+                <neighbors>
+                    <neighbor as="128" ip="1.0.0.1"/>
+                    <neighbor as="128" ip="1.0.0.4"/>
+                    <neighbor as="128" ip="1.0.0.25"/>
+                    <neighbor as="128" ip="1.0.0.0"/>
+                    <neighbor as="128" ip="1.0.0.8"/>
+                    <neighbor as="128" ip="1.0.0.6"/>
+                    <neighbor as="128" ip="1.0.0.5"/>
+                    <neighbor as="128" ip="1.0.0.29" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.2" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.28" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.10"/>
+                </neighbors>
+            </router>
+            <router id="FRA">
+                <rid>1.0.0.4</rid>
+                <neighbors>
+                    <neighbor as="128" ip="1.0.0.3" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.2" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.24" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.12" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="FUC" reflector="true">
+                <rid>1.0.0.5</rid>
+                <neighbors>
+                    <neighbor as="128" ip="1.0.0.7"/>
+                    <neighbor as="128" ip="1.0.0.9"/>
+                    <neighbor as="128" ip="1.0.0.13"/>
+                    <neighbor as="128" ip="1.0.0.3" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="AQ">
+                <rid>1.0.0.7</rid>
+                <neighbors>
+                    <neighbor as="128" ip="1.0.0.11" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.10" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.6" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.5" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.8" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="AQ-1" reflector="true">
+                <rid>1.0.0.6</rid>
+                <neighbors>
+                    <neighbor as="128" ip="1.0.0.7"/>
+                    <neighbor as="128" ip="1.0.0.9"/>
+                    <neighbor as="128" ip="1.0.0.13"/>
+                    <neighbor as="128" ip="1.0.0.3" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="PG" reflector="true">
+                <rid>1.0.0.8</rid>
+                <neighbors>
+                    <neighbor as="128" ip="1.0.0.7"/>
+                    <neighbor as="128" ip="1.0.0.9"/>
+                    <neighbor as="128" ip="1.0.0.13"/>
+                    <neighbor as="128" ip="1.0.0.3" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="Ur">
+                <rid>1.0.0.9</rid>
+                <neighbors>
+                    <neighbor as="128" ip="1.0.0.11" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.10" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.6" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.5" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.8" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="AN" reflector="true">
+                <rid>1.0.0.10</rid>
+                <neighbors>
+                    <neighbor as="128" ip="1.0.0.7"/>
+                    <neighbor as="128" ip="1.0.0.9"/>
+                    <neighbor as="128" ip="1.0.0.13"/>
+                    <neighbor as="128" ip="1.0.0.29" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.2" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.28" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.3" reflector-client="false"/>
+                </neighbors>
+            </router>
+            <router id="NA" reflector="true">
+                <rid>1.0.0.11</rid>
+                <neighbors>
+                    <neighbor as="128" ip="1.0.0.7"/>
+                    <neighbor as="128" ip="1.0.0.9"/>
+                    <neighbor as="128" ip="1.0.0.13"/>
+                    <neighbor as="128" ip="1.0.0.12"/>
+                    <neighbor as="128" ip="1.0.0.29" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.2" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.15"/>
+                    <neighbor as="128" ip="1.0.0.23"/>
+                </neighbors>
+            </router>
+            <router id="SA" reflector="true">
+                <rid>1.0.0.12</rid>
+                <neighbors>
+                    <neighbor as="128" ip="1.0.0.1"/>
+                    <neighbor as="128" ip="1.0.0.4"/>
+                    <neighbor as="128" ip="1.0.0.25"/>
+                    <neighbor as="128" ip="1.0.0.0"/>
+                    <neighbor as="128" ip="1.0.0.11" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="CB">
+                <rid>1.0.0.13</rid>
+                <neighbors>
+                    <neighbor as="128" ip="1.0.0.11" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.10" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.6" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.5" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.8" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="FG">
+                <rid>1.0.0.14</rid>
+                <neighbors>
+                    <neighbor as="128" ip="1.0.0.15" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.23" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="BA" reflector="true">
+                <rid>1.0.0.15</rid>
+                <neighbors>
+                    <neighbor as="128" ip="1.0.0.20"/>
+                    <neighbor as="128" ip="1.0.0.16"/>
+                    <neighbor as="128" ip="1.0.0.19"/>
+                    <neighbor as="128" ip="1.0.0.22"/>
+                    <neighbor as="128" ip="1.0.0.21"/>
+                    <neighbor as="128" ip="1.0.0.17"/>
+                    <neighbor as="128" ip="1.0.0.18"/>
+                    <neighbor as="128" ip="1.0.0.14"/>
+                    <neighbor as="128" ip="1.0.0.29" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.2" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.11" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="PZ">
+                <rid>1.0.0.16</rid>
+                <neighbors>
+                    <neighbor as="128" ip="1.0.0.15" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.23" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="MT">
+                <rid>1.0.0.17</rid>
+                <neighbors>
+                    <neighbor as="128" ip="1.0.0.15" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.23" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="BR">
+                <rid>1.0.0.18</rid>
+                <neighbors>
+                    <neighbor as="128" ip="1.0.0.15" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.23" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="LE">
+                <rid>1.0.0.19</rid>
+                <neighbors>
+                    <neighbor as="128" ip="1.0.0.15" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.23" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="CS">
+                <rid>1.0.0.20</rid>
+                <neighbors>
+                    <neighbor as="128" ip="1.0.0.15" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.23" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="CZ">
+                <rid>1.0.0.21</rid>
+                <neighbors>
+                    <neighbor as="128" ip="1.0.0.15" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.23" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="ME">
+                <rid>1.0.0.22</rid>
+                <neighbors>
+                    <neighbor as="128" ip="1.0.0.15" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.23" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="CT" reflector="true">
+                <rid>1.0.0.23</rid>
+                <neighbors>
+                    <neighbor as="128" ip="1.0.0.20"/>
+                    <neighbor as="128" ip="1.0.0.16"/>
+                    <neighbor as="128" ip="1.0.0.19"/>
+                    <neighbor as="128" ip="1.0.0.22"/>
+                    <neighbor as="128" ip="1.0.0.21"/>
+                    <neighbor as="128" ip="1.0.0.17"/>
+                    <neighbor as="128" ip="1.0.0.18"/>
+                    <neighbor as="128" ip="1.0.0.14"/>
+                    <neighbor as="128" ip="1.0.0.24"/>
+                    <neighbor as="128" ip="1.0.0.29" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.2" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.11" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="PA" reflector="true">
+                <rid>1.0.0.24</rid>
+                <neighbors>
+                    <neighbor as="128" ip="1.0.0.1"/>
+                    <neighbor as="128" ip="1.0.0.4"/>
+                    <neighbor as="128" ip="1.0.0.25"/>
+                    <neighbor as="128" ip="1.0.0.0"/>
+                    <neighbor as="128" ip="1.0.0.23" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="PA-2">
+                <rid>1.0.0.25</rid>
+                <neighbors>
+                    <neighbor as="128" ip="1.0.0.3" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.2" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.24" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.12" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="FI">
+                <rid>1.0.0.26</rid>
+                <neighbors>
+                    <neighbor as="128" ip="1.0.0.29" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.27" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.35" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.36" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="FI-1" reflector="true">
+                <rid>1.0.0.27</rid>
+                <neighbors>
+                    <neighbor as="128" ip="1.0.0.32"/>
+                    <neighbor as="128" ip="1.0.0.33"/>
+                    <neighbor as="128" ip="1.0.0.31"/>
+                    <neighbor as="128" ip="1.0.0.30"/>
+                    <neighbor as="128" ip="1.0.0.34"/>
+                    <neighbor as="128" ip="1.0.0.26"/>
+                    <neighbor as="128" ip="1.0.0.29" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.2" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.28" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="PI" reflector="true">
+                <rid>1.0.0.28</rid>
+                <neighbors>
+                    <neighbor as="128" ip="1.0.0.40"/>
+                    <neighbor as="128" ip="1.0.0.43"/>
+                    <neighbor as="128" ip="1.0.0.41"/>
+                    <neighbor as="128" ip="1.0.0.45"/>
+                    <neighbor as="128" ip="1.0.0.46"/>
+                    <neighbor as="128" ip="1.0.0.44"/>
+                    <neighbor as="128" ip="1.0.0.37"/>
+                    <neighbor as="128" ip="1.0.0.29" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.2" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.10"/>
+                    <neighbor as="128" ip="1.0.0.3"/>
+                    <neighbor as="128" ip="1.0.0.27"/>
+                </neighbors>
+            </router>
+            <router id="BO-1" reflector="true">
+                <rid>1.0.0.29</rid>
+                <neighbors>
+                    <neighbor as="128" ip="1.0.0.32"/>
+                    <neighbor as="128" ip="1.0.0.33"/>
+                    <neighbor as="128" ip="1.0.0.31"/>
+                    <neighbor as="128" ip="1.0.0.30"/>
+                    <neighbor as="128" ip="1.0.0.34"/>
+                    <neighbor as="128" ip="1.0.0.26"/>
+                    <neighbor as="128" ip="1.0.0.38"/>
+                    <neighbor as="128" ip="1.0.0.2" reflector-client="false"/>
+                    <neighbor as="128" ip="1.0.0.11"/>
+                    <neighbor as="128" ip="1.0.0.15"/>
+                    <neighbor as="128" ip="1.0.0.23"/>
+                    <neighbor as="128" ip="1.0.0.10"/>
+                    <neighbor as="128" ip="1.0.0.3"/>
+                    <neighbor as="128" ip="1.0.0.27"/>
+                    <neighbor as="128" ip="1.0.0.28"/>
+                </neighbors>
+            </router>
+            <router id="BO-3">
+                <rid>1.0.0.30</rid>
+                <neighbors>
+                    <neighbor as="128" ip="1.0.0.29" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.27" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.35" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.36" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="FE">
+                <rid>1.0.0.31</rid>
+                <neighbors>
+                    <neighbor as="128" ip="1.0.0.29" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.27" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.35" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.36" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="PD-1">
+                <rid>1.0.0.32</rid>
+                <neighbors>
+                    <neighbor as="128" ip="1.0.0.29" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.27" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.35" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.36" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="PD-2">
+                <rid>1.0.0.33</rid>
+                <neighbors>
+                    <neighbor as="128" ip="1.0.0.29" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.27" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.35" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.36" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="VE">
+                <rid>1.0.0.34</rid>
+                <neighbors>
+                    <neighbor as="128" ip="1.0.0.29" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.27" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.35" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.36" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="TS-1" reflector="true">
+                <rid>1.0.0.35</rid>
+                <neighbors>
+                    <neighbor as="128" ip="1.0.0.32"/>
+                    <neighbor as="128" ip="1.0.0.33"/>
+                    <neighbor as="128" ip="1.0.0.31"/>
+                    <neighbor as="128" ip="1.0.0.30"/>
+                    <neighbor as="128" ip="1.0.0.34"/>
+                    <neighbor as="128" ip="1.0.0.26"/>
+                    <neighbor as="128" ip="1.0.0.42" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="TN" reflector="true">
+                <rid>1.0.0.36</rid>
+                <neighbors>
+                    <neighbor as="128" ip="1.0.0.32"/>
+                    <neighbor as="128" ip="1.0.0.33"/>
+                    <neighbor as="128" ip="1.0.0.31"/>
+                    <neighbor as="128" ip="1.0.0.30"/>
+                    <neighbor as="128" ip="1.0.0.34"/>
+                    <neighbor as="128" ip="1.0.0.26"/>
+                    <neighbor as="128" ip="1.0.0.39" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="BS">
+                <rid>1.0.0.37</rid>
+                <neighbors>
+                    <neighbor as="128" ip="1.0.0.39" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.42" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.28" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.38" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="MI-1" reflector="true">
+                <rid>1.0.0.38</rid>
+                <neighbors>
+                    <neighbor as="128" ip="1.0.0.40"/>
+                    <neighbor as="128" ip="1.0.0.43"/>
+                    <neighbor as="128" ip="1.0.0.41"/>
+                    <neighbor as="128" ip="1.0.0.45"/>
+                    <neighbor as="128" ip="1.0.0.46"/>
+                    <neighbor as="128" ip="1.0.0.44"/>
+                    <neighbor as="128" ip="1.0.0.37"/>
+                    <neighbor as="128" ip="1.0.0.42"/>
+                    <neighbor as="128" ip="1.0.0.29" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="MI-2" reflector="true">
+                <rid>1.0.0.39</rid>
+                <neighbors>
+                    <neighbor as="128" ip="1.0.0.40"/>
+                    <neighbor as="128" ip="1.0.0.43"/>
+                    <neighbor as="128" ip="1.0.0.41"/>
+                    <neighbor as="128" ip="1.0.0.45"/>
+                    <neighbor as="128" ip="1.0.0.46"/>
+                    <neighbor as="128" ip="1.0.0.44"/>
+                    <neighbor as="128" ip="1.0.0.37"/>
+                    <neighbor as="128" ip="1.0.0.36"/>
+                    <neighbor as="128" ip="1.0.0.42" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="MI-3">
+                <rid>1.0.0.40</rid>
+                <neighbors>
+                    <neighbor as="128" ip="1.0.0.39" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.42" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.28" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.38" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="MI-4">
+                <rid>1.0.0.41</rid>
+                <neighbors>
+                    <neighbor as="128" ip="1.0.0.39" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.42" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.28" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.38" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="CO" reflector="true">
+                <rid>1.0.0.42</rid>
+                <neighbors>
+                    <neighbor as="128" ip="1.0.0.40"/>
+                    <neighbor as="128" ip="1.0.0.43"/>
+                    <neighbor as="128" ip="1.0.0.41"/>
+                    <neighbor as="128" ip="1.0.0.45"/>
+                    <neighbor as="128" ip="1.0.0.46"/>
+                    <neighbor as="128" ip="1.0.0.44"/>
+                    <neighbor as="128" ip="1.0.0.37"/>
+                    <neighbor as="128" ip="1.0.0.35"/>
+                    <neighbor as="128" ip="1.0.0.39"/>
+                    <neighbor as="128" ip="1.0.0.38" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="PV">
+                <rid>1.0.0.43</rid>
+                <neighbors>
+                    <neighbor as="128" ip="1.0.0.39" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.42" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.28" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.38" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="PV-1">
+                <rid>1.0.0.44</rid>
+                <neighbors>
+                    <neighbor as="128" ip="1.0.0.39" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.42" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.28" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.38" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="GE">
+                <rid>1.0.0.45</rid>
+                <neighbors>
+                    <neighbor as="128" ip="1.0.0.39" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.42" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.28" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.38" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="TO">
+                <rid>1.0.0.46</rid>
+                <neighbors>
+                    <neighbor as="128" ip="1.0.0.39" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.42" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.28" reflector-client="true"/>
+                    <neighbor as="128" ip="1.0.0.38" reflector-client="true"/>
+                </neighbors>
+            </router>
+        </routers>
+    </bgp>
+</domain>
+
