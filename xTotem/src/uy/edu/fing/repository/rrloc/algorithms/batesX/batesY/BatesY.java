@@ -36,10 +36,7 @@ import be.ac.ulg.montefiore.run.totem.visualtopo.guiComponents.TopoChooser;
 import edu.uci.ics.jung2.graph.Graph;
 import edu.uci.ics.jung2.graph.UndirectedSparseMultigraph;
 
-public class BatesY extends BindAlgorithm 
-{
-
-	private Domain domain;
+public class BatesY extends BindAlgorithm {
 	private String name;
 	private int pops;
 	

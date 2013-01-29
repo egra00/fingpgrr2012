@@ -36,9 +36,7 @@ import be.ac.ulg.montefiore.run.totem.visualtopo.guiComponents.TopoChooser;
 import edu.uci.ics.jung2.graph.Graph;
 import edu.uci.ics.jung2.graph.UndirectedSparseMultigraph;
 
-public class Bates extends BindAlgorithm
-{	
-	private Domain domain;
+public class Bates extends BindAlgorithm {
 	private int cant_rr;
 	private String name;
 	
