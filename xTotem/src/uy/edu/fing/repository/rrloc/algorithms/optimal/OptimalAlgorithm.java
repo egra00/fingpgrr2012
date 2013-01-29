@@ -223,7 +223,7 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 		
 		//Solving the MIP without max-flow min-cut constraints
 		
-		System.out.println("####Solution 0##############################################################################");
+		//System.out.println("####Solution 0##############################################################################");
 		
 		//System.out.println(cplex.toString());
 		
@@ -234,9 +234,9 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 			cplex.end();
 		}
 		
-		printSolution(IGPGraph,cplex,UP,DOWN,BGPRouters,BGPRoutersSize);
+		//printSolution(IGPGraph,cplex,UP,DOWN,BGPRouters,BGPRoutersSize);
 		
-		System.out.println("####End solution 0##############################################################################");
+		//System.out.println("####End solution 0##############################################################################");
 		
 		int satIndex = 0;
 		
@@ -320,7 +320,7 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 						
 						cplex.addRange(1, cplex.sum(restrictionEdges), minCutEdgesSize);
 						
-						System.out.println("####Solution "+(satIndex+1)+" - "+satNames[satIndex]+"##############################################################################");
+						//System.out.println("####Solution "+(satIndex+1)+" - "+satNames[satIndex]+"##############################################################################");
 						
 						//System.out.println(cplex.toString());
 						
@@ -332,9 +332,9 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 							cplex.end();
 						}
 						
-						printSolution(IGPGraph,cplex,UP,DOWN,BGPRouters,BGPRoutersSize);
+						//printSolution(IGPGraph,cplex,UP,DOWN,BGPRouters,BGPRoutersSize);
 						
-						System.out.println("####End solution "+(satIndex+1)+" - "+satNames[satIndex]+"##############################################################################");
+						//System.out.println("####End solution "+(satIndex+1)+" - "+satNames[satIndex]+"##############################################################################");
 					}
 					
 					satIndex++;
@@ -344,7 +344,7 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 		
 		// Print the solution and create sessions list
 		if(res){
-			printSolution(IGPGraph,cplex,UP,DOWN,BGPRouters,BGPRoutersSize);
+			//printSolution(IGPGraph,cplex,UP,DOWN,BGPRouters,BGPRoutersSize);
 			createSessionList(lstSessions,cplex,UP,DOWN,BGPRouters,BGPRoutersSize);
 	     }
 	     else {
@@ -498,11 +498,7 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 			
 		}
 		
-		System.out.println("Reacheables: "+reachableMetaNodes.size());
-		
 		it = lst.iterator();
-		
-		System.out.println("Destino: "+dst.getId());
 		
 		while(it.hasNext()){
 			
