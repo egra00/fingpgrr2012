@@ -9,8 +9,18 @@ import javax.swing.JOptionPane;
 
 import org.apache.log4j.Logger;
 
+import uy.edu.fing.repository.rrloc.algorithms.iBGPSession;
+import uy.edu.fing.repository.rrloc.algorithms.iBGPSessionType;
+
 import be.ac.ulg.montefiore.run.totem.domain.facade.InterDomainManager;
 import be.ac.ulg.montefiore.run.totem.domain.model.Domain;
+import be.ac.ulg.montefiore.run.totem.domain.model.Node;
+import be.ac.ulg.montefiore.run.totem.domain.model.impl.BgpNeighborImpl;
+import be.ac.ulg.montefiore.run.totem.domain.model.impl.BgpRouterImpl;
+import be.ac.ulg.montefiore.run.totem.domain.model.impl.DomainImpl;
+import be.ac.ulg.montefiore.run.totem.domain.model.jaxb.BgpNeighbor;
+import be.ac.ulg.montefiore.run.totem.domain.model.jaxb.BgpRouter;
+import be.ac.ulg.montefiore.run.totem.domain.model.jaxb.ObjectFactory;
 import be.ac.ulg.montefiore.run.totem.repository.model.TotemAlgorithm;
 import be.ac.ulg.montefiore.run.totem.repository.model.exception.AlgorithmInitialisationException;
 import be.ac.ulg.montefiore.run.totem.util.ParameterDescriptor;
@@ -51,16 +61,6 @@ public abstract class BindAlgorithm implements Runnable, TotemAlgorithm {
 	public abstract Object initAlgorithmResult();
 	
 	/*
-	 * It is called when a algorithm end and is necessary impact
-	 * the changes in the domain
-	 * 
-	 * @param domain
-	 * @param algorithmResult is the result of the algorithm
-	 * 
-	 */
-	public abstract void dumpResultInDomain(Object algorithmResult) throws Exception;
-	
-	/*
 	 * Used in debug mode, log the result of algorithm in logger
 	 * 
 	 * @param algorithmResult is the result of the algorithm
@@ -68,6 +68,67 @@ public abstract class BindAlgorithm implements Runnable, TotemAlgorithm {
 	 */
 	public abstract void log(Object algorithmResult);
 	
+	/*
+	 * It is called when a algorithm end and is necessary impact
+	 * the changes in the domain
+	 * 
+	 * @param domain
+	 * @param algorithmResult is the result of the algorithm
+	 * 
+	 */
+	public void dumpResultInDomain(Object algorithmResult) throws Exception {
+		List<iBGPSession> iBGPTopology = (List<iBGPSession>)algorithmResult;
+		
+		ManagerRRLocAlgorithm.getInstance().lock(domain.getASID());
+		
+    	ObjectFactory factory = new ObjectFactory();
+    	
+		// Se elimina toda posible configuracion previa
+		((DomainImpl)domain).removeBgpRouters();
+		
+		// Todos los routers tendrán sesiones bgp
+		for (Node router : domain.getAllNodes()) {
+			BgpRouter bgpRouter = factory.createBgpRouter();
+	        bgpRouter.setId(router.getId());
+	        bgpRouter.setRid(router.getRid());
+	        domain.addBgpRouter((BgpRouterImpl)bgpRouter);
+		}
+		
+		// Creo las sesiones
+		for (iBGPSession session : iBGPTopology) {
+			
+			BgpRouterImpl router1 = (BgpRouterImpl)domain.getBgpRouter(session.getIdLink1());
+			BgpRouterImpl router2 = (BgpRouterImpl)domain.getBgpRouter(session.getIdLink2());
+			
+			// El router2, el destino, sera reflector en caso que router1 sea su cliente
+			router2.setReflector(
+					router2.isReflector() ||
+					session.getSessionType().equals(iBGPSessionType.client));
+			
+			BgpNeighbor bgpNeighbor = factory.createBgpNeighbor();
+			bgpNeighbor.setIp(router2.getRid());
+			bgpNeighbor.setAs(domain.getASID());
+			if (router1.getNeighbors() == null) {
+				router1.setNeighbors(factory.createBgpRouterNeighborsType());
+			}
+			router1.getNeighbors().getNeighbor().add((be.ac.ulg.montefiore.run.totem.domain.model.BgpNeighbor)bgpNeighbor);
+			
+			// El router1, el origen, sera cliente en caso de tener una session de tipo client.
+			((BgpNeighborImpl)bgpNeighbor).setReflectorClient(
+					((BgpNeighborImpl)bgpNeighbor).isReflectorClient() ||
+					session.getSessionType().equals(iBGPSessionType.client));
+			
+			bgpNeighbor = factory.createBgpNeighbor();
+			bgpNeighbor.setIp(router1.getRid());
+			bgpNeighbor.setAs(domain.getASID());
+			if (router2.getNeighbors() == null) {
+				router2.setNeighbors(factory.createBgpRouterNeighborsType());
+			}
+			router2.getNeighbors().getNeighbor().add((be.ac.ulg.montefiore.run.totem.domain.model.BgpNeighbor)bgpNeighbor);
+		}
+        
+        ManagerRRLocAlgorithm.getInstance().unlock(domain.getASID());
+	}
 	
 	public RRLocAlgorithm getAlgorithm()
 	{

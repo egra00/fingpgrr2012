@@ -118,61 +118,6 @@ public class Zhang  extends BindAlgorithm {
 	public Object initAlgorithmResult() {
 		return new ArrayList<iBGPSession>();
 	}
-
-	@Override
-	public void dumpResultInDomain(Object algorithmResult) throws Exception {
-		List<iBGPSession> iBGPTopology = (List<iBGPSession>)algorithmResult;
-		
-		ManagerRRLocAlgorithm.getInstance().lock(domain.getASID());
-		
-    	ObjectFactory factory = new ObjectFactory();
-    	
-		// Se elimina toda posible configuracion previa
-		((DomainImpl)domain).removeBgpRouters();
-		
-		// Todos los routers tendrán sesiones bgp
-		for (Node router : domain.getAllNodes()) {
-			BgpRouter bgpRouter = factory.createBgpRouter();
-	        bgpRouter.setId(router.getId());
-	        bgpRouter.setRid(router.getRid());
-	        domain.addBgpRouter((BgpRouterImpl)bgpRouter);
-		}
-		
-		// Creo las sesiones
-		for (iBGPSession session : iBGPTopology) {
-			
-			BgpRouterImpl router1 = (BgpRouterImpl)domain.getBgpRouter(session.getIdLink1());
-			BgpRouterImpl router2 = (BgpRouterImpl)domain.getBgpRouter(session.getIdLink2());
-			
-			// El router2, el destino, sera reflector en caso que router1 sea su cliente
-			router2.setReflector(
-					router2.isReflector() ||
-					session.getSessionType().equals(iBGPSessionType.client));
-			
-			BgpNeighbor bgpNeighbor = factory.createBgpNeighbor();
-			bgpNeighbor.setIp(router2.getRid());
-			bgpNeighbor.setAs(domain.getASID());
-			if (router1.getNeighbors() == null) {
-				router1.setNeighbors(factory.createBgpRouterNeighborsType());
-			}
-			router1.getNeighbors().getNeighbor().add((be.ac.ulg.montefiore.run.totem.domain.model.BgpNeighbor)bgpNeighbor);
-			
-			// El router1, el origen, sera cliente en caso de tener una session de tipo client.
-			((BgpNeighborImpl)bgpNeighbor).setReflectorClient(
-					((BgpNeighborImpl)bgpNeighbor).isReflectorClient() ||
-					session.getSessionType().equals(iBGPSessionType.client));
-			
-			bgpNeighbor = factory.createBgpNeighbor();
-			bgpNeighbor.setIp(router1.getRid());
-			bgpNeighbor.setAs(domain.getASID());
-			if (router2.getNeighbors() == null) {
-				router2.setNeighbors(factory.createBgpRouterNeighborsType());
-			}
-			router2.getNeighbors().getNeighbor().add((be.ac.ulg.montefiore.run.totem.domain.model.BgpNeighbor)bgpNeighbor);
-		}
-        
-        ManagerRRLocAlgorithm.getInstance().unlock(domain.getASID());
-	}
 	
 	@Override
 	public void log(Object algorithmResult) {
