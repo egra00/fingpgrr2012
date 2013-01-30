@@ -36,5 +36,4 @@
 	<classpathentry kind="lib" path="lib/java/jung2-201/collections-generic-4.01.jar"/>
 	<classpathentry kind="lib" path="lib/java/ejml-0.19.jar"/>
 	<classpathentry kind="lib" path="/usr/local/cplex122/cplex/lib/cplex.jar"/>
-	<classpathentry kind="output" path="bin"/>
 </classpath>
