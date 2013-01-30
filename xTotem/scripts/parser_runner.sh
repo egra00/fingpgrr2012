@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-FAILURES=0
-
 mkdir -p parser_out
 
 echo "Running parser..."
