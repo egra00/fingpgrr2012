@@ -19,7 +19,7 @@
     <topology>
         <nodes>
             <node id="STTL">
-                <rid>198.32.8.200</rid>
+                <rid>192.168.0.7</rid>
                 <description>Seattle</description>
                 <type>EDGE</type>
                 <location latitude="31.147552" longitude="66.65515"/>
@@ -32,7 +32,7 @@
                 </interfaces>
             </node>
             <node id="DNVR">
-                <rid>198.32.8.194</rid>
+                <rid>192.168.0.2</rid>
                 <description>Denver</description>
                 <type>EDGE</type>
                 <location latitude="275.87833" longitude="304.29526"/>
@@ -46,7 +46,7 @@
                 </interfaces>
             </node>
             <node id="KSCY">
-                <rid>198.32.8.197</rid>
+                <rid>192.168.0.0</rid>
                 <description>Kansas City</description>
                 <type>EDGE</type>
                 <location latitude="271.42868" longitude="507.15878"/>
@@ -60,7 +60,7 @@
                 </interfaces>
             </node>
             <node id="IPLS">
-                <rid>198.32.8.196</rid>
+                <rid>192.168.0.9</rid>
                 <description>Indianapolis</description>
                 <type>EDGE</type>
                 <location latitude="170.0" longitude="779.0"/>
@@ -74,7 +74,7 @@
                 </interfaces>
             </node>
             <node id="CHIN">
-                <rid>198.32.8.193</rid>
+                <rid>192.168.0.5</rid>
                 <description>Chicago</description>
                 <type>EDGE</type>
                 <location latitude="62.295105" longitude="692.634"/>
@@ -84,7 +84,7 @@
                 </interfaces>
             </node>
             <node id="NYCM">
-                <rid>198.32.8.199</rid>
+                <rid>192.168.0.4</rid>
                 <description>New york City</description>
                 <type>EDGE</type>
                 <location latitude="57.845455" longitude="1054.8903"/>
@@ -97,7 +97,7 @@
                 </interfaces>
             </node>
             <node id="WASH">
-                <rid>198.32.8.202</rid>
+                <rid>192.168.0.11</rid>
                 <description>Washington DC</description>
                 <type>EDGE</type>
                 <location latitude="225.99998" longitude="1033.0"/>
@@ -110,7 +110,7 @@
                 </interfaces>
             </node>
             <node id="ATLA">
-                <rid>198.32.8.192</rid>
+                <rid>192.168.0.3</rid>
                 <description>Atlanta</description>
                 <type>EDGE</type>
                 <location latitude="418.0" longitude="909.0"/>
@@ -125,7 +125,7 @@
                 </interfaces>
             </node>
             <node id="ATLA-M5">
-                <rid>198.32.8.203</rid>
+                <rid>192.168.0.8</rid>
                 <type>EDGE</type>
                 <location latitude="440.0" longitude="1040.0"/>
                 <interfaces>
@@ -133,7 +133,7 @@
                 </interfaces>
             </node>
             <node id="HSTN">
-                <rid>198.32.8.195</rid>
+                <rid>192.168.0.6</rid>
                 <description>Houston</description>
                 <type>EDGE</type>
                 <location latitude="658.5483" longitude="518.751"/>
@@ -147,7 +147,7 @@
                 </interfaces>
             </node>
             <node id="LOSA">
-                <rid>198.32.8.198</rid>
+                <rid>192.168.0.1</rid>
                 <description>Los Angeles</description>
                 <type>EDGE</type>
                 <location latitude="529.50836" longitude="92.7376"/>
@@ -160,7 +160,7 @@
                 </interfaces>
             </node>
             <node id="SNVA">
-                <rid>198.32.8.201</rid>
+                <rid>192.168.0.10</rid>
                 <description>Sunnyvale</description>
                 <type>EDGE</type>
                 <location latitude="324.8245" longitude="14.490252"/>

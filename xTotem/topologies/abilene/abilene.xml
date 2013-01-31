@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<domain ASID="11537" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="http://totem.run.montefiore.ulg.ac.be/Schema/Domain-v1_3.xsd">
+<domain ASID="11537">
     <info>
         <title>Abilene Topology</title>
         <date>2005-01-01</date>
@@ -20,7 +19,7 @@
     <topology>
         <nodes>
             <node id="STTL">
-                <rid>198.32.8.200</rid>
+                <rid>192.168.0.7</rid>
                 <description>Seattle</description>
                 <location latitude="31.147552" longitude="66.65515"/>
                 <interfaces>
@@ -32,7 +31,7 @@
                 </interfaces>
             </node>
             <node id="DNVR">
-                <rid>198.32.8.194</rid>
+                <rid>192.168.0.2</rid>
                 <description>Denver</description>
                 <location latitude="275.87833" longitude="304.29526"/>
                 <interfaces>
@@ -45,7 +44,7 @@
                 </interfaces>
             </node>
             <node id="KSCY">
-                <rid>198.32.8.197</rid>
+                <rid>192.168.0.0</rid>
                 <description>Kansas City</description>
                 <location latitude="271.42868" longitude="507.15875"/>
                 <interfaces>
@@ -58,7 +57,7 @@
                 </interfaces>
             </node>
             <node id="IPLS">
-                <rid>198.32.8.196</rid>
+                <rid>192.168.0.9</rid>
                 <description>Indianapolis</description>
                 <location latitude="170.0" longitude="779.0"/>
                 <interfaces>
@@ -71,7 +70,7 @@
                 </interfaces>
             </node>
             <node id="CHIN">
-                <rid>198.32.8.193</rid>
+                <rid>192.168.0.5</rid>
                 <description>Chicago</description>
                 <location latitude="62.295105" longitude="692.634"/>
                 <interfaces>
@@ -80,7 +79,7 @@
                 </interfaces>
             </node>
             <node id="NYCM">
-                <rid>198.32.8.199</rid>
+                <rid>192.168.0.4</rid>
                 <description>New york City</description>
                 <location latitude="57.845455" longitude="1054.8903"/>
                 <interfaces>
@@ -92,7 +91,7 @@
                 </interfaces>
             </node>
             <node id="WASH">
-                <rid>198.32.8.202</rid>
+                <rid>192.168.0.11</rid>
                 <description>Washington DC</description>
                 <location latitude="226.0" longitude="1033.0"/>
                 <interfaces>
@@ -104,7 +103,7 @@
                 </interfaces>
             </node>
             <node id="ATLA">
-                <rid>198.32.8.192</rid>
+                <rid>192.168.0.3</rid>
                 <description>Atlanta</description>
                 <location latitude="418.0" longitude="909.0"/>
                 <interfaces>
@@ -118,14 +117,14 @@
                 </interfaces>
             </node>
             <node id="ATLA-M5">
-                <rid>198.32.8.203</rid>
-	        <location latitude="440.0" longitude="1040.0"/>
+                <rid>192.168.0.8</rid>
+                <location latitude="440.0" longitude="1040.0"/>
                 <interfaces>
                     <interface id="ge-0/0/0"/>
                 </interfaces>
             </node>
             <node id="HSTN">
-                <rid>198.32.8.195</rid>
+                <rid>192.168.0.6</rid>
                 <description>Houston</description>
                 <location latitude="658.5483" longitude="518.751"/>
                 <interfaces>
@@ -138,7 +137,7 @@
                 </interfaces>
             </node>
             <node id="LOSA">
-                <rid>198.32.8.198</rid>
+                <rid>192.168.0.1</rid>
                 <description>Los Angeles</description>
                 <location latitude="529.50836" longitude="92.7376"/>
                 <interfaces>
@@ -150,7 +149,7 @@
                 </interfaces>
             </node>
             <node id="SNVA">
-                <rid>198.32.8.201</rid>
+                <rid>192.168.0.10</rid>
                 <description>Sunnyvale</description>
                 <location latitude="324.8245" longitude="14.490252"/>
                 <interfaces>
@@ -351,6 +350,7 @@
             <link id="STTL-DNVR">
                 <static>
                     <metric>2095.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -367,6 +367,7 @@
             <link id="DNVR-STTL">
                 <static>
                     <metric>2095.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -383,6 +384,7 @@
             <link id="DNVR-KSCY">
                 <static>
                     <metric>639.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -399,6 +401,7 @@
             <link id="KSCY-DNVR">
                 <static>
                     <metric>639.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -415,6 +418,7 @@
             <link id="KSCY-IPLS">
                 <static>
                     <metric>548.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -431,6 +435,7 @@
             <link id="IPLS-KSCY">
                 <static>
                     <metric>548.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -447,6 +452,7 @@
             <link id="KSCY-HSTN">
                 <static>
                     <metric>902.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -463,6 +469,7 @@
             <link id="HSTN-KSCY">
                 <static>
                     <metric>902.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -479,6 +486,7 @@
             <link id="IPLS-CHIN">
                 <static>
                     <metric>260.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -495,6 +503,7 @@
             <link id="CHIN-IPLS">
                 <static>
                     <metric>260.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -511,6 +520,7 @@
             <link id="IPLS-ATLA">
                 <static>
                     <metric>587.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -527,6 +537,7 @@
             <link id="ATLA-IPLS">
                 <static>
                     <metric>587.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -543,6 +554,7 @@
             <link id="CHIN-NYCM">
                 <static>
                     <metric>700.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -559,6 +571,7 @@
             <link id="NYCM-CHIN">
                 <static>
                     <metric>700.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -575,6 +588,7 @@
             <link id="NYCM-WASH">
                 <static>
                     <metric>233.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -591,6 +605,7 @@
             <link id="WASH-NYCM">
                 <static>
                     <metric>233.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -607,6 +622,7 @@
             <link id="WASH-ATLA">
                 <static>
                     <metric>846.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -623,6 +639,7 @@
             <link id="ATLA-WASH">
                 <static>
                     <metric>846.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -639,6 +656,7 @@
             <link id="ATLA-HSTN">
                 <static>
                     <metric>1176.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -655,6 +673,7 @@
             <link id="HSTN-ATLA">
                 <static>
                     <metric>1176.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -671,6 +690,7 @@
             <link id="HSTN-LOSA">
                 <static>
                     <metric>1893.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -687,6 +707,7 @@
             <link id="LOSA-HSTN">
                 <static>
                     <metric>1893.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -703,6 +724,7 @@
             <link id="LOSA-SNVA">
                 <static>
                     <metric>366.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -719,6 +741,7 @@
             <link id="SNVA-LOSA">
                 <static>
                     <metric>366.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -735,6 +758,7 @@
             <link id="SNVA-DNVR">
                 <static>
                     <metric>1295.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -751,6 +775,7 @@
             <link id="DNVR-SNVA">
                 <static>
                     <metric>1295.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -767,6 +792,7 @@
             <link id="SNVA-STTL">
                 <static>
                     <metric>861.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -783,6 +809,7 @@
             <link id="STTL-SNVA">
                 <static>
                     <metric>861.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -799,6 +826,7 @@
             <link id="ATLAM5-ATLA">
                 <static>
                     <metric>587.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -815,6 +843,7 @@
             <link id="ATLA-ATLAM5">
                 <static>
                     <metric>587.0</metric>
+                    <te-metric>1.0</te-metric>
                     <mrbw>10000.0</mrbw>
                     <mbw>10000.0</mbw>
                     <diff-serv>
@@ -831,3 +860,4 @@
         </links>
     </igp>
 </domain>
+
