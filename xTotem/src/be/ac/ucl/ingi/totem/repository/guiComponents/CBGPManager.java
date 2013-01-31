@@ -29,7 +29,6 @@ package be.ac.ucl.ingi.totem.repository.guiComponents;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
-import java.io.File;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Enumeration;
@@ -42,7 +41,6 @@ import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JDialog;
-import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
@@ -56,8 +54,7 @@ import javax.swing.SpringLayout;
 
 import org.jfree.ui.RefineryUtilities;
 
-import uy.edu.fing.repository.tools.CBGPDump.CBGPDumpAlgorithm;
-
+import uy.edu.fing.repository.tools.CBGPDump.CBGPDumpGUI;
 import be.ac.ucl.ingi.cbgp.IPPrefix;
 import be.ac.ucl.ingi.cbgp.IPTrace;
 import be.ac.ucl.ingi.cbgp.UnknownMetricException;
@@ -216,7 +213,7 @@ public class CBGPManager extends AbstractGUIModule {
     class ExportCbgpListener implements ActionListener 
     {
 
-        public void actionPerformed(ActionEvent e) 
+      /*  public void actionPerformed(ActionEvent e) 
         {
         	JFileChooser fc = new JFileChooser();
             int returnVal = fc.showSaveDialog(MainWindow.getInstance());
@@ -233,6 +230,12 @@ public class CBGPManager extends AbstractGUIModule {
                 CBGPDumpAlgorithm alg = new CBGPDumpAlgorithm();
                 alg.run(filename);
             }
+        }*/
+    	
+        public void actionPerformed(ActionEvent e) {
+            JDialog dialog = new CBGPDumpGUI();
+            dialog.setLocationRelativeTo(MainWindow.getInstance());
+            dialog.setVisible(true);
         }
     }
     

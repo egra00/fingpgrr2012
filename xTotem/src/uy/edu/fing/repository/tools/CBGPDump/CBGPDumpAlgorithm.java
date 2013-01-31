@@ -1,17 +1,23 @@
 package uy.edu.fing.repository.tools.CBGPDump;
 
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.DataInputStream;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.StringTokenizer;
 
 import org.apache.log4j.Logger;
 
+import uy.edu.fing.repository.tools.CBGPDump.model.MsjMRT;
 import be.ac.ulg.montefiore.run.totem.domain.exception.NodeNotFoundException;
-import be.ac.ulg.montefiore.run.totem.domain.facade.InterDomainManager;
 import be.ac.ulg.montefiore.run.totem.domain.model.BgpNeighbor;
 import be.ac.ulg.montefiore.run.totem.domain.model.BgpNetwork;
 import be.ac.ulg.montefiore.run.totem.domain.model.BgpRouter;
@@ -28,30 +34,31 @@ public class CBGPDumpAlgorithm
 	
 	private Domain domain;
 	private int domain_num; 
-	private String fileName;
+	private String mrtName;
+	private String outName;
 	private BufferedWriter bw;
 	private HashMap<String, Link> linksById;
     private HashMap<String, Node> nodesById;
 	private static Logger logger = Logger.getLogger(CBGPDumpAlgorithm.class);
 
 
-	public void run(String name) 
+	public void run(Domain _domain, String mrt_file) 
 	{
 		
 		
-    	domain = InterDomainManager.getInstance().getDefaultDomain();
+    	domain = _domain;
     	if(domain == null)
     	{
         	logger.error("There is no default domain");
             return;
     	}
     	
-    	if(name.equals("") || name == null)
-    	{
-        	logger.error("Invalid file name");
-            return;
-    	}
-    	fileName = name;
+    	mrtName = mrt_file;
+
+    	
+    	outName = domain.getURI().getPath();
+    	outName = outName.endsWith(".xml") ? outName.substring(0, outName.length() - 4) : outName;
+    	outName += "-" + "simulation.cli";
     	
 		linksById = new HashMap<String, Link>();
 		nodesById = new HashMap<String, Node>();
@@ -61,7 +68,7 @@ public class CBGPDumpAlgorithm
 		logger.debug("Ending CBGPDump");
 		
 		domain = null;
-		fileName = null;
+		outName = null;
 	}
 
 	
@@ -70,7 +77,7 @@ public class CBGPDumpAlgorithm
 	{
 		/// Re-write file with error
 		bw.close();
-		bw = new BufferedWriter(new FileWriter(fileName));
+		bw = new BufferedWriter(new FileWriter(outName));
 		bw.write("print \"*** ERROR: "+ descriptionError +" ***\\n\\n\""+"\n\n");
 		bw.close();	
 		
@@ -84,7 +91,7 @@ public class CBGPDumpAlgorithm
         {
         	boolean error;
         	domain_num = domain.getASID();
-			bw = new BufferedWriter(new FileWriter(fileName));
+			bw = new BufferedWriter(new FileWriter(outName));
 			
             error = initDescriptionTopology();
             if (!error) initIgpTopology();
@@ -93,7 +100,7 @@ public class CBGPDumpAlgorithm
 		} 
         catch (IOException e) 
 		{
-        	logger.error("ERROR: Unexpected error occurred while open/close/write file " + fileName);
+        	logger.error("ERROR: Unexpected error occurred while open/close/write file " + outName);
 			e.printStackTrace();
 			return;
 		}
@@ -288,11 +295,8 @@ public class CBGPDumpAlgorithm
 		bw.write("\n");
 		/// END BGP FILTERS
 		
-		/// SCENARIO TO SIMULATE
-		bw.write("# -------------------------------------------------------------------\n");
-		bw.write("# Scenario to simulate\n");
-		bw.write("# -------------------------------------------------------------------\n");
-		bw.write("\n");
+		//SCENARIO TO SIMULATE
+		simulationSecction();
 		/// END SCENARIO TO SIMULATE
 		
 		
@@ -301,9 +305,88 @@ public class CBGPDumpAlgorithm
 		bw.write("# Start simulation\n");
 		bw.write("# -------------------------------------------------------------------\n");
 		bw.write("sim run\n");
+		bw.close();
 		/// END START SIMULATION
 		
 		return false;
+	}
+
+
+
+	private void simulationSecction() throws IOException{
+		
+		bw.write("# -------------------------------------------------------------------\n");
+		bw.write("# Scenario to simulate\n");
+		bw.write("# -------------------------------------------------------------------\n");
+		
+		if(mrtName != null) {
+			File file = new File(mrtName);
+			if(file.exists() && !file.isDirectory()) {
+				 try
+				 {
+					  // Open the file that is the first 
+					  // command line parameter
+					  FileInputStream fstream = new FileInputStream(mrtName);
+					  // Get the object of DataInputStream
+					  DataInputStream in = new DataInputStream(fstream);
+					  BufferedReader br = new BufferedReader(new InputStreamReader(in));
+					  String strLine;
+					  int pos;
+					  //Read File Line By  
+					  int as_number = domain_num + 1;
+					  while ((strLine = br.readLine()) != null)   {
+						  
+						  StringTokenizer token = new StringTokenizer(strLine, ";|");
+						  
+						  //System.out.println(strLine);
+						  
+						  String border_router = token.nextToken();
+						  String virtual_router = token.nextToken();
+						  
+						  MsjMRT msj = new MsjMRT();
+						  pos=0;
+						  while(token.hasMoreTokens()) {
+							  msj.setAttribute(pos, token.nextToken());
+							  pos++;
+						  }
+						  
+						  if(msj.getOrigin() != null) msj.setOrigin(virtual_router);
+						  if(msj.getPath() != null) msj.setPath(as_number + " " + msj.getPath());
+						  						  
+						  bw.write("net add node "+ virtual_router +"\n");
+						  bw.write("net add domain " + as_number + " igp" +"\n");
+						  bw.write("net node " + virtual_router + " domain " + as_number +"\n");
+						  bw.write("net add link " + border_router + " " + virtual_router +"\n");
+						  bw.write("net node " + border_router +" route add --oif="+ virtual_router + "/32 0" +"\n");
+						  bw.write("net node " +virtual_router +" route add --oif="+ border_router + "/32 0" +"\n");
+						  bw.write("bgp router " + border_router +"\n");
+						  	bw.write("\tadd peer " + as_number + " " + virtual_router +"\n");
+						  	bw.write("\tpeer " + virtual_router + " virtual" +"\n");
+						  	bw.write("\tpeer " + virtual_router + " next-hop-self" +"\n");
+						  	bw.write("\tpeer " + virtual_router + " up" +"\n");
+						  	bw.write("\tpeer " + virtual_router + " recv \"" + msj.toString() +"\"\n");
+						  	bw.write("\texit" +"\n");
+						  	
+						  bw.write("\n");
+						  as_number++;
+						  
+					  }
+					  
+					  //Close the input stream
+					  in.close();
+				 }
+				 catch (Exception e){//Catch exception if any
+					 
+					 e.printStackTrace();
+					  System.err.println("Error jjjjj: " + e.getMessage());
+				 }
+			}
+		}
+		
+	
+	
+		bw.write("\n");
+		
 	}
 	
 }

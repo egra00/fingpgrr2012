@@ -1,0 +1,389 @@
+# ===================================================================
+# C-BGP Export file (CLI)
+# Domain AS 123
+# ===================================================================
+
+# -------------------------------------------------------------------
+# Physical topology
+# -------------------------------------------------------------------
+net add node 1.0.0.1
+net add node 1.0.0.2
+net add node 1.0.0.3
+net add node 1.0.0.4
+net add node 1.0.0.5
+net add node 1.0.0.6
+net add node 1.0.0.7
+net add node 1.0.0.8
+net add node 1.0.0.9
+net add node 1.0.0.10
+net add node 1.0.0.11
+net add node 1.0.0.12
+net add node 1.0.0.13
+net add node 1.0.0.14
+net add node 1.0.0.15
+net add node 1.0.0.16
+net add node 1.0.0.17
+net add node 1.0.0.18
+net add node 1.0.0.19
+net add node 1.0.0.20
+net add node 1.0.0.21
+net add node 1.0.0.22
+net add node 1.0.0.23
+net add node 1.0.0.24
+net add node 1.0.0.25
+net add node 1.0.0.26
+net add node 1.0.0.27
+net add node 1.0.0.28
+net add node 1.0.0.29
+net add node 1.0.0.30
+net add node 1.0.0.31
+net add node 1.0.0.32
+net add node 1.0.0.33
+net add node 1.0.0.34
+net add node 1.0.0.35
+net add node 1.0.0.36
+net add node 1.0.0.37
+net add node 1.0.0.38
+net add node 1.0.0.39
+net add node 1.0.0.40
+net add node 1.0.0.41
+net add node 1.0.0.42
+net add node 1.0.0.43
+net add node 1.0.0.44
+net add node 1.0.0.45
+net add node 1.0.0.46
+net add node 1.0.0.47
+net add link 1.0.0.6 1.0.0.21
+net link 1.0.0.6 1.0.0.21 igp-weight --bidir 3
+net add link 1.0.0.6 1.0.0.2
+net link 1.0.0.6 1.0.0.2 igp-weight --bidir 8
+net add link 1.0.0.21 1.0.0.7
+net link 1.0.0.21 1.0.0.7 igp-weight --bidir 5
+net add link 1.0.0.7 1.0.0.5
+net link 1.0.0.7 1.0.0.5 igp-weight --bidir 7
+net add link 1.0.0.5 1.0.0.22
+net link 1.0.0.5 1.0.0.22 igp-weight --bidir 1
+net add link 1.0.0.2 1.0.0.3
+net link 1.0.0.2 1.0.0.3 igp-weight --bidir 3
+net add link 1.0.0.3 1.0.0.1
+net link 1.0.0.3 1.0.0.1 igp-weight --bidir 1
+net add link 1.0.0.5 1.0.0.3
+net link 1.0.0.5 1.0.0.3 igp-weight --bidir 6
+net add link 1.0.0.5 1.0.0.26
+net link 1.0.0.5 1.0.0.26 igp-weight --bidir 2
+net add link 1.0.0.5 1.0.0.21
+net link 1.0.0.5 1.0.0.21 igp-weight --bidir 8
+net add link 1.0.0.5 1.0.0.30
+net link 1.0.0.5 1.0.0.30 igp-weight --bidir 9
+net add link 1.0.0.5 1.0.0.31
+net link 1.0.0.5 1.0.0.31 igp-weight --bidir 8
+net add link 1.0.0.5 1.0.0.29
+net link 1.0.0.5 1.0.0.29 igp-weight --bidir 3
+net add link 1.0.0.5 1.0.0.28
+net link 1.0.0.5 1.0.0.28 igp-weight --bidir 4
+net add link 1.0.0.5 1.0.0.27
+net link 1.0.0.5 1.0.0.27 igp-weight --bidir 5
+net add link 1.0.0.3 1.0.0.4
+net link 1.0.0.3 1.0.0.4 igp-weight --bidir 6
+net add link 1.0.0.4 1.0.0.24
+net link 1.0.0.4 1.0.0.24 igp-weight --bidir 1
+net add link 1.0.0.4 1.0.0.23
+net link 1.0.0.4 1.0.0.23 igp-weight --bidir 1
+net add link 1.0.0.4 1.0.0.11
+net link 1.0.0.4 1.0.0.11 igp-weight --bidir 8
+net add link 1.0.0.11 1.0.0.25
+net link 1.0.0.11 1.0.0.25 igp-weight --bidir 2
+net add link 1.0.0.5 1.0.0.11
+net link 1.0.0.5 1.0.0.11 igp-weight --bidir 9
+net add link 1.0.0.11 1.0.0.12
+net link 1.0.0.11 1.0.0.12 igp-weight --bidir 1
+net add link 1.0.0.12 1.0.0.37
+net link 1.0.0.12 1.0.0.37 igp-weight --bidir 2
+net add link 1.0.0.12 1.0.0.38
+net link 1.0.0.12 1.0.0.38 igp-weight --bidir 4
+net add link 1.0.0.11 1.0.0.17
+net link 1.0.0.11 1.0.0.17 igp-weight --bidir 5
+net add link 1.0.0.18 1.0.0.40
+net link 1.0.0.18 1.0.0.40 igp-weight --bidir 1
+net add link 1.0.0.17 1.0.0.18
+net link 1.0.0.17 1.0.0.18 igp-weight --bidir 7
+net add link 1.0.0.18 1.0.0.19
+net link 1.0.0.18 1.0.0.19 igp-weight --bidir 2
+net add link 1.0.0.19 1.0.0.20
+net link 1.0.0.19 1.0.0.20 igp-weight --bidir 1
+net add link 1.0.0.2 1.0.0.1
+net link 1.0.0.2 1.0.0.1 igp-weight --bidir 4
+net add link 1.0.0.8 1.0.0.32
+net link 1.0.0.8 1.0.0.32 igp-weight --bidir 1
+net add link 1.0.0.8 1.0.0.33
+net link 1.0.0.8 1.0.0.33 igp-weight --bidir 2
+net add link 1.0.0.8 1.0.0.34
+net link 1.0.0.8 1.0.0.34 igp-weight --bidir 1
+net add link 1.0.0.8 1.0.0.35
+net link 1.0.0.8 1.0.0.35 igp-weight --bidir 2
+net add link 1.0.0.8 1.0.0.36
+net link 1.0.0.8 1.0.0.36 igp-weight --bidir 3
+net add link 1.0.0.8 1.0.0.7
+net link 1.0.0.8 1.0.0.7 igp-weight --bidir 12
+net add link 1.0.0.8 1.0.0.5
+net link 1.0.0.8 1.0.0.5 igp-weight --bidir 13
+net add link 1.0.0.8 1.0.0.9
+net link 1.0.0.8 1.0.0.9 igp-weight --bidir 5
+net add link 1.0.0.9 1.0.0.10
+net link 1.0.0.9 1.0.0.10 igp-weight --bidir 5
+net add link 1.0.0.16 1.0.0.19
+net link 1.0.0.16 1.0.0.19 igp-weight --bidir 8
+net add link 1.0.0.16 1.0.0.15
+net link 1.0.0.16 1.0.0.15 igp-weight --bidir 7
+net add link 1.0.0.15 1.0.0.47
+net link 1.0.0.15 1.0.0.47 igp-weight --bidir 2
+net add link 1.0.0.13 1.0.0.14
+net link 1.0.0.13 1.0.0.14 igp-weight --bidir 4
+net add link 1.0.0.13 1.0.0.46
+net link 1.0.0.13 1.0.0.46 igp-weight --bidir 3
+net add link 1.0.0.13 1.0.0.45
+net link 1.0.0.13 1.0.0.45 igp-weight --bidir 5
+net add link 1.0.0.13 1.0.0.16
+net link 1.0.0.13 1.0.0.16 igp-weight --bidir 8
+net add link 1.0.0.17 1.0.0.39
+net link 1.0.0.17 1.0.0.39 igp-weight --bidir 1
+net add link 1.0.0.17 1.0.0.16
+net link 1.0.0.17 1.0.0.16 igp-weight --bidir 8
+net add link 1.0.0.13 1.0.0.42
+net link 1.0.0.13 1.0.0.42 igp-weight --bidir 9
+net add link 1.0.0.10 1.0.0.41
+net link 1.0.0.10 1.0.0.41 igp-weight --bidir 8
+net add link 1.0.0.13 1.0.0.43
+net link 1.0.0.13 1.0.0.43 igp-weight --bidir 9
+net add link 1.0.0.13 1.0.0.15
+net link 1.0.0.13 1.0.0.15 igp-weight --bidir 7
+net add link 1.0.0.13 1.0.0.44
+net link 1.0.0.13 1.0.0.44 igp-weight --bidir 6
+net add link 1.0.0.10 1.0.0.13
+net link 1.0.0.10 1.0.0.13 igp-weight --bidir 8
+net add link 1.0.0.5 1.0.0.12
+net link 1.0.0.5 1.0.0.12 igp-weight --bidir 8
+net add link 1.0.0.5 1.0.0.13
+net link 1.0.0.5 1.0.0.13 igp-weight --bidir 20
+net add link 1.0.0.19 1.0.0.13
+net link 1.0.0.19 1.0.0.13 igp-weight --bidir 15
+net add link 1.0.0.5 1.0.0.4
+net link 1.0.0.5 1.0.0.4 igp-weight --bidir 10
+
+# -------------------------------------------------------------------
+# Static routing
+# -------------------------------------------------------------------
+
+# -------------------------------------------------------------------
+# IGP routing
+# -------------------------------------------------------------------
+net add domain 123 igp
+net node 1.0.0.1 domain 123
+net node 1.0.0.2 domain 123
+net node 1.0.0.3 domain 123
+net node 1.0.0.4 domain 123
+net node 1.0.0.5 domain 123
+net node 1.0.0.6 domain 123
+net node 1.0.0.7 domain 123
+net node 1.0.0.8 domain 123
+net node 1.0.0.9 domain 123
+net node 1.0.0.10 domain 123
+net node 1.0.0.11 domain 123
+net node 1.0.0.12 domain 123
+net node 1.0.0.13 domain 123
+net node 1.0.0.14 domain 123
+net node 1.0.0.15 domain 123
+net node 1.0.0.16 domain 123
+net node 1.0.0.17 domain 123
+net node 1.0.0.18 domain 123
+net node 1.0.0.19 domain 123
+net node 1.0.0.20 domain 123
+net node 1.0.0.21 domain 123
+net node 1.0.0.22 domain 123
+net node 1.0.0.23 domain 123
+net node 1.0.0.24 domain 123
+net node 1.0.0.25 domain 123
+net node 1.0.0.26 domain 123
+net node 1.0.0.27 domain 123
+net node 1.0.0.28 domain 123
+net node 1.0.0.29 domain 123
+net node 1.0.0.30 domain 123
+net node 1.0.0.31 domain 123
+net node 1.0.0.32 domain 123
+net node 1.0.0.33 domain 123
+net node 1.0.0.34 domain 123
+net node 1.0.0.35 domain 123
+net node 1.0.0.36 domain 123
+net node 1.0.0.37 domain 123
+net node 1.0.0.38 domain 123
+net node 1.0.0.39 domain 123
+net node 1.0.0.40 domain 123
+net node 1.0.0.41 domain 123
+net node 1.0.0.42 domain 123
+net node 1.0.0.43 domain 123
+net node 1.0.0.44 domain 123
+net node 1.0.0.45 domain 123
+net node 1.0.0.46 domain 123
+net node 1.0.0.47 domain 123
+net domain 123 compute
+
+# -------------------------------------------------------------------
+# BGP routing
+# -------------------------------------------------------------------
+bgp options msg-monitor AS123-trace.bgp
+
+bgp add router 123 1.0.0.1
+bgp router 1.0.0.1
+	exit
+bgp add router 123 1.0.0.2
+bgp router 1.0.0.2
+	exit
+bgp add router 123 1.0.0.3
+bgp router 1.0.0.3
+	exit
+bgp add router 123 1.0.0.4
+bgp router 1.0.0.4
+	exit
+bgp add router 123 1.0.0.5
+bgp router 1.0.0.5
+	exit
+bgp add router 123 1.0.0.6
+bgp router 1.0.0.6
+	exit
+bgp add router 123 1.0.0.7
+bgp router 1.0.0.7
+	exit
+bgp add router 123 1.0.0.8
+bgp router 1.0.0.8
+	exit
+bgp add router 123 1.0.0.9
+bgp router 1.0.0.9
+	exit
+bgp add router 123 1.0.0.10
+bgp router 1.0.0.10
+	exit
+bgp add router 123 1.0.0.11
+bgp router 1.0.0.11
+	exit
+bgp add router 123 1.0.0.12
+bgp router 1.0.0.12
+	exit
+bgp add router 123 1.0.0.13
+bgp router 1.0.0.13
+	exit
+bgp add router 123 1.0.0.14
+bgp router 1.0.0.14
+	exit
+bgp add router 123 1.0.0.15
+bgp router 1.0.0.15
+	exit
+bgp add router 123 1.0.0.16
+bgp router 1.0.0.16
+	exit
+bgp add router 123 1.0.0.17
+bgp router 1.0.0.17
+	exit
+bgp add router 123 1.0.0.18
+bgp router 1.0.0.18
+	exit
+bgp add router 123 1.0.0.19
+bgp router 1.0.0.19
+	exit
+bgp add router 123 1.0.0.20
+bgp router 1.0.0.20
+	exit
+bgp add router 123 1.0.0.21
+bgp router 1.0.0.21
+	exit
+bgp add router 123 1.0.0.22
+bgp router 1.0.0.22
+	exit
+bgp add router 123 1.0.0.23
+bgp router 1.0.0.23
+	exit
+bgp add router 123 1.0.0.24
+bgp router 1.0.0.24
+	exit
+bgp add router 123 1.0.0.25
+bgp router 1.0.0.25
+	exit
+bgp add router 123 1.0.0.26
+bgp router 1.0.0.26
+	exit
+bgp add router 123 1.0.0.27
+bgp router 1.0.0.27
+	exit
+bgp add router 123 1.0.0.28
+bgp router 1.0.0.28
+	exit
+bgp add router 123 1.0.0.29
+bgp router 1.0.0.29
+	exit
+bgp add router 123 1.0.0.30
+bgp router 1.0.0.30
+	exit
+bgp add router 123 1.0.0.31
+bgp router 1.0.0.31
+	exit
+bgp add router 123 1.0.0.32
+bgp router 1.0.0.32
+	exit
+bgp add router 123 1.0.0.33
+bgp router 1.0.0.33
+	exit
+bgp add router 123 1.0.0.34
+bgp router 1.0.0.34
+	exit
+bgp add router 123 1.0.0.35
+bgp router 1.0.0.35
+	exit
+bgp add router 123 1.0.0.36
+bgp router 1.0.0.36
+	exit
+bgp add router 123 1.0.0.37
+bgp router 1.0.0.37
+	exit
+bgp add router 123 1.0.0.38
+bgp router 1.0.0.38
+	exit
+bgp add router 123 1.0.0.39
+bgp router 1.0.0.39
+	exit
+bgp add router 123 1.0.0.40
+bgp router 1.0.0.40
+	exit
+bgp add router 123 1.0.0.41
+bgp router 1.0.0.41
+	exit
+bgp add router 123 1.0.0.42
+bgp router 1.0.0.42
+	exit
+bgp add router 123 1.0.0.43
+bgp router 1.0.0.43
+	exit
+bgp add router 123 1.0.0.44
+bgp router 1.0.0.44
+	exit
+bgp add router 123 1.0.0.45
+bgp router 1.0.0.45
+	exit
+bgp add router 123 1.0.0.46
+bgp router 1.0.0.46
+	exit
+bgp add router 123 1.0.0.47
+bgp router 1.0.0.47
+	exit
+
+# -------------------------------------------------------------------
+# BGP filters
+# -------------------------------------------------------------------
+
+
+# -------------------------------------------------------------------
+# Scenario to simulate
+# -------------------------------------------------------------------
+
+# -------------------------------------------------------------------
+# Start simulation
+# -------------------------------------------------------------------
+sim run

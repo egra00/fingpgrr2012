@@ -1,0 +1,248 @@
+# ===================================================================
+# C-BGP Export file (CLI)
+# Domain AS 123
+# ===================================================================
+
+# -------------------------------------------------------------------
+# Physical topology
+# -------------------------------------------------------------------
+net add node 192.168.0.35
+net add node 192.168.0.4
+net add node 192.168.0.33
+net add node 192.168.0.27
+net add node 192.168.0.32
+net add node 192.168.0.1
+net add node 192.168.0.34
+net add node 192.168.0.30
+net add node 192.168.0.6
+net add node 192.168.0.11
+net add node 192.168.0.29
+net add node 192.168.0.10
+net add node 192.168.0.3
+net add node 192.168.0.8
+net add node 192.168.0.28
+net add node 192.168.0.12
+net add node 192.168.0.0
+net add node 192.168.0.7
+net add node 192.168.0.39
+net add node 192.168.0.21
+net add node 192.168.0.41
+net add node 192.168.0.19
+net add node 192.168.0.46
+net add node 192.168.0.22
+net add node 192.168.0.38
+net add node 192.168.0.25
+net add node 192.168.0.31
+net add node 192.168.0.18
+net add node 192.168.0.43
+net add node 192.168.0.15
+net add node 192.168.0.40
+net add node 192.168.0.24
+net add node 192.168.0.44
+net add node 192.168.0.17
+net add node 192.168.0.42
+net add node 192.168.0.16
+net add node 192.168.0.45
+net add node 192.168.0.13
+net add node 192.168.0.5
+net add node 192.168.0.9
+net add node 192.168.0.26
+net add node 192.168.0.14
+net add node 192.168.0.2
+net add node 192.168.0.20
+net add node 192.168.0.37
+net add node 192.168.0.23
+net add node 192.168.0.36
+net add link 192.168.0.1 192.168.0.41
+net link 192.168.0.1 192.168.0.41 igp-weight --bidir 3
+net add link 192.168.0.1 192.168.0.4
+net link 192.168.0.1 192.168.0.4 igp-weight --bidir 8
+net add link 192.168.0.41 192.168.0.34
+net link 192.168.0.41 192.168.0.34 igp-weight --bidir 5
+net add link 192.168.0.34 192.168.0.32
+net link 192.168.0.34 192.168.0.32 igp-weight --bidir 7
+net add link 192.168.0.32 192.168.0.19
+net link 192.168.0.32 192.168.0.19 igp-weight --bidir 1
+net add link 192.168.0.4 192.168.0.33
+net link 192.168.0.4 192.168.0.33 igp-weight --bidir 3
+net add link 192.168.0.33 192.168.0.35
+net link 192.168.0.33 192.168.0.35 igp-weight --bidir 1
+net add link 192.168.0.32 192.168.0.33
+net link 192.168.0.32 192.168.0.33 igp-weight --bidir 6
+net add link 192.168.0.32 192.168.0.25
+net link 192.168.0.32 192.168.0.25 igp-weight --bidir 2
+net add link 192.168.0.32 192.168.0.41
+net link 192.168.0.32 192.168.0.41 igp-weight --bidir 8
+net add link 192.168.0.32 192.168.0.15
+net link 192.168.0.32 192.168.0.15 igp-weight --bidir 9
+net add link 192.168.0.32 192.168.0.40
+net link 192.168.0.32 192.168.0.40 igp-weight --bidir 8
+net add link 192.168.0.32 192.168.0.43
+net link 192.168.0.32 192.168.0.43 igp-weight --bidir 3
+net add link 192.168.0.32 192.168.0.18
+net link 192.168.0.32 192.168.0.18 igp-weight --bidir 4
+net add link 192.168.0.32 192.168.0.31
+net link 192.168.0.32 192.168.0.31 igp-weight --bidir 5
+net add link 192.168.0.33 192.168.0.27
+net link 192.168.0.33 192.168.0.27 igp-weight --bidir 6
+net add link 192.168.0.27 192.168.0.22
+net link 192.168.0.27 192.168.0.22 igp-weight --bidir 1
+net add link 192.168.0.27 192.168.0.46
+net link 192.168.0.27 192.168.0.46 igp-weight --bidir 1
+net add link 192.168.0.27 192.168.0.29
+net link 192.168.0.27 192.168.0.29 igp-weight --bidir 8
+net add link 192.168.0.29 192.168.0.38
+net link 192.168.0.29 192.168.0.38 igp-weight --bidir 2
+net add link 192.168.0.32 192.168.0.29
+net link 192.168.0.32 192.168.0.29 igp-weight --bidir 9
+net add link 192.168.0.29 192.168.0.10
+net link 192.168.0.29 192.168.0.10 igp-weight --bidir 1
+net add link 192.168.0.10 192.168.0.45
+net link 192.168.0.10 192.168.0.45 igp-weight --bidir 2
+net add link 192.168.0.10 192.168.0.13
+net link 192.168.0.10 192.168.0.13 igp-weight --bidir 4
+net add link 192.168.0.29 192.168.0.0
+net link 192.168.0.29 192.168.0.0 igp-weight --bidir 5
+net add link 192.168.0.7 192.168.0.9
+net link 192.168.0.7 192.168.0.9 igp-weight --bidir 1
+net add link 192.168.0.0 192.168.0.7
+net link 192.168.0.0 192.168.0.7 igp-weight --bidir 7
+net add link 192.168.0.7 192.168.0.39
+net link 192.168.0.7 192.168.0.39 igp-weight --bidir 2
+net add link 192.168.0.39 192.168.0.21
+net link 192.168.0.39 192.168.0.21 igp-weight --bidir 1
+net add link 192.168.0.4 192.168.0.35
+net link 192.168.0.4 192.168.0.35 igp-weight --bidir 4
+net add link 192.168.0.30 192.168.0.24
+net link 192.168.0.30 192.168.0.24 igp-weight --bidir 1
+net add link 192.168.0.30 192.168.0.44
+net link 192.168.0.30 192.168.0.44 igp-weight --bidir 2
+net add link 192.168.0.30 192.168.0.17
+net link 192.168.0.30 192.168.0.17 igp-weight --bidir 1
+net add link 192.168.0.30 192.168.0.42
+net link 192.168.0.30 192.168.0.42 igp-weight --bidir 2
+net add link 192.168.0.30 192.168.0.16
+net link 192.168.0.30 192.168.0.16 igp-weight --bidir 3
+net add link 192.168.0.30 192.168.0.34
+net link 192.168.0.30 192.168.0.34 igp-weight --bidir 12
+net add link 192.168.0.30 192.168.0.32
+net link 192.168.0.30 192.168.0.32 igp-weight --bidir 13
+net add link 192.168.0.30 192.168.0.6
+net link 192.168.0.30 192.168.0.6 igp-weight --bidir 5
+net add link 192.168.0.6 192.168.0.11
+net link 192.168.0.6 192.168.0.11 igp-weight --bidir 5
+net add link 192.168.0.12 192.168.0.39
+net link 192.168.0.12 192.168.0.39 igp-weight --bidir 8
+net add link 192.168.0.12 192.168.0.28
+net link 192.168.0.12 192.168.0.28 igp-weight --bidir 7
+net add link 192.168.0.28 192.168.0.36
+net link 192.168.0.28 192.168.0.36 igp-weight --bidir 2
+net add link 192.168.0.3 192.168.0.8
+net link 192.168.0.3 192.168.0.8 igp-weight --bidir 4
+net add link 192.168.0.3 192.168.0.23
+net link 192.168.0.3 192.168.0.23 igp-weight --bidir 3
+net add link 192.168.0.3 192.168.0.37
+net link 192.168.0.3 192.168.0.37 igp-weight --bidir 5
+net add link 192.168.0.3 192.168.0.12
+net link 192.168.0.3 192.168.0.12 igp-weight --bidir 8
+net add link 192.168.0.0 192.168.0.5
+net link 192.168.0.0 192.168.0.5 igp-weight --bidir 1
+net add link 192.168.0.0 192.168.0.12
+net link 192.168.0.0 192.168.0.12 igp-weight --bidir 8
+net add link 192.168.0.3 192.168.0.14
+net link 192.168.0.3 192.168.0.14 igp-weight --bidir 9
+net add link 192.168.0.11 192.168.0.26
+net link 192.168.0.11 192.168.0.26 igp-weight --bidir 8
+net add link 192.168.0.3 192.168.0.2
+net link 192.168.0.3 192.168.0.2 igp-weight --bidir 9
+net add link 192.168.0.3 192.168.0.28
+net link 192.168.0.3 192.168.0.28 igp-weight --bidir 7
+net add link 192.168.0.3 192.168.0.20
+net link 192.168.0.3 192.168.0.20 igp-weight --bidir 6
+net add link 192.168.0.11 192.168.0.3
+net link 192.168.0.11 192.168.0.3 igp-weight --bidir 8
+net add link 192.168.0.32 192.168.0.10
+net link 192.168.0.32 192.168.0.10 igp-weight --bidir 8
+net add link 192.168.0.32 192.168.0.3
+net link 192.168.0.32 192.168.0.3 igp-weight --bidir 20
+net add link 192.168.0.39 192.168.0.3
+net link 192.168.0.39 192.168.0.3 igp-weight --bidir 15
+net add link 192.168.0.32 192.168.0.27
+net link 192.168.0.32 192.168.0.27 igp-weight --bidir 10
+
+# -------------------------------------------------------------------
+# Static routing
+# -------------------------------------------------------------------
+
+# -------------------------------------------------------------------
+# IGP routing
+# -------------------------------------------------------------------
+net add domain 123 igp
+net node 192.168.0.35 domain 123
+net node 192.168.0.4 domain 123
+net node 192.168.0.33 domain 123
+net node 192.168.0.27 domain 123
+net node 192.168.0.32 domain 123
+net node 192.168.0.1 domain 123
+net node 192.168.0.34 domain 123
+net node 192.168.0.30 domain 123
+net node 192.168.0.6 domain 123
+net node 192.168.0.11 domain 123
+net node 192.168.0.29 domain 123
+net node 192.168.0.10 domain 123
+net node 192.168.0.3 domain 123
+net node 192.168.0.8 domain 123
+net node 192.168.0.28 domain 123
+net node 192.168.0.12 domain 123
+net node 192.168.0.0 domain 123
+net node 192.168.0.7 domain 123
+net node 192.168.0.39 domain 123
+net node 192.168.0.21 domain 123
+net node 192.168.0.41 domain 123
+net node 192.168.0.19 domain 123
+net node 192.168.0.46 domain 123
+net node 192.168.0.22 domain 123
+net node 192.168.0.38 domain 123
+net node 192.168.0.25 domain 123
+net node 192.168.0.31 domain 123
+net node 192.168.0.18 domain 123
+net node 192.168.0.43 domain 123
+net node 192.168.0.15 domain 123
+net node 192.168.0.40 domain 123
+net node 192.168.0.24 domain 123
+net node 192.168.0.44 domain 123
+net node 192.168.0.17 domain 123
+net node 192.168.0.42 domain 123
+net node 192.168.0.16 domain 123
+net node 192.168.0.45 domain 123
+net node 192.168.0.13 domain 123
+net node 192.168.0.5 domain 123
+net node 192.168.0.9 domain 123
+net node 192.168.0.26 domain 123
+net node 192.168.0.14 domain 123
+net node 192.168.0.2 domain 123
+net node 192.168.0.20 domain 123
+net node 192.168.0.37 domain 123
+net node 192.168.0.23 domain 123
+net node 192.168.0.36 domain 123
+net domain 123 compute
+
+# -------------------------------------------------------------------
+# BGP routing
+# -------------------------------------------------------------------
+bgp options msg-monitor AS123-trace.bgp
+
+
+# -------------------------------------------------------------------
+# BGP filters
+# -------------------------------------------------------------------
+
+
+# -------------------------------------------------------------------
+# Scenario to simulate
+# -------------------------------------------------------------------
+
+# -------------------------------------------------------------------
+# Start simulation
+# -------------------------------------------------------------------
+sim run
