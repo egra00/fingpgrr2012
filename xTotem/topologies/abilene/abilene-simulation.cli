@@ -74,7 +74,7 @@ net domain 11537 compute
 # -------------------------------------------------------------------
 # BGP routing
 # -------------------------------------------------------------------
-bgp options msg-monitor AS11537-trace.bgp
+bgp options msg-monitor /home/emiliano/PG/Totem/topologies/abilene/abilene-trace.bgp
 
 bgp add router 11537 192.168.0.7
 bgp router 192.168.0.7
@@ -287,92 +287,748 @@ bgp router 192.168.0.10
 # -------------------------------------------------------------------
 # Scenario to simulate
 # -------------------------------------------------------------------
-net add node 3.0.0.2
-net add domain 11538 igp
-net node 3.0.0.2 domain 11538
-net add link 198.32.8.5 3.0.0.2
-net node 198.32.8.5 route add --oif=3.0.0.2/32 0
-net node 3.0.0.2 route add --oif=198.32.8.5/32 0
-bgp router 198.32.8.5
-	add peer 11538 3.0.0.2
-	peer 3.0.0.2 virtual
-	peer 3.0.0.2 next-hop-self
-	peer 3.0.0.2 up
-	peer 3.0.0.2 recv "BGP4|1|A|10.0.8.195|2|3.0.0.0/8|11538 3 3356 7018|3.0.0.2|3.0.0.82|0|0"
-	exit
 
-net add node 3.0.0.3
+net add node 3.0.0.2
 net add domain 11539 igp
-net node 3.0.0.3 domain 11539
-net add link 198.32.8.4 3.0.0.3
-net node 198.32.8.4 route add --oif=3.0.0.3/32 0
-net node 3.0.0.3 route add --oif=198.32.8.4/32 0
-bgp router 198.32.8.4
-	add peer 11539 3.0.0.3
-	peer 3.0.0.3 virtual
-	peer 3.0.0.3 next-hop-self
-	peer 3.0.0.3 up
-	peer 3.0.0.3 recv "BGP4|1|A|10.0.8.195|2|3.0.0.0/8|11539 3 3356 7018|3.0.0.3|3.0.0.32|0|0"
-	exit
-
-net add node 3.0.0.2
-net add domain 11540 igp
-net node 3.0.0.2 domain 11540
-net add link 198.32.8.3 3.0.0.2
-net node 198.32.8.3 route add --oif=3.0.0.2/32 0
-net node 3.0.0.2 route add --oif=198.32.8.3/32 0
-bgp router 198.32.8.3
-	add peer 11540 3.0.0.2
+net node 3.0.0.2 domain 11539
+net add link 192.168.0.10 3.0.0.2
+net node 192.168.0.10 route add --oif=3.0.0.2 --gw=3.0.0.2 3.0.0.2/32 0
+net node 3.0.0.2 route add --oif=192.168.0.10 --gw=192.168.0.10 192.168.0.10/32 0
+bgp router 192.168.0.10
+	add peer 11539 3.0.0.2
 	peer 3.0.0.2 virtual
 	peer 3.0.0.2 next-hop-self
 	peer 3.0.0.2 up
-	peer 3.0.0.2 recv "BGP4|1|A|10.0.8.195|2|3.0.0.0/8|11540 3 3356 7018|3.0.0.2|3.0.0.28|0|0"
 	exit
+
+bgp router 192.168.0.10 peer 3.0.0.2 recv "BGP4|1|A|10.0.8.195|2|3.0.0.0/8|11539 3 3356 7018|IGP|3.0.0.2|0|0"
+bgp router 192.168.0.10 peer 3.0.0.2 recv "BGP4|2|W|10.0.8.195|2|3.0.0.0/8"
+bgp router 192.168.0.10 peer 3.0.0.2 recv "BGP4|3|W|10.0.8.195|2|3.0.0.0/8"
 
 net add node 3.0.0.3
-net add domain 11541 igp
-net node 3.0.0.3 domain 11541
-net add link 198.32.8.2 3.0.0.3
-net node 198.32.8.2 route add --oif=3.0.0.3/32 0
-net node 3.0.0.3 route add --oif=198.32.8.2/32 0
-bgp router 198.32.8.2
-	add peer 11541 3.0.0.3
+net add domain 11540 igp
+net node 3.0.0.3 domain 11540
+net add link 192.168.0.9 3.0.0.3
+net node 192.168.0.9 route add --oif=3.0.0.3 --gw=3.0.0.3 3.0.0.3/32 0
+net node 3.0.0.3 route add --oif=192.168.0.9 --gw=192.168.0.9 192.168.0.9/32 0
+bgp router 192.168.0.9
+	add peer 11540 3.0.0.3
 	peer 3.0.0.3 virtual
 	peer 3.0.0.3 next-hop-self
 	peer 3.0.0.3 up
-	peer 3.0.0.3 recv "BGP4|1|A|10.0.8.195|2|3.0.0.0/8|11541 3 3356 7018|3.0.0.3|3.0.0.26|0|0"
 	exit
 
-net add node 3.0.0.2
-net add domain 11542 igp
-net node 3.0.0.2 domain 11542
-net add link 198.32.8.0 3.0.0.2
-net node 198.32.8.0 route add --oif=3.0.0.2/32 0
-net node 3.0.0.2 route add --oif=198.32.8.0/32 0
-bgp router 198.32.8.0
-	add peer 11542 3.0.0.2
+bgp router 192.168.0.9 peer 3.0.0.3 recv "BGP4|4|A|10.0.8.195|2|3.0.0.0/8|11540 3 3356 7018|IGP|3.0.0.3|0|0"
+bgp router 192.168.0.9 peer 3.0.0.3 recv "BGP4|5|A|10.0.8.195|2|3.0.0.0/8|11540 3 3356 7018|IGP|3.0.0.3|0|0"
+
+net add link 192.168.0.8 3.0.0.2
+net node 192.168.0.8 route add --oif=3.0.0.2 --gw=3.0.0.2 3.0.0.2/32 0
+net node 3.0.0.2 route add --oif=192.168.0.8 --gw=192.168.0.8 192.168.0.8/32 0
+bgp router 192.168.0.8
+	add peer 11539 3.0.0.2
 	peer 3.0.0.2 virtual
 	peer 3.0.0.2 next-hop-self
 	peer 3.0.0.2 up
-	peer 3.0.0.2 recv "BGP4|1|A|10.0.8.195|2|3.0.0.0/8|11542 3 3356 7018|3.0.0.2|3.0.0.22|0|0"
 	exit
+
+bgp router 192.168.0.8 peer 3.0.0.2 recv "BGP4|6|A|10.0.8.195|2|3.0.0.0/8|11539 3 3356 7018|IGP|3.0.0.2|0|0"
+
+net add link 192.168.0.7 3.0.0.3
+net node 192.168.0.7 route add --oif=3.0.0.3 --gw=3.0.0.3 3.0.0.3/32 0
+net node 3.0.0.3 route add --oif=192.168.0.7 --gw=192.168.0.7 192.168.0.7/32 0
+bgp router 192.168.0.7
+	add peer 11540 3.0.0.3
+	peer 3.0.0.3 virtual
+	peer 3.0.0.3 next-hop-self
+	peer 3.0.0.3 up
+	exit
+
+bgp router 192.168.0.7 peer 3.0.0.3 recv "BGP4|7|A|10.0.8.195|2|3.0.0.0/8|11540 3 3356 7018|IGP|3.0.0.3|0|0"
+
+net add link 192.168.0.6 3.0.0.2
+net node 192.168.0.6 route add --oif=3.0.0.2 --gw=3.0.0.2 3.0.0.2/32 0
+net node 3.0.0.2 route add --oif=192.168.0.6 --gw=192.168.0.6 192.168.0.6/32 0
+bgp router 192.168.0.6
+	add peer 11539 3.0.0.2
+	peer 3.0.0.2 virtual
+	peer 3.0.0.2 next-hop-self
+	peer 3.0.0.2 up
+	exit
+
+bgp router 192.168.0.6 peer 3.0.0.2 recv "BGP4|8|A|10.0.8.195|2|3.0.0.0/8|11539 3 3356 7018|IGP|3.0.0.2|0|0"
 
 net add node 3.0.0.5
-net add domain 11543 igp
-net node 3.0.0.5 domain 11543
-net add link 198.32.8.1 3.0.0.5
-net node 198.32.8.1 route add --oif=3.0.0.5/32 0
-net node 3.0.0.5 route add --oif=198.32.8.1/32 0
-bgp router 198.32.8.1
-	add peer 11543 3.0.0.5
+net add domain 11541 igp
+net node 3.0.0.5 domain 11541
+net add link 192.168.0.5 3.0.0.5
+net node 192.168.0.5 route add --oif=3.0.0.5 --gw=3.0.0.5 3.0.0.5/32 0
+net node 3.0.0.5 route add --oif=192.168.0.5 --gw=192.168.0.5 192.168.0.5/32 0
+bgp router 192.168.0.5
+	add peer 11541 3.0.0.5
 	peer 3.0.0.5 virtual
 	peer 3.0.0.5 next-hop-self
 	peer 3.0.0.5 up
-	peer 3.0.0.5 recv "BGP4|1|A|10.0.8.195|2|3.0.0.0/8|11543 3 3356 7018|3.0.0.5|3.0.0.25|0|0"
 	exit
 
+bgp router 192.168.0.5 peer 3.0.0.5 recv "BGP4|9|A|10.0.8.195|2|3.0.0.0/8|11541 3 3356 7018|IGP|3.0.0.5|0|0"
 
 # -------------------------------------------------------------------
 # Start simulation
 # -------------------------------------------------------------------
 sim run
+print "# -------------------------------------------------------------------\n"
+print "# 192.168.0.7's tables data\n"
+print "# -------------------------------------------------------------------\n\n"
+
+print "# 192.168.0.7's RT table data\n"
+net node 192.168.0.7 show rt *
+print "\n"
+
+print "# 192.168.0.7's RIB table data\n"
+bgp router 192.168.0.7 show rib *
+print "\n"
+
+print "# 192.168.0.7's RIB in table data with 192.168.0.6\n"
+bgp router 192.168.0.7 show adj-rib out 192.168.0.6 *
+print "\n"
+
+print "# 192.168.0.7's RIB out table data with 192.168.0.6\n"
+bgp router 192.168.0.7 show adj-rib out 192.168.0.6 *
+print "\n"
+
+print "# 192.168.0.7's RIB in table data with 192.168.0.9\n"
+bgp router 192.168.0.7 show adj-rib out 192.168.0.9 *
+print "\n"
+
+print "# 192.168.0.7's RIB out table data with 192.168.0.9\n"
+bgp router 192.168.0.7 show adj-rib out 192.168.0.9 *
+print "\n"
+
+print "# 192.168.0.7's RIB in table data with 192.168.0.2\n"
+bgp router 192.168.0.7 show adj-rib out 192.168.0.2 *
+print "\n"
+
+print "# 192.168.0.7's RIB out table data with 192.168.0.2\n"
+bgp router 192.168.0.7 show adj-rib out 192.168.0.2 *
+print "\n"
+
+print "# 192.168.0.7's RIB in table data with 192.168.0.10\n"
+bgp router 192.168.0.7 show adj-rib out 192.168.0.10 *
+print "\n"
+
+print "# 192.168.0.7's RIB out table data with 192.168.0.10\n"
+bgp router 192.168.0.7 show adj-rib out 192.168.0.10 *
+print "\n"
+
+
+print "# -------------------------------------------------------------------\n"
+print "# 192.168.0.2's tables data\n"
+print "# -------------------------------------------------------------------\n\n"
+
+print "# 192.168.0.2's RT table data\n"
+net node 192.168.0.2 show rt *
+print "\n"
+
+print "# 192.168.0.2's RIB table data\n"
+bgp router 192.168.0.2 show rib *
+print "\n"
+
+print "# 192.168.0.2's RIB in table data with 192.168.0.6\n"
+bgp router 192.168.0.2 show adj-rib out 192.168.0.6 *
+print "\n"
+
+print "# 192.168.0.2's RIB out table data with 192.168.0.6\n"
+bgp router 192.168.0.2 show adj-rib out 192.168.0.6 *
+print "\n"
+
+print "# 192.168.0.2's RIB in table data with 192.168.0.9\n"
+bgp router 192.168.0.2 show adj-rib out 192.168.0.9 *
+print "\n"
+
+print "# 192.168.0.2's RIB out table data with 192.168.0.9\n"
+bgp router 192.168.0.2 show adj-rib out 192.168.0.9 *
+print "\n"
+
+print "# 192.168.0.2's RIB in table data with 192.168.0.10\n"
+bgp router 192.168.0.2 show adj-rib out 192.168.0.10 *
+print "\n"
+
+print "# 192.168.0.2's RIB out table data with 192.168.0.10\n"
+bgp router 192.168.0.2 show adj-rib out 192.168.0.10 *
+print "\n"
+
+print "# 192.168.0.2's RIB in table data with 192.168.0.1\n"
+bgp router 192.168.0.2 show adj-rib out 192.168.0.1 *
+print "\n"
+
+print "# 192.168.0.2's RIB out table data with 192.168.0.1\n"
+bgp router 192.168.0.2 show adj-rib out 192.168.0.1 *
+print "\n"
+
+print "# 192.168.0.2's RIB in table data with 192.168.0.0\n"
+bgp router 192.168.0.2 show adj-rib out 192.168.0.0 *
+print "\n"
+
+print "# 192.168.0.2's RIB out table data with 192.168.0.0\n"
+bgp router 192.168.0.2 show adj-rib out 192.168.0.0 *
+print "\n"
+
+print "# 192.168.0.2's RIB in table data with 192.168.0.7\n"
+bgp router 192.168.0.2 show adj-rib out 192.168.0.7 *
+print "\n"
+
+print "# 192.168.0.2's RIB out table data with 192.168.0.7\n"
+bgp router 192.168.0.2 show adj-rib out 192.168.0.7 *
+print "\n"
+
+
+print "# -------------------------------------------------------------------\n"
+print "# 192.168.0.0's tables data\n"
+print "# -------------------------------------------------------------------\n\n"
+
+print "# 192.168.0.0's RT table data\n"
+net node 192.168.0.0 show rt *
+print "\n"
+
+print "# 192.168.0.0's RIB table data\n"
+bgp router 192.168.0.0 show rib *
+print "\n"
+
+print "# 192.168.0.0's RIB in table data with 192.168.0.6\n"
+bgp router 192.168.0.0 show adj-rib out 192.168.0.6 *
+print "\n"
+
+print "# 192.168.0.0's RIB out table data with 192.168.0.6\n"
+bgp router 192.168.0.0 show adj-rib out 192.168.0.6 *
+print "\n"
+
+print "# 192.168.0.0's RIB in table data with 192.168.0.9\n"
+bgp router 192.168.0.0 show adj-rib out 192.168.0.9 *
+print "\n"
+
+print "# 192.168.0.0's RIB out table data with 192.168.0.9\n"
+bgp router 192.168.0.0 show adj-rib out 192.168.0.9 *
+print "\n"
+
+print "# 192.168.0.0's RIB in table data with 192.168.0.2\n"
+bgp router 192.168.0.0 show adj-rib out 192.168.0.2 *
+print "\n"
+
+print "# 192.168.0.0's RIB out table data with 192.168.0.2\n"
+bgp router 192.168.0.0 show adj-rib out 192.168.0.2 *
+print "\n"
+
+print "# 192.168.0.0's RIB in table data with 192.168.0.10\n"
+bgp router 192.168.0.0 show adj-rib out 192.168.0.10 *
+print "\n"
+
+print "# 192.168.0.0's RIB out table data with 192.168.0.10\n"
+bgp router 192.168.0.0 show adj-rib out 192.168.0.10 *
+print "\n"
+
+
+print "# -------------------------------------------------------------------\n"
+print "# 192.168.0.9's tables data\n"
+print "# -------------------------------------------------------------------\n\n"
+
+print "# 192.168.0.9's RT table data\n"
+net node 192.168.0.9 show rt *
+print "\n"
+
+print "# 192.168.0.9's RIB table data\n"
+bgp router 192.168.0.9 show rib *
+print "\n"
+
+print "# 192.168.0.9's RIB in table data with 192.168.0.6\n"
+bgp router 192.168.0.9 show adj-rib out 192.168.0.6 *
+print "\n"
+
+print "# 192.168.0.9's RIB out table data with 192.168.0.6\n"
+bgp router 192.168.0.9 show adj-rib out 192.168.0.6 *
+print "\n"
+
+print "# 192.168.0.9's RIB in table data with 192.168.0.11\n"
+bgp router 192.168.0.9 show adj-rib out 192.168.0.11 *
+print "\n"
+
+print "# 192.168.0.9's RIB out table data with 192.168.0.11\n"
+bgp router 192.168.0.9 show adj-rib out 192.168.0.11 *
+print "\n"
+
+print "# 192.168.0.9's RIB in table data with 192.168.0.4\n"
+bgp router 192.168.0.9 show adj-rib out 192.168.0.4 *
+print "\n"
+
+print "# 192.168.0.9's RIB out table data with 192.168.0.4\n"
+bgp router 192.168.0.9 show adj-rib out 192.168.0.4 *
+print "\n"
+
+print "# 192.168.0.9's RIB in table data with 192.168.0.5\n"
+bgp router 192.168.0.9 show adj-rib out 192.168.0.5 *
+print "\n"
+
+print "# 192.168.0.9's RIB out table data with 192.168.0.5\n"
+bgp router 192.168.0.9 show adj-rib out 192.168.0.5 *
+print "\n"
+
+print "# 192.168.0.9's RIB in table data with 192.168.0.3\n"
+bgp router 192.168.0.9 show adj-rib out 192.168.0.3 *
+print "\n"
+
+print "# 192.168.0.9's RIB out table data with 192.168.0.3\n"
+bgp router 192.168.0.9 show adj-rib out 192.168.0.3 *
+print "\n"
+
+print "# 192.168.0.9's RIB in table data with 192.168.0.2\n"
+bgp router 192.168.0.9 show adj-rib out 192.168.0.2 *
+print "\n"
+
+print "# 192.168.0.9's RIB out table data with 192.168.0.2\n"
+bgp router 192.168.0.9 show adj-rib out 192.168.0.2 *
+print "\n"
+
+print "# 192.168.0.9's RIB in table data with 192.168.0.1\n"
+bgp router 192.168.0.9 show adj-rib out 192.168.0.1 *
+print "\n"
+
+print "# 192.168.0.9's RIB out table data with 192.168.0.1\n"
+bgp router 192.168.0.9 show adj-rib out 192.168.0.1 *
+print "\n"
+
+print "# 192.168.0.9's RIB in table data with 192.168.0.0\n"
+bgp router 192.168.0.9 show adj-rib out 192.168.0.0 *
+print "\n"
+
+print "# 192.168.0.9's RIB out table data with 192.168.0.0\n"
+bgp router 192.168.0.9 show adj-rib out 192.168.0.0 *
+print "\n"
+
+print "# 192.168.0.9's RIB in table data with 192.168.0.7\n"
+bgp router 192.168.0.9 show adj-rib out 192.168.0.7 *
+print "\n"
+
+print "# 192.168.0.9's RIB out table data with 192.168.0.7\n"
+bgp router 192.168.0.9 show adj-rib out 192.168.0.7 *
+print "\n"
+
+print "# 192.168.0.9's RIB in table data with 192.168.0.10\n"
+bgp router 192.168.0.9 show adj-rib out 192.168.0.10 *
+print "\n"
+
+print "# 192.168.0.9's RIB out table data with 192.168.0.10\n"
+bgp router 192.168.0.9 show adj-rib out 192.168.0.10 *
+print "\n"
+
+
+print "# -------------------------------------------------------------------\n"
+print "# 192.168.0.5's tables data\n"
+print "# -------------------------------------------------------------------\n\n"
+
+print "# 192.168.0.5's RT table data\n"
+net node 192.168.0.5 show rt *
+print "\n"
+
+print "# 192.168.0.5's RIB table data\n"
+bgp router 192.168.0.5 show rib *
+print "\n"
+
+print "# 192.168.0.5's RIB in table data with 192.168.0.6\n"
+bgp router 192.168.0.5 show adj-rib out 192.168.0.6 *
+print "\n"
+
+print "# 192.168.0.5's RIB out table data with 192.168.0.6\n"
+bgp router 192.168.0.5 show adj-rib out 192.168.0.6 *
+print "\n"
+
+print "# 192.168.0.5's RIB in table data with 192.168.0.9\n"
+bgp router 192.168.0.5 show adj-rib out 192.168.0.9 *
+print "\n"
+
+print "# 192.168.0.5's RIB out table data with 192.168.0.9\n"
+bgp router 192.168.0.5 show adj-rib out 192.168.0.9 *
+print "\n"
+
+print "# 192.168.0.5's RIB in table data with 192.168.0.4\n"
+bgp router 192.168.0.5 show adj-rib out 192.168.0.4 *
+print "\n"
+
+print "# 192.168.0.5's RIB out table data with 192.168.0.4\n"
+bgp router 192.168.0.5 show adj-rib out 192.168.0.4 *
+print "\n"
+
+
+print "# -------------------------------------------------------------------\n"
+print "# 192.168.0.4's tables data\n"
+print "# -------------------------------------------------------------------\n\n"
+
+print "# 192.168.0.4's RT table data\n"
+net node 192.168.0.4 show rt *
+print "\n"
+
+print "# 192.168.0.4's RIB table data\n"
+bgp router 192.168.0.4 show rib *
+print "\n"
+
+print "# 192.168.0.4's RIB in table data with 192.168.0.6\n"
+bgp router 192.168.0.4 show adj-rib out 192.168.0.6 *
+print "\n"
+
+print "# 192.168.0.4's RIB out table data with 192.168.0.6\n"
+bgp router 192.168.0.4 show adj-rib out 192.168.0.6 *
+print "\n"
+
+print "# 192.168.0.4's RIB in table data with 192.168.0.9\n"
+bgp router 192.168.0.4 show adj-rib out 192.168.0.9 *
+print "\n"
+
+print "# 192.168.0.4's RIB out table data with 192.168.0.9\n"
+bgp router 192.168.0.4 show adj-rib out 192.168.0.9 *
+print "\n"
+
+print "# 192.168.0.4's RIB in table data with 192.168.0.11\n"
+bgp router 192.168.0.4 show adj-rib out 192.168.0.11 *
+print "\n"
+
+print "# 192.168.0.4's RIB out table data with 192.168.0.11\n"
+bgp router 192.168.0.4 show adj-rib out 192.168.0.11 *
+print "\n"
+
+print "# 192.168.0.4's RIB in table data with 192.168.0.3\n"
+bgp router 192.168.0.4 show adj-rib out 192.168.0.3 *
+print "\n"
+
+print "# 192.168.0.4's RIB out table data with 192.168.0.3\n"
+bgp router 192.168.0.4 show adj-rib out 192.168.0.3 *
+print "\n"
+
+print "# 192.168.0.4's RIB in table data with 192.168.0.5\n"
+bgp router 192.168.0.4 show adj-rib out 192.168.0.5 *
+print "\n"
+
+print "# 192.168.0.4's RIB out table data with 192.168.0.5\n"
+bgp router 192.168.0.4 show adj-rib out 192.168.0.5 *
+print "\n"
+
+
+print "# -------------------------------------------------------------------\n"
+print "# 192.168.0.11's tables data\n"
+print "# -------------------------------------------------------------------\n\n"
+
+print "# 192.168.0.11's RT table data\n"
+net node 192.168.0.11 show rt *
+print "\n"
+
+print "# 192.168.0.11's RIB table data\n"
+bgp router 192.168.0.11 show rib *
+print "\n"
+
+print "# 192.168.0.11's RIB in table data with 192.168.0.6\n"
+bgp router 192.168.0.11 show adj-rib out 192.168.0.6 *
+print "\n"
+
+print "# 192.168.0.11's RIB out table data with 192.168.0.6\n"
+bgp router 192.168.0.11 show adj-rib out 192.168.0.6 *
+print "\n"
+
+print "# 192.168.0.11's RIB in table data with 192.168.0.9\n"
+bgp router 192.168.0.11 show adj-rib out 192.168.0.9 *
+print "\n"
+
+print "# 192.168.0.11's RIB out table data with 192.168.0.9\n"
+bgp router 192.168.0.11 show adj-rib out 192.168.0.9 *
+print "\n"
+
+print "# 192.168.0.11's RIB in table data with 192.168.0.4\n"
+bgp router 192.168.0.11 show adj-rib out 192.168.0.4 *
+print "\n"
+
+print "# 192.168.0.11's RIB out table data with 192.168.0.4\n"
+bgp router 192.168.0.11 show adj-rib out 192.168.0.4 *
+print "\n"
+
+print "# 192.168.0.11's RIB in table data with 192.168.0.3\n"
+bgp router 192.168.0.11 show adj-rib out 192.168.0.3 *
+print "\n"
+
+print "# 192.168.0.11's RIB out table data with 192.168.0.3\n"
+bgp router 192.168.0.11 show adj-rib out 192.168.0.3 *
+print "\n"
+
+
+print "# -------------------------------------------------------------------\n"
+print "# 192.168.0.3's tables data\n"
+print "# -------------------------------------------------------------------\n\n"
+
+print "# 192.168.0.3's RT table data\n"
+net node 192.168.0.3 show rt *
+print "\n"
+
+print "# 192.168.0.3's RIB table data\n"
+bgp router 192.168.0.3 show rib *
+print "\n"
+
+print "# 192.168.0.3's RIB in table data with 192.168.0.8\n"
+bgp router 192.168.0.3 show adj-rib out 192.168.0.8 *
+print "\n"
+
+print "# 192.168.0.3's RIB out table data with 192.168.0.8\n"
+bgp router 192.168.0.3 show adj-rib out 192.168.0.8 *
+print "\n"
+
+print "# 192.168.0.3's RIB in table data with 192.168.0.6\n"
+bgp router 192.168.0.3 show adj-rib out 192.168.0.6 *
+print "\n"
+
+print "# 192.168.0.3's RIB out table data with 192.168.0.6\n"
+bgp router 192.168.0.3 show adj-rib out 192.168.0.6 *
+print "\n"
+
+print "# 192.168.0.3's RIB in table data with 192.168.0.9\n"
+bgp router 192.168.0.3 show adj-rib out 192.168.0.9 *
+print "\n"
+
+print "# 192.168.0.3's RIB out table data with 192.168.0.9\n"
+bgp router 192.168.0.3 show adj-rib out 192.168.0.9 *
+print "\n"
+
+print "# 192.168.0.3's RIB in table data with 192.168.0.4\n"
+bgp router 192.168.0.3 show adj-rib out 192.168.0.4 *
+print "\n"
+
+print "# 192.168.0.3's RIB out table data with 192.168.0.4\n"
+bgp router 192.168.0.3 show adj-rib out 192.168.0.4 *
+print "\n"
+
+print "# 192.168.0.3's RIB in table data with 192.168.0.11\n"
+bgp router 192.168.0.3 show adj-rib out 192.168.0.11 *
+print "\n"
+
+print "# 192.168.0.3's RIB out table data with 192.168.0.11\n"
+bgp router 192.168.0.3 show adj-rib out 192.168.0.11 *
+print "\n"
+
+
+print "# -------------------------------------------------------------------\n"
+print "# 192.168.0.8's tables data\n"
+print "# -------------------------------------------------------------------\n\n"
+
+print "# 192.168.0.8's RT table data\n"
+net node 192.168.0.8 show rt *
+print "\n"
+
+print "# 192.168.0.8's RIB table data\n"
+bgp router 192.168.0.8 show rib *
+print "\n"
+
+print "# 192.168.0.8's RIB in table data with 192.168.0.3\n"
+bgp router 192.168.0.8 show adj-rib out 192.168.0.3 *
+print "\n"
+
+print "# 192.168.0.8's RIB out table data with 192.168.0.3\n"
+bgp router 192.168.0.8 show adj-rib out 192.168.0.3 *
+print "\n"
+
+
+print "# -------------------------------------------------------------------\n"
+print "# 192.168.0.6's tables data\n"
+print "# -------------------------------------------------------------------\n\n"
+
+print "# 192.168.0.6's RT table data\n"
+net node 192.168.0.6 show rt *
+print "\n"
+
+print "# 192.168.0.6's RIB table data\n"
+bgp router 192.168.0.6 show rib *
+print "\n"
+
+print "# 192.168.0.6's RIB in table data with 192.168.0.9\n"
+bgp router 192.168.0.6 show adj-rib out 192.168.0.9 *
+print "\n"
+
+print "# 192.168.0.6's RIB out table data with 192.168.0.9\n"
+bgp router 192.168.0.6 show adj-rib out 192.168.0.9 *
+print "\n"
+
+print "# 192.168.0.6's RIB in table data with 192.168.0.11\n"
+bgp router 192.168.0.6 show adj-rib out 192.168.0.11 *
+print "\n"
+
+print "# 192.168.0.6's RIB out table data with 192.168.0.11\n"
+bgp router 192.168.0.6 show adj-rib out 192.168.0.11 *
+print "\n"
+
+print "# 192.168.0.6's RIB in table data with 192.168.0.4\n"
+bgp router 192.168.0.6 show adj-rib out 192.168.0.4 *
+print "\n"
+
+print "# 192.168.0.6's RIB out table data with 192.168.0.4\n"
+bgp router 192.168.0.6 show adj-rib out 192.168.0.4 *
+print "\n"
+
+print "# 192.168.0.6's RIB in table data with 192.168.0.5\n"
+bgp router 192.168.0.6 show adj-rib out 192.168.0.5 *
+print "\n"
+
+print "# 192.168.0.6's RIB out table data with 192.168.0.5\n"
+bgp router 192.168.0.6 show adj-rib out 192.168.0.5 *
+print "\n"
+
+print "# 192.168.0.6's RIB in table data with 192.168.0.3\n"
+bgp router 192.168.0.6 show adj-rib out 192.168.0.3 *
+print "\n"
+
+print "# 192.168.0.6's RIB out table data with 192.168.0.3\n"
+bgp router 192.168.0.6 show adj-rib out 192.168.0.3 *
+print "\n"
+
+print "# 192.168.0.6's RIB in table data with 192.168.0.2\n"
+bgp router 192.168.0.6 show adj-rib out 192.168.0.2 *
+print "\n"
+
+print "# 192.168.0.6's RIB out table data with 192.168.0.2\n"
+bgp router 192.168.0.6 show adj-rib out 192.168.0.2 *
+print "\n"
+
+print "# 192.168.0.6's RIB in table data with 192.168.0.1\n"
+bgp router 192.168.0.6 show adj-rib out 192.168.0.1 *
+print "\n"
+
+print "# 192.168.0.6's RIB out table data with 192.168.0.1\n"
+bgp router 192.168.0.6 show adj-rib out 192.168.0.1 *
+print "\n"
+
+print "# 192.168.0.6's RIB in table data with 192.168.0.0\n"
+bgp router 192.168.0.6 show adj-rib out 192.168.0.0 *
+print "\n"
+
+print "# 192.168.0.6's RIB out table data with 192.168.0.0\n"
+bgp router 192.168.0.6 show adj-rib out 192.168.0.0 *
+print "\n"
+
+print "# 192.168.0.6's RIB in table data with 192.168.0.7\n"
+bgp router 192.168.0.6 show adj-rib out 192.168.0.7 *
+print "\n"
+
+print "# 192.168.0.6's RIB out table data with 192.168.0.7\n"
+bgp router 192.168.0.6 show adj-rib out 192.168.0.7 *
+print "\n"
+
+print "# 192.168.0.6's RIB in table data with 192.168.0.10\n"
+bgp router 192.168.0.6 show adj-rib out 192.168.0.10 *
+print "\n"
+
+print "# 192.168.0.6's RIB out table data with 192.168.0.10\n"
+bgp router 192.168.0.6 show adj-rib out 192.168.0.10 *
+print "\n"
+
+
+print "# -------------------------------------------------------------------\n"
+print "# 192.168.0.1's tables data\n"
+print "# -------------------------------------------------------------------\n\n"
+
+print "# 192.168.0.1's RT table data\n"
+net node 192.168.0.1 show rt *
+print "\n"
+
+print "# 192.168.0.1's RIB table data\n"
+bgp router 192.168.0.1 show rib *
+print "\n"
+
+print "# 192.168.0.1's RIB in table data with 192.168.0.6\n"
+bgp router 192.168.0.1 show adj-rib out 192.168.0.6 *
+print "\n"
+
+print "# 192.168.0.1's RIB out table data with 192.168.0.6\n"
+bgp router 192.168.0.1 show adj-rib out 192.168.0.6 *
+print "\n"
+
+print "# 192.168.0.1's RIB in table data with 192.168.0.9\n"
+bgp router 192.168.0.1 show adj-rib out 192.168.0.9 *
+print "\n"
+
+print "# 192.168.0.1's RIB out table data with 192.168.0.9\n"
+bgp router 192.168.0.1 show adj-rib out 192.168.0.9 *
+print "\n"
+
+print "# 192.168.0.1's RIB in table data with 192.168.0.2\n"
+bgp router 192.168.0.1 show adj-rib out 192.168.0.2 *
+print "\n"
+
+print "# 192.168.0.1's RIB out table data with 192.168.0.2\n"
+bgp router 192.168.0.1 show adj-rib out 192.168.0.2 *
+print "\n"
+
+print "# 192.168.0.1's RIB in table data with 192.168.0.10\n"
+bgp router 192.168.0.1 show adj-rib out 192.168.0.10 *
+print "\n"
+
+print "# 192.168.0.1's RIB out table data with 192.168.0.10\n"
+bgp router 192.168.0.1 show adj-rib out 192.168.0.10 *
+print "\n"
+
+
+print "# -------------------------------------------------------------------\n"
+print "# 192.168.0.10's tables data\n"
+print "# -------------------------------------------------------------------\n\n"
+
+print "# 192.168.0.10's RT table data\n"
+net node 192.168.0.10 show rt *
+print "\n"
+
+print "# 192.168.0.10's RIB table data\n"
+bgp router 192.168.0.10 show rib *
+print "\n"
+
+print "# 192.168.0.10's RIB in table data with 192.168.0.6\n"
+bgp router 192.168.0.10 show adj-rib out 192.168.0.6 *
+print "\n"
+
+print "# 192.168.0.10's RIB out table data with 192.168.0.6\n"
+bgp router 192.168.0.10 show adj-rib out 192.168.0.6 *
+print "\n"
+
+print "# 192.168.0.10's RIB in table data with 192.168.0.9\n"
+bgp router 192.168.0.10 show adj-rib out 192.168.0.9 *
+print "\n"
+
+print "# 192.168.0.10's RIB out table data with 192.168.0.9\n"
+bgp router 192.168.0.10 show adj-rib out 192.168.0.9 *
+print "\n"
+
+print "# 192.168.0.10's RIB in table data with 192.168.0.2\n"
+bgp router 192.168.0.10 show adj-rib out 192.168.0.2 *
+print "\n"
+
+print "# 192.168.0.10's RIB out table data with 192.168.0.2\n"
+bgp router 192.168.0.10 show adj-rib out 192.168.0.2 *
+print "\n"
+
+print "# 192.168.0.10's RIB in table data with 192.168.0.1\n"
+bgp router 192.168.0.10 show adj-rib out 192.168.0.1 *
+print "\n"
+
+print "# 192.168.0.10's RIB out table data with 192.168.0.1\n"
+bgp router 192.168.0.10 show adj-rib out 192.168.0.1 *
+print "\n"
+
+print "# 192.168.0.10's RIB in table data with 192.168.0.0\n"
+bgp router 192.168.0.10 show adj-rib out 192.168.0.0 *
+print "\n"
+
+print "# 192.168.0.10's RIB out table data with 192.168.0.0\n"
+bgp router 192.168.0.10 show adj-rib out 192.168.0.0 *
+print "\n"
+
+print "# 192.168.0.10's RIB in table data with 192.168.0.7\n"
+bgp router 192.168.0.10 show adj-rib out 192.168.0.7 *
+print "\n"
+
+print "# 192.168.0.10's RIB out table data with 192.168.0.7\n"
+bgp router 192.168.0.10 show adj-rib out 192.168.0.7 *
+print "\n"
+
+
+
+# -------------------------------------------------------------------
+# Start data section
+# -------------------------------------------------------------------
