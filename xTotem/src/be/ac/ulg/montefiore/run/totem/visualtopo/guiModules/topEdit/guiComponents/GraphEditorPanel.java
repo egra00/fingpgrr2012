@@ -219,8 +219,102 @@ public class GraphEditorPanel extends JPanel {
             }
         }
     }
+    
+    
 
-    final static DecimalFormat df = new DecimalFormat();
+	public void setNumberingNetwork() {
+    	
+    	
+    	if(graph.numVertices()<=256*256) { //clase C
+    		numering192_168_0_0to192_168_255_255(graph);
+    	}
+    	else if(graph.numVertices()<=16*256*256) { // clese B
+    		numering172_16_0_0to172_31_255_255(graph);
+    	} 
+    	else { // clase A
+    		numering10_0_0_0to10_255_255_255(graph);
+    	}
+    }
+
+    @SuppressWarnings("unchecked")
+    private void numering10_0_0_0to10_255_255_255(MyDirectedSparseGraph graph) {
+		int cant = 0;
+		int part1;
+		int part2;
+		int part3;
+		String part1str;
+		String part2str;
+		String part3str;
+		String fix = "10";
+		
+        for (Vertex v : (Set<Vertex>)graph.getVertices()) {
+        	Node n = (Node)v.getUserDatum(MyDirectedSparseGraph.KEY);
+            part1 = cant%256;
+            part2 = cant%(256*256);
+            part3 = cant/(256*256*256);
+            
+            part1str = String.valueOf(part1);
+        	part2str = String.valueOf(part2);
+        	part3str = String.valueOf(part3);
+        	
+            n.setRid(fix+ "." + part3str + "." + part2str + "." + part1str);
+            cant++;
+        }
+		
+	}
+    
+    @SuppressWarnings("unchecked")
+	private void numering172_16_0_0to172_31_255_255(MyDirectedSparseGraph graph) {
+		int cant = 0;
+		int part1;
+		int part2;
+		int part3;
+		String part1str;
+		String part2str;
+		String part3str;
+		String fix = "172";
+		
+        for (Vertex v : (Set<Vertex>)graph.getVertices()) {
+        	Node n = (Node)v.getUserDatum(MyDirectedSparseGraph.KEY);
+            part1 = cant%256;
+            part2 = cant%(256*256);
+            part3 = cant/(16*256*256);
+            
+            part1str = String.valueOf(part1);
+        	part2str = String.valueOf(part2);
+        	part3str = String.valueOf(part3 + 16);
+        	
+            n.setRid(fix+ "." + part3str + "." + part2str + "." + part1str);
+            cant++;
+        }
+		
+	}
+
+	@SuppressWarnings("unchecked")
+	private void numering192_168_0_0to192_168_255_255(MyDirectedSparseGraph graph) {
+		
+		int cant = 0;
+		int part1;
+		int part2;
+		String part1str;
+		String part2str;
+		String fix = "192.168";
+		
+        for (Vertex v : (Set<Vertex>)graph.getVertices()) {
+        	Node n = (Node)v.getUserDatum(MyDirectedSparseGraph.KEY);
+            part1 = cant%256;
+            part2 = cant/(256*256);
+            
+            part1str = String.valueOf(part1);
+        	part2str = String.valueOf(part2);
+        	
+            n.setRid(fix + "." + part2str + "." + part1str);
+            cant++;
+        }
+	}
+
+
+	final static DecimalFormat df = new DecimalFormat();
     static {
         df.setMaximumFractionDigits(2);
     }

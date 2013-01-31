@@ -174,6 +174,9 @@ public class TopEditGUI extends JFrame {
 
         menuItem = new JMenuItem(new RenameLinksAction());
         menu.add(menuItem);
+        
+        menuItem = new JMenuItem(new NumberingNetwork());
+        menu.add(menuItem);
 
         menuItem = new JMenuItem(new SetAllLocationAction());
         menu.add(menuItem);
@@ -491,7 +494,7 @@ public class TopEditGUI extends JFrame {
             }
         }
     }
-
+    
     private class SetAllLocationAction extends AbstractAction {
         public SetAllLocationAction() {
             super("Set node locations", null);
@@ -500,6 +503,17 @@ public class TopEditGUI extends JFrame {
         public void actionPerformed(ActionEvent e) {
             getCurrentPanel().setNodeLocations();
             JOptionPane.showMessageDialog(TopEditGUI.this, "Location set for all nodes", "Information", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
+
+    private class  NumberingNetwork extends AbstractAction {
+        public  NumberingNetwork() {
+            super("Numbering network", null);
+        }
+
+        public void actionPerformed(ActionEvent e) {
+            getCurrentPanel().setNumberingNetwork();
+            JOptionPane.showMessageDialog(TopEditGUI.this, "Ip number assigned for all nodes", "Information", JOptionPane.INFORMATION_MESSAGE);
         }
     }
 
@@ -738,12 +752,15 @@ public class TopEditGUI extends JFrame {
      * by the user.
      */
     void exit() {
-        int n = JOptionPane.showConfirmDialog(this, "Do you really want to quit ?", "Exit",
+      /*  int n = JOptionPane.showConfirmDialog(this, "Do you really want to quit ?", "Exit",
                 JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         if (n == JOptionPane.YES_OPTION) {
         	reset();
         	dispose();
-        }
+        }*/
+        
+        reset();
+    	dispose();
     }
     
 	/**
@@ -762,8 +779,9 @@ public class TopEditGUI extends JFrame {
          * @param e the fired event
          */
         public void windowClosing(WindowEvent e) {
-            if (e.getWindow() instanceof TopEditGUI)
-                exit();
+            if (e.getWindow() instanceof TopEditGUI) {
+            	exit();
+            }
             else
                 System.exit(1);
         }

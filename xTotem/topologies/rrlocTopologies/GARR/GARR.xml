@@ -16,237 +16,237 @@
     <topology>
         <nodes>
             <node id="SS">
-                <rid>1.0.0.0</rid>
+                <rid>192.168.0.24</rid>
                 <type>CORE</type>
                 <location latitude="547.19006" longitude="12.144043"/>
             </node>
             <node id="CA-1">
-                <rid>1.0.0.1</rid>
+                <rid>192.168.0.46</rid>
                 <type>CORE</type>
                 <location latitude="654.7045" longitude="20.77084"/>
             </node>
             <node id="RM-1">
-                <rid>1.0.0.2</rid>
+                <rid>192.168.0.23</rid>
                 <type>CORE</type>
                 <location latitude="500.04605" longitude="188.05296"/>
             </node>
             <node id="RM-2">
-                <rid>1.0.0.3</rid>
+                <rid>192.168.0.4</rid>
                 <type>EDGE</type>
                 <location latitude="503.87863" longitude="144.97691"/>
             </node>
             <node id="FRA">
-                <rid>1.0.0.4</rid>
+                <rid>192.168.0.22</rid>
                 <type>CORE</type>
                 <location latitude="539.6881" longitude="186.86119"/>
             </node>
             <node id="FUC">
-                <rid>1.0.0.5</rid>
+                <rid>192.168.0.27</rid>
                 <type>CORE</type>
                 <location latitude="467.4783" longitude="225.88278"/>
             </node>
             <node id="AQ">
-                <rid>1.0.0.7</rid>
+                <rid>192.168.0.21</rid>
                 <type>CORE</type>
                 <location latitude="453.69904" longitude="252.26683"/>
             </node>
             <node id="AQ-1">
-                <rid>1.0.0.6</rid>
+                <rid>192.168.0.5</rid>
                 <type>CORE</type>
                 <location latitude="434.9424" longitude="232.02367"/>
             </node>
             <node id="PG">
-                <rid>1.0.0.8</rid>
+                <rid>192.168.0.15</rid>
                 <type>CORE</type>
                 <location latitude="415.0664" longitude="184.20682"/>
             </node>
             <node id="Ur">
-                <rid>1.0.0.9</rid>
+                <rid>192.168.0.29</rid>
                 <type>CORE</type>
                 <location latitude="345.0627" longitude="235.9021"/>
             </node>
             <node id="AN">
-                <rid>1.0.0.10</rid>
+                <rid>192.168.0.18</rid>
                 <type>CORE</type>
                 <location latitude="372.35736" longitude="275.26703"/>
             </node>
             <node id="NA">
-                <rid>1.0.0.11</rid>
+                <rid>192.168.0.6</rid>
                 <type>CORE</type>
                 <location latitude="521.3711" longitude="231.66843"/>
             </node>
             <node id="SA">
-                <rid>1.0.0.12</rid>
+                <rid>192.168.0.25</rid>
                 <type>CORE</type>
                 <location latitude="552.4397" longitude="261.29532"/>
             </node>
             <node id="CB">
-                <rid>1.0.0.13</rid>
+                <rid>192.168.0.44</rid>
                 <type>CORE</type>
                 <location latitude="479.8721" longitude="301.31467"/>
             </node>
             <node id="FG">
-                <rid>1.0.0.14</rid>
+                <rid>192.168.0.0</rid>
                 <type>CORE</type>
                 <location latitude="489.16522" longitude="354.26044"/>
             </node>
             <node id="BA">
-                <rid>1.0.0.15</rid>
+                <rid>192.168.0.45</rid>
                 <type>CORE</type>
                 <location latitude="536.29584" longitude="414.49036"/>
             </node>
             <node id="PZ">
-                <rid>1.0.0.16</rid>
+                <rid>192.168.0.30</rid>
                 <type>CORE</type>
                 <location latitude="546.4188" longitude="357.57697"/>
             </node>
             <node id="MT">
-                <rid>1.0.0.17</rid>
+                <rid>192.168.0.41</rid>
                 <type>CORE</type>
                 <location latitude="572.9778" longitude="390.84784"/>
             </node>
             <node id="BR">
-                <rid>1.0.0.18</rid>
+                <rid>192.168.0.2</rid>
                 <type>CORE</type>
                 <location latitude="538.5312" longitude="467.29422"/>
             </node>
             <node id="LE">
-                <rid>1.0.0.19</rid>
+                <rid>192.168.0.42</rid>
                 <type>CORE</type>
                 <location latitude="574.80273" longitude="457.8639"/>
             </node>
             <node id="CS">
-                <rid>1.0.0.20</rid>
+                <rid>192.168.0.31</rid>
                 <type>CORE</type>
                 <location latitude="577.68176" longitude="344.1136"/>
             </node>
             <node id="CZ">
-                <rid>1.0.0.21</rid>
+                <rid>192.168.0.43</rid>
                 <type>CORE</type>
                 <location latitude="613.1377" longitude="376.5948"/>
             </node>
             <node id="ME">
-                <rid>1.0.0.22</rid>
+                <rid>192.168.0.12</rid>
                 <type>CORE</type>
                 <location latitude="628.48267" longitude="305.14777"/>
             </node>
             <node id="CT">
-                <rid>1.0.0.23</rid>
+                <rid>192.168.0.35</rid>
                 <type>EDGE</type>
                 <location latitude="699.76666" longitude="285.46793"/>
             </node>
             <node id="PA">
-                <rid>1.0.0.24</rid>
+                <rid>192.168.0.33</rid>
                 <type>CORE</type>
                 <location latitude="654.5015" longitude="234.50426"/>
             </node>
             <node id="PA-2">
-                <rid>1.0.0.25</rid>
+                <rid>192.168.0.11</rid>
                 <type>CORE</type>
                 <location latitude="655.3927" longitude="185.54623"/>
             </node>
             <node id="FI">
-                <rid>1.0.0.26</rid>
+                <rid>192.168.0.14</rid>
                 <type>CORE</type>
                 <location latitude="277.6146" longitude="134.85518"/>
             </node>
             <node id="FI-1">
-                <rid>1.0.0.27</rid>
+                <rid>192.168.0.36</rid>
                 <type>EDGE</type>
                 <location latitude="288.05716" longitude="178.63152"/>
             </node>
             <node id="PI">
-                <rid>1.0.0.28</rid>
+                <rid>192.168.0.34</rid>
                 <type>CORE</type>
                 <location latitude="304.43515" longitude="103.45032"/>
             </node>
             <node id="BO-1">
-                <rid>1.0.0.29</rid>
+                <rid>192.168.0.13</rid>
                 <type>CORE</type>
                 <location latitude="183.46289" longitude="216.40704"/>
             </node>
             <node id="BO-3">
-                <rid>1.0.0.30</rid>
+                <rid>192.168.0.17</rid>
                 <type>CORE</type>
                 <location latitude="192.2946" longitude="179.4632"/>
             </node>
             <node id="FE">
-                <rid>1.0.0.31</rid>
+                <rid>192.168.0.38</rid>
                 <type>CORE</type>
                 <location latitude="202.5695" longitude="271.7343"/>
             </node>
             <node id="PD-1">
-                <rid>1.0.0.32</rid>
+                <rid>192.168.0.9</rid>
                 <type>EDGE</type>
                 <location latitude="181.34373" longitude="297.9823"/>
             </node>
             <node id="PD-2">
-                <rid>1.0.0.33</rid>
+                <rid>192.168.0.7</rid>
                 <type>CORE</type>
                 <location latitude="174.0207" longitude="251.40742"/>
             </node>
             <node id="VE">
-                <rid>1.0.0.34</rid>
+                <rid>192.168.0.37</rid>
                 <type>CORE</type>
                 <location latitude="181.95558" longitude="349.57834"/>
             </node>
             <node id="TS-1">
-                <rid>1.0.0.35</rid>
+                <rid>192.168.0.32</rid>
                 <type>CORE</type>
                 <location latitude="159.07655" longitude="415.4789"/>
             </node>
             <node id="TN">
-                <rid>1.0.0.36</rid>
+                <rid>192.168.0.10</rid>
                 <type>CORE</type>
                 <location latitude="119.11706" longitude="267.6372"/>
             </node>
             <node id="BS">
-                <rid>1.0.0.37</rid>
+                <rid>192.168.0.8</rid>
                 <type>CORE</type>
                 <location latitude="115.71863" longitude="160.83003"/>
             </node>
             <node id="MI-1">
-                <rid>1.0.0.38</rid>
+                <rid>192.168.0.40</rid>
                 <type>EDGE</type>
                 <location latitude="67.396034" longitude="128.07094"/>
             </node>
             <node id="MI-2">
-                <rid>1.0.0.39</rid>
+                <rid>192.168.0.39</rid>
                 <type>EDGE</type>
                 <location latitude="81.0142" longitude="69.67217"/>
             </node>
             <node id="MI-3">
-                <rid>1.0.0.40</rid>
+                <rid>192.168.0.3</rid>
                 <type>CORE</type>
                 <location latitude="111.06512" longitude="115.136055"/>
             </node>
             <node id="MI-4">
-                <rid>1.0.0.41</rid>
+                <rid>192.168.0.20</rid>
                 <type>CORE</type>
                 <location latitude="47.32325" longitude="70.900536"/>
             </node>
             <node id="CO">
-                <rid>1.0.0.42</rid>
+                <rid>192.168.0.28</rid>
                 <type>EDGE</type>
                 <location latitude="44.4853" longitude="107.163994"/>
             </node>
             <node id="PV">
-                <rid>1.0.0.43</rid>
+                <rid>192.168.0.19</rid>
                 <type>CORE</type>
                 <location latitude="122.18085" longitude="49.749237"/>
             </node>
             <node id="PV-1">
-                <rid>1.0.0.44</rid>
+                <rid>192.168.0.1</rid>
                 <type>CORE</type>
                 <location latitude="132.19576" longitude="87.36438"/>
             </node>
             <node id="GE">
-                <rid>1.0.0.45</rid>
+                <rid>192.168.0.16</rid>
                 <type>CORE</type>
                 <location latitude="172.3586" longitude="72.499405"/>
             </node>
             <node id="TO">
-                <rid>1.0.0.46</rid>
+                <rid>192.168.0.26</rid>
                 <type>EDGE</type>
                 <location latitude="134.34917" longitude="15.496544"/>
             </node>
