@@ -337,6 +337,7 @@ bgp router 198.32.8.200
 	exit
 
 net add node 3.0.0.2
+net add domain  igp
 net node 3.0.0.2 domain 4
 net add link 198.32.8.195 3.0.0.2
 net node 198.32.8.195 route add --oif=3.0.0.2 --gw=3.0.0.2 3.0.0.2/32 0
@@ -370,3 +371,23 @@ net node 198.32.8.199 show rt *
 
 print "\nRECORD-ROPUTE: 198.32.8.196 -> 3.0.0.1\n"
 net node 198.32.8.196 record-route 3.0.0.1
+
+print "\nRIB\n"
+bgp router 198.32.8.196 show rib *
+
+print "\nRIBIN\n"
+bgp router 198.32.8.196 show adj-rib in * *
+
+print "\nRIBOUT\n"
+bgp router 198.32.8.196 show adj-rib out * *
+
+print "\nRIB\n"
+bgp router 198.32.8.195 show rib *
+
+print "\nRIBIN\n"
+bgp router 198.32.8.195 show adj-rib in * *
+
+print "\nRIBOUT\n"
+bgp router 198.32.8.195 show adj-rib out * *
+
+
