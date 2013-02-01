@@ -35,6 +35,7 @@ import ilog.cplex.*;
 
 public class OptimalAlgorithm implements RRLocAlgorithm{
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public void run(Object inParams, Object outResutl) {
 		
@@ -513,6 +514,7 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 		return links;
 	}
 	
+	@SuppressWarnings("unused")
 	private static void printSolution(Graph<Node, Link> IGPGraph, IloCplex cplex, IloNumVar[][] UP, IloNumVar[][] DOWN, List<Node> BGPRouters,int BGPRoutersSize){
 		//Prints in the standard output information about the solution found by the solver 
 		
@@ -656,6 +658,7 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 			return -1;
 	}
 	
+	@SuppressWarnings("unused")
 	private static void printGraph(Graph<Node,Link> g,String title){
 		//Draws in a new window the grap 'g' and it's information 
 		
@@ -673,6 +676,7 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 		
 	}
 	
+	@SuppressWarnings("unused")
 	private static void printGraph2(Graph<MetaNode,ExtendedLink> g,String title){
 		//Draws in a new window the grap 'g' and it's information 
 		
@@ -689,7 +693,7 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 		frame.setVisible(true);
 		
 	}
-	
+	@SuppressWarnings("unused")
 	private static void printGraph_(Graph<Node,Link> g,String title){
 		//Draws in a new window the grap 'g' and it's information 
 		
@@ -714,7 +718,8 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 		frame.setVisible(true);
 		 
 		}
-		 
+	
+	@SuppressWarnings("unused")
 	private static void printGraph2_(Graph<MetaNode,ExtendedLink> g,String title){
 		//Draws in a new window the grap 'g' and it's information 
 		
