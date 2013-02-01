@@ -32,7 +32,7 @@ public class CBGPDumpAlgorithm {
 
 	private Domain domain;
 	private int domain_num;
-	private String mrtName;
+	private File mrtFile;
 	private String outName;
 	private BufferedWriter bw;
 	private HashMap<String, Link> linksById;
@@ -41,7 +41,7 @@ public class CBGPDumpAlgorithm {
 	
 	private final String ipRegexp = "\\d{1,3}.\\d{1,3}.\\d{1,3}.\\d{1,3}";
 
-	public void run(Domain _domain, String mrt_file) {
+	public void run(Domain _domain, File mrt_file) {
 
 		domain = _domain;
 		if (domain == null) {
@@ -49,12 +49,16 @@ public class CBGPDumpAlgorithm {
 			return;
 		}
 
-		mrtName = mrt_file;
+		mrtFile = mrt_file;
 
 		outName = domain.getURI().getPath();
 		outName = outName.endsWith(".xml") ? outName.substring(0,
 				outName.length() - 4) : outName;
-		outName += "-" + "simulation.cli";
+		
+		String path = mrtFile.getName();
+        path = path.endsWith(".tra") ? path.substring(0, path.length() - 4) : path;
+		
+		outName += "-" + path + ".cli";
 
 		linksById = new HashMap<String, Link>();
 		nodesById = new HashMap<String, Node>();
@@ -325,12 +329,11 @@ public class CBGPDumpAlgorithm {
 	private void simulationSection() throws IOException {
 		Map<String, Integer> virtualPeersAS = new HashMap<String, Integer>(); 
 
-		if (mrtName != null) {
-			File file = new File(mrtName);
-			if (file.exists() && !file.isDirectory()) {
+		if (mrtFile != null) {
+			if (mrtFile.exists() && !mrtFile.isDirectory()) {
 				// Open the file that is the first
 				// command line parameter
-				FileInputStream fstream = new FileInputStream(mrtName);
+				FileInputStream fstream = new FileInputStream(mrtFile);
 				// Get the object of DataInputStream
 				DataInputStream in = new DataInputStream(fstream);
 				BufferedReader br = new BufferedReader(
@@ -442,6 +445,7 @@ public class CBGPDumpAlgorithm {
 						}
 					}
 				}
+				br.close();
 			}
 		}
 	}
