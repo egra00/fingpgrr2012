@@ -1,38 +1,23 @@
 package uy.edu.fing.repository.rrloc.algorithms.batesX.bates;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import javax.swing.JOptionPane;
-
 import org.apache.log4j.Logger;
 
 import uy.edu.fing.repository.rrloc.algorithms.iBGPSession;
-import uy.edu.fing.repository.rrloc.algorithms.iBGPSessionType;
 import uy.edu.fing.repository.rrloc.iAlgorithm.BindAlgorithm;
-import uy.edu.fing.repository.rrloc.iAlgorithm.ManagerRRLocAlgorithm;
 import agape.tools.Operations;
 import be.ac.ulg.montefiore.run.totem.domain.exception.InvalidDomainException;
 import be.ac.ulg.montefiore.run.totem.domain.exception.NodeNotFoundException;
 import be.ac.ulg.montefiore.run.totem.domain.facade.InterDomainManager;
-import be.ac.ulg.montefiore.run.totem.domain.model.Domain;
 import be.ac.ulg.montefiore.run.totem.domain.model.Link;
 import be.ac.ulg.montefiore.run.totem.domain.model.Node;
-import be.ac.ulg.montefiore.run.totem.domain.model.impl.BgpNeighborImpl;
-import be.ac.ulg.montefiore.run.totem.domain.model.impl.BgpRouterImpl;
-import be.ac.ulg.montefiore.run.totem.domain.model.impl.DomainImpl;
-import be.ac.ulg.montefiore.run.totem.domain.model.jaxb.BgpNeighbor;
-import be.ac.ulg.montefiore.run.totem.domain.model.jaxb.BgpRouter;
-import be.ac.ulg.montefiore.run.totem.domain.model.jaxb.ObjectFactory;
 import be.ac.ulg.montefiore.run.totem.repository.model.exception.AlgorithmParameterException;
 import be.ac.ulg.montefiore.run.totem.util.ParameterDescriptor;
-import be.ac.ulg.montefiore.run.totem.visualtopo.graph.GraphManager;
-import be.ac.ulg.montefiore.run.totem.visualtopo.guiComponents.MainWindow;
-import be.ac.ulg.montefiore.run.totem.visualtopo.guiComponents.TopoChooser;
 import edu.uci.ics.jung2.graph.Graph;
 import edu.uci.ics.jung2.graph.UndirectedSparseMultigraph;
 
@@ -55,6 +40,7 @@ public class Bates extends BindAlgorithm {
 		}
 	}
 		
+	@SuppressWarnings("rawtypes")
 	@Override
 	public Object getAlgorithmParams(HashMap params) 
 	{
@@ -109,6 +95,7 @@ public class Bates extends BindAlgorithm {
 		return new ArrayList<iBGPSession>();
 	}
 	
+	@SuppressWarnings("unchecked")
 	@Override
 	public void log(Object algorithmResult) {
 		List<iBGPSession> iBGPTopology = (List<iBGPSession>)algorithmResult;
