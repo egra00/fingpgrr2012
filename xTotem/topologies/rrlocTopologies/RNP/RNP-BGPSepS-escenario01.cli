@@ -1,0 +1,5666 @@
+# ===================================================================
+# C-BGP Export file (CLI)
+# Domain AS 130
+# ===================================================================
+
+# -------------------------------------------------------------------
+# Physical topology
+# -------------------------------------------------------------------
+net add node 1.0.0.1
+net add node 1.0.0.2
+net add node 1.0.0.3
+net add node 1.0.0.4
+net add node 1.0.0.5
+net add node 1.0.0.6
+net add node 1.0.0.7
+net add node 1.0.0.8
+net add node 1.0.0.9
+net add node 1.0.0.10
+net add node 1.0.0.11
+net add node 1.0.0.12
+net add node 1.0.0.13
+net add node 1.0.0.14
+net add node 1.0.0.15
+net add node 1.0.0.16
+net add node 1.0.0.17
+net add node 1.0.0.18
+net add node 1.0.0.19
+net add node 1.0.0.20
+net add node 1.0.0.21
+net add node 1.0.0.22
+net add node 1.0.0.23
+net add node 1.0.0.24
+net add node 1.0.0.25
+net add node 1.0.0.26
+net add node 1.0.0.27
+net add node 1.0.0.28
+net add link 1.0.0.1 1.0.0.2
+net link 1.0.0.1 1.0.0.2 igp-weight --bidir 4
+net add link 1.0.0.2 1.0.0.3
+net link 1.0.0.2 1.0.0.3 igp-weight --bidir 7
+net add link 1.0.0.3 1.0.0.4
+net link 1.0.0.3 1.0.0.4 igp-weight --bidir 6
+net add link 1.0.0.3 1.0.0.24
+net link 1.0.0.3 1.0.0.24 igp-weight --bidir 6
+net add link 1.0.0.4 1.0.0.5
+net link 1.0.0.4 1.0.0.5 igp-weight --bidir 7
+net add link 1.0.0.5 1.0.0.7
+net link 1.0.0.5 1.0.0.7 igp-weight --bidir 4
+net add link 1.0.0.7 1.0.0.8
+net link 1.0.0.7 1.0.0.8 igp-weight --bidir 2
+net add link 1.0.0.6 1.0.0.5
+net link 1.0.0.6 1.0.0.5 igp-weight --bidir 1
+net add link 1.0.0.6 1.0.0.8
+net link 1.0.0.6 1.0.0.8 igp-weight --bidir 4
+net add link 1.0.0.24 1.0.0.23
+net link 1.0.0.24 1.0.0.23 igp-weight --bidir 1
+net add link 1.0.0.24 1.0.0.25
+net link 1.0.0.24 1.0.0.25 igp-weight --bidir 5
+net add link 1.0.0.23 1.0.0.26
+net link 1.0.0.23 1.0.0.26 igp-weight --bidir 14
+net add link 1.0.0.6 1.0.0.28
+net link 1.0.0.6 1.0.0.28 igp-weight --bidir 28
+net add link 1.0.0.27 1.0.0.22
+net link 1.0.0.27 1.0.0.22 igp-weight --bidir 1
+net add link 1.0.0.23 1.0.0.11
+net link 1.0.0.23 1.0.0.11 igp-weight --bidir 3
+net add link 1.0.0.23 1.0.0.9
+net link 1.0.0.23 1.0.0.9 igp-weight --bidir 6
+net add link 1.0.0.6 1.0.0.9
+net link 1.0.0.6 1.0.0.9 igp-weight --bidir 2
+net add link 1.0.0.6 1.0.0.11
+net link 1.0.0.6 1.0.0.11 igp-weight --bidir 3
+net add link 1.0.0.11 1.0.0.19
+net link 1.0.0.11 1.0.0.19 igp-weight --bidir 15
+net add link 1.0.0.9 1.0.0.10
+net link 1.0.0.9 1.0.0.10 igp-weight --bidir 2
+net add link 1.0.0.10 1.0.0.12
+net link 1.0.0.10 1.0.0.12 igp-weight --bidir 5
+net add link 1.0.0.11 1.0.0.12
+net link 1.0.0.11 1.0.0.12 igp-weight --bidir 6
+net add link 1.0.0.12 1.0.0.13
+net link 1.0.0.12 1.0.0.13 igp-weight --bidir 2
+net add link 1.0.0.13 1.0.0.14
+net link 1.0.0.13 1.0.0.14 igp-weight --bidir 1
+net add link 1.0.0.14 1.0.0.15
+net link 1.0.0.14 1.0.0.15 igp-weight --bidir 1
+net add link 1.0.0.16 1.0.0.15
+net link 1.0.0.16 1.0.0.15 igp-weight --bidir 1
+net add link 1.0.0.16 1.0.0.17
+net link 1.0.0.16 1.0.0.17 igp-weight --bidir 1
+net add link 1.0.0.18 1.0.0.17
+net link 1.0.0.18 1.0.0.17 igp-weight --bidir 1
+net add link 1.0.0.19 1.0.0.18
+net link 1.0.0.19 1.0.0.18 igp-weight --bidir 2
+net add link 1.0.0.19 1.0.0.21
+net link 1.0.0.19 1.0.0.21 igp-weight --bidir 3
+net add link 1.0.0.22 1.0.0.21
+net link 1.0.0.22 1.0.0.21 igp-weight --bidir 3
+net add link 1.0.0.20 1.0.0.22
+net link 1.0.0.20 1.0.0.22 igp-weight --bidir 8
+net add link 1.0.0.20 1.0.0.15
+net link 1.0.0.20 1.0.0.15 igp-weight --bidir 6
+
+# -------------------------------------------------------------------
+# Static routing
+# -------------------------------------------------------------------
+
+# -------------------------------------------------------------------
+# IGP routing
+# -------------------------------------------------------------------
+net add domain 130 igp
+net node 1.0.0.1 domain 130
+net node 1.0.0.2 domain 130
+net node 1.0.0.3 domain 130
+net node 1.0.0.4 domain 130
+net node 1.0.0.5 domain 130
+net node 1.0.0.6 domain 130
+net node 1.0.0.7 domain 130
+net node 1.0.0.8 domain 130
+net node 1.0.0.9 domain 130
+net node 1.0.0.10 domain 130
+net node 1.0.0.11 domain 130
+net node 1.0.0.12 domain 130
+net node 1.0.0.13 domain 130
+net node 1.0.0.14 domain 130
+net node 1.0.0.15 domain 130
+net node 1.0.0.16 domain 130
+net node 1.0.0.17 domain 130
+net node 1.0.0.18 domain 130
+net node 1.0.0.19 domain 130
+net node 1.0.0.20 domain 130
+net node 1.0.0.21 domain 130
+net node 1.0.0.22 domain 130
+net node 1.0.0.23 domain 130
+net node 1.0.0.24 domain 130
+net node 1.0.0.25 domain 130
+net node 1.0.0.26 domain 130
+net node 1.0.0.27 domain 130
+net node 1.0.0.28 domain 130
+net domain 130 compute
+
+# -------------------------------------------------------------------
+# BGP routing
+# -------------------------------------------------------------------
+bgp options msg-monitor /C:/workspace/xTotem/topologies/rrlocTopologies/RNP/RNP-BGPSepS-trace.bgp
+
+bgp add router 130 1.0.0.1
+bgp router 1.0.0.1
+	add peer 130 1.0.0.2
+	peer 1.0.0.2 up
+	exit
+bgp add router 130 1.0.0.2
+bgp router 1.0.0.2
+	add peer 130 1.0.0.1
+	peer 1.0.0.1 rr-client
+	peer 1.0.0.1 up
+	add peer 130 1.0.0.3
+	peer 1.0.0.3 rr-client
+	peer 1.0.0.3 up
+	exit
+bgp add router 130 1.0.0.3
+bgp router 1.0.0.3
+	add peer 130 1.0.0.2
+	peer 1.0.0.2 rr-client
+	peer 1.0.0.2 up
+	add peer 130 1.0.0.23
+	peer 1.0.0.23 rr-client
+	peer 1.0.0.23 up
+	add peer 130 1.0.0.19
+	peer 1.0.0.19 rr-client
+	peer 1.0.0.19 up
+	add peer 130 1.0.0.21
+	peer 1.0.0.21 rr-client
+	peer 1.0.0.21 up
+	add peer 130 1.0.0.9
+	peer 1.0.0.9 rr-client
+	peer 1.0.0.9 up
+	add peer 130 1.0.0.14
+	peer 1.0.0.14 rr-client
+	peer 1.0.0.14 up
+	add peer 130 1.0.0.24
+	peer 1.0.0.24 rr-client
+	peer 1.0.0.24 up
+	add peer 130 1.0.0.17
+	peer 1.0.0.17 rr-client
+	peer 1.0.0.17 up
+	add peer 130 1.0.0.12
+	peer 1.0.0.12 rr-client
+	peer 1.0.0.12 up
+	add peer 130 1.0.0.18
+	peer 1.0.0.18 rr-client
+	peer 1.0.0.18 up
+	add peer 130 1.0.0.4
+	peer 1.0.0.4 rr-client
+	peer 1.0.0.4 up
+	add peer 130 1.0.0.11
+	peer 1.0.0.11 rr-client
+	peer 1.0.0.11 up
+	add peer 130 1.0.0.15
+	peer 1.0.0.15 rr-client
+	peer 1.0.0.15 up
+	add peer 130 1.0.0.4
+	peer 1.0.0.4 rr-client
+	peer 1.0.0.4 up
+	add peer 130 1.0.0.13
+	peer 1.0.0.13 rr-client
+	peer 1.0.0.13 up
+	add peer 130 1.0.0.22
+	peer 1.0.0.22 rr-client
+	peer 1.0.0.22 up
+	add peer 130 1.0.0.4
+	peer 1.0.0.4 rr-client
+	peer 1.0.0.4 up
+	add peer 130 1.0.0.4
+	peer 1.0.0.4 rr-client
+	peer 1.0.0.4 up
+	add peer 130 1.0.0.9
+	peer 1.0.0.9 rr-client
+	peer 1.0.0.9 up
+	add peer 130 1.0.0.8
+	peer 1.0.0.8 rr-client
+	peer 1.0.0.8 up
+	add peer 130 1.0.0.7
+	peer 1.0.0.7 rr-client
+	peer 1.0.0.7 up
+	add peer 130 1.0.0.4
+	peer 1.0.0.4 rr-client
+	peer 1.0.0.4 up
+	exit
+bgp add router 130 1.0.0.4
+bgp router 1.0.0.4
+	add peer 130 1.0.0.3
+	peer 1.0.0.3 rr-client
+	peer 1.0.0.3 up
+	add peer 130 1.0.0.3
+	peer 1.0.0.3 rr-client
+	peer 1.0.0.3 up
+	add peer 130 1.0.0.7
+	peer 1.0.0.7 rr-client
+	peer 1.0.0.7 up
+	add peer 130 1.0.0.3
+	peer 1.0.0.3 rr-client
+	peer 1.0.0.3 up
+	add peer 130 1.0.0.19
+	peer 1.0.0.19 rr-client
+	peer 1.0.0.19 up
+	add peer 130 1.0.0.21
+	peer 1.0.0.21 rr-client
+	peer 1.0.0.21 up
+	add peer 130 1.0.0.9
+	peer 1.0.0.9 rr-client
+	peer 1.0.0.9 up
+	add peer 130 1.0.0.14
+	peer 1.0.0.14 rr-client
+	peer 1.0.0.14 up
+	add peer 130 1.0.0.3
+	peer 1.0.0.3 rr-client
+	peer 1.0.0.3 up
+	add peer 130 1.0.0.17
+	peer 1.0.0.17 rr-client
+	peer 1.0.0.17 up
+	add peer 130 1.0.0.12
+	peer 1.0.0.12 rr-client
+	peer 1.0.0.12 up
+	add peer 130 1.0.0.18
+	peer 1.0.0.18 rr-client
+	peer 1.0.0.18 up
+	add peer 130 1.0.0.5
+	peer 1.0.0.5 rr-client
+	peer 1.0.0.5 up
+	add peer 130 1.0.0.11
+	peer 1.0.0.11 rr-client
+	peer 1.0.0.11 up
+	add peer 130 1.0.0.15
+	peer 1.0.0.15 rr-client
+	peer 1.0.0.15 up
+	add peer 130 1.0.0.6
+	peer 1.0.0.6 rr-client
+	peer 1.0.0.6 up
+	add peer 130 1.0.0.13
+	peer 1.0.0.13 rr-client
+	peer 1.0.0.13 up
+	add peer 130 1.0.0.22
+	peer 1.0.0.22 rr-client
+	peer 1.0.0.22 up
+	add peer 130 1.0.0.3
+	peer 1.0.0.3 rr-client
+	peer 1.0.0.3 up
+	add peer 130 1.0.0.9
+	peer 1.0.0.9 rr-client
+	peer 1.0.0.9 up
+	add peer 130 1.0.0.7
+	peer 1.0.0.7 rr-client
+	peer 1.0.0.7 up
+	add peer 130 1.0.0.8
+	peer 1.0.0.8 rr-client
+	peer 1.0.0.8 up
+	exit
+bgp add router 130 1.0.0.5
+bgp router 1.0.0.5
+	add peer 130 1.0.0.23
+	peer 1.0.0.23 rr-client
+	peer 1.0.0.23 up
+	add peer 130 1.0.0.19
+	peer 1.0.0.19 rr-client
+	peer 1.0.0.19 up
+	add peer 130 1.0.0.21
+	peer 1.0.0.21 rr-client
+	peer 1.0.0.21 up
+	add peer 130 1.0.0.10
+	peer 1.0.0.10 rr-client
+	peer 1.0.0.10 up
+	add peer 130 1.0.0.14
+	peer 1.0.0.14 rr-client
+	peer 1.0.0.14 up
+	add peer 130 1.0.0.24
+	peer 1.0.0.24 rr-client
+	peer 1.0.0.24 up
+	add peer 130 1.0.0.17
+	peer 1.0.0.17 rr-client
+	peer 1.0.0.17 up
+	add peer 130 1.0.0.12
+	peer 1.0.0.12 rr-client
+	peer 1.0.0.12 up
+	add peer 130 1.0.0.18
+	peer 1.0.0.18 rr-client
+	peer 1.0.0.18 up
+	add peer 130 1.0.0.11
+	peer 1.0.0.11 rr-client
+	peer 1.0.0.11 up
+	add peer 130 1.0.0.15
+	peer 1.0.0.15 rr-client
+	peer 1.0.0.15 up
+	add peer 130 1.0.0.6
+	peer 1.0.0.6 rr-client
+	peer 1.0.0.6 up
+	add peer 130 1.0.0.13
+	peer 1.0.0.13 rr-client
+	peer 1.0.0.13 up
+	add peer 130 1.0.0.22
+	peer 1.0.0.22 rr-client
+	peer 1.0.0.22 up
+	add peer 130 1.0.0.20
+	peer 1.0.0.20 rr-client
+	peer 1.0.0.20 up
+	add peer 130 1.0.0.7
+	peer 1.0.0.7 rr-client
+	peer 1.0.0.7 up
+	add peer 130 1.0.0.9
+	peer 1.0.0.9 rr-client
+	peer 1.0.0.9 up
+	add peer 130 1.0.0.16
+	peer 1.0.0.16 rr-client
+	peer 1.0.0.16 up
+	add peer 130 1.0.0.4
+	peer 1.0.0.4 rr-client
+	peer 1.0.0.4 up
+	exit
+bgp add router 130 1.0.0.6
+bgp router 1.0.0.6
+	add peer 130 1.0.0.28
+	peer 1.0.0.28 rr-client
+	peer 1.0.0.28 up
+	add peer 130 1.0.0.23
+	peer 1.0.0.23 rr-client
+	peer 1.0.0.23 up
+	add peer 130 1.0.0.19
+	peer 1.0.0.19 rr-client
+	peer 1.0.0.19 up
+	add peer 130 1.0.0.21
+	peer 1.0.0.21 rr-client
+	peer 1.0.0.21 up
+	add peer 130 1.0.0.10
+	peer 1.0.0.10 rr-client
+	peer 1.0.0.10 up
+	add peer 130 1.0.0.14
+	peer 1.0.0.14 rr-client
+	peer 1.0.0.14 up
+	add peer 130 1.0.0.24
+	peer 1.0.0.24 rr-client
+	peer 1.0.0.24 up
+	add peer 130 1.0.0.17
+	peer 1.0.0.17 rr-client
+	peer 1.0.0.17 up
+	add peer 130 1.0.0.12
+	peer 1.0.0.12 rr-client
+	peer 1.0.0.12 up
+	add peer 130 1.0.0.18
+	peer 1.0.0.18 rr-client
+	peer 1.0.0.18 up
+	add peer 130 1.0.0.5
+	peer 1.0.0.5 rr-client
+	peer 1.0.0.5 up
+	add peer 130 1.0.0.11
+	peer 1.0.0.11 rr-client
+	peer 1.0.0.11 up
+	add peer 130 1.0.0.15
+	peer 1.0.0.15 rr-client
+	peer 1.0.0.15 up
+	add peer 130 1.0.0.13
+	peer 1.0.0.13 rr-client
+	peer 1.0.0.13 up
+	add peer 130 1.0.0.22
+	peer 1.0.0.22 rr-client
+	peer 1.0.0.22 up
+	add peer 130 1.0.0.20
+	peer 1.0.0.20 rr-client
+	peer 1.0.0.20 up
+	add peer 130 1.0.0.8
+	peer 1.0.0.8 rr-client
+	peer 1.0.0.8 up
+	add peer 130 1.0.0.7
+	peer 1.0.0.7 rr-client
+	peer 1.0.0.7 up
+	add peer 130 1.0.0.9
+	peer 1.0.0.9 rr-client
+	peer 1.0.0.9 up
+	add peer 130 1.0.0.16
+	peer 1.0.0.16 rr-client
+	peer 1.0.0.16 up
+	add peer 130 1.0.0.4
+	peer 1.0.0.4 rr-client
+	peer 1.0.0.4 up
+	exit
+bgp add router 130 1.0.0.7
+bgp router 1.0.0.7
+	add peer 130 1.0.0.8
+	peer 1.0.0.8 rr-client
+	peer 1.0.0.8 up
+	add peer 130 1.0.0.9
+	peer 1.0.0.9 rr-client
+	peer 1.0.0.9 up
+	add peer 130 1.0.0.19
+	peer 1.0.0.19 rr-client
+	peer 1.0.0.19 up
+	add peer 130 1.0.0.21
+	peer 1.0.0.21 rr-client
+	peer 1.0.0.21 up
+	add peer 130 1.0.0.9
+	peer 1.0.0.9 rr-client
+	peer 1.0.0.9 up
+	add peer 130 1.0.0.14
+	peer 1.0.0.14 rr-client
+	peer 1.0.0.14 up
+	add peer 130 1.0.0.4
+	peer 1.0.0.4 rr-client
+	peer 1.0.0.4 up
+	add peer 130 1.0.0.17
+	peer 1.0.0.17 rr-client
+	peer 1.0.0.17 up
+	add peer 130 1.0.0.12
+	peer 1.0.0.12 rr-client
+	peer 1.0.0.12 up
+	add peer 130 1.0.0.18
+	peer 1.0.0.18 rr-client
+	peer 1.0.0.18 up
+	add peer 130 1.0.0.5
+	peer 1.0.0.5 rr-client
+	peer 1.0.0.5 up
+	add peer 130 1.0.0.11
+	peer 1.0.0.11 rr-client
+	peer 1.0.0.11 up
+	add peer 130 1.0.0.15
+	peer 1.0.0.15 rr-client
+	peer 1.0.0.15 up
+	add peer 130 1.0.0.6
+	peer 1.0.0.6 rr-client
+	peer 1.0.0.6 up
+	add peer 130 1.0.0.13
+	peer 1.0.0.13 rr-client
+	peer 1.0.0.13 up
+	add peer 130 1.0.0.22
+	peer 1.0.0.22 rr-client
+	peer 1.0.0.22 up
+	add peer 130 1.0.0.3
+	peer 1.0.0.3 rr-client
+	peer 1.0.0.3 up
+	add peer 130 1.0.0.9
+	peer 1.0.0.9 rr-client
+	peer 1.0.0.9 up
+	add peer 130 1.0.0.8
+	peer 1.0.0.8 rr-client
+	peer 1.0.0.8 up
+	add peer 130 1.0.0.4
+	peer 1.0.0.4 rr-client
+	peer 1.0.0.4 up
+	exit
+bgp add router 130 1.0.0.8
+bgp router 1.0.0.8
+	add peer 130 1.0.0.9
+	peer 1.0.0.9 up
+	add peer 130 1.0.0.19
+	peer 1.0.0.19 up
+	add peer 130 1.0.0.21
+	peer 1.0.0.21 up
+	add peer 130 1.0.0.9
+	peer 1.0.0.9 up
+	add peer 130 1.0.0.14
+	peer 1.0.0.14 up
+	add peer 130 1.0.0.9
+	peer 1.0.0.9 up
+	add peer 130 1.0.0.17
+	peer 1.0.0.17 up
+	add peer 130 1.0.0.12
+	peer 1.0.0.12 up
+	add peer 130 1.0.0.18
+	peer 1.0.0.18 up
+	add peer 130 1.0.0.7
+	peer 1.0.0.7 up
+	add peer 130 1.0.0.11
+	peer 1.0.0.11 up
+	add peer 130 1.0.0.15
+	peer 1.0.0.15 up
+	add peer 130 1.0.0.6
+	peer 1.0.0.6 up
+	add peer 130 1.0.0.13
+	peer 1.0.0.13 up
+	add peer 130 1.0.0.22
+	peer 1.0.0.22 up
+	add peer 130 1.0.0.3
+	peer 1.0.0.3 up
+	add peer 130 1.0.0.9
+	peer 1.0.0.9 up
+	add peer 130 1.0.0.7
+	peer 1.0.0.7 up
+	add peer 130 1.0.0.4
+	peer 1.0.0.4 up
+	exit
+bgp add router 130 1.0.0.9
+bgp router 1.0.0.9
+	add peer 130 1.0.0.3
+	peer 1.0.0.3 rr-client
+	peer 1.0.0.3 up
+	add peer 130 1.0.0.8
+	peer 1.0.0.8 rr-client
+	peer 1.0.0.8 up
+	add peer 130 1.0.0.8
+	peer 1.0.0.8 rr-client
+	peer 1.0.0.8 up
+	add peer 130 1.0.0.8
+	peer 1.0.0.8 rr-client
+	peer 1.0.0.8 up
+	add peer 130 1.0.0.7
+	peer 1.0.0.7 rr-client
+	peer 1.0.0.7 up
+	add peer 130 1.0.0.7
+	peer 1.0.0.7 rr-client
+	peer 1.0.0.7 up
+	add peer 130 1.0.0.23
+	peer 1.0.0.23 rr-client
+	peer 1.0.0.23 up
+	add peer 130 1.0.0.19
+	peer 1.0.0.19 rr-client
+	peer 1.0.0.19 up
+	add peer 130 1.0.0.21
+	peer 1.0.0.21 rr-client
+	peer 1.0.0.21 up
+	add peer 130 1.0.0.10
+	peer 1.0.0.10 rr-client
+	peer 1.0.0.10 up
+	add peer 130 1.0.0.14
+	peer 1.0.0.14 rr-client
+	peer 1.0.0.14 up
+	add peer 130 1.0.0.24
+	peer 1.0.0.24 rr-client
+	peer 1.0.0.24 up
+	add peer 130 1.0.0.17
+	peer 1.0.0.17 rr-client
+	peer 1.0.0.17 up
+	add peer 130 1.0.0.12
+	peer 1.0.0.12 rr-client
+	peer 1.0.0.12 up
+	add peer 130 1.0.0.18
+	peer 1.0.0.18 rr-client
+	peer 1.0.0.18 up
+	add peer 130 1.0.0.5
+	peer 1.0.0.5 rr-client
+	peer 1.0.0.5 up
+	add peer 130 1.0.0.11
+	peer 1.0.0.11 rr-client
+	peer 1.0.0.11 up
+	add peer 130 1.0.0.15
+	peer 1.0.0.15 rr-client
+	peer 1.0.0.15 up
+	add peer 130 1.0.0.6
+	peer 1.0.0.6 rr-client
+	peer 1.0.0.6 up
+	add peer 130 1.0.0.13
+	peer 1.0.0.13 rr-client
+	peer 1.0.0.13 up
+	add peer 130 1.0.0.22
+	peer 1.0.0.22 rr-client
+	peer 1.0.0.22 up
+	add peer 130 1.0.0.4
+	peer 1.0.0.4 rr-client
+	peer 1.0.0.4 up
+	add peer 130 1.0.0.3
+	peer 1.0.0.3 rr-client
+	peer 1.0.0.3 up
+	add peer 130 1.0.0.8
+	peer 1.0.0.8 rr-client
+	peer 1.0.0.8 up
+	add peer 130 1.0.0.7
+	peer 1.0.0.7 rr-client
+	peer 1.0.0.7 up
+	add peer 130 1.0.0.4
+	peer 1.0.0.4 rr-client
+	peer 1.0.0.4 up
+	exit
+bgp add router 130 1.0.0.10
+bgp router 1.0.0.10
+	add peer 130 1.0.0.23
+	peer 1.0.0.23 rr-client
+	peer 1.0.0.23 up
+	add peer 130 1.0.0.19
+	peer 1.0.0.19 rr-client
+	peer 1.0.0.19 up
+	add peer 130 1.0.0.21
+	peer 1.0.0.21 rr-client
+	peer 1.0.0.21 up
+	add peer 130 1.0.0.14
+	peer 1.0.0.14 rr-client
+	peer 1.0.0.14 up
+	add peer 130 1.0.0.24
+	peer 1.0.0.24 rr-client
+	peer 1.0.0.24 up
+	add peer 130 1.0.0.17
+	peer 1.0.0.17 rr-client
+	peer 1.0.0.17 up
+	add peer 130 1.0.0.12
+	peer 1.0.0.12 rr-client
+	peer 1.0.0.12 up
+	add peer 130 1.0.0.18
+	peer 1.0.0.18 rr-client
+	peer 1.0.0.18 up
+	add peer 130 1.0.0.5
+	peer 1.0.0.5 rr-client
+	peer 1.0.0.5 up
+	add peer 130 1.0.0.11
+	peer 1.0.0.11 rr-client
+	peer 1.0.0.11 up
+	add peer 130 1.0.0.15
+	peer 1.0.0.15 rr-client
+	peer 1.0.0.15 up
+	add peer 130 1.0.0.6
+	peer 1.0.0.6 rr-client
+	peer 1.0.0.6 up
+	add peer 130 1.0.0.13
+	peer 1.0.0.13 rr-client
+	peer 1.0.0.13 up
+	add peer 130 1.0.0.22
+	peer 1.0.0.22 rr-client
+	peer 1.0.0.22 up
+	add peer 130 1.0.0.20
+	peer 1.0.0.20 rr-client
+	peer 1.0.0.20 up
+	add peer 130 1.0.0.9
+	peer 1.0.0.9 rr-client
+	peer 1.0.0.9 up
+	add peer 130 1.0.0.16
+	peer 1.0.0.16 rr-client
+	peer 1.0.0.16 up
+	exit
+bgp add router 130 1.0.0.11
+bgp router 1.0.0.11
+	add peer 130 1.0.0.23
+	peer 1.0.0.23 rr-client
+	peer 1.0.0.23 up
+	add peer 130 1.0.0.19
+	peer 1.0.0.19 rr-client
+	peer 1.0.0.19 up
+	add peer 130 1.0.0.21
+	peer 1.0.0.21 rr-client
+	peer 1.0.0.21 up
+	add peer 130 1.0.0.10
+	peer 1.0.0.10 rr-client
+	peer 1.0.0.10 up
+	add peer 130 1.0.0.14
+	peer 1.0.0.14 rr-client
+	peer 1.0.0.14 up
+	add peer 130 1.0.0.24
+	peer 1.0.0.24 rr-client
+	peer 1.0.0.24 up
+	add peer 130 1.0.0.17
+	peer 1.0.0.17 rr-client
+	peer 1.0.0.17 up
+	add peer 130 1.0.0.12
+	peer 1.0.0.12 rr-client
+	peer 1.0.0.12 up
+	add peer 130 1.0.0.18
+	peer 1.0.0.18 rr-client
+	peer 1.0.0.18 up
+	add peer 130 1.0.0.5
+	peer 1.0.0.5 rr-client
+	peer 1.0.0.5 up
+	add peer 130 1.0.0.15
+	peer 1.0.0.15 rr-client
+	peer 1.0.0.15 up
+	add peer 130 1.0.0.6
+	peer 1.0.0.6 rr-client
+	peer 1.0.0.6 up
+	add peer 130 1.0.0.13
+	peer 1.0.0.13 rr-client
+	peer 1.0.0.13 up
+	add peer 130 1.0.0.22
+	peer 1.0.0.22 rr-client
+	peer 1.0.0.22 up
+	add peer 130 1.0.0.20
+	peer 1.0.0.20 rr-client
+	peer 1.0.0.20 up
+	add peer 130 1.0.0.3
+	peer 1.0.0.3 rr-client
+	peer 1.0.0.3 up
+	add peer 130 1.0.0.8
+	peer 1.0.0.8 rr-client
+	peer 1.0.0.8 up
+	add peer 130 1.0.0.7
+	peer 1.0.0.7 rr-client
+	peer 1.0.0.7 up
+	add peer 130 1.0.0.9
+	peer 1.0.0.9 rr-client
+	peer 1.0.0.9 up
+	add peer 130 1.0.0.16
+	peer 1.0.0.16 rr-client
+	peer 1.0.0.16 up
+	add peer 130 1.0.0.4
+	peer 1.0.0.4 rr-client
+	peer 1.0.0.4 up
+	exit
+bgp add router 130 1.0.0.12
+bgp router 1.0.0.12
+	add peer 130 1.0.0.23
+	peer 1.0.0.23 rr-client
+	peer 1.0.0.23 up
+	add peer 130 1.0.0.19
+	peer 1.0.0.19 rr-client
+	peer 1.0.0.19 up
+	add peer 130 1.0.0.21
+	peer 1.0.0.21 rr-client
+	peer 1.0.0.21 up
+	add peer 130 1.0.0.10
+	peer 1.0.0.10 rr-client
+	peer 1.0.0.10 up
+	add peer 130 1.0.0.14
+	peer 1.0.0.14 rr-client
+	peer 1.0.0.14 up
+	add peer 130 1.0.0.24
+	peer 1.0.0.24 rr-client
+	peer 1.0.0.24 up
+	add peer 130 1.0.0.17
+	peer 1.0.0.17 rr-client
+	peer 1.0.0.17 up
+	add peer 130 1.0.0.18
+	peer 1.0.0.18 rr-client
+	peer 1.0.0.18 up
+	add peer 130 1.0.0.5
+	peer 1.0.0.5 rr-client
+	peer 1.0.0.5 up
+	add peer 130 1.0.0.11
+	peer 1.0.0.11 rr-client
+	peer 1.0.0.11 up
+	add peer 130 1.0.0.15
+	peer 1.0.0.15 rr-client
+	peer 1.0.0.15 up
+	add peer 130 1.0.0.6
+	peer 1.0.0.6 rr-client
+	peer 1.0.0.6 up
+	add peer 130 1.0.0.13
+	peer 1.0.0.13 rr-client
+	peer 1.0.0.13 up
+	add peer 130 1.0.0.22
+	peer 1.0.0.22 rr-client
+	peer 1.0.0.22 up
+	add peer 130 1.0.0.20
+	peer 1.0.0.20 rr-client
+	peer 1.0.0.20 up
+	add peer 130 1.0.0.3
+	peer 1.0.0.3 rr-client
+	peer 1.0.0.3 up
+	add peer 130 1.0.0.8
+	peer 1.0.0.8 rr-client
+	peer 1.0.0.8 up
+	add peer 130 1.0.0.7
+	peer 1.0.0.7 rr-client
+	peer 1.0.0.7 up
+	add peer 130 1.0.0.9
+	peer 1.0.0.9 rr-client
+	peer 1.0.0.9 up
+	add peer 130 1.0.0.16
+	peer 1.0.0.16 rr-client
+	peer 1.0.0.16 up
+	add peer 130 1.0.0.4
+	peer 1.0.0.4 rr-client
+	peer 1.0.0.4 up
+	exit
+bgp add router 130 1.0.0.13
+bgp router 1.0.0.13
+	add peer 130 1.0.0.23
+	peer 1.0.0.23 rr-client
+	peer 1.0.0.23 up
+	add peer 130 1.0.0.19
+	peer 1.0.0.19 rr-client
+	peer 1.0.0.19 up
+	add peer 130 1.0.0.21
+	peer 1.0.0.21 rr-client
+	peer 1.0.0.21 up
+	add peer 130 1.0.0.10
+	peer 1.0.0.10 rr-client
+	peer 1.0.0.10 up
+	add peer 130 1.0.0.14
+	peer 1.0.0.14 rr-client
+	peer 1.0.0.14 up
+	add peer 130 1.0.0.24
+	peer 1.0.0.24 rr-client
+	peer 1.0.0.24 up
+	add peer 130 1.0.0.17
+	peer 1.0.0.17 rr-client
+	peer 1.0.0.17 up
+	add peer 130 1.0.0.12
+	peer 1.0.0.12 rr-client
+	peer 1.0.0.12 up
+	add peer 130 1.0.0.18
+	peer 1.0.0.18 rr-client
+	peer 1.0.0.18 up
+	add peer 130 1.0.0.5
+	peer 1.0.0.5 rr-client
+	peer 1.0.0.5 up
+	add peer 130 1.0.0.11
+	peer 1.0.0.11 rr-client
+	peer 1.0.0.11 up
+	add peer 130 1.0.0.15
+	peer 1.0.0.15 rr-client
+	peer 1.0.0.15 up
+	add peer 130 1.0.0.6
+	peer 1.0.0.6 rr-client
+	peer 1.0.0.6 up
+	add peer 130 1.0.0.22
+	peer 1.0.0.22 rr-client
+	peer 1.0.0.22 up
+	add peer 130 1.0.0.20
+	peer 1.0.0.20 rr-client
+	peer 1.0.0.20 up
+	add peer 130 1.0.0.3
+	peer 1.0.0.3 rr-client
+	peer 1.0.0.3 up
+	add peer 130 1.0.0.8
+	peer 1.0.0.8 rr-client
+	peer 1.0.0.8 up
+	add peer 130 1.0.0.7
+	peer 1.0.0.7 rr-client
+	peer 1.0.0.7 up
+	add peer 130 1.0.0.9
+	peer 1.0.0.9 rr-client
+	peer 1.0.0.9 up
+	add peer 130 1.0.0.16
+	peer 1.0.0.16 rr-client
+	peer 1.0.0.16 up
+	add peer 130 1.0.0.4
+	peer 1.0.0.4 rr-client
+	peer 1.0.0.4 up
+	exit
+bgp add router 130 1.0.0.14
+bgp router 1.0.0.14
+	add peer 130 1.0.0.23
+	peer 1.0.0.23 rr-client
+	peer 1.0.0.23 up
+	add peer 130 1.0.0.19
+	peer 1.0.0.19 rr-client
+	peer 1.0.0.19 up
+	add peer 130 1.0.0.21
+	peer 1.0.0.21 rr-client
+	peer 1.0.0.21 up
+	add peer 130 1.0.0.10
+	peer 1.0.0.10 rr-client
+	peer 1.0.0.10 up
+	add peer 130 1.0.0.24
+	peer 1.0.0.24 rr-client
+	peer 1.0.0.24 up
+	add peer 130 1.0.0.17
+	peer 1.0.0.17 rr-client
+	peer 1.0.0.17 up
+	add peer 130 1.0.0.12
+	peer 1.0.0.12 rr-client
+	peer 1.0.0.12 up
+	add peer 130 1.0.0.18
+	peer 1.0.0.18 rr-client
+	peer 1.0.0.18 up
+	add peer 130 1.0.0.5
+	peer 1.0.0.5 rr-client
+	peer 1.0.0.5 up
+	add peer 130 1.0.0.11
+	peer 1.0.0.11 rr-client
+	peer 1.0.0.11 up
+	add peer 130 1.0.0.15
+	peer 1.0.0.15 rr-client
+	peer 1.0.0.15 up
+	add peer 130 1.0.0.6
+	peer 1.0.0.6 rr-client
+	peer 1.0.0.6 up
+	add peer 130 1.0.0.13
+	peer 1.0.0.13 rr-client
+	peer 1.0.0.13 up
+	add peer 130 1.0.0.22
+	peer 1.0.0.22 rr-client
+	peer 1.0.0.22 up
+	add peer 130 1.0.0.20
+	peer 1.0.0.20 rr-client
+	peer 1.0.0.20 up
+	add peer 130 1.0.0.3
+	peer 1.0.0.3 rr-client
+	peer 1.0.0.3 up
+	add peer 130 1.0.0.8
+	peer 1.0.0.8 rr-client
+	peer 1.0.0.8 up
+	add peer 130 1.0.0.7
+	peer 1.0.0.7 rr-client
+	peer 1.0.0.7 up
+	add peer 130 1.0.0.9
+	peer 1.0.0.9 rr-client
+	peer 1.0.0.9 up
+	add peer 130 1.0.0.16
+	peer 1.0.0.16 rr-client
+	peer 1.0.0.16 up
+	add peer 130 1.0.0.4
+	peer 1.0.0.4 rr-client
+	peer 1.0.0.4 up
+	exit
+bgp add router 130 1.0.0.15
+bgp router 1.0.0.15
+	add peer 130 1.0.0.23
+	peer 1.0.0.23 rr-client
+	peer 1.0.0.23 up
+	add peer 130 1.0.0.19
+	peer 1.0.0.19 rr-client
+	peer 1.0.0.19 up
+	add peer 130 1.0.0.21
+	peer 1.0.0.21 rr-client
+	peer 1.0.0.21 up
+	add peer 130 1.0.0.10
+	peer 1.0.0.10 rr-client
+	peer 1.0.0.10 up
+	add peer 130 1.0.0.14
+	peer 1.0.0.14 rr-client
+	peer 1.0.0.14 up
+	add peer 130 1.0.0.24
+	peer 1.0.0.24 rr-client
+	peer 1.0.0.24 up
+	add peer 130 1.0.0.17
+	peer 1.0.0.17 rr-client
+	peer 1.0.0.17 up
+	add peer 130 1.0.0.12
+	peer 1.0.0.12 rr-client
+	peer 1.0.0.12 up
+	add peer 130 1.0.0.18
+	peer 1.0.0.18 rr-client
+	peer 1.0.0.18 up
+	add peer 130 1.0.0.5
+	peer 1.0.0.5 rr-client
+	peer 1.0.0.5 up
+	add peer 130 1.0.0.11
+	peer 1.0.0.11 rr-client
+	peer 1.0.0.11 up
+	add peer 130 1.0.0.6
+	peer 1.0.0.6 rr-client
+	peer 1.0.0.6 up
+	add peer 130 1.0.0.13
+	peer 1.0.0.13 rr-client
+	peer 1.0.0.13 up
+	add peer 130 1.0.0.22
+	peer 1.0.0.22 rr-client
+	peer 1.0.0.22 up
+	add peer 130 1.0.0.20
+	peer 1.0.0.20 rr-client
+	peer 1.0.0.20 up
+	add peer 130 1.0.0.3
+	peer 1.0.0.3 rr-client
+	peer 1.0.0.3 up
+	add peer 130 1.0.0.8
+	peer 1.0.0.8 rr-client
+	peer 1.0.0.8 up
+	add peer 130 1.0.0.7
+	peer 1.0.0.7 rr-client
+	peer 1.0.0.7 up
+	add peer 130 1.0.0.9
+	peer 1.0.0.9 rr-client
+	peer 1.0.0.9 up
+	add peer 130 1.0.0.16
+	peer 1.0.0.16 rr-client
+	peer 1.0.0.16 up
+	add peer 130 1.0.0.4
+	peer 1.0.0.4 rr-client
+	peer 1.0.0.4 up
+	exit
+bgp add router 130 1.0.0.16
+bgp router 1.0.0.16
+	add peer 130 1.0.0.20
+	peer 1.0.0.20 rr-client
+	peer 1.0.0.20 up
+	add peer 130 1.0.0.23
+	peer 1.0.0.23 rr-client
+	peer 1.0.0.23 up
+	add peer 130 1.0.0.19
+	peer 1.0.0.19 rr-client
+	peer 1.0.0.19 up
+	add peer 130 1.0.0.21
+	peer 1.0.0.21 rr-client
+	peer 1.0.0.21 up
+	add peer 130 1.0.0.10
+	peer 1.0.0.10 rr-client
+	peer 1.0.0.10 up
+	add peer 130 1.0.0.14
+	peer 1.0.0.14 rr-client
+	peer 1.0.0.14 up
+	add peer 130 1.0.0.24
+	peer 1.0.0.24 rr-client
+	peer 1.0.0.24 up
+	add peer 130 1.0.0.17
+	peer 1.0.0.17 rr-client
+	peer 1.0.0.17 up
+	add peer 130 1.0.0.12
+	peer 1.0.0.12 rr-client
+	peer 1.0.0.12 up
+	add peer 130 1.0.0.18
+	peer 1.0.0.18 rr-client
+	peer 1.0.0.18 up
+	add peer 130 1.0.0.5
+	peer 1.0.0.5 rr-client
+	peer 1.0.0.5 up
+	add peer 130 1.0.0.11
+	peer 1.0.0.11 rr-client
+	peer 1.0.0.11 up
+	add peer 130 1.0.0.15
+	peer 1.0.0.15 rr-client
+	peer 1.0.0.15 up
+	add peer 130 1.0.0.6
+	peer 1.0.0.6 rr-client
+	peer 1.0.0.6 up
+	add peer 130 1.0.0.13
+	peer 1.0.0.13 rr-client
+	peer 1.0.0.13 up
+	add peer 130 1.0.0.20
+	peer 1.0.0.20 rr-client
+	peer 1.0.0.20 up
+	add peer 130 1.0.0.20
+	peer 1.0.0.20 rr-client
+	peer 1.0.0.20 up
+	exit
+bgp add router 130 1.0.0.17
+bgp router 1.0.0.17
+	add peer 130 1.0.0.23
+	peer 1.0.0.23 rr-client
+	peer 1.0.0.23 up
+	add peer 130 1.0.0.19
+	peer 1.0.0.19 rr-client
+	peer 1.0.0.19 up
+	add peer 130 1.0.0.21
+	peer 1.0.0.21 rr-client
+	peer 1.0.0.21 up
+	add peer 130 1.0.0.10
+	peer 1.0.0.10 rr-client
+	peer 1.0.0.10 up
+	add peer 130 1.0.0.14
+	peer 1.0.0.14 rr-client
+	peer 1.0.0.14 up
+	add peer 130 1.0.0.24
+	peer 1.0.0.24 rr-client
+	peer 1.0.0.24 up
+	add peer 130 1.0.0.12
+	peer 1.0.0.12 rr-client
+	peer 1.0.0.12 up
+	add peer 130 1.0.0.18
+	peer 1.0.0.18 rr-client
+	peer 1.0.0.18 up
+	add peer 130 1.0.0.5
+	peer 1.0.0.5 rr-client
+	peer 1.0.0.5 up
+	add peer 130 1.0.0.11
+	peer 1.0.0.11 rr-client
+	peer 1.0.0.11 up
+	add peer 130 1.0.0.15
+	peer 1.0.0.15 rr-client
+	peer 1.0.0.15 up
+	add peer 130 1.0.0.6
+	peer 1.0.0.6 rr-client
+	peer 1.0.0.6 up
+	add peer 130 1.0.0.13
+	peer 1.0.0.13 rr-client
+	peer 1.0.0.13 up
+	add peer 130 1.0.0.22
+	peer 1.0.0.22 rr-client
+	peer 1.0.0.22 up
+	add peer 130 1.0.0.3
+	peer 1.0.0.3 rr-client
+	peer 1.0.0.3 up
+	add peer 130 1.0.0.8
+	peer 1.0.0.8 rr-client
+	peer 1.0.0.8 up
+	add peer 130 1.0.0.7
+	peer 1.0.0.7 rr-client
+	peer 1.0.0.7 up
+	add peer 130 1.0.0.9
+	peer 1.0.0.9 rr-client
+	peer 1.0.0.9 up
+	add peer 130 1.0.0.16
+	peer 1.0.0.16 rr-client
+	peer 1.0.0.16 up
+	add peer 130 1.0.0.4
+	peer 1.0.0.4 rr-client
+	peer 1.0.0.4 up
+	exit
+bgp add router 130 1.0.0.18
+bgp router 1.0.0.18
+	add peer 130 1.0.0.23
+	peer 1.0.0.23 rr-client
+	peer 1.0.0.23 up
+	add peer 130 1.0.0.19
+	peer 1.0.0.19 rr-client
+	peer 1.0.0.19 up
+	add peer 130 1.0.0.21
+	peer 1.0.0.21 rr-client
+	peer 1.0.0.21 up
+	add peer 130 1.0.0.10
+	peer 1.0.0.10 rr-client
+	peer 1.0.0.10 up
+	add peer 130 1.0.0.14
+	peer 1.0.0.14 rr-client
+	peer 1.0.0.14 up
+	add peer 130 1.0.0.24
+	peer 1.0.0.24 rr-client
+	peer 1.0.0.24 up
+	add peer 130 1.0.0.17
+	peer 1.0.0.17 rr-client
+	peer 1.0.0.17 up
+	add peer 130 1.0.0.12
+	peer 1.0.0.12 rr-client
+	peer 1.0.0.12 up
+	add peer 130 1.0.0.5
+	peer 1.0.0.5 rr-client
+	peer 1.0.0.5 up
+	add peer 130 1.0.0.11
+	peer 1.0.0.11 rr-client
+	peer 1.0.0.11 up
+	add peer 130 1.0.0.15
+	peer 1.0.0.15 rr-client
+	peer 1.0.0.15 up
+	add peer 130 1.0.0.6
+	peer 1.0.0.6 rr-client
+	peer 1.0.0.6 up
+	add peer 130 1.0.0.13
+	peer 1.0.0.13 rr-client
+	peer 1.0.0.13 up
+	add peer 130 1.0.0.22
+	peer 1.0.0.22 rr-client
+	peer 1.0.0.22 up
+	add peer 130 1.0.0.20
+	peer 1.0.0.20 rr-client
+	peer 1.0.0.20 up
+	add peer 130 1.0.0.3
+	peer 1.0.0.3 rr-client
+	peer 1.0.0.3 up
+	add peer 130 1.0.0.8
+	peer 1.0.0.8 rr-client
+	peer 1.0.0.8 up
+	add peer 130 1.0.0.7
+	peer 1.0.0.7 rr-client
+	peer 1.0.0.7 up
+	add peer 130 1.0.0.9
+	peer 1.0.0.9 rr-client
+	peer 1.0.0.9 up
+	add peer 130 1.0.0.16
+	peer 1.0.0.16 rr-client
+	peer 1.0.0.16 up
+	add peer 130 1.0.0.4
+	peer 1.0.0.4 rr-client
+	peer 1.0.0.4 up
+	exit
+bgp add router 130 1.0.0.19
+bgp router 1.0.0.19
+	add peer 130 1.0.0.23
+	peer 1.0.0.23 rr-client
+	peer 1.0.0.23 up
+	add peer 130 1.0.0.21
+	peer 1.0.0.21 rr-client
+	peer 1.0.0.21 up
+	add peer 130 1.0.0.10
+	peer 1.0.0.10 rr-client
+	peer 1.0.0.10 up
+	add peer 130 1.0.0.14
+	peer 1.0.0.14 rr-client
+	peer 1.0.0.14 up
+	add peer 130 1.0.0.24
+	peer 1.0.0.24 rr-client
+	peer 1.0.0.24 up
+	add peer 130 1.0.0.17
+	peer 1.0.0.17 rr-client
+	peer 1.0.0.17 up
+	add peer 130 1.0.0.12
+	peer 1.0.0.12 rr-client
+	peer 1.0.0.12 up
+	add peer 130 1.0.0.18
+	peer 1.0.0.18 rr-client
+	peer 1.0.0.18 up
+	add peer 130 1.0.0.5
+	peer 1.0.0.5 rr-client
+	peer 1.0.0.5 up
+	add peer 130 1.0.0.11
+	peer 1.0.0.11 rr-client
+	peer 1.0.0.11 up
+	add peer 130 1.0.0.15
+	peer 1.0.0.15 rr-client
+	peer 1.0.0.15 up
+	add peer 130 1.0.0.6
+	peer 1.0.0.6 rr-client
+	peer 1.0.0.6 up
+	add peer 130 1.0.0.13
+	peer 1.0.0.13 rr-client
+	peer 1.0.0.13 up
+	add peer 130 1.0.0.22
+	peer 1.0.0.22 rr-client
+	peer 1.0.0.22 up
+	add peer 130 1.0.0.20
+	peer 1.0.0.20 rr-client
+	peer 1.0.0.20 up
+	add peer 130 1.0.0.3
+	peer 1.0.0.3 rr-client
+	peer 1.0.0.3 up
+	add peer 130 1.0.0.8
+	peer 1.0.0.8 rr-client
+	peer 1.0.0.8 up
+	add peer 130 1.0.0.7
+	peer 1.0.0.7 rr-client
+	peer 1.0.0.7 up
+	add peer 130 1.0.0.9
+	peer 1.0.0.9 rr-client
+	peer 1.0.0.9 up
+	add peer 130 1.0.0.16
+	peer 1.0.0.16 rr-client
+	peer 1.0.0.16 up
+	add peer 130 1.0.0.4
+	peer 1.0.0.4 rr-client
+	peer 1.0.0.4 up
+	exit
+bgp add router 130 1.0.0.20
+bgp router 1.0.0.20
+	add peer 130 1.0.0.23
+	peer 1.0.0.23 rr-client
+	peer 1.0.0.23 up
+	add peer 130 1.0.0.19
+	peer 1.0.0.19 rr-client
+	peer 1.0.0.19 up
+	add peer 130 1.0.0.21
+	peer 1.0.0.21 rr-client
+	peer 1.0.0.21 up
+	add peer 130 1.0.0.10
+	peer 1.0.0.10 rr-client
+	peer 1.0.0.10 up
+	add peer 130 1.0.0.14
+	peer 1.0.0.14 rr-client
+	peer 1.0.0.14 up
+	add peer 130 1.0.0.24
+	peer 1.0.0.24 rr-client
+	peer 1.0.0.24 up
+	add peer 130 1.0.0.16
+	peer 1.0.0.16 rr-client
+	peer 1.0.0.16 up
+	add peer 130 1.0.0.12
+	peer 1.0.0.12 rr-client
+	peer 1.0.0.12 up
+	add peer 130 1.0.0.18
+	peer 1.0.0.18 rr-client
+	peer 1.0.0.18 up
+	add peer 130 1.0.0.5
+	peer 1.0.0.5 rr-client
+	peer 1.0.0.5 up
+	add peer 130 1.0.0.11
+	peer 1.0.0.11 rr-client
+	peer 1.0.0.11 up
+	add peer 130 1.0.0.15
+	peer 1.0.0.15 rr-client
+	peer 1.0.0.15 up
+	add peer 130 1.0.0.6
+	peer 1.0.0.6 rr-client
+	peer 1.0.0.6 up
+	add peer 130 1.0.0.13
+	peer 1.0.0.13 rr-client
+	peer 1.0.0.13 up
+	add peer 130 1.0.0.22
+	peer 1.0.0.22 rr-client
+	peer 1.0.0.22 up
+	add peer 130 1.0.0.16
+	peer 1.0.0.16 rr-client
+	peer 1.0.0.16 up
+	add peer 130 1.0.0.16
+	peer 1.0.0.16 rr-client
+	peer 1.0.0.16 up
+	exit
+bgp add router 130 1.0.0.21
+bgp router 1.0.0.21
+	add peer 130 1.0.0.23
+	peer 1.0.0.23 rr-client
+	peer 1.0.0.23 up
+	add peer 130 1.0.0.19
+	peer 1.0.0.19 rr-client
+	peer 1.0.0.19 up
+	add peer 130 1.0.0.10
+	peer 1.0.0.10 rr-client
+	peer 1.0.0.10 up
+	add peer 130 1.0.0.14
+	peer 1.0.0.14 rr-client
+	peer 1.0.0.14 up
+	add peer 130 1.0.0.24
+	peer 1.0.0.24 rr-client
+	peer 1.0.0.24 up
+	add peer 130 1.0.0.17
+	peer 1.0.0.17 rr-client
+	peer 1.0.0.17 up
+	add peer 130 1.0.0.12
+	peer 1.0.0.12 rr-client
+	peer 1.0.0.12 up
+	add peer 130 1.0.0.18
+	peer 1.0.0.18 rr-client
+	peer 1.0.0.18 up
+	add peer 130 1.0.0.5
+	peer 1.0.0.5 rr-client
+	peer 1.0.0.5 up
+	add peer 130 1.0.0.11
+	peer 1.0.0.11 rr-client
+	peer 1.0.0.11 up
+	add peer 130 1.0.0.15
+	peer 1.0.0.15 rr-client
+	peer 1.0.0.15 up
+	add peer 130 1.0.0.6
+	peer 1.0.0.6 rr-client
+	peer 1.0.0.6 up
+	add peer 130 1.0.0.13
+	peer 1.0.0.13 rr-client
+	peer 1.0.0.13 up
+	add peer 130 1.0.0.22
+	peer 1.0.0.22 rr-client
+	peer 1.0.0.22 up
+	add peer 130 1.0.0.20
+	peer 1.0.0.20 rr-client
+	peer 1.0.0.20 up
+	add peer 130 1.0.0.3
+	peer 1.0.0.3 rr-client
+	peer 1.0.0.3 up
+	add peer 130 1.0.0.8
+	peer 1.0.0.8 rr-client
+	peer 1.0.0.8 up
+	add peer 130 1.0.0.7
+	peer 1.0.0.7 rr-client
+	peer 1.0.0.7 up
+	add peer 130 1.0.0.9
+	peer 1.0.0.9 rr-client
+	peer 1.0.0.9 up
+	add peer 130 1.0.0.16
+	peer 1.0.0.16 rr-client
+	peer 1.0.0.16 up
+	add peer 130 1.0.0.4
+	peer 1.0.0.4 rr-client
+	peer 1.0.0.4 up
+	exit
+bgp add router 130 1.0.0.22
+bgp router 1.0.0.22
+	add peer 130 1.0.0.27
+	peer 1.0.0.27 rr-client
+	peer 1.0.0.27 up
+	add peer 130 1.0.0.23
+	peer 1.0.0.23 rr-client
+	peer 1.0.0.23 up
+	add peer 130 1.0.0.19
+	peer 1.0.0.19 rr-client
+	peer 1.0.0.19 up
+	add peer 130 1.0.0.21
+	peer 1.0.0.21 rr-client
+	peer 1.0.0.21 up
+	add peer 130 1.0.0.10
+	peer 1.0.0.10 rr-client
+	peer 1.0.0.10 up
+	add peer 130 1.0.0.14
+	peer 1.0.0.14 rr-client
+	peer 1.0.0.14 up
+	add peer 130 1.0.0.24
+	peer 1.0.0.24 rr-client
+	peer 1.0.0.24 up
+	add peer 130 1.0.0.17
+	peer 1.0.0.17 rr-client
+	peer 1.0.0.17 up
+	add peer 130 1.0.0.12
+	peer 1.0.0.12 rr-client
+	peer 1.0.0.12 up
+	add peer 130 1.0.0.18
+	peer 1.0.0.18 rr-client
+	peer 1.0.0.18 up
+	add peer 130 1.0.0.5
+	peer 1.0.0.5 rr-client
+	peer 1.0.0.5 up
+	add peer 130 1.0.0.11
+	peer 1.0.0.11 rr-client
+	peer 1.0.0.11 up
+	add peer 130 1.0.0.15
+	peer 1.0.0.15 rr-client
+	peer 1.0.0.15 up
+	add peer 130 1.0.0.6
+	peer 1.0.0.6 rr-client
+	peer 1.0.0.6 up
+	add peer 130 1.0.0.13
+	peer 1.0.0.13 rr-client
+	peer 1.0.0.13 up
+	add peer 130 1.0.0.20
+	peer 1.0.0.20 rr-client
+	peer 1.0.0.20 up
+	add peer 130 1.0.0.3
+	peer 1.0.0.3 rr-client
+	peer 1.0.0.3 up
+	add peer 130 1.0.0.8
+	peer 1.0.0.8 rr-client
+	peer 1.0.0.8 up
+	add peer 130 1.0.0.7
+	peer 1.0.0.7 rr-client
+	peer 1.0.0.7 up
+	add peer 130 1.0.0.9
+	peer 1.0.0.9 rr-client
+	peer 1.0.0.9 up
+	add peer 130 1.0.0.4
+	peer 1.0.0.4 rr-client
+	peer 1.0.0.4 up
+	exit
+bgp add router 130 1.0.0.23
+bgp router 1.0.0.23
+	add peer 130 1.0.0.26
+	peer 1.0.0.26 rr-client
+	peer 1.0.0.26 up
+	add peer 130 1.0.0.19
+	peer 1.0.0.19 rr-client
+	peer 1.0.0.19 up
+	add peer 130 1.0.0.21
+	peer 1.0.0.21 rr-client
+	peer 1.0.0.21 up
+	add peer 130 1.0.0.10
+	peer 1.0.0.10 rr-client
+	peer 1.0.0.10 up
+	add peer 130 1.0.0.14
+	peer 1.0.0.14 rr-client
+	peer 1.0.0.14 up
+	add peer 130 1.0.0.24
+	peer 1.0.0.24 rr-client
+	peer 1.0.0.24 up
+	add peer 130 1.0.0.17
+	peer 1.0.0.17 rr-client
+	peer 1.0.0.17 up
+	add peer 130 1.0.0.12
+	peer 1.0.0.12 rr-client
+	peer 1.0.0.12 up
+	add peer 130 1.0.0.18
+	peer 1.0.0.18 rr-client
+	peer 1.0.0.18 up
+	add peer 130 1.0.0.5
+	peer 1.0.0.5 rr-client
+	peer 1.0.0.5 up
+	add peer 130 1.0.0.11
+	peer 1.0.0.11 rr-client
+	peer 1.0.0.11 up
+	add peer 130 1.0.0.15
+	peer 1.0.0.15 rr-client
+	peer 1.0.0.15 up
+	add peer 130 1.0.0.6
+	peer 1.0.0.6 rr-client
+	peer 1.0.0.6 up
+	add peer 130 1.0.0.13
+	peer 1.0.0.13 rr-client
+	peer 1.0.0.13 up
+	add peer 130 1.0.0.22
+	peer 1.0.0.22 rr-client
+	peer 1.0.0.22 up
+	add peer 130 1.0.0.20
+	peer 1.0.0.20 rr-client
+	peer 1.0.0.20 up
+	add peer 130 1.0.0.3
+	peer 1.0.0.3 rr-client
+	peer 1.0.0.3 up
+	add peer 130 1.0.0.9
+	peer 1.0.0.9 rr-client
+	peer 1.0.0.9 up
+	add peer 130 1.0.0.16
+	peer 1.0.0.16 rr-client
+	peer 1.0.0.16 up
+	exit
+bgp add router 130 1.0.0.24
+bgp router 1.0.0.24
+	add peer 130 1.0.0.25
+	peer 1.0.0.25 rr-client
+	peer 1.0.0.25 up
+	add peer 130 1.0.0.23
+	peer 1.0.0.23 rr-client
+	peer 1.0.0.23 up
+	add peer 130 1.0.0.19
+	peer 1.0.0.19 rr-client
+	peer 1.0.0.19 up
+	add peer 130 1.0.0.21
+	peer 1.0.0.21 rr-client
+	peer 1.0.0.21 up
+	add peer 130 1.0.0.10
+	peer 1.0.0.10 rr-client
+	peer 1.0.0.10 up
+	add peer 130 1.0.0.14
+	peer 1.0.0.14 rr-client
+	peer 1.0.0.14 up
+	add peer 130 1.0.0.17
+	peer 1.0.0.17 rr-client
+	peer 1.0.0.17 up
+	add peer 130 1.0.0.12
+	peer 1.0.0.12 rr-client
+	peer 1.0.0.12 up
+	add peer 130 1.0.0.18
+	peer 1.0.0.18 rr-client
+	peer 1.0.0.18 up
+	add peer 130 1.0.0.5
+	peer 1.0.0.5 rr-client
+	peer 1.0.0.5 up
+	add peer 130 1.0.0.11
+	peer 1.0.0.11 rr-client
+	peer 1.0.0.11 up
+	add peer 130 1.0.0.15
+	peer 1.0.0.15 rr-client
+	peer 1.0.0.15 up
+	add peer 130 1.0.0.6
+	peer 1.0.0.6 rr-client
+	peer 1.0.0.6 up
+	add peer 130 1.0.0.13
+	peer 1.0.0.13 rr-client
+	peer 1.0.0.13 up
+	add peer 130 1.0.0.22
+	peer 1.0.0.22 rr-client
+	peer 1.0.0.22 up
+	add peer 130 1.0.0.20
+	peer 1.0.0.20 rr-client
+	peer 1.0.0.20 up
+	add peer 130 1.0.0.3
+	peer 1.0.0.3 rr-client
+	peer 1.0.0.3 up
+	add peer 130 1.0.0.9
+	peer 1.0.0.9 rr-client
+	peer 1.0.0.9 up
+	add peer 130 1.0.0.16
+	peer 1.0.0.16 rr-client
+	peer 1.0.0.16 up
+	exit
+bgp add router 130 1.0.0.25
+bgp router 1.0.0.25
+	add peer 130 1.0.0.24
+	peer 1.0.0.24 up
+	exit
+bgp add router 130 1.0.0.26
+bgp router 1.0.0.26
+	add peer 130 1.0.0.23
+	peer 1.0.0.23 up
+	exit
+bgp add router 130 1.0.0.27
+bgp router 1.0.0.27
+	add peer 130 1.0.0.22
+	peer 1.0.0.22 up
+	exit
+bgp add router 130 1.0.0.28
+bgp router 1.0.0.28
+	add peer 130 1.0.0.6
+	peer 1.0.0.6 up
+	exit
+
+# -------------------------------------------------------------------
+# BGP filters
+# -------------------------------------------------------------------
+
+
+# -------------------------------------------------------------------
+# Scenario to simulate
+# -------------------------------------------------------------------
+
+net add node 3.0.0.2
+net add domain 132 igp
+net node 3.0.0.2 domain 132
+net add link 192.168.0.10 3.0.0.2
+net node 192.168.0.10 route add --oif=3.0.0.2 --gw=3.0.0.2 3.0.0.2/32 0
+net node 3.0.0.2 route add --oif=192.168.0.10 --gw=192.168.0.10 192.168.0.10/32 0
+bgp router 192.168.0.10
+	add peer 132 3.0.0.2
+	peer 3.0.0.2 virtual
+	peer 3.0.0.2 next-hop-self
+	peer 3.0.0.2 up
+	exit
+
+bgp router 192.168.0.10 peer 3.0.0.2 recv "BGP4|1|A|10.0.8.195|2|3.0.0.0/8|132 3 3356 7018|IGP|3.0.0.2|0|0"
+bgp router 192.168.0.10 peer 3.0.0.2 recv "BGP4|2|W|10.0.8.195|2|3.0.0.0/8"
+bgp router 192.168.0.10 peer 3.0.0.2 recv "BGP4|3|W|10.0.8.195|2|3.0.0.0/8"
+
+net add node 3.0.0.3
+net add domain 133 igp
+net node 3.0.0.3 domain 133
+net add link 192.168.0.9 3.0.0.3
+net node 192.168.0.9 route add --oif=3.0.0.3 --gw=3.0.0.3 3.0.0.3/32 0
+net node 3.0.0.3 route add --oif=192.168.0.9 --gw=192.168.0.9 192.168.0.9/32 0
+bgp router 192.168.0.9
+	add peer 133 3.0.0.3
+	peer 3.0.0.3 virtual
+	peer 3.0.0.3 next-hop-self
+	peer 3.0.0.3 up
+	exit
+
+bgp router 192.168.0.9 peer 3.0.0.3 recv "BGP4|4|A|10.0.8.195|2|3.0.0.0/8|133 3 3356 7018|IGP|3.0.0.3|0|0"
+bgp router 192.168.0.9 peer 3.0.0.3 recv "BGP4|5|A|10.0.8.195|2|3.0.0.0/8|133 3 3356 7018|IGP|3.0.0.3|0|0"
+
+net add link 192.168.0.8 3.0.0.2
+net node 192.168.0.8 route add --oif=3.0.0.2 --gw=3.0.0.2 3.0.0.2/32 0
+net node 3.0.0.2 route add --oif=192.168.0.8 --gw=192.168.0.8 192.168.0.8/32 0
+bgp router 192.168.0.8
+	add peer 132 3.0.0.2
+	peer 3.0.0.2 virtual
+	peer 3.0.0.2 next-hop-self
+	peer 3.0.0.2 up
+	exit
+
+bgp router 192.168.0.8 peer 3.0.0.2 recv "BGP4|6|A|10.0.8.195|2|3.0.0.0/8|132 3 3356 7018|IGP|3.0.0.2|0|0"
+
+net add link 192.168.0.7 3.0.0.3
+net node 192.168.0.7 route add --oif=3.0.0.3 --gw=3.0.0.3 3.0.0.3/32 0
+net node 3.0.0.3 route add --oif=192.168.0.7 --gw=192.168.0.7 192.168.0.7/32 0
+bgp router 192.168.0.7
+	add peer 133 3.0.0.3
+	peer 3.0.0.3 virtual
+	peer 3.0.0.3 next-hop-self
+	peer 3.0.0.3 up
+	exit
+
+bgp router 192.168.0.7 peer 3.0.0.3 recv "BGP4|7|A|10.0.8.195|2|3.0.0.0/8|133 3 3356 7018|IGP|3.0.0.3|0|0"
+
+net add link 192.168.0.6 3.0.0.2
+net node 192.168.0.6 route add --oif=3.0.0.2 --gw=3.0.0.2 3.0.0.2/32 0
+net node 3.0.0.2 route add --oif=192.168.0.6 --gw=192.168.0.6 192.168.0.6/32 0
+bgp router 192.168.0.6
+	add peer 132 3.0.0.2
+	peer 3.0.0.2 virtual
+	peer 3.0.0.2 next-hop-self
+	peer 3.0.0.2 up
+	exit
+
+bgp router 192.168.0.6 peer 3.0.0.2 recv "BGP4|8|A|10.0.8.195|2|3.0.0.0/8|132 3 3356 7018|IGP|3.0.0.2|0|0"
+
+net add node 3.0.0.5
+net add domain 134 igp
+net node 3.0.0.5 domain 134
+net add link 192.168.0.5 3.0.0.5
+net node 192.168.0.5 route add --oif=3.0.0.5 --gw=3.0.0.5 3.0.0.5/32 0
+net node 3.0.0.5 route add --oif=192.168.0.5 --gw=192.168.0.5 192.168.0.5/32 0
+bgp router 192.168.0.5
+	add peer 134 3.0.0.5
+	peer 3.0.0.5 virtual
+	peer 3.0.0.5 next-hop-self
+	peer 3.0.0.5 up
+	exit
+
+bgp router 192.168.0.5 peer 3.0.0.5 recv "BGP4|9|A|10.0.8.195|2|3.0.0.0/8|134 3 3356 7018|IGP|3.0.0.5|0|0"
+
+# -------------------------------------------------------------------
+# Start simulation
+# -------------------------------------------------------------------
+sim run
+print "# -------------------------------------------------------------------\n"
+print "# 1.0.0.1's tables data\n"
+print "# -------------------------------------------------------------------\n\n"
+
+print "# 1.0.0.1's RT table data\n"
+net node 1.0.0.1 show rt *
+print "\n"
+
+print "# 1.0.0.1's RIB table data\n"
+bgp router 1.0.0.1 show rib *
+print "\n"
+
+print "# 1.0.0.1's RIB in table data with 1.0.0.2\n"
+bgp router 1.0.0.1 show adj-rib out 1.0.0.2 *
+print "\n"
+
+print "# 1.0.0.1's RIB out table data with 1.0.0.2\n"
+bgp router 1.0.0.1 show adj-rib out 1.0.0.2 *
+print "\n"
+
+
+print "# -------------------------------------------------------------------\n"
+print "# 1.0.0.2's tables data\n"
+print "# -------------------------------------------------------------------\n\n"
+
+print "# 1.0.0.2's RT table data\n"
+net node 1.0.0.2 show rt *
+print "\n"
+
+print "# 1.0.0.2's RIB table data\n"
+bgp router 1.0.0.2 show rib *
+print "\n"
+
+print "# 1.0.0.2's RIB in table data with 1.0.0.1\n"
+bgp router 1.0.0.2 show adj-rib out 1.0.0.1 *
+print "\n"
+
+print "# 1.0.0.2's RIB out table data with 1.0.0.1\n"
+bgp router 1.0.0.2 show adj-rib out 1.0.0.1 *
+print "\n"
+
+print "# 1.0.0.2's RIB in table data with 1.0.0.3\n"
+bgp router 1.0.0.2 show adj-rib out 1.0.0.3 *
+print "\n"
+
+print "# 1.0.0.2's RIB out table data with 1.0.0.3\n"
+bgp router 1.0.0.2 show adj-rib out 1.0.0.3 *
+print "\n"
+
+
+print "# -------------------------------------------------------------------\n"
+print "# 1.0.0.3's tables data\n"
+print "# -------------------------------------------------------------------\n\n"
+
+print "# 1.0.0.3's RT table data\n"
+net node 1.0.0.3 show rt *
+print "\n"
+
+print "# 1.0.0.3's RIB table data\n"
+bgp router 1.0.0.3 show rib *
+print "\n"
+
+print "# 1.0.0.3's RIB in table data with 1.0.0.2\n"
+bgp router 1.0.0.3 show adj-rib out 1.0.0.2 *
+print "\n"
+
+print "# 1.0.0.3's RIB out table data with 1.0.0.2\n"
+bgp router 1.0.0.3 show adj-rib out 1.0.0.2 *
+print "\n"
+
+print "# 1.0.0.3's RIB in table data with 1.0.0.23\n"
+bgp router 1.0.0.3 show adj-rib out 1.0.0.23 *
+print "\n"
+
+print "# 1.0.0.3's RIB out table data with 1.0.0.23\n"
+bgp router 1.0.0.3 show adj-rib out 1.0.0.23 *
+print "\n"
+
+print "# 1.0.0.3's RIB in table data with 1.0.0.19\n"
+bgp router 1.0.0.3 show adj-rib out 1.0.0.19 *
+print "\n"
+
+print "# 1.0.0.3's RIB out table data with 1.0.0.19\n"
+bgp router 1.0.0.3 show adj-rib out 1.0.0.19 *
+print "\n"
+
+print "# 1.0.0.3's RIB in table data with 1.0.0.21\n"
+bgp router 1.0.0.3 show adj-rib out 1.0.0.21 *
+print "\n"
+
+print "# 1.0.0.3's RIB out table data with 1.0.0.21\n"
+bgp router 1.0.0.3 show adj-rib out 1.0.0.21 *
+print "\n"
+
+print "# 1.0.0.3's RIB in table data with 1.0.0.9\n"
+bgp router 1.0.0.3 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.3's RIB out table data with 1.0.0.9\n"
+bgp router 1.0.0.3 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.3's RIB in table data with 1.0.0.14\n"
+bgp router 1.0.0.3 show adj-rib out 1.0.0.14 *
+print "\n"
+
+print "# 1.0.0.3's RIB out table data with 1.0.0.14\n"
+bgp router 1.0.0.3 show adj-rib out 1.0.0.14 *
+print "\n"
+
+print "# 1.0.0.3's RIB in table data with 1.0.0.24\n"
+bgp router 1.0.0.3 show adj-rib out 1.0.0.24 *
+print "\n"
+
+print "# 1.0.0.3's RIB out table data with 1.0.0.24\n"
+bgp router 1.0.0.3 show adj-rib out 1.0.0.24 *
+print "\n"
+
+print "# 1.0.0.3's RIB in table data with 1.0.0.17\n"
+bgp router 1.0.0.3 show adj-rib out 1.0.0.17 *
+print "\n"
+
+print "# 1.0.0.3's RIB out table data with 1.0.0.17\n"
+bgp router 1.0.0.3 show adj-rib out 1.0.0.17 *
+print "\n"
+
+print "# 1.0.0.3's RIB in table data with 1.0.0.12\n"
+bgp router 1.0.0.3 show adj-rib out 1.0.0.12 *
+print "\n"
+
+print "# 1.0.0.3's RIB out table data with 1.0.0.12\n"
+bgp router 1.0.0.3 show adj-rib out 1.0.0.12 *
+print "\n"
+
+print "# 1.0.0.3's RIB in table data with 1.0.0.18\n"
+bgp router 1.0.0.3 show adj-rib out 1.0.0.18 *
+print "\n"
+
+print "# 1.0.0.3's RIB out table data with 1.0.0.18\n"
+bgp router 1.0.0.3 show adj-rib out 1.0.0.18 *
+print "\n"
+
+print "# 1.0.0.3's RIB in table data with 1.0.0.4\n"
+bgp router 1.0.0.3 show adj-rib out 1.0.0.4 *
+print "\n"
+
+print "# 1.0.0.3's RIB out table data with 1.0.0.4\n"
+bgp router 1.0.0.3 show adj-rib out 1.0.0.4 *
+print "\n"
+
+print "# 1.0.0.3's RIB in table data with 1.0.0.11\n"
+bgp router 1.0.0.3 show adj-rib out 1.0.0.11 *
+print "\n"
+
+print "# 1.0.0.3's RIB out table data with 1.0.0.11\n"
+bgp router 1.0.0.3 show adj-rib out 1.0.0.11 *
+print "\n"
+
+print "# 1.0.0.3's RIB in table data with 1.0.0.15\n"
+bgp router 1.0.0.3 show adj-rib out 1.0.0.15 *
+print "\n"
+
+print "# 1.0.0.3's RIB out table data with 1.0.0.15\n"
+bgp router 1.0.0.3 show adj-rib out 1.0.0.15 *
+print "\n"
+
+print "# 1.0.0.3's RIB in table data with 1.0.0.4\n"
+bgp router 1.0.0.3 show adj-rib out 1.0.0.4 *
+print "\n"
+
+print "# 1.0.0.3's RIB out table data with 1.0.0.4\n"
+bgp router 1.0.0.3 show adj-rib out 1.0.0.4 *
+print "\n"
+
+print "# 1.0.0.3's RIB in table data with 1.0.0.13\n"
+bgp router 1.0.0.3 show adj-rib out 1.0.0.13 *
+print "\n"
+
+print "# 1.0.0.3's RIB out table data with 1.0.0.13\n"
+bgp router 1.0.0.3 show adj-rib out 1.0.0.13 *
+print "\n"
+
+print "# 1.0.0.3's RIB in table data with 1.0.0.22\n"
+bgp router 1.0.0.3 show adj-rib out 1.0.0.22 *
+print "\n"
+
+print "# 1.0.0.3's RIB out table data with 1.0.0.22\n"
+bgp router 1.0.0.3 show adj-rib out 1.0.0.22 *
+print "\n"
+
+print "# 1.0.0.3's RIB in table data with 1.0.0.4\n"
+bgp router 1.0.0.3 show adj-rib out 1.0.0.4 *
+print "\n"
+
+print "# 1.0.0.3's RIB out table data with 1.0.0.4\n"
+bgp router 1.0.0.3 show adj-rib out 1.0.0.4 *
+print "\n"
+
+print "# 1.0.0.3's RIB in table data with 1.0.0.4\n"
+bgp router 1.0.0.3 show adj-rib out 1.0.0.4 *
+print "\n"
+
+print "# 1.0.0.3's RIB out table data with 1.0.0.4\n"
+bgp router 1.0.0.3 show adj-rib out 1.0.0.4 *
+print "\n"
+
+print "# 1.0.0.3's RIB in table data with 1.0.0.9\n"
+bgp router 1.0.0.3 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.3's RIB out table data with 1.0.0.9\n"
+bgp router 1.0.0.3 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.3's RIB in table data with 1.0.0.8\n"
+bgp router 1.0.0.3 show adj-rib out 1.0.0.8 *
+print "\n"
+
+print "# 1.0.0.3's RIB out table data with 1.0.0.8\n"
+bgp router 1.0.0.3 show adj-rib out 1.0.0.8 *
+print "\n"
+
+print "# 1.0.0.3's RIB in table data with 1.0.0.7\n"
+bgp router 1.0.0.3 show adj-rib out 1.0.0.7 *
+print "\n"
+
+print "# 1.0.0.3's RIB out table data with 1.0.0.7\n"
+bgp router 1.0.0.3 show adj-rib out 1.0.0.7 *
+print "\n"
+
+print "# 1.0.0.3's RIB in table data with 1.0.0.4\n"
+bgp router 1.0.0.3 show adj-rib out 1.0.0.4 *
+print "\n"
+
+print "# 1.0.0.3's RIB out table data with 1.0.0.4\n"
+bgp router 1.0.0.3 show adj-rib out 1.0.0.4 *
+print "\n"
+
+
+print "# -------------------------------------------------------------------\n"
+print "# 1.0.0.4's tables data\n"
+print "# -------------------------------------------------------------------\n\n"
+
+print "# 1.0.0.4's RT table data\n"
+net node 1.0.0.4 show rt *
+print "\n"
+
+print "# 1.0.0.4's RIB table data\n"
+bgp router 1.0.0.4 show rib *
+print "\n"
+
+print "# 1.0.0.4's RIB in table data with 1.0.0.3\n"
+bgp router 1.0.0.4 show adj-rib out 1.0.0.3 *
+print "\n"
+
+print "# 1.0.0.4's RIB out table data with 1.0.0.3\n"
+bgp router 1.0.0.4 show adj-rib out 1.0.0.3 *
+print "\n"
+
+print "# 1.0.0.4's RIB in table data with 1.0.0.3\n"
+bgp router 1.0.0.4 show adj-rib out 1.0.0.3 *
+print "\n"
+
+print "# 1.0.0.4's RIB out table data with 1.0.0.3\n"
+bgp router 1.0.0.4 show adj-rib out 1.0.0.3 *
+print "\n"
+
+print "# 1.0.0.4's RIB in table data with 1.0.0.7\n"
+bgp router 1.0.0.4 show adj-rib out 1.0.0.7 *
+print "\n"
+
+print "# 1.0.0.4's RIB out table data with 1.0.0.7\n"
+bgp router 1.0.0.4 show adj-rib out 1.0.0.7 *
+print "\n"
+
+print "# 1.0.0.4's RIB in table data with 1.0.0.3\n"
+bgp router 1.0.0.4 show adj-rib out 1.0.0.3 *
+print "\n"
+
+print "# 1.0.0.4's RIB out table data with 1.0.0.3\n"
+bgp router 1.0.0.4 show adj-rib out 1.0.0.3 *
+print "\n"
+
+print "# 1.0.0.4's RIB in table data with 1.0.0.19\n"
+bgp router 1.0.0.4 show adj-rib out 1.0.0.19 *
+print "\n"
+
+print "# 1.0.0.4's RIB out table data with 1.0.0.19\n"
+bgp router 1.0.0.4 show adj-rib out 1.0.0.19 *
+print "\n"
+
+print "# 1.0.0.4's RIB in table data with 1.0.0.21\n"
+bgp router 1.0.0.4 show adj-rib out 1.0.0.21 *
+print "\n"
+
+print "# 1.0.0.4's RIB out table data with 1.0.0.21\n"
+bgp router 1.0.0.4 show adj-rib out 1.0.0.21 *
+print "\n"
+
+print "# 1.0.0.4's RIB in table data with 1.0.0.9\n"
+bgp router 1.0.0.4 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.4's RIB out table data with 1.0.0.9\n"
+bgp router 1.0.0.4 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.4's RIB in table data with 1.0.0.14\n"
+bgp router 1.0.0.4 show adj-rib out 1.0.0.14 *
+print "\n"
+
+print "# 1.0.0.4's RIB out table data with 1.0.0.14\n"
+bgp router 1.0.0.4 show adj-rib out 1.0.0.14 *
+print "\n"
+
+print "# 1.0.0.4's RIB in table data with 1.0.0.3\n"
+bgp router 1.0.0.4 show adj-rib out 1.0.0.3 *
+print "\n"
+
+print "# 1.0.0.4's RIB out table data with 1.0.0.3\n"
+bgp router 1.0.0.4 show adj-rib out 1.0.0.3 *
+print "\n"
+
+print "# 1.0.0.4's RIB in table data with 1.0.0.17\n"
+bgp router 1.0.0.4 show adj-rib out 1.0.0.17 *
+print "\n"
+
+print "# 1.0.0.4's RIB out table data with 1.0.0.17\n"
+bgp router 1.0.0.4 show adj-rib out 1.0.0.17 *
+print "\n"
+
+print "# 1.0.0.4's RIB in table data with 1.0.0.12\n"
+bgp router 1.0.0.4 show adj-rib out 1.0.0.12 *
+print "\n"
+
+print "# 1.0.0.4's RIB out table data with 1.0.0.12\n"
+bgp router 1.0.0.4 show adj-rib out 1.0.0.12 *
+print "\n"
+
+print "# 1.0.0.4's RIB in table data with 1.0.0.18\n"
+bgp router 1.0.0.4 show adj-rib out 1.0.0.18 *
+print "\n"
+
+print "# 1.0.0.4's RIB out table data with 1.0.0.18\n"
+bgp router 1.0.0.4 show adj-rib out 1.0.0.18 *
+print "\n"
+
+print "# 1.0.0.4's RIB in table data with 1.0.0.5\n"
+bgp router 1.0.0.4 show adj-rib out 1.0.0.5 *
+print "\n"
+
+print "# 1.0.0.4's RIB out table data with 1.0.0.5\n"
+bgp router 1.0.0.4 show adj-rib out 1.0.0.5 *
+print "\n"
+
+print "# 1.0.0.4's RIB in table data with 1.0.0.11\n"
+bgp router 1.0.0.4 show adj-rib out 1.0.0.11 *
+print "\n"
+
+print "# 1.0.0.4's RIB out table data with 1.0.0.11\n"
+bgp router 1.0.0.4 show adj-rib out 1.0.0.11 *
+print "\n"
+
+print "# 1.0.0.4's RIB in table data with 1.0.0.15\n"
+bgp router 1.0.0.4 show adj-rib out 1.0.0.15 *
+print "\n"
+
+print "# 1.0.0.4's RIB out table data with 1.0.0.15\n"
+bgp router 1.0.0.4 show adj-rib out 1.0.0.15 *
+print "\n"
+
+print "# 1.0.0.4's RIB in table data with 1.0.0.6\n"
+bgp router 1.0.0.4 show adj-rib out 1.0.0.6 *
+print "\n"
+
+print "# 1.0.0.4's RIB out table data with 1.0.0.6\n"
+bgp router 1.0.0.4 show adj-rib out 1.0.0.6 *
+print "\n"
+
+print "# 1.0.0.4's RIB in table data with 1.0.0.13\n"
+bgp router 1.0.0.4 show adj-rib out 1.0.0.13 *
+print "\n"
+
+print "# 1.0.0.4's RIB out table data with 1.0.0.13\n"
+bgp router 1.0.0.4 show adj-rib out 1.0.0.13 *
+print "\n"
+
+print "# 1.0.0.4's RIB in table data with 1.0.0.22\n"
+bgp router 1.0.0.4 show adj-rib out 1.0.0.22 *
+print "\n"
+
+print "# 1.0.0.4's RIB out table data with 1.0.0.22\n"
+bgp router 1.0.0.4 show adj-rib out 1.0.0.22 *
+print "\n"
+
+print "# 1.0.0.4's RIB in table data with 1.0.0.3\n"
+bgp router 1.0.0.4 show adj-rib out 1.0.0.3 *
+print "\n"
+
+print "# 1.0.0.4's RIB out table data with 1.0.0.3\n"
+bgp router 1.0.0.4 show adj-rib out 1.0.0.3 *
+print "\n"
+
+print "# 1.0.0.4's RIB in table data with 1.0.0.9\n"
+bgp router 1.0.0.4 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.4's RIB out table data with 1.0.0.9\n"
+bgp router 1.0.0.4 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.4's RIB in table data with 1.0.0.7\n"
+bgp router 1.0.0.4 show adj-rib out 1.0.0.7 *
+print "\n"
+
+print "# 1.0.0.4's RIB out table data with 1.0.0.7\n"
+bgp router 1.0.0.4 show adj-rib out 1.0.0.7 *
+print "\n"
+
+print "# 1.0.0.4's RIB in table data with 1.0.0.8\n"
+bgp router 1.0.0.4 show adj-rib out 1.0.0.8 *
+print "\n"
+
+print "# 1.0.0.4's RIB out table data with 1.0.0.8\n"
+bgp router 1.0.0.4 show adj-rib out 1.0.0.8 *
+print "\n"
+
+
+print "# -------------------------------------------------------------------\n"
+print "# 1.0.0.5's tables data\n"
+print "# -------------------------------------------------------------------\n\n"
+
+print "# 1.0.0.5's RT table data\n"
+net node 1.0.0.5 show rt *
+print "\n"
+
+print "# 1.0.0.5's RIB table data\n"
+bgp router 1.0.0.5 show rib *
+print "\n"
+
+print "# 1.0.0.5's RIB in table data with 1.0.0.23\n"
+bgp router 1.0.0.5 show adj-rib out 1.0.0.23 *
+print "\n"
+
+print "# 1.0.0.5's RIB out table data with 1.0.0.23\n"
+bgp router 1.0.0.5 show adj-rib out 1.0.0.23 *
+print "\n"
+
+print "# 1.0.0.5's RIB in table data with 1.0.0.19\n"
+bgp router 1.0.0.5 show adj-rib out 1.0.0.19 *
+print "\n"
+
+print "# 1.0.0.5's RIB out table data with 1.0.0.19\n"
+bgp router 1.0.0.5 show adj-rib out 1.0.0.19 *
+print "\n"
+
+print "# 1.0.0.5's RIB in table data with 1.0.0.21\n"
+bgp router 1.0.0.5 show adj-rib out 1.0.0.21 *
+print "\n"
+
+print "# 1.0.0.5's RIB out table data with 1.0.0.21\n"
+bgp router 1.0.0.5 show adj-rib out 1.0.0.21 *
+print "\n"
+
+print "# 1.0.0.5's RIB in table data with 1.0.0.10\n"
+bgp router 1.0.0.5 show adj-rib out 1.0.0.10 *
+print "\n"
+
+print "# 1.0.0.5's RIB out table data with 1.0.0.10\n"
+bgp router 1.0.0.5 show adj-rib out 1.0.0.10 *
+print "\n"
+
+print "# 1.0.0.5's RIB in table data with 1.0.0.14\n"
+bgp router 1.0.0.5 show adj-rib out 1.0.0.14 *
+print "\n"
+
+print "# 1.0.0.5's RIB out table data with 1.0.0.14\n"
+bgp router 1.0.0.5 show adj-rib out 1.0.0.14 *
+print "\n"
+
+print "# 1.0.0.5's RIB in table data with 1.0.0.24\n"
+bgp router 1.0.0.5 show adj-rib out 1.0.0.24 *
+print "\n"
+
+print "# 1.0.0.5's RIB out table data with 1.0.0.24\n"
+bgp router 1.0.0.5 show adj-rib out 1.0.0.24 *
+print "\n"
+
+print "# 1.0.0.5's RIB in table data with 1.0.0.17\n"
+bgp router 1.0.0.5 show adj-rib out 1.0.0.17 *
+print "\n"
+
+print "# 1.0.0.5's RIB out table data with 1.0.0.17\n"
+bgp router 1.0.0.5 show adj-rib out 1.0.0.17 *
+print "\n"
+
+print "# 1.0.0.5's RIB in table data with 1.0.0.12\n"
+bgp router 1.0.0.5 show adj-rib out 1.0.0.12 *
+print "\n"
+
+print "# 1.0.0.5's RIB out table data with 1.0.0.12\n"
+bgp router 1.0.0.5 show adj-rib out 1.0.0.12 *
+print "\n"
+
+print "# 1.0.0.5's RIB in table data with 1.0.0.18\n"
+bgp router 1.0.0.5 show adj-rib out 1.0.0.18 *
+print "\n"
+
+print "# 1.0.0.5's RIB out table data with 1.0.0.18\n"
+bgp router 1.0.0.5 show adj-rib out 1.0.0.18 *
+print "\n"
+
+print "# 1.0.0.5's RIB in table data with 1.0.0.11\n"
+bgp router 1.0.0.5 show adj-rib out 1.0.0.11 *
+print "\n"
+
+print "# 1.0.0.5's RIB out table data with 1.0.0.11\n"
+bgp router 1.0.0.5 show adj-rib out 1.0.0.11 *
+print "\n"
+
+print "# 1.0.0.5's RIB in table data with 1.0.0.15\n"
+bgp router 1.0.0.5 show adj-rib out 1.0.0.15 *
+print "\n"
+
+print "# 1.0.0.5's RIB out table data with 1.0.0.15\n"
+bgp router 1.0.0.5 show adj-rib out 1.0.0.15 *
+print "\n"
+
+print "# 1.0.0.5's RIB in table data with 1.0.0.6\n"
+bgp router 1.0.0.5 show adj-rib out 1.0.0.6 *
+print "\n"
+
+print "# 1.0.0.5's RIB out table data with 1.0.0.6\n"
+bgp router 1.0.0.5 show adj-rib out 1.0.0.6 *
+print "\n"
+
+print "# 1.0.0.5's RIB in table data with 1.0.0.13\n"
+bgp router 1.0.0.5 show adj-rib out 1.0.0.13 *
+print "\n"
+
+print "# 1.0.0.5's RIB out table data with 1.0.0.13\n"
+bgp router 1.0.0.5 show adj-rib out 1.0.0.13 *
+print "\n"
+
+print "# 1.0.0.5's RIB in table data with 1.0.0.22\n"
+bgp router 1.0.0.5 show adj-rib out 1.0.0.22 *
+print "\n"
+
+print "# 1.0.0.5's RIB out table data with 1.0.0.22\n"
+bgp router 1.0.0.5 show adj-rib out 1.0.0.22 *
+print "\n"
+
+print "# 1.0.0.5's RIB in table data with 1.0.0.20\n"
+bgp router 1.0.0.5 show adj-rib out 1.0.0.20 *
+print "\n"
+
+print "# 1.0.0.5's RIB out table data with 1.0.0.20\n"
+bgp router 1.0.0.5 show adj-rib out 1.0.0.20 *
+print "\n"
+
+print "# 1.0.0.5's RIB in table data with 1.0.0.7\n"
+bgp router 1.0.0.5 show adj-rib out 1.0.0.7 *
+print "\n"
+
+print "# 1.0.0.5's RIB out table data with 1.0.0.7\n"
+bgp router 1.0.0.5 show adj-rib out 1.0.0.7 *
+print "\n"
+
+print "# 1.0.0.5's RIB in table data with 1.0.0.9\n"
+bgp router 1.0.0.5 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.5's RIB out table data with 1.0.0.9\n"
+bgp router 1.0.0.5 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.5's RIB in table data with 1.0.0.16\n"
+bgp router 1.0.0.5 show adj-rib out 1.0.0.16 *
+print "\n"
+
+print "# 1.0.0.5's RIB out table data with 1.0.0.16\n"
+bgp router 1.0.0.5 show adj-rib out 1.0.0.16 *
+print "\n"
+
+print "# 1.0.0.5's RIB in table data with 1.0.0.4\n"
+bgp router 1.0.0.5 show adj-rib out 1.0.0.4 *
+print "\n"
+
+print "# 1.0.0.5's RIB out table data with 1.0.0.4\n"
+bgp router 1.0.0.5 show adj-rib out 1.0.0.4 *
+print "\n"
+
+
+print "# -------------------------------------------------------------------\n"
+print "# 1.0.0.6's tables data\n"
+print "# -------------------------------------------------------------------\n\n"
+
+print "# 1.0.0.6's RT table data\n"
+net node 1.0.0.6 show rt *
+print "\n"
+
+print "# 1.0.0.6's RIB table data\n"
+bgp router 1.0.0.6 show rib *
+print "\n"
+
+print "# 1.0.0.6's RIB in table data with 1.0.0.28\n"
+bgp router 1.0.0.6 show adj-rib out 1.0.0.28 *
+print "\n"
+
+print "# 1.0.0.6's RIB out table data with 1.0.0.28\n"
+bgp router 1.0.0.6 show adj-rib out 1.0.0.28 *
+print "\n"
+
+print "# 1.0.0.6's RIB in table data with 1.0.0.23\n"
+bgp router 1.0.0.6 show adj-rib out 1.0.0.23 *
+print "\n"
+
+print "# 1.0.0.6's RIB out table data with 1.0.0.23\n"
+bgp router 1.0.0.6 show adj-rib out 1.0.0.23 *
+print "\n"
+
+print "# 1.0.0.6's RIB in table data with 1.0.0.19\n"
+bgp router 1.0.0.6 show adj-rib out 1.0.0.19 *
+print "\n"
+
+print "# 1.0.0.6's RIB out table data with 1.0.0.19\n"
+bgp router 1.0.0.6 show adj-rib out 1.0.0.19 *
+print "\n"
+
+print "# 1.0.0.6's RIB in table data with 1.0.0.21\n"
+bgp router 1.0.0.6 show adj-rib out 1.0.0.21 *
+print "\n"
+
+print "# 1.0.0.6's RIB out table data with 1.0.0.21\n"
+bgp router 1.0.0.6 show adj-rib out 1.0.0.21 *
+print "\n"
+
+print "# 1.0.0.6's RIB in table data with 1.0.0.10\n"
+bgp router 1.0.0.6 show adj-rib out 1.0.0.10 *
+print "\n"
+
+print "# 1.0.0.6's RIB out table data with 1.0.0.10\n"
+bgp router 1.0.0.6 show adj-rib out 1.0.0.10 *
+print "\n"
+
+print "# 1.0.0.6's RIB in table data with 1.0.0.14\n"
+bgp router 1.0.0.6 show adj-rib out 1.0.0.14 *
+print "\n"
+
+print "# 1.0.0.6's RIB out table data with 1.0.0.14\n"
+bgp router 1.0.0.6 show adj-rib out 1.0.0.14 *
+print "\n"
+
+print "# 1.0.0.6's RIB in table data with 1.0.0.24\n"
+bgp router 1.0.0.6 show adj-rib out 1.0.0.24 *
+print "\n"
+
+print "# 1.0.0.6's RIB out table data with 1.0.0.24\n"
+bgp router 1.0.0.6 show adj-rib out 1.0.0.24 *
+print "\n"
+
+print "# 1.0.0.6's RIB in table data with 1.0.0.17\n"
+bgp router 1.0.0.6 show adj-rib out 1.0.0.17 *
+print "\n"
+
+print "# 1.0.0.6's RIB out table data with 1.0.0.17\n"
+bgp router 1.0.0.6 show adj-rib out 1.0.0.17 *
+print "\n"
+
+print "# 1.0.0.6's RIB in table data with 1.0.0.12\n"
+bgp router 1.0.0.6 show adj-rib out 1.0.0.12 *
+print "\n"
+
+print "# 1.0.0.6's RIB out table data with 1.0.0.12\n"
+bgp router 1.0.0.6 show adj-rib out 1.0.0.12 *
+print "\n"
+
+print "# 1.0.0.6's RIB in table data with 1.0.0.18\n"
+bgp router 1.0.0.6 show adj-rib out 1.0.0.18 *
+print "\n"
+
+print "# 1.0.0.6's RIB out table data with 1.0.0.18\n"
+bgp router 1.0.0.6 show adj-rib out 1.0.0.18 *
+print "\n"
+
+print "# 1.0.0.6's RIB in table data with 1.0.0.5\n"
+bgp router 1.0.0.6 show adj-rib out 1.0.0.5 *
+print "\n"
+
+print "# 1.0.0.6's RIB out table data with 1.0.0.5\n"
+bgp router 1.0.0.6 show adj-rib out 1.0.0.5 *
+print "\n"
+
+print "# 1.0.0.6's RIB in table data with 1.0.0.11\n"
+bgp router 1.0.0.6 show adj-rib out 1.0.0.11 *
+print "\n"
+
+print "# 1.0.0.6's RIB out table data with 1.0.0.11\n"
+bgp router 1.0.0.6 show adj-rib out 1.0.0.11 *
+print "\n"
+
+print "# 1.0.0.6's RIB in table data with 1.0.0.15\n"
+bgp router 1.0.0.6 show adj-rib out 1.0.0.15 *
+print "\n"
+
+print "# 1.0.0.6's RIB out table data with 1.0.0.15\n"
+bgp router 1.0.0.6 show adj-rib out 1.0.0.15 *
+print "\n"
+
+print "# 1.0.0.6's RIB in table data with 1.0.0.13\n"
+bgp router 1.0.0.6 show adj-rib out 1.0.0.13 *
+print "\n"
+
+print "# 1.0.0.6's RIB out table data with 1.0.0.13\n"
+bgp router 1.0.0.6 show adj-rib out 1.0.0.13 *
+print "\n"
+
+print "# 1.0.0.6's RIB in table data with 1.0.0.22\n"
+bgp router 1.0.0.6 show adj-rib out 1.0.0.22 *
+print "\n"
+
+print "# 1.0.0.6's RIB out table data with 1.0.0.22\n"
+bgp router 1.0.0.6 show adj-rib out 1.0.0.22 *
+print "\n"
+
+print "# 1.0.0.6's RIB in table data with 1.0.0.20\n"
+bgp router 1.0.0.6 show adj-rib out 1.0.0.20 *
+print "\n"
+
+print "# 1.0.0.6's RIB out table data with 1.0.0.20\n"
+bgp router 1.0.0.6 show adj-rib out 1.0.0.20 *
+print "\n"
+
+print "# 1.0.0.6's RIB in table data with 1.0.0.8\n"
+bgp router 1.0.0.6 show adj-rib out 1.0.0.8 *
+print "\n"
+
+print "# 1.0.0.6's RIB out table data with 1.0.0.8\n"
+bgp router 1.0.0.6 show adj-rib out 1.0.0.8 *
+print "\n"
+
+print "# 1.0.0.6's RIB in table data with 1.0.0.7\n"
+bgp router 1.0.0.6 show adj-rib out 1.0.0.7 *
+print "\n"
+
+print "# 1.0.0.6's RIB out table data with 1.0.0.7\n"
+bgp router 1.0.0.6 show adj-rib out 1.0.0.7 *
+print "\n"
+
+print "# 1.0.0.6's RIB in table data with 1.0.0.9\n"
+bgp router 1.0.0.6 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.6's RIB out table data with 1.0.0.9\n"
+bgp router 1.0.0.6 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.6's RIB in table data with 1.0.0.16\n"
+bgp router 1.0.0.6 show adj-rib out 1.0.0.16 *
+print "\n"
+
+print "# 1.0.0.6's RIB out table data with 1.0.0.16\n"
+bgp router 1.0.0.6 show adj-rib out 1.0.0.16 *
+print "\n"
+
+print "# 1.0.0.6's RIB in table data with 1.0.0.4\n"
+bgp router 1.0.0.6 show adj-rib out 1.0.0.4 *
+print "\n"
+
+print "# 1.0.0.6's RIB out table data with 1.0.0.4\n"
+bgp router 1.0.0.6 show adj-rib out 1.0.0.4 *
+print "\n"
+
+
+print "# -------------------------------------------------------------------\n"
+print "# 1.0.0.7's tables data\n"
+print "# -------------------------------------------------------------------\n\n"
+
+print "# 1.0.0.7's RT table data\n"
+net node 1.0.0.7 show rt *
+print "\n"
+
+print "# 1.0.0.7's RIB table data\n"
+bgp router 1.0.0.7 show rib *
+print "\n"
+
+print "# 1.0.0.7's RIB in table data with 1.0.0.8\n"
+bgp router 1.0.0.7 show adj-rib out 1.0.0.8 *
+print "\n"
+
+print "# 1.0.0.7's RIB out table data with 1.0.0.8\n"
+bgp router 1.0.0.7 show adj-rib out 1.0.0.8 *
+print "\n"
+
+print "# 1.0.0.7's RIB in table data with 1.0.0.9\n"
+bgp router 1.0.0.7 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.7's RIB out table data with 1.0.0.9\n"
+bgp router 1.0.0.7 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.7's RIB in table data with 1.0.0.19\n"
+bgp router 1.0.0.7 show adj-rib out 1.0.0.19 *
+print "\n"
+
+print "# 1.0.0.7's RIB out table data with 1.0.0.19\n"
+bgp router 1.0.0.7 show adj-rib out 1.0.0.19 *
+print "\n"
+
+print "# 1.0.0.7's RIB in table data with 1.0.0.21\n"
+bgp router 1.0.0.7 show adj-rib out 1.0.0.21 *
+print "\n"
+
+print "# 1.0.0.7's RIB out table data with 1.0.0.21\n"
+bgp router 1.0.0.7 show adj-rib out 1.0.0.21 *
+print "\n"
+
+print "# 1.0.0.7's RIB in table data with 1.0.0.9\n"
+bgp router 1.0.0.7 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.7's RIB out table data with 1.0.0.9\n"
+bgp router 1.0.0.7 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.7's RIB in table data with 1.0.0.14\n"
+bgp router 1.0.0.7 show adj-rib out 1.0.0.14 *
+print "\n"
+
+print "# 1.0.0.7's RIB out table data with 1.0.0.14\n"
+bgp router 1.0.0.7 show adj-rib out 1.0.0.14 *
+print "\n"
+
+print "# 1.0.0.7's RIB in table data with 1.0.0.4\n"
+bgp router 1.0.0.7 show adj-rib out 1.0.0.4 *
+print "\n"
+
+print "# 1.0.0.7's RIB out table data with 1.0.0.4\n"
+bgp router 1.0.0.7 show adj-rib out 1.0.0.4 *
+print "\n"
+
+print "# 1.0.0.7's RIB in table data with 1.0.0.17\n"
+bgp router 1.0.0.7 show adj-rib out 1.0.0.17 *
+print "\n"
+
+print "# 1.0.0.7's RIB out table data with 1.0.0.17\n"
+bgp router 1.0.0.7 show adj-rib out 1.0.0.17 *
+print "\n"
+
+print "# 1.0.0.7's RIB in table data with 1.0.0.12\n"
+bgp router 1.0.0.7 show adj-rib out 1.0.0.12 *
+print "\n"
+
+print "# 1.0.0.7's RIB out table data with 1.0.0.12\n"
+bgp router 1.0.0.7 show adj-rib out 1.0.0.12 *
+print "\n"
+
+print "# 1.0.0.7's RIB in table data with 1.0.0.18\n"
+bgp router 1.0.0.7 show adj-rib out 1.0.0.18 *
+print "\n"
+
+print "# 1.0.0.7's RIB out table data with 1.0.0.18\n"
+bgp router 1.0.0.7 show adj-rib out 1.0.0.18 *
+print "\n"
+
+print "# 1.0.0.7's RIB in table data with 1.0.0.5\n"
+bgp router 1.0.0.7 show adj-rib out 1.0.0.5 *
+print "\n"
+
+print "# 1.0.0.7's RIB out table data with 1.0.0.5\n"
+bgp router 1.0.0.7 show adj-rib out 1.0.0.5 *
+print "\n"
+
+print "# 1.0.0.7's RIB in table data with 1.0.0.11\n"
+bgp router 1.0.0.7 show adj-rib out 1.0.0.11 *
+print "\n"
+
+print "# 1.0.0.7's RIB out table data with 1.0.0.11\n"
+bgp router 1.0.0.7 show adj-rib out 1.0.0.11 *
+print "\n"
+
+print "# 1.0.0.7's RIB in table data with 1.0.0.15\n"
+bgp router 1.0.0.7 show adj-rib out 1.0.0.15 *
+print "\n"
+
+print "# 1.0.0.7's RIB out table data with 1.0.0.15\n"
+bgp router 1.0.0.7 show adj-rib out 1.0.0.15 *
+print "\n"
+
+print "# 1.0.0.7's RIB in table data with 1.0.0.6\n"
+bgp router 1.0.0.7 show adj-rib out 1.0.0.6 *
+print "\n"
+
+print "# 1.0.0.7's RIB out table data with 1.0.0.6\n"
+bgp router 1.0.0.7 show adj-rib out 1.0.0.6 *
+print "\n"
+
+print "# 1.0.0.7's RIB in table data with 1.0.0.13\n"
+bgp router 1.0.0.7 show adj-rib out 1.0.0.13 *
+print "\n"
+
+print "# 1.0.0.7's RIB out table data with 1.0.0.13\n"
+bgp router 1.0.0.7 show adj-rib out 1.0.0.13 *
+print "\n"
+
+print "# 1.0.0.7's RIB in table data with 1.0.0.22\n"
+bgp router 1.0.0.7 show adj-rib out 1.0.0.22 *
+print "\n"
+
+print "# 1.0.0.7's RIB out table data with 1.0.0.22\n"
+bgp router 1.0.0.7 show adj-rib out 1.0.0.22 *
+print "\n"
+
+print "# 1.0.0.7's RIB in table data with 1.0.0.3\n"
+bgp router 1.0.0.7 show adj-rib out 1.0.0.3 *
+print "\n"
+
+print "# 1.0.0.7's RIB out table data with 1.0.0.3\n"
+bgp router 1.0.0.7 show adj-rib out 1.0.0.3 *
+print "\n"
+
+print "# 1.0.0.7's RIB in table data with 1.0.0.9\n"
+bgp router 1.0.0.7 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.7's RIB out table data with 1.0.0.9\n"
+bgp router 1.0.0.7 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.7's RIB in table data with 1.0.0.8\n"
+bgp router 1.0.0.7 show adj-rib out 1.0.0.8 *
+print "\n"
+
+print "# 1.0.0.7's RIB out table data with 1.0.0.8\n"
+bgp router 1.0.0.7 show adj-rib out 1.0.0.8 *
+print "\n"
+
+print "# 1.0.0.7's RIB in table data with 1.0.0.4\n"
+bgp router 1.0.0.7 show adj-rib out 1.0.0.4 *
+print "\n"
+
+print "# 1.0.0.7's RIB out table data with 1.0.0.4\n"
+bgp router 1.0.0.7 show adj-rib out 1.0.0.4 *
+print "\n"
+
+
+print "# -------------------------------------------------------------------\n"
+print "# 1.0.0.8's tables data\n"
+print "# -------------------------------------------------------------------\n\n"
+
+print "# 1.0.0.8's RT table data\n"
+net node 1.0.0.8 show rt *
+print "\n"
+
+print "# 1.0.0.8's RIB table data\n"
+bgp router 1.0.0.8 show rib *
+print "\n"
+
+print "# 1.0.0.8's RIB in table data with 1.0.0.9\n"
+bgp router 1.0.0.8 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.8's RIB out table data with 1.0.0.9\n"
+bgp router 1.0.0.8 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.8's RIB in table data with 1.0.0.19\n"
+bgp router 1.0.0.8 show adj-rib out 1.0.0.19 *
+print "\n"
+
+print "# 1.0.0.8's RIB out table data with 1.0.0.19\n"
+bgp router 1.0.0.8 show adj-rib out 1.0.0.19 *
+print "\n"
+
+print "# 1.0.0.8's RIB in table data with 1.0.0.21\n"
+bgp router 1.0.0.8 show adj-rib out 1.0.0.21 *
+print "\n"
+
+print "# 1.0.0.8's RIB out table data with 1.0.0.21\n"
+bgp router 1.0.0.8 show adj-rib out 1.0.0.21 *
+print "\n"
+
+print "# 1.0.0.8's RIB in table data with 1.0.0.9\n"
+bgp router 1.0.0.8 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.8's RIB out table data with 1.0.0.9\n"
+bgp router 1.0.0.8 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.8's RIB in table data with 1.0.0.14\n"
+bgp router 1.0.0.8 show adj-rib out 1.0.0.14 *
+print "\n"
+
+print "# 1.0.0.8's RIB out table data with 1.0.0.14\n"
+bgp router 1.0.0.8 show adj-rib out 1.0.0.14 *
+print "\n"
+
+print "# 1.0.0.8's RIB in table data with 1.0.0.9\n"
+bgp router 1.0.0.8 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.8's RIB out table data with 1.0.0.9\n"
+bgp router 1.0.0.8 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.8's RIB in table data with 1.0.0.17\n"
+bgp router 1.0.0.8 show adj-rib out 1.0.0.17 *
+print "\n"
+
+print "# 1.0.0.8's RIB out table data with 1.0.0.17\n"
+bgp router 1.0.0.8 show adj-rib out 1.0.0.17 *
+print "\n"
+
+print "# 1.0.0.8's RIB in table data with 1.0.0.12\n"
+bgp router 1.0.0.8 show adj-rib out 1.0.0.12 *
+print "\n"
+
+print "# 1.0.0.8's RIB out table data with 1.0.0.12\n"
+bgp router 1.0.0.8 show adj-rib out 1.0.0.12 *
+print "\n"
+
+print "# 1.0.0.8's RIB in table data with 1.0.0.18\n"
+bgp router 1.0.0.8 show adj-rib out 1.0.0.18 *
+print "\n"
+
+print "# 1.0.0.8's RIB out table data with 1.0.0.18\n"
+bgp router 1.0.0.8 show adj-rib out 1.0.0.18 *
+print "\n"
+
+print "# 1.0.0.8's RIB in table data with 1.0.0.7\n"
+bgp router 1.0.0.8 show adj-rib out 1.0.0.7 *
+print "\n"
+
+print "# 1.0.0.8's RIB out table data with 1.0.0.7\n"
+bgp router 1.0.0.8 show adj-rib out 1.0.0.7 *
+print "\n"
+
+print "# 1.0.0.8's RIB in table data with 1.0.0.11\n"
+bgp router 1.0.0.8 show adj-rib out 1.0.0.11 *
+print "\n"
+
+print "# 1.0.0.8's RIB out table data with 1.0.0.11\n"
+bgp router 1.0.0.8 show adj-rib out 1.0.0.11 *
+print "\n"
+
+print "# 1.0.0.8's RIB in table data with 1.0.0.15\n"
+bgp router 1.0.0.8 show adj-rib out 1.0.0.15 *
+print "\n"
+
+print "# 1.0.0.8's RIB out table data with 1.0.0.15\n"
+bgp router 1.0.0.8 show adj-rib out 1.0.0.15 *
+print "\n"
+
+print "# 1.0.0.8's RIB in table data with 1.0.0.6\n"
+bgp router 1.0.0.8 show adj-rib out 1.0.0.6 *
+print "\n"
+
+print "# 1.0.0.8's RIB out table data with 1.0.0.6\n"
+bgp router 1.0.0.8 show adj-rib out 1.0.0.6 *
+print "\n"
+
+print "# 1.0.0.8's RIB in table data with 1.0.0.13\n"
+bgp router 1.0.0.8 show adj-rib out 1.0.0.13 *
+print "\n"
+
+print "# 1.0.0.8's RIB out table data with 1.0.0.13\n"
+bgp router 1.0.0.8 show adj-rib out 1.0.0.13 *
+print "\n"
+
+print "# 1.0.0.8's RIB in table data with 1.0.0.22\n"
+bgp router 1.0.0.8 show adj-rib out 1.0.0.22 *
+print "\n"
+
+print "# 1.0.0.8's RIB out table data with 1.0.0.22\n"
+bgp router 1.0.0.8 show adj-rib out 1.0.0.22 *
+print "\n"
+
+print "# 1.0.0.8's RIB in table data with 1.0.0.3\n"
+bgp router 1.0.0.8 show adj-rib out 1.0.0.3 *
+print "\n"
+
+print "# 1.0.0.8's RIB out table data with 1.0.0.3\n"
+bgp router 1.0.0.8 show adj-rib out 1.0.0.3 *
+print "\n"
+
+print "# 1.0.0.8's RIB in table data with 1.0.0.9\n"
+bgp router 1.0.0.8 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.8's RIB out table data with 1.0.0.9\n"
+bgp router 1.0.0.8 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.8's RIB in table data with 1.0.0.7\n"
+bgp router 1.0.0.8 show adj-rib out 1.0.0.7 *
+print "\n"
+
+print "# 1.0.0.8's RIB out table data with 1.0.0.7\n"
+bgp router 1.0.0.8 show adj-rib out 1.0.0.7 *
+print "\n"
+
+print "# 1.0.0.8's RIB in table data with 1.0.0.4\n"
+bgp router 1.0.0.8 show adj-rib out 1.0.0.4 *
+print "\n"
+
+print "# 1.0.0.8's RIB out table data with 1.0.0.4\n"
+bgp router 1.0.0.8 show adj-rib out 1.0.0.4 *
+print "\n"
+
+
+print "# -------------------------------------------------------------------\n"
+print "# 1.0.0.9's tables data\n"
+print "# -------------------------------------------------------------------\n\n"
+
+print "# 1.0.0.9's RT table data\n"
+net node 1.0.0.9 show rt *
+print "\n"
+
+print "# 1.0.0.9's RIB table data\n"
+bgp router 1.0.0.9 show rib *
+print "\n"
+
+print "# 1.0.0.9's RIB in table data with 1.0.0.3\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.3 *
+print "\n"
+
+print "# 1.0.0.9's RIB out table data with 1.0.0.3\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.3 *
+print "\n"
+
+print "# 1.0.0.9's RIB in table data with 1.0.0.8\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.8 *
+print "\n"
+
+print "# 1.0.0.9's RIB out table data with 1.0.0.8\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.8 *
+print "\n"
+
+print "# 1.0.0.9's RIB in table data with 1.0.0.8\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.8 *
+print "\n"
+
+print "# 1.0.0.9's RIB out table data with 1.0.0.8\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.8 *
+print "\n"
+
+print "# 1.0.0.9's RIB in table data with 1.0.0.8\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.8 *
+print "\n"
+
+print "# 1.0.0.9's RIB out table data with 1.0.0.8\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.8 *
+print "\n"
+
+print "# 1.0.0.9's RIB in table data with 1.0.0.7\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.7 *
+print "\n"
+
+print "# 1.0.0.9's RIB out table data with 1.0.0.7\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.7 *
+print "\n"
+
+print "# 1.0.0.9's RIB in table data with 1.0.0.7\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.7 *
+print "\n"
+
+print "# 1.0.0.9's RIB out table data with 1.0.0.7\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.7 *
+print "\n"
+
+print "# 1.0.0.9's RIB in table data with 1.0.0.23\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.23 *
+print "\n"
+
+print "# 1.0.0.9's RIB out table data with 1.0.0.23\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.23 *
+print "\n"
+
+print "# 1.0.0.9's RIB in table data with 1.0.0.19\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.19 *
+print "\n"
+
+print "# 1.0.0.9's RIB out table data with 1.0.0.19\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.19 *
+print "\n"
+
+print "# 1.0.0.9's RIB in table data with 1.0.0.21\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.21 *
+print "\n"
+
+print "# 1.0.0.9's RIB out table data with 1.0.0.21\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.21 *
+print "\n"
+
+print "# 1.0.0.9's RIB in table data with 1.0.0.10\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.10 *
+print "\n"
+
+print "# 1.0.0.9's RIB out table data with 1.0.0.10\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.10 *
+print "\n"
+
+print "# 1.0.0.9's RIB in table data with 1.0.0.14\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.14 *
+print "\n"
+
+print "# 1.0.0.9's RIB out table data with 1.0.0.14\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.14 *
+print "\n"
+
+print "# 1.0.0.9's RIB in table data with 1.0.0.24\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.24 *
+print "\n"
+
+print "# 1.0.0.9's RIB out table data with 1.0.0.24\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.24 *
+print "\n"
+
+print "# 1.0.0.9's RIB in table data with 1.0.0.17\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.17 *
+print "\n"
+
+print "# 1.0.0.9's RIB out table data with 1.0.0.17\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.17 *
+print "\n"
+
+print "# 1.0.0.9's RIB in table data with 1.0.0.12\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.12 *
+print "\n"
+
+print "# 1.0.0.9's RIB out table data with 1.0.0.12\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.12 *
+print "\n"
+
+print "# 1.0.0.9's RIB in table data with 1.0.0.18\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.18 *
+print "\n"
+
+print "# 1.0.0.9's RIB out table data with 1.0.0.18\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.18 *
+print "\n"
+
+print "# 1.0.0.9's RIB in table data with 1.0.0.5\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.5 *
+print "\n"
+
+print "# 1.0.0.9's RIB out table data with 1.0.0.5\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.5 *
+print "\n"
+
+print "# 1.0.0.9's RIB in table data with 1.0.0.11\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.11 *
+print "\n"
+
+print "# 1.0.0.9's RIB out table data with 1.0.0.11\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.11 *
+print "\n"
+
+print "# 1.0.0.9's RIB in table data with 1.0.0.15\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.15 *
+print "\n"
+
+print "# 1.0.0.9's RIB out table data with 1.0.0.15\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.15 *
+print "\n"
+
+print "# 1.0.0.9's RIB in table data with 1.0.0.6\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.6 *
+print "\n"
+
+print "# 1.0.0.9's RIB out table data with 1.0.0.6\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.6 *
+print "\n"
+
+print "# 1.0.0.9's RIB in table data with 1.0.0.13\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.13 *
+print "\n"
+
+print "# 1.0.0.9's RIB out table data with 1.0.0.13\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.13 *
+print "\n"
+
+print "# 1.0.0.9's RIB in table data with 1.0.0.22\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.22 *
+print "\n"
+
+print "# 1.0.0.9's RIB out table data with 1.0.0.22\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.22 *
+print "\n"
+
+print "# 1.0.0.9's RIB in table data with 1.0.0.4\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.4 *
+print "\n"
+
+print "# 1.0.0.9's RIB out table data with 1.0.0.4\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.4 *
+print "\n"
+
+print "# 1.0.0.9's RIB in table data with 1.0.0.3\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.3 *
+print "\n"
+
+print "# 1.0.0.9's RIB out table data with 1.0.0.3\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.3 *
+print "\n"
+
+print "# 1.0.0.9's RIB in table data with 1.0.0.8\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.8 *
+print "\n"
+
+print "# 1.0.0.9's RIB out table data with 1.0.0.8\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.8 *
+print "\n"
+
+print "# 1.0.0.9's RIB in table data with 1.0.0.7\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.7 *
+print "\n"
+
+print "# 1.0.0.9's RIB out table data with 1.0.0.7\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.7 *
+print "\n"
+
+print "# 1.0.0.9's RIB in table data with 1.0.0.4\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.4 *
+print "\n"
+
+print "# 1.0.0.9's RIB out table data with 1.0.0.4\n"
+bgp router 1.0.0.9 show adj-rib out 1.0.0.4 *
+print "\n"
+
+
+print "# -------------------------------------------------------------------\n"
+print "# 1.0.0.10's tables data\n"
+print "# -------------------------------------------------------------------\n\n"
+
+print "# 1.0.0.10's RT table data\n"
+net node 1.0.0.10 show rt *
+print "\n"
+
+print "# 1.0.0.10's RIB table data\n"
+bgp router 1.0.0.10 show rib *
+print "\n"
+
+print "# 1.0.0.10's RIB in table data with 1.0.0.23\n"
+bgp router 1.0.0.10 show adj-rib out 1.0.0.23 *
+print "\n"
+
+print "# 1.0.0.10's RIB out table data with 1.0.0.23\n"
+bgp router 1.0.0.10 show adj-rib out 1.0.0.23 *
+print "\n"
+
+print "# 1.0.0.10's RIB in table data with 1.0.0.19\n"
+bgp router 1.0.0.10 show adj-rib out 1.0.0.19 *
+print "\n"
+
+print "# 1.0.0.10's RIB out table data with 1.0.0.19\n"
+bgp router 1.0.0.10 show adj-rib out 1.0.0.19 *
+print "\n"
+
+print "# 1.0.0.10's RIB in table data with 1.0.0.21\n"
+bgp router 1.0.0.10 show adj-rib out 1.0.0.21 *
+print "\n"
+
+print "# 1.0.0.10's RIB out table data with 1.0.0.21\n"
+bgp router 1.0.0.10 show adj-rib out 1.0.0.21 *
+print "\n"
+
+print "# 1.0.0.10's RIB in table data with 1.0.0.14\n"
+bgp router 1.0.0.10 show adj-rib out 1.0.0.14 *
+print "\n"
+
+print "# 1.0.0.10's RIB out table data with 1.0.0.14\n"
+bgp router 1.0.0.10 show adj-rib out 1.0.0.14 *
+print "\n"
+
+print "# 1.0.0.10's RIB in table data with 1.0.0.24\n"
+bgp router 1.0.0.10 show adj-rib out 1.0.0.24 *
+print "\n"
+
+print "# 1.0.0.10's RIB out table data with 1.0.0.24\n"
+bgp router 1.0.0.10 show adj-rib out 1.0.0.24 *
+print "\n"
+
+print "# 1.0.0.10's RIB in table data with 1.0.0.17\n"
+bgp router 1.0.0.10 show adj-rib out 1.0.0.17 *
+print "\n"
+
+print "# 1.0.0.10's RIB out table data with 1.0.0.17\n"
+bgp router 1.0.0.10 show adj-rib out 1.0.0.17 *
+print "\n"
+
+print "# 1.0.0.10's RIB in table data with 1.0.0.12\n"
+bgp router 1.0.0.10 show adj-rib out 1.0.0.12 *
+print "\n"
+
+print "# 1.0.0.10's RIB out table data with 1.0.0.12\n"
+bgp router 1.0.0.10 show adj-rib out 1.0.0.12 *
+print "\n"
+
+print "# 1.0.0.10's RIB in table data with 1.0.0.18\n"
+bgp router 1.0.0.10 show adj-rib out 1.0.0.18 *
+print "\n"
+
+print "# 1.0.0.10's RIB out table data with 1.0.0.18\n"
+bgp router 1.0.0.10 show adj-rib out 1.0.0.18 *
+print "\n"
+
+print "# 1.0.0.10's RIB in table data with 1.0.0.5\n"
+bgp router 1.0.0.10 show adj-rib out 1.0.0.5 *
+print "\n"
+
+print "# 1.0.0.10's RIB out table data with 1.0.0.5\n"
+bgp router 1.0.0.10 show adj-rib out 1.0.0.5 *
+print "\n"
+
+print "# 1.0.0.10's RIB in table data with 1.0.0.11\n"
+bgp router 1.0.0.10 show adj-rib out 1.0.0.11 *
+print "\n"
+
+print "# 1.0.0.10's RIB out table data with 1.0.0.11\n"
+bgp router 1.0.0.10 show adj-rib out 1.0.0.11 *
+print "\n"
+
+print "# 1.0.0.10's RIB in table data with 1.0.0.15\n"
+bgp router 1.0.0.10 show adj-rib out 1.0.0.15 *
+print "\n"
+
+print "# 1.0.0.10's RIB out table data with 1.0.0.15\n"
+bgp router 1.0.0.10 show adj-rib out 1.0.0.15 *
+print "\n"
+
+print "# 1.0.0.10's RIB in table data with 1.0.0.6\n"
+bgp router 1.0.0.10 show adj-rib out 1.0.0.6 *
+print "\n"
+
+print "# 1.0.0.10's RIB out table data with 1.0.0.6\n"
+bgp router 1.0.0.10 show adj-rib out 1.0.0.6 *
+print "\n"
+
+print "# 1.0.0.10's RIB in table data with 1.0.0.13\n"
+bgp router 1.0.0.10 show adj-rib out 1.0.0.13 *
+print "\n"
+
+print "# 1.0.0.10's RIB out table data with 1.0.0.13\n"
+bgp router 1.0.0.10 show adj-rib out 1.0.0.13 *
+print "\n"
+
+print "# 1.0.0.10's RIB in table data with 1.0.0.22\n"
+bgp router 1.0.0.10 show adj-rib out 1.0.0.22 *
+print "\n"
+
+print "# 1.0.0.10's RIB out table data with 1.0.0.22\n"
+bgp router 1.0.0.10 show adj-rib out 1.0.0.22 *
+print "\n"
+
+print "# 1.0.0.10's RIB in table data with 1.0.0.20\n"
+bgp router 1.0.0.10 show adj-rib out 1.0.0.20 *
+print "\n"
+
+print "# 1.0.0.10's RIB out table data with 1.0.0.20\n"
+bgp router 1.0.0.10 show adj-rib out 1.0.0.20 *
+print "\n"
+
+print "# 1.0.0.10's RIB in table data with 1.0.0.9\n"
+bgp router 1.0.0.10 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.10's RIB out table data with 1.0.0.9\n"
+bgp router 1.0.0.10 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.10's RIB in table data with 1.0.0.16\n"
+bgp router 1.0.0.10 show adj-rib out 1.0.0.16 *
+print "\n"
+
+print "# 1.0.0.10's RIB out table data with 1.0.0.16\n"
+bgp router 1.0.0.10 show adj-rib out 1.0.0.16 *
+print "\n"
+
+
+print "# -------------------------------------------------------------------\n"
+print "# 1.0.0.11's tables data\n"
+print "# -------------------------------------------------------------------\n\n"
+
+print "# 1.0.0.11's RT table data\n"
+net node 1.0.0.11 show rt *
+print "\n"
+
+print "# 1.0.0.11's RIB table data\n"
+bgp router 1.0.0.11 show rib *
+print "\n"
+
+print "# 1.0.0.11's RIB in table data with 1.0.0.23\n"
+bgp router 1.0.0.11 show adj-rib out 1.0.0.23 *
+print "\n"
+
+print "# 1.0.0.11's RIB out table data with 1.0.0.23\n"
+bgp router 1.0.0.11 show adj-rib out 1.0.0.23 *
+print "\n"
+
+print "# 1.0.0.11's RIB in table data with 1.0.0.19\n"
+bgp router 1.0.0.11 show adj-rib out 1.0.0.19 *
+print "\n"
+
+print "# 1.0.0.11's RIB out table data with 1.0.0.19\n"
+bgp router 1.0.0.11 show adj-rib out 1.0.0.19 *
+print "\n"
+
+print "# 1.0.0.11's RIB in table data with 1.0.0.21\n"
+bgp router 1.0.0.11 show adj-rib out 1.0.0.21 *
+print "\n"
+
+print "# 1.0.0.11's RIB out table data with 1.0.0.21\n"
+bgp router 1.0.0.11 show adj-rib out 1.0.0.21 *
+print "\n"
+
+print "# 1.0.0.11's RIB in table data with 1.0.0.10\n"
+bgp router 1.0.0.11 show adj-rib out 1.0.0.10 *
+print "\n"
+
+print "# 1.0.0.11's RIB out table data with 1.0.0.10\n"
+bgp router 1.0.0.11 show adj-rib out 1.0.0.10 *
+print "\n"
+
+print "# 1.0.0.11's RIB in table data with 1.0.0.14\n"
+bgp router 1.0.0.11 show adj-rib out 1.0.0.14 *
+print "\n"
+
+print "# 1.0.0.11's RIB out table data with 1.0.0.14\n"
+bgp router 1.0.0.11 show adj-rib out 1.0.0.14 *
+print "\n"
+
+print "# 1.0.0.11's RIB in table data with 1.0.0.24\n"
+bgp router 1.0.0.11 show adj-rib out 1.0.0.24 *
+print "\n"
+
+print "# 1.0.0.11's RIB out table data with 1.0.0.24\n"
+bgp router 1.0.0.11 show adj-rib out 1.0.0.24 *
+print "\n"
+
+print "# 1.0.0.11's RIB in table data with 1.0.0.17\n"
+bgp router 1.0.0.11 show adj-rib out 1.0.0.17 *
+print "\n"
+
+print "# 1.0.0.11's RIB out table data with 1.0.0.17\n"
+bgp router 1.0.0.11 show adj-rib out 1.0.0.17 *
+print "\n"
+
+print "# 1.0.0.11's RIB in table data with 1.0.0.12\n"
+bgp router 1.0.0.11 show adj-rib out 1.0.0.12 *
+print "\n"
+
+print "# 1.0.0.11's RIB out table data with 1.0.0.12\n"
+bgp router 1.0.0.11 show adj-rib out 1.0.0.12 *
+print "\n"
+
+print "# 1.0.0.11's RIB in table data with 1.0.0.18\n"
+bgp router 1.0.0.11 show adj-rib out 1.0.0.18 *
+print "\n"
+
+print "# 1.0.0.11's RIB out table data with 1.0.0.18\n"
+bgp router 1.0.0.11 show adj-rib out 1.0.0.18 *
+print "\n"
+
+print "# 1.0.0.11's RIB in table data with 1.0.0.5\n"
+bgp router 1.0.0.11 show adj-rib out 1.0.0.5 *
+print "\n"
+
+print "# 1.0.0.11's RIB out table data with 1.0.0.5\n"
+bgp router 1.0.0.11 show adj-rib out 1.0.0.5 *
+print "\n"
+
+print "# 1.0.0.11's RIB in table data with 1.0.0.15\n"
+bgp router 1.0.0.11 show adj-rib out 1.0.0.15 *
+print "\n"
+
+print "# 1.0.0.11's RIB out table data with 1.0.0.15\n"
+bgp router 1.0.0.11 show adj-rib out 1.0.0.15 *
+print "\n"
+
+print "# 1.0.0.11's RIB in table data with 1.0.0.6\n"
+bgp router 1.0.0.11 show adj-rib out 1.0.0.6 *
+print "\n"
+
+print "# 1.0.0.11's RIB out table data with 1.0.0.6\n"
+bgp router 1.0.0.11 show adj-rib out 1.0.0.6 *
+print "\n"
+
+print "# 1.0.0.11's RIB in table data with 1.0.0.13\n"
+bgp router 1.0.0.11 show adj-rib out 1.0.0.13 *
+print "\n"
+
+print "# 1.0.0.11's RIB out table data with 1.0.0.13\n"
+bgp router 1.0.0.11 show adj-rib out 1.0.0.13 *
+print "\n"
+
+print "# 1.0.0.11's RIB in table data with 1.0.0.22\n"
+bgp router 1.0.0.11 show adj-rib out 1.0.0.22 *
+print "\n"
+
+print "# 1.0.0.11's RIB out table data with 1.0.0.22\n"
+bgp router 1.0.0.11 show adj-rib out 1.0.0.22 *
+print "\n"
+
+print "# 1.0.0.11's RIB in table data with 1.0.0.20\n"
+bgp router 1.0.0.11 show adj-rib out 1.0.0.20 *
+print "\n"
+
+print "# 1.0.0.11's RIB out table data with 1.0.0.20\n"
+bgp router 1.0.0.11 show adj-rib out 1.0.0.20 *
+print "\n"
+
+print "# 1.0.0.11's RIB in table data with 1.0.0.3\n"
+bgp router 1.0.0.11 show adj-rib out 1.0.0.3 *
+print "\n"
+
+print "# 1.0.0.11's RIB out table data with 1.0.0.3\n"
+bgp router 1.0.0.11 show adj-rib out 1.0.0.3 *
+print "\n"
+
+print "# 1.0.0.11's RIB in table data with 1.0.0.8\n"
+bgp router 1.0.0.11 show adj-rib out 1.0.0.8 *
+print "\n"
+
+print "# 1.0.0.11's RIB out table data with 1.0.0.8\n"
+bgp router 1.0.0.11 show adj-rib out 1.0.0.8 *
+print "\n"
+
+print "# 1.0.0.11's RIB in table data with 1.0.0.7\n"
+bgp router 1.0.0.11 show adj-rib out 1.0.0.7 *
+print "\n"
+
+print "# 1.0.0.11's RIB out table data with 1.0.0.7\n"
+bgp router 1.0.0.11 show adj-rib out 1.0.0.7 *
+print "\n"
+
+print "# 1.0.0.11's RIB in table data with 1.0.0.9\n"
+bgp router 1.0.0.11 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.11's RIB out table data with 1.0.0.9\n"
+bgp router 1.0.0.11 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.11's RIB in table data with 1.0.0.16\n"
+bgp router 1.0.0.11 show adj-rib out 1.0.0.16 *
+print "\n"
+
+print "# 1.0.0.11's RIB out table data with 1.0.0.16\n"
+bgp router 1.0.0.11 show adj-rib out 1.0.0.16 *
+print "\n"
+
+print "# 1.0.0.11's RIB in table data with 1.0.0.4\n"
+bgp router 1.0.0.11 show adj-rib out 1.0.0.4 *
+print "\n"
+
+print "# 1.0.0.11's RIB out table data with 1.0.0.4\n"
+bgp router 1.0.0.11 show adj-rib out 1.0.0.4 *
+print "\n"
+
+
+print "# -------------------------------------------------------------------\n"
+print "# 1.0.0.12's tables data\n"
+print "# -------------------------------------------------------------------\n\n"
+
+print "# 1.0.0.12's RT table data\n"
+net node 1.0.0.12 show rt *
+print "\n"
+
+print "# 1.0.0.12's RIB table data\n"
+bgp router 1.0.0.12 show rib *
+print "\n"
+
+print "# 1.0.0.12's RIB in table data with 1.0.0.23\n"
+bgp router 1.0.0.12 show adj-rib out 1.0.0.23 *
+print "\n"
+
+print "# 1.0.0.12's RIB out table data with 1.0.0.23\n"
+bgp router 1.0.0.12 show adj-rib out 1.0.0.23 *
+print "\n"
+
+print "# 1.0.0.12's RIB in table data with 1.0.0.19\n"
+bgp router 1.0.0.12 show adj-rib out 1.0.0.19 *
+print "\n"
+
+print "# 1.0.0.12's RIB out table data with 1.0.0.19\n"
+bgp router 1.0.0.12 show adj-rib out 1.0.0.19 *
+print "\n"
+
+print "# 1.0.0.12's RIB in table data with 1.0.0.21\n"
+bgp router 1.0.0.12 show adj-rib out 1.0.0.21 *
+print "\n"
+
+print "# 1.0.0.12's RIB out table data with 1.0.0.21\n"
+bgp router 1.0.0.12 show adj-rib out 1.0.0.21 *
+print "\n"
+
+print "# 1.0.0.12's RIB in table data with 1.0.0.10\n"
+bgp router 1.0.0.12 show adj-rib out 1.0.0.10 *
+print "\n"
+
+print "# 1.0.0.12's RIB out table data with 1.0.0.10\n"
+bgp router 1.0.0.12 show adj-rib out 1.0.0.10 *
+print "\n"
+
+print "# 1.0.0.12's RIB in table data with 1.0.0.14\n"
+bgp router 1.0.0.12 show adj-rib out 1.0.0.14 *
+print "\n"
+
+print "# 1.0.0.12's RIB out table data with 1.0.0.14\n"
+bgp router 1.0.0.12 show adj-rib out 1.0.0.14 *
+print "\n"
+
+print "# 1.0.0.12's RIB in table data with 1.0.0.24\n"
+bgp router 1.0.0.12 show adj-rib out 1.0.0.24 *
+print "\n"
+
+print "# 1.0.0.12's RIB out table data with 1.0.0.24\n"
+bgp router 1.0.0.12 show adj-rib out 1.0.0.24 *
+print "\n"
+
+print "# 1.0.0.12's RIB in table data with 1.0.0.17\n"
+bgp router 1.0.0.12 show adj-rib out 1.0.0.17 *
+print "\n"
+
+print "# 1.0.0.12's RIB out table data with 1.0.0.17\n"
+bgp router 1.0.0.12 show adj-rib out 1.0.0.17 *
+print "\n"
+
+print "# 1.0.0.12's RIB in table data with 1.0.0.18\n"
+bgp router 1.0.0.12 show adj-rib out 1.0.0.18 *
+print "\n"
+
+print "# 1.0.0.12's RIB out table data with 1.0.0.18\n"
+bgp router 1.0.0.12 show adj-rib out 1.0.0.18 *
+print "\n"
+
+print "# 1.0.0.12's RIB in table data with 1.0.0.5\n"
+bgp router 1.0.0.12 show adj-rib out 1.0.0.5 *
+print "\n"
+
+print "# 1.0.0.12's RIB out table data with 1.0.0.5\n"
+bgp router 1.0.0.12 show adj-rib out 1.0.0.5 *
+print "\n"
+
+print "# 1.0.0.12's RIB in table data with 1.0.0.11\n"
+bgp router 1.0.0.12 show adj-rib out 1.0.0.11 *
+print "\n"
+
+print "# 1.0.0.12's RIB out table data with 1.0.0.11\n"
+bgp router 1.0.0.12 show adj-rib out 1.0.0.11 *
+print "\n"
+
+print "# 1.0.0.12's RIB in table data with 1.0.0.15\n"
+bgp router 1.0.0.12 show adj-rib out 1.0.0.15 *
+print "\n"
+
+print "# 1.0.0.12's RIB out table data with 1.0.0.15\n"
+bgp router 1.0.0.12 show adj-rib out 1.0.0.15 *
+print "\n"
+
+print "# 1.0.0.12's RIB in table data with 1.0.0.6\n"
+bgp router 1.0.0.12 show adj-rib out 1.0.0.6 *
+print "\n"
+
+print "# 1.0.0.12's RIB out table data with 1.0.0.6\n"
+bgp router 1.0.0.12 show adj-rib out 1.0.0.6 *
+print "\n"
+
+print "# 1.0.0.12's RIB in table data with 1.0.0.13\n"
+bgp router 1.0.0.12 show adj-rib out 1.0.0.13 *
+print "\n"
+
+print "# 1.0.0.12's RIB out table data with 1.0.0.13\n"
+bgp router 1.0.0.12 show adj-rib out 1.0.0.13 *
+print "\n"
+
+print "# 1.0.0.12's RIB in table data with 1.0.0.22\n"
+bgp router 1.0.0.12 show adj-rib out 1.0.0.22 *
+print "\n"
+
+print "# 1.0.0.12's RIB out table data with 1.0.0.22\n"
+bgp router 1.0.0.12 show adj-rib out 1.0.0.22 *
+print "\n"
+
+print "# 1.0.0.12's RIB in table data with 1.0.0.20\n"
+bgp router 1.0.0.12 show adj-rib out 1.0.0.20 *
+print "\n"
+
+print "# 1.0.0.12's RIB out table data with 1.0.0.20\n"
+bgp router 1.0.0.12 show adj-rib out 1.0.0.20 *
+print "\n"
+
+print "# 1.0.0.12's RIB in table data with 1.0.0.3\n"
+bgp router 1.0.0.12 show adj-rib out 1.0.0.3 *
+print "\n"
+
+print "# 1.0.0.12's RIB out table data with 1.0.0.3\n"
+bgp router 1.0.0.12 show adj-rib out 1.0.0.3 *
+print "\n"
+
+print "# 1.0.0.12's RIB in table data with 1.0.0.8\n"
+bgp router 1.0.0.12 show adj-rib out 1.0.0.8 *
+print "\n"
+
+print "# 1.0.0.12's RIB out table data with 1.0.0.8\n"
+bgp router 1.0.0.12 show adj-rib out 1.0.0.8 *
+print "\n"
+
+print "# 1.0.0.12's RIB in table data with 1.0.0.7\n"
+bgp router 1.0.0.12 show adj-rib out 1.0.0.7 *
+print "\n"
+
+print "# 1.0.0.12's RIB out table data with 1.0.0.7\n"
+bgp router 1.0.0.12 show adj-rib out 1.0.0.7 *
+print "\n"
+
+print "# 1.0.0.12's RIB in table data with 1.0.0.9\n"
+bgp router 1.0.0.12 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.12's RIB out table data with 1.0.0.9\n"
+bgp router 1.0.0.12 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.12's RIB in table data with 1.0.0.16\n"
+bgp router 1.0.0.12 show adj-rib out 1.0.0.16 *
+print "\n"
+
+print "# 1.0.0.12's RIB out table data with 1.0.0.16\n"
+bgp router 1.0.0.12 show adj-rib out 1.0.0.16 *
+print "\n"
+
+print "# 1.0.0.12's RIB in table data with 1.0.0.4\n"
+bgp router 1.0.0.12 show adj-rib out 1.0.0.4 *
+print "\n"
+
+print "# 1.0.0.12's RIB out table data with 1.0.0.4\n"
+bgp router 1.0.0.12 show adj-rib out 1.0.0.4 *
+print "\n"
+
+
+print "# -------------------------------------------------------------------\n"
+print "# 1.0.0.13's tables data\n"
+print "# -------------------------------------------------------------------\n\n"
+
+print "# 1.0.0.13's RT table data\n"
+net node 1.0.0.13 show rt *
+print "\n"
+
+print "# 1.0.0.13's RIB table data\n"
+bgp router 1.0.0.13 show rib *
+print "\n"
+
+print "# 1.0.0.13's RIB in table data with 1.0.0.23\n"
+bgp router 1.0.0.13 show adj-rib out 1.0.0.23 *
+print "\n"
+
+print "# 1.0.0.13's RIB out table data with 1.0.0.23\n"
+bgp router 1.0.0.13 show adj-rib out 1.0.0.23 *
+print "\n"
+
+print "# 1.0.0.13's RIB in table data with 1.0.0.19\n"
+bgp router 1.0.0.13 show adj-rib out 1.0.0.19 *
+print "\n"
+
+print "# 1.0.0.13's RIB out table data with 1.0.0.19\n"
+bgp router 1.0.0.13 show adj-rib out 1.0.0.19 *
+print "\n"
+
+print "# 1.0.0.13's RIB in table data with 1.0.0.21\n"
+bgp router 1.0.0.13 show adj-rib out 1.0.0.21 *
+print "\n"
+
+print "# 1.0.0.13's RIB out table data with 1.0.0.21\n"
+bgp router 1.0.0.13 show adj-rib out 1.0.0.21 *
+print "\n"
+
+print "# 1.0.0.13's RIB in table data with 1.0.0.10\n"
+bgp router 1.0.0.13 show adj-rib out 1.0.0.10 *
+print "\n"
+
+print "# 1.0.0.13's RIB out table data with 1.0.0.10\n"
+bgp router 1.0.0.13 show adj-rib out 1.0.0.10 *
+print "\n"
+
+print "# 1.0.0.13's RIB in table data with 1.0.0.14\n"
+bgp router 1.0.0.13 show adj-rib out 1.0.0.14 *
+print "\n"
+
+print "# 1.0.0.13's RIB out table data with 1.0.0.14\n"
+bgp router 1.0.0.13 show adj-rib out 1.0.0.14 *
+print "\n"
+
+print "# 1.0.0.13's RIB in table data with 1.0.0.24\n"
+bgp router 1.0.0.13 show adj-rib out 1.0.0.24 *
+print "\n"
+
+print "# 1.0.0.13's RIB out table data with 1.0.0.24\n"
+bgp router 1.0.0.13 show adj-rib out 1.0.0.24 *
+print "\n"
+
+print "# 1.0.0.13's RIB in table data with 1.0.0.17\n"
+bgp router 1.0.0.13 show adj-rib out 1.0.0.17 *
+print "\n"
+
+print "# 1.0.0.13's RIB out table data with 1.0.0.17\n"
+bgp router 1.0.0.13 show adj-rib out 1.0.0.17 *
+print "\n"
+
+print "# 1.0.0.13's RIB in table data with 1.0.0.12\n"
+bgp router 1.0.0.13 show adj-rib out 1.0.0.12 *
+print "\n"
+
+print "# 1.0.0.13's RIB out table data with 1.0.0.12\n"
+bgp router 1.0.0.13 show adj-rib out 1.0.0.12 *
+print "\n"
+
+print "# 1.0.0.13's RIB in table data with 1.0.0.18\n"
+bgp router 1.0.0.13 show adj-rib out 1.0.0.18 *
+print "\n"
+
+print "# 1.0.0.13's RIB out table data with 1.0.0.18\n"
+bgp router 1.0.0.13 show adj-rib out 1.0.0.18 *
+print "\n"
+
+print "# 1.0.0.13's RIB in table data with 1.0.0.5\n"
+bgp router 1.0.0.13 show adj-rib out 1.0.0.5 *
+print "\n"
+
+print "# 1.0.0.13's RIB out table data with 1.0.0.5\n"
+bgp router 1.0.0.13 show adj-rib out 1.0.0.5 *
+print "\n"
+
+print "# 1.0.0.13's RIB in table data with 1.0.0.11\n"
+bgp router 1.0.0.13 show adj-rib out 1.0.0.11 *
+print "\n"
+
+print "# 1.0.0.13's RIB out table data with 1.0.0.11\n"
+bgp router 1.0.0.13 show adj-rib out 1.0.0.11 *
+print "\n"
+
+print "# 1.0.0.13's RIB in table data with 1.0.0.15\n"
+bgp router 1.0.0.13 show adj-rib out 1.0.0.15 *
+print "\n"
+
+print "# 1.0.0.13's RIB out table data with 1.0.0.15\n"
+bgp router 1.0.0.13 show adj-rib out 1.0.0.15 *
+print "\n"
+
+print "# 1.0.0.13's RIB in table data with 1.0.0.6\n"
+bgp router 1.0.0.13 show adj-rib out 1.0.0.6 *
+print "\n"
+
+print "# 1.0.0.13's RIB out table data with 1.0.0.6\n"
+bgp router 1.0.0.13 show adj-rib out 1.0.0.6 *
+print "\n"
+
+print "# 1.0.0.13's RIB in table data with 1.0.0.22\n"
+bgp router 1.0.0.13 show adj-rib out 1.0.0.22 *
+print "\n"
+
+print "# 1.0.0.13's RIB out table data with 1.0.0.22\n"
+bgp router 1.0.0.13 show adj-rib out 1.0.0.22 *
+print "\n"
+
+print "# 1.0.0.13's RIB in table data with 1.0.0.20\n"
+bgp router 1.0.0.13 show adj-rib out 1.0.0.20 *
+print "\n"
+
+print "# 1.0.0.13's RIB out table data with 1.0.0.20\n"
+bgp router 1.0.0.13 show adj-rib out 1.0.0.20 *
+print "\n"
+
+print "# 1.0.0.13's RIB in table data with 1.0.0.3\n"
+bgp router 1.0.0.13 show adj-rib out 1.0.0.3 *
+print "\n"
+
+print "# 1.0.0.13's RIB out table data with 1.0.0.3\n"
+bgp router 1.0.0.13 show adj-rib out 1.0.0.3 *
+print "\n"
+
+print "# 1.0.0.13's RIB in table data with 1.0.0.8\n"
+bgp router 1.0.0.13 show adj-rib out 1.0.0.8 *
+print "\n"
+
+print "# 1.0.0.13's RIB out table data with 1.0.0.8\n"
+bgp router 1.0.0.13 show adj-rib out 1.0.0.8 *
+print "\n"
+
+print "# 1.0.0.13's RIB in table data with 1.0.0.7\n"
+bgp router 1.0.0.13 show adj-rib out 1.0.0.7 *
+print "\n"
+
+print "# 1.0.0.13's RIB out table data with 1.0.0.7\n"
+bgp router 1.0.0.13 show adj-rib out 1.0.0.7 *
+print "\n"
+
+print "# 1.0.0.13's RIB in table data with 1.0.0.9\n"
+bgp router 1.0.0.13 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.13's RIB out table data with 1.0.0.9\n"
+bgp router 1.0.0.13 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.13's RIB in table data with 1.0.0.16\n"
+bgp router 1.0.0.13 show adj-rib out 1.0.0.16 *
+print "\n"
+
+print "# 1.0.0.13's RIB out table data with 1.0.0.16\n"
+bgp router 1.0.0.13 show adj-rib out 1.0.0.16 *
+print "\n"
+
+print "# 1.0.0.13's RIB in table data with 1.0.0.4\n"
+bgp router 1.0.0.13 show adj-rib out 1.0.0.4 *
+print "\n"
+
+print "# 1.0.0.13's RIB out table data with 1.0.0.4\n"
+bgp router 1.0.0.13 show adj-rib out 1.0.0.4 *
+print "\n"
+
+
+print "# -------------------------------------------------------------------\n"
+print "# 1.0.0.14's tables data\n"
+print "# -------------------------------------------------------------------\n\n"
+
+print "# 1.0.0.14's RT table data\n"
+net node 1.0.0.14 show rt *
+print "\n"
+
+print "# 1.0.0.14's RIB table data\n"
+bgp router 1.0.0.14 show rib *
+print "\n"
+
+print "# 1.0.0.14's RIB in table data with 1.0.0.23\n"
+bgp router 1.0.0.14 show adj-rib out 1.0.0.23 *
+print "\n"
+
+print "# 1.0.0.14's RIB out table data with 1.0.0.23\n"
+bgp router 1.0.0.14 show adj-rib out 1.0.0.23 *
+print "\n"
+
+print "# 1.0.0.14's RIB in table data with 1.0.0.19\n"
+bgp router 1.0.0.14 show adj-rib out 1.0.0.19 *
+print "\n"
+
+print "# 1.0.0.14's RIB out table data with 1.0.0.19\n"
+bgp router 1.0.0.14 show adj-rib out 1.0.0.19 *
+print "\n"
+
+print "# 1.0.0.14's RIB in table data with 1.0.0.21\n"
+bgp router 1.0.0.14 show adj-rib out 1.0.0.21 *
+print "\n"
+
+print "# 1.0.0.14's RIB out table data with 1.0.0.21\n"
+bgp router 1.0.0.14 show adj-rib out 1.0.0.21 *
+print "\n"
+
+print "# 1.0.0.14's RIB in table data with 1.0.0.10\n"
+bgp router 1.0.0.14 show adj-rib out 1.0.0.10 *
+print "\n"
+
+print "# 1.0.0.14's RIB out table data with 1.0.0.10\n"
+bgp router 1.0.0.14 show adj-rib out 1.0.0.10 *
+print "\n"
+
+print "# 1.0.0.14's RIB in table data with 1.0.0.24\n"
+bgp router 1.0.0.14 show adj-rib out 1.0.0.24 *
+print "\n"
+
+print "# 1.0.0.14's RIB out table data with 1.0.0.24\n"
+bgp router 1.0.0.14 show adj-rib out 1.0.0.24 *
+print "\n"
+
+print "# 1.0.0.14's RIB in table data with 1.0.0.17\n"
+bgp router 1.0.0.14 show adj-rib out 1.0.0.17 *
+print "\n"
+
+print "# 1.0.0.14's RIB out table data with 1.0.0.17\n"
+bgp router 1.0.0.14 show adj-rib out 1.0.0.17 *
+print "\n"
+
+print "# 1.0.0.14's RIB in table data with 1.0.0.12\n"
+bgp router 1.0.0.14 show adj-rib out 1.0.0.12 *
+print "\n"
+
+print "# 1.0.0.14's RIB out table data with 1.0.0.12\n"
+bgp router 1.0.0.14 show adj-rib out 1.0.0.12 *
+print "\n"
+
+print "# 1.0.0.14's RIB in table data with 1.0.0.18\n"
+bgp router 1.0.0.14 show adj-rib out 1.0.0.18 *
+print "\n"
+
+print "# 1.0.0.14's RIB out table data with 1.0.0.18\n"
+bgp router 1.0.0.14 show adj-rib out 1.0.0.18 *
+print "\n"
+
+print "# 1.0.0.14's RIB in table data with 1.0.0.5\n"
+bgp router 1.0.0.14 show adj-rib out 1.0.0.5 *
+print "\n"
+
+print "# 1.0.0.14's RIB out table data with 1.0.0.5\n"
+bgp router 1.0.0.14 show adj-rib out 1.0.0.5 *
+print "\n"
+
+print "# 1.0.0.14's RIB in table data with 1.0.0.11\n"
+bgp router 1.0.0.14 show adj-rib out 1.0.0.11 *
+print "\n"
+
+print "# 1.0.0.14's RIB out table data with 1.0.0.11\n"
+bgp router 1.0.0.14 show adj-rib out 1.0.0.11 *
+print "\n"
+
+print "# 1.0.0.14's RIB in table data with 1.0.0.15\n"
+bgp router 1.0.0.14 show adj-rib out 1.0.0.15 *
+print "\n"
+
+print "# 1.0.0.14's RIB out table data with 1.0.0.15\n"
+bgp router 1.0.0.14 show adj-rib out 1.0.0.15 *
+print "\n"
+
+print "# 1.0.0.14's RIB in table data with 1.0.0.6\n"
+bgp router 1.0.0.14 show adj-rib out 1.0.0.6 *
+print "\n"
+
+print "# 1.0.0.14's RIB out table data with 1.0.0.6\n"
+bgp router 1.0.0.14 show adj-rib out 1.0.0.6 *
+print "\n"
+
+print "# 1.0.0.14's RIB in table data with 1.0.0.13\n"
+bgp router 1.0.0.14 show adj-rib out 1.0.0.13 *
+print "\n"
+
+print "# 1.0.0.14's RIB out table data with 1.0.0.13\n"
+bgp router 1.0.0.14 show adj-rib out 1.0.0.13 *
+print "\n"
+
+print "# 1.0.0.14's RIB in table data with 1.0.0.22\n"
+bgp router 1.0.0.14 show adj-rib out 1.0.0.22 *
+print "\n"
+
+print "# 1.0.0.14's RIB out table data with 1.0.0.22\n"
+bgp router 1.0.0.14 show adj-rib out 1.0.0.22 *
+print "\n"
+
+print "# 1.0.0.14's RIB in table data with 1.0.0.20\n"
+bgp router 1.0.0.14 show adj-rib out 1.0.0.20 *
+print "\n"
+
+print "# 1.0.0.14's RIB out table data with 1.0.0.20\n"
+bgp router 1.0.0.14 show adj-rib out 1.0.0.20 *
+print "\n"
+
+print "# 1.0.0.14's RIB in table data with 1.0.0.3\n"
+bgp router 1.0.0.14 show adj-rib out 1.0.0.3 *
+print "\n"
+
+print "# 1.0.0.14's RIB out table data with 1.0.0.3\n"
+bgp router 1.0.0.14 show adj-rib out 1.0.0.3 *
+print "\n"
+
+print "# 1.0.0.14's RIB in table data with 1.0.0.8\n"
+bgp router 1.0.0.14 show adj-rib out 1.0.0.8 *
+print "\n"
+
+print "# 1.0.0.14's RIB out table data with 1.0.0.8\n"
+bgp router 1.0.0.14 show adj-rib out 1.0.0.8 *
+print "\n"
+
+print "# 1.0.0.14's RIB in table data with 1.0.0.7\n"
+bgp router 1.0.0.14 show adj-rib out 1.0.0.7 *
+print "\n"
+
+print "# 1.0.0.14's RIB out table data with 1.0.0.7\n"
+bgp router 1.0.0.14 show adj-rib out 1.0.0.7 *
+print "\n"
+
+print "# 1.0.0.14's RIB in table data with 1.0.0.9\n"
+bgp router 1.0.0.14 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.14's RIB out table data with 1.0.0.9\n"
+bgp router 1.0.0.14 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.14's RIB in table data with 1.0.0.16\n"
+bgp router 1.0.0.14 show adj-rib out 1.0.0.16 *
+print "\n"
+
+print "# 1.0.0.14's RIB out table data with 1.0.0.16\n"
+bgp router 1.0.0.14 show adj-rib out 1.0.0.16 *
+print "\n"
+
+print "# 1.0.0.14's RIB in table data with 1.0.0.4\n"
+bgp router 1.0.0.14 show adj-rib out 1.0.0.4 *
+print "\n"
+
+print "# 1.0.0.14's RIB out table data with 1.0.0.4\n"
+bgp router 1.0.0.14 show adj-rib out 1.0.0.4 *
+print "\n"
+
+
+print "# -------------------------------------------------------------------\n"
+print "# 1.0.0.15's tables data\n"
+print "# -------------------------------------------------------------------\n\n"
+
+print "# 1.0.0.15's RT table data\n"
+net node 1.0.0.15 show rt *
+print "\n"
+
+print "# 1.0.0.15's RIB table data\n"
+bgp router 1.0.0.15 show rib *
+print "\n"
+
+print "# 1.0.0.15's RIB in table data with 1.0.0.23\n"
+bgp router 1.0.0.15 show adj-rib out 1.0.0.23 *
+print "\n"
+
+print "# 1.0.0.15's RIB out table data with 1.0.0.23\n"
+bgp router 1.0.0.15 show adj-rib out 1.0.0.23 *
+print "\n"
+
+print "# 1.0.0.15's RIB in table data with 1.0.0.19\n"
+bgp router 1.0.0.15 show adj-rib out 1.0.0.19 *
+print "\n"
+
+print "# 1.0.0.15's RIB out table data with 1.0.0.19\n"
+bgp router 1.0.0.15 show adj-rib out 1.0.0.19 *
+print "\n"
+
+print "# 1.0.0.15's RIB in table data with 1.0.0.21\n"
+bgp router 1.0.0.15 show adj-rib out 1.0.0.21 *
+print "\n"
+
+print "# 1.0.0.15's RIB out table data with 1.0.0.21\n"
+bgp router 1.0.0.15 show adj-rib out 1.0.0.21 *
+print "\n"
+
+print "# 1.0.0.15's RIB in table data with 1.0.0.10\n"
+bgp router 1.0.0.15 show adj-rib out 1.0.0.10 *
+print "\n"
+
+print "# 1.0.0.15's RIB out table data with 1.0.0.10\n"
+bgp router 1.0.0.15 show adj-rib out 1.0.0.10 *
+print "\n"
+
+print "# 1.0.0.15's RIB in table data with 1.0.0.14\n"
+bgp router 1.0.0.15 show adj-rib out 1.0.0.14 *
+print "\n"
+
+print "# 1.0.0.15's RIB out table data with 1.0.0.14\n"
+bgp router 1.0.0.15 show adj-rib out 1.0.0.14 *
+print "\n"
+
+print "# 1.0.0.15's RIB in table data with 1.0.0.24\n"
+bgp router 1.0.0.15 show adj-rib out 1.0.0.24 *
+print "\n"
+
+print "# 1.0.0.15's RIB out table data with 1.0.0.24\n"
+bgp router 1.0.0.15 show adj-rib out 1.0.0.24 *
+print "\n"
+
+print "# 1.0.0.15's RIB in table data with 1.0.0.17\n"
+bgp router 1.0.0.15 show adj-rib out 1.0.0.17 *
+print "\n"
+
+print "# 1.0.0.15's RIB out table data with 1.0.0.17\n"
+bgp router 1.0.0.15 show adj-rib out 1.0.0.17 *
+print "\n"
+
+print "# 1.0.0.15's RIB in table data with 1.0.0.12\n"
+bgp router 1.0.0.15 show adj-rib out 1.0.0.12 *
+print "\n"
+
+print "# 1.0.0.15's RIB out table data with 1.0.0.12\n"
+bgp router 1.0.0.15 show adj-rib out 1.0.0.12 *
+print "\n"
+
+print "# 1.0.0.15's RIB in table data with 1.0.0.18\n"
+bgp router 1.0.0.15 show adj-rib out 1.0.0.18 *
+print "\n"
+
+print "# 1.0.0.15's RIB out table data with 1.0.0.18\n"
+bgp router 1.0.0.15 show adj-rib out 1.0.0.18 *
+print "\n"
+
+print "# 1.0.0.15's RIB in table data with 1.0.0.5\n"
+bgp router 1.0.0.15 show adj-rib out 1.0.0.5 *
+print "\n"
+
+print "# 1.0.0.15's RIB out table data with 1.0.0.5\n"
+bgp router 1.0.0.15 show adj-rib out 1.0.0.5 *
+print "\n"
+
+print "# 1.0.0.15's RIB in table data with 1.0.0.11\n"
+bgp router 1.0.0.15 show adj-rib out 1.0.0.11 *
+print "\n"
+
+print "# 1.0.0.15's RIB out table data with 1.0.0.11\n"
+bgp router 1.0.0.15 show adj-rib out 1.0.0.11 *
+print "\n"
+
+print "# 1.0.0.15's RIB in table data with 1.0.0.6\n"
+bgp router 1.0.0.15 show adj-rib out 1.0.0.6 *
+print "\n"
+
+print "# 1.0.0.15's RIB out table data with 1.0.0.6\n"
+bgp router 1.0.0.15 show adj-rib out 1.0.0.6 *
+print "\n"
+
+print "# 1.0.0.15's RIB in table data with 1.0.0.13\n"
+bgp router 1.0.0.15 show adj-rib out 1.0.0.13 *
+print "\n"
+
+print "# 1.0.0.15's RIB out table data with 1.0.0.13\n"
+bgp router 1.0.0.15 show adj-rib out 1.0.0.13 *
+print "\n"
+
+print "# 1.0.0.15's RIB in table data with 1.0.0.22\n"
+bgp router 1.0.0.15 show adj-rib out 1.0.0.22 *
+print "\n"
+
+print "# 1.0.0.15's RIB out table data with 1.0.0.22\n"
+bgp router 1.0.0.15 show adj-rib out 1.0.0.22 *
+print "\n"
+
+print "# 1.0.0.15's RIB in table data with 1.0.0.20\n"
+bgp router 1.0.0.15 show adj-rib out 1.0.0.20 *
+print "\n"
+
+print "# 1.0.0.15's RIB out table data with 1.0.0.20\n"
+bgp router 1.0.0.15 show adj-rib out 1.0.0.20 *
+print "\n"
+
+print "# 1.0.0.15's RIB in table data with 1.0.0.3\n"
+bgp router 1.0.0.15 show adj-rib out 1.0.0.3 *
+print "\n"
+
+print "# 1.0.0.15's RIB out table data with 1.0.0.3\n"
+bgp router 1.0.0.15 show adj-rib out 1.0.0.3 *
+print "\n"
+
+print "# 1.0.0.15's RIB in table data with 1.0.0.8\n"
+bgp router 1.0.0.15 show adj-rib out 1.0.0.8 *
+print "\n"
+
+print "# 1.0.0.15's RIB out table data with 1.0.0.8\n"
+bgp router 1.0.0.15 show adj-rib out 1.0.0.8 *
+print "\n"
+
+print "# 1.0.0.15's RIB in table data with 1.0.0.7\n"
+bgp router 1.0.0.15 show adj-rib out 1.0.0.7 *
+print "\n"
+
+print "# 1.0.0.15's RIB out table data with 1.0.0.7\n"
+bgp router 1.0.0.15 show adj-rib out 1.0.0.7 *
+print "\n"
+
+print "# 1.0.0.15's RIB in table data with 1.0.0.9\n"
+bgp router 1.0.0.15 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.15's RIB out table data with 1.0.0.9\n"
+bgp router 1.0.0.15 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.15's RIB in table data with 1.0.0.16\n"
+bgp router 1.0.0.15 show adj-rib out 1.0.0.16 *
+print "\n"
+
+print "# 1.0.0.15's RIB out table data with 1.0.0.16\n"
+bgp router 1.0.0.15 show adj-rib out 1.0.0.16 *
+print "\n"
+
+print "# 1.0.0.15's RIB in table data with 1.0.0.4\n"
+bgp router 1.0.0.15 show adj-rib out 1.0.0.4 *
+print "\n"
+
+print "# 1.0.0.15's RIB out table data with 1.0.0.4\n"
+bgp router 1.0.0.15 show adj-rib out 1.0.0.4 *
+print "\n"
+
+
+print "# -------------------------------------------------------------------\n"
+print "# 1.0.0.16's tables data\n"
+print "# -------------------------------------------------------------------\n\n"
+
+print "# 1.0.0.16's RT table data\n"
+net node 1.0.0.16 show rt *
+print "\n"
+
+print "# 1.0.0.16's RIB table data\n"
+bgp router 1.0.0.16 show rib *
+print "\n"
+
+print "# 1.0.0.16's RIB in table data with 1.0.0.20\n"
+bgp router 1.0.0.16 show adj-rib out 1.0.0.20 *
+print "\n"
+
+print "# 1.0.0.16's RIB out table data with 1.0.0.20\n"
+bgp router 1.0.0.16 show adj-rib out 1.0.0.20 *
+print "\n"
+
+print "# 1.0.0.16's RIB in table data with 1.0.0.23\n"
+bgp router 1.0.0.16 show adj-rib out 1.0.0.23 *
+print "\n"
+
+print "# 1.0.0.16's RIB out table data with 1.0.0.23\n"
+bgp router 1.0.0.16 show adj-rib out 1.0.0.23 *
+print "\n"
+
+print "# 1.0.0.16's RIB in table data with 1.0.0.19\n"
+bgp router 1.0.0.16 show adj-rib out 1.0.0.19 *
+print "\n"
+
+print "# 1.0.0.16's RIB out table data with 1.0.0.19\n"
+bgp router 1.0.0.16 show adj-rib out 1.0.0.19 *
+print "\n"
+
+print "# 1.0.0.16's RIB in table data with 1.0.0.21\n"
+bgp router 1.0.0.16 show adj-rib out 1.0.0.21 *
+print "\n"
+
+print "# 1.0.0.16's RIB out table data with 1.0.0.21\n"
+bgp router 1.0.0.16 show adj-rib out 1.0.0.21 *
+print "\n"
+
+print "# 1.0.0.16's RIB in table data with 1.0.0.10\n"
+bgp router 1.0.0.16 show adj-rib out 1.0.0.10 *
+print "\n"
+
+print "# 1.0.0.16's RIB out table data with 1.0.0.10\n"
+bgp router 1.0.0.16 show adj-rib out 1.0.0.10 *
+print "\n"
+
+print "# 1.0.0.16's RIB in table data with 1.0.0.14\n"
+bgp router 1.0.0.16 show adj-rib out 1.0.0.14 *
+print "\n"
+
+print "# 1.0.0.16's RIB out table data with 1.0.0.14\n"
+bgp router 1.0.0.16 show adj-rib out 1.0.0.14 *
+print "\n"
+
+print "# 1.0.0.16's RIB in table data with 1.0.0.24\n"
+bgp router 1.0.0.16 show adj-rib out 1.0.0.24 *
+print "\n"
+
+print "# 1.0.0.16's RIB out table data with 1.0.0.24\n"
+bgp router 1.0.0.16 show adj-rib out 1.0.0.24 *
+print "\n"
+
+print "# 1.0.0.16's RIB in table data with 1.0.0.17\n"
+bgp router 1.0.0.16 show adj-rib out 1.0.0.17 *
+print "\n"
+
+print "# 1.0.0.16's RIB out table data with 1.0.0.17\n"
+bgp router 1.0.0.16 show adj-rib out 1.0.0.17 *
+print "\n"
+
+print "# 1.0.0.16's RIB in table data with 1.0.0.12\n"
+bgp router 1.0.0.16 show adj-rib out 1.0.0.12 *
+print "\n"
+
+print "# 1.0.0.16's RIB out table data with 1.0.0.12\n"
+bgp router 1.0.0.16 show adj-rib out 1.0.0.12 *
+print "\n"
+
+print "# 1.0.0.16's RIB in table data with 1.0.0.18\n"
+bgp router 1.0.0.16 show adj-rib out 1.0.0.18 *
+print "\n"
+
+print "# 1.0.0.16's RIB out table data with 1.0.0.18\n"
+bgp router 1.0.0.16 show adj-rib out 1.0.0.18 *
+print "\n"
+
+print "# 1.0.0.16's RIB in table data with 1.0.0.5\n"
+bgp router 1.0.0.16 show adj-rib out 1.0.0.5 *
+print "\n"
+
+print "# 1.0.0.16's RIB out table data with 1.0.0.5\n"
+bgp router 1.0.0.16 show adj-rib out 1.0.0.5 *
+print "\n"
+
+print "# 1.0.0.16's RIB in table data with 1.0.0.11\n"
+bgp router 1.0.0.16 show adj-rib out 1.0.0.11 *
+print "\n"
+
+print "# 1.0.0.16's RIB out table data with 1.0.0.11\n"
+bgp router 1.0.0.16 show adj-rib out 1.0.0.11 *
+print "\n"
+
+print "# 1.0.0.16's RIB in table data with 1.0.0.15\n"
+bgp router 1.0.0.16 show adj-rib out 1.0.0.15 *
+print "\n"
+
+print "# 1.0.0.16's RIB out table data with 1.0.0.15\n"
+bgp router 1.0.0.16 show adj-rib out 1.0.0.15 *
+print "\n"
+
+print "# 1.0.0.16's RIB in table data with 1.0.0.6\n"
+bgp router 1.0.0.16 show adj-rib out 1.0.0.6 *
+print "\n"
+
+print "# 1.0.0.16's RIB out table data with 1.0.0.6\n"
+bgp router 1.0.0.16 show adj-rib out 1.0.0.6 *
+print "\n"
+
+print "# 1.0.0.16's RIB in table data with 1.0.0.13\n"
+bgp router 1.0.0.16 show adj-rib out 1.0.0.13 *
+print "\n"
+
+print "# 1.0.0.16's RIB out table data with 1.0.0.13\n"
+bgp router 1.0.0.16 show adj-rib out 1.0.0.13 *
+print "\n"
+
+print "# 1.0.0.16's RIB in table data with 1.0.0.20\n"
+bgp router 1.0.0.16 show adj-rib out 1.0.0.20 *
+print "\n"
+
+print "# 1.0.0.16's RIB out table data with 1.0.0.20\n"
+bgp router 1.0.0.16 show adj-rib out 1.0.0.20 *
+print "\n"
+
+print "# 1.0.0.16's RIB in table data with 1.0.0.20\n"
+bgp router 1.0.0.16 show adj-rib out 1.0.0.20 *
+print "\n"
+
+print "# 1.0.0.16's RIB out table data with 1.0.0.20\n"
+bgp router 1.0.0.16 show adj-rib out 1.0.0.20 *
+print "\n"
+
+
+print "# -------------------------------------------------------------------\n"
+print "# 1.0.0.17's tables data\n"
+print "# -------------------------------------------------------------------\n\n"
+
+print "# 1.0.0.17's RT table data\n"
+net node 1.0.0.17 show rt *
+print "\n"
+
+print "# 1.0.0.17's RIB table data\n"
+bgp router 1.0.0.17 show rib *
+print "\n"
+
+print "# 1.0.0.17's RIB in table data with 1.0.0.23\n"
+bgp router 1.0.0.17 show adj-rib out 1.0.0.23 *
+print "\n"
+
+print "# 1.0.0.17's RIB out table data with 1.0.0.23\n"
+bgp router 1.0.0.17 show adj-rib out 1.0.0.23 *
+print "\n"
+
+print "# 1.0.0.17's RIB in table data with 1.0.0.19\n"
+bgp router 1.0.0.17 show adj-rib out 1.0.0.19 *
+print "\n"
+
+print "# 1.0.0.17's RIB out table data with 1.0.0.19\n"
+bgp router 1.0.0.17 show adj-rib out 1.0.0.19 *
+print "\n"
+
+print "# 1.0.0.17's RIB in table data with 1.0.0.21\n"
+bgp router 1.0.0.17 show adj-rib out 1.0.0.21 *
+print "\n"
+
+print "# 1.0.0.17's RIB out table data with 1.0.0.21\n"
+bgp router 1.0.0.17 show adj-rib out 1.0.0.21 *
+print "\n"
+
+print "# 1.0.0.17's RIB in table data with 1.0.0.10\n"
+bgp router 1.0.0.17 show adj-rib out 1.0.0.10 *
+print "\n"
+
+print "# 1.0.0.17's RIB out table data with 1.0.0.10\n"
+bgp router 1.0.0.17 show adj-rib out 1.0.0.10 *
+print "\n"
+
+print "# 1.0.0.17's RIB in table data with 1.0.0.14\n"
+bgp router 1.0.0.17 show adj-rib out 1.0.0.14 *
+print "\n"
+
+print "# 1.0.0.17's RIB out table data with 1.0.0.14\n"
+bgp router 1.0.0.17 show adj-rib out 1.0.0.14 *
+print "\n"
+
+print "# 1.0.0.17's RIB in table data with 1.0.0.24\n"
+bgp router 1.0.0.17 show adj-rib out 1.0.0.24 *
+print "\n"
+
+print "# 1.0.0.17's RIB out table data with 1.0.0.24\n"
+bgp router 1.0.0.17 show adj-rib out 1.0.0.24 *
+print "\n"
+
+print "# 1.0.0.17's RIB in table data with 1.0.0.12\n"
+bgp router 1.0.0.17 show adj-rib out 1.0.0.12 *
+print "\n"
+
+print "# 1.0.0.17's RIB out table data with 1.0.0.12\n"
+bgp router 1.0.0.17 show adj-rib out 1.0.0.12 *
+print "\n"
+
+print "# 1.0.0.17's RIB in table data with 1.0.0.18\n"
+bgp router 1.0.0.17 show adj-rib out 1.0.0.18 *
+print "\n"
+
+print "# 1.0.0.17's RIB out table data with 1.0.0.18\n"
+bgp router 1.0.0.17 show adj-rib out 1.0.0.18 *
+print "\n"
+
+print "# 1.0.0.17's RIB in table data with 1.0.0.5\n"
+bgp router 1.0.0.17 show adj-rib out 1.0.0.5 *
+print "\n"
+
+print "# 1.0.0.17's RIB out table data with 1.0.0.5\n"
+bgp router 1.0.0.17 show adj-rib out 1.0.0.5 *
+print "\n"
+
+print "# 1.0.0.17's RIB in table data with 1.0.0.11\n"
+bgp router 1.0.0.17 show adj-rib out 1.0.0.11 *
+print "\n"
+
+print "# 1.0.0.17's RIB out table data with 1.0.0.11\n"
+bgp router 1.0.0.17 show adj-rib out 1.0.0.11 *
+print "\n"
+
+print "# 1.0.0.17's RIB in table data with 1.0.0.15\n"
+bgp router 1.0.0.17 show adj-rib out 1.0.0.15 *
+print "\n"
+
+print "# 1.0.0.17's RIB out table data with 1.0.0.15\n"
+bgp router 1.0.0.17 show adj-rib out 1.0.0.15 *
+print "\n"
+
+print "# 1.0.0.17's RIB in table data with 1.0.0.6\n"
+bgp router 1.0.0.17 show adj-rib out 1.0.0.6 *
+print "\n"
+
+print "# 1.0.0.17's RIB out table data with 1.0.0.6\n"
+bgp router 1.0.0.17 show adj-rib out 1.0.0.6 *
+print "\n"
+
+print "# 1.0.0.17's RIB in table data with 1.0.0.13\n"
+bgp router 1.0.0.17 show adj-rib out 1.0.0.13 *
+print "\n"
+
+print "# 1.0.0.17's RIB out table data with 1.0.0.13\n"
+bgp router 1.0.0.17 show adj-rib out 1.0.0.13 *
+print "\n"
+
+print "# 1.0.0.17's RIB in table data with 1.0.0.22\n"
+bgp router 1.0.0.17 show adj-rib out 1.0.0.22 *
+print "\n"
+
+print "# 1.0.0.17's RIB out table data with 1.0.0.22\n"
+bgp router 1.0.0.17 show adj-rib out 1.0.0.22 *
+print "\n"
+
+print "# 1.0.0.17's RIB in table data with 1.0.0.3\n"
+bgp router 1.0.0.17 show adj-rib out 1.0.0.3 *
+print "\n"
+
+print "# 1.0.0.17's RIB out table data with 1.0.0.3\n"
+bgp router 1.0.0.17 show adj-rib out 1.0.0.3 *
+print "\n"
+
+print "# 1.0.0.17's RIB in table data with 1.0.0.8\n"
+bgp router 1.0.0.17 show adj-rib out 1.0.0.8 *
+print "\n"
+
+print "# 1.0.0.17's RIB out table data with 1.0.0.8\n"
+bgp router 1.0.0.17 show adj-rib out 1.0.0.8 *
+print "\n"
+
+print "# 1.0.0.17's RIB in table data with 1.0.0.7\n"
+bgp router 1.0.0.17 show adj-rib out 1.0.0.7 *
+print "\n"
+
+print "# 1.0.0.17's RIB out table data with 1.0.0.7\n"
+bgp router 1.0.0.17 show adj-rib out 1.0.0.7 *
+print "\n"
+
+print "# 1.0.0.17's RIB in table data with 1.0.0.9\n"
+bgp router 1.0.0.17 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.17's RIB out table data with 1.0.0.9\n"
+bgp router 1.0.0.17 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.17's RIB in table data with 1.0.0.16\n"
+bgp router 1.0.0.17 show adj-rib out 1.0.0.16 *
+print "\n"
+
+print "# 1.0.0.17's RIB out table data with 1.0.0.16\n"
+bgp router 1.0.0.17 show adj-rib out 1.0.0.16 *
+print "\n"
+
+print "# 1.0.0.17's RIB in table data with 1.0.0.4\n"
+bgp router 1.0.0.17 show adj-rib out 1.0.0.4 *
+print "\n"
+
+print "# 1.0.0.17's RIB out table data with 1.0.0.4\n"
+bgp router 1.0.0.17 show adj-rib out 1.0.0.4 *
+print "\n"
+
+
+print "# -------------------------------------------------------------------\n"
+print "# 1.0.0.18's tables data\n"
+print "# -------------------------------------------------------------------\n\n"
+
+print "# 1.0.0.18's RT table data\n"
+net node 1.0.0.18 show rt *
+print "\n"
+
+print "# 1.0.0.18's RIB table data\n"
+bgp router 1.0.0.18 show rib *
+print "\n"
+
+print "# 1.0.0.18's RIB in table data with 1.0.0.23\n"
+bgp router 1.0.0.18 show adj-rib out 1.0.0.23 *
+print "\n"
+
+print "# 1.0.0.18's RIB out table data with 1.0.0.23\n"
+bgp router 1.0.0.18 show adj-rib out 1.0.0.23 *
+print "\n"
+
+print "# 1.0.0.18's RIB in table data with 1.0.0.19\n"
+bgp router 1.0.0.18 show adj-rib out 1.0.0.19 *
+print "\n"
+
+print "# 1.0.0.18's RIB out table data with 1.0.0.19\n"
+bgp router 1.0.0.18 show adj-rib out 1.0.0.19 *
+print "\n"
+
+print "# 1.0.0.18's RIB in table data with 1.0.0.21\n"
+bgp router 1.0.0.18 show adj-rib out 1.0.0.21 *
+print "\n"
+
+print "# 1.0.0.18's RIB out table data with 1.0.0.21\n"
+bgp router 1.0.0.18 show adj-rib out 1.0.0.21 *
+print "\n"
+
+print "# 1.0.0.18's RIB in table data with 1.0.0.10\n"
+bgp router 1.0.0.18 show adj-rib out 1.0.0.10 *
+print "\n"
+
+print "# 1.0.0.18's RIB out table data with 1.0.0.10\n"
+bgp router 1.0.0.18 show adj-rib out 1.0.0.10 *
+print "\n"
+
+print "# 1.0.0.18's RIB in table data with 1.0.0.14\n"
+bgp router 1.0.0.18 show adj-rib out 1.0.0.14 *
+print "\n"
+
+print "# 1.0.0.18's RIB out table data with 1.0.0.14\n"
+bgp router 1.0.0.18 show adj-rib out 1.0.0.14 *
+print "\n"
+
+print "# 1.0.0.18's RIB in table data with 1.0.0.24\n"
+bgp router 1.0.0.18 show adj-rib out 1.0.0.24 *
+print "\n"
+
+print "# 1.0.0.18's RIB out table data with 1.0.0.24\n"
+bgp router 1.0.0.18 show adj-rib out 1.0.0.24 *
+print "\n"
+
+print "# 1.0.0.18's RIB in table data with 1.0.0.17\n"
+bgp router 1.0.0.18 show adj-rib out 1.0.0.17 *
+print "\n"
+
+print "# 1.0.0.18's RIB out table data with 1.0.0.17\n"
+bgp router 1.0.0.18 show adj-rib out 1.0.0.17 *
+print "\n"
+
+print "# 1.0.0.18's RIB in table data with 1.0.0.12\n"
+bgp router 1.0.0.18 show adj-rib out 1.0.0.12 *
+print "\n"
+
+print "# 1.0.0.18's RIB out table data with 1.0.0.12\n"
+bgp router 1.0.0.18 show adj-rib out 1.0.0.12 *
+print "\n"
+
+print "# 1.0.0.18's RIB in table data with 1.0.0.5\n"
+bgp router 1.0.0.18 show adj-rib out 1.0.0.5 *
+print "\n"
+
+print "# 1.0.0.18's RIB out table data with 1.0.0.5\n"
+bgp router 1.0.0.18 show adj-rib out 1.0.0.5 *
+print "\n"
+
+print "# 1.0.0.18's RIB in table data with 1.0.0.11\n"
+bgp router 1.0.0.18 show adj-rib out 1.0.0.11 *
+print "\n"
+
+print "# 1.0.0.18's RIB out table data with 1.0.0.11\n"
+bgp router 1.0.0.18 show adj-rib out 1.0.0.11 *
+print "\n"
+
+print "# 1.0.0.18's RIB in table data with 1.0.0.15\n"
+bgp router 1.0.0.18 show adj-rib out 1.0.0.15 *
+print "\n"
+
+print "# 1.0.0.18's RIB out table data with 1.0.0.15\n"
+bgp router 1.0.0.18 show adj-rib out 1.0.0.15 *
+print "\n"
+
+print "# 1.0.0.18's RIB in table data with 1.0.0.6\n"
+bgp router 1.0.0.18 show adj-rib out 1.0.0.6 *
+print "\n"
+
+print "# 1.0.0.18's RIB out table data with 1.0.0.6\n"
+bgp router 1.0.0.18 show adj-rib out 1.0.0.6 *
+print "\n"
+
+print "# 1.0.0.18's RIB in table data with 1.0.0.13\n"
+bgp router 1.0.0.18 show adj-rib out 1.0.0.13 *
+print "\n"
+
+print "# 1.0.0.18's RIB out table data with 1.0.0.13\n"
+bgp router 1.0.0.18 show adj-rib out 1.0.0.13 *
+print "\n"
+
+print "# 1.0.0.18's RIB in table data with 1.0.0.22\n"
+bgp router 1.0.0.18 show adj-rib out 1.0.0.22 *
+print "\n"
+
+print "# 1.0.0.18's RIB out table data with 1.0.0.22\n"
+bgp router 1.0.0.18 show adj-rib out 1.0.0.22 *
+print "\n"
+
+print "# 1.0.0.18's RIB in table data with 1.0.0.20\n"
+bgp router 1.0.0.18 show adj-rib out 1.0.0.20 *
+print "\n"
+
+print "# 1.0.0.18's RIB out table data with 1.0.0.20\n"
+bgp router 1.0.0.18 show adj-rib out 1.0.0.20 *
+print "\n"
+
+print "# 1.0.0.18's RIB in table data with 1.0.0.3\n"
+bgp router 1.0.0.18 show adj-rib out 1.0.0.3 *
+print "\n"
+
+print "# 1.0.0.18's RIB out table data with 1.0.0.3\n"
+bgp router 1.0.0.18 show adj-rib out 1.0.0.3 *
+print "\n"
+
+print "# 1.0.0.18's RIB in table data with 1.0.0.8\n"
+bgp router 1.0.0.18 show adj-rib out 1.0.0.8 *
+print "\n"
+
+print "# 1.0.0.18's RIB out table data with 1.0.0.8\n"
+bgp router 1.0.0.18 show adj-rib out 1.0.0.8 *
+print "\n"
+
+print "# 1.0.0.18's RIB in table data with 1.0.0.7\n"
+bgp router 1.0.0.18 show adj-rib out 1.0.0.7 *
+print "\n"
+
+print "# 1.0.0.18's RIB out table data with 1.0.0.7\n"
+bgp router 1.0.0.18 show adj-rib out 1.0.0.7 *
+print "\n"
+
+print "# 1.0.0.18's RIB in table data with 1.0.0.9\n"
+bgp router 1.0.0.18 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.18's RIB out table data with 1.0.0.9\n"
+bgp router 1.0.0.18 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.18's RIB in table data with 1.0.0.16\n"
+bgp router 1.0.0.18 show adj-rib out 1.0.0.16 *
+print "\n"
+
+print "# 1.0.0.18's RIB out table data with 1.0.0.16\n"
+bgp router 1.0.0.18 show adj-rib out 1.0.0.16 *
+print "\n"
+
+print "# 1.0.0.18's RIB in table data with 1.0.0.4\n"
+bgp router 1.0.0.18 show adj-rib out 1.0.0.4 *
+print "\n"
+
+print "# 1.0.0.18's RIB out table data with 1.0.0.4\n"
+bgp router 1.0.0.18 show adj-rib out 1.0.0.4 *
+print "\n"
+
+
+print "# -------------------------------------------------------------------\n"
+print "# 1.0.0.19's tables data\n"
+print "# -------------------------------------------------------------------\n\n"
+
+print "# 1.0.0.19's RT table data\n"
+net node 1.0.0.19 show rt *
+print "\n"
+
+print "# 1.0.0.19's RIB table data\n"
+bgp router 1.0.0.19 show rib *
+print "\n"
+
+print "# 1.0.0.19's RIB in table data with 1.0.0.23\n"
+bgp router 1.0.0.19 show adj-rib out 1.0.0.23 *
+print "\n"
+
+print "# 1.0.0.19's RIB out table data with 1.0.0.23\n"
+bgp router 1.0.0.19 show adj-rib out 1.0.0.23 *
+print "\n"
+
+print "# 1.0.0.19's RIB in table data with 1.0.0.21\n"
+bgp router 1.0.0.19 show adj-rib out 1.0.0.21 *
+print "\n"
+
+print "# 1.0.0.19's RIB out table data with 1.0.0.21\n"
+bgp router 1.0.0.19 show adj-rib out 1.0.0.21 *
+print "\n"
+
+print "# 1.0.0.19's RIB in table data with 1.0.0.10\n"
+bgp router 1.0.0.19 show adj-rib out 1.0.0.10 *
+print "\n"
+
+print "# 1.0.0.19's RIB out table data with 1.0.0.10\n"
+bgp router 1.0.0.19 show adj-rib out 1.0.0.10 *
+print "\n"
+
+print "# 1.0.0.19's RIB in table data with 1.0.0.14\n"
+bgp router 1.0.0.19 show adj-rib out 1.0.0.14 *
+print "\n"
+
+print "# 1.0.0.19's RIB out table data with 1.0.0.14\n"
+bgp router 1.0.0.19 show adj-rib out 1.0.0.14 *
+print "\n"
+
+print "# 1.0.0.19's RIB in table data with 1.0.0.24\n"
+bgp router 1.0.0.19 show adj-rib out 1.0.0.24 *
+print "\n"
+
+print "# 1.0.0.19's RIB out table data with 1.0.0.24\n"
+bgp router 1.0.0.19 show adj-rib out 1.0.0.24 *
+print "\n"
+
+print "# 1.0.0.19's RIB in table data with 1.0.0.17\n"
+bgp router 1.0.0.19 show adj-rib out 1.0.0.17 *
+print "\n"
+
+print "# 1.0.0.19's RIB out table data with 1.0.0.17\n"
+bgp router 1.0.0.19 show adj-rib out 1.0.0.17 *
+print "\n"
+
+print "# 1.0.0.19's RIB in table data with 1.0.0.12\n"
+bgp router 1.0.0.19 show adj-rib out 1.0.0.12 *
+print "\n"
+
+print "# 1.0.0.19's RIB out table data with 1.0.0.12\n"
+bgp router 1.0.0.19 show adj-rib out 1.0.0.12 *
+print "\n"
+
+print "# 1.0.0.19's RIB in table data with 1.0.0.18\n"
+bgp router 1.0.0.19 show adj-rib out 1.0.0.18 *
+print "\n"
+
+print "# 1.0.0.19's RIB out table data with 1.0.0.18\n"
+bgp router 1.0.0.19 show adj-rib out 1.0.0.18 *
+print "\n"
+
+print "# 1.0.0.19's RIB in table data with 1.0.0.5\n"
+bgp router 1.0.0.19 show adj-rib out 1.0.0.5 *
+print "\n"
+
+print "# 1.0.0.19's RIB out table data with 1.0.0.5\n"
+bgp router 1.0.0.19 show adj-rib out 1.0.0.5 *
+print "\n"
+
+print "# 1.0.0.19's RIB in table data with 1.0.0.11\n"
+bgp router 1.0.0.19 show adj-rib out 1.0.0.11 *
+print "\n"
+
+print "# 1.0.0.19's RIB out table data with 1.0.0.11\n"
+bgp router 1.0.0.19 show adj-rib out 1.0.0.11 *
+print "\n"
+
+print "# 1.0.0.19's RIB in table data with 1.0.0.15\n"
+bgp router 1.0.0.19 show adj-rib out 1.0.0.15 *
+print "\n"
+
+print "# 1.0.0.19's RIB out table data with 1.0.0.15\n"
+bgp router 1.0.0.19 show adj-rib out 1.0.0.15 *
+print "\n"
+
+print "# 1.0.0.19's RIB in table data with 1.0.0.6\n"
+bgp router 1.0.0.19 show adj-rib out 1.0.0.6 *
+print "\n"
+
+print "# 1.0.0.19's RIB out table data with 1.0.0.6\n"
+bgp router 1.0.0.19 show adj-rib out 1.0.0.6 *
+print "\n"
+
+print "# 1.0.0.19's RIB in table data with 1.0.0.13\n"
+bgp router 1.0.0.19 show adj-rib out 1.0.0.13 *
+print "\n"
+
+print "# 1.0.0.19's RIB out table data with 1.0.0.13\n"
+bgp router 1.0.0.19 show adj-rib out 1.0.0.13 *
+print "\n"
+
+print "# 1.0.0.19's RIB in table data with 1.0.0.22\n"
+bgp router 1.0.0.19 show adj-rib out 1.0.0.22 *
+print "\n"
+
+print "# 1.0.0.19's RIB out table data with 1.0.0.22\n"
+bgp router 1.0.0.19 show adj-rib out 1.0.0.22 *
+print "\n"
+
+print "# 1.0.0.19's RIB in table data with 1.0.0.20\n"
+bgp router 1.0.0.19 show adj-rib out 1.0.0.20 *
+print "\n"
+
+print "# 1.0.0.19's RIB out table data with 1.0.0.20\n"
+bgp router 1.0.0.19 show adj-rib out 1.0.0.20 *
+print "\n"
+
+print "# 1.0.0.19's RIB in table data with 1.0.0.3\n"
+bgp router 1.0.0.19 show adj-rib out 1.0.0.3 *
+print "\n"
+
+print "# 1.0.0.19's RIB out table data with 1.0.0.3\n"
+bgp router 1.0.0.19 show adj-rib out 1.0.0.3 *
+print "\n"
+
+print "# 1.0.0.19's RIB in table data with 1.0.0.8\n"
+bgp router 1.0.0.19 show adj-rib out 1.0.0.8 *
+print "\n"
+
+print "# 1.0.0.19's RIB out table data with 1.0.0.8\n"
+bgp router 1.0.0.19 show adj-rib out 1.0.0.8 *
+print "\n"
+
+print "# 1.0.0.19's RIB in table data with 1.0.0.7\n"
+bgp router 1.0.0.19 show adj-rib out 1.0.0.7 *
+print "\n"
+
+print "# 1.0.0.19's RIB out table data with 1.0.0.7\n"
+bgp router 1.0.0.19 show adj-rib out 1.0.0.7 *
+print "\n"
+
+print "# 1.0.0.19's RIB in table data with 1.0.0.9\n"
+bgp router 1.0.0.19 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.19's RIB out table data with 1.0.0.9\n"
+bgp router 1.0.0.19 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.19's RIB in table data with 1.0.0.16\n"
+bgp router 1.0.0.19 show adj-rib out 1.0.0.16 *
+print "\n"
+
+print "# 1.0.0.19's RIB out table data with 1.0.0.16\n"
+bgp router 1.0.0.19 show adj-rib out 1.0.0.16 *
+print "\n"
+
+print "# 1.0.0.19's RIB in table data with 1.0.0.4\n"
+bgp router 1.0.0.19 show adj-rib out 1.0.0.4 *
+print "\n"
+
+print "# 1.0.0.19's RIB out table data with 1.0.0.4\n"
+bgp router 1.0.0.19 show adj-rib out 1.0.0.4 *
+print "\n"
+
+
+print "# -------------------------------------------------------------------\n"
+print "# 1.0.0.20's tables data\n"
+print "# -------------------------------------------------------------------\n\n"
+
+print "# 1.0.0.20's RT table data\n"
+net node 1.0.0.20 show rt *
+print "\n"
+
+print "# 1.0.0.20's RIB table data\n"
+bgp router 1.0.0.20 show rib *
+print "\n"
+
+print "# 1.0.0.20's RIB in table data with 1.0.0.23\n"
+bgp router 1.0.0.20 show adj-rib out 1.0.0.23 *
+print "\n"
+
+print "# 1.0.0.20's RIB out table data with 1.0.0.23\n"
+bgp router 1.0.0.20 show adj-rib out 1.0.0.23 *
+print "\n"
+
+print "# 1.0.0.20's RIB in table data with 1.0.0.19\n"
+bgp router 1.0.0.20 show adj-rib out 1.0.0.19 *
+print "\n"
+
+print "# 1.0.0.20's RIB out table data with 1.0.0.19\n"
+bgp router 1.0.0.20 show adj-rib out 1.0.0.19 *
+print "\n"
+
+print "# 1.0.0.20's RIB in table data with 1.0.0.21\n"
+bgp router 1.0.0.20 show adj-rib out 1.0.0.21 *
+print "\n"
+
+print "# 1.0.0.20's RIB out table data with 1.0.0.21\n"
+bgp router 1.0.0.20 show adj-rib out 1.0.0.21 *
+print "\n"
+
+print "# 1.0.0.20's RIB in table data with 1.0.0.10\n"
+bgp router 1.0.0.20 show adj-rib out 1.0.0.10 *
+print "\n"
+
+print "# 1.0.0.20's RIB out table data with 1.0.0.10\n"
+bgp router 1.0.0.20 show adj-rib out 1.0.0.10 *
+print "\n"
+
+print "# 1.0.0.20's RIB in table data with 1.0.0.14\n"
+bgp router 1.0.0.20 show adj-rib out 1.0.0.14 *
+print "\n"
+
+print "# 1.0.0.20's RIB out table data with 1.0.0.14\n"
+bgp router 1.0.0.20 show adj-rib out 1.0.0.14 *
+print "\n"
+
+print "# 1.0.0.20's RIB in table data with 1.0.0.24\n"
+bgp router 1.0.0.20 show adj-rib out 1.0.0.24 *
+print "\n"
+
+print "# 1.0.0.20's RIB out table data with 1.0.0.24\n"
+bgp router 1.0.0.20 show adj-rib out 1.0.0.24 *
+print "\n"
+
+print "# 1.0.0.20's RIB in table data with 1.0.0.16\n"
+bgp router 1.0.0.20 show adj-rib out 1.0.0.16 *
+print "\n"
+
+print "# 1.0.0.20's RIB out table data with 1.0.0.16\n"
+bgp router 1.0.0.20 show adj-rib out 1.0.0.16 *
+print "\n"
+
+print "# 1.0.0.20's RIB in table data with 1.0.0.12\n"
+bgp router 1.0.0.20 show adj-rib out 1.0.0.12 *
+print "\n"
+
+print "# 1.0.0.20's RIB out table data with 1.0.0.12\n"
+bgp router 1.0.0.20 show adj-rib out 1.0.0.12 *
+print "\n"
+
+print "# 1.0.0.20's RIB in table data with 1.0.0.18\n"
+bgp router 1.0.0.20 show adj-rib out 1.0.0.18 *
+print "\n"
+
+print "# 1.0.0.20's RIB out table data with 1.0.0.18\n"
+bgp router 1.0.0.20 show adj-rib out 1.0.0.18 *
+print "\n"
+
+print "# 1.0.0.20's RIB in table data with 1.0.0.5\n"
+bgp router 1.0.0.20 show adj-rib out 1.0.0.5 *
+print "\n"
+
+print "# 1.0.0.20's RIB out table data with 1.0.0.5\n"
+bgp router 1.0.0.20 show adj-rib out 1.0.0.5 *
+print "\n"
+
+print "# 1.0.0.20's RIB in table data with 1.0.0.11\n"
+bgp router 1.0.0.20 show adj-rib out 1.0.0.11 *
+print "\n"
+
+print "# 1.0.0.20's RIB out table data with 1.0.0.11\n"
+bgp router 1.0.0.20 show adj-rib out 1.0.0.11 *
+print "\n"
+
+print "# 1.0.0.20's RIB in table data with 1.0.0.15\n"
+bgp router 1.0.0.20 show adj-rib out 1.0.0.15 *
+print "\n"
+
+print "# 1.0.0.20's RIB out table data with 1.0.0.15\n"
+bgp router 1.0.0.20 show adj-rib out 1.0.0.15 *
+print "\n"
+
+print "# 1.0.0.20's RIB in table data with 1.0.0.6\n"
+bgp router 1.0.0.20 show adj-rib out 1.0.0.6 *
+print "\n"
+
+print "# 1.0.0.20's RIB out table data with 1.0.0.6\n"
+bgp router 1.0.0.20 show adj-rib out 1.0.0.6 *
+print "\n"
+
+print "# 1.0.0.20's RIB in table data with 1.0.0.13\n"
+bgp router 1.0.0.20 show adj-rib out 1.0.0.13 *
+print "\n"
+
+print "# 1.0.0.20's RIB out table data with 1.0.0.13\n"
+bgp router 1.0.0.20 show adj-rib out 1.0.0.13 *
+print "\n"
+
+print "# 1.0.0.20's RIB in table data with 1.0.0.22\n"
+bgp router 1.0.0.20 show adj-rib out 1.0.0.22 *
+print "\n"
+
+print "# 1.0.0.20's RIB out table data with 1.0.0.22\n"
+bgp router 1.0.0.20 show adj-rib out 1.0.0.22 *
+print "\n"
+
+print "# 1.0.0.20's RIB in table data with 1.0.0.16\n"
+bgp router 1.0.0.20 show adj-rib out 1.0.0.16 *
+print "\n"
+
+print "# 1.0.0.20's RIB out table data with 1.0.0.16\n"
+bgp router 1.0.0.20 show adj-rib out 1.0.0.16 *
+print "\n"
+
+print "# 1.0.0.20's RIB in table data with 1.0.0.16\n"
+bgp router 1.0.0.20 show adj-rib out 1.0.0.16 *
+print "\n"
+
+print "# 1.0.0.20's RIB out table data with 1.0.0.16\n"
+bgp router 1.0.0.20 show adj-rib out 1.0.0.16 *
+print "\n"
+
+
+print "# -------------------------------------------------------------------\n"
+print "# 1.0.0.21's tables data\n"
+print "# -------------------------------------------------------------------\n\n"
+
+print "# 1.0.0.21's RT table data\n"
+net node 1.0.0.21 show rt *
+print "\n"
+
+print "# 1.0.0.21's RIB table data\n"
+bgp router 1.0.0.21 show rib *
+print "\n"
+
+print "# 1.0.0.21's RIB in table data with 1.0.0.23\n"
+bgp router 1.0.0.21 show adj-rib out 1.0.0.23 *
+print "\n"
+
+print "# 1.0.0.21's RIB out table data with 1.0.0.23\n"
+bgp router 1.0.0.21 show adj-rib out 1.0.0.23 *
+print "\n"
+
+print "# 1.0.0.21's RIB in table data with 1.0.0.19\n"
+bgp router 1.0.0.21 show adj-rib out 1.0.0.19 *
+print "\n"
+
+print "# 1.0.0.21's RIB out table data with 1.0.0.19\n"
+bgp router 1.0.0.21 show adj-rib out 1.0.0.19 *
+print "\n"
+
+print "# 1.0.0.21's RIB in table data with 1.0.0.10\n"
+bgp router 1.0.0.21 show adj-rib out 1.0.0.10 *
+print "\n"
+
+print "# 1.0.0.21's RIB out table data with 1.0.0.10\n"
+bgp router 1.0.0.21 show adj-rib out 1.0.0.10 *
+print "\n"
+
+print "# 1.0.0.21's RIB in table data with 1.0.0.14\n"
+bgp router 1.0.0.21 show adj-rib out 1.0.0.14 *
+print "\n"
+
+print "# 1.0.0.21's RIB out table data with 1.0.0.14\n"
+bgp router 1.0.0.21 show adj-rib out 1.0.0.14 *
+print "\n"
+
+print "# 1.0.0.21's RIB in table data with 1.0.0.24\n"
+bgp router 1.0.0.21 show adj-rib out 1.0.0.24 *
+print "\n"
+
+print "# 1.0.0.21's RIB out table data with 1.0.0.24\n"
+bgp router 1.0.0.21 show adj-rib out 1.0.0.24 *
+print "\n"
+
+print "# 1.0.0.21's RIB in table data with 1.0.0.17\n"
+bgp router 1.0.0.21 show adj-rib out 1.0.0.17 *
+print "\n"
+
+print "# 1.0.0.21's RIB out table data with 1.0.0.17\n"
+bgp router 1.0.0.21 show adj-rib out 1.0.0.17 *
+print "\n"
+
+print "# 1.0.0.21's RIB in table data with 1.0.0.12\n"
+bgp router 1.0.0.21 show adj-rib out 1.0.0.12 *
+print "\n"
+
+print "# 1.0.0.21's RIB out table data with 1.0.0.12\n"
+bgp router 1.0.0.21 show adj-rib out 1.0.0.12 *
+print "\n"
+
+print "# 1.0.0.21's RIB in table data with 1.0.0.18\n"
+bgp router 1.0.0.21 show adj-rib out 1.0.0.18 *
+print "\n"
+
+print "# 1.0.0.21's RIB out table data with 1.0.0.18\n"
+bgp router 1.0.0.21 show adj-rib out 1.0.0.18 *
+print "\n"
+
+print "# 1.0.0.21's RIB in table data with 1.0.0.5\n"
+bgp router 1.0.0.21 show adj-rib out 1.0.0.5 *
+print "\n"
+
+print "# 1.0.0.21's RIB out table data with 1.0.0.5\n"
+bgp router 1.0.0.21 show adj-rib out 1.0.0.5 *
+print "\n"
+
+print "# 1.0.0.21's RIB in table data with 1.0.0.11\n"
+bgp router 1.0.0.21 show adj-rib out 1.0.0.11 *
+print "\n"
+
+print "# 1.0.0.21's RIB out table data with 1.0.0.11\n"
+bgp router 1.0.0.21 show adj-rib out 1.0.0.11 *
+print "\n"
+
+print "# 1.0.0.21's RIB in table data with 1.0.0.15\n"
+bgp router 1.0.0.21 show adj-rib out 1.0.0.15 *
+print "\n"
+
+print "# 1.0.0.21's RIB out table data with 1.0.0.15\n"
+bgp router 1.0.0.21 show adj-rib out 1.0.0.15 *
+print "\n"
+
+print "# 1.0.0.21's RIB in table data with 1.0.0.6\n"
+bgp router 1.0.0.21 show adj-rib out 1.0.0.6 *
+print "\n"
+
+print "# 1.0.0.21's RIB out table data with 1.0.0.6\n"
+bgp router 1.0.0.21 show adj-rib out 1.0.0.6 *
+print "\n"
+
+print "# 1.0.0.21's RIB in table data with 1.0.0.13\n"
+bgp router 1.0.0.21 show adj-rib out 1.0.0.13 *
+print "\n"
+
+print "# 1.0.0.21's RIB out table data with 1.0.0.13\n"
+bgp router 1.0.0.21 show adj-rib out 1.0.0.13 *
+print "\n"
+
+print "# 1.0.0.21's RIB in table data with 1.0.0.22\n"
+bgp router 1.0.0.21 show adj-rib out 1.0.0.22 *
+print "\n"
+
+print "# 1.0.0.21's RIB out table data with 1.0.0.22\n"
+bgp router 1.0.0.21 show adj-rib out 1.0.0.22 *
+print "\n"
+
+print "# 1.0.0.21's RIB in table data with 1.0.0.20\n"
+bgp router 1.0.0.21 show adj-rib out 1.0.0.20 *
+print "\n"
+
+print "# 1.0.0.21's RIB out table data with 1.0.0.20\n"
+bgp router 1.0.0.21 show adj-rib out 1.0.0.20 *
+print "\n"
+
+print "# 1.0.0.21's RIB in table data with 1.0.0.3\n"
+bgp router 1.0.0.21 show adj-rib out 1.0.0.3 *
+print "\n"
+
+print "# 1.0.0.21's RIB out table data with 1.0.0.3\n"
+bgp router 1.0.0.21 show adj-rib out 1.0.0.3 *
+print "\n"
+
+print "# 1.0.0.21's RIB in table data with 1.0.0.8\n"
+bgp router 1.0.0.21 show adj-rib out 1.0.0.8 *
+print "\n"
+
+print "# 1.0.0.21's RIB out table data with 1.0.0.8\n"
+bgp router 1.0.0.21 show adj-rib out 1.0.0.8 *
+print "\n"
+
+print "# 1.0.0.21's RIB in table data with 1.0.0.7\n"
+bgp router 1.0.0.21 show adj-rib out 1.0.0.7 *
+print "\n"
+
+print "# 1.0.0.21's RIB out table data with 1.0.0.7\n"
+bgp router 1.0.0.21 show adj-rib out 1.0.0.7 *
+print "\n"
+
+print "# 1.0.0.21's RIB in table data with 1.0.0.9\n"
+bgp router 1.0.0.21 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.21's RIB out table data with 1.0.0.9\n"
+bgp router 1.0.0.21 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.21's RIB in table data with 1.0.0.16\n"
+bgp router 1.0.0.21 show adj-rib out 1.0.0.16 *
+print "\n"
+
+print "# 1.0.0.21's RIB out table data with 1.0.0.16\n"
+bgp router 1.0.0.21 show adj-rib out 1.0.0.16 *
+print "\n"
+
+print "# 1.0.0.21's RIB in table data with 1.0.0.4\n"
+bgp router 1.0.0.21 show adj-rib out 1.0.0.4 *
+print "\n"
+
+print "# 1.0.0.21's RIB out table data with 1.0.0.4\n"
+bgp router 1.0.0.21 show adj-rib out 1.0.0.4 *
+print "\n"
+
+
+print "# -------------------------------------------------------------------\n"
+print "# 1.0.0.22's tables data\n"
+print "# -------------------------------------------------------------------\n\n"
+
+print "# 1.0.0.22's RT table data\n"
+net node 1.0.0.22 show rt *
+print "\n"
+
+print "# 1.0.0.22's RIB table data\n"
+bgp router 1.0.0.22 show rib *
+print "\n"
+
+print "# 1.0.0.22's RIB in table data with 1.0.0.27\n"
+bgp router 1.0.0.22 show adj-rib out 1.0.0.27 *
+print "\n"
+
+print "# 1.0.0.22's RIB out table data with 1.0.0.27\n"
+bgp router 1.0.0.22 show adj-rib out 1.0.0.27 *
+print "\n"
+
+print "# 1.0.0.22's RIB in table data with 1.0.0.23\n"
+bgp router 1.0.0.22 show adj-rib out 1.0.0.23 *
+print "\n"
+
+print "# 1.0.0.22's RIB out table data with 1.0.0.23\n"
+bgp router 1.0.0.22 show adj-rib out 1.0.0.23 *
+print "\n"
+
+print "# 1.0.0.22's RIB in table data with 1.0.0.19\n"
+bgp router 1.0.0.22 show adj-rib out 1.0.0.19 *
+print "\n"
+
+print "# 1.0.0.22's RIB out table data with 1.0.0.19\n"
+bgp router 1.0.0.22 show adj-rib out 1.0.0.19 *
+print "\n"
+
+print "# 1.0.0.22's RIB in table data with 1.0.0.21\n"
+bgp router 1.0.0.22 show adj-rib out 1.0.0.21 *
+print "\n"
+
+print "# 1.0.0.22's RIB out table data with 1.0.0.21\n"
+bgp router 1.0.0.22 show adj-rib out 1.0.0.21 *
+print "\n"
+
+print "# 1.0.0.22's RIB in table data with 1.0.0.10\n"
+bgp router 1.0.0.22 show adj-rib out 1.0.0.10 *
+print "\n"
+
+print "# 1.0.0.22's RIB out table data with 1.0.0.10\n"
+bgp router 1.0.0.22 show adj-rib out 1.0.0.10 *
+print "\n"
+
+print "# 1.0.0.22's RIB in table data with 1.0.0.14\n"
+bgp router 1.0.0.22 show adj-rib out 1.0.0.14 *
+print "\n"
+
+print "# 1.0.0.22's RIB out table data with 1.0.0.14\n"
+bgp router 1.0.0.22 show adj-rib out 1.0.0.14 *
+print "\n"
+
+print "# 1.0.0.22's RIB in table data with 1.0.0.24\n"
+bgp router 1.0.0.22 show adj-rib out 1.0.0.24 *
+print "\n"
+
+print "# 1.0.0.22's RIB out table data with 1.0.0.24\n"
+bgp router 1.0.0.22 show adj-rib out 1.0.0.24 *
+print "\n"
+
+print "# 1.0.0.22's RIB in table data with 1.0.0.17\n"
+bgp router 1.0.0.22 show adj-rib out 1.0.0.17 *
+print "\n"
+
+print "# 1.0.0.22's RIB out table data with 1.0.0.17\n"
+bgp router 1.0.0.22 show adj-rib out 1.0.0.17 *
+print "\n"
+
+print "# 1.0.0.22's RIB in table data with 1.0.0.12\n"
+bgp router 1.0.0.22 show adj-rib out 1.0.0.12 *
+print "\n"
+
+print "# 1.0.0.22's RIB out table data with 1.0.0.12\n"
+bgp router 1.0.0.22 show adj-rib out 1.0.0.12 *
+print "\n"
+
+print "# 1.0.0.22's RIB in table data with 1.0.0.18\n"
+bgp router 1.0.0.22 show adj-rib out 1.0.0.18 *
+print "\n"
+
+print "# 1.0.0.22's RIB out table data with 1.0.0.18\n"
+bgp router 1.0.0.22 show adj-rib out 1.0.0.18 *
+print "\n"
+
+print "# 1.0.0.22's RIB in table data with 1.0.0.5\n"
+bgp router 1.0.0.22 show adj-rib out 1.0.0.5 *
+print "\n"
+
+print "# 1.0.0.22's RIB out table data with 1.0.0.5\n"
+bgp router 1.0.0.22 show adj-rib out 1.0.0.5 *
+print "\n"
+
+print "# 1.0.0.22's RIB in table data with 1.0.0.11\n"
+bgp router 1.0.0.22 show adj-rib out 1.0.0.11 *
+print "\n"
+
+print "# 1.0.0.22's RIB out table data with 1.0.0.11\n"
+bgp router 1.0.0.22 show adj-rib out 1.0.0.11 *
+print "\n"
+
+print "# 1.0.0.22's RIB in table data with 1.0.0.15\n"
+bgp router 1.0.0.22 show adj-rib out 1.0.0.15 *
+print "\n"
+
+print "# 1.0.0.22's RIB out table data with 1.0.0.15\n"
+bgp router 1.0.0.22 show adj-rib out 1.0.0.15 *
+print "\n"
+
+print "# 1.0.0.22's RIB in table data with 1.0.0.6\n"
+bgp router 1.0.0.22 show adj-rib out 1.0.0.6 *
+print "\n"
+
+print "# 1.0.0.22's RIB out table data with 1.0.0.6\n"
+bgp router 1.0.0.22 show adj-rib out 1.0.0.6 *
+print "\n"
+
+print "# 1.0.0.22's RIB in table data with 1.0.0.13\n"
+bgp router 1.0.0.22 show adj-rib out 1.0.0.13 *
+print "\n"
+
+print "# 1.0.0.22's RIB out table data with 1.0.0.13\n"
+bgp router 1.0.0.22 show adj-rib out 1.0.0.13 *
+print "\n"
+
+print "# 1.0.0.22's RIB in table data with 1.0.0.20\n"
+bgp router 1.0.0.22 show adj-rib out 1.0.0.20 *
+print "\n"
+
+print "# 1.0.0.22's RIB out table data with 1.0.0.20\n"
+bgp router 1.0.0.22 show adj-rib out 1.0.0.20 *
+print "\n"
+
+print "# 1.0.0.22's RIB in table data with 1.0.0.3\n"
+bgp router 1.0.0.22 show adj-rib out 1.0.0.3 *
+print "\n"
+
+print "# 1.0.0.22's RIB out table data with 1.0.0.3\n"
+bgp router 1.0.0.22 show adj-rib out 1.0.0.3 *
+print "\n"
+
+print "# 1.0.0.22's RIB in table data with 1.0.0.8\n"
+bgp router 1.0.0.22 show adj-rib out 1.0.0.8 *
+print "\n"
+
+print "# 1.0.0.22's RIB out table data with 1.0.0.8\n"
+bgp router 1.0.0.22 show adj-rib out 1.0.0.8 *
+print "\n"
+
+print "# 1.0.0.22's RIB in table data with 1.0.0.7\n"
+bgp router 1.0.0.22 show adj-rib out 1.0.0.7 *
+print "\n"
+
+print "# 1.0.0.22's RIB out table data with 1.0.0.7\n"
+bgp router 1.0.0.22 show adj-rib out 1.0.0.7 *
+print "\n"
+
+print "# 1.0.0.22's RIB in table data with 1.0.0.9\n"
+bgp router 1.0.0.22 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.22's RIB out table data with 1.0.0.9\n"
+bgp router 1.0.0.22 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.22's RIB in table data with 1.0.0.4\n"
+bgp router 1.0.0.22 show adj-rib out 1.0.0.4 *
+print "\n"
+
+print "# 1.0.0.22's RIB out table data with 1.0.0.4\n"
+bgp router 1.0.0.22 show adj-rib out 1.0.0.4 *
+print "\n"
+
+
+print "# -------------------------------------------------------------------\n"
+print "# 1.0.0.23's tables data\n"
+print "# -------------------------------------------------------------------\n\n"
+
+print "# 1.0.0.23's RT table data\n"
+net node 1.0.0.23 show rt *
+print "\n"
+
+print "# 1.0.0.23's RIB table data\n"
+bgp router 1.0.0.23 show rib *
+print "\n"
+
+print "# 1.0.0.23's RIB in table data with 1.0.0.26\n"
+bgp router 1.0.0.23 show adj-rib out 1.0.0.26 *
+print "\n"
+
+print "# 1.0.0.23's RIB out table data with 1.0.0.26\n"
+bgp router 1.0.0.23 show adj-rib out 1.0.0.26 *
+print "\n"
+
+print "# 1.0.0.23's RIB in table data with 1.0.0.19\n"
+bgp router 1.0.0.23 show adj-rib out 1.0.0.19 *
+print "\n"
+
+print "# 1.0.0.23's RIB out table data with 1.0.0.19\n"
+bgp router 1.0.0.23 show adj-rib out 1.0.0.19 *
+print "\n"
+
+print "# 1.0.0.23's RIB in table data with 1.0.0.21\n"
+bgp router 1.0.0.23 show adj-rib out 1.0.0.21 *
+print "\n"
+
+print "# 1.0.0.23's RIB out table data with 1.0.0.21\n"
+bgp router 1.0.0.23 show adj-rib out 1.0.0.21 *
+print "\n"
+
+print "# 1.0.0.23's RIB in table data with 1.0.0.10\n"
+bgp router 1.0.0.23 show adj-rib out 1.0.0.10 *
+print "\n"
+
+print "# 1.0.0.23's RIB out table data with 1.0.0.10\n"
+bgp router 1.0.0.23 show adj-rib out 1.0.0.10 *
+print "\n"
+
+print "# 1.0.0.23's RIB in table data with 1.0.0.14\n"
+bgp router 1.0.0.23 show adj-rib out 1.0.0.14 *
+print "\n"
+
+print "# 1.0.0.23's RIB out table data with 1.0.0.14\n"
+bgp router 1.0.0.23 show adj-rib out 1.0.0.14 *
+print "\n"
+
+print "# 1.0.0.23's RIB in table data with 1.0.0.24\n"
+bgp router 1.0.0.23 show adj-rib out 1.0.0.24 *
+print "\n"
+
+print "# 1.0.0.23's RIB out table data with 1.0.0.24\n"
+bgp router 1.0.0.23 show adj-rib out 1.0.0.24 *
+print "\n"
+
+print "# 1.0.0.23's RIB in table data with 1.0.0.17\n"
+bgp router 1.0.0.23 show adj-rib out 1.0.0.17 *
+print "\n"
+
+print "# 1.0.0.23's RIB out table data with 1.0.0.17\n"
+bgp router 1.0.0.23 show adj-rib out 1.0.0.17 *
+print "\n"
+
+print "# 1.0.0.23's RIB in table data with 1.0.0.12\n"
+bgp router 1.0.0.23 show adj-rib out 1.0.0.12 *
+print "\n"
+
+print "# 1.0.0.23's RIB out table data with 1.0.0.12\n"
+bgp router 1.0.0.23 show adj-rib out 1.0.0.12 *
+print "\n"
+
+print "# 1.0.0.23's RIB in table data with 1.0.0.18\n"
+bgp router 1.0.0.23 show adj-rib out 1.0.0.18 *
+print "\n"
+
+print "# 1.0.0.23's RIB out table data with 1.0.0.18\n"
+bgp router 1.0.0.23 show adj-rib out 1.0.0.18 *
+print "\n"
+
+print "# 1.0.0.23's RIB in table data with 1.0.0.5\n"
+bgp router 1.0.0.23 show adj-rib out 1.0.0.5 *
+print "\n"
+
+print "# 1.0.0.23's RIB out table data with 1.0.0.5\n"
+bgp router 1.0.0.23 show adj-rib out 1.0.0.5 *
+print "\n"
+
+print "# 1.0.0.23's RIB in table data with 1.0.0.11\n"
+bgp router 1.0.0.23 show adj-rib out 1.0.0.11 *
+print "\n"
+
+print "# 1.0.0.23's RIB out table data with 1.0.0.11\n"
+bgp router 1.0.0.23 show adj-rib out 1.0.0.11 *
+print "\n"
+
+print "# 1.0.0.23's RIB in table data with 1.0.0.15\n"
+bgp router 1.0.0.23 show adj-rib out 1.0.0.15 *
+print "\n"
+
+print "# 1.0.0.23's RIB out table data with 1.0.0.15\n"
+bgp router 1.0.0.23 show adj-rib out 1.0.0.15 *
+print "\n"
+
+print "# 1.0.0.23's RIB in table data with 1.0.0.6\n"
+bgp router 1.0.0.23 show adj-rib out 1.0.0.6 *
+print "\n"
+
+print "# 1.0.0.23's RIB out table data with 1.0.0.6\n"
+bgp router 1.0.0.23 show adj-rib out 1.0.0.6 *
+print "\n"
+
+print "# 1.0.0.23's RIB in table data with 1.0.0.13\n"
+bgp router 1.0.0.23 show adj-rib out 1.0.0.13 *
+print "\n"
+
+print "# 1.0.0.23's RIB out table data with 1.0.0.13\n"
+bgp router 1.0.0.23 show adj-rib out 1.0.0.13 *
+print "\n"
+
+print "# 1.0.0.23's RIB in table data with 1.0.0.22\n"
+bgp router 1.0.0.23 show adj-rib out 1.0.0.22 *
+print "\n"
+
+print "# 1.0.0.23's RIB out table data with 1.0.0.22\n"
+bgp router 1.0.0.23 show adj-rib out 1.0.0.22 *
+print "\n"
+
+print "# 1.0.0.23's RIB in table data with 1.0.0.20\n"
+bgp router 1.0.0.23 show adj-rib out 1.0.0.20 *
+print "\n"
+
+print "# 1.0.0.23's RIB out table data with 1.0.0.20\n"
+bgp router 1.0.0.23 show adj-rib out 1.0.0.20 *
+print "\n"
+
+print "# 1.0.0.23's RIB in table data with 1.0.0.3\n"
+bgp router 1.0.0.23 show adj-rib out 1.0.0.3 *
+print "\n"
+
+print "# 1.0.0.23's RIB out table data with 1.0.0.3\n"
+bgp router 1.0.0.23 show adj-rib out 1.0.0.3 *
+print "\n"
+
+print "# 1.0.0.23's RIB in table data with 1.0.0.9\n"
+bgp router 1.0.0.23 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.23's RIB out table data with 1.0.0.9\n"
+bgp router 1.0.0.23 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.23's RIB in table data with 1.0.0.16\n"
+bgp router 1.0.0.23 show adj-rib out 1.0.0.16 *
+print "\n"
+
+print "# 1.0.0.23's RIB out table data with 1.0.0.16\n"
+bgp router 1.0.0.23 show adj-rib out 1.0.0.16 *
+print "\n"
+
+
+print "# -------------------------------------------------------------------\n"
+print "# 1.0.0.24's tables data\n"
+print "# -------------------------------------------------------------------\n\n"
+
+print "# 1.0.0.24's RT table data\n"
+net node 1.0.0.24 show rt *
+print "\n"
+
+print "# 1.0.0.24's RIB table data\n"
+bgp router 1.0.0.24 show rib *
+print "\n"
+
+print "# 1.0.0.24's RIB in table data with 1.0.0.25\n"
+bgp router 1.0.0.24 show adj-rib out 1.0.0.25 *
+print "\n"
+
+print "# 1.0.0.24's RIB out table data with 1.0.0.25\n"
+bgp router 1.0.0.24 show adj-rib out 1.0.0.25 *
+print "\n"
+
+print "# 1.0.0.24's RIB in table data with 1.0.0.23\n"
+bgp router 1.0.0.24 show adj-rib out 1.0.0.23 *
+print "\n"
+
+print "# 1.0.0.24's RIB out table data with 1.0.0.23\n"
+bgp router 1.0.0.24 show adj-rib out 1.0.0.23 *
+print "\n"
+
+print "# 1.0.0.24's RIB in table data with 1.0.0.19\n"
+bgp router 1.0.0.24 show adj-rib out 1.0.0.19 *
+print "\n"
+
+print "# 1.0.0.24's RIB out table data with 1.0.0.19\n"
+bgp router 1.0.0.24 show adj-rib out 1.0.0.19 *
+print "\n"
+
+print "# 1.0.0.24's RIB in table data with 1.0.0.21\n"
+bgp router 1.0.0.24 show adj-rib out 1.0.0.21 *
+print "\n"
+
+print "# 1.0.0.24's RIB out table data with 1.0.0.21\n"
+bgp router 1.0.0.24 show adj-rib out 1.0.0.21 *
+print "\n"
+
+print "# 1.0.0.24's RIB in table data with 1.0.0.10\n"
+bgp router 1.0.0.24 show adj-rib out 1.0.0.10 *
+print "\n"
+
+print "# 1.0.0.24's RIB out table data with 1.0.0.10\n"
+bgp router 1.0.0.24 show adj-rib out 1.0.0.10 *
+print "\n"
+
+print "# 1.0.0.24's RIB in table data with 1.0.0.14\n"
+bgp router 1.0.0.24 show adj-rib out 1.0.0.14 *
+print "\n"
+
+print "# 1.0.0.24's RIB out table data with 1.0.0.14\n"
+bgp router 1.0.0.24 show adj-rib out 1.0.0.14 *
+print "\n"
+
+print "# 1.0.0.24's RIB in table data with 1.0.0.17\n"
+bgp router 1.0.0.24 show adj-rib out 1.0.0.17 *
+print "\n"
+
+print "# 1.0.0.24's RIB out table data with 1.0.0.17\n"
+bgp router 1.0.0.24 show adj-rib out 1.0.0.17 *
+print "\n"
+
+print "# 1.0.0.24's RIB in table data with 1.0.0.12\n"
+bgp router 1.0.0.24 show adj-rib out 1.0.0.12 *
+print "\n"
+
+print "# 1.0.0.24's RIB out table data with 1.0.0.12\n"
+bgp router 1.0.0.24 show adj-rib out 1.0.0.12 *
+print "\n"
+
+print "# 1.0.0.24's RIB in table data with 1.0.0.18\n"
+bgp router 1.0.0.24 show adj-rib out 1.0.0.18 *
+print "\n"
+
+print "# 1.0.0.24's RIB out table data with 1.0.0.18\n"
+bgp router 1.0.0.24 show adj-rib out 1.0.0.18 *
+print "\n"
+
+print "# 1.0.0.24's RIB in table data with 1.0.0.5\n"
+bgp router 1.0.0.24 show adj-rib out 1.0.0.5 *
+print "\n"
+
+print "# 1.0.0.24's RIB out table data with 1.0.0.5\n"
+bgp router 1.0.0.24 show adj-rib out 1.0.0.5 *
+print "\n"
+
+print "# 1.0.0.24's RIB in table data with 1.0.0.11\n"
+bgp router 1.0.0.24 show adj-rib out 1.0.0.11 *
+print "\n"
+
+print "# 1.0.0.24's RIB out table data with 1.0.0.11\n"
+bgp router 1.0.0.24 show adj-rib out 1.0.0.11 *
+print "\n"
+
+print "# 1.0.0.24's RIB in table data with 1.0.0.15\n"
+bgp router 1.0.0.24 show adj-rib out 1.0.0.15 *
+print "\n"
+
+print "# 1.0.0.24's RIB out table data with 1.0.0.15\n"
+bgp router 1.0.0.24 show adj-rib out 1.0.0.15 *
+print "\n"
+
+print "# 1.0.0.24's RIB in table data with 1.0.0.6\n"
+bgp router 1.0.0.24 show adj-rib out 1.0.0.6 *
+print "\n"
+
+print "# 1.0.0.24's RIB out table data with 1.0.0.6\n"
+bgp router 1.0.0.24 show adj-rib out 1.0.0.6 *
+print "\n"
+
+print "# 1.0.0.24's RIB in table data with 1.0.0.13\n"
+bgp router 1.0.0.24 show adj-rib out 1.0.0.13 *
+print "\n"
+
+print "# 1.0.0.24's RIB out table data with 1.0.0.13\n"
+bgp router 1.0.0.24 show adj-rib out 1.0.0.13 *
+print "\n"
+
+print "# 1.0.0.24's RIB in table data with 1.0.0.22\n"
+bgp router 1.0.0.24 show adj-rib out 1.0.0.22 *
+print "\n"
+
+print "# 1.0.0.24's RIB out table data with 1.0.0.22\n"
+bgp router 1.0.0.24 show adj-rib out 1.0.0.22 *
+print "\n"
+
+print "# 1.0.0.24's RIB in table data with 1.0.0.20\n"
+bgp router 1.0.0.24 show adj-rib out 1.0.0.20 *
+print "\n"
+
+print "# 1.0.0.24's RIB out table data with 1.0.0.20\n"
+bgp router 1.0.0.24 show adj-rib out 1.0.0.20 *
+print "\n"
+
+print "# 1.0.0.24's RIB in table data with 1.0.0.3\n"
+bgp router 1.0.0.24 show adj-rib out 1.0.0.3 *
+print "\n"
+
+print "# 1.0.0.24's RIB out table data with 1.0.0.3\n"
+bgp router 1.0.0.24 show adj-rib out 1.0.0.3 *
+print "\n"
+
+print "# 1.0.0.24's RIB in table data with 1.0.0.9\n"
+bgp router 1.0.0.24 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.24's RIB out table data with 1.0.0.9\n"
+bgp router 1.0.0.24 show adj-rib out 1.0.0.9 *
+print "\n"
+
+print "# 1.0.0.24's RIB in table data with 1.0.0.16\n"
+bgp router 1.0.0.24 show adj-rib out 1.0.0.16 *
+print "\n"
+
+print "# 1.0.0.24's RIB out table data with 1.0.0.16\n"
+bgp router 1.0.0.24 show adj-rib out 1.0.0.16 *
+print "\n"
+
+
+print "# -------------------------------------------------------------------\n"
+print "# 1.0.0.25's tables data\n"
+print "# -------------------------------------------------------------------\n\n"
+
+print "# 1.0.0.25's RT table data\n"
+net node 1.0.0.25 show rt *
+print "\n"
+
+print "# 1.0.0.25's RIB table data\n"
+bgp router 1.0.0.25 show rib *
+print "\n"
+
+print "# 1.0.0.25's RIB in table data with 1.0.0.24\n"
+bgp router 1.0.0.25 show adj-rib out 1.0.0.24 *
+print "\n"
+
+print "# 1.0.0.25's RIB out table data with 1.0.0.24\n"
+bgp router 1.0.0.25 show adj-rib out 1.0.0.24 *
+print "\n"
+
+
+print "# -------------------------------------------------------------------\n"
+print "# 1.0.0.26's tables data\n"
+print "# -------------------------------------------------------------------\n\n"
+
+print "# 1.0.0.26's RT table data\n"
+net node 1.0.0.26 show rt *
+print "\n"
+
+print "# 1.0.0.26's RIB table data\n"
+bgp router 1.0.0.26 show rib *
+print "\n"
+
+print "# 1.0.0.26's RIB in table data with 1.0.0.23\n"
+bgp router 1.0.0.26 show adj-rib out 1.0.0.23 *
+print "\n"
+
+print "# 1.0.0.26's RIB out table data with 1.0.0.23\n"
+bgp router 1.0.0.26 show adj-rib out 1.0.0.23 *
+print "\n"
+
+
+print "# -------------------------------------------------------------------\n"
+print "# 1.0.0.27's tables data\n"
+print "# -------------------------------------------------------------------\n\n"
+
+print "# 1.0.0.27's RT table data\n"
+net node 1.0.0.27 show rt *
+print "\n"
+
+print "# 1.0.0.27's RIB table data\n"
+bgp router 1.0.0.27 show rib *
+print "\n"
+
+print "# 1.0.0.27's RIB in table data with 1.0.0.22\n"
+bgp router 1.0.0.27 show adj-rib out 1.0.0.22 *
+print "\n"
+
+print "# 1.0.0.27's RIB out table data with 1.0.0.22\n"
+bgp router 1.0.0.27 show adj-rib out 1.0.0.22 *
+print "\n"
+
+
+print "# -------------------------------------------------------------------\n"
+print "# 1.0.0.28's tables data\n"
+print "# -------------------------------------------------------------------\n\n"
+
+print "# 1.0.0.28's RT table data\n"
+net node 1.0.0.28 show rt *
+print "\n"
+
+print "# 1.0.0.28's RIB table data\n"
+bgp router 1.0.0.28 show rib *
+print "\n"
+
+print "# 1.0.0.28's RIB in table data with 1.0.0.6\n"
+bgp router 1.0.0.28 show adj-rib out 1.0.0.6 *
+print "\n"
+
+print "# 1.0.0.28's RIB out table data with 1.0.0.6\n"
+bgp router 1.0.0.28 show adj-rib out 1.0.0.6 *
+print "\n"
+
+
+
+# -------------------------------------------------------------------
+# Start data section
+# -------------------------------------------------------------------

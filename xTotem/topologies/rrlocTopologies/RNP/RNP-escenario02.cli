@@ -1,0 +1,248 @@
+# ===================================================================
+# C-BGP Export file (CLI)
+# Domain AS 130
+# ===================================================================
+
+# -------------------------------------------------------------------
+# Physical topology
+# -------------------------------------------------------------------
+net add node 192.168.0.20
+net add node 192.168.0.3
+net add node 192.168.0.22
+net add node 192.168.0.16
+net add node 192.168.0.24
+net add node 192.168.0.1
+net add node 192.168.0.23
+net add node 192.168.0.19
+net add node 192.168.0.6
+net add node 192.168.0.5
+net add node 192.168.0.18
+net add node 192.168.0.7
+net add node 192.168.0.4
+net add node 192.168.0.11
+net add node 192.168.0.15
+net add node 192.168.0.9
+net add node 192.168.0.0
+net add node 192.168.0.8
+net add node 192.168.0.17
+net add node 192.168.0.10
+net add node 192.168.0.25
+net add node 192.168.0.12
+net add node 192.168.0.27
+net add node 192.168.0.13
+net add node 192.168.0.26
+net add node 192.168.0.14
+net add node 192.168.0.21
+net add node 192.168.0.2
+net add link 192.168.0.20 192.168.0.3
+net link 192.168.0.20 192.168.0.3 igp-weight --bidir 4
+net add link 192.168.0.3 192.168.0.22
+net link 192.168.0.3 192.168.0.22 igp-weight --bidir 7
+net add link 192.168.0.22 192.168.0.16
+net link 192.168.0.22 192.168.0.16 igp-weight --bidir 6
+net add link 192.168.0.22 192.168.0.13
+net link 192.168.0.22 192.168.0.13 igp-weight --bidir 6
+net add link 192.168.0.16 192.168.0.24
+net link 192.168.0.16 192.168.0.24 igp-weight --bidir 7
+net add link 192.168.0.24 192.168.0.23
+net link 192.168.0.24 192.168.0.23 igp-weight --bidir 4
+net add link 192.168.0.23 192.168.0.19
+net link 192.168.0.23 192.168.0.19 igp-weight --bidir 2
+net add link 192.168.0.1 192.168.0.24
+net link 192.168.0.1 192.168.0.24 igp-weight --bidir 1
+net add link 192.168.0.1 192.168.0.19
+net link 192.168.0.1 192.168.0.19 igp-weight --bidir 4
+net add link 192.168.0.13 192.168.0.27
+net link 192.168.0.13 192.168.0.27 igp-weight --bidir 1
+net add link 192.168.0.13 192.168.0.26
+net link 192.168.0.13 192.168.0.26 igp-weight --bidir 5
+net add link 192.168.0.27 192.168.0.14
+net link 192.168.0.27 192.168.0.14 igp-weight --bidir 14
+net add link 192.168.0.1 192.168.0.2
+net link 192.168.0.1 192.168.0.2 igp-weight --bidir 28
+net add link 192.168.0.21 192.168.0.12
+net link 192.168.0.21 192.168.0.12 igp-weight --bidir 1
+net add link 192.168.0.27 192.168.0.18
+net link 192.168.0.27 192.168.0.18 igp-weight --bidir 3
+net add link 192.168.0.27 192.168.0.6
+net link 192.168.0.27 192.168.0.6 igp-weight --bidir 6
+net add link 192.168.0.1 192.168.0.6
+net link 192.168.0.1 192.168.0.6 igp-weight --bidir 2
+net add link 192.168.0.1 192.168.0.18
+net link 192.168.0.1 192.168.0.18 igp-weight --bidir 3
+net add link 192.168.0.18 192.168.0.17
+net link 192.168.0.18 192.168.0.17 igp-weight --bidir 15
+net add link 192.168.0.6 192.168.0.5
+net link 192.168.0.6 192.168.0.5 igp-weight --bidir 2
+net add link 192.168.0.5 192.168.0.7
+net link 192.168.0.5 192.168.0.7 igp-weight --bidir 5
+net add link 192.168.0.18 192.168.0.7
+net link 192.168.0.18 192.168.0.7 igp-weight --bidir 6
+net add link 192.168.0.7 192.168.0.4
+net link 192.168.0.7 192.168.0.4 igp-weight --bidir 2
+net add link 192.168.0.4 192.168.0.11
+net link 192.168.0.4 192.168.0.11 igp-weight --bidir 1
+net add link 192.168.0.11 192.168.0.15
+net link 192.168.0.11 192.168.0.15 igp-weight --bidir 1
+net add link 192.168.0.9 192.168.0.15
+net link 192.168.0.9 192.168.0.15 igp-weight --bidir 1
+net add link 192.168.0.9 192.168.0.0
+net link 192.168.0.9 192.168.0.0 igp-weight --bidir 1
+net add link 192.168.0.8 192.168.0.0
+net link 192.168.0.8 192.168.0.0 igp-weight --bidir 1
+net add link 192.168.0.17 192.168.0.8
+net link 192.168.0.17 192.168.0.8 igp-weight --bidir 2
+net add link 192.168.0.17 192.168.0.25
+net link 192.168.0.17 192.168.0.25 igp-weight --bidir 3
+net add link 192.168.0.12 192.168.0.25
+net link 192.168.0.12 192.168.0.25 igp-weight --bidir 3
+net add link 192.168.0.10 192.168.0.12
+net link 192.168.0.10 192.168.0.12 igp-weight --bidir 8
+net add link 192.168.0.10 192.168.0.15
+net link 192.168.0.10 192.168.0.15 igp-weight --bidir 6
+
+# -------------------------------------------------------------------
+# Static routing
+# -------------------------------------------------------------------
+
+# -------------------------------------------------------------------
+# IGP routing
+# -------------------------------------------------------------------
+net add domain 130 igp
+net node 192.168.0.20 domain 130
+net node 192.168.0.3 domain 130
+net node 192.168.0.22 domain 130
+net node 192.168.0.16 domain 130
+net node 192.168.0.24 domain 130
+net node 192.168.0.1 domain 130
+net node 192.168.0.23 domain 130
+net node 192.168.0.19 domain 130
+net node 192.168.0.6 domain 130
+net node 192.168.0.5 domain 130
+net node 192.168.0.18 domain 130
+net node 192.168.0.7 domain 130
+net node 192.168.0.4 domain 130
+net node 192.168.0.11 domain 130
+net node 192.168.0.15 domain 130
+net node 192.168.0.9 domain 130
+net node 192.168.0.0 domain 130
+net node 192.168.0.8 domain 130
+net node 192.168.0.17 domain 130
+net node 192.168.0.10 domain 130
+net node 192.168.0.25 domain 130
+net node 192.168.0.12 domain 130
+net node 192.168.0.27 domain 130
+net node 192.168.0.13 domain 130
+net node 192.168.0.26 domain 130
+net node 192.168.0.14 domain 130
+net node 192.168.0.21 domain 130
+net node 192.168.0.2 domain 130
+net domain 130 compute
+
+# -------------------------------------------------------------------
+# BGP routing
+# -------------------------------------------------------------------
+bgp options msg-monitor /C:/workspace/xTotem/topologies/rrlocTopologies/RNP/RNP-trace.bgp
+
+
+# -------------------------------------------------------------------
+# BGP filters
+# -------------------------------------------------------------------
+
+
+# -------------------------------------------------------------------
+# Scenario to simulate
+# -------------------------------------------------------------------
+
+net add node 3.0.0.2
+net add domain 132 igp
+net node 3.0.0.2 domain 132
+net add link 192.168.0.10 3.0.0.2
+net node 192.168.0.10 route add --oif=3.0.0.2 --gw=3.0.0.2 3.0.0.2/32 0
+net node 3.0.0.2 route add --oif=192.168.0.10 --gw=192.168.0.10 192.168.0.10/32 0
+bgp router 192.168.0.10
+	add peer 132 3.0.0.2
+	peer 3.0.0.2 virtual
+	peer 3.0.0.2 next-hop-self
+	peer 3.0.0.2 up
+	exit
+
+bgp router 192.168.0.10 peer 3.0.0.2 recv "BGP4|1|A|10.0.8.195|2|3.0.0.0/8|132 3 3356 7018|IGP|3.0.0.2|0|0"
+bgp router 192.168.0.10 peer 3.0.0.2 recv "BGP4|2|W|10.0.8.195|2|3.0.0.0/8"
+bgp router 192.168.0.10 peer 3.0.0.2 recv "BGP4|3|W|10.0.8.195|2|3.0.0.0/8"
+
+net add node 3.0.0.3
+net add domain 133 igp
+net node 3.0.0.3 domain 133
+net add link 192.168.0.9 3.0.0.3
+net node 192.168.0.9 route add --oif=3.0.0.3 --gw=3.0.0.3 3.0.0.3/32 0
+net node 3.0.0.3 route add --oif=192.168.0.9 --gw=192.168.0.9 192.168.0.9/32 0
+bgp router 192.168.0.9
+	add peer 133 3.0.0.3
+	peer 3.0.0.3 virtual
+	peer 3.0.0.3 next-hop-self
+	peer 3.0.0.3 up
+	exit
+
+bgp router 192.168.0.9 peer 3.0.0.3 recv "BGP4|4|A|10.0.8.195|2|3.0.0.0/8|133 3 3356 7018|IGP|3.0.0.3|0|0"
+bgp router 192.168.0.9 peer 3.0.0.3 recv "BGP4|5|A|10.0.8.195|2|3.0.0.0/8|133 3 3356 7018|IGP|3.0.0.3|0|0"
+
+net add link 192.168.0.8 3.0.0.2
+net node 192.168.0.8 route add --oif=3.0.0.2 --gw=3.0.0.2 3.0.0.2/32 0
+net node 3.0.0.2 route add --oif=192.168.0.8 --gw=192.168.0.8 192.168.0.8/32 0
+bgp router 192.168.0.8
+	add peer 132 3.0.0.2
+	peer 3.0.0.2 virtual
+	peer 3.0.0.2 next-hop-self
+	peer 3.0.0.2 up
+	exit
+
+bgp router 192.168.0.8 peer 3.0.0.2 recv "BGP4|6|A|10.0.8.195|2|3.0.0.0/8|132 3 3356 7018|IGP|3.0.0.2|0|0"
+
+net add link 192.168.0.7 3.0.0.3
+net node 192.168.0.7 route add --oif=3.0.0.3 --gw=3.0.0.3 3.0.0.3/32 0
+net node 3.0.0.3 route add --oif=192.168.0.7 --gw=192.168.0.7 192.168.0.7/32 0
+bgp router 192.168.0.7
+	add peer 133 3.0.0.3
+	peer 3.0.0.3 virtual
+	peer 3.0.0.3 next-hop-self
+	peer 3.0.0.3 up
+	exit
+
+bgp router 192.168.0.7 peer 3.0.0.3 recv "BGP4|7|A|10.0.8.195|2|3.0.0.0/8|133 3 3356 7018|IGP|3.0.0.3|0|0"
+
+net add link 192.168.0.6 3.0.0.2
+net node 192.168.0.6 route add --oif=3.0.0.2 --gw=3.0.0.2 3.0.0.2/32 0
+net node 3.0.0.2 route add --oif=192.168.0.6 --gw=192.168.0.6 192.168.0.6/32 0
+bgp router 192.168.0.6
+	add peer 132 3.0.0.2
+	peer 3.0.0.2 virtual
+	peer 3.0.0.2 next-hop-self
+	peer 3.0.0.2 up
+	exit
+
+bgp router 192.168.0.6 peer 3.0.0.2 recv "BGP4|8|A|10.0.8.195|2|3.0.0.0/8|132 3 3356 7018|IGP|3.0.0.2|0|0"
+
+net add node 3.0.0.5
+net add domain 134 igp
+net node 3.0.0.5 domain 134
+net add link 192.168.0.5 3.0.0.5
+net node 192.168.0.5 route add --oif=3.0.0.5 --gw=3.0.0.5 3.0.0.5/32 0
+net node 3.0.0.5 route add --oif=192.168.0.5 --gw=192.168.0.5 192.168.0.5/32 0
+bgp router 192.168.0.5
+	add peer 134 3.0.0.5
+	peer 3.0.0.5 virtual
+	peer 3.0.0.5 next-hop-self
+	peer 3.0.0.5 up
+	exit
+
+bgp router 192.168.0.5 peer 3.0.0.5 recv "BGP4|9|A|10.0.8.195|2|3.0.0.0/8|134 3 3356 7018|IGP|3.0.0.5|0|0"
+
+# -------------------------------------------------------------------
+# Start simulation
+# -------------------------------------------------------------------
+sim run
+
+# -------------------------------------------------------------------
+# Start data section
+# -------------------------------------------------------------------
