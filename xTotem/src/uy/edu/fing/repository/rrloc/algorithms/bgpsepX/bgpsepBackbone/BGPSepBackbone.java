@@ -58,6 +58,7 @@ public class BGPSepBackbone extends BindAlgorithm {
 		try {
 			params.add(new ParameterDescriptor("ASID", "Domain ASID (leave blank for default).", Integer.class, null));
 			params.add(new ParameterDescriptor("PoPs", "Amount of PoPs (by default is one).", Integer.class, null));
+			params.add(new ParameterDescriptor("separator", "Methauristic utiliced for graph separator", String.class, "GRASP", new String[]{"GRASP", "EA"}));
 		} catch (AlgorithmParameterException e) {
 			e.printStackTrace();
 		}
