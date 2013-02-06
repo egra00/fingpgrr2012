@@ -165,20 +165,20 @@
     </igp>
     <bgp>
         <routers>
-            <router id="1">
+            <router id="1" reflector="true">
                 <rid>192.168.0.1</rid>
                 <neighbors>
-                    <neighbor as="0" ip="192.168.0.2" reflector-client="true"/>
                     <neighbor as="0" ip="192.168.0.0" reflector-client="true"/>
-                    <neighbor as="0" ip="192.168.0.2" reflector-client="true"/>
+                    <neighbor as="0" ip="192.168.0.2"/>
+                    <neighbor as="0" ip="192.168.0.2"/>
                     <neighbor as="0" ip="192.168.0.0" reflector-client="true"/>
                 </neighbors>
             </router>
-            <router id="2" reflector="true">
+            <router id="2">
                 <rid>192.168.0.2</rid>
                 <neighbors>
-                    <neighbor as="0" ip="192.168.0.1"/>
-                    <neighbor as="0" ip="192.168.0.1"/>
+                    <neighbor as="0" ip="192.168.0.1" reflector-client="true"/>
+                    <neighbor as="0" ip="192.168.0.1" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="3" reflector="true">
