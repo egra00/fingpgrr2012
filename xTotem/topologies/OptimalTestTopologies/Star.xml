@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<domain ASID="0">
+    <info>
+        <title>Star</title>
+        <author>Diego Agriel</author>
+        <description/>
+        <units>
+            <unit type="bandwidth" value="mbps"/>
+            <unit type="delay" value="ms"/>
+        </units>
+    </info>
+    <topology>
+        <nodes>
+            <node id="1">
+                <rid>192.168.0.0</rid>
+                <type>EDGE</type>
+                <location latitude="727.11664" longitude="751.5"/>
+            </node>
+            <node id="2">
+                <rid>192.168.0.2</rid>
+                <type>CORE</type>
+                <location latitude="691.65" longitude="928.8333"/>
+            </node>
+            <node id="3">
+                <rid>192.168.0.4</rid>
+                <type>CORE</type>
+                <location latitude="853.4667" longitude="835.73334"/>
+            </node>
+            <node id="4">
+                <rid>192.168.0.1</rid>
+                <type>CORE</type>
+                <location latitude="771.45" longitude="591.9"/>
+            </node>
+            <node id="5">
+                <rid>192.168.0.3</rid>
+                <type>CORE</type>
+                <location latitude="556.43335" longitude="718.25"/>
+            </node>
+        </nodes>
+        <links>
+            <link id="5-1">
+                <from node="5"/>
+                <to node="1"/>
+            </link>
+            <link id="3-1">
+                <from node="3"/>
+                <to node="1"/>
+            </link>
+            <link id="2-1">
+                <from node="2"/>
+                <to node="1"/>
+            </link>
+            <link id="4-1">
+                <from node="4"/>
+                <to node="1"/>
+            </link>
+            <link id="1-3">
+                <from node="1"/>
+                <to node="3"/>
+            </link>
+            <link id="1-4">
+                <from node="1"/>
+                <to node="4"/>
+            </link>
+            <link id="1-5">
+                <from node="1"/>
+                <to node="5"/>
+            </link>
+            <link id="1-2">
+                <from node="1"/>
+                <to node="2"/>
+            </link>
+        </links>
+    </topology>
+    <igp>
+        <links>
+            <link id="5-1">
+                <static>
+                    <metric>1.0</metric>
+                </static>
+            </link>
+            <link id="3-1">
+                <static>
+                    <metric>1.0</metric>
+                </static>
+            </link>
+            <link id="2-1">
+                <static>
+                    <metric>1.0</metric>
+                </static>
+            </link>
+            <link id="4-1">
+                <static>
+                    <metric>1.0</metric>
+                </static>
+            </link>
+            <link id="1-3">
+                <static>
+                    <metric>1.0</metric>
+                </static>
+            </link>
+            <link id="1-4">
+                <static>
+                    <metric>1.0</metric>
+                </static>
+            </link>
+            <link id="1-5">
+                <static>
+                    <metric>1.0</metric>
+                </static>
+            </link>
+            <link id="1-2">
+                <static>
+                    <metric>1.0</metric>
+                </static>
+            </link>
+        </links>
+    </igp>
+</domain>
+
