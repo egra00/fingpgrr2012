@@ -210,7 +210,7 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 						}
 					}
 					
-					//printGraph_(sat,"Grafo Satelite ("+br.getId()+","+nod.getId()+")");
+					printGraph_(sat,"Grafo Satelite ("+br.getId()+","+nod.getId()+")");
 						
 					satNames[satellites.size()]="Satellite Graph ("+br.getId()+","+nod.getId()+")";
 					
