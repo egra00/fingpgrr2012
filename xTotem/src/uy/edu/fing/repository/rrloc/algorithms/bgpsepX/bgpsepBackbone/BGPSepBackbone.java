@@ -57,7 +57,7 @@ public class BGPSepBackbone extends BindAlgorithm {
 		
 		try {
 			params.add(new ParameterDescriptor("ASID", "Domain ASID (leave blank for default).", Integer.class, null));
-			params.add(new ParameterDescriptor("Amount PoPs", "Amount of PoPs (by default is one).", Integer.class, null));
+			params.add(new ParameterDescriptor("PoPs", "Amount of PoPs (by default is one).", Integer.class, null));
 		} catch (AlgorithmParameterException e) {
 			e.printStackTrace();
 		}
@@ -67,7 +67,7 @@ public class BGPSepBackbone extends BindAlgorithm {
 	@Override
 	@SuppressWarnings("rawtypes")
 	public Object getAlgorithmParams(HashMap params)  {
-        String popsS = (String) params.get("Amount PoPs");
+        String popsS = (String) params.get("PoPs");
         pops = 5;
         
         Integer asId;
