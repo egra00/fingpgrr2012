@@ -111,7 +111,7 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 		for(int i = 0; i < BGPRoutersSize; i++) {
 			for(int j = 0; j < BGPRoutersSize; j++) {
 				if(i!=j)
-					ExpAux[i*BGPRoutersSize+j] = cplex.prod(MINHOPS[i][j],cplex.sum(UP[i][j],DOWN[i][j]));
+					ExpAux[i*BGPRoutersSize+j] = cplex.prod(MINHOPS[i][j],cplex.sum(DOWN[i][j],UP[i][j]));
 				else
 					ExpAux[i*BGPRoutersSize+j] = UP[i][j];
 			}
@@ -310,24 +310,13 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 							int indexI = IndexOf(BGPRouters,el.getSrc().getId());
 							int indexJ = IndexOf(BGPRouters,el.getDst().getId());
 							
-							if(el.getSrc().getType()==MetaNodeType.DST){
-								cplex.addEq(restrictionEdges[k],DOWN[indexI][indexJ]);
-								k++;
-							}
-						}
-						
-						it = minCutEdges.iterator();
-						
-						while(it.hasNext()){
-							ExtendedLink el = (ExtendedLink)it.next();
-							
-							int indexI = IndexOf(BGPRouters,el.getSrc().getId());
-							int indexJ = IndexOf(BGPRouters,el.getDst().getId());
-							
 							if(el.getSrc().getType()==MetaNodeType.SRC){
 								cplex.addEq(restrictionEdges[k],UP[indexI][indexJ]);
-								k++;
 							}
+							else{
+								cplex.addEq(restrictionEdges[k],DOWN[indexI][indexJ]);
+							}
+							k++;		
 						}
 						
 						cplex.addRange(1, cplex.sum(restrictionEdges), minCutEdgesSize);
