@@ -310,8 +310,8 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 							int indexI = IndexOf(BGPRouters,el.getSrc().getId());
 							int indexJ = IndexOf(BGPRouters,el.getDst().getId());
 							
-							if(el.getSrc().getType()==MetaNodeType.SRC){
-								cplex.addEq(restrictionEdges[k],UP[indexI][indexJ]);
+							if(el.getSrc().getType()==MetaNodeType.DST){
+								cplex.addEq(restrictionEdges[k],DOWN[indexI][indexJ]);
 								k++;
 							}
 						}
@@ -324,8 +324,8 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 							int indexI = IndexOf(BGPRouters,el.getSrc().getId());
 							int indexJ = IndexOf(BGPRouters,el.getDst().getId());
 							
-							if(el.getSrc().getType()==MetaNodeType.DST){
-								cplex.addEq(restrictionEdges[k],DOWN[indexI][indexJ]);
+							if(el.getSrc().getType()==MetaNodeType.SRC){
+								cplex.addEq(restrictionEdges[k],UP[indexI][indexJ]);
 								k++;
 							}
 						}
