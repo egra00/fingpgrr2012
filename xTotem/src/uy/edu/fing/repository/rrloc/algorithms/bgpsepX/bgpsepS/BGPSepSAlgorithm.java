@@ -23,25 +23,21 @@ public class BGPSepSAlgorithm extends BGPSepDAlgorithm {
 	private DijkstraShortestPath<Node, Link> dijkstra;
 
 	
-	public Node getNode(Link link, Node node) // Dado un link "link" y un nodo "node" doy el extremo del que no es "node"
-	{
-		try 
-		{
+	public Node getNode(Link link, Node node) { // Dado un link "link" y un nodo "node" doy el extremo del que no es "node"
+		try {
 			if (link.getDstNode() != node)
 				return link.getDstNode();
 			else
 				return link.getSrcNode();
 		}
-		catch (NodeNotFoundException e) 
-		{
+		catch (NodeNotFoundException e) {
 			e.printStackTrace();
 			return null;
 		}
 	}
 	
 	
-	public List<Node> toPathNode(Node u, Node v)
-	{
+	public List<Node> toPathNode(Node u, Node v) {
 		List<Node> lst = new LinkedList<Node>();
 		
 		List<Link> path = dijkstra.getPath(u, v);
@@ -49,8 +45,7 @@ public class BGPSepSAlgorithm extends BGPSepDAlgorithm {
 		Node u_i = u;
 		lst.add(u_i);
 		
-		for(Link link : path)
-		{
+		for(Link link : path) {
 			Node u_i_mas_1 = getNode(link, u_i);
 			u_i = u_i_mas_1;
 			lst.add(u_i);
@@ -62,8 +57,16 @@ public class BGPSepSAlgorithm extends BGPSepDAlgorithm {
 	
 	
 	@Override
-	public void run(Object param, Object result) {
-		Graph<Node, Link> G = (Graph<Node, Link>) param;
+	public void run(Object _params, Object result) {
+		Object[] params = (Object[])_params;
+		
+		Graph<Node, Link> G = (Graph<Node, Link>) params[0];
+		
+		Integer MAX_ITER = (Integer) params[1];
+		Double ALPHA = (Double) params[2];
+		Double BETA = (Double) params[3];
+		Double GAMA = (Double) params[4];
+		
 		List<iBGPSession> I = (List<iBGPSession>) result;
 		
 		/* Step 1: removing the pendant vertexes gradually*/
@@ -72,7 +75,8 @@ public class BGPSepSAlgorithm extends BGPSepDAlgorithm {
 		
 		/* Step 2: Choose a graph separator S in G'.V */
 		
-		GraphSeparator graphSeparator = Separator.GraphPartitionAE(20, Gp ,50, 200, 350, 0.01, 0.1);
+//		GraphSeparator graphSeparator = Separator.GraphPartitionAE(20, Gp ,50, 200, 350, 0.01, 0.1);
+		GraphSeparator graphSeparator = Separator.GRASPBisection(Gp, MAX_ITER, ALPHA, BETA, GAMA);
 		Set<Node> S = graphSeparator.getSeparator();
 		List<Graph<Node, Link>> G1m = graphSeparator.getComponents();
 		dijkstra = new DijkstraShortestPath<Node, Link>(Gp);
@@ -80,18 +84,12 @@ public class BGPSepSAlgorithm extends BGPSepDAlgorithm {
 		/* Step 3: find a superset S+ of S */
 		Set<Node> Splus = new HashSet<Node>(S);
 		
-		for (Graph<Node, Link> Gi : G1m)  // Foreach connected componet
-		{
-			for (Node u : Gi.getVertices()) 
-			{
-				for (Node v : S) 
-				{
-					if (!Splus.contains(u)) 
-					{
+		for (Graph<Node, Link> Gi : G1m) { // Foreach connected componet
+			for (Node u : Gi.getVertices()) {
+				for (Node v : S) {
+					if (!Splus.contains(u)) {
 						List<Node> P = toPathNode(u, v);
-						
-						for (Iterator<Node> ii = P.iterator() ; ii.hasNext() ; )
-						{
+						for (Iterator<Node> ii = P.iterator() ; ii.hasNext() ; ) {
 							Node w = ii.next();
 							if (w != u && w != v) Splus.add(w);
 						}
@@ -114,10 +112,8 @@ public class BGPSepSAlgorithm extends BGPSepDAlgorithm {
 		
 		Set<Node> GpV_Splus = new HashSet<Node>(Gp.getVertices());
 		GpV_Splus.removeAll(Splus);
-		for (Node u : GpV_Splus) 
-		{
-			for (Node v : Splus) 
-			{
+		for (Node u : GpV_Splus) {
+			for (Node v : Splus) {
 				List<Node> P = toPathNode(u, v);
 				Iterator<Node> ii = P.iterator();
 				Node Ri = ii.next(); // como el nodo u0, estoy en u1 (el siguiente)

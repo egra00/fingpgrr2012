@@ -17,20 +17,29 @@ import edu.uci.ics.jung2.graph.UndirectedSparseGraph;
 public class BGPSepBackboneAlgorithm implements RRLocAlgorithm
 {
 
-	public static class Params
-	{
-		public int pops;
-		public Graph<Node, Link> graph;
-	}
-	
 	@Override
-	public void run(Object in_params, Object out_result) 
-	{
-		int _pops = ((Params) in_params).pops;
-		Graph<Node, Link> igp = ((Params) in_params).graph;
+	public void run(Object _in_params, Object out_result) {
+		
+		Object[] in_params = (Object[])_in_params;
+		
+		Graph<Node, Link> igp = (Graph<Node, Link>)in_params[0];
+		int _pops = (Integer)in_params[1];
+		
+		Integer MAX_ITER = (Integer)in_params[2];
+		Double ALPHA = (Double)in_params[3];
+		Double BETA = (Double)in_params[4];
+		Double GAMA = (Double)in_params[5];
+		
+		Integer NB_RUN = (Integer)in_params[6];
+		Integer N_GEN = (Integer)in_params[7];
+		Integer SIZE_P = (Integer)in_params[8];
+		Integer SIZE_OF = (Integer)in_params[9];
+		Double PMUT = (Double)in_params[10];
+		Double PCROSS = (Double)in_params[11];
+		
 		List<iBGPSession> lst_sessions = (List<iBGPSession>) out_result;
 		
-		List<List<Node>> lst_cells = KMedoidsGA.kMedoids(15, igp, _pops ,50, 60, 100, 0.01, 0.1);
+		List<List<Node>> lst_cells = KMedoidsGA.kMedoids(NB_RUN, igp, _pops, N_GEN, SIZE_P, SIZE_OF, PMUT, PCROSS);
 		List<Node> lst_PoPs_RRs = new LinkedList<Node>();
 		
 		BatesZAlgorithm bates = new BatesZAlgorithm();
