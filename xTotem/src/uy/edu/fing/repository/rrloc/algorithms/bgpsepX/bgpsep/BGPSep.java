@@ -43,6 +43,7 @@ public class BGPSep extends BindAlgorithm {
 		
 		try {
 			params.add(new ParameterDescriptor("ASID", "Domain ASID (leave blank for default).", Integer.class, null));
+			params.add(new ParameterDescriptor("separator", "Methauristic utiliced for graph separator", String.class, "GRASP", new String[]{"GRASP", "EA"}));
 		} catch (AlgorithmParameterException e) {
 			e.printStackTrace();
 		}

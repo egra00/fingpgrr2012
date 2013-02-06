@@ -117,10 +117,10 @@ public class Totem {
      */
     private static void printUsage() {
         System.out.println("Usage : ");
-        System.out.println("\t -rrloc_bgpsep <topology.xml> [-max_iter] [-alpha] [-beta] [-gama]: start BGPSEP algorithm running over the topology specifies in topology.xml.");
-        System.out.println("\t -rrloc_bgpsepB <topology.xml> -PoPs [-max_iter] [-alpha] [-beta] [-gama] [-nb_run] [-nGen] [-sizeP] [-sizeOf] [-pmut] [-pcross]: start BGPSEPBackbone algorithm running over the topology specifies in topology.xml.");
-        System.out.println("\t -rrloc_bgpsepD <topology.xml> [-max_iter] [-alpha] [-beta] [-gama]: start BGPSEPD algorithm running over the topology specifies in topology.xml.");
-        System.out.println("\t -rrloc_bgpsepS <topology.xml> [-max_iter] [-alpha] [-beta] [-gama]: start BGPSEPS algorithm running over the topology specifies in topology.xml.");
+        System.out.println("\t -rrloc_bgpsep <topology.xml> [-separator] [-max_iter] [-alpha] [-beta] [-gama]: start BGPSEP algorithm running over the topology specifies in topology.xml.");
+        System.out.println("\t -rrloc_bgpsepB <topology.xml> [-separator] -PoPs [-max_iter] [-alpha] [-beta] [-gama] [-nb_run] [-nGen] [-sizeP] [-sizeOf] [-pmut] [-pcross]: start BGPSEPBackbone algorithm running over the topology specifies in topology.xml.");
+        System.out.println("\t -rrloc_bgpsepD <topology.xml> [-separator] [-max_iter] [-alpha] [-beta] [-gama]: start BGPSEPD algorithm running over the topology specifies in topology.xml.");
+        System.out.println("\t -rrloc_bgpsepS <topology.xml> [-separator] [-max_iter] [-alpha] [-beta] [-gama]: start BGPSEPS algorithm running over the topology specifies in topology.xml.");
         System.out.println("\t -rrloc_cbr <topology.xml> : start CBR algorithm running over the topology specifies in topology.xml.");
         System.out.println("\t -rrloc_fullmesh <topology.xml> : start FULLMESH algorithm running over the topology specifies in topology.xml.");
         System.out.println("\t -rrloc_optimal <topology.xml> : start OPTIMAL algorithm running over the topology specifies in topology.xml.");
