@@ -16,13 +16,29 @@ public class BGPSepDAlgorithm implements RRLocAlgorithm {
 	
 	@SuppressWarnings("unchecked")
 	@Override
-	public void run(Object param, Object result) {
-		Graph<Node, Link> G = (Graph<Node, Link>) param;
+	public void run(Object _params, Object result) {
+		Object[] params = (Object[])_params;
+		
+		Graph<Node, Link> G = (Graph<Node, Link>) params[0];
+		
+		Integer MAX_ITER = (Integer) params[1];
+		Double ALPHA = (Double) params[2];
+		Double BETA = (Double) params[3];
+		Double GAMA = (Double) params[4];
+		
 		List<iBGPSession> I = (List<iBGPSession>) result;
 		
 		Graph<Node, Link> Gp = removePedantVertexes(G, I);
 		RRLocAlgorithm bgpsep = new BGPSepAlgorithm();
-		bgpsep.run(Gp, I);
+		
+		Object[] newParams = new Object[5];
+		newParams[0] = Gp;
+		newParams[1] = MAX_ITER;
+		newParams[2] = ALPHA;
+		newParams[3] = BETA;
+		newParams[4] = GAMA;
+		
+		bgpsep.run(newParams, I);
 	}
 	
 	

@@ -24,6 +24,16 @@ import edu.uci.ics.jung2.graph.UndirectedSparseMultigraph;
 @SuppressWarnings("unchecked")
 public class BGPSep extends BindAlgorithm {
 	
+	private Integer _MAX_ITER = 25000;
+	private Double _ALPHA = 0.035;
+	private Double _BETA = 0.014;
+	private Double _GAMA = 0.15;
+	
+	private Integer MAX_ITER;
+	private Double ALPHA;
+	private Double BETA;
+	private Double GAMA;
+	
 	public BGPSep() {
 		logger = Logger.getLogger(BGPSep.class);
 		params = new ArrayList<ParameterDescriptor>();
@@ -43,9 +53,50 @@ public class BGPSep extends BindAlgorithm {
 	@Override
 	public Object getAlgorithmParams(HashMap params) 
 	{
-        String asId = (String) params.get("ASID");
+        Integer asId;
+        
+        try {
+        	asId = Integer.valueOf((String)params.get("ASID"));
+        }
+        catch (Exception e) {
+        	asId = null;
+        }
+        
+        try {
+        	MAX_ITER = Integer.valueOf((String)params.get("max_iter"));
+        }
+        catch (Exception e) {
+        	MAX_ITER = _MAX_ITER;
+        }
+        
+        try {
+        	ALPHA = Double.valueOf((String)params.get("alpha")); 
+        }
+        catch (Exception e) {
+        	ALPHA = _ALPHA;
+        }
+        
+        try {
+        	BETA = Double.valueOf((String)params.get("beta")); 
+        }
+        catch (Exception e) {
+        	BETA = _BETA;
+        }
+        
+        try {
+        	GAMA = Double.parseDouble((String)params.get("gama")); 
+        }
+        catch (Exception e) {
+        	GAMA = _GAMA;
+        }
+        
+        System.out.println("ASID: " + asId);
+        System.out.println("MAX_ITER: " + MAX_ITER);
+        System.out.println("ALPHA: " + ALPHA);
+        System.out.println("BETA: " + BETA);
+        System.out.println("GAMA: " + GAMA);
       
-        if(asId == null || asId.isEmpty()) {
+        if(asId == null) {
         	domain = InterDomainManager.getInstance().getDefaultDomain();
         	if(domain == null){
 	        	logger.error("There is no default domain");
@@ -53,7 +104,7 @@ public class BGPSep extends BindAlgorithm {
         	}
         } else {
             try {
-                domain = InterDomainManager.getInstance().getDomain(Integer.parseInt(asId));
+                domain = InterDomainManager.getInstance().getDomain(asId);
             } catch(InvalidDomainException e) {
                 logger.error("Cannot load domain " + asId);
                 return null;
@@ -77,8 +128,15 @@ public class BGPSep extends BindAlgorithm {
 				e.printStackTrace();
 			}
 		}
-				
-		return jIGPTopology;
+		
+		Object[] returnedParams = new Object[5];
+		returnedParams[0] = jIGPTopology;
+		returnedParams[1] = MAX_ITER;
+		returnedParams[2] = ALPHA;
+		returnedParams[3] = BETA;
+		returnedParams[4] = GAMA;
+
+		return returnedParams;
 	}
 	
 	@Override

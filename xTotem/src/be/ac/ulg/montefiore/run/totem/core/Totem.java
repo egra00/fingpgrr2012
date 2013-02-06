@@ -117,10 +117,10 @@ public class Totem {
      */
     private static void printUsage() {
         System.out.println("Usage : ");
-        System.out.println("\t -rrloc_bgpsep <topology.xml> : start BGPSEP algorithm running over the topology specifies in topology.xml.");
-        System.out.println("\t -rrloc_bgpsepB <topology.xml> : start BGPSEPBackbone algorithm running over the topology specifies in topology.xml.");
-        System.out.println("\t -rrloc_bgpsepD <topology.xml> : start BGPSEPD algorithm running over the topology specifies in topology.xml.");
-        System.out.println("\t -rrloc_bgpsepS <topology.xml> : start BGPSEPS algorithm running over the topology specifies in topology.xml.");
+        System.out.println("\t -rrloc_bgpsep <topology.xml> [-max_iter] [-alpha] [-beta] [-gama]: start BGPSEP algorithm running over the topology specifies in topology.xml.");
+        System.out.println("\t -rrloc_bgpsepB <topology.xml> -PoPs [-max_iter] [-alpha] [-beta] [-gama] [-nb_run] [-nGen] [-sizeP] [-sizeOf] [-pmut] [-pcross]: start BGPSEPBackbone algorithm running over the topology specifies in topology.xml.");
+        System.out.println("\t -rrloc_bgpsepD <topology.xml> [-max_iter] [-alpha] [-beta] [-gama]: start BGPSEPD algorithm running over the topology specifies in topology.xml.");
+        System.out.println("\t -rrloc_bgpsepS <topology.xml> [-max_iter] [-alpha] [-beta] [-gama]: start BGPSEPS algorithm running over the topology specifies in topology.xml.");
         System.out.println("\t -rrloc_cbr <topology.xml> : start CBR algorithm running over the topology specifies in topology.xml.");
         System.out.println("\t -rrloc_fullmesh <topology.xml> : start FULLMESH algorithm running over the topology specifies in topology.xml.");
         System.out.println("\t -rrloc_optimal <topology.xml> : start OPTIMAL algorithm running over the topology specifies in topology.xml.");
@@ -365,7 +365,7 @@ public class Totem {
             	int i = 2;
             	while (i < args.length-1) {
                     if (args[i].startsWith("-")) {
-                        if (params.put(args[i], args[i+1]) != null) {
+                        if (params.put(args[i].substring(1), args[i+1]) != null) {
                             System.out.println("Multiple values for parameter " + args[i]);
                             printUsage();
                             System.exit(1);

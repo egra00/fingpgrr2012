@@ -17,11 +17,18 @@ import edu.uci.ics.jung2.graph.Graph;
 @SuppressWarnings("unchecked")
 public class BGPSepAlgorithm implements RRLocAlgorithm {
 	
-	
 	@Override
-	public void run(Object param, Object result) {
-		Graph<Node, Link> IGPTopology = (Graph<Node, Link>) param;
+	public void run(Object _param, Object result) {
 		List<iBGPSession> i = (List<iBGPSession>) result;
+		
+		Object[] param = (Object[])_param;
+		
+		Graph<Node, Link> IGPTopology = (Graph<Node, Link>) param[0];
+
+		Integer MAX_ITER = (Integer)param[1];
+		Double ALPHA = (Double)param[2];
+		Double BETA = (Double)param[3];
+		Double GAMA = (Double)param[4];
 		
 		if (IGPTopology.getVertexCount() == 2) {
 			Iterator<Node> ii = IGPTopology.getVertices().iterator();
@@ -68,8 +75,7 @@ public class BGPSepAlgorithm implements RRLocAlgorithm {
 				}
 			}*/ 
 			
-			
-			GraphSeparator graphSeparator = Separator.GRASPBisection(IGPTopology, 25000, 0.035, 0.014, 0.15);
+			GraphSeparator graphSeparator = Separator.GRASPBisection(IGPTopology, MAX_ITER, ALPHA, BETA, GAMA);
 			
 			//El conjunto de routes reflectors estara configurado Full Mesh
 			Set<Node> aux_set = new HashSet<Node>(graphSeparator.getSeparator());
@@ -80,8 +86,6 @@ public class BGPSepAlgorithm implements RRLocAlgorithm {
 				}
 			}
 			
-
-			
 			// Cada router en la componente debe ser un cliente de todos
 			// los route reflectos	
 			for (Graph<Node, Link> g_i : graphSeparator.getComponents()) {
@@ -90,7 +94,15 @@ public class BGPSepAlgorithm implements RRLocAlgorithm {
 						i.add(new iBGPSession(u.getId(), v.getId(), iBGPSessionType.client));
 					}
 				}
-				run(g_i, i);
+				
+				Object[] newParams = new Object[5];
+				newParams[0] = g_i;
+				newParams[1] = MAX_ITER;
+				newParams[2] = ALPHA;
+				newParams[3] = BETA;
+				newParams[4] = GAMA;
+				
+				run(newParams, i);
 			}
 		}
 	}
