@@ -312,11 +312,22 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 							
 							if(el.getSrc().getType()==MetaNodeType.SRC){
 								cplex.addEq(restrictionEdges[k],UP[indexI][indexJ]);
+								k++;
 							}
-							else{
+						}
+						
+						it = minCutEdges.iterator();
+						
+						while(it.hasNext()){
+							ExtendedLink el = (ExtendedLink)it.next();
+							
+							int indexI = IndexOf(BGPRouters,el.getSrc().getId());
+							int indexJ = IndexOf(BGPRouters,el.getDst().getId());
+							
+							if(el.getSrc().getType()==MetaNodeType.DST){
 								cplex.addEq(restrictionEdges[k],DOWN[indexI][indexJ]);
+								k++;
 							}
-							k++;		
 						}
 						
 						cplex.addRange(1, cplex.sum(restrictionEdges), minCutEdgesSize);
