@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<domain ASID="0">
+    <info>
+        <title>Triangle</title>
+        <author>Diego Agriel</author>
+        <description/>
+        <units>
+            <unit type="bandwidth" value="mbps"/>
+            <unit type="delay" value="ms"/>
+        </units>
+    </info>
+    <topology>
+        <nodes>
+            <node id="1">
+                <rid>192.168.0.1</rid>
+                <type>EDGE</type>
+                <location latitude="565.3" longitude="598.55"/>
+            </node>
+            <node id="2">
+                <rid>192.168.0.2</rid>
+                <type>CORE</type>
+                <location latitude="840.1667" longitude="795.8333"/>
+            </node>
+            <node id="3">
+                <rid>192.168.0.0</rid>
+                <type>CORE</type>
+                <location latitude="565.3" longitude="977.6"/>
+            </node>
+        </nodes>
+        <links>
+            <link id="1-2">
+                <from node="1"/>
+                <to node="2"/>
+            </link>
+            <link id="2-1">
+                <from node="2"/>
+                <to node="1"/>
+            </link>
+            <link id="1-3">
+                <from node="1"/>
+                <to node="3"/>
+            </link>
+            <link id="3-1">
+                <from node="3"/>
+                <to node="1"/>
+            </link>
+            <link id="2-3">
+                <from node="2"/>
+                <to node="3"/>
+            </link>
+            <link id="3-2">
+                <from node="3"/>
+                <to node="2"/>
+            </link>
+        </links>
+    </topology>
+    <igp>
+        <links>
+            <link id="1-2">
+                <static>
+                    <metric>1.0</metric>
+                </static>
+            </link>
+            <link id="2-1">
+                <static>
+                    <metric>1.0</metric>
+                </static>
+            </link>
+            <link id="1-3">
+                <static>
+                    <metric>1.0</metric>
+                </static>
+            </link>
+            <link id="3-1">
+                <static>
+                    <metric>1.0</metric>
+                </static>
+            </link>
+            <link id="2-3">
+                <static>
+                    <metric>1.0</metric>
+                </static>
+            </link>
+            <link id="3-2">
+                <static>
+                    <metric>1.0</metric>
+                </static>
+            </link>
+        </links>
+    </igp>
+</domain>
+
