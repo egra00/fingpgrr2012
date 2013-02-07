@@ -5,8 +5,8 @@ if [ $# -lt 2 ]; then
 	exit -1
 fi
 
-test_path=$1
-totem_script=$2
+totem_script=$1
+test_path=$2
 debug=$3
 all_algoritms=(bgpsep bgpsepB bgpsepD bgpsepS fullmesh optimal zhang bates batesY batesZ) 
 
@@ -17,8 +17,6 @@ fi
 if [ ${debug} -a ${debug} = "-vvv" ]; then
         mode=""
 fi
-
-
 
 for test_file in `find ${test_path} -regextype awk -mtime -1 ! -regex  '.*(svn|BGPSep|BGPSepBackbone|BGPSepD|BGPSepS|Cbr|FullMesh|Optimal|Zhang|Bates|BatesY|BatesZ).*' -regex '.*xml$'`
 do 
