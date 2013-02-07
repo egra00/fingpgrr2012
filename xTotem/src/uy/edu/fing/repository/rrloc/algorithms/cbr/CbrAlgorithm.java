@@ -18,7 +18,7 @@ public class CbrAlgorithm implements RRLocAlgorithm {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public void run(Object in_params, Object out_result) {
+	public int run(Object in_params, Object out_result) {
 		Graph<Node, Link> igp = (Graph<Node, Link>)((Object[]) in_params)[0];
 		List<Node> nextHops = (List<Node>)((Object[]) in_params)[1];
 		Object[] ret = (Object[]) out_result;
@@ -88,6 +88,8 @@ public class CbrAlgorithm implements RRLocAlgorithm {
 		ret[1] = coloredTopology;
 		ret[2] = colorsPerRouter;
 		ret[3] = nextHops;
+		
+		return 0;
 		
 	}
 

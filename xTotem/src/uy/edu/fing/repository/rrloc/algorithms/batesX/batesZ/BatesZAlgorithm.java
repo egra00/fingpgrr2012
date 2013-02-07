@@ -29,7 +29,7 @@ public class BatesZAlgorithm implements RRLocAlgorithm
 	
 	
 	@Override
-	public void run(Object in_params, Object out_result) 
+	public int run(Object in_params, Object out_result) 
 	{
 		int _pops = ((Params) in_params).pops;
 		Graph<Node, Link> igp = ((Params) in_params).graph;
@@ -53,7 +53,7 @@ public class BatesZAlgorithm implements RRLocAlgorithm
 			}
 		}
 		
-		
+		return 0;
 	}
 	
 	

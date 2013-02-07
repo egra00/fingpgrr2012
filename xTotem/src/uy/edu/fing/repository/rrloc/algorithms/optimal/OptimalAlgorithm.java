@@ -37,7 +37,7 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public void run(Object inParams, Object outResutl) {
+	public int run(Object inParams, Object outResutl) {
 		
 		//Obtain parameters
 		Graph<Node, Link> IGPGraph = (Graph<Node, Link>)((List<Object>)inParams).get(0);
@@ -359,6 +359,8 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 	      catch (IloException e) {
 	         System.err.println("Concert exception caught: " + e);
 	      }
+		
+		return 0;
 		
 	}
 	
