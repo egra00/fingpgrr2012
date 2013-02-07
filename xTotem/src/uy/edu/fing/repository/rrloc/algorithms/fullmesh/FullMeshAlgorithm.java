@@ -26,7 +26,7 @@ public class FullMeshAlgorithm implements RRLocAlgorithm
 	}
 	
 	@Override
-	public void run(Object in_params, Object out_result) 
+	public int run(Object in_params, Object out_result) 
 	{
 		Graph<Node, Link> igp = (Graph<Node, Link>) in_params;
 		List<iBGPSession> lst_sessions = (List<iBGPSession>) out_result;
@@ -43,6 +43,8 @@ public class FullMeshAlgorithm implements RRLocAlgorithm
 				iBGPSession session = new iBGPSession(node1.getId(), node2.getId(), iBGPSessionType.peer);
 				lst_sessions.add(session);
 			}
-		}	
+		}
+		
+		return 0;
 	}
 }

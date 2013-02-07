@@ -57,15 +57,23 @@ public class BGPSepSAlgorithm extends BGPSepDAlgorithm {
 	
 	
 	@Override
-	public void run(Object _params, Object result) {
+	public int run(Object _params, Object result) {
 		Object[] params = (Object[])_params;
 		
 		Graph<Node, Link> G = (Graph<Node, Link>) params[0];
 		
-		Integer MAX_ITER = (Integer) params[1];
-		Double ALPHA = (Double) params[2];
-		Double BETA = (Double) params[3];
-		Double GAMA = (Double) params[4];
+		String SEPARATOR = (String) params[1];
+		Integer MAX_ITER = (Integer) params[2];
+		Double ALPHA = (Double) params[3];
+		Double BETA = (Double) params[4];
+		Double GAMA = (Double) params[5];
+		
+		Integer NB_RUN = (Integer)params[6];
+		Integer N_GEN = (Integer)params[7];
+		Integer SIZE_P = (Integer)params[8];
+		Integer SIZE_OF = (Integer)params[9];
+		Double PMUT = (Double)params[10];
+		Double PCROSS = (Double)params[11];
 		
 		List<iBGPSession> I = (List<iBGPSession>) result;
 		
@@ -75,8 +83,15 @@ public class BGPSepSAlgorithm extends BGPSepDAlgorithm {
 		
 		/* Step 2: Choose a graph separator S in G'.V */
 		
-//		GraphSeparator graphSeparator = Separator.GraphPartitionAE(20, Gp ,50, 200, 350, 0.01, 0.1);
-		GraphSeparator graphSeparator = Separator.GRASPBisection(Gp, MAX_ITER, ALPHA, BETA, GAMA);
+		GraphSeparator graphSeparator;
+		
+		if ("GRASP".equals(SEPARATOR)) {
+			graphSeparator = Separator.GRASPBisection(Gp, MAX_ITER, ALPHA, BETA, GAMA);
+		}
+		else {
+			graphSeparator = Separator.GraphPartitionAE(NB_RUN, Gp, N_GEN, SIZE_P, SIZE_OF, PMUT, PCROSS);
+		}
+		
 		Set<Node> S = graphSeparator.getSeparator();
 		List<Graph<Node, Link>> G1m = graphSeparator.getComponents();
 		dijkstra = new DijkstraShortestPath<Node, Link>(Gp);
@@ -135,5 +150,7 @@ public class BGPSepSAlgorithm extends BGPSepDAlgorithm {
 				}
 			}
 		}
+		
+		return 0;
 	}
 }

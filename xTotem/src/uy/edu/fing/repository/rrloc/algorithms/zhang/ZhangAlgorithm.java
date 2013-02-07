@@ -33,7 +33,7 @@ public class ZhangAlgorithm implements RRLocAlgorithm
 	}
 	
 	@Override
-	public void run(Object in_params, Object out_result) 
+	public int run(Object in_params, Object out_result) 
 	{
 		Graph<Node, Link> igp = ((Params) in_params).graph;
 		int level_one = ((Params) in_params).nbr_level1;
@@ -59,6 +59,8 @@ public class ZhangAlgorithm implements RRLocAlgorithm
 				lst_sessions.add(session);
 			}
 		}	
+		
+		return 0;
 	}
 	
 	

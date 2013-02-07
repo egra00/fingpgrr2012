@@ -24,15 +24,17 @@ import edu.uci.ics.jung2.graph.UndirectedSparseMultigraph;
 @SuppressWarnings("unchecked")
 public class BGPSep extends BindAlgorithm {
 	
-	private Integer _MAX_ITER = 25000;
-	private Double _ALPHA = 0.035;
-	private Double _BETA = 0.014;
-	private Double _GAMA = 0.15;
+	private int _MAX_ITER = 25000;
+	private double _ALPHA = 0.035;
+	private double _BETA = 0.014;
+	private double _GAMA = 0.15;
 	
-	private Integer MAX_ITER;
-	private Double ALPHA;
-	private Double BETA;
-	private Double GAMA;
+	private final int _N_GEN = 50;
+	private final int _SIZE_P = 60;
+	private final int _SIZE_OF = 100;
+	private final double _PMUT = 0.01;
+	private final double _PCROSS = 0.1;
+	private final int _NB_RUN = 15;
 	
 	public BGPSep() {
 		logger = Logger.getLogger(BGPSep.class);
@@ -52,33 +54,46 @@ public class BGPSep extends BindAlgorithm {
 	
 	@SuppressWarnings("rawtypes")
 	@Override
-	public Object getAlgorithmParams(HashMap params) 
-	{
-        Integer asId;
+	public Object getAlgorithmParams(HashMap params) {
+        Integer ASID;
+        String SEPARATOR;
+    	Integer MAX_ITER;
+    	Double ALPHA;
+    	Double BETA;
+    	Double GAMA; 
+    	
+    	Integer NB_RUN;
+    	Integer N_GEN;
+    	Integer SIZE_P;
+    	Integer SIZE_OF;
+    	Double PMUT;
+    	Double PCROSS;
+    	
+    	SEPARATOR = (String)params.get("separator");
         
         try {
-        	asId = Integer.valueOf((String)params.get("ASID"));
+        	ASID = Integer.parseInt((String)params.get("ASID"));
         }
         catch (Exception e) {
-        	asId = null;
+        	ASID = null;
         }
         
         try {
-        	MAX_ITER = Integer.valueOf((String)params.get("max_iter"));
+        	MAX_ITER = Integer.parseInt((String)params.get("max_iter"));
         }
         catch (Exception e) {
         	MAX_ITER = _MAX_ITER;
         }
         
         try {
-        	ALPHA = Double.valueOf((String)params.get("alpha")); 
+        	ALPHA = Double.parseDouble((String)params.get("alpha")); 
         }
         catch (Exception e) {
         	ALPHA = _ALPHA;
         }
         
         try {
-        	BETA = Double.valueOf((String)params.get("beta")); 
+        	BETA = Double.parseDouble((String)params.get("beta")); 
         }
         catch (Exception e) {
         	BETA = _BETA;
@@ -91,13 +106,61 @@ public class BGPSep extends BindAlgorithm {
         	GAMA = _GAMA;
         }
         
-        System.out.println("ASID: " + asId);
+        try {
+        	NB_RUN = Integer.parseInt((String)params.get("nb_run"));
+        }
+        catch (Exception e) {
+        	NB_RUN = _NB_RUN;
+        }
+        
+        try {
+        	N_GEN = Integer.parseInt((String)params.get("n_gen"));
+        }
+        catch (Exception e) {
+        	N_GEN = _N_GEN;
+        }
+        
+        try {
+        	SIZE_P = Integer.parseInt((String)params.get("sizeP"));
+        }
+        catch (Exception e) {
+        	SIZE_P = _SIZE_P;
+        }
+        
+        try {
+        	SIZE_OF = Integer.parseInt((String)params.get("sizeOf"));
+        }
+        catch (Exception e) {
+        	SIZE_OF = _SIZE_OF;
+        }
+        
+        try {
+        	PMUT = Double.parseDouble((String)params.get("pmut")); 
+        }
+        catch (Exception e) {
+        	PMUT = _PMUT;
+        }
+        
+        try {
+        	PCROSS = Double.parseDouble((String)params.get("pcross")); 
+        }
+        catch (Exception e) {
+        	PCROSS = _PCROSS;
+        }
+        
+        System.out.println("ASID: " + ASID);
         System.out.println("MAX_ITER: " + MAX_ITER);
         System.out.println("ALPHA: " + ALPHA);
         System.out.println("BETA: " + BETA);
         System.out.println("GAMA: " + GAMA);
+        System.out.println("NB_RUN: " + NB_RUN);
+        System.out.println("N_GEN: " + N_GEN);
+        System.out.println("SIZE_P: " + SIZE_P);
+        System.out.println("SIZE_OF: " + SIZE_OF);
+        System.out.println("PMUT: " + PMUT);
+        System.out.println("PCROSS: " + PCROSS);
       
-        if(asId == null) {
+        if(ASID == null) {
         	domain = InterDomainManager.getInstance().getDefaultDomain();
         	if(domain == null){
 	        	logger.error("There is no default domain");
@@ -105,13 +168,12 @@ public class BGPSep extends BindAlgorithm {
         	}
         } else {
             try {
-                domain = InterDomainManager.getInstance().getDomain(asId);
+                domain = InterDomainManager.getInstance().getDomain(ASID);
             } catch(InvalidDomainException e) {
-                logger.error("Cannot load domain " + asId);
+                logger.error("Cannot load domain " + ASID);
                 return null;
             }
         }
-		
 		
 		// Topología IGP representada en un grafo jung 
 		Graph<Node, Link> jIGPTopology = new UndirectedSparseMultigraph<Node, Link>();
@@ -130,12 +192,19 @@ public class BGPSep extends BindAlgorithm {
 			}
 		}
 		
-		Object[] returnedParams = new Object[5];
+		Object[] returnedParams = new Object[12];
 		returnedParams[0] = jIGPTopology;
-		returnedParams[1] = MAX_ITER;
-		returnedParams[2] = ALPHA;
-		returnedParams[3] = BETA;
-		returnedParams[4] = GAMA;
+		returnedParams[1] = SEPARATOR;
+		returnedParams[2] = MAX_ITER;
+		returnedParams[3] = ALPHA;
+		returnedParams[4] = BETA;
+		returnedParams[5] = GAMA;
+		returnedParams[6] = NB_RUN;
+		returnedParams[7] = N_GEN;
+		returnedParams[8] = SIZE_P;
+		returnedParams[9] = SIZE_OF;
+		returnedParams[10] = PMUT;
+		returnedParams[11] = PCROSS;
 
 		return returnedParams;
 	}

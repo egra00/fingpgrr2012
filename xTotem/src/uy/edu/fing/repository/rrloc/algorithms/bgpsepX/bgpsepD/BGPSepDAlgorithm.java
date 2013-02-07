@@ -16,29 +16,44 @@ public class BGPSepDAlgorithm implements RRLocAlgorithm {
 	
 	@SuppressWarnings("unchecked")
 	@Override
-	public void run(Object _params, Object result) {
+	public int run(Object _params, Object result) {
 		Object[] params = (Object[])_params;
 		
 		Graph<Node, Link> G = (Graph<Node, Link>) params[0];
 		
-		Integer MAX_ITER = (Integer) params[1];
-		Double ALPHA = (Double) params[2];
-		Double BETA = (Double) params[3];
-		Double GAMA = (Double) params[4];
+		String SEPARATOR = (String) params[1];
+		Integer MAX_ITER = (Integer) params[2];
+		Double ALPHA = (Double) params[3];
+		Double BETA = (Double) params[4];
+		Double GAMA = (Double) params[5];
+		
+		Integer NB_RUN = (Integer)params[6];
+		Integer N_GEN = (Integer)params[7];
+		Integer SIZE_P = (Integer)params[8];
+		Integer SIZE_OF = (Integer)params[9];
+		Double PMUT = (Double)params[10];
+		Double PCROSS = (Double)params[11];
 		
 		List<iBGPSession> I = (List<iBGPSession>) result;
 		
 		Graph<Node, Link> Gp = removePedantVertexes(G, I);
 		RRLocAlgorithm bgpsep = new BGPSepAlgorithm();
 		
-		Object[] newParams = new Object[5];
+		Object[] newParams = new Object[12];
 		newParams[0] = Gp;
-		newParams[1] = MAX_ITER;
-		newParams[2] = ALPHA;
-		newParams[3] = BETA;
-		newParams[4] = GAMA;
+		newParams[1] = SEPARATOR;
+		newParams[2] = MAX_ITER;
+		newParams[3] = ALPHA;
+		newParams[4] = BETA;
+		newParams[5] = GAMA;
+		newParams[6] = NB_RUN;
+		newParams[7] = N_GEN;
+		newParams[8] = SIZE_P;
+		newParams[9] = SIZE_OF;
+		newParams[10] = PMUT;
+		newParams[11] = PCROSS;
 		
-		bgpsep.run(newParams, I);
+		return bgpsep.run(newParams, I);
 	}
 	
 	

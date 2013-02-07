@@ -28,7 +28,7 @@ public class BatesYAlgorithm implements RRLocAlgorithm
 	
 	
 	@Override
-	public void run(Object in_params, Object out_result) 
+	public int run(Object in_params, Object out_result) 
 	{
 		int _pops = ((Params) in_params).pops;
 		Graph<Node, Link> igp = ((Params) in_params).graph;
@@ -51,6 +51,8 @@ public class BatesYAlgorithm implements RRLocAlgorithm
 				lst_sessions.add(session);
 			}
 		}
+		
+		return 0;
 	}
 	
 	

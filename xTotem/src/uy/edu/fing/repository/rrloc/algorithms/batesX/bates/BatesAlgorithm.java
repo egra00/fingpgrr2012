@@ -16,14 +16,12 @@ import edu.uci.ics.jung2.graph.Graph;
 public class BatesAlgorithm implements RRLocAlgorithm{
 
 	
-	public static class Params
-	{
+	public static class Params {
 		public int cant_rr;
 		public Graph<Node, Link> graph;
 	}
 	
-	public List<Node> toList(Graph<Node, Link> igp)
-	{
+	public List<Node> toList(Graph<Node, Link> igp) {
 		List<Node> lst = new LinkedList<Node>();
 		
 		for(Iterator<Node> i = igp.getVertices().iterator(); i.hasNext();)
@@ -32,8 +30,7 @@ public class BatesAlgorithm implements RRLocAlgorithm{
 	}
 	
 	@Override
-	public void run(Object in_params, Object out_result) 
-	{
+	public int run(Object in_params, Object out_result) {
 		Graph<Node, Link> igp = ((Params) in_params).graph;
 		int cant_rr = ((Params) in_params).cant_rr;
 		List<iBGPSession> lst_sessions = (List<iBGPSession>) out_result;
@@ -42,8 +39,7 @@ public class BatesAlgorithm implements RRLocAlgorithm{
 		
 		
 		// Escojo al azar los RRs
-		for(int i=0; i<cant_rr; i++)
-		{
+		for(int i=0; i<cant_rr; i++) {
 			Random ram = new Random();
 			int index = ram.nextInt(lst.size());
 			Node node = lst.remove(index);
@@ -51,33 +47,30 @@ public class BatesAlgorithm implements RRLocAlgorithm{
 		}
 		
 		// full-mesh entre los RRs
-		for(; !my_lst_node.isEmpty(); )
-		{
+		for(; !my_lst_node.isEmpty();) {
 			Node node1 = my_lst_node.remove(0);
-			for(Iterator<Node> ii2 = my_lst_node.iterator(); ii2.hasNext(); )
-			{
+			for(Iterator<Node> ii2 = my_lst_node.iterator(); ii2.hasNext(); ) {
 				Node node2 = ii2.next();
 				iBGPSession session = new iBGPSession(node1.getId(), node2.getId(), iBGPSessionType.peer);
 				lst_sessions.add(session);
 			}
 			
 			// Hago clientes al resto de los routers con el RR node
-			for(Iterator<Node> ii2 = lst.iterator(); ii2.hasNext(); )
-			{
+			for(Iterator<Node> ii2 = lst.iterator(); ii2.hasNext(); ) {
 				Node node2 = ii2.next();
 				iBGPSession session = new iBGPSession(node2.getId(), node1.getId(), iBGPSessionType.client);
 				lst_sessions.add(session);
 			}
 		}
 		
-		for( ; !lst.isEmpty() ; )
-		{
+		for( ; !lst.isEmpty() ; ) {
 			Node n1 = lst.remove(0);
-			for(Node n2 : lst)
-			{
+			for(Node n2 : lst) {
 				iBGPSession session = new iBGPSession(n2.getId(), n1.getId(), iBGPSessionType.peer);
 				lst_sessions.add(session);
 			}
 		}
+		
+		return 0;
 	}
 }

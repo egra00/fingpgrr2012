@@ -22,12 +22,20 @@ import edu.uci.ics.jung2.graph.Graph;
 import edu.uci.ics.jung2.graph.UndirectedSparseMultigraph;
 
 public class BGPSepBackbone extends BindAlgorithm {
-	private int pops;
+
+	private final int _POPS = 5;
 	
-	private final Integer _MAX_ITER = 25000;
-	private final Double _ALPHA = 0.035;
-	private final Double _BETA = 0.014;
-	private final Double _GAMA = 0.15;
+	private final int _MAX_ITER = 25000;
+	private final double _ALPHA = 0.035;
+	private final double _BETA = 0.014;
+	private final double _GAMA = 0.15;
+	
+	private final int _KM_N_GEN = 50;
+	private final int _KM_SIZE_P = 60;
+	private final int _KM_SIZE_OF = 100;
+	private final double _KM_PMUT = 0.01;
+	private final double _KM_PCROSS = 0.1;
+	private final int _KM_NB_RUN = 15;
 	
 	private final int _N_GEN = 50;
 	private final int _SIZE_P = 60;
@@ -35,18 +43,6 @@ public class BGPSepBackbone extends BindAlgorithm {
 	private final double _PMUT = 0.01;
 	private final double _PCROSS = 0.1;
 	private final int _NB_RUN = 15;
-	
-	private Integer MAX_ITER;
-	private Double ALPHA;
-	private Double BETA;
-	private Double GAMA;
-	
-	private Integer NB_RUN;
-	private Integer N_GEN;
-	private Integer SIZE_P;
-	private Integer SIZE_OF;
-	private Double PMUT;
-	private Double PCROSS;
 	
 	public BGPSepBackbone() {
 		logger = Logger.getLogger(BGPSepBackbone.class);
@@ -68,34 +64,62 @@ public class BGPSepBackbone extends BindAlgorithm {
 	@Override
 	@SuppressWarnings("rawtypes")
 	public Object getAlgorithmParams(HashMap params)  {
-        String popsS = (String) params.get("PoPs");
-        pops = 5;
+        int POPS;
         
-        Integer asId;
+        Integer ASID;
+        String SEPARATOR;
+        
+        Integer MAX_ITER;
+    	Double ALPHA;
+    	Double BETA;
+    	Double GAMA;
+    	
+    	Integer KM_NB_RUN;
+    	Integer KM_N_GEN;
+    	Integer KM_SIZE_P;
+    	Integer KM_SIZE_OF;
+    	Double KM_PMUT;
+    	Double KM_PCROSS;
+    	
+    	Integer NB_RUN;
+    	Integer N_GEN;
+    	Integer SIZE_P;
+    	Integer SIZE_OF;
+    	Double PMUT;
+    	Double PCROSS;
+    	
+    	SEPARATOR = (String)params.get("separator");
         
         try {
-        	asId = Integer.valueOf((String)params.get("ASID"));
+        	ASID = Integer.parseInt((String)params.get("ASID"));
         }
         catch (Exception e) {
-        	asId = null;
+        	ASID = null;
         }
         
         try {
-        	MAX_ITER = Integer.valueOf((String)params.get("max_iter"));
+        	POPS = Integer.parseInt((String)params.get("PoPs"));
+        }
+        catch (Exception e) {
+        	POPS = _POPS;
+        }
+        
+        try {
+        	MAX_ITER = Integer.parseInt((String)params.get("max_iter"));
         }
         catch (Exception e) {
         	MAX_ITER = _MAX_ITER;
         }
         
         try {
-        	ALPHA = Double.valueOf((String)params.get("alpha")); 
+        	ALPHA = Double.parseDouble((String)params.get("alpha")); 
         }
         catch (Exception e) {
         	ALPHA = _ALPHA;
         }
         
         try {
-        	BETA = Double.valueOf((String)params.get("beta")); 
+        	BETA = Double.parseDouble((String)params.get("beta")); 
         }
         catch (Exception e) {
         	BETA = _BETA;
@@ -109,33 +133,74 @@ public class BGPSepBackbone extends BindAlgorithm {
         }
         
         try {
-        	NB_RUN = Integer.valueOf((String)params.get("nb_run"));
+        	KM_NB_RUN = Integer.parseInt((String)params.get("km_nb_run"));
+        }
+        catch (Exception e) {
+        	KM_NB_RUN = _KM_NB_RUN;
+        }
+        
+        try {
+        	KM_N_GEN = Integer.parseInt((String)params.get("km_n_gen"));
+        }
+        catch (Exception e) {
+        	KM_N_GEN = _KM_N_GEN;
+        }
+        
+        try {
+        	KM_SIZE_P = Integer.parseInt((String)params.get("km_sizeP"));
+        }
+        catch (Exception e) {
+        	KM_SIZE_P = _KM_SIZE_P;
+        }
+        
+        try {
+        	KM_SIZE_OF = Integer.parseInt((String)params.get("km_sizeOf"));
+        }
+        catch (Exception e) {
+        	KM_SIZE_OF = _KM_SIZE_OF;
+        }
+        
+        try {
+        	KM_PMUT = Double.parseDouble((String)params.get("km_pmut")); 
+        }
+        catch (Exception e) {
+        	KM_PMUT = _KM_PMUT;
+        }
+        
+        try {
+        	KM_PCROSS = Double.parseDouble((String)params.get("km_pcross")); 
+        }
+        catch (Exception e) {
+        	KM_PCROSS = _KM_PCROSS;
+        }
+        
+        try {
+        	NB_RUN = Integer.parseInt((String)params.get("nb_run"));
         }
         catch (Exception e) {
         	NB_RUN = _NB_RUN;
         }
         
         try {
-        	N_GEN = Integer.valueOf((String)params.get("nGen"));
+        	N_GEN = Integer.parseInt((String)params.get("n_gen"));
         }
         catch (Exception e) {
         	N_GEN = _N_GEN;
         }
         
         try {
-        	SIZE_P = Integer.valueOf((String)params.get("sizeP"));
+        	SIZE_P = Integer.parseInt((String)params.get("sizeP"));
         }
         catch (Exception e) {
         	SIZE_P = _SIZE_P;
         }
         
         try {
-        	SIZE_OF = Integer.valueOf((String)params.get("sizeOf"));
+        	SIZE_OF = Integer.parseInt((String)params.get("sizeOf"));
         }
         catch (Exception e) {
         	SIZE_OF = _SIZE_OF;
         }
-        
         
         try {
         	PMUT = Double.parseDouble((String)params.get("pmut")); 
@@ -151,11 +216,17 @@ public class BGPSepBackbone extends BindAlgorithm {
         	PCROSS = _PCROSS;
         }
         
-        System.out.println("ASID: " + asId);
+        System.out.println("ASID: " + ASID);
         System.out.println("MAX_ITER: " + MAX_ITER);
         System.out.println("ALPHA: " + ALPHA);
         System.out.println("BETA: " + BETA);
         System.out.println("GAMA: " + GAMA);
+        System.out.println("KM_NB_RUN: " + KM_NB_RUN);
+        System.out.println("KM_N_GEN: " + KM_N_GEN);
+        System.out.println("KM_SIZE_P: " + KM_SIZE_P);
+        System.out.println("KM_SIZE_OF: " + KM_SIZE_OF);
+        System.out.println("KM_PMUT: " + KM_PMUT);
+        System.out.println("KM_PCROSS: " + KM_PCROSS);
         System.out.println("NB_RUN: " + NB_RUN);
         System.out.println("N_GEN: " + N_GEN);
         System.out.println("SIZE_P: " + SIZE_P);
@@ -163,7 +234,7 @@ public class BGPSepBackbone extends BindAlgorithm {
         System.out.println("PMUT: " + PMUT);
         System.out.println("PCROSS: " + PCROSS);
         
-        if(asId == null) {
+        if (ASID == null) {
         	domain = InterDomainManager.getInstance().getDefaultDomain();
         	if(domain == null){
 	        	logger.error("There is no default domain");
@@ -171,14 +242,12 @@ public class BGPSepBackbone extends BindAlgorithm {
         	}
         } else {
             try {
-                domain = InterDomainManager.getInstance().getDomain(asId);
+                domain = InterDomainManager.getInstance().getDomain(ASID);
             } catch(InvalidDomainException e) {
-                logger.error("Cannot load domain " + asId);
+                logger.error("Cannot load domain " + ASID);
                 return null;
             }
         }
-		
-        if(popsS != null && !popsS.isEmpty() && Integer.parseInt(popsS) <= domain.getNbNodes()) pops = Integer.parseInt(popsS);
         
 		// Topologia IGP representada en un grafo jung 
 		Graph<Node, Link> jIGPTopology = new UndirectedSparseMultigraph<Node, Link>();
@@ -197,19 +266,26 @@ public class BGPSepBackbone extends BindAlgorithm {
 			}
 		}
 		
-		Object[] returnedParams = new Object[12];
+		Object[] returnedParams = new Object[19];
 		returnedParams[0] = jIGPTopology;
-		returnedParams[1] = pops;
-		returnedParams[2] = MAX_ITER;
-		returnedParams[3] = ALPHA;
-		returnedParams[4] = BETA;
-		returnedParams[5] = GAMA;
-		returnedParams[6] = NB_RUN;
-		returnedParams[7] = N_GEN;
-		returnedParams[8] = SIZE_P;
-		returnedParams[9] = SIZE_OF;
-		returnedParams[10] = PMUT;
-		returnedParams[11] = PCROSS;
+		returnedParams[1] = SEPARATOR;
+		returnedParams[2] = POPS;
+		returnedParams[3] = MAX_ITER;
+		returnedParams[4] = ALPHA;
+		returnedParams[5] = BETA;
+		returnedParams[6] = GAMA;
+		returnedParams[7] = KM_NB_RUN;
+		returnedParams[8] = KM_N_GEN;
+		returnedParams[9] = KM_SIZE_P;
+		returnedParams[10] = KM_SIZE_OF;
+		returnedParams[11] = KM_PMUT;
+		returnedParams[12] = KM_PCROSS;
+		returnedParams[13] = NB_RUN;
+		returnedParams[14] = N_GEN;
+		returnedParams[15] = SIZE_P;
+		returnedParams[16] = SIZE_OF;
+		returnedParams[17] = PMUT;
+		returnedParams[18] = PCROSS;
 
 		return returnedParams;
 	}

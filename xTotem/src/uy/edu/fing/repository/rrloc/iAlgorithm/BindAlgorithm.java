@@ -164,9 +164,10 @@ public abstract class BindAlgorithm implements Runnable, TotemAlgorithm {
 	}
 
 	@Override
-	public void run() 
-	{
-        algorithm.run(algorithmParams, algorithmResult);
+	public void run() {
+        if (algorithm.run(algorithmParams, algorithmResult) != 0) {
+        	return;
+        }
         
         log(algorithmResult);
         
