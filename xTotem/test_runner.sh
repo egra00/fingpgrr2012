@@ -24,12 +24,14 @@ if [ ${debug} -a ${debug} = "-vvv" ]; then
         mode=""
 fi
 
+echo "find ${test_path} -regextype awk -mtime -1 ! -regex  '.*(svn|BGPSep|BGPSepBackbone|BGPSepD|BGPSepS|Cbr|FullMesh|Optimal|Zhang|Bates|BatesY|BatesZ).*' -regex '.*xml$'"
+
 for test_file in `find ${test_path} -regextype awk -mtime -1 ! -regex  '.*(svn|BGPSep|BGPSepBackbone|BGPSepD|BGPSepS|Cbr|FullMesh|Optimal|Zhang|Bates|BatesY|BatesZ).*' -regex '.*xml$'`
 do 
 	for algoritm in "${all_algoritms[@]}"
 	do
 		echo "[${totem_script}]: Starting ${algoritm} with ${test_file}"
-		eval "${totem_script} -rrloc_${algoritm} ${test_file} ${mode}"
+		#eval "${totem_script} -rrloc_${algoritm} ${test_file} ${mode}"
 		echo "[${totem_script}]: End ${algoritm} with ${test_file}"
 	done
 done
