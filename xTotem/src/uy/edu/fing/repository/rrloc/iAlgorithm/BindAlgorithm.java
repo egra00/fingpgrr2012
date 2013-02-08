@@ -42,6 +42,8 @@ public abstract class BindAlgorithm implements Runnable, TotemAlgorithm {
     
     Object algorithmParams;
     Object algorithmResult;
+    
+    String outputFileName;
 	
 	/*
 	 * Used for initialize the parameters of input
@@ -140,9 +142,9 @@ public abstract class BindAlgorithm implements Runnable, TotemAlgorithm {
 		runningParams = params;
         logger.debug("Starting...");
         
+        outputFileName = (String)params.get("ofn");
         algorithmParams = getAlgorithmParams(params);
         algorithmResult = initAlgorithmResult();
-        
         
 		if(algorithmParams != null && algorithmResult != null) {
 			if (!MainWindow.cliMode()) {
@@ -173,7 +175,7 @@ public abstract class BindAlgorithm implements Runnable, TotemAlgorithm {
         
         String path = domain.getURI().getPath();
         path = path.endsWith(".xml") ? path.substring(0, path.length() - 4) : path;
-        path += "-" + name;
+        path += "-" + (outputFileName == null ? name : outputFileName);
         
         try {
         	dumpResultInDomain(algorithmResult);
