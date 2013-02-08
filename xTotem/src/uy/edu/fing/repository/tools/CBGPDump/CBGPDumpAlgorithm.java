@@ -40,8 +40,12 @@ public class CBGPDumpAlgorithm {
 	private static Logger logger = Logger.getLogger(CBGPDumpAlgorithm.class);
 	
 	private final String ipRegexp = "\\d{1,3}.\\d{1,3}.\\d{1,3}.\\d{1,3}";
-
+	
 	public void run(Domain _domain, File mrt_file) {
+		run(_domain, mrt_file, null);
+	}
+
+	public void run(Domain _domain, File mrt_file, String outFilePath) {
 
 		domain = _domain;
 		if (domain == null) {
@@ -51,14 +55,18 @@ public class CBGPDumpAlgorithm {
 
 		mrtFile = mrt_file;
 
-		outName = domain.getURI().getPath();
-		outName = outName.endsWith(".xml") ? outName.substring(0,
-				outName.length() - 4) : outName;
-		
-		String path = mrtFile.getName();
-        path = path.endsWith(".tra") ? path.substring(0, path.length() - 4) : path;
-		
-		outName += "-" + path + ".cli";
+		if (outFilePath == null) {
+			outName = domain.getURI().getPath();
+			outName = outName.endsWith(".xml") ? outName.substring(0, outName.length() - 4) : outName;
+			
+			String path = mrtFile.getName();
+	        path = path.endsWith(".tra") ? path.substring(0, path.length() - 4) : path;
+			
+			outName += "-" + path;
+		}
+		else {
+			outName = outFilePath;
+		}
 
 		linksById = new HashMap<String, Link>();
 		nodesById = new HashMap<String, Node>();
@@ -74,7 +82,7 @@ public class CBGPDumpAlgorithm {
 	private void errorControl(String descriptionError) throws IOException {
 		// / Re-write file with error
 		bw.close();
-		bw = new BufferedWriter(new FileWriter(outName));
+		bw = new BufferedWriter(new FileWriter(outName + ".cli"));
 		bw.write("print \"*** ERROR: " + descriptionError + " ***\\n\\n\""
 				+ "\n\n");
 		bw.close();
@@ -87,7 +95,7 @@ public class CBGPDumpAlgorithm {
 		try {
 			boolean error;
 			domain_num = domain.getASID();
-			bw = new BufferedWriter(new FileWriter(outName));
+			bw = new BufferedWriter(new FileWriter(outName + ".cli"));
 
 			error = initDescriptionTopology();
 			if (!error)
@@ -98,7 +106,7 @@ public class CBGPDumpAlgorithm {
 				bw.close();
 		} catch (Exception e) {
 			logger.error("ERROR: Unexpected error occurred while open/close/write file "
-					+ outName);
+					+ outName + ".cli");
 			e.printStackTrace();
 			return;
 		}
@@ -205,7 +213,7 @@ public class CBGPDumpAlgorithm {
 		String path = domain.getURI().getPath();
         path = path.endsWith(".xml") ? path.substring(0, path.length() - 4) : path;
 		
-		bw.write("bgp options msg-monitor " + path + "-trace.bgp"
+		bw.write("bgp options msg-monitor " + outName + "-trace.bgp"
 				+ "\n\n");
 
 		// / ADD ROUTERS BGP AND SESSIONS iBGP
