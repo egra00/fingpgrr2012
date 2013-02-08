@@ -1,5 +1,11 @@
 #! /bin/bash
 
+############################################################################
+#                                                                          #
+# Solo funciona en Gilbert!. El find no se comporta igual en Debian/Ubuntu #
+#                                                                          #
+############################################################################
+
 if [ $# -lt 2 ]; then
 	echo "Usage $0 totem_runner topologies_path"
 	exit -1
