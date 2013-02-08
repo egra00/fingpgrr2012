@@ -117,13 +117,13 @@ public class Totem {
      */
     private static void printUsage() {
         System.out.println("Usage : ");
-        System.out.println("\t -rrloc_bgpsep <topology.xml> [-ofn] [-separator] [-max_iter] [-alpha] [-beta] [-gama] [-nb_run] [-n_gen] [-sizeP] [-sizeOf] [-pmut] [-pcross]: " +
+        System.out.println("\t -rrloc_bgpsep <topology.xml> [-ofn] [-tra] [-separator] [-max_iter] [-alpha] [-beta] [-gama] [-nb_run] [-n_gen] [-sizeP] [-sizeOf] [-pmut] [-pcross]: " +
         		"start BGPSEP algorithm running over the topology specifies in topology.xml.");
-        System.out.println("\t -rrloc_bgpsepB <topology.xml> [-ofn] [-separator] -PoPs [-max_iter] [-alpha] [-beta] [-gama] [-km_nb_run] [-km_n_gen] [-km_sizeP] [-km_sizeOf] [-km_pmut] [-km_pcross]" +
+        System.out.println("\t -rrloc_bgpsepB <topology.xml> [-ofn] [-tra] [-separator] -PoPs [-max_iter] [-alpha] [-beta] [-gama] [-km_nb_run] [-km_n_gen] [-km_sizeP] [-km_sizeOf] [-km_pmut] [-km_pcross]" +
         		"[-nb_run] [-n_gen] [-sizeP] [-sizeOf] [-pmut] [-pcross]: start BGPSEPBackbone algorithm running over the topology specifies in topology.xml.");
-        System.out.println("\t -rrloc_bgpsepD <topology.xml> [-ofn] [-separator] [-max_iter] [-alpha] [-beta] [-gama] [-nb_run] [-n_gen] [-sizeP] [-sizeOf] [-pmut] [-pcross]: " +
+        System.out.println("\t -rrloc_bgpsepD <topology.xml> [-ofn] [-tra] [-separator] [-max_iter] [-alpha] [-beta] [-gama] [-nb_run] [-n_gen] [-sizeP] [-sizeOf] [-pmut] [-pcross]: " +
         		"start BGPSEPD algorithm running over the topology specifies in topology.xml.");
-        System.out.println("\t -rrloc_bgpsepS <topology.xml> [-ofn] [-separator] [-max_iter] [-alpha] [-beta] [-gama] [-nb_run] [-n_gen] [-sizeP] [-sizeOf] [-pmut] [-pcross]: " +
+        System.out.println("\t -rrloc_bgpsepS <topology.xml> [-ofn] [-tra] [-separator] [-max_iter] [-alpha] [-beta] [-gama] [-nb_run] [-n_gen] [-sizeP] [-sizeOf] [-pmut] [-pcross]: " +
         		"start BGPSEPS algorithm running over the topology specifies in topology.xml.");
         System.out.println("\t -rrloc_cbr <topology.xml> : start CBR algorithm running over the topology specifies in topology.xml.");
         System.out.println("\t -rrloc_fullmesh <topology.xml> : start FULLMESH algorithm running over the topology specifies in topology.xml.");

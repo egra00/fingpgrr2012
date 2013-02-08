@@ -11,6 +11,7 @@ import org.apache.log4j.Logger;
 
 import uy.edu.fing.repository.rrloc.algorithms.iBGPSession;
 import uy.edu.fing.repository.rrloc.algorithms.iBGPSessionType;
+import uy.edu.fing.repository.tools.CBGPDump.CBGPDumpAlgorithm;
 
 import be.ac.ulg.montefiore.run.totem.domain.facade.InterDomainManager;
 import be.ac.ulg.montefiore.run.totem.domain.model.Domain;
@@ -44,6 +45,7 @@ public abstract class BindAlgorithm implements Runnable, TotemAlgorithm {
     Object algorithmResult;
     
     String outputFileName;
+    String simulationFile;
 	
 	/*
 	 * Used for initialize the parameters of input
@@ -142,6 +144,7 @@ public abstract class BindAlgorithm implements Runnable, TotemAlgorithm {
 		runningParams = params;
         logger.debug("Starting...");
         
+        simulationFile = (String)params.get("tra");
         outputFileName = (String)params.get("ofn");
         algorithmParams = getAlgorithmParams(params);
         algorithmResult = initAlgorithmResult();
@@ -185,6 +188,11 @@ public abstract class BindAlgorithm implements Runnable, TotemAlgorithm {
         	else {
         		saveTopo();
         	}
+        	
+        	if (simulationFile != null) {
+        		new CBGPDumpAlgorithm().run(domain, new File(simulationFile), path);
+        	}
+        	
 		} catch (Exception e) {
 			logger.error("Dumping iBGP topology in Totem domain");
 			e.printStackTrace();
