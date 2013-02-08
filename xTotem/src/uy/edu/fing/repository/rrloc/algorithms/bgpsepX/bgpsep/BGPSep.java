@@ -148,7 +148,7 @@ public class BGPSep extends BindAlgorithm {
         	PCROSS = _PCROSS;
         }
         
-        System.out.println("ASID: " + ASID);
+       /* System.out.println("ASID: " + ASID);
         System.out.println("MAX_ITER: " + MAX_ITER);
         System.out.println("ALPHA: " + ALPHA);
         System.out.println("BETA: " + BETA);
@@ -158,7 +158,7 @@ public class BGPSep extends BindAlgorithm {
         System.out.println("SIZE_P: " + SIZE_P);
         System.out.println("SIZE_OF: " + SIZE_OF);
         System.out.println("PMUT: " + PMUT);
-        System.out.println("PCROSS: " + PCROSS);
+        System.out.println("PCROSS: " + PCROSS);*/
       
         if(ASID == null) {
         	domain = InterDomainManager.getInstance().getDefaultDomain();
