@@ -82,36 +82,19 @@ public class KMedoids
 	{
 		int[] indi = new int[_tam_individuo];
 		int[] meds = new int[_pops];
-		
-		
-		double point1_X = ram.nextInt(_pops) + Math.random();
-		double point1_Y = ram1.nextInt(_pops) + Math.random();
-	
-		double point2_X = ram.nextInt(_pops) + Math.random();
-		double point2_Y = ram1.nextInt(_pops) + Math.random();
-		
-		double _a = (point1_X - point2_X)/(point1_Y - point2_Y);
-		double _b = point2_Y - _a*point2_X;
-		
-		
-		int delta = ram.nextInt(_tam_individuo/_pops)+1;
-		int index = ram1.nextInt(_tam_individuo);
-		int num = 0;
+		int index;
 		
 		for(int i=0; i<_pops; i++)
-			meds[i] = (delta*i + index)% _tam_individuo;
+			meds[i] = ram.nextInt(_tam_individuo);
 		
 		for(int i=0; i<_tam_individuo; i++)
 		{
-					
-			num = (int)((_a*ram.nextInt(_pops)) +_b);
-			
-			if (num < 0)
-				indi[i] = 0;
-			else if(num >= _pops)
-				indi[i] = _pops-1;
-			else
-				indi[i] =  num;
+			if((index = isMed(meds, i)) >= 0) {
+				indi[i] = index;
+			}
+			else {
+				indi[i] = ram.nextInt(_pops);
+			}	
 		}
 			
 		meds_populations[_indi_id] = meds;	
@@ -140,7 +123,7 @@ public class KMedoids
 		for(int i=pointA; i<pointB; i++)
 		{
 			change_pops(meds_ind1, meds_ind2[i], meds_ind1[i]);
-			change_pops(meds_ind1, meds_ind1[i], meds_ind2[i]);
+			change_pops(meds_ind2, meds_ind1[i], meds_ind2[i]);
 			
 			aux = meds_ind1[i];
 			meds_ind1[i] = meds_ind2[i];
@@ -207,20 +190,10 @@ public class KMedoids
 	private void mut(int[] indi, int[] meds, Random ram,  Random ram1)
 	{
 		int _new_med;
-		double point1_X = ram.nextInt(_pops) + Math.random();
-		double point1_Y = ram1.nextInt(_pops) + Math.random();
-	
-		double point2_X = ram.nextInt(_pops) + Math.random();
-		double point2_Y = ram1.nextInt(_pops) + Math.random();
+		int index;
 		
-		double _a = (point1_X - point2_X)/(point1_Y - point2_Y);
-		double _b = point2_Y - _a*point2_X;
-		int num = 0;
-		
-		for(int i=0; i<_pops; i++)
-		{
-			if (Math.random() <= _pmut)
-			{
+		for(int i=0; i<_pops; i++) {
+			if (Math.random() <= _pmut) {
 				_new_med = ram.nextInt(_tam_individuo);
 				change_pops(meds, _new_med, meds[i]);
 				
@@ -228,21 +201,22 @@ public class KMedoids
 			}
 		}
 		
-		for(int i=0; i<_tam_individuo; i++)
-		{
-			if (Math.random() <= _pmut)	
-			{
-				num = (int)((_a*ram.nextInt(_pops)) + _b);
-				
-				if (num < 0)
-					indi[i] = 0;
-				else if(num >= _pops)
-					indi[i] = _pops-1;
-				else
-					indi[i] = num;
+		for(int i=0; i<_tam_individuo; i++) {
+			if((index = isMed(meds, i)) >= 0) {
+				indi[i] = index;
 			}
-				
+			else {
+				indi[i] = ram.nextInt(_pops);
+			}	
 		}
+	}
+	
+	private int isMed(int[] meds, int _node){
+		
+		for(int i=0; i < _pops; i++)
+			if(meds[i] == _node) return i;
+		
+		return -1;
 	}
 	
 	public void Recombine()
