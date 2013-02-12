@@ -1,12 +1,6 @@
 #! /bin/bash
 
 ################################################################################
-################################################################################
-###                                                                          ###
-### Solo funciona en Gilbert!. El find no se comporta igual en Debian/Ubuntu ###
-###                                                                          ###
-################################################################################
-################################################################################
 # En la carpeta topologies_and_tras_path estarán las topologías sobre las que  #
 # se va a ejecutár la calibración y para cada topología example.xml debe       #
 # existir un archivo example.tra con la definición del escenario para esta     #
@@ -32,6 +26,8 @@ fi
 if [ ${debug} -a ${debug} = "-vvv" ]; then
         mode=""
 fi
+
+echo "find ${topologies_and_tras_path} -regextype awk -mtime -1 ! -regex  '.*(svn|BGPSep|BGPSepBackbone|BGPSepD|BGPSepS|Cbr|FullMesh|Optimal|Zhang|Bates|BatesY|BatesZ).*' -regex '.*xml$'"
 
 for one_topology_file in `find ${topologies_and_tras_path} -regextype awk -mtime -1 ! -regex  '.*(svn|BGPSep|BGPSepBackbone|BGPSepD|BGPSepS|Cbr|FullMesh|Optimal|Zhang|Bates|BatesY|BatesZ).*' -regex '.*xml$'`
 do
