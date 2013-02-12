@@ -16,7 +16,7 @@ test_path=$2
 debug=$3
 all_algoritms=(bgpsep bgpsepB bgpsepD bgpsepS fullmesh optimal zhang bates batesY batesZ) 
 
-mode="2>&1 /dev/null"
+mode="2>&1 > /dev/null"
 if [ ${debug} -a ${debug} = "-vv" ]; then
 	mode="> /dev/null"
 fi
