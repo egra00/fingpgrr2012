@@ -74,7 +74,7 @@ net domain 11537 compute
 # -------------------------------------------------------------------
 # BGP routing
 # -------------------------------------------------------------------
-bgp options msg-monitor /ens/home01/pgrrloc/totem/ctest/abilene-abilene_bgpsep_0-trace.bgp
+bgp options msg-monitor /home/emiliano/PG/Totem/ctest/abilene-abilene_bgpsep_0.msg
 
 bgp add router 11537 192.168.0.7
 bgp router 192.168.0.7
