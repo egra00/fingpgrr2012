@@ -27,6 +27,7 @@ if [ ${debug} -a ${debug} = "-vvv" ]; then
         mode=""
 fi
 
+
 for one_topology_file in `find ${topologies_and_tras_path} -regextype awk -mtime -1 ! -regex  '.*(svn|BGPSep|BGPSepBackbone|BGPSepD|BGPSepS|Cbr|FullMesh|Optimal|Zhang|Bates|BatesY|BatesZ).*' -regex '.*xml$'`
 do
 	one_tra_file="${one_topology_file%.*}.tra"
@@ -44,8 +45,8 @@ do
 		do
 			eval "${totem_script} -rrloc_${algoritm} ${one_topology_file} -tra ${one_tra_file} -ofn ${base_output_name}_${unique_file} ${params} ${mode}"
 			#echo "${totem_script} -rrloc_${algoritm} ${one_topology_file} -tra ${one_tra_file} -ofn ${base_output_name}_${unique_file} ${params} ${mode}"
-			eval "cbgp -c ${base_output_dir}/${topology_name}-${base_output_name}_${unique_file}.cli > ${base_output_dir}/${base_output_name}_${unique_file}.bgp"
-			#echo "cbgp -c ${base_output_dir}/${topology_name}-${base_output_name}_${unique_file}.cli > ${base_output_dir}/${base_output_name}_${unique_file}.bgp"
+			eval "cbgp -c ${base_output_dir}/${topology_name}-${base_output_name}_${unique_file}.cli > ${base_output_dir}/${topology_name}-${base_output_name}_${unique_file}.bgp"
+			#echo "cbgp -c ${base_output_dir}/${topology_name}-${base_output_name}_${unique_file}.cli > ${base_output_dir}/${topology_name}-${base_output_name}_${unique_file}.bgp"
 
 			((unique_file++))
 		done < ${test_file}

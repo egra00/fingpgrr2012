@@ -213,7 +213,7 @@ public class CBGPDumpAlgorithm {
 		String path = domain.getURI().getPath();
         path = path.endsWith(".xml") ? path.substring(0, path.length() - 4) : path;
 		
-		bw.write("bgp options msg-monitor " + outName + "-trace.bgp"
+		bw.write("bgp options msg-monitor " + outName + ".msg"
 				+ "\n\n");
 
 		// / ADD ROUTERS BGP AND SESSIONS iBGP
