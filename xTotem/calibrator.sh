@@ -28,7 +28,7 @@ if [ ${debug} -a ${debug} = "-vvv" ]; then
         mode=""
 fi
 
-for one_topology_file in `find ${topologies_and_tras_path} -regextype awk -mtime -1 ! -regex  '.*(svn|BGPSep|BGPSepBackbone|BGPSepD|BGPSepS|Cbr|FullMesh|Optimal|Zhang|Bates|BatesY|BatesZ).*' -regex '.*xml$'`
+for one_topology_file in `find ${topologies_and_tras_path} -regextype awk -not -regex  '.*(svn|BGPSep|BGPSepBackbone|BGPSepD|BGPSepS|Cbr|FullMesh|Optimal|Zhang|Bates|BatesY|BatesZ).*' -regex '.*xml$'`
 do
 	one_tra_file="${one_topology_file%.*}.tra"
 	if [ ! -f ${one_tra_file} ]; then
