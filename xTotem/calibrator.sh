@@ -7,15 +7,16 @@
 # topología                                                                    #
 ################################################################################
 
-if [ $# -lt 3 ]; then
-	echo "Usage $0 totem_runner topologies_and_tras_path tests_path"
+if [ $# -lt 4 ]; then
+	echo "Usage $0 totem_runner parser topologies_and_tras_path tests_path"
 	exit -1
 fi
 
 totem_script=$1
-topologies_and_tras_path=$2
-test_file=$3
-debug=$4
+parser_script=$2
+topologies_and_tras_path=$3
+test_file=$4
+debug=$5
 #all_algoritms=(bgpsep bgpsepB bgpsepD bgpsepS) 
 all_algoritms=(bgpsep)
 
@@ -26,7 +27,6 @@ fi
 if [ ${debug} -a ${debug} = "-vvv" ]; then
         mode=""
 fi
-
 
 for one_topology_file in `find ${topologies_and_tras_path} -regextype awk -mtime -1 ! -regex  '.*(svn|BGPSep|BGPSepBackbone|BGPSepD|BGPSepS|Cbr|FullMesh|Optimal|Zhang|Bates|BatesY|BatesZ).*' -regex '.*xml$'`
 do
@@ -47,6 +47,9 @@ do
 			#echo "${totem_script} -rrloc_${algoritm} ${one_topology_file} -tra ${one_tra_file} -ofn ${base_output_name}_${unique_file} ${params} ${mode}"
 			eval "cbgp -c ${base_output_dir}/${topology_name}-${base_output_name}_${unique_file}.cli > ${base_output_dir}/${topology_name}-${base_output_name}_${unique_file}.bgp"
 			#echo "cbgp -c ${base_output_dir}/${topology_name}-${base_output_name}_${unique_file}.cli > ${base_output_dir}/${topology_name}-${base_output_name}_${unique_file}.bgp"
+
+			eval "${parser_script} ${base_output_dir}/${topology_name}-${base_output_name}_${unique_file}.bgp ${base_output_dir}/${topology_name}-${base_output_name}_${unique_file}"
+			#echo "${parser_script} ${base_output_dir}/${topology_name}-${base_output_name}_${unique_file}.bgp ${base_output_dir}/${topology_name}-${base_output_name}_${unique_file}"
 
 			((unique_file++))
 		done < ${test_file}
