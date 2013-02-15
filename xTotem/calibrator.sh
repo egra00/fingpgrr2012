@@ -46,7 +46,8 @@ do
 		topology_name=`basename ${one_topology_file%.*}`
 		base_output_dir=`dirname ${one_topology_file}`
 		unique_file=0
-		for one_params_file in `find ${params_path} -regextype awk -not -regex '*.params$'`
+		for one_params_file in `find ${params_path} -name '*.params'`
+		do
 			base_params_file=`basename ${one_params_file%.*}`
 			while read params
 			do
