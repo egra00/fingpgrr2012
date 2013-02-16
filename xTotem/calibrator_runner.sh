@@ -1,5 +1,5 @@
 #!/bin/sh
-host=hostname
+host=`hostname`
 (	trap "" HUP
 	exec 0< /dev/null
 	exec 1> calibrator.log
