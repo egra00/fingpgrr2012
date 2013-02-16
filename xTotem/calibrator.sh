@@ -33,6 +33,32 @@ if [ ${debug} -a ${debug} = "-vvv" ]; then
         mode=""
 fi
 
+total_work=0
+for one_topology_file in `find ${topologies_and_tras_path} -regextype awk -not -regex  '.*(svn|BGPSep|BGPSepBackbone|BGPSepD|BGPSepS|Cbr|FullMesh|Optimal|Zhang|Bates|BatesY|BatesZ).*' -regex '.*xml$'`
+do
+	one_tra_file="${one_topology_file%.*}.tra"
+	if [ ! -f ${one_tra_file} ]; then
+		echo "ERROR: Not exist ${one_tra_file}"
+		exit -1
+	fi
+	for algoritm in "${all_algoritms[@]}"
+	do
+		for one_params_file in `find ${params_path} -name '*.params'`
+		do
+			while read params
+			do
+				((total_work+=3))
+			done < ${one_params_file}
+		done
+	done
+done
+
+current_work=0
+function printPorcentage() {
+	((current_work++))
+	echo "$(echo "${current_work} * 100 / ${total_work}" | bc -l | awk '{printf "%.2f", $0}')%"
+}
+
 for one_topology_file in `find ${topologies_and_tras_path} -regextype awk -not -regex  '.*(svn|BGPSep|BGPSepBackbone|BGPSepD|BGPSepS|Cbr|FullMesh|Optimal|Zhang|Bates|BatesY|BatesZ).*' -regex '.*xml$'`
 do
 	one_tra_file="${one_topology_file%.*}.tra"
@@ -53,13 +79,18 @@ do
 			do
 				eval "${totem_script} -rrloc_${algoritm} ${one_topology_file} -tra ${one_tra_file} -ofn ${base_output_name}_${base_params_file}_${unique_file} ${params} ${mode}"
 				#echo "${totem_script} -rrloc_${algoritm} ${one_topology_file} -tra ${one_tra_file} -ofn ${base_output_name}_${base_params_file}_${unique_file} ${params} ${mode}"
+				printPorcentage
+
 				eval "cbgp -c ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}.cli > ${base_output_dir}/${topology_name}-${base_output_name}_${unique_file}.bgp"
 				#echo "cbgp -c ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}.cli > ${base_output_dir}/${topology_name}-${base_output_name}_${unique_file}.bgp"
+				printPorcentage
 
 				eval "${parser_script} ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}.bgp ${base_output_dir}/${topology_name}-${base_output_name}_${unique_file}"
 				#echo "${parser_script} ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}.bgp ${base_output_dir}/${topology_name}-${base_output_name}_${unique_file}"
+				printPorcentage
 
 				((unique_file++))
+
 			done < ${one_params_file}
 		done
 	done
