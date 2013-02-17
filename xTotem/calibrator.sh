@@ -85,8 +85,8 @@ do
 				#echo "cbgp -c ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}.cli > ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}.bgp"
 				printPorcentage
 
-				eval "${parser_script} ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}.bgp ${base_output_dir}/${topology_name}-${base_output_name}_${unique_file}"
-				#echo "${parser_script} ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}.bgp ${base_output_dir}/${topology_name}-${base_output_name}_${unique_file}"
+				eval "${parser_script} ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}.bgp ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}"
+				#echo "${parser_script} ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}.bgp ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}"
 				printPorcentage
 
 				((unique_file++))
