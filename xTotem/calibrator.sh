@@ -12,6 +12,8 @@
 #                                                                                  #
 ####################################################################################
 
+exclude=".*(bgpsep|bgpsepB|bgpsepD|bgpsepS|fullmesh|optimal|zhang|bates|batesY|batesZ|svn|BGPSep|BGPSepBackbone|BGPSepD|BGPSepS|Cbr|FullMesh|Optimal|Zhang|Bates|BatesY|BatesZ).*"
+
 start_time="$(date +%s)"
 
 if [ $# -lt 4 ]; then
@@ -35,7 +37,7 @@ if [ ${debug} -a ${debug} = "-vvv" ]; then
 fi
 
 total_work=0
-for one_topology_file in `find ${topologies_and_tras_path} -regextype awk -not -regex  '.*(svn|BGPSep|BGPSepBackbone|BGPSepD|BGPSepS|Cbr|FullMesh|Optimal|Zhang|Bates|BatesY|BatesZ).*' -regex '.*xml$'`
+for one_topology_file in `find ${topologies_and_tras_path} -regextype awk -not -regex  '${exclude}' -regex '.*xml$'`
 do
 	one_tra_file="${one_topology_file%.*}.tra"
 	if [ ! -f ${one_tra_file} ]; then
@@ -62,7 +64,7 @@ function printPorcentage() {
 	echo "${current_time} - $(echo "${current_work} * 100 / ${total_work}" | bc -l | awk '{printf "%.2f", $0}')%"
 }
 
-for one_topology_file in `find ${topologies_and_tras_path} -regextype awk -not -regex  '.*(svn|BGPSep|BGPSepBackbone|BGPSepD|BGPSepS|Cbr|FullMesh|Optimal|Zhang|Bates|BatesY|BatesZ).*' -regex '.*xml$'`
+for one_topology_file in `find ${topologies_and_tras_path} -regextype awk -not -regex  '${exclude}' -regex '.*xml$'`
 do
 	one_tra_file="${one_topology_file%.*}.tra"
 	if [ ! -f ${one_tra_file} ]; then
@@ -80,16 +82,16 @@ do
 			base_params_file=`basename ${one_params_file%.*}`
 			while read params
 			do
-				eval "${totem_script} -rrloc_${algoritm} ${one_topology_file} -tra ${one_tra_file} -ofn ${base_output_name}_${base_params_file}_${unique_file} ${params} ${mode}"
-				#echo "${totem_script} -rrloc_${algoritm} ${one_topology_file} -tra ${one_tra_file} -ofn ${base_output_name}_${base_params_file}_${unique_file} ${params} ${mode}"
+				eval "${totem_script} -rrloc_${algoritm} ${one_topology_file} -tra ${one_tra_file} -ofn ${algoritm}_${base_output_name}_${base_params_file}_${unique_file} ${params} ${mode}"
+				#echo "${totem_script} -rrloc_${algoritm} ${one_topology_file} -tra ${one_tra_file} -ofn ${algoritm}_${base_output_name}_${base_params_file}_${unique_file} ${params} ${mode}"
 				printPorcentage
 
-				eval "cbgp -c ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}.cli > ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}.bgp"
-				#echo "cbgp -c ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}.cli > ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}.bgp"
+				eval "cbgp -c ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}.cli > ${base_output_dir}/${algoritm}_${topology_name}-${base_output_name}_${base_params_file}_${unique_file}.bgp"
+				#echo "cbgp -c ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}.cli > ${base_output_dir}/${algoritm}_${topology_name}-${base_output_name}_${base_params_file}_${unique_file}.bgp"
 				printPorcentage
 
-				eval "${parser_script} ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}.bgp ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}"
-				#echo "${parser_script} ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}.bgp ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}"
+				eval "${parser_script} ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}.bgp ${base_output_dir}/${algoritm}_${topology_name}-${base_output_name}_${base_params_file}_${unique_file}"
+				#echo "${parser_script} ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}.bgp ${base_output_dir}/${algoritm}_${topology_name}-${base_output_name}_${base_params_file}_${unique_file}"
 				printPorcentage
 
 				((unique_file++))
