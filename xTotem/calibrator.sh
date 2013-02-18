@@ -24,8 +24,7 @@ parser_script=$2
 topologies_and_tras_path=$3
 params_path=$4
 debug=$5
-#all_algoritms=(bgpsep bgpsepB bgpsepD bgpsepS) 
-all_algoritms=(bgpsep)
+all_algoritms=(bgpsep bgpsepB bgpsepD bgpsepS) 
 
 mode="2>&1 > /dev/null"
 if [ ${debug} -a ${debug} = "-vv" ]; then
