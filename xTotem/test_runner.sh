@@ -6,6 +6,8 @@
 #                                                                          #
 ############################################################################
 
+exclude=".*(bgpsep|bgpsepB|bgpsepD|bgpsepS|fullmesh|optimal|zhang|bates|batesY|batesZ|svn|BGPSep|BGPSepBackbone|BGPSepD|BGPSepS|Cbr|FullMesh|Optimal|Zhang|Bates|BatesY|BatesZ).*"
+
 if [ $# -lt 2 ]; then
 	echo "Usage $0 totem_runner topologies_path"
 	exit -1
@@ -24,7 +26,7 @@ if [ ${debug} -a ${debug} = "-vvv" ]; then
         mode=""
 fi
 
-for test_file in `find ${test_path} -regextype awk -not -regex  '.*(svn|BGPSep|BGPSepBackbone|BGPSepD|BGPSepS|Cbr|FullMesh|Optimal|Zhang|Bates|BatesY|BatesZ).*' -regex '.*xml$'`
+for test_file in `find ${test_path} -regextype awk -not -regex  '${exclude}' -regex '.*xml$'`
 do 
 	for algoritm in "${all_algoritms[@]}"
 	do
