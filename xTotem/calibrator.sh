@@ -12,6 +12,8 @@
 #                                                                                  #
 ####################################################################################
 
+start_time="$(date +%s)"
+
 if [ $# -lt 4 ]; then
 	echo "Usage $0 totem_runner parser topologies_and_tras_path params_path"
 	exit -1
@@ -56,7 +58,9 @@ done
 current_work=0
 function printPorcentage() {
 	((current_work++))
-	echo "$(echo "${current_work} * 100 / ${total_work}" | bc -l | awk '{printf "%.2f", $0}')%"
+	current_time="$(($(date +%s)-start_time))"
+	current_time=`printf "%02d:%02d:%02d\n" "$((current_time/3600%24))" "$((current_time/60%60))" "$((current_time%60))"`
+	echo "${current_time} - $(echo "${current_work} * 100 / ${total_work}" | bc -l | awk '{printf "%.2f", $0}')%"
 }
 
 for one_topology_file in `find ${topologies_and_tras_path} -regextype awk -not -regex  '.*(svn|BGPSep|BGPSepBackbone|BGPSepD|BGPSepS|Cbr|FullMesh|Optimal|Zhang|Bates|BatesY|BatesZ).*' -regex '.*xml$'`
