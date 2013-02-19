@@ -29,10 +29,10 @@ debug=$5
 all_algoritms=(bgpsep bgpsepB bgpsepD bgpsepS) 
 
 mode="2>&1 > /dev/null"
-if [ ${debug} -a ${debug} = "-vv" ]; then
+if [ "${debug}" = "-vv" ]; then
 	mode="> /dev/null"
 fi
-if [ ${debug} -a ${debug} = "-vvv" ]; then
+if [ "${debug}" = "-vvv" ]; then
         mode=""
 fi
 
@@ -82,17 +82,25 @@ do
 			base_params_file=`basename ${one_params_file%.*}`
 			while read params
 			do
-				eval "${totem_script} -rrloc_${algoritm} ${one_topology_file} -tra ${one_tra_file} -ofn ${algoritm}_${base_output_name}_${base_params_file}_${unique_file} ${params} ${mode}"
-				#echo "${totem_script} -rrloc_${algoritm} ${one_topology_file} -tra ${one_tra_file} -ofn ${algoritm}_${base_output_name}_${base_params_file}_${unique_file} ${params} ${mode}"
+				eval "${totem_script} -rrloc_${algoritm} ${one_topology_file} -tra ${one_tra_file} -ofn ${base_output_name}_${base_params_file}_${unique_file} ${params} ${mode}"
+				#echo "${totem_script} -rrloc_${algoritm} ${one_topology_file} -tra ${one_tra_file} -ofn ${base_output_name}_${base_params_file}_${unique_file} ${params} ${mode}"
 				printPorcentage
 
-				eval "cbgp -c ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}.cli > ${base_output_dir}/${algoritm}_${topology_name}-${base_output_name}_${base_params_file}_${unique_file}.bgp"
-				#echo "cbgp -c ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}.cli > ${base_output_dir}/${algoritm}_${topology_name}-${base_output_name}_${base_params_file}_${unique_file}.bgp"
+				eval "cbgp -c ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}.cli > ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}.bgp"
+				#echo "cbgp -c ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}.cli > ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}.bgp"
 				printPorcentage
 
-				eval "${parser_script} ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}.bgp ${base_output_dir}/${algoritm}_${topology_name}-${base_output_name}_${base_params_file}_${unique_file}"
-				#echo "${parser_script} ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}.bgp ${base_output_dir}/${algoritm}_${topology_name}-${base_output_name}_${base_params_file}_${unique_file}"
+				eval "${parser_script} ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file} ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}"
+				#echo "${parser_script} ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file} ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}"
 				printPorcentage
+
+				# Only need the csv
+				if [ "${mode}" != "" ]; then 
+					rm ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}.bgp
+					rm ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}.msg
+					rm ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}.xml
+					rm ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}.cli
+				fi
 
 				((unique_file++))
 
