@@ -19,10 +19,10 @@ debug=$3
 all_algoritms=(bgpsep bgpsepB bgpsepD bgpsepS fullmesh optimal zhang bates batesY batesZ) 
 
 mode="2>&1 > /dev/null"
-if [ ${debug} -a ${debug} = "-vv" ]; then
+if [ "${debug}" = "-vv" ]; then
 	mode="> /dev/null"
 fi
-if [ ${debug} -a ${debug} = "-vvv" ]; then
+if [ "${debug}" = "-vvv" ]; then
         mode=""
 fi
 

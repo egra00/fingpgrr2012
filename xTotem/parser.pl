@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-my ${result_bgp};
+my ${result};
 my ${outout_file};
 my ${table_counter};
 my ${first_table_columns}; # Need two variables to order rib in and rib out columns
@@ -8,24 +8,32 @@ my ${last_table_columns};
 my ${first_table_row};
 my ${last_table_row};
 my ${process_rib};
+my ${process_msg};
 
 if (@{ARGV} != 2) {
-	die "Usage: ${0} result.bgp output_file_name\n";
+	die "Usage: ${0} result output_file_name\n";
 }
 
-${result_bgp} = ${ARGV}[0];
+${result} = ${ARGV}[0];
 ${outout_file} = ${ARGV}[1];
 
-open IN_FILE, "<", ${result_bgp} or die ${!};
+open IN_FILE, "<", "${result}.bgp" or die ${!};
 open OUT_FILE, ">", "${outout_file}.csv" or die ${!};
+
+${process_msg} = `grep -c '^[^#]' ${result}.msg`;
+${process_msg} = "${process_msg},";
+
+print OUT_FILE "MSGs,\n";
+print OUT_FILE "${process_msg}\n";
 
 foreach ${line} (<IN_FILE>) {
 
 	if (${line} =~ /.*(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\'s tables data.*/) {
 		if (! ${first_table_columns} eq "") {
 			${last_table_row} = "${last_table_row}${table_counter},";
-			print OUT_FILE 	"${first_table_columns}${last_table_columns}\n";
-			print OUT_FILE 	"${first_table_row}${last_table_row}\n";
+
+			print OUT_FILE "${first_table_columns}${last_table_columns}\n";
+			print OUT_FILE "${first_table_row}${last_table_row}${process_msg}\n";
 		}
 
 		${first_table_columns} = "Router ${1}\n";
