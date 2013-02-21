@@ -90,11 +90,21 @@ public class ModuleLoader {
      * starts the "Load at startup" modules.
      */
     public void initBasicModules() {
-        String modules = PreferenceManager.getInstance().getPrefs().get("AVAILABLE-GUI-MODULES", "be.ac.ulg.montefiore.run.totem.visualtopo.guiModules.routingGUIModule.RoutingGUIModule");
+    	String modules = PreferenceManager.getInstance().getPrefs().get("AVAILABLE-GUI-MODULES", "be.ac.ulg.montefiore.run.totem.visualtopo.guiModules.routingGUIModule.RoutingGUIModule");
         for (String moduleClassName : modules.split(":")) {
             try {
                 Class clazz = Class.forName(moduleClassName);
-                addGUIModule((GUIModule)clazz.newInstance());
+                
+                if (moduleClassName.equals("be.ac.ucl.ingi.totem.repository.guiComponents.CBGPManager") 
+                		|| moduleClassName.equals("be.ac.ulg.montefiore.run.totem.visualtopo.guiModules.topEdit.TopEditGUIModule") 
+                		|| moduleClassName.equals("be.ac.ulg.montefiore.run.totem.visualtopo.guiModules.routingGUIModule.RoutingGUIModule") ) {
+                	addGUIModule((GUIModule)clazz.newInstance(), LOADED);
+                }
+                else{
+                	addGUIModule((GUIModule)clazz.newInstance(), NOTLOADED);
+                }
+                	
+               
             } catch (ClassNotFoundException e) {
                 logger.error("Module not found: " + moduleClassName);
             } catch (IllegalAccessException e) {
@@ -107,9 +117,8 @@ public class ModuleLoader {
         }
         for (Iterator iter = allModules.listIterator(); iter.hasNext();) {
             ModuleCell cell = (ModuleCell) iter.next();
-            if (cell.getModule().loadAtStartup() && (cell.getStatus() == NOTLOADED)) {
+            if (cell.getModule().loadAtStartup() && (cell.getStatus() == LOADED)) {
                 loadModule(cell);
-                cell.setStatus(LOADED);
             }
         }
     }
@@ -185,6 +194,10 @@ public class ModuleLoader {
      */
     public void addGUIModule(GUIModule module) {
         allModules.add(new ModuleCell(module, NOTLOADED));
+    }
+    
+    public void addGUIModule(GUIModule module, int status) {
+        allModules.add(new ModuleCell(module, status));
     }
 
 
