@@ -40,7 +40,6 @@ public abstract class BindAlgorithm implements Runnable, TotemAlgorithm {
 	
 	protected Domain domain;
 	protected String name;
-	protected String path;
     
     Object algorithmParams;
     Object algorithmResult;
@@ -131,13 +130,6 @@ public abstract class BindAlgorithm implements Runnable, TotemAlgorithm {
 			}
 			router2.getNeighbors().getNeighbor().add((be.ac.ulg.montefiore.run.totem.domain.model.BgpNeighbor)bgpNeighbor);
 		}
-		
-    	if (MainWindow.cliMode()) {
-    		save(new File(path));
-    	}
-    	else {
-    		saveTopo();
-    	}
         
         ManagerRRLocAlgorithm.getInstance().unlock(domain.getASID());
 	}
@@ -184,12 +176,19 @@ public abstract class BindAlgorithm implements Runnable, TotemAlgorithm {
         
         log(algorithmResult);
         
-        path = domain.getURI().getPath();
+        String path = domain.getURI().getPath();
         path = path.endsWith(".xml") ? path.substring(0, path.length() - 4) : path;
         path += "-" + (outputFileName == null ? name : outputFileName);
         
         try {
         	dumpResultInDomain(algorithmResult);
+        	if (MainWindow.cliMode()) {
+        		save(new File(path));
+        	}
+        	else {
+        		saveTopo();
+        	}
+        	
         	if (simulationFile != null) {
         		new CBGPDumpAlgorithm().run(domain, new File(simulationFile), path);
         	}
