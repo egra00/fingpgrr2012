@@ -216,7 +216,7 @@ public abstract class BindAlgorithm implements Runnable, TotemAlgorithm {
     	
 		String information = "BGP information will change for the domain " + domain.getASID() + "\n";
 		String description = (domain.getDescription() == null || domain.getDescription().isEmpty() ? "No description" : domain .getDescription() ) + "\n";
-		String action = "This action saves the previous version and will delete all existing information. Would you like to continue?" + "\n";
+		String action = "Want to save the results in a file?" + "\n";
 		String title = "@Run " + name + " algorithm reports";
 		
         int n = JOptionPane.showConfirmDialog(MainWindow.getInstance(), information + description + action, title, JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
