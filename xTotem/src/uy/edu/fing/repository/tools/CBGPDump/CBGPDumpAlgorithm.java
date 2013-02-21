@@ -56,7 +56,7 @@ public class CBGPDumpAlgorithm {
 
 		mrtFile = mrt_file;
 
-		if (outFilePath == null) {
+		if (outFilePath == null && mrtFile != null) {
 			outName = domain.getURI().getPath();
 			outName = outName.endsWith(".xml") ? outName.substring(0, outName.length() - 4) : outName;
 			
