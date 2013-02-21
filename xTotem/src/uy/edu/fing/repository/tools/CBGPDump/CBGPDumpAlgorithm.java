@@ -37,6 +37,7 @@ public class CBGPDumpAlgorithm {
 	private BufferedWriter bw;
 	private HashMap<String, Link> linksById;
 	private HashMap<String, Node> nodesById;
+	private HashMap<String, Node> processedNodesById;
 	private static Logger logger = Logger.getLogger(CBGPDumpAlgorithm.class);
 	
 	private final String ipRegexp = "\\d{1,3}.\\d{1,3}.\\d{1,3}.\\d{1,3}";
@@ -70,6 +71,7 @@ public class CBGPDumpAlgorithm {
 
 		linksById = new HashMap<String, Link>();
 		nodesById = new HashMap<String, Node>();
+		processedNodesById = new HashMap<String, Node>();
 
 		logger.debug("Starting CBGPDump");
 		myrun();
@@ -137,6 +139,7 @@ public class CBGPDumpAlgorithm {
 				// bw.write("net node "+node.getRid()+ " domain "+ domain_num
 				// +"\n");
 				nodesById.put(node.getRid(), node);
+				processedNodesById.put(node.getRid(), node);
 			}
 		}
 		// / END ADD NODE
@@ -219,9 +222,10 @@ public class CBGPDumpAlgorithm {
 		// / ADD ROUTERS BGP AND SESSIONS iBGP
 		List<BgpRouter> lst_bgps = domain.getAllBgpRouters();
 		for (BgpRouter router : lst_bgps) {
-			if (nodesById.containsKey(router.getRid())) {
-				bw.write("bgp add router " + domain_num + " " + router.getRid()
-						+ "\n");
+			if (nodesById.containsKey(router.getRid()) && processedNodesById.containsKey(router.getRid())) {
+				processedNodesById.remove(router.getRid());
+				
+				bw.write("bgp add router " + domain_num + " " + router.getRid() + "\n");
 				bw.write("bgp router " + router.getRid() + "\n");
 
 				// Add all originated networks
