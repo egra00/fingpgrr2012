@@ -20,7 +20,8 @@ ${outout_file} = ${ARGV}[1];
 open IN_FILE, "<", "${result}.bgp" or die ${!};
 open OUT_FILE, ">", "${outout_file}.csv" or die ${!};
 
-${process_msg} = `grep -c '^[^#]' ${result}.msg`;
+${process_msg} = `grep -c '' ${result}.msg`;
+${process_msg} = ${process_msg} - 3; # 3 comments lines
 ${process_msg} = "${process_msg},";
 
 print OUT_FILE "MSGs,\n";
