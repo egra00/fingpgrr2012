@@ -11,6 +11,7 @@ public class BGPSepS extends BGPSep {
 		
 		logger = Logger.getLogger(BGPSepS.class);
 		name = "BGPSepS";
+		algorithm = new BGPSepSAlgorithm();
 	}
 
 }
