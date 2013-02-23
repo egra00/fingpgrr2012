@@ -70,7 +70,15 @@ public abstract class BindAlgorithm implements Runnable, TotemAlgorithm {
 	 * @param algorithmResult is the result of the algorithm
 	 * 
 	 */
-	public abstract void log(Object algorithmResult);
+	public void log(Object algorithmResult) {
+		List<iBGPSession> iBGPTopology = (List<iBGPSession>)algorithmResult;
+		
+		logger.debug("iBGP sessions ("+iBGPTopology.size()+")");
+		for (iBGPSession session: iBGPTopology) {
+			logger.debug(session.getIdLink1() + " - " + session.getIdLink2() + " -> " + session.getSessionType());
+		}
+		
+	}
 	
 	/*
 	 * It is called when a algorithm end and is necessary impact
@@ -166,6 +174,8 @@ public abstract class BindAlgorithm implements Runnable, TotemAlgorithm {
 	public void stop() {
 		runningParams = null;
 		thread.interrupt();
+		
+		
 	}
 
 	@Override
@@ -244,3 +254,7 @@ public abstract class BindAlgorithm implements Runnable, TotemAlgorithm {
         }
     }
 }
+
+
+
+
