@@ -94,17 +94,4 @@ public class Bates extends BindAlgorithm {
 	public Object initAlgorithmResult() {
 		return new ArrayList<iBGPSession>();
 	}
-	
-	@SuppressWarnings("unchecked")
-	@Override
-	public void log(Object algorithmResult) {
-		List<iBGPSession> iBGPTopology = (List<iBGPSession>)algorithmResult;
-		
-		logger.debug("iBGP sessions ("+iBGPTopology.size()+")");
-		for (iBGPSession session: iBGPTopology) {
-			logger.debug(session.getIdLink1() + " - " + session.getIdLink2() + " -> " + session.getSessionType());
-		}
-		
-	}
-
 }
