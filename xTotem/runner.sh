@@ -16,6 +16,7 @@ if [ $# -lt 3 ]; then
 	echo "	Where flags: "
 	echo "		[-vv|-vvv]"
 	echo "		[-f]"
+	echo "		[-ns]"
 	echo "		[-bgpsep]"
 	echo "		[-bgpsepB]"
 	echo "		[-bgpsepD]"
@@ -37,6 +38,7 @@ params_path=$4
 
 debug=""
 files=""
+not_simulate=""
 algoritms=()
 
 for flag in "$@"
@@ -50,6 +52,9 @@ do
 			;;
 		-f)
 			files="true"
+			;;
+		-ns)
+			not_simulate="true"
 			;;
 		-bgpsep)
 			algoritms+=('bgpsep')
@@ -96,7 +101,7 @@ fi
 if [ "${params_path}" = "-vv" ] || [ "${params_path}" = "-vvv" ] || [ "${params_path}" = "-f" ] || [ "${params_path}" = "-bgpsep" ] || \
    [ "${params_path}" = "-bgpsepB" ] || [ "${params_path}" = "-bgpsepD" ] || [ "${params_path}" = "-bgpsepS" ] || [ "${params_path}" = "-fullmesh" ] || \
    [ "${params_path}" = "-optimal" ] || [ "${params_path}" = "-zhang" ] || [ "${params_path}" = "-bates" ] || [ "${params_path}" = "-batesY" ] || \
-   [ "${params_path}" = "batesZ" ]; then
+   [ "${params_path}" = "batesZ" ] || [ "${params_path}" = "-ns" ]; then
 	params_path=""
 fi
 
@@ -112,13 +117,21 @@ do
 	for algoritm in "${algoritms[@]}"
 	do
 		if [ "${params_path}" = "" ]; then
-			((total_work+=3))
+			if [ "${not_simulate}" = "" ]; then 
+				((total_work+=3))
+			else
+				((total_work+=2))
+			fi
 		else
 			for one_params_file in `find ${params_path} -name '*.params'`
 			do
 				while read params
 				do
-					((total_work+=3))
+					if [ "${not_simulate}" = "" ]; then 
+						((total_work+=3))
+					else
+						((total_work+=2))
+					fi
 				done < ${one_params_file}
 			done
 		fi
@@ -136,10 +149,12 @@ function printPorcentage() {
 function removeTmpFiles() {
 	# Only need the csv
 	if [ "${files}" = "" ]; then 
-		rm ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}.bgp
-		rm ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}.msg
 		rm ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}.xml
 		rm ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}.cli
+		if [ "${not_simulate}" = "" ]; then 
+			rm ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}.bgp
+			rm ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}.msg
+		fi
 	fi
 }
 
@@ -158,9 +173,12 @@ do
 			#echo "${totem_script} -rrloc_${algoritm} ${one_topology_file} -tra ${one_tra_file} -ofn ${base_output_name}_${unique_file} ${params} ${debug}"
 			printPorcentage
 
-			eval "cbgp -c ${base_output_dir}/${topology_name}-${base_output_name}_${unique_file}.cli > ${base_output_dir}/${topology_name}-${base_output_name}_${unique_file}.bgp"
-			#echo "cbgp -c ${base_output_dir}/${topology_name}-${base_output_name}_${unique_file}.cli > ${base_output_dir}/${topology_name}-${base_output_name}_${unique_file}.bgp"
-			printPorcentage
+			if [ "${not_simulate}" = "" ]; then 
+
+				eval "cbgp -c ${base_output_dir}/${topology_name}-${base_output_name}_${unique_file}.cli > ${base_output_dir}/${topology_name}-${base_output_name}_${unique_file}.bgp"
+				#echo "cbgp -c ${base_output_dir}/${topology_name}-${base_output_name}_${unique_file}.cli > ${base_output_dir}/${topology_name}-${base_output_name}_${unique_file}.bgp"
+				printPorcentage
+			fi
 
 			eval "${parser_script} ${base_output_dir}/${topology_name}-${base_output_name}_${unique_file} ${base_output_dir}/${topology_name}-${base_output_name}_${unique_file}"
 			#echo "${parser_script} ${base_output_dir}/${topology_name}-${base_output_name}_${unique_file} ${base_output_dir}/${topology_name}-${base_output_name}_${unique_file}"
@@ -181,9 +199,11 @@ do
 					#echo "${totem_script} -rrloc_${algoritm} ${one_topology_file} -tra ${one_tra_file} -ofn ${base_output_name}_${base_params_file}_${unique_file} ${params} ${debug}"
 					printPorcentage
 
-					eval "cbgp -c ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}.cli > ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}.bgp"
-					#echo "cbgp -c ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}.cli > ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}.bgp"
-					printPorcentage
+					if [ "${not_simulate}" = "" ]; then 
+						eval "cbgp -c ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}.cli > ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}.bgp"
+						#echo "cbgp -c ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}.cli > ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}.bgp"
+						printPorcentage
+					fi
 
 					eval "${parser_script} ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file} ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}"
 					#echo "${parser_script} ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file} ${base_output_dir}/${topology_name}-${base_output_name}_${base_params_file}_${unique_file}"
