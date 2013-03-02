@@ -5,7 +5,6 @@ if (@{ARGV} != 1) {
 }
 
 ${result} = ${ARGV}[0];
-${outout_file} = ${ARGV}[1];
 
 ${nodes} = `grep -c '\<node id' ${result}`;
 ${links} = `grep -c '\<link id' ${result}`;
