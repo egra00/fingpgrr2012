@@ -3,7 +3,6 @@ package uy.edu.fing.repository.rrloc.algorithms.bgpsepX.bgpsep;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import org.apache.log4j.Logger;
@@ -21,7 +20,6 @@ import be.ac.ulg.montefiore.run.totem.util.ParameterDescriptor;
 import edu.uci.ics.jung2.graph.Graph;
 import edu.uci.ics.jung2.graph.UndirectedSparseMultigraph;
 
-@SuppressWarnings("unchecked")
 public class BGPSep extends BindAlgorithm {
 	
 	private int _MAX_ITER = 25000;

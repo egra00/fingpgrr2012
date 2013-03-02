@@ -1,23 +1,31 @@
 package uy.edu.fing.repository.rrloc.algorithms.optimal;
 
+import ilog.concert.IloException;
+import ilog.concert.IloNumExpr;
+import ilog.concert.IloNumVar;
+import ilog.concert.IloNumVarType;
+import ilog.cplex.IloCplex;
+
+import java.awt.Dimension;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-import java.awt.Dimension;
 
 import javax.swing.JFrame;
 
 import org.apache.commons.collections15.Transformer;
 
+import uy.edu.fing.repository.rrloc.algorithms.iBGPSession;
+import uy.edu.fing.repository.rrloc.algorithms.iBGPSessionType;
+import uy.edu.fing.repository.rrloc.iAlgorithm.RRLocAlgorithm;
 import be.ac.ulg.montefiore.run.totem.domain.exception.NodeNotFoundException;
 import be.ac.ulg.montefiore.run.totem.domain.model.Domain;
 import be.ac.ulg.montefiore.run.totem.domain.model.Link;
 import be.ac.ulg.montefiore.run.totem.domain.model.Node;
 import be.ac.ulg.montefiore.run.totem.domain.model.impl.LinkImpl;
-
 import edu.uci.ics.jung2.algorithms.layout.CircleLayout;
 import edu.uci.ics.jung2.algorithms.layout.Layout;
 import edu.uci.ics.jung2.algorithms.shortestpath.DijkstraShortestPath;
@@ -26,12 +34,6 @@ import edu.uci.ics.jung2.graph.DirectedSparseMultigraph;
 import edu.uci.ics.jung2.graph.Graph;
 import edu.uci.ics.jung2.visualization.BasicVisualizationServer;
 import edu.uci.ics.jung2.visualization.VisualizationViewer;
-import uy.edu.fing.repository.rrloc.algorithms.iBGPSession;
-import uy.edu.fing.repository.rrloc.algorithms.iBGPSessionType;
-import uy.edu.fing.repository.rrloc.iAlgorithm.RRLocAlgorithm;
-
-import ilog.concert.*;
-import ilog.cplex.*;
 
 public class OptimalAlgorithm implements RRLocAlgorithm{
 
@@ -695,7 +697,6 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 		frame.setVisible(true);
 		
 	}
-	@SuppressWarnings("unused")
 	private static void printGraph_(Graph<Node,Link> g,String title){
 		//Draws in a new window the grap 'g' and it's information 
 		
