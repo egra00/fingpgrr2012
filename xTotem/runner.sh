@@ -142,7 +142,7 @@ current_work=0
 function printPorcentage() {
 	((current_work++))
 	current_time="$(($(date +%s)-start_time))"
-	current_time=`printf "%02d:%02d:%02d:%02d\n" "$((current_time/86400))" "$((current_time/60%60))" "$((current_time%60))"`
+	current_time=`printf "%02d:%02d:%02d:%02d\n" "$((current_time/86400))" "$((current_time/3600%24))" "$((current_time/60%60))" "$((current_time%60))"`
 	echo "${current_time} - $(echo "${current_work} * 100 / ${total_work}" | bc -l | awk '{printf "%.2f", $0}')%"
 }
 
