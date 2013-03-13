@@ -811,7 +811,7 @@ public class RepositoryManager extends RepositoryManagerObserver {
             try {
                 clazz = Class.forName(ss);
             } catch (ClassNotFoundException e) {
-                e.printStackTrace();
+            	logger.error("The class " + ss + " cannot be found.");
                 continue;
             } catch (NoClassDefFoundError e) {
                 logger.error("The class " + ss + " cannot be found.");
