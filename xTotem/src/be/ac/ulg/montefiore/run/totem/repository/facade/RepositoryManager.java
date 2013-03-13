@@ -106,7 +106,7 @@ public class RepositoryManager extends RepositoryManagerObserver {
                 Class clazz = Thread.currentThread().getContextClassLoader().loadClass(algos[i]);
                 algoInstances.put(shortName, (TotemAlgorithm)clazz.newInstance());
             } catch (ClassNotFoundException e) {
-                e.printStackTrace();
+                logger.error("Cannot be found algorithm: " + algos[i]);
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
             } catch (InstantiationException e) {
