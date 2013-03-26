@@ -53,11 +53,11 @@ public class BGPSepAlgorithm implements RRLocAlgorithm {
 		
 			GraphSeparator graphSeparator;
 			
-			if ("GRASP".equals(SEPARATOR)) {
-				graphSeparator = Separator.GRASPBisection(IGPTopology, MAX_ITER, ALPHA, BETA, GAMA);
+			if ("AE".equals(SEPARATOR)) {
+				graphSeparator = Separator.GraphPartitionAE(NB_RUN, IGPTopology, N_GEN, SIZE_P, SIZE_OF, PMUT, PCROSS);
 			}
 			else {
-				graphSeparator = Separator.GraphPartitionAE(NB_RUN, IGPTopology, N_GEN, SIZE_P, SIZE_OF, PMUT, PCROSS);
+				graphSeparator = Separator.GRASPBisection(IGPTopology, MAX_ITER, ALPHA, BETA, GAMA);
 			}
 			
 			//El conjunto de routes reflectors estara configurado Full Mesh

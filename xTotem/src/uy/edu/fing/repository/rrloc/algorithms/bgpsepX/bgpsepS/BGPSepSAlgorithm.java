@@ -85,11 +85,11 @@ public class BGPSepSAlgorithm extends BGPSepDAlgorithm {
 		
 		GraphSeparator graphSeparator;
 		
-		if ("GRASP".equals(SEPARATOR)) {
-			graphSeparator = Separator.GRASPBisection(Gp, MAX_ITER, ALPHA, BETA, GAMA);
+		if ("AE".equals(SEPARATOR)) {
+			graphSeparator = Separator.GraphPartitionAE(NB_RUN, Gp, N_GEN, SIZE_P, SIZE_OF, PMUT, PCROSS);
 		}
 		else {
-			graphSeparator = Separator.GraphPartitionAE(NB_RUN, Gp, N_GEN, SIZE_P, SIZE_OF, PMUT, PCROSS);
+			graphSeparator = Separator.GRASPBisection(Gp, MAX_ITER, ALPHA, BETA, GAMA);
 		}
 		
 		Set<Node> S = graphSeparator.getSeparator();
