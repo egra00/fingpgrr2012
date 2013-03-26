@@ -24,8 +24,13 @@ ${process_msg} = `grep -c '' ${result}.msg`;
 ${process_msg} = ${process_msg} - 3; # 3 comments lines
 ${process_msg} = "${process_msg},";
 
-print OUT_FILE "MSGs,\n";
-print OUT_FILE "${process_msg}\n";
+${process_ses} = `grep -c '\<neighbor as' ${result}.xml`;
+${process_ses} = ${process_ses} / 2; # count session tow times
+${process_ses} = "${process_ses},";
+
+
+print OUT_FILE "MSGs,Ses,\n";
+print OUT_FILE "${process_msg},${process_ses},\n";
 
 foreach ${line} (<IN_FILE>) {
 
