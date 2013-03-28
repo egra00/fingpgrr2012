@@ -697,6 +697,8 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 		frame.setVisible(true);
 		
 	}
+	
+	@SuppressWarnings("unused")
 	private static void printGraph_(Graph<Node,Link> g,String title){
 		//Draws in a new window the grap 'g' and it's information 
 		
