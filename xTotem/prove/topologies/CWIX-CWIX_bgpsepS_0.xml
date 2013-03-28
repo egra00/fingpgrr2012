@@ -1,0 +1,1907 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<domain ASID="125">
+    <info>
+        <title>CWIX</title>
+        <date>2012-11-23-02:00</date>
+        <author>Diego Agriel</author>
+        <description/>
+        <units>
+            <unit type="bandwidth" value="mbps"/>
+            <unit type="delay" value="ms"/>
+        </units>
+        <diff-serv>
+            <priority ct="0" id="0" preemption="0"/>
+        </diff-serv>
+    </info>
+    <topology>
+        <nodes>
+            <node id="SANFR">
+                <rid>192.168.0.22</rid>
+                <type>EDGE</type>
+                <location latitude="669.48334" longitude="90.933334"/>
+            </node>
+            <node id="LA">
+                <rid>192.168.0.21</rid>
+                <type>CORE</type>
+                <location latitude="928.8333" longitude="184.03334"/>
+            </node>
+            <node id="DNV">
+                <rid>192.168.0.23</rid>
+                <type>CORE</type>
+                <location latitude="724.32117" longitude="598.39246"/>
+            </node>
+            <node id="DALL">
+                <rid>192.168.0.15</rid>
+                <type>CORE</type>
+                <location latitude="1083.8241" longitude="764.03796"/>
+            </node>
+            <node id="HOU">
+                <rid>192.168.0.4</rid>
+                <type>CORE</type>
+                <location latitude="1306.4983" longitude="884.141"/>
+            </node>
+            <node id="KAN">
+                <rid>192.168.0.14</rid>
+                <type>CORE</type>
+                <location latitude="800.09076" longitude="943.58795"/>
+            </node>
+            <node id="CHI">
+                <rid>192.168.0.2</rid>
+                <type>CORE</type>
+                <location latitude="658.2241" longitude="1160.8214"/>
+            </node>
+            <node id="AKR">
+                <rid>192.168.0.19</rid>
+                <type>CORE</type>
+                <location latitude="671.5242" longitude="1402.438"/>
+            </node>
+            <node id="CLE">
+                <rid>192.168.0.3</rid>
+                <type>CORE</type>
+                <location latitude="624.9741" longitude="1378.0547"/>
+            </node>
+            <node id="PITT">
+                <rid>192.168.0.20</rid>
+                <type>CORE</type>
+                <location latitude="669.50903" longitude="1504.2032"/>
+            </node>
+            <node id="WASH">
+                <rid>192.168.0.1</rid>
+                <type>EDGE</type>
+                <location latitude="746.48773" longitude="1724.8622"/>
+            </node>
+            <node id="RICH">
+                <rid>192.168.0.17</rid>
+                <type>CORE</type>
+                <location latitude="834.95294" longitude="1696.0455"/>
+            </node>
+            <node id="RAL">
+                <rid>192.168.0.8</rid>
+                <type>CORE</type>
+                <location latitude="949.01044" longitude="1713.7789"/>
+            </node>
+            <node id="JACK">
+                <rid>192.168.0.12</rid>
+                <type>CORE</type>
+                <location latitude="1235.565" longitude="1642.4425"/>
+            </node>
+            <node id="ORL">
+                <rid>192.168.0.5</rid>
+                <type>CORE</type>
+                <location latitude="1336.5242" longitude="1706.1213"/>
+            </node>
+            <node id="TAM">
+                <rid>192.168.0.10</rid>
+                <type>CORE</type>
+                <location latitude="1371.9907" longitude="1553.1714"/>
+            </node>
+            <node id="FORT">
+                <rid>192.168.0.13</rid>
+                <type>CORE</type>
+                <location latitude="1400.8075" longitude="1754.8881"/>
+            </node>
+            <node id="MIA">
+                <rid>192.168.0.9</rid>
+                <type>CORE</type>
+                <location latitude="1456.2241" longitude="1743.8047"/>
+            </node>
+            <node id="BALT">
+                <rid>192.168.0.18</rid>
+                <type>CORE</type>
+                <location latitude="693.6908" longitude="1757.1047"/>
+            </node>
+            <node id="PHI">
+                <rid>192.168.0.0</rid>
+                <type>CORE</type>
+                <location latitude="598.37415" longitude="1812.5214"/>
+            </node>
+            <node id="NY">
+                <rid>192.168.0.16</rid>
+                <type>EDGE</type>
+                <location latitude="520.1258" longitude="1859.5148"/>
+            </node>
+            <node id="BOST">
+                <rid>192.168.0.7</rid>
+                <type>CORE</type>
+                <location latitude="371.60913" longitude="1960.6753"/>
+            </node>
+            <node id="HART">
+                <rid>192.168.0.11</rid>
+                <type>CORE</type>
+                <location latitude="415.94247" longitude="1872.4116"/>
+            </node>
+            <node id="ATL">
+                <rid>192.168.0.6</rid>
+                <type>CORE</type>
+                <location latitude="1085.7788" longitude="1435.1237"/>
+            </node>
+        </nodes>
+        <links>
+            <link id="HART-BOST">
+                <from node="HART"/>
+                <to node="BOST"/>
+            </link>
+            <link id="BOST-HART">
+                <from node="BOST"/>
+                <to node="HART"/>
+            </link>
+            <link id="HART-NY">
+                <from node="HART"/>
+                <to node="NY"/>
+            </link>
+            <link id="NY-HART">
+                <from node="NY"/>
+                <to node="HART"/>
+            </link>
+            <link id="BOST-NY">
+                <from node="BOST"/>
+                <to node="NY"/>
+            </link>
+            <link id="NY-BOST">
+                <from node="NY"/>
+                <to node="BOST"/>
+            </link>
+            <link id="NY-PHI">
+                <from node="NY"/>
+                <to node="PHI"/>
+            </link>
+            <link id="PHI-NY">
+                <from node="PHI"/>
+                <to node="NY"/>
+            </link>
+            <link id="PHI-BALT">
+                <from node="PHI"/>
+                <to node="BALT"/>
+            </link>
+            <link id="BALT-PHI">
+                <from node="BALT"/>
+                <to node="PHI"/>
+            </link>
+            <link id="BALT-WASH">
+                <from node="BALT"/>
+                <to node="WASH"/>
+            </link>
+            <link id="WASH-BALT">
+                <from node="WASH"/>
+                <to node="BALT"/>
+            </link>
+            <link id="WASH-RICH">
+                <from node="WASH"/>
+                <to node="RICH"/>
+            </link>
+            <link id="RICH-WASH">
+                <from node="RICH"/>
+                <to node="WASH"/>
+            </link>
+            <link id="RICH-RAL">
+                <from node="RICH"/>
+                <to node="RAL"/>
+            </link>
+            <link id="RAL-RICH">
+                <from node="RAL"/>
+                <to node="RICH"/>
+            </link>
+            <link id="RAL-JACK">
+                <from node="RAL"/>
+                <to node="JACK"/>
+            </link>
+            <link id="JACK-RAL">
+                <from node="JACK"/>
+                <to node="RAL"/>
+            </link>
+            <link id="JACK-ORL">
+                <from node="JACK"/>
+                <to node="ORL"/>
+            </link>
+            <link id="ORL-JACK">
+                <from node="ORL"/>
+                <to node="JACK"/>
+            </link>
+            <link id="PITT-WASH">
+                <from node="PITT"/>
+                <to node="WASH"/>
+            </link>
+            <link id="WASH-PITT">
+                <from node="WASH"/>
+                <to node="PITT"/>
+            </link>
+            <link id="AKR-PITT">
+                <from node="AKR"/>
+                <to node="PITT"/>
+            </link>
+            <link id="PITT-AKR">
+                <from node="PITT"/>
+                <to node="AKR"/>
+            </link>
+            <link id="AKR-CLE">
+                <from node="AKR"/>
+                <to node="CLE"/>
+            </link>
+            <link id="CLE-AKR">
+                <from node="CLE"/>
+                <to node="AKR"/>
+            </link>
+            <link id="CHI-AKR">
+                <from node="CHI"/>
+                <to node="AKR"/>
+            </link>
+            <link id="AKR-CHI">
+                <from node="AKR"/>
+                <to node="CHI"/>
+            </link>
+            <link id="CHI-NY">
+                <from node="CHI"/>
+                <to node="NY"/>
+            </link>
+            <link id="NY-CHI">
+                <from node="NY"/>
+                <to node="CHI"/>
+            </link>
+            <link id="NY-SANFR">
+                <from node="NY"/>
+                <to node="SANFR"/>
+            </link>
+            <link id="SANFR-NY">
+                <from node="SANFR"/>
+                <to node="NY"/>
+            </link>
+            <link id="SANFR-LA">
+                <from node="SANFR"/>
+                <to node="LA"/>
+            </link>
+            <link id="LA-SANFR">
+                <from node="LA"/>
+                <to node="SANFR"/>
+            </link>
+            <link id="SANFR-DNV">
+                <from node="SANFR"/>
+                <to node="DNV"/>
+            </link>
+            <link id="DNV-SANFR">
+                <from node="DNV"/>
+                <to node="SANFR"/>
+            </link>
+            <link id="LA-DALL">
+                <from node="LA"/>
+                <to node="DALL"/>
+            </link>
+            <link id="DALL-LA">
+                <from node="DALL"/>
+                <to node="LA"/>
+            </link>
+            <link id="DALL-HOU">
+                <from node="DALL"/>
+                <to node="HOU"/>
+            </link>
+            <link id="HOU-DALL">
+                <from node="HOU"/>
+                <to node="DALL"/>
+            </link>
+            <link id="DALL-KAN">
+                <from node="DALL"/>
+                <to node="KAN"/>
+            </link>
+            <link id="KAN-DALL">
+                <from node="KAN"/>
+                <to node="DALL"/>
+            </link>
+            <link id="DNV-KAN">
+                <from node="DNV"/>
+                <to node="KAN"/>
+            </link>
+            <link id="KAN-DNV">
+                <from node="KAN"/>
+                <to node="DNV"/>
+            </link>
+            <link id="KAN-CHI">
+                <from node="KAN"/>
+                <to node="CHI"/>
+            </link>
+            <link id="CHI-KAN">
+                <from node="CHI"/>
+                <to node="KAN"/>
+            </link>
+            <link id="DALL-ATL">
+                <from node="DALL"/>
+                <to node="ATL"/>
+            </link>
+            <link id="ATL-DALL">
+                <from node="ATL"/>
+                <to node="DALL"/>
+            </link>
+            <link id="ATL-WASH">
+                <from node="ATL"/>
+                <to node="WASH"/>
+            </link>
+            <link id="WASH-ATL">
+                <from node="WASH"/>
+                <to node="ATL"/>
+            </link>
+            <link id="ATL-TAM">
+                <from node="ATL"/>
+                <to node="TAM"/>
+            </link>
+            <link id="TAM-ATL">
+                <from node="TAM"/>
+                <to node="ATL"/>
+            </link>
+            <link id="ORL-FORT">
+                <from node="ORL"/>
+                <to node="FORT"/>
+            </link>
+            <link id="FORT-ORL">
+                <from node="FORT"/>
+                <to node="ORL"/>
+            </link>
+            <link id="MIA-FORT">
+                <from node="MIA"/>
+                <to node="FORT"/>
+            </link>
+            <link id="FORT-MIA">
+                <from node="FORT"/>
+                <to node="MIA"/>
+            </link>
+            <link id="FORT-TAM">
+                <from node="FORT"/>
+                <to node="TAM"/>
+            </link>
+            <link id="TAM-FORT">
+                <from node="TAM"/>
+                <to node="FORT"/>
+            </link>
+        </links>
+    </topology>
+    <igp>
+        <links>
+            <link id="HART-BOST">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="BOST-HART">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="HART-NY">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="NY-HART">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="BOST-NY">
+                <static>
+                    <metric>2.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="NY-BOST">
+                <static>
+                    <metric>2.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="NY-PHI">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="PHI-NY">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="PHI-BALT">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="BALT-PHI">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="BALT-WASH">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="WASH-BALT">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="WASH-RICH">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="RICH-WASH">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="RICH-RAL">
+                <static>
+                    <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="RAL-RICH">
+                <static>
+                    <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="RAL-JACK">
+                <static>
+                    <metric>5.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="JACK-RAL">
+                <static>
+                    <metric>5.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="JACK-ORL">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="ORL-JACK">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="PITT-WASH">
+                <static>
+                    <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="WASH-PITT">
+                <static>
+                    <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="AKR-PITT">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="PITT-AKR">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="AKR-CLE">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="CLE-AKR">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="CHI-AKR">
+                <static>
+                    <metric>5.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="AKR-CHI">
+                <static>
+                    <metric>5.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="CHI-NY">
+                <static>
+                    <metric>9.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="NY-CHI">
+                <static>
+                    <metric>9.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="NY-SANFR">
+                <static>
+                    <metric>35.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="SANFR-NY">
+                <static>
+                    <metric>35.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="SANFR-LA">
+                <static>
+                    <metric>4.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="LA-SANFR">
+                <static>
+                    <metric>4.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="SANFR-DNV">
+                <static>
+                    <metric>7.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="DNV-SANFR">
+                <static>
+                    <metric>7.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="LA-DALL">
+                <static>
+                    <metric>12.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="DALL-LA">
+                <static>
+                    <metric>12.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="DALL-HOU">
+                <static>
+                    <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="HOU-DALL">
+                <static>
+                    <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="DALL-KAN">
+                <static>
+                    <metric>6.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="KAN-DALL">
+                <static>
+                    <metric>6.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="DNV-KAN">
+                <static>
+                    <metric>5.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="KAN-DNV">
+                <static>
+                    <metric>5.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="KAN-CHI">
+                <static>
+                    <metric>5.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="CHI-KAN">
+                <static>
+                    <metric>5.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="DALL-ATL">
+                <static>
+                    <metric>10.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="ATL-DALL">
+                <static>
+                    <metric>10.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="ATL-WASH">
+                <static>
+                    <metric>9.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="WASH-ATL">
+                <static>
+                    <metric>9.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="ATL-TAM">
+                <static>
+                    <metric>8.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="TAM-ATL">
+                <static>
+                    <metric>8.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="ORL-FORT">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="FORT-ORL">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="MIA-FORT">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="FORT-MIA">
+                <static>
+                    <metric>1.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="FORT-TAM">
+                <static>
+                    <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+            <link id="TAM-FORT">
+                <static>
+                    <metric>3.0</metric>
+                    <te-metric>1.0</te-metric>
+                    <mrbw>155000.0</mrbw>
+                    <mbw>155000.0</mbw>
+                    <diff-serv>
+                        <bcm>MAM</bcm>
+                        <bc id="0">155000.0</bc>
+                    </diff-serv>
+                </static>
+                <dynamic>
+                    <rbw>
+                        <priority id="0">155000.0</priority>
+                    </rbw>
+                </dynamic>
+            </link>
+        </links>
+    </igp>
+    <bgp>
+        <routers>
+            <router id="SANFR" reflector="true">
+                <rid>192.168.0.22</rid>
+                <neighbors>
+                    <neighbor as="125" ip="192.168.0.14"/>
+                    <neighbor as="125" ip="192.168.0.13"/>
+                    <neighbor as="125" ip="192.168.0.18"/>
+                    <neighbor as="125" ip="192.168.0.15"/>
+                    <neighbor as="125" ip="192.168.0.5"/>
+                    <neighbor as="125" ip="192.168.0.17" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.2" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.0" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.6" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.19" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.10" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.8" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.16" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.20" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.1" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.11"/>
+                    <neighbor as="125" ip="192.168.0.23"/>
+                    <neighbor as="125" ip="192.168.0.12"/>
+                    <neighbor as="125" ip="192.168.0.7"/>
+                    <neighbor as="125" ip="192.168.0.21"/>
+                </neighbors>
+            </router>
+            <router id="LA" reflector="true">
+                <rid>192.168.0.21</rid>
+                <neighbors>
+                    <neighbor as="125" ip="192.168.0.11"/>
+                    <neighbor as="125" ip="192.168.0.7"/>
+                    <neighbor as="125" ip="192.168.0.14" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.13" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.18" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.15" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.5" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.22" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.17" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.2" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.6" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.0" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.19" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.10" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.8" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.16" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.1" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.20" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.11"/>
+                    <neighbor as="125" ip="192.168.0.23"/>
+                    <neighbor as="125" ip="192.168.0.7"/>
+                </neighbors>
+            </router>
+            <router id="DNV" reflector="false">
+                <rid>192.168.0.23</rid>
+                <neighbors>
+                    <neighbor as="125" ip="192.168.0.14" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.13" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.18" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.15" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.5" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.22" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.17" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.2" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.6" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.0" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.19" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.10" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.8" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.16" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.1" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.20" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.11"/>
+                    <neighbor as="125" ip="192.168.0.7" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.21" reflector-client="false"/>
+                </neighbors>
+            </router>
+            <router id="DALL" reflector="true">
+                <rid>192.168.0.15</rid>
+                <neighbors>
+                    <neighbor as="125" ip="192.168.0.4"/>
+                    <neighbor as="125" ip="192.168.0.14"/>
+                    <neighbor as="125" ip="192.168.0.13"/>
+                    <neighbor as="125" ip="192.168.0.18"/>
+                    <neighbor as="125" ip="192.168.0.5" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.22" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.17" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.2" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.0" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.6" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.19" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.10" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.8" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.16" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.20" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.1" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.23"/>
+                    <neighbor as="125" ip="192.168.0.12"/>
+                    <neighbor as="125" ip="192.168.0.21"/>
+                </neighbors>
+            </router>
+            <router id="HOU">
+                <rid>192.168.0.4</rid>
+                <neighbors>
+                    <neighbor as="125" ip="192.168.0.15" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="KAN" reflector="true">
+                <rid>192.168.0.14</rid>
+                <neighbors>
+                    <neighbor as="125" ip="192.168.0.13" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.18" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.15" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.5" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.22" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.17" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.2" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.0" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.6" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.19" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.10" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.8" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.16" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.20" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.1" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.11"/>
+                    <neighbor as="125" ip="192.168.0.23"/>
+                    <neighbor as="125" ip="192.168.0.12"/>
+                    <neighbor as="125" ip="192.168.0.7"/>
+                    <neighbor as="125" ip="192.168.0.21"/>
+                </neighbors>
+            </router>
+            <router id="CHI" reflector="true">
+                <rid>192.168.0.2</rid>
+                <neighbors>
+                    <neighbor as="125" ip="192.168.0.14"/>
+                    <neighbor as="125" ip="192.168.0.13"/>
+                    <neighbor as="125" ip="192.168.0.18"/>
+                    <neighbor as="125" ip="192.168.0.15"/>
+                    <neighbor as="125" ip="192.168.0.5"/>
+                    <neighbor as="125" ip="192.168.0.22"/>
+                    <neighbor as="125" ip="192.168.0.17"/>
+                    <neighbor as="125" ip="192.168.0.0" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.6" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.19" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.10" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.8" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.16" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.20" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.1" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.11"/>
+                    <neighbor as="125" ip="192.168.0.23"/>
+                    <neighbor as="125" ip="192.168.0.12"/>
+                    <neighbor as="125" ip="192.168.0.7"/>
+                    <neighbor as="125" ip="192.168.0.21"/>
+                </neighbors>
+            </router>
+            <router id="AKR" reflector="true">
+                <rid>192.168.0.19</rid>
+                <neighbors>
+                    <neighbor as="125" ip="192.168.0.3"/>
+                    <neighbor as="125" ip="192.168.0.14"/>
+                    <neighbor as="125" ip="192.168.0.13"/>
+                    <neighbor as="125" ip="192.168.0.18"/>
+                    <neighbor as="125" ip="192.168.0.15"/>
+                    <neighbor as="125" ip="192.168.0.5"/>
+                    <neighbor as="125" ip="192.168.0.22"/>
+                    <neighbor as="125" ip="192.168.0.17"/>
+                    <neighbor as="125" ip="192.168.0.2"/>
+                    <neighbor as="125" ip="192.168.0.6"/>
+                    <neighbor as="125" ip="192.168.0.0"/>
+                    <neighbor as="125" ip="192.168.0.10" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.8" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.16" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.20" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.1" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.11"/>
+                    <neighbor as="125" ip="192.168.0.23"/>
+                    <neighbor as="125" ip="192.168.0.12"/>
+                    <neighbor as="125" ip="192.168.0.7"/>
+                    <neighbor as="125" ip="192.168.0.21"/>
+                </neighbors>
+            </router>
+            <router id="CLE">
+                <rid>192.168.0.3</rid>
+                <neighbors>
+                    <neighbor as="125" ip="192.168.0.19" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="PITT" reflector="true">
+                <rid>192.168.0.20</rid>
+                <neighbors>
+                    <neighbor as="125" ip="192.168.0.14"/>
+                    <neighbor as="125" ip="192.168.0.13"/>
+                    <neighbor as="125" ip="192.168.0.18"/>
+                    <neighbor as="125" ip="192.168.0.15"/>
+                    <neighbor as="125" ip="192.168.0.5"/>
+                    <neighbor as="125" ip="192.168.0.22"/>
+                    <neighbor as="125" ip="192.168.0.17"/>
+                    <neighbor as="125" ip="192.168.0.2"/>
+                    <neighbor as="125" ip="192.168.0.6"/>
+                    <neighbor as="125" ip="192.168.0.0"/>
+                    <neighbor as="125" ip="192.168.0.19"/>
+                    <neighbor as="125" ip="192.168.0.10"/>
+                    <neighbor as="125" ip="192.168.0.8"/>
+                    <neighbor as="125" ip="192.168.0.16"/>
+                    <neighbor as="125" ip="192.168.0.1"/>
+                    <neighbor as="125" ip="192.168.0.11"/>
+                    <neighbor as="125" ip="192.168.0.23"/>
+                    <neighbor as="125" ip="192.168.0.12"/>
+                    <neighbor as="125" ip="192.168.0.7"/>
+                    <neighbor as="125" ip="192.168.0.21"/>
+                </neighbors>
+            </router>
+            <router id="WASH" reflector="true">
+                <rid>192.168.0.1</rid>
+                <neighbors>
+                    <neighbor as="125" ip="192.168.0.14"/>
+                    <neighbor as="125" ip="192.168.0.13"/>
+                    <neighbor as="125" ip="192.168.0.18"/>
+                    <neighbor as="125" ip="192.168.0.15"/>
+                    <neighbor as="125" ip="192.168.0.5"/>
+                    <neighbor as="125" ip="192.168.0.22"/>
+                    <neighbor as="125" ip="192.168.0.17"/>
+                    <neighbor as="125" ip="192.168.0.2"/>
+                    <neighbor as="125" ip="192.168.0.6"/>
+                    <neighbor as="125" ip="192.168.0.0"/>
+                    <neighbor as="125" ip="192.168.0.19"/>
+                    <neighbor as="125" ip="192.168.0.10"/>
+                    <neighbor as="125" ip="192.168.0.8"/>
+                    <neighbor as="125" ip="192.168.0.16"/>
+                    <neighbor as="125" ip="192.168.0.20" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.11"/>
+                    <neighbor as="125" ip="192.168.0.23"/>
+                    <neighbor as="125" ip="192.168.0.12"/>
+                    <neighbor as="125" ip="192.168.0.7"/>
+                    <neighbor as="125" ip="192.168.0.21"/>
+                </neighbors>
+            </router>
+            <router id="RICH" reflector="true">
+                <rid>192.168.0.17</rid>
+                <neighbors>
+                    <neighbor as="125" ip="192.168.0.14"/>
+                    <neighbor as="125" ip="192.168.0.13"/>
+                    <neighbor as="125" ip="192.168.0.18"/>
+                    <neighbor as="125" ip="192.168.0.15"/>
+                    <neighbor as="125" ip="192.168.0.5"/>
+                    <neighbor as="125" ip="192.168.0.22"/>
+                    <neighbor as="125" ip="192.168.0.2" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.0" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.6" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.19" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.10" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.8" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.16" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.20" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.1" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.11"/>
+                    <neighbor as="125" ip="192.168.0.23"/>
+                    <neighbor as="125" ip="192.168.0.12"/>
+                    <neighbor as="125" ip="192.168.0.7"/>
+                    <neighbor as="125" ip="192.168.0.21"/>
+                </neighbors>
+            </router>
+            <router id="RAL" reflector="true">
+                <rid>192.168.0.8</rid>
+                <neighbors>
+                    <neighbor as="125" ip="192.168.0.14"/>
+                    <neighbor as="125" ip="192.168.0.13"/>
+                    <neighbor as="125" ip="192.168.0.18"/>
+                    <neighbor as="125" ip="192.168.0.15"/>
+                    <neighbor as="125" ip="192.168.0.5"/>
+                    <neighbor as="125" ip="192.168.0.22"/>
+                    <neighbor as="125" ip="192.168.0.17"/>
+                    <neighbor as="125" ip="192.168.0.2"/>
+                    <neighbor as="125" ip="192.168.0.6"/>
+                    <neighbor as="125" ip="192.168.0.0"/>
+                    <neighbor as="125" ip="192.168.0.19"/>
+                    <neighbor as="125" ip="192.168.0.10"/>
+                    <neighbor as="125" ip="192.168.0.16" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.20" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.1" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.11"/>
+                    <neighbor as="125" ip="192.168.0.23"/>
+                    <neighbor as="125" ip="192.168.0.12"/>
+                    <neighbor as="125" ip="192.168.0.7"/>
+                    <neighbor as="125" ip="192.168.0.21"/>
+                </neighbors>
+            </router>
+            <router id="JACK" reflector="true">
+                <rid>192.168.0.12</rid>
+                <neighbors>
+                    <neighbor as="125" ip="192.168.0.14" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.13" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.18" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.15" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.5" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.22" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.17" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.2" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.6" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.0" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.19" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.10" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.8" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.16" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.1" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.20" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.7"/>
+                </neighbors>
+            </router>
+            <router id="ORL" reflector="true">
+                <rid>192.168.0.5</rid>
+                <neighbors>
+                    <neighbor as="125" ip="192.168.0.14"/>
+                    <neighbor as="125" ip="192.168.0.13"/>
+                    <neighbor as="125" ip="192.168.0.18"/>
+                    <neighbor as="125" ip="192.168.0.15"/>
+                    <neighbor as="125" ip="192.168.0.22" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.17" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.2" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.0" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.6" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.19" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.10" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.8" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.16" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.20" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.1" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.11"/>
+                    <neighbor as="125" ip="192.168.0.23"/>
+                    <neighbor as="125" ip="192.168.0.12"/>
+                    <neighbor as="125" ip="192.168.0.21"/>
+                </neighbors>
+            </router>
+            <router id="TAM" reflector="true">
+                <rid>192.168.0.10</rid>
+                <neighbors>
+                    <neighbor as="125" ip="192.168.0.14"/>
+                    <neighbor as="125" ip="192.168.0.13"/>
+                    <neighbor as="125" ip="192.168.0.18"/>
+                    <neighbor as="125" ip="192.168.0.15"/>
+                    <neighbor as="125" ip="192.168.0.5"/>
+                    <neighbor as="125" ip="192.168.0.22"/>
+                    <neighbor as="125" ip="192.168.0.17"/>
+                    <neighbor as="125" ip="192.168.0.2"/>
+                    <neighbor as="125" ip="192.168.0.6"/>
+                    <neighbor as="125" ip="192.168.0.0"/>
+                    <neighbor as="125" ip="192.168.0.19"/>
+                    <neighbor as="125" ip="192.168.0.8" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.16" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.20" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.1" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.11"/>
+                    <neighbor as="125" ip="192.168.0.23"/>
+                    <neighbor as="125" ip="192.168.0.12"/>
+                    <neighbor as="125" ip="192.168.0.7"/>
+                    <neighbor as="125" ip="192.168.0.21"/>
+                </neighbors>
+            </router>
+            <router id="FORT" reflector="true">
+                <rid>192.168.0.13</rid>
+                <neighbors>
+                    <neighbor as="125" ip="192.168.0.9"/>
+                    <neighbor as="125" ip="192.168.0.14"/>
+                    <neighbor as="125" ip="192.168.0.18" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.15" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.5" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.22" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.17" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.2" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.0" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.6" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.19" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.10" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.8" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.16" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.20" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.1" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.11"/>
+                    <neighbor as="125" ip="192.168.0.23"/>
+                    <neighbor as="125" ip="192.168.0.12"/>
+                    <neighbor as="125" ip="192.168.0.7"/>
+                    <neighbor as="125" ip="192.168.0.21"/>
+                </neighbors>
+            </router>
+            <router id="MIA">
+                <rid>192.168.0.9</rid>
+                <neighbors>
+                    <neighbor as="125" ip="192.168.0.13" reflector-client="true"/>
+                </neighbors>
+            </router>
+            <router id="BALT" reflector="true">
+                <rid>192.168.0.18</rid>
+                <neighbors>
+                    <neighbor as="125" ip="192.168.0.14"/>
+                    <neighbor as="125" ip="192.168.0.13"/>
+                    <neighbor as="125" ip="192.168.0.15" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.5" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.22" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.17" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.2" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.0" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.6" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.19" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.10" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.8" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.16" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.20" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.1" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.11"/>
+                    <neighbor as="125" ip="192.168.0.23"/>
+                    <neighbor as="125" ip="192.168.0.12"/>
+                    <neighbor as="125" ip="192.168.0.7"/>
+                    <neighbor as="125" ip="192.168.0.21"/>
+                </neighbors>
+            </router>
+            <router id="PHI" reflector="true">
+                <rid>192.168.0.0</rid>
+                <neighbors>
+                    <neighbor as="125" ip="192.168.0.14"/>
+                    <neighbor as="125" ip="192.168.0.13"/>
+                    <neighbor as="125" ip="192.168.0.18"/>
+                    <neighbor as="125" ip="192.168.0.15"/>
+                    <neighbor as="125" ip="192.168.0.5"/>
+                    <neighbor as="125" ip="192.168.0.22"/>
+                    <neighbor as="125" ip="192.168.0.17"/>
+                    <neighbor as="125" ip="192.168.0.2"/>
+                    <neighbor as="125" ip="192.168.0.6"/>
+                    <neighbor as="125" ip="192.168.0.19" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.10" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.8" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.16" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.20" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.1" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.11"/>
+                    <neighbor as="125" ip="192.168.0.23"/>
+                    <neighbor as="125" ip="192.168.0.12"/>
+                    <neighbor as="125" ip="192.168.0.7"/>
+                    <neighbor as="125" ip="192.168.0.21"/>
+                </neighbors>
+            </router>
+            <router id="NY" reflector="true">
+                <rid>192.168.0.16</rid>
+                <neighbors>
+                    <neighbor as="125" ip="192.168.0.14"/>
+                    <neighbor as="125" ip="192.168.0.13"/>
+                    <neighbor as="125" ip="192.168.0.18"/>
+                    <neighbor as="125" ip="192.168.0.15"/>
+                    <neighbor as="125" ip="192.168.0.5"/>
+                    <neighbor as="125" ip="192.168.0.22"/>
+                    <neighbor as="125" ip="192.168.0.17"/>
+                    <neighbor as="125" ip="192.168.0.2"/>
+                    <neighbor as="125" ip="192.168.0.6"/>
+                    <neighbor as="125" ip="192.168.0.0"/>
+                    <neighbor as="125" ip="192.168.0.19"/>
+                    <neighbor as="125" ip="192.168.0.10"/>
+                    <neighbor as="125" ip="192.168.0.8"/>
+                    <neighbor as="125" ip="192.168.0.20" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.1" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.11"/>
+                    <neighbor as="125" ip="192.168.0.23"/>
+                    <neighbor as="125" ip="192.168.0.12"/>
+                    <neighbor as="125" ip="192.168.0.7"/>
+                    <neighbor as="125" ip="192.168.0.21"/>
+                </neighbors>
+            </router>
+            <router id="BOST" reflector="false">
+                <rid>192.168.0.7</rid>
+                <neighbors>
+                    <neighbor as="125" ip="192.168.0.14" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.13" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.18" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.21" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.12" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.22" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.17" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.2" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.6" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.0" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.19" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.10" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.8" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.16" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.1" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.20" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.11"/>
+                    <neighbor as="125" ip="192.168.0.23"/>
+                    <neighbor as="125" ip="192.168.0.21" reflector-client="false"/>
+                </neighbors>
+            </router>
+            <router id="HART">
+                <rid>192.168.0.11</rid>
+                <neighbors>
+                    <neighbor as="125" ip="192.168.0.14" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.13" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.18" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.21" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.5" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.22" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.17" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.2" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.6" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.0" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.19" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.10" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.8" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.16" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.1" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.20" reflector-client="true"/>
+                    <neighbor as="125" ip="192.168.0.23" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.7" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.21" reflector-client="false"/>
+                </neighbors>
+            </router>
+            <router id="ATL" reflector="true">
+                <rid>192.168.0.6</rid>
+                <neighbors>
+                    <neighbor as="125" ip="192.168.0.14"/>
+                    <neighbor as="125" ip="192.168.0.13"/>
+                    <neighbor as="125" ip="192.168.0.18"/>
+                    <neighbor as="125" ip="192.168.0.15"/>
+                    <neighbor as="125" ip="192.168.0.5"/>
+                    <neighbor as="125" ip="192.168.0.22"/>
+                    <neighbor as="125" ip="192.168.0.17"/>
+                    <neighbor as="125" ip="192.168.0.2"/>
+                    <neighbor as="125" ip="192.168.0.0" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.19" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.10" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.8" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.16" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.20" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.1" reflector-client="false"/>
+                    <neighbor as="125" ip="192.168.0.11"/>
+                    <neighbor as="125" ip="192.168.0.23"/>
+                    <neighbor as="125" ip="192.168.0.12"/>
+                    <neighbor as="125" ip="192.168.0.7"/>
+                    <neighbor as="125" ip="192.168.0.21"/>
+                </neighbors>
+            </router>
+        </routers>
+    </bgp>
+</domain>
+
