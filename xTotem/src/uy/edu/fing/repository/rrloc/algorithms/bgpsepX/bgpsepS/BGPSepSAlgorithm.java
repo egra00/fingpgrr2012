@@ -54,6 +54,20 @@ public class BGPSepSAlgorithm extends BGPSepDAlgorithm {
 		return lst;
 	}
 	
+	public boolean containsClientSession(List<iBGPSession> iBGPTopology, String u, String v) {
+		
+		for (iBGPSession session: iBGPTopology) {
+			if ((session.getSessionType() == iBGPSessionType.client) &&
+				session.getIdLink1().equals(u) &&
+				session.getIdLink2().equals(v))
+			{
+				return true;
+			}
+				
+		}
+		return false;
+	}
+	
 	
 	
 	@Override
@@ -131,9 +145,12 @@ public class BGPSepSAlgorithm extends BGPSepDAlgorithm {
 			for (Node v : Splus) {
 				List<Node> P = toPathNode(u, v);
 				Iterator<Node> ii = P.iterator();
-				Node Ri = ii.next(); // como el nodo u0, estoy en u1 (el siguiente)
-				for ( ; ii.hasNext() && Splus.contains(Ri = ii.next()) ; );
-				I.add(new iBGPSession(u.getId(), Ri.getId(), iBGPSessionType.client));
+				ii.next(); // el nodo u0, estoy en el nodo u1 (el siguiente)
+				Node Ri = null;
+				while( ii.hasNext() && !Splus.contains(Ri = ii.next())) {
+					Ri = ii.next();
+				};
+				if(!containsClientSession(I, u.getId(), Ri.getId())) I.add(new iBGPSession(u.getId(), Ri.getId(), iBGPSessionType.client));
 			}
 		}
 
