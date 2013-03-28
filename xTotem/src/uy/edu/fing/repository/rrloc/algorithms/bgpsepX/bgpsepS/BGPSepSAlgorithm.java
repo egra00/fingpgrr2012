@@ -145,12 +145,11 @@ public class BGPSepSAlgorithm extends BGPSepDAlgorithm {
 			for (Node v : Splus) {
 				List<Node> P = toPathNode(u, v);
 				Iterator<Node> ii = P.iterator();
-				ii.next(); // el nodo u0, estoy en el nodo u1 (el siguiente)
-				Node Ri = null;
-				while( ii.hasNext() && !Splus.contains(Ri = ii.next())) {
-					Ri = ii.next();
-				};
-				if(!containsClientSession(I, u.getId(), Ri.getId())) I.add(new iBGPSession(u.getId(), Ri.getId(), iBGPSessionType.client));
+				Node Ri = ii.next(); // estoy en el nodo u1 (el siguiente)
+				while( ii.hasNext() && !Splus.contains(Ri = ii.next()) );
+				
+				if(!containsClientSession(I, u.getId(), Ri.getId())) 
+					I.add(new iBGPSession(u.getId(), Ri.getId(), iBGPSessionType.client));
 			}
 		}
 
