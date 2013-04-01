@@ -590,13 +590,13 @@ public class OptimalAlgorithm implements RRLocAlgorithm{
 				}
 			}
 			
-			for (int i = 0; i < BGPRoutersSize; i++) {
+			/*for (int i = 0; i < BGPRoutersSize; i++) {
 				for (int j = 0; j < BGPRoutersSize; j++) {
 					long value = Math.round(cplex.getValue(DOWN[i][j]));
 					if(value==1.0)
 						lstSessions.add(new iBGPSession(BGPRouters.get(j).getId(),BGPRouters.get(i).getId(), iBGPSessionType.client));
 				}
-			}
+			}*/
 		}
 		catch (IloException e) {
 		   System.err.println("Concert exception caught: " + e);
