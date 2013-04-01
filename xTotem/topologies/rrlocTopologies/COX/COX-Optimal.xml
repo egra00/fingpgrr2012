@@ -16,169 +16,164 @@
     <topology>
         <nodes>
             <node id="LV">
-                <rid>1.0.0.1</rid>
+                <rid>192.168.0.0</rid>
                 <type>CORE</type>
                 <location latitude="1959.9023" longitude="-548.049"/>
             </node>
-            <node id="PAL">
-                <rid>1.0.0.2</rid>
-                <type>EDGE</type>
-                <location latitude="1920.6843" longitude="-816.07263"/>
-            </node>
             <node id="STAB">
-                <rid>1.0.0.2</rid>
+                <rid>192.168.0.2</rid>
                 <type>CORE</type>
                 <location latitude="2045.3575" longitude="-854.74274"/>
             </node>
             <node id="LANG">
-                <rid>1.0.0.3</rid>
+                <rid>192.168.0.3</rid>
                 <type>CORE</type>
                 <location latitude="2087.0913" longitude="-759.2708"/>
             </node>
             <node id="ORC">
-                <rid>1.0.0.4</rid>
+                <rid>192.168.0.4</rid>
                 <type>CORE</type>
                 <location latitude="2192.506" longitude="-724.2453"/>
             </node>
             <node id="SDIE">
-                <rid>1.0.0.5</rid>
+                <rid>192.168.0.5</rid>
                 <type>CORE</type>
                 <location latitude="2297.6074" longitude="-590.8869"/>
             </node>
             <node id="PHX">
-                <rid>1.0.0.6</rid>
+                <rid>192.168.0.6</rid>
                 <type>CORE</type>
                 <location latitude="2198.12" longitude="-447.63358"/>
             </node>
             <node id="TUC">
-                <rid>1.0.0.7</rid>
+                <rid>192.168.0.7</rid>
                 <type>CORE</type>
                 <location latitude="2326.533" longitude="-374.85004"/>
             </node>
             <node id="SVALL">
-                <rid>1.0.0.9</rid>
+                <rid>192.168.0.8</rid>
                 <type>CORE</type>
                 <location latitude="1716.3789" longitude="-392.67923"/>
             </node>
             <node id="OMH">
-                <rid>1.0.0.10</rid>
+                <rid>192.168.0.9</rid>
                 <type>CORE</type>
-                <location latitude="1762.9978" longitude="32.633945"/>
+                <location latitude="1762.9978" longitude="32.63393"/>
             </node>
             <node id="KAN">
-                <rid>1.0.0.11</rid>
+                <rid>192.168.0.10</rid>
                 <type>CORE</type>
-                <location latitude="1874.5878" longitude="157.68924"/>
+                <location latitude="1874.5878" longitude="157.68929"/>
             </node>
             <node id="WICH">
-                <rid>1.0.0.12</rid>
+                <rid>192.168.0.11</rid>
                 <type>CORE</type>
-                <location latitude="1976.3076" longitude="-11.458611"/>
+                <location latitude="1976.3076" longitude="-11.458637"/>
             </node>
             <node id="OKL">
-                <rid>1.0.0.13</rid>
+                <rid>192.168.0.12</rid>
                 <type>CORE</type>
-                <location latitude="2018.671" longitude="84.05219"/>
+                <location latitude="2018.671" longitude="84.052216"/>
             </node>
             <node id="TUL">
-                <rid>1.0.0.14</rid>
+                <rid>192.168.0.13</rid>
                 <type>CORE</type>
-                <location latitude="1974.9885" longitude="185.49681"/>
+                <location latitude="1974.9885" longitude="185.49675"/>
             </node>
             <node id="FORT">
-                <rid>1.0.0.15</rid>
+                <rid>192.168.0.14</rid>
                 <type>CORE</type>
-                <location latitude="2096.415" longitude="220.66823"/>
+                <location latitude="2096.415" longitude="220.6682"/>
             </node>
             <node id="BENT">
-                <rid>1.0.0.16</rid>
+                <rid>192.168.0.15</rid>
                 <type>CORE</type>
                 <location latitude="2023.158" longitude="304.15778"/>
             </node>
             <node id="DALL">
-                <rid>1.0.0.17</rid>
+                <rid>192.168.0.16</rid>
                 <type>CORE</type>
-                <location latitude="2264.2595" longitude="133.67744"/>
+                <location latitude="2264.2595" longitude="133.67743"/>
             </node>
             <node id="BAT">
-                <rid>1.0.0.18</rid>
+                <rid>192.168.0.17</rid>
                 <type>CORE</type>
-                <location latitude="2271.858" longitude="494.8809"/>
+                <location latitude="2271.858" longitude="494.88083"/>
             </node>
             <node id="LAF">
-                <rid>1.0.0.19</rid>
+                <rid>192.168.0.18</rid>
                 <type>CORE</type>
-                <location latitude="2354.2847" longitude="409.36444"/>
+                <location latitude="2354.2847" longitude="409.3645"/>
             </node>
             <node id="NEWO">
-                <rid>1.0.0.20</rid>
+                <rid>192.168.0.19</rid>
                 <type>CORE</type>
                 <location latitude="2325.6348" longitude="574.9657"/>
             </node>
             <node id="PENS">
-                <rid>1.0.0.21</rid>
+                <rid>192.168.0.20</rid>
                 <type>CORE</type>
-                <location latitude="2248.01" longitude="728.9367"/>
+                <location latitude="2248.01" longitude="728.93665"/>
             </node>
             <node id="GAIN">
-                <rid>1.0.0.22</rid>
+                <rid>192.168.0.21</rid>
                 <type>CORE</type>
-                <location latitude="2321.1687" longitude="943.1779"/>
+                <location latitude="2321.1687" longitude="943.178"/>
             </node>
             <node id="MAC">
-                <rid>1.0.0.23</rid>
+                <rid>192.168.0.22</rid>
                 <type>CORE</type>
-                <location latitude="2171.3499" longitude="927.5354"/>
+                <location latitude="2171.3499" longitude="927.53534"/>
             </node>
             <node id="ATL">
-                <rid>1.0.0.24</rid>
+                <rid>192.168.0.23</rid>
                 <type>EDGE</type>
                 <location latitude="2079.8713" longitude="765.6524"/>
             </node>
             <node id="CHI">
-                <rid>1.0.0.25</rid>
+                <rid>192.168.0.24</rid>
                 <type>EDGE</type>
-                <location latitude="1726.9901" longitude="502.7516"/>
+                <location latitude="1726.9901" longitude="502.75162"/>
             </node>
             <node id="CLE">
-                <rid>1.0.0.26</rid>
+                <rid>192.168.0.25</rid>
                 <type>CORE</type>
                 <location latitude="1776.2562" longitude="841.46674"/>
             </node>
             <node id="ASH">
-                <rid>1.0.0.27</rid>
+                <rid>192.168.0.26</rid>
                 <type>CORE</type>
                 <location latitude="1863.3358" longitude="1145.8344"/>
             </node>
             <node id="NOVA">
-                <rid>1.0.0.28</rid>
+                <rid>192.168.0.27</rid>
                 <type>CORE</type>
                 <location latitude="1863.4973" longitude="1219.0271"/>
             </node>
             <node id="HAMP">
-                <rid>1.0.0.29</rid>
+                <rid>192.168.0.28</rid>
                 <type>CORE</type>
                 <location latitude="1990.6157" longitude="1258.5771"/>
             </node>
             <node id="ROA">
-                <rid>1.0.0.30</rid>
+                <rid>192.168.0.29</rid>
                 <type>CORE</type>
-                <location latitude="1993.7056" longitude="1124.0854"/>
+                <location latitude="1993.7057" longitude="1124.0854"/>
             </node>
             <node id="NY">
-                <rid>1.0.0.31</rid>
+                <rid>192.168.0.30</rid>
                 <type>EDGE</type>
-                <location latitude="1795.4214" longitude="1373.2524"/>
+                <location latitude="1795.4214" longitude="1373.2526"/>
             </node>
             <node id="MAN">
-                <rid>1.0.0.32</rid>
+                <rid>192.168.0.31</rid>
                 <type>CORE</type>
-                <location latitude="1730.6849" longitude="1382.6187"/>
+                <location latitude="1730.6849" longitude="1382.6188"/>
             </node>
             <node id="PROV">
-                <rid>1.0.0.34</rid>
+                <rid>192.168.0.32</rid>
                 <type>CORE</type>
-                <location latitude="1687.5532" longitude="1486.9851"/>
+                <location latitude="1687.5532" longitude="1486.9852"/>
             </node>
         </nodes>
         <links>
@@ -486,22 +481,6 @@
                 <from node="LV"/>
                 <to node="PHX"/>
             </link>
-            <link id="PAL-LV">
-                <from node="PAL"/>
-                <to node="LV"/>
-            </link>
-            <link id="LV-PAL">
-                <from node="LV"/>
-                <to node="PAL"/>
-            </link>
-            <link id="PAL-STAB">
-                <from node="PAL"/>
-                <to node="STAB"/>
-            </link>
-            <link id="STAB-PAL">
-                <from node="STAB"/>
-                <to node="PAL"/>
-            </link>
             <link id="STAB-ORC">
                 <from node="STAB"/>
                 <to node="ORC"/>
@@ -518,14 +497,6 @@
                 <from node="LANG"/>
                 <to node="ORC"/>
             </link>
-            <link id="LANG-PAL">
-                <from node="LANG"/>
-                <to node="PAL"/>
-            </link>
-            <link id="PAL-LANG">
-                <from node="PAL"/>
-                <to node="LANG"/>
-            </link>
             <link id="ORC-SDIE">
                 <from node="ORC"/>
                 <to node="SDIE"/>
@@ -541,14 +512,6 @@
             <link id="PHX-SDIE">
                 <from node="PHX"/>
                 <to node="SDIE"/>
-            </link>
-            <link id="PAL-SDIE">
-                <from node="PAL"/>
-                <to node="SDIE"/>
-            </link>
-            <link id="SDIE-PAL">
-                <from node="SDIE"/>
-                <to node="PAL"/>
             </link>
             <link id="PHX-LANG">
                 <from node="PHX"/>
@@ -629,14 +592,6 @@
             <link id="ATL-CHI">
                 <from node="ATL"/>
                 <to node="CHI"/>
-            </link>
-            <link id="OKL-PAL">
-                <from node="OKL"/>
-                <to node="PAL"/>
-            </link>
-            <link id="PAL-OKL">
-                <from node="PAL"/>
-                <to node="OKL"/>
             </link>
             <link id="ATL-ASH">
                 <from node="ATL"/>
@@ -1982,74 +1937,6 @@
                     </rbw>
                 </dynamic>
             </link>
-            <link id="PAL-LV">
-                <static>
-                    <metric>4.0</metric>
-                    <te-metric>1.0</te-metric>
-                    <mrbw>155000.0</mrbw>
-                    <mbw>155000.0</mbw>
-                    <diff-serv>
-                        <bcm>MAM</bcm>
-                        <bc id="0">155000.0</bc>
-                    </diff-serv>
-                </static>
-                <dynamic>
-                    <rbw>
-                        <priority id="0">155000.0</priority>
-                    </rbw>
-                </dynamic>
-            </link>
-            <link id="LV-PAL">
-                <static>
-                    <metric>4.0</metric>
-                    <te-metric>1.0</te-metric>
-                    <mrbw>155000.0</mrbw>
-                    <mbw>155000.0</mbw>
-                    <diff-serv>
-                        <bcm>MAM</bcm>
-                        <bc id="0">155000.0</bc>
-                    </diff-serv>
-                </static>
-                <dynamic>
-                    <rbw>
-                        <priority id="0">155000.0</priority>
-                    </rbw>
-                </dynamic>
-            </link>
-            <link id="PAL-STAB">
-                <static>
-                    <metric>1.0</metric>
-                    <te-metric>1.0</te-metric>
-                    <mrbw>155000.0</mrbw>
-                    <mbw>155000.0</mbw>
-                    <diff-serv>
-                        <bcm>MAM</bcm>
-                        <bc id="0">155000.0</bc>
-                    </diff-serv>
-                </static>
-                <dynamic>
-                    <rbw>
-                        <priority id="0">155000.0</priority>
-                    </rbw>
-                </dynamic>
-            </link>
-            <link id="STAB-PAL">
-                <static>
-                    <metric>1.0</metric>
-                    <te-metric>1.0</te-metric>
-                    <mrbw>155000.0</mrbw>
-                    <mbw>155000.0</mbw>
-                    <diff-serv>
-                        <bcm>MAM</bcm>
-                        <bc id="0">155000.0</bc>
-                    </diff-serv>
-                </static>
-                <dynamic>
-                    <rbw>
-                        <priority id="0">155000.0</priority>
-                    </rbw>
-                </dynamic>
-            </link>
             <link id="STAB-ORC">
                 <static>
                     <metric>2.0</metric>
@@ -2118,40 +2005,6 @@
                     </rbw>
                 </dynamic>
             </link>
-            <link id="LANG-PAL">
-                <static>
-                    <metric>3.0</metric>
-                    <te-metric>1.0</te-metric>
-                    <mrbw>155000.0</mrbw>
-                    <mbw>155000.0</mbw>
-                    <diff-serv>
-                        <bcm>MAM</bcm>
-                        <bc id="0">155000.0</bc>
-                    </diff-serv>
-                </static>
-                <dynamic>
-                    <rbw>
-                        <priority id="0">155000.0</priority>
-                    </rbw>
-                </dynamic>
-            </link>
-            <link id="PAL-LANG">
-                <static>
-                    <metric>3.0</metric>
-                    <te-metric>1.0</te-metric>
-                    <mrbw>155000.0</mrbw>
-                    <mbw>155000.0</mbw>
-                    <diff-serv>
-                        <bcm>MAM</bcm>
-                        <bc id="0">155000.0</bc>
-                    </diff-serv>
-                </static>
-                <dynamic>
-                    <rbw>
-                        <priority id="0">155000.0</priority>
-                    </rbw>
-                </dynamic>
-            </link>
             <link id="ORC-SDIE">
                 <static>
                     <metric>1.0</metric>
@@ -2206,40 +2059,6 @@
             <link id="PHX-SDIE">
                 <static>
                     <metric>3.0</metric>
-                    <te-metric>1.0</te-metric>
-                    <mrbw>155000.0</mrbw>
-                    <mbw>155000.0</mbw>
-                    <diff-serv>
-                        <bcm>MAM</bcm>
-                        <bc id="0">155000.0</bc>
-                    </diff-serv>
-                </static>
-                <dynamic>
-                    <rbw>
-                        <priority id="0">155000.0</priority>
-                    </rbw>
-                </dynamic>
-            </link>
-            <link id="PAL-SDIE">
-                <static>
-                    <metric>8.0</metric>
-                    <te-metric>1.0</te-metric>
-                    <mrbw>155000.0</mrbw>
-                    <mbw>155000.0</mbw>
-                    <diff-serv>
-                        <bcm>MAM</bcm>
-                        <bc id="0">155000.0</bc>
-                    </diff-serv>
-                </static>
-                <dynamic>
-                    <rbw>
-                        <priority id="0">155000.0</priority>
-                    </rbw>
-                </dynamic>
-            </link>
-            <link id="SDIE-PAL">
-                <static>
-                    <metric>8.0</metric>
                     <te-metric>1.0</te-metric>
                     <mrbw>155000.0</mrbw>
                     <mbw>155000.0</mbw>
@@ -2594,40 +2413,6 @@
                     </rbw>
                 </dynamic>
             </link>
-            <link id="OKL-PAL">
-                <static>
-                    <metric>24.0</metric>
-                    <te-metric>1.0</te-metric>
-                    <mrbw>155000.0</mrbw>
-                    <mbw>155000.0</mbw>
-                    <diff-serv>
-                        <bcm>MAM</bcm>
-                        <bc id="0">155000.0</bc>
-                    </diff-serv>
-                </static>
-                <dynamic>
-                    <rbw>
-                        <priority id="0">155000.0</priority>
-                    </rbw>
-                </dynamic>
-            </link>
-            <link id="PAL-OKL">
-                <static>
-                    <metric>24.0</metric>
-                    <te-metric>1.0</te-metric>
-                    <mrbw>155000.0</mrbw>
-                    <mbw>155000.0</mbw>
-                    <diff-serv>
-                        <bcm>MAM</bcm>
-                        <bc id="0">155000.0</bc>
-                    </diff-serv>
-                </static>
-                <dynamic>
-                    <rbw>
-                        <priority id="0">155000.0</priority>
-                    </rbw>
-                </dynamic>
-            </link>
             <link id="ATL-ASH">
                 <static>
                     <metric>8.0</metric>
@@ -2837,476 +2622,463 @@
     <bgp>
         <routers>
             <router id="LV" reflector="true">
-                <rid>1.0.0.1</rid>
+                <rid>192.168.0.0</rid>
                 <neighbors>
-                    <neighbor as="124" ip="1.0.0.2" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.3" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.24" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.25" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.31" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.4"/>
-                    <neighbor as="124" ip="1.0.0.4"/>
-                    <neighbor as="124" ip="1.0.0.2" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.3" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.24" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.25" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.31" reflector-client="true"/>
-                </neighbors>
-            </router>
-            <router id="PAL" reflector="true">
-                <rid>1.0.0.2</rid>
-                <neighbors>
-                    <neighbor as="124" ip="1.0.0.1"/>
-                    <neighbor as="124" ip="1.0.0.2" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.3" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.24"/>
-                    <neighbor as="124" ip="1.0.0.1"/>
-                    <neighbor as="124" ip="1.0.0.24"/>
-                    <neighbor as="124" ip="1.0.0.2" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.3" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.2" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.3" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.23" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.24" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.30" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.4"/>
+                    <neighbor as="124" ip="192.168.0.4"/>
+                    <neighbor as="124" ip="192.168.0.2" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.3" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.23" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.24" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.30" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="STAB" reflector="true">
-                <rid>1.0.0.2</rid>
+                <rid>192.168.0.2</rid>
                 <neighbors>
-                    <neighbor as="124" ip="1.0.0.2"/>
-                    <neighbor as="124" ip="1.0.0.13" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.24" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.25" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.31"/>
-                    <neighbor as="124" ip="1.0.0.2"/>
-                    <neighbor as="124" ip="1.0.0.31"/>
-                    <neighbor as="124" ip="1.0.0.13" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.24" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.25" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.12" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.23" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.24" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.30"/>
+                    <neighbor as="124" ip="192.168.0.30"/>
+                    <neighbor as="124" ip="192.168.0.3" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.12" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.23" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.24" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="LANG" reflector="true">
-                <rid>1.0.0.3</rid>
+                <rid>192.168.0.3</rid>
                 <neighbors>
-                    <neighbor as="124" ip="1.0.0.1"/>
-                    <neighbor as="124" ip="1.0.0.2"/>
-                    <neighbor as="124" ip="1.0.0.17" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.4"/>
-                    <neighbor as="124" ip="1.0.0.5"/>
-                    <neighbor as="124" ip="1.0.0.10"/>
-                    <neighbor as="124" ip="1.0.0.11"/>
-                    <neighbor as="124" ip="1.0.0.24"/>
-                    <neighbor as="124" ip="1.0.0.1"/>
-                    <neighbor as="124" ip="1.0.0.2"/>
-                    <neighbor as="124" ip="1.0.0.4"/>
-                    <neighbor as="124" ip="1.0.0.5"/>
-                    <neighbor as="124" ip="1.0.0.10"/>
-                    <neighbor as="124" ip="1.0.0.11"/>
-                    <neighbor as="124" ip="1.0.0.24"/>
-                    <neighbor as="124" ip="1.0.0.17" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.0"/>
+                    <neighbor as="124" ip="192.168.0.2"/>
+                    <neighbor as="124" ip="192.168.0.16" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.4"/>
+                    <neighbor as="124" ip="192.168.0.2"/>
+                    <neighbor as="124" ip="192.168.0.5"/>
+                    <neighbor as="124" ip="192.168.0.9"/>
+                    <neighbor as="124" ip="192.168.0.10"/>
+                    <neighbor as="124" ip="192.168.0.23"/>
+                    <neighbor as="124" ip="192.168.0.0"/>
+                    <neighbor as="124" ip="192.168.0.2"/>
+                    <neighbor as="124" ip="192.168.0.4"/>
+                    <neighbor as="124" ip="192.168.0.5"/>
+                    <neighbor as="124" ip="192.168.0.9"/>
+                    <neighbor as="124" ip="192.168.0.10"/>
+                    <neighbor as="124" ip="192.168.0.23"/>
+                    <neighbor as="124" ip="192.168.0.16" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="ORC" reflector="true">
-                <rid>1.0.0.4</rid>
+                <rid>192.168.0.4</rid>
                 <neighbors>
-                    <neighbor as="124" ip="1.0.0.1" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.3" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.24" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.6"/>
-                    <neighbor as="124" ip="1.0.0.15"/>
-                    <neighbor as="124" ip="1.0.0.20"/>
-                    <neighbor as="124" ip="1.0.0.1" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.3" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.6"/>
-                    <neighbor as="124" ip="1.0.0.15"/>
-                    <neighbor as="124" ip="1.0.0.20"/>
-                    <neighbor as="124" ip="1.0.0.24" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.0" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.3" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.23" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.6"/>
+                    <neighbor as="124" ip="192.168.0.14"/>
+                    <neighbor as="124" ip="192.168.0.19"/>
+                    <neighbor as="124" ip="192.168.0.0" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.3" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.6"/>
+                    <neighbor as="124" ip="192.168.0.14"/>
+                    <neighbor as="124" ip="192.168.0.19"/>
+                    <neighbor as="124" ip="192.168.0.23" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="SDIE" reflector="true">
-                <rid>1.0.0.5</rid>
+                <rid>192.168.0.5</rid>
                 <neighbors>
-                    <neighbor as="124" ip="1.0.0.3" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.25" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.14"/>
-                    <neighbor as="124" ip="1.0.0.24"/>
-                    <neighbor as="124" ip="1.0.0.31"/>
-                    <neighbor as="124" ip="1.0.0.3" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.14"/>
-                    <neighbor as="124" ip="1.0.0.24"/>
-                    <neighbor as="124" ip="1.0.0.31"/>
-                    <neighbor as="124" ip="1.0.0.25" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.3" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.24" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.13"/>
+                    <neighbor as="124" ip="192.168.0.23"/>
+                    <neighbor as="124" ip="192.168.0.30"/>
+                    <neighbor as="124" ip="192.168.0.3" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.13"/>
+                    <neighbor as="124" ip="192.168.0.23"/>
+                    <neighbor as="124" ip="192.168.0.30"/>
+                    <neighbor as="124" ip="192.168.0.24" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="PHX" reflector="true">
-                <rid>1.0.0.6</rid>
+                <rid>192.168.0.6</rid>
                 <neighbors>
-                    <neighbor as="124" ip="1.0.0.4" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.24" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.25" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.31" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.7"/>
-                    <neighbor as="124" ip="1.0.0.21"/>
-                    <neighbor as="124" ip="1.0.0.4" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.7"/>
-                    <neighbor as="124" ip="1.0.0.21"/>
-                    <neighbor as="124" ip="1.0.0.24" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.25" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.31" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.4" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.23" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.24" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.30" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.7"/>
+                    <neighbor as="124" ip="192.168.0.20"/>
+                    <neighbor as="124" ip="192.168.0.4" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.7"/>
+                    <neighbor as="124" ip="192.168.0.20"/>
+                    <neighbor as="124" ip="192.168.0.23" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.24" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.30" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="TUC">
-                <rid>1.0.0.7</rid>
+                <rid>192.168.0.7</rid>
                 <neighbors>
-                    <neighbor as="124" ip="1.0.0.6" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.6" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.6" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.6" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="SVALL" reflector="true">
-                <rid>1.0.0.9</rid>
+                <rid>192.168.0.8</rid>
                 <neighbors>
-                    <neighbor as="124" ip="1.0.0.24" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.25"/>
-                    <neighbor as="124" ip="1.0.0.31"/>
-                    <neighbor as="124" ip="1.0.0.25"/>
-                    <neighbor as="124" ip="1.0.0.31"/>
-                    <neighbor as="124" ip="1.0.0.24" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.23" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.24"/>
+                    <neighbor as="124" ip="192.168.0.30"/>
+                    <neighbor as="124" ip="192.168.0.24"/>
+                    <neighbor as="124" ip="192.168.0.30"/>
+                    <neighbor as="124" ip="192.168.0.23" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="OMH" reflector="true">
-                <rid>1.0.0.10</rid>
+                <rid>192.168.0.9</rid>
                 <neighbors>
-                    <neighbor as="124" ip="1.0.0.3" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.24" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.25" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.11"/>
-                    <neighbor as="124" ip="1.0.0.13"/>
-                    <neighbor as="124" ip="1.0.0.14"/>
-                    <neighbor as="124" ip="1.0.0.17"/>
-                    <neighbor as="124" ip="1.0.0.31"/>
-                    <neighbor as="124" ip="1.0.0.3" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.11"/>
-                    <neighbor as="124" ip="1.0.0.13"/>
-                    <neighbor as="124" ip="1.0.0.14"/>
-                    <neighbor as="124" ip="1.0.0.17"/>
-                    <neighbor as="124" ip="1.0.0.31"/>
-                    <neighbor as="124" ip="1.0.0.24" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.25" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.3" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.23" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.24" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.10"/>
+                    <neighbor as="124" ip="192.168.0.12"/>
+                    <neighbor as="124" ip="192.168.0.13"/>
+                    <neighbor as="124" ip="192.168.0.16"/>
+                    <neighbor as="124" ip="192.168.0.30"/>
+                    <neighbor as="124" ip="192.168.0.3" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.10"/>
+                    <neighbor as="124" ip="192.168.0.12"/>
+                    <neighbor as="124" ip="192.168.0.13"/>
+                    <neighbor as="124" ip="192.168.0.16"/>
+                    <neighbor as="124" ip="192.168.0.30"/>
+                    <neighbor as="124" ip="192.168.0.23" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.24" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="KAN" reflector="true">
-                <rid>1.0.0.11</rid>
+                <rid>192.168.0.10</rid>
                 <neighbors>
-                    <neighbor as="124" ip="1.0.0.3" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.10" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.24" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.12"/>
-                    <neighbor as="124" ip="1.0.0.3" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.10" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.12"/>
-                    <neighbor as="124" ip="1.0.0.24" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.3" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.9" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.23" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.11"/>
+                    <neighbor as="124" ip="192.168.0.3" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.9" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.11"/>
+                    <neighbor as="124" ip="192.168.0.23" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="WICH">
-                <rid>1.0.0.12</rid>
+                <rid>192.168.0.11</rid>
                 <neighbors>
-                    <neighbor as="124" ip="1.0.0.11" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.11" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.10" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.10" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="OKL" reflector="true">
-                <rid>1.0.0.13</rid>
+                <rid>192.168.0.12</rid>
                 <neighbors>
-                    <neighbor as="124" ip="1.0.0.2"/>
-                    <neighbor as="124" ip="1.0.0.10" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.16"/>
-                    <neighbor as="124" ip="1.0.0.24"/>
-                    <neighbor as="124" ip="1.0.0.10" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.2"/>
-                    <neighbor as="124" ip="1.0.0.16"/>
-                    <neighbor as="124" ip="1.0.0.24"/>
+                    <neighbor as="124" ip="192.168.0.2"/>
+                    <neighbor as="124" ip="192.168.0.9" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.15"/>
+                    <neighbor as="124" ip="192.168.0.23"/>
+                    <neighbor as="124" ip="192.168.0.9" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.2"/>
+                    <neighbor as="124" ip="192.168.0.15"/>
+                    <neighbor as="124" ip="192.168.0.23"/>
                 </neighbors>
             </router>
             <router id="TUL" reflector="true">
-                <rid>1.0.0.14</rid>
+                <rid>192.168.0.13</rid>
                 <neighbors>
-                    <neighbor as="124" ip="1.0.0.5" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.10" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.15"/>
-                    <neighbor as="124" ip="1.0.0.18"/>
-                    <neighbor as="124" ip="1.0.0.24"/>
-                    <neighbor as="124" ip="1.0.0.5" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.10" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.15"/>
-                    <neighbor as="124" ip="1.0.0.18"/>
-                    <neighbor as="124" ip="1.0.0.24"/>
+                    <neighbor as="124" ip="192.168.0.5" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.9" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.14"/>
+                    <neighbor as="124" ip="192.168.0.17"/>
+                    <neighbor as="124" ip="192.168.0.23"/>
+                    <neighbor as="124" ip="192.168.0.5" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.9" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.14"/>
+                    <neighbor as="124" ip="192.168.0.17"/>
+                    <neighbor as="124" ip="192.168.0.23"/>
                 </neighbors>
             </router>
             <router id="FORT">
-                <rid>1.0.0.15</rid>
+                <rid>192.168.0.14</rid>
                 <neighbors>
-                    <neighbor as="124" ip="1.0.0.4" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.14" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.4" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.14" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.4" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.13" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.4" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.13" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="BENT">
-                <rid>1.0.0.16</rid>
+                <rid>192.168.0.15</rid>
                 <neighbors>
-                    <neighbor as="124" ip="1.0.0.13" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.13" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.12" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.12" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="DALL" reflector="true">
-                <rid>1.0.0.17</rid>
+                <rid>192.168.0.16</rid>
                 <neighbors>
-                    <neighbor as="124" ip="1.0.0.3"/>
-                    <neighbor as="124" ip="1.0.0.10" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.24"/>
-                    <neighbor as="124" ip="1.0.0.10" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.3"/>
-                    <neighbor as="124" ip="1.0.0.24"/>
+                    <neighbor as="124" ip="192.168.0.3"/>
+                    <neighbor as="124" ip="192.168.0.9" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.23"/>
+                    <neighbor as="124" ip="192.168.0.9" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.3"/>
+                    <neighbor as="124" ip="192.168.0.23"/>
                 </neighbors>
             </router>
             <router id="BAT" reflector="true">
-                <rid>1.0.0.18</rid>
+                <rid>192.168.0.17</rid>
                 <neighbors>
-                    <neighbor as="124" ip="1.0.0.14" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.24" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.31" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.19"/>
-                    <neighbor as="124" ip="1.0.0.14" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.19"/>
-                    <neighbor as="124" ip="1.0.0.24" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.31" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.13" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.23" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.30" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.18"/>
+                    <neighbor as="124" ip="192.168.0.13" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.18"/>
+                    <neighbor as="124" ip="192.168.0.23" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.30" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="LAF">
-                <rid>1.0.0.19</rid>
+                <rid>192.168.0.18</rid>
                 <neighbors>
-                    <neighbor as="124" ip="1.0.0.18" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.18" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.17" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.17" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="NEWO" reflector="true">
-                <rid>1.0.0.20</rid>
+                <rid>192.168.0.19</rid>
                 <neighbors>
-                    <neighbor as="124" ip="1.0.0.4" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.31" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.24"/>
-                    <neighbor as="124" ip="1.0.0.4" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.24"/>
-                    <neighbor as="124" ip="1.0.0.31" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.4" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.30" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.23"/>
+                    <neighbor as="124" ip="192.168.0.4" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.23"/>
+                    <neighbor as="124" ip="192.168.0.30" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="PENS" reflector="true">
-                <rid>1.0.0.21</rid>
+                <rid>192.168.0.20</rid>
                 <neighbors>
-                    <neighbor as="124" ip="1.0.0.6" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.31" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.22"/>
-                    <neighbor as="124" ip="1.0.0.24"/>
-                    <neighbor as="124" ip="1.0.0.25"/>
-                    <neighbor as="124" ip="1.0.0.6" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.22"/>
-                    <neighbor as="124" ip="1.0.0.24"/>
-                    <neighbor as="124" ip="1.0.0.25"/>
-                    <neighbor as="124" ip="1.0.0.31" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.6" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.30" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.21"/>
+                    <neighbor as="124" ip="192.168.0.23"/>
+                    <neighbor as="124" ip="192.168.0.24"/>
+                    <neighbor as="124" ip="192.168.0.6" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.21"/>
+                    <neighbor as="124" ip="192.168.0.23"/>
+                    <neighbor as="124" ip="192.168.0.24"/>
+                    <neighbor as="124" ip="192.168.0.30" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="GAIN">
-                <rid>1.0.0.22</rid>
+                <rid>192.168.0.21</rid>
                 <neighbors>
-                    <neighbor as="124" ip="1.0.0.21" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.24" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.21" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.24" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.20" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.23" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.20" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.23" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="MAC" reflector="true">
-                <rid>1.0.0.23</rid>
+                <rid>192.168.0.22</rid>
                 <neighbors>
-                    <neighbor as="124" ip="1.0.0.25" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.31" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.24"/>
-                    <neighbor as="124" ip="1.0.0.24"/>
-                    <neighbor as="124" ip="1.0.0.25" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.31" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.24" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.30" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.23"/>
+                    <neighbor as="124" ip="192.168.0.23"/>
+                    <neighbor as="124" ip="192.168.0.24" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.30" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="ATL" reflector="true">
-                <rid>1.0.0.24</rid>
+                <rid>192.168.0.23</rid>
                 <neighbors>
-                    <neighbor as="124" ip="1.0.0.1"/>
-                    <neighbor as="124" ip="1.0.0.2"/>
-                    <neighbor as="124" ip="1.0.0.4"/>
-                    <neighbor as="124" ip="1.0.0.6"/>
-                    <neighbor as="124" ip="1.0.0.9"/>
-                    <neighbor as="124" ip="1.0.0.10"/>
-                    <neighbor as="124" ip="1.0.0.11"/>
-                    <neighbor as="124" ip="1.0.0.18"/>
-                    <neighbor as="124" ip="1.0.0.22"/>
-                    <neighbor as="124" ip="1.0.0.2" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.3" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.5" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.13" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.14" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.17" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.20" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.21" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.23" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.25" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.31" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.27"/>
-                    <neighbor as="124" ip="1.0.0.29"/>
-                    <neighbor as="124" ip="1.0.0.2" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.3" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.5" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.13" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.14" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.17" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.20" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.21" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.23" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.1"/>
-                    <neighbor as="124" ip="1.0.0.2"/>
-                    <neighbor as="124" ip="1.0.0.4"/>
-                    <neighbor as="124" ip="1.0.0.6"/>
-                    <neighbor as="124" ip="1.0.0.9"/>
-                    <neighbor as="124" ip="1.0.0.10"/>
-                    <neighbor as="124" ip="1.0.0.11"/>
-                    <neighbor as="124" ip="1.0.0.18"/>
-                    <neighbor as="124" ip="1.0.0.22"/>
-                    <neighbor as="124" ip="1.0.0.27"/>
-                    <neighbor as="124" ip="1.0.0.29"/>
-                    <neighbor as="124" ip="1.0.0.25" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.31" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.0"/>
+                    <neighbor as="124" ip="192.168.0.2"/>
+                    <neighbor as="124" ip="192.168.0.4"/>
+                    <neighbor as="124" ip="192.168.0.6"/>
+                    <neighbor as="124" ip="192.168.0.8"/>
+                    <neighbor as="124" ip="192.168.0.9"/>
+                    <neighbor as="124" ip="192.168.0.10"/>
+                    <neighbor as="124" ip="192.168.0.17"/>
+                    <neighbor as="124" ip="192.168.0.21"/>
+                    <neighbor as="124" ip="192.168.0.2" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.3" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.5" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.12" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.13" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.16" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.19" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.20" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.22" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.24" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.30" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.26"/>
+                    <neighbor as="124" ip="192.168.0.28"/>
+                    <neighbor as="124" ip="192.168.0.2" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.3" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.5" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.12" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.13" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.16" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.19" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.20" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.22" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.0"/>
+                    <neighbor as="124" ip="192.168.0.2"/>
+                    <neighbor as="124" ip="192.168.0.4"/>
+                    <neighbor as="124" ip="192.168.0.6"/>
+                    <neighbor as="124" ip="192.168.0.8"/>
+                    <neighbor as="124" ip="192.168.0.9"/>
+                    <neighbor as="124" ip="192.168.0.10"/>
+                    <neighbor as="124" ip="192.168.0.17"/>
+                    <neighbor as="124" ip="192.168.0.21"/>
+                    <neighbor as="124" ip="192.168.0.26"/>
+                    <neighbor as="124" ip="192.168.0.28"/>
+                    <neighbor as="124" ip="192.168.0.24" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.30" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="CHI" reflector="true">
-                <rid>1.0.0.25</rid>
+                <rid>192.168.0.24</rid>
                 <neighbors>
-                    <neighbor as="124" ip="1.0.0.1"/>
-                    <neighbor as="124" ip="1.0.0.2"/>
-                    <neighbor as="124" ip="1.0.0.5"/>
-                    <neighbor as="124" ip="1.0.0.6"/>
-                    <neighbor as="124" ip="1.0.0.10"/>
-                    <neighbor as="124" ip="1.0.0.23"/>
-                    <neighbor as="124" ip="1.0.0.24"/>
-                    <neighbor as="124" ip="1.0.0.9" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.21" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.26"/>
-                    <neighbor as="124" ip="1.0.0.34"/>
-                    <neighbor as="124" ip="1.0.0.9" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.21" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.1"/>
-                    <neighbor as="124" ip="1.0.0.2"/>
-                    <neighbor as="124" ip="1.0.0.5"/>
-                    <neighbor as="124" ip="1.0.0.6"/>
-                    <neighbor as="124" ip="1.0.0.10"/>
-                    <neighbor as="124" ip="1.0.0.23"/>
-                    <neighbor as="124" ip="1.0.0.24"/>
-                    <neighbor as="124" ip="1.0.0.26"/>
-                    <neighbor as="124" ip="1.0.0.34"/>
+                    <neighbor as="124" ip="192.168.0.0"/>
+                    <neighbor as="124" ip="192.168.0.2"/>
+                    <neighbor as="124" ip="192.168.0.5"/>
+                    <neighbor as="124" ip="192.168.0.6"/>
+                    <neighbor as="124" ip="192.168.0.9"/>
+                    <neighbor as="124" ip="192.168.0.22"/>
+                    <neighbor as="124" ip="192.168.0.23"/>
+                    <neighbor as="124" ip="192.168.0.8" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.20" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.25"/>
+                    <neighbor as="124" ip="192.168.0.32"/>
+                    <neighbor as="124" ip="192.168.0.8" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.20" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.0"/>
+                    <neighbor as="124" ip="192.168.0.2"/>
+                    <neighbor as="124" ip="192.168.0.5"/>
+                    <neighbor as="124" ip="192.168.0.6"/>
+                    <neighbor as="124" ip="192.168.0.9"/>
+                    <neighbor as="124" ip="192.168.0.22"/>
+                    <neighbor as="124" ip="192.168.0.23"/>
+                    <neighbor as="124" ip="192.168.0.25"/>
+                    <neighbor as="124" ip="192.168.0.32"/>
                 </neighbors>
             </router>
             <router id="CLE" reflector="true">
-                <rid>1.0.0.26</rid>
+                <rid>192.168.0.25</rid>
                 <neighbors>
-                    <neighbor as="124" ip="1.0.0.25" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.31" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.32"/>
-                    <neighbor as="124" ip="1.0.0.25" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.32"/>
-                    <neighbor as="124" ip="1.0.0.31" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.24" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.30" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.31"/>
+                    <neighbor as="124" ip="192.168.0.24" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.31"/>
+                    <neighbor as="124" ip="192.168.0.30" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="ASH" reflector="true">
-                <rid>1.0.0.27</rid>
+                <rid>192.168.0.26</rid>
                 <neighbors>
-                    <neighbor as="124" ip="1.0.0.24" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.31" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.28"/>
-                    <neighbor as="124" ip="1.0.0.30"/>
-                    <neighbor as="124" ip="1.0.0.24" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.28"/>
-                    <neighbor as="124" ip="1.0.0.30"/>
-                    <neighbor as="124" ip="1.0.0.31" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.23" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.30" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.27"/>
+                    <neighbor as="124" ip="192.168.0.29"/>
+                    <neighbor as="124" ip="192.168.0.23" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.27"/>
+                    <neighbor as="124" ip="192.168.0.29"/>
+                    <neighbor as="124" ip="192.168.0.30" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="NOVA">
-                <rid>1.0.0.28</rid>
+                <rid>192.168.0.27</rid>
                 <neighbors>
-                    <neighbor as="124" ip="1.0.0.27" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.27" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.26" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.26" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="HAMP">
-                <rid>1.0.0.29</rid>
+                <rid>192.168.0.28</rid>
                 <neighbors>
-                    <neighbor as="124" ip="1.0.0.24" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.31" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.24" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.31" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.23" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.30" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.23" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.30" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="ROA">
-                <rid>1.0.0.30</rid>
+                <rid>192.168.0.29</rid>
                 <neighbors>
-                    <neighbor as="124" ip="1.0.0.27" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.27" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.26" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.26" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="NY" reflector="true">
-                <rid>1.0.0.31</rid>
+                <rid>192.168.0.30</rid>
                 <neighbors>
-                    <neighbor as="124" ip="1.0.0.1"/>
-                    <neighbor as="124" ip="1.0.0.6"/>
-                    <neighbor as="124" ip="1.0.0.18"/>
-                    <neighbor as="124" ip="1.0.0.20"/>
-                    <neighbor as="124" ip="1.0.0.21"/>
-                    <neighbor as="124" ip="1.0.0.23"/>
-                    <neighbor as="124" ip="1.0.0.24"/>
-                    <neighbor as="124" ip="1.0.0.26"/>
-                    <neighbor as="124" ip="1.0.0.27"/>
-                    <neighbor as="124" ip="1.0.0.29"/>
-                    <neighbor as="124" ip="1.0.0.2" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.5" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.9" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.10" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.34" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.32"/>
-                    <neighbor as="124" ip="1.0.0.2" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.5" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.9" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.10" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.1"/>
-                    <neighbor as="124" ip="1.0.0.6"/>
-                    <neighbor as="124" ip="1.0.0.18"/>
-                    <neighbor as="124" ip="1.0.0.20"/>
-                    <neighbor as="124" ip="1.0.0.21"/>
-                    <neighbor as="124" ip="1.0.0.23"/>
-                    <neighbor as="124" ip="1.0.0.24"/>
-                    <neighbor as="124" ip="1.0.0.26"/>
-                    <neighbor as="124" ip="1.0.0.27"/>
-                    <neighbor as="124" ip="1.0.0.29"/>
-                    <neighbor as="124" ip="1.0.0.32"/>
-                    <neighbor as="124" ip="1.0.0.34" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.0"/>
+                    <neighbor as="124" ip="192.168.0.6"/>
+                    <neighbor as="124" ip="192.168.0.17"/>
+                    <neighbor as="124" ip="192.168.0.19"/>
+                    <neighbor as="124" ip="192.168.0.20"/>
+                    <neighbor as="124" ip="192.168.0.22"/>
+                    <neighbor as="124" ip="192.168.0.23"/>
+                    <neighbor as="124" ip="192.168.0.25"/>
+                    <neighbor as="124" ip="192.168.0.26"/>
+                    <neighbor as="124" ip="192.168.0.28"/>
+                    <neighbor as="124" ip="192.168.0.2" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.5" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.8" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.9" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.32" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.31"/>
+                    <neighbor as="124" ip="192.168.0.2" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.5" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.8" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.9" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.0"/>
+                    <neighbor as="124" ip="192.168.0.6"/>
+                    <neighbor as="124" ip="192.168.0.17"/>
+                    <neighbor as="124" ip="192.168.0.19"/>
+                    <neighbor as="124" ip="192.168.0.20"/>
+                    <neighbor as="124" ip="192.168.0.22"/>
+                    <neighbor as="124" ip="192.168.0.23"/>
+                    <neighbor as="124" ip="192.168.0.25"/>
+                    <neighbor as="124" ip="192.168.0.26"/>
+                    <neighbor as="124" ip="192.168.0.28"/>
+                    <neighbor as="124" ip="192.168.0.31"/>
+                    <neighbor as="124" ip="192.168.0.32" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="MAN">
-                <rid>1.0.0.32</rid>
+                <rid>192.168.0.31</rid>
                 <neighbors>
-                    <neighbor as="124" ip="1.0.0.26" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.31" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.26" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.31" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.25" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.30" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.25" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.30" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="PROV" reflector="true">
-                <rid>1.0.0.34</rid>
+                <rid>192.168.0.32</rid>
                 <neighbors>
-                    <neighbor as="124" ip="1.0.0.31"/>
-                    <neighbor as="124" ip="1.0.0.25" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.25" reflector-client="true"/>
-                    <neighbor as="124" ip="1.0.0.31"/>
+                    <neighbor as="124" ip="192.168.0.30"/>
+                    <neighbor as="124" ip="192.168.0.24" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.24" reflector-client="true"/>
+                    <neighbor as="124" ip="192.168.0.30"/>
                 </neighbors>
             </router>
         </routers>
