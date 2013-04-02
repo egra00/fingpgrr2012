@@ -1,0 +1,35 @@
+MSGs,Ses,
+0,,0,,
+Router 2.168.0.7
+RT,RIB,
+22,10,0,
+Router 2.168.0.2
+RT,RIB,
+22,10,0,
+Router 2.168.0.0
+RT,RIB,
+22,10,0,
+Router 2.168.0.9
+RT,RIB,
+22,10,0,
+Router 2.168.0.5
+RT,RIB,
+22,10,0,
+Router 2.168.0.4
+RT,RIB,
+22,10,0,
+Router 2.168.0.11
+RT,RIB,
+22,10,0,
+Router 2.168.0.3
+RT,RIB,
+22,10,0,
+Router 2.168.0.8
+RT,RIB,
+22,10,0,
+Router 2.168.0.6
+RT,RIB,
+22,10,0,
+Router 2.168.0.1
+RT,RIB,
+22,10,0,
