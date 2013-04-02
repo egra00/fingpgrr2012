@@ -41,6 +41,7 @@
             <node id="2">
                 <rid>198.32.8.202</rid>
                 <description>2</description>
+                <type>EDGE</type>
                 <location latitude="415.12964" longitude="550.6321"/>
                 <interfaces>
                     <interface id="0"/>
@@ -375,5 +376,24 @@
             </link>
         </links>
     </igp>
+    <bgp>
+        <routers>
+            <router id="0">
+                <rid>198.32.8.200</rid>
+            </router>
+            <router id="1">
+                <rid>198.32.8.201</rid>
+            </router>
+            <router id="2">
+                <rid>198.32.8.202</rid>
+            </router>
+            <router id="3">
+                <rid>198.32.8.203</rid>
+            </router>
+            <router id="4">
+                <rid>198.32.8.204</rid>
+            </router>
+        </routers>
+    </bgp>
 </domain>
 
