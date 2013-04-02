@@ -1555,13 +1555,11 @@
                 <rid>192.168.0.0</rid>
                 <neighbors>
                     <neighbor as="130" ip="192.168.0.5" reflector-client="true"/>
-                    <neighbor as="130" ip="192.168.0.5" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="PORV" reflector="true">
                 <rid>192.168.0.1</rid>
                 <neighbors>
-                    <neighbor as="130" ip="192.168.0.5"/>
                     <neighbor as="130" ip="192.168.0.5"/>
                 </neighbors>
             </router>
@@ -1569,20 +1567,17 @@
                 <rid>192.168.0.2</rid>
                 <neighbors>
                     <neighbor as="130" ip="192.168.0.5"/>
-                    <neighbor as="130" ip="192.168.0.5"/>
                 </neighbors>
             </router>
             <router id="CAMP">
                 <rid>192.168.0.3</rid>
                 <neighbors>
                     <neighbor as="130" ip="192.168.0.5" reflector-client="true"/>
-                    <neighbor as="130" ip="192.168.0.5" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="CUR" reflector="true">
                 <rid>192.168.0.4</rid>
                 <neighbors>
-                    <neighbor as="130" ip="192.168.0.5"/>
                     <neighbor as="130" ip="192.168.0.5"/>
                 </neighbors>
             </router>
@@ -1604,34 +1599,17 @@
                     <neighbor as="130" ip="192.168.0.21" reflector-client="true"/>
                     <neighbor as="130" ip="192.168.0.27" reflector-client="true"/>
                     <neighbor as="130" ip="192.168.0.23"/>
-                    <neighbor as="130" ip="192.168.0.1" reflector-client="true"/>
-                    <neighbor as="130" ip="192.168.0.2" reflector-client="true"/>
-                    <neighbor as="130" ip="192.168.0.4" reflector-client="true"/>
-                    <neighbor as="130" ip="192.168.0.0"/>
-                    <neighbor as="130" ip="192.168.0.3"/>
-                    <neighbor as="130" ip="192.168.0.23"/>
-                    <neighbor as="130" ip="192.168.0.6" reflector-client="true"/>
-                    <neighbor as="130" ip="192.168.0.7" reflector-client="true"/>
-                    <neighbor as="130" ip="192.168.0.8" reflector-client="true"/>
-                    <neighbor as="130" ip="192.168.0.9" reflector-client="true"/>
-                    <neighbor as="130" ip="192.168.0.10" reflector-client="true"/>
-                    <neighbor as="130" ip="192.168.0.11" reflector-client="true"/>
-                    <neighbor as="130" ip="192.168.0.13" reflector-client="true"/>
-                    <neighbor as="130" ip="192.168.0.21" reflector-client="true"/>
-                    <neighbor as="130" ip="192.168.0.27" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="PORT" reflector="true">
                 <rid>192.168.0.6</rid>
                 <neighbors>
                     <neighbor as="130" ip="192.168.0.5"/>
-                    <neighbor as="130" ip="192.168.0.5"/>
                 </neighbors>
             </router>
             <router id="FLOR" reflector="true">
                 <rid>192.168.0.7</rid>
                 <neighbors>
-                    <neighbor as="130" ip="192.168.0.5"/>
                     <neighbor as="130" ip="192.168.0.5"/>
                 </neighbors>
             </router>
@@ -1643,18 +1621,11 @@
                     <neighbor as="130" ip="192.168.0.15" reflector-client="true"/>
                     <neighbor as="130" ip="192.168.0.22" reflector-client="true"/>
                     <neighbor as="130" ip="192.168.0.17"/>
-                    <neighbor as="130" ip="192.168.0.5"/>
-                    <neighbor as="130" ip="192.168.0.17"/>
-                    <neighbor as="130" ip="192.168.0.12" reflector-client="true"/>
-                    <neighbor as="130" ip="192.168.0.15" reflector-client="true"/>
-                    <neighbor as="130" ip="192.168.0.22" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="VIT" reflector="true">
                 <rid>192.168.0.9</rid>
                 <neighbors>
-                    <neighbor as="130" ip="192.168.0.5"/>
-                    <neighbor as="130" ip="192.168.0.16" reflector-client="true"/>
                     <neighbor as="130" ip="192.168.0.5"/>
                     <neighbor as="130" ip="192.168.0.16" reflector-client="true"/>
                 </neighbors>
@@ -1663,14 +1634,11 @@
                 <rid>192.168.0.10</rid>
                 <neighbors>
                     <neighbor as="130" ip="192.168.0.5"/>
-                    <neighbor as="130" ip="192.168.0.5"/>
                 </neighbors>
             </router>
             <router id="SAL" reflector="true">
                 <rid>192.168.0.11</rid>
                 <neighbors>
-                    <neighbor as="130" ip="192.168.0.5"/>
-                    <neighbor as="130" ip="192.168.0.26" reflector-client="true"/>
                     <neighbor as="130" ip="192.168.0.5"/>
                     <neighbor as="130" ip="192.168.0.26" reflector-client="true"/>
                 </neighbors>
@@ -1681,16 +1649,11 @@
                     <neighbor as="130" ip="192.168.0.8"/>
                     <neighbor as="130" ip="192.168.0.19"/>
                     <neighbor as="130" ip="192.168.0.20"/>
-                    <neighbor as="130" ip="192.168.0.8"/>
-                    <neighbor as="130" ip="192.168.0.19"/>
-                    <neighbor as="130" ip="192.168.0.20"/>
                 </neighbors>
             </router>
             <router id="MAC" reflector="true">
                 <rid>192.168.0.13</rid>
                 <neighbors>
-                    <neighbor as="130" ip="192.168.0.5"/>
-                    <neighbor as="130" ip="192.168.0.14"/>
                     <neighbor as="130" ip="192.168.0.5"/>
                     <neighbor as="130" ip="192.168.0.14"/>
                 </neighbors>
@@ -1700,14 +1663,11 @@
                 <neighbors>
                     <neighbor as="130" ip="192.168.0.13" reflector-client="true"/>
                     <neighbor as="130" ip="192.168.0.18"/>
-                    <neighbor as="130" ip="192.168.0.13" reflector-client="true"/>
-                    <neighbor as="130" ip="192.168.0.18"/>
                 </neighbors>
             </router>
             <router id="CAMG" reflector="true">
                 <rid>192.168.0.15</rid>
                 <neighbors>
-                    <neighbor as="130" ip="192.168.0.8"/>
                     <neighbor as="130" ip="192.168.0.8"/>
                 </neighbors>
             </router>
@@ -1715,13 +1675,11 @@
                 <rid>192.168.0.16</rid>
                 <neighbors>
                     <neighbor as="130" ip="192.168.0.9"/>
-                    <neighbor as="130" ip="192.168.0.9"/>
                 </neighbors>
             </router>
             <router id="NAT">
                 <rid>192.168.0.17</rid>
                 <neighbors>
-                    <neighbor as="130" ip="192.168.0.8" reflector-client="true"/>
                     <neighbor as="130" ip="192.168.0.8" reflector-client="true"/>
                 </neighbors>
             </router>
@@ -1729,13 +1687,11 @@
                 <rid>192.168.0.18</rid>
                 <neighbors>
                     <neighbor as="130" ip="192.168.0.14" reflector-client="true"/>
-                    <neighbor as="130" ip="192.168.0.14" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="TERE">
                 <rid>192.168.0.19</rid>
                 <neighbors>
-                    <neighbor as="130" ip="192.168.0.12" reflector-client="true"/>
                     <neighbor as="130" ip="192.168.0.12" reflector-client="true"/>
                 </neighbors>
             </router>
@@ -1743,20 +1699,17 @@
                 <rid>192.168.0.20</rid>
                 <neighbors>
                     <neighbor as="130" ip="192.168.0.12" reflector-client="true"/>
-                    <neighbor as="130" ip="192.168.0.12" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="BELE" reflector="true">
                 <rid>192.168.0.21</rid>
                 <neighbors>
                     <neighbor as="130" ip="192.168.0.5"/>
-                    <neighbor as="130" ip="192.168.0.5"/>
                 </neighbors>
             </router>
             <router id="BRAS" reflector="true">
                 <rid>192.168.0.22</rid>
                 <neighbors>
-                    <neighbor as="130" ip="192.168.0.8"/>
                     <neighbor as="130" ip="192.168.0.8"/>
                 </neighbors>
             </router>
@@ -1766,15 +1719,11 @@
                     <neighbor as="130" ip="192.168.0.5" reflector-client="true"/>
                     <neighbor as="130" ip="192.168.0.24" reflector-client="true"/>
                     <neighbor as="130" ip="192.168.0.25"/>
-                    <neighbor as="130" ip="192.168.0.5" reflector-client="true"/>
-                    <neighbor as="130" ip="192.168.0.25"/>
-                    <neighbor as="130" ip="192.168.0.24" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="PALM" reflector="true">
                 <rid>192.168.0.24</rid>
                 <neighbors>
-                    <neighbor as="130" ip="192.168.0.23"/>
                     <neighbor as="130" ip="192.168.0.23"/>
                 </neighbors>
             </router>
@@ -1782,20 +1731,17 @@
                 <rid>192.168.0.25</rid>
                 <neighbors>
                     <neighbor as="130" ip="192.168.0.23" reflector-client="true"/>
-                    <neighbor as="130" ip="192.168.0.23" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="MACA" reflector="true">
                 <rid>192.168.0.26</rid>
                 <neighbors>
                     <neighbor as="130" ip="192.168.0.11"/>
-                    <neighbor as="130" ip="192.168.0.11"/>
                 </neighbors>
             </router>
             <router id="BOAV" reflector="true">
                 <rid>192.168.0.27</rid>
                 <neighbors>
-                    <neighbor as="130" ip="192.168.0.5"/>
                     <neighbor as="130" ip="192.168.0.5"/>
                 </neighbors>
             </router>
