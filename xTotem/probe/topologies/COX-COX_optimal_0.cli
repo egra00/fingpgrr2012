@@ -200,7 +200,7 @@ net domain 124 compute
 # -------------------------------------------------------------------
 # BGP routing
 # -------------------------------------------------------------------
-bgp options msg-monitor /C:/workspace/Totem/prove/topologies/COX-COX_optimal_0-COX.msg
+bgp options msg-monitor /home/emiliano/PG/Totem/probe/topologies/COX-COX_optimal_0-COX.msg
 
 bgp add router 124 192.168.0.0
 bgp router 192.168.0.0

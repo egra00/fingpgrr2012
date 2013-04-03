@@ -74,7 +74,7 @@ net domain 11537 compute
 # -------------------------------------------------------------------
 # BGP routing
 # -------------------------------------------------------------------
-bgp options msg-monitor /C:/workspace/Totem/prove/topologies/ABILENE-ABILENE_optimal_0-ABILENE.msg
+bgp options msg-monitor /home/emiliano/PG/Totem/probe/topologies/ABILENE-ABILENE_optimal_0-ABILENE.msg
 
 bgp add router 11537 192.168.0.0
 bgp router 192.168.0.0

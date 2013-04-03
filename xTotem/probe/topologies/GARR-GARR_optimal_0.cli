@@ -226,7 +226,7 @@ net domain 128 compute
 # -------------------------------------------------------------------
 # BGP routing
 # -------------------------------------------------------------------
-bgp options msg-monitor /C:/workspace/Totem/prove/topologies/GARR-GARR_optimal_0-GARR.msg
+bgp options msg-monitor /home/emiliano/PG/Totem/probe/topologies/GARR-GARR_optimal_0-GARR.msg
 
 bgp add router 128 192.168.0.0
 bgp router 192.168.0.0

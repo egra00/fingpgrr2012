@@ -30,11 +30,11 @@ ${process_ses} = "${process_ses},";
 
 
 print OUT_FILE "MSGs,Ses,\n";
-print OUT_FILE "${process_msg},${process_ses},\n";
+print OUT_FILE "${process_msg}${process_ses},\n";
 
 foreach ${line} (<IN_FILE>) {
 
-	if (${line} =~ /.*(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\'s tables data.*/) {
+	if (${line} =~ /\s*(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\'s tables data.*/) {
 		if (! ${first_table_columns} eq "") {
 			${last_table_row} = "${last_table_row}${table_counter},";
 

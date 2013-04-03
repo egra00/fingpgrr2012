@@ -19,7 +19,7 @@
     <topology>
         <nodes>
             <node id="STTL">
-                <rid>192.168.0.7</rid>
+                <rid>192.168.0.0</rid>
                 <description>Seattle</description>
                 <type>EDGE</type>
                 <location latitude="31.147552" longitude="66.65515"/>
@@ -32,7 +32,7 @@
                 </interfaces>
             </node>
             <node id="DNVR">
-                <rid>192.168.0.2</rid>
+                <rid>192.168.0.1</rid>
                 <description>Denver</description>
                 <type>EDGE</type>
                 <location latitude="275.87833" longitude="304.29526"/>
@@ -46,7 +46,7 @@
                 </interfaces>
             </node>
             <node id="KSCY">
-                <rid>192.168.0.0</rid>
+                <rid>192.168.0.2</rid>
                 <description>Kansas City</description>
                 <type>EDGE</type>
                 <location latitude="271.42868" longitude="507.15878"/>
@@ -60,10 +60,10 @@
                 </interfaces>
             </node>
             <node id="IPLS">
-                <rid>192.168.0.9</rid>
+                <rid>192.168.0.3</rid>
                 <description>Indianapolis</description>
                 <type>EDGE</type>
-                <location latitude="170.0" longitude="779.0"/>
+                <location latitude="169.99998" longitude="779.0"/>
                 <interfaces>
                     <interface id="lo">
                         <ip mask="198.32.12.177/32">198.32.12.177</ip>
@@ -74,17 +74,17 @@
                 </interfaces>
             </node>
             <node id="CHIN">
-                <rid>192.168.0.5</rid>
+                <rid>192.168.0.4</rid>
                 <description>Chicago</description>
                 <type>EDGE</type>
-                <location latitude="62.295105" longitude="692.634"/>
+                <location latitude="62.295105" longitude="692.63403"/>
                 <interfaces>
                     <interface id="so-0/0/0"/>
                     <interface id="so-3/1/0"/>
                 </interfaces>
             </node>
             <node id="NYCM">
-                <rid>192.168.0.4</rid>
+                <rid>192.168.0.5</rid>
                 <description>New york City</description>
                 <type>EDGE</type>
                 <location latitude="57.845455" longitude="1054.8903"/>
@@ -97,10 +97,10 @@
                 </interfaces>
             </node>
             <node id="WASH">
-                <rid>192.168.0.11</rid>
+                <rid>192.168.0.6</rid>
                 <description>Washington DC</description>
                 <type>EDGE</type>
-                <location latitude="225.99998" longitude="1033.0"/>
+                <location latitude="226.0" longitude="1033.0"/>
                 <interfaces>
                     <interface id="lo">
                         <ip mask="198.32.12.169/32">198.32.12.169</ip>
@@ -110,10 +110,10 @@
                 </interfaces>
             </node>
             <node id="ATLA">
-                <rid>192.168.0.3</rid>
+                <rid>192.168.0.7</rid>
                 <description>Atlanta</description>
                 <type>EDGE</type>
-                <location latitude="418.0" longitude="909.0"/>
+                <location latitude="418.0" longitude="909.00006"/>
                 <interfaces>
                     <interface id="lo">
                         <ip mask="198.32.12.9/32">198.32.12.9</ip>
@@ -133,7 +133,7 @@
                 </interfaces>
             </node>
             <node id="HSTN">
-                <rid>192.168.0.6</rid>
+                <rid>192.168.0.9</rid>
                 <description>Houston</description>
                 <type>EDGE</type>
                 <location latitude="658.5483" longitude="518.751"/>
@@ -147,7 +147,7 @@
                 </interfaces>
             </node>
             <node id="LOSA">
-                <rid>192.168.0.1</rid>
+                <rid>192.168.0.10</rid>
                 <description>Los Angeles</description>
                 <type>EDGE</type>
                 <location latitude="529.50836" longitude="92.7376"/>
@@ -160,7 +160,7 @@
                 </interfaces>
             </node>
             <node id="SNVA">
-                <rid>192.168.0.10</rid>
+                <rid>192.168.0.11</rid>
                 <description>Sunnyvale</description>
                 <type>EDGE</type>
                 <location latitude="324.8245" longitude="14.490252"/>
@@ -874,171 +874,135 @@
     <bgp>
         <routers>
             <router id="STTL">
-                <rid>192.168.0.7</rid>
+                <rid>192.168.0.0</rid>
                 <neighbors>
-                    <neighbor as="11537" ip="192.168.0.11" reflector-client="true"/>
+                    <neighbor as="11537" ip="192.168.0.1" reflector-client="true"/>
                     <neighbor as="11537" ip="192.168.0.10" reflector-client="true"/>
-                    <neighbor as="11537" ip="192.168.0.2" reflector-client="true"/>
-                    <neighbor as="11537" ip="192.168.0.0" reflector-client="true"/>
-                    <neighbor as="11537" ip="192.168.0.5" reflector-client="true"/>
-                    <neighbor as="11537" ip="192.168.0.9" reflector-client="true"/>
-                    <neighbor as="11537" ip="192.168.0.3" reflector-client="true"/>
-                    <neighbor as="11537" ip="192.168.0.6" reflector-client="true"/>
-                    <neighbor as="11537" ip="192.168.0.10" reflector-client="false"/>
+                    <neighbor as="11537" ip="192.168.0.11" reflector-client="false"/>
                 </neighbors>
             </router>
             <router id="DNVR" reflector="true">
+                <rid>192.168.0.1</rid>
+                <neighbors>
+                    <neighbor as="11537" ip="192.168.0.6"/>
+                    <neighbor as="11537" ip="192.168.0.10"/>
+                    <neighbor as="11537" ip="192.168.0.2" reflector-client="false"/>
+                    <neighbor as="11537" ip="192.168.0.4" reflector-client="false"/>
+                    <neighbor as="11537" ip="192.168.0.7" reflector-client="false"/>
+                    <neighbor as="11537" ip="192.168.0.9" reflector-client="false"/>
+                    <neighbor as="11537" ip="192.168.0.3" reflector-client="false"/>
+                    <neighbor as="11537" ip="192.168.0.0"/>
+                    <neighbor as="11537" ip="192.168.0.11"/>
+                </neighbors>
+            </router>
+            <router id="KSCY" reflector="false">
                 <rid>192.168.0.2</rid>
                 <neighbors>
-                    <neighbor as="11537" ip="192.168.0.11"/>
-                    <neighbor as="11537" ip="192.168.0.1"/>
-                    <neighbor as="11537" ip="192.168.0.0" reflector-client="false"/>
-                    <neighbor as="11537" ip="192.168.0.5" reflector-client="false"/>
-                    <neighbor as="11537" ip="192.168.0.6" reflector-client="false"/>
-                    <neighbor as="11537" ip="192.168.0.3" reflector-client="false"/>
-                    <neighbor as="11537" ip="192.168.0.9" reflector-client="false"/>
-                    <neighbor as="11537" ip="192.168.0.4"/>
-                    <neighbor as="11537" ip="192.168.0.7"/>
+                    <neighbor as="11537" ip="192.168.0.6"/>
                     <neighbor as="11537" ip="192.168.0.10"/>
+                    <neighbor as="11537" ip="192.168.0.1"/>
+                    <neighbor as="11537" ip="192.168.0.4" reflector-client="false"/>
+                    <neighbor as="11537" ip="192.168.0.7" reflector-client="false"/>
+                    <neighbor as="11537" ip="192.168.0.9" reflector-client="false"/>
+                    <neighbor as="11537" ip="192.168.0.3" reflector-client="false"/>
                 </neighbors>
             </router>
-            <router id="KSCY" reflector="true">
-                <rid>192.168.0.0</rid>
+            <router id="IPLS" reflector="false">
+                <rid>192.168.0.3</rid>
                 <neighbors>
-                    <neighbor as="11537" ip="192.168.0.11"/>
+                    <neighbor as="11537" ip="192.168.0.6"/>
+                    <neighbor as="11537" ip="192.168.0.10"/>
                     <neighbor as="11537" ip="192.168.0.1"/>
                     <neighbor as="11537" ip="192.168.0.2"/>
-                    <neighbor as="11537" ip="192.168.0.5" reflector-client="false"/>
-                    <neighbor as="11537" ip="192.168.0.6" reflector-client="false"/>
-                    <neighbor as="11537" ip="192.168.0.3" reflector-client="false"/>
+                    <neighbor as="11537" ip="192.168.0.4"/>
+                    <neighbor as="11537" ip="192.168.0.7" reflector-client="false"/>
                     <neighbor as="11537" ip="192.168.0.9" reflector-client="false"/>
-                    <neighbor as="11537" ip="192.168.0.4"/>
-                    <neighbor as="11537" ip="192.168.0.7"/>
-                    <neighbor as="11537" ip="192.168.0.10"/>
-                </neighbors>
-            </router>
-            <router id="IPLS" reflector="true">
-                <rid>192.168.0.9</rid>
-                <neighbors>
-                    <neighbor as="11537" ip="192.168.0.11"/>
-                    <neighbor as="11537" ip="192.168.0.1"/>
-                    <neighbor as="11537" ip="192.168.0.2"/>
-                    <neighbor as="11537" ip="192.168.0.0"/>
-                    <neighbor as="11537" ip="192.168.0.5"/>
-                    <neighbor as="11537" ip="192.168.0.6" reflector-client="false"/>
-                    <neighbor as="11537" ip="192.168.0.3" reflector-client="false"/>
-                    <neighbor as="11537" ip="192.168.0.4"/>
-                    <neighbor as="11537" ip="192.168.0.7"/>
-                    <neighbor as="11537" ip="192.168.0.10"/>
                 </neighbors>
             </router>
             <router id="CHIN" reflector="true">
-                <rid>192.168.0.5</rid>
+                <rid>192.168.0.4</rid>
                 <neighbors>
-                    <neighbor as="11537" ip="192.168.0.11"/>
+                    <neighbor as="11537" ip="192.168.0.6"/>
+                    <neighbor as="11537" ip="192.168.0.10"/>
                     <neighbor as="11537" ip="192.168.0.1"/>
                     <neighbor as="11537" ip="192.168.0.2"/>
-                    <neighbor as="11537" ip="192.168.0.0"/>
-                    <neighbor as="11537" ip="192.168.0.6" reflector-client="false"/>
-                    <neighbor as="11537" ip="192.168.0.3" reflector-client="false"/>
+                    <neighbor as="11537" ip="192.168.0.7" reflector-client="false"/>
                     <neighbor as="11537" ip="192.168.0.9" reflector-client="false"/>
-                    <neighbor as="11537" ip="192.168.0.4"/>
-                    <neighbor as="11537" ip="192.168.0.7"/>
-                    <neighbor as="11537" ip="192.168.0.10"/>
+                    <neighbor as="11537" ip="192.168.0.3" reflector-client="false"/>
+                    <neighbor as="11537" ip="192.168.0.5"/>
                 </neighbors>
             </router>
             <router id="NYCM">
-                <rid>192.168.0.4</rid>
+                <rid>192.168.0.5</rid>
                 <neighbors>
-                    <neighbor as="11537" ip="192.168.0.11" reflector-client="true"/>
-                    <neighbor as="11537" ip="192.168.0.1" reflector-client="true"/>
-                    <neighbor as="11537" ip="192.168.0.2" reflector-client="true"/>
-                    <neighbor as="11537" ip="192.168.0.0" reflector-client="true"/>
-                    <neighbor as="11537" ip="192.168.0.5" reflector-client="true"/>
-                    <neighbor as="11537" ip="192.168.0.9" reflector-client="true"/>
-                    <neighbor as="11537" ip="192.168.0.3" reflector-client="true"/>
                     <neighbor as="11537" ip="192.168.0.6" reflector-client="true"/>
+                    <neighbor as="11537" ip="192.168.0.4" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="WASH" reflector="true">
-                <rid>192.168.0.11</rid>
+                <rid>192.168.0.6</rid>
                 <neighbors>
-                    <neighbor as="11537" ip="192.168.0.2" reflector-client="false"/>
                     <neighbor as="11537" ip="192.168.0.1" reflector-client="false"/>
-                    <neighbor as="11537" ip="192.168.0.0" reflector-client="false"/>
-                    <neighbor as="11537" ip="192.168.0.5" reflector-client="false"/>
-                    <neighbor as="11537" ip="192.168.0.6" reflector-client="false"/>
-                    <neighbor as="11537" ip="192.168.0.3" reflector-client="false"/>
+                    <neighbor as="11537" ip="192.168.0.10" reflector-client="false"/>
+                    <neighbor as="11537" ip="192.168.0.2" reflector-client="false"/>
+                    <neighbor as="11537" ip="192.168.0.4" reflector-client="false"/>
+                    <neighbor as="11537" ip="192.168.0.7" reflector-client="false"/>
                     <neighbor as="11537" ip="192.168.0.9" reflector-client="false"/>
-                    <neighbor as="11537" ip="192.168.0.4"/>
-                    <neighbor as="11537" ip="192.168.0.7"/>
-                    <neighbor as="11537" ip="192.168.0.10"/>
+                    <neighbor as="11537" ip="192.168.0.3" reflector-client="false"/>
+                    <neighbor as="11537" ip="192.168.0.5"/>
                 </neighbors>
             </router>
             <router id="ATLA" reflector="true">
-                <rid>192.168.0.3</rid>
+                <rid>192.168.0.7</rid>
                 <neighbors>
                     <neighbor as="11537" ip="192.168.0.8"/>
-                    <neighbor as="11537" ip="192.168.0.11"/>
+                    <neighbor as="11537" ip="192.168.0.6"/>
+                    <neighbor as="11537" ip="192.168.0.10"/>
                     <neighbor as="11537" ip="192.168.0.1"/>
                     <neighbor as="11537" ip="192.168.0.2"/>
-                    <neighbor as="11537" ip="192.168.0.0"/>
-                    <neighbor as="11537" ip="192.168.0.5"/>
-                    <neighbor as="11537" ip="192.168.0.9"/>
-                    <neighbor as="11537" ip="192.168.0.6" reflector-client="false"/>
                     <neighbor as="11537" ip="192.168.0.4"/>
-                    <neighbor as="11537" ip="192.168.0.7"/>
-                    <neighbor as="11537" ip="192.168.0.10"/>
+                    <neighbor as="11537" ip="192.168.0.3"/>
+                    <neighbor as="11537" ip="192.168.0.9"/>
                 </neighbors>
             </router>
             <router id="ATLA-M5">
                 <rid>192.168.0.8</rid>
                 <neighbors>
-                    <neighbor as="11537" ip="192.168.0.3" reflector-client="true"/>
+                    <neighbor as="11537" ip="192.168.0.7" reflector-client="true"/>
                 </neighbors>
             </router>
-            <router id="HSTN" reflector="true">
-                <rid>192.168.0.6</rid>
+            <router id="HSTN" reflector="false">
+                <rid>192.168.0.9</rid>
                 <neighbors>
-                    <neighbor as="11537" ip="192.168.0.11"/>
+                    <neighbor as="11537" ip="192.168.0.6"/>
+                    <neighbor as="11537" ip="192.168.0.10"/>
                     <neighbor as="11537" ip="192.168.0.1"/>
                     <neighbor as="11537" ip="192.168.0.2"/>
-                    <neighbor as="11537" ip="192.168.0.0"/>
-                    <neighbor as="11537" ip="192.168.0.5"/>
-                    <neighbor as="11537" ip="192.168.0.9"/>
-                    <neighbor as="11537" ip="192.168.0.3"/>
                     <neighbor as="11537" ip="192.168.0.4"/>
-                    <neighbor as="11537" ip="192.168.0.7"/>
-                    <neighbor as="11537" ip="192.168.0.10"/>
+                    <neighbor as="11537" ip="192.168.0.3"/>
+                    <neighbor as="11537" ip="192.168.0.7" reflector-client="false"/>
                 </neighbors>
             </router>
             <router id="LOSA" reflector="true">
-                <rid>192.168.0.1</rid>
-                <neighbors>
-                    <neighbor as="11537" ip="192.168.0.11"/>
-                    <neighbor as="11537" ip="192.168.0.2" reflector-client="false"/>
-                    <neighbor as="11537" ip="192.168.0.0" reflector-client="false"/>
-                    <neighbor as="11537" ip="192.168.0.5" reflector-client="false"/>
-                    <neighbor as="11537" ip="192.168.0.6" reflector-client="false"/>
-                    <neighbor as="11537" ip="192.168.0.3" reflector-client="false"/>
-                    <neighbor as="11537" ip="192.168.0.9" reflector-client="false"/>
-                    <neighbor as="11537" ip="192.168.0.4"/>
-                    <neighbor as="11537" ip="192.168.0.10"/>
-                </neighbors>
-            </router>
-            <router id="SNVA" reflector="true">
                 <rid>192.168.0.10</rid>
                 <neighbors>
-                    <neighbor as="11537" ip="192.168.0.7"/>
-                    <neighbor as="11537" ip="192.168.0.11" reflector-client="true"/>
+                    <neighbor as="11537" ip="192.168.0.6"/>
+                    <neighbor as="11537" ip="192.168.0.1" reflector-client="false"/>
+                    <neighbor as="11537" ip="192.168.0.2" reflector-client="false"/>
+                    <neighbor as="11537" ip="192.168.0.4" reflector-client="false"/>
+                    <neighbor as="11537" ip="192.168.0.7" reflector-client="false"/>
+                    <neighbor as="11537" ip="192.168.0.9" reflector-client="false"/>
+                    <neighbor as="11537" ip="192.168.0.3" reflector-client="false"/>
+                    <neighbor as="11537" ip="192.168.0.0"/>
+                    <neighbor as="11537" ip="192.168.0.11"/>
+                </neighbors>
+            </router>
+            <router id="SNVA" reflector="false">
+                <rid>192.168.0.11</rid>
+                <neighbors>
+                    <neighbor as="11537" ip="192.168.0.10" reflector-client="true"/>
                     <neighbor as="11537" ip="192.168.0.1" reflector-client="true"/>
-                    <neighbor as="11537" ip="192.168.0.2" reflector-client="true"/>
-                    <neighbor as="11537" ip="192.168.0.0" reflector-client="true"/>
-                    <neighbor as="11537" ip="192.168.0.5" reflector-client="true"/>
-                    <neighbor as="11537" ip="192.168.0.9" reflector-client="true"/>
-                    <neighbor as="11537" ip="192.168.0.3" reflector-client="true"/>
-                    <neighbor as="11537" ip="192.168.0.6" reflector-client="true"/>
-                    <neighbor as="11537" ip="192.168.0.7"/>
+                    <neighbor as="11537" ip="192.168.0.0"/>
                 </neighbors>
             </router>
         </routers>

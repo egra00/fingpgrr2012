@@ -142,7 +142,7 @@ net domain 130 compute
 # -------------------------------------------------------------------
 # BGP routing
 # -------------------------------------------------------------------
-bgp options msg-monitor /C:/workspace/Totem/prove/topologies/RNP-RNP_optimal_0-RNP.msg
+bgp options msg-monitor /home/emiliano/PG/Totem/probe/topologies/RNP-RNP_optimal_0-RNP.msg
 
 bgp add router 130 192.168.0.0
 bgp router 192.168.0.0
