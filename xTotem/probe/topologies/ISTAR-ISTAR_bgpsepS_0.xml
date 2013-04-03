@@ -16,97 +16,97 @@
     <topology>
         <nodes>
             <node id="VIC">
-                <rid>192.168.0.4</rid>
+                <rid>192.168.0.0</rid>
                 <type>CORE</type>
                 <location latitude="758.15" longitude="73.2"/>
             </node>
             <node id="VANC">
-                <rid>192.168.0.7</rid>
+                <rid>192.168.0.1</rid>
                 <type>EDGE</type>
                 <location latitude="667.26666" longitude="139.7"/>
             </node>
             <node id="CALG">
-                <rid>192.168.0.15</rid>
+                <rid>192.168.0.2</rid>
                 <type>CORE</type>
                 <location latitude="671.7" longitude="481.06668"/>
             </node>
             <node id="EDM">
-                <rid>192.168.0.10</rid>
+                <rid>192.168.0.3</rid>
                 <type>CORE</type>
                 <location latitude="492.15" longitude="545.35"/>
             </node>
             <node id="LETH">
-                <rid>192.168.0.18</rid>
+                <rid>192.168.0.4</rid>
                 <type>CORE</type>
                 <location latitude="747.06665" longitude="532.05"/>
             </node>
             <node id="WIN">
-                <rid>192.168.0.16</rid>
+                <rid>192.168.0.5</rid>
                 <type>CORE</type>
                 <location latitude="778.1" longitude="866.76666"/>
             </node>
             <node id="OTT">
-                <rid>192.168.0.13</rid>
+                <rid>192.168.0.6</rid>
                 <type>CORE</type>
                 <location latitude="782.5333" longitude="1350.0"/>
             </node>
             <node id="TOR">
-                <rid>192.168.0.12</rid>
+                <rid>192.168.0.7</rid>
                 <type>EDGE</type>
                 <location latitude="1030.8" longitude="1161.5834"/>
             </node>
             <node id="KIT">
-                <rid>192.168.0.17</rid>
+                <rid>192.168.0.8</rid>
                 <type>CORE</type>
                 <location latitude="1052.9667" longitude="1079.5667"/>
             </node>
             <node id="LON">
-                <rid>192.168.0.11</rid>
+                <rid>192.168.0.9</rid>
                 <type>CORE</type>
                 <location latitude="1123.9" longitude="1081.7833"/>
             </node>
             <node id="HAM">
-                <rid>192.168.0.14</rid>
+                <rid>192.168.0.10</rid>
                 <type>CORE</type>
                 <location latitude="1101.7333" longitude="1159.3667"/>
             </node>
             <node id="MONT">
-                <rid>192.168.0.3</rid>
+                <rid>192.168.0.11</rid>
                 <type>CORE</type>
                 <location latitude="753.7167" longitude="1509.6"/>
             </node>
             <node id="QUE">
-                <rid>192.168.0.5</rid>
+                <rid>192.168.0.12</rid>
                 <type>CORE</type>
                 <location latitude="605.2" longitude="1558.3667"/>
             </node>
             <node id="SHER">
-                <rid>192.168.0.1</rid>
+                <rid>192.168.0.13</rid>
                 <type>CORE</type>
                 <location latitude="755.93335" longitude="1611.5667"/>
             </node>
             <node id="MON">
-                <rid>192.168.0.8</rid>
+                <rid>192.168.0.14</rid>
                 <type>CORE</type>
                 <location latitude="525.4" longitude="1771.1666"/>
             </node>
             <node id="STJH">
-                <rid>192.168.0.0</rid>
+                <rid>192.168.0.15</rid>
                 <type>CORE</type>
                 <location latitude="614.06665" longitude="1753.4333"/>
             </node>
             <node id="HAL">
-                <rid>192.168.0.6</rid>
+                <rid>192.168.0.16</rid>
                 <type>CORE</type>
                 <location latitude="616.2833" longitude="1950.7167"/>
             </node>
             <node id="SYD">
-                <rid>192.168.0.2</rid>
+                <rid>192.168.0.17</rid>
                 <type>CORE</type>
                 <location latitude="454.46667" longitude="1997.2667"/>
             </node>
             <node id="YAR">
-                <rid>192.168.0.9</rid>
+                <rid>192.168.0.18</rid>
                 <type>CORE</type>
                 <location latitude="722.68335" longitude="1879.7833"/>
             </node>
@@ -919,136 +919,136 @@
     <bgp>
         <routers>
             <router id="VIC">
-                <rid>192.168.0.4</rid>
+                <rid>192.168.0.0</rid>
                 <neighbors>
-                    <neighbor as="129" ip="192.168.0.7" reflector-client="true"/>
+                    <neighbor as="129" ip="192.168.0.1" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="VANC" reflector="true">
-                <rid>192.168.0.7</rid>
+                <rid>192.168.0.1</rid>
                 <neighbors>
-                    <neighbor as="129" ip="192.168.0.4"/>
-                    <neighbor as="129" ip="192.168.0.15"/>
-                    <neighbor as="129" ip="192.168.0.13" reflector-client="true"/>
+                    <neighbor as="129" ip="192.168.0.0"/>
+                    <neighbor as="129" ip="192.168.0.2"/>
+                    <neighbor as="129" ip="192.168.0.6" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="CALG" reflector="true">
-                <rid>192.168.0.15</rid>
+                <rid>192.168.0.2</rid>
                 <neighbors>
-                    <neighbor as="129" ip="192.168.0.18"/>
-                    <neighbor as="129" ip="192.168.0.10"/>
-                    <neighbor as="129" ip="192.168.0.7" reflector-client="true"/>
+                    <neighbor as="129" ip="192.168.0.4"/>
+                    <neighbor as="129" ip="192.168.0.3"/>
+                    <neighbor as="129" ip="192.168.0.1" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="EDM">
-                <rid>192.168.0.10</rid>
+                <rid>192.168.0.3</rid>
                 <neighbors>
-                    <neighbor as="129" ip="192.168.0.15" reflector-client="true"/>
+                    <neighbor as="129" ip="192.168.0.2" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="LETH">
-                <rid>192.168.0.18</rid>
+                <rid>192.168.0.4</rid>
                 <neighbors>
-                    <neighbor as="129" ip="192.168.0.15" reflector-client="true"/>
+                    <neighbor as="129" ip="192.168.0.2" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="WIN">
-                <rid>192.168.0.16</rid>
+                <rid>192.168.0.5</rid>
                 <neighbors>
-                    <neighbor as="129" ip="192.168.0.13" reflector-client="true"/>
+                    <neighbor as="129" ip="192.168.0.6" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="OTT" reflector="true">
-                <rid>192.168.0.13</rid>
+                <rid>192.168.0.6</rid>
                 <neighbors>
-                    <neighbor as="129" ip="192.168.0.16"/>
-                    <neighbor as="129" ip="192.168.0.7"/>
-                    <neighbor as="129" ip="192.168.0.3"/>
-                    <neighbor as="129" ip="192.168.0.12" reflector-client="false"/>
+                    <neighbor as="129" ip="192.168.0.5"/>
+                    <neighbor as="129" ip="192.168.0.1"/>
+                    <neighbor as="129" ip="192.168.0.11"/>
+                    <neighbor as="129" ip="192.168.0.7" reflector-client="false"/>
                 </neighbors>
             </router>
             <router id="TOR" reflector="true">
-                <rid>192.168.0.12</rid>
+                <rid>192.168.0.7</rid>
                 <neighbors>
-                    <neighbor as="129" ip="192.168.0.14"/>
+                    <neighbor as="129" ip="192.168.0.10"/>
+                    <neighbor as="129" ip="192.168.0.9"/>
+                    <neighbor as="129" ip="192.168.0.8"/>
                     <neighbor as="129" ip="192.168.0.11"/>
-                    <neighbor as="129" ip="192.168.0.17"/>
-                    <neighbor as="129" ip="192.168.0.3"/>
-                    <neighbor as="129" ip="192.168.0.13"/>
+                    <neighbor as="129" ip="192.168.0.6"/>
                 </neighbors>
             </router>
             <router id="KIT">
-                <rid>192.168.0.17</rid>
+                <rid>192.168.0.8</rid>
                 <neighbors>
-                    <neighbor as="129" ip="192.168.0.12" reflector-client="true"/>
+                    <neighbor as="129" ip="192.168.0.7" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="LON">
-                <rid>192.168.0.11</rid>
+                <rid>192.168.0.9</rid>
                 <neighbors>
-                    <neighbor as="129" ip="192.168.0.12" reflector-client="true"/>
+                    <neighbor as="129" ip="192.168.0.7" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="HAM">
-                <rid>192.168.0.14</rid>
+                <rid>192.168.0.10</rid>
                 <neighbors>
-                    <neighbor as="129" ip="192.168.0.12" reflector-client="true"/>
+                    <neighbor as="129" ip="192.168.0.7" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="MONT" reflector="true">
-                <rid>192.168.0.3</rid>
+                <rid>192.168.0.11</rid>
                 <neighbors>
-                    <neighbor as="129" ip="192.168.0.1"/>
-                    <neighbor as="129" ip="192.168.0.5"/>
-                    <neighbor as="129" ip="192.168.0.8"/>
-                    <neighbor as="129" ip="192.168.0.13" reflector-client="false"/>
-                    <neighbor as="129" ip="192.168.0.12" reflector-client="false"/>
+                    <neighbor as="129" ip="192.168.0.13"/>
+                    <neighbor as="129" ip="192.168.0.12"/>
+                    <neighbor as="129" ip="192.168.0.14"/>
+                    <neighbor as="129" ip="192.168.0.6" reflector-client="false"/>
+                    <neighbor as="129" ip="192.168.0.7" reflector-client="false"/>
                 </neighbors>
             </router>
             <router id="QUE">
-                <rid>192.168.0.5</rid>
+                <rid>192.168.0.12</rid>
                 <neighbors>
-                    <neighbor as="129" ip="192.168.0.3" reflector-client="true"/>
+                    <neighbor as="129" ip="192.168.0.11" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="SHER">
-                <rid>192.168.0.1</rid>
+                <rid>192.168.0.13</rid>
                 <neighbors>
-                    <neighbor as="129" ip="192.168.0.3" reflector-client="true"/>
+                    <neighbor as="129" ip="192.168.0.11" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="MON" reflector="true">
-                <rid>192.168.0.8</rid>
+                <rid>192.168.0.14</rid>
                 <neighbors>
-                    <neighbor as="129" ip="192.168.0.0"/>
-                    <neighbor as="129" ip="192.168.0.6"/>
-                    <neighbor as="129" ip="192.168.0.3" reflector-client="true"/>
+                    <neighbor as="129" ip="192.168.0.15"/>
+                    <neighbor as="129" ip="192.168.0.16"/>
+                    <neighbor as="129" ip="192.168.0.11" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="STJH">
-                <rid>192.168.0.0</rid>
+                <rid>192.168.0.15</rid>
                 <neighbors>
-                    <neighbor as="129" ip="192.168.0.8" reflector-client="true"/>
+                    <neighbor as="129" ip="192.168.0.14" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="HAL" reflector="true">
-                <rid>192.168.0.6</rid>
+                <rid>192.168.0.16</rid>
                 <neighbors>
-                    <neighbor as="129" ip="192.168.0.2"/>
-                    <neighbor as="129" ip="192.168.0.9"/>
-                    <neighbor as="129" ip="192.168.0.8" reflector-client="true"/>
+                    <neighbor as="129" ip="192.168.0.17"/>
+                    <neighbor as="129" ip="192.168.0.18"/>
+                    <neighbor as="129" ip="192.168.0.14" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="SYD">
-                <rid>192.168.0.2</rid>
+                <rid>192.168.0.17</rid>
                 <neighbors>
-                    <neighbor as="129" ip="192.168.0.6" reflector-client="true"/>
+                    <neighbor as="129" ip="192.168.0.16" reflector-client="true"/>
                 </neighbors>
             </router>
             <router id="YAR">
-                <rid>192.168.0.9</rid>
+                <rid>192.168.0.18</rid>
                 <neighbors>
-                    <neighbor as="129" ip="192.168.0.6" reflector-client="true"/>
+                    <neighbor as="129" ip="192.168.0.16" reflector-client="true"/>
                 </neighbors>
             </router>
         </routers>
